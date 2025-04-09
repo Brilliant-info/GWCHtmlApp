@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <link href="../../WMSTheme/fontawesome/css/all.css" rel="stylesheet" />
+     <link href="Report-Template-Common.css" rel="stylesheet" />
+    <link href="Purchase-Order.css" rel="stylesheet" />
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+	<script src="../../Themes/js/wms-app-session.js"></script>
+	<script src="../../Themes/js/wms-app-navigator.js"></script>
+</head>
+<body class="WmsReport">
+    <form id="form1" runat="server">
+         <asp:Label ID="JsDataHolder" runat="server"></asp:Label>
+    <script src="Report-Template-Common.js" type="text/javascript"></script>
+	<script src="Purchase-Order.js" type="text/javascript"></script>
+    <asp:HiddenField ID="hdnDataId" runat="server" ClientIDMode="Static" />
+    <a href="#" class="printTemplate" onclick="window.print();"><i class="fas fa-print"></i>Print</a>
+     <!-- Header -->
+		<div class="invoiceHeader">
+			<div class="invoiceHeaderContent">
+				<div class="invoiceHeaderCell">
+					<!-- Company Details -->
+						<div class="invoiceLogo">
+                            <span class="wmsCustomImageTag">LogoPath</span>
+						</div>
+						<div class="invoiceCompanyInfo">
+							<div class="invCompRow">
+								<div class="invCompLable">Address</div>
+								<div class="invCompInfo"><span class="wmsCustomTag">Address</span></div>
+							</div>
+							<div class="invCompRow">
+								<div class="invCompLable">Email</div>
+								<div class="invCompInfo"><span class="wmsCustomTag">Email</span></div>
+							</div>
+							<div class="invCompRow">
+								<div class="invCompLable">Phone NO</div>
+								<div class="invCompInfo"><span class="wmsCustomTag">Phone</span></div>
+							</div>
+						</div>
+					<!-- Company Details -->
+				</div>
+				<div class="invoiceHeaderCell">
+					<!-- Company Details -->
+						<div class="invoiceCompanyInfoHolder">
+							<div class="PurchaseOrderTitle">
+								Internal Transfer Detail
+							</div>
+							<div class="invoiceLogo-B">
+								<span class="wmsCustomImageTag">LogoPath</span>
+							</div>
+							<div class="invoiceOrderInfo">
+								<div class="invCompRow">
+									<div class="invCompLable">Transfer Id</div>
+									<div class="invCompInfo"><span class="wmsCustomTag">orderNumber</span></div>
+								</div>
+								 <div class="invCompRow">
+									<div class="invCompLable">Transfer By</div>
+									<div class="invCompInfo"><span class="wmsCustomTag">CustomerRef</span></div>
+								</div> 
+								<div class="invCompRow">
+									<div class="invCompLable">Warehouse Code</div>
+									<div class="invCompInfo"><span class="wmsCustomTag">WarehouseCode</span></div>
+								</div> 
+								<div class="invCompRow">
+									<div class="invCompLable">Transfer Date</div>
+									<div class="invCompInfo"><span class="wmsCustomTag">TransferDate</span></div>
+								</div>
+							</div>
+						</div>
+					<!-- Company Details -->
+				</div>
+			</div>
+		</div>
+	<!-- Header -->
+	<!-- Billing Details Holder -->
+		<div class="invoiceAddressInfo">
+			
+			<div class="invoiceBillingAddress">
+				<div class="invoiceAddressHolder">
+					<div class="invCompRow">
+						<div class="invCompHeader">TRANSFER DETAIL</div>
+						<div class="invCompHeader"></div>
+					</div>
+					<!-- <div class="invCompRow">
+						<div class="invCompLable">VENDOR NAME</div>
+						<div class="invCompInfo"><span class="wmsCustomTag">vendorName</span></div>
+					</div> -->
+					<div class="invCompRow">
+						<div class="invCompLable">WAREHOUSE</div>
+						<div class="invCompInfo"><span class="wmsCustomTag">Warehouse</span></div>
+					</div>
+					<div class="invCompRow">
+						<div class="invCompLable">ADDRESS</div>
+						<div class="invCompInfo"><span class="wmsCustomTag">Address</span></div>
+					</div>
+				</div>
+			</div>
+			
+		</div>
+	<!-- Billing Details Holder -->
+	<!-- Product Details -->
+		<div class="invoiceProductDetails">
+			<div class="invProductGrid">
+				<div class="invProductGridHeaderRow">
+					<div class="invProductGridCell">
+						S.R NO
+					</div>
+					<div class="invProductGridCell">
+						SKU CODE
+					</div>
+					<div class="invProductGridCell">
+						PALLET CODE
+					</div>
+					<div class="invProductGridCell">
+						FROM PALLET
+					</div>
+					<div class="invProductGridCell">
+						TO PALLET
+					</div>
+					<div class="invProductGridCell">
+						FROM LOCATION
+					</div>
+					<div class="invProductGridCell">
+						TO LOCATION
+					</div>
+					<div class="invProductGridCell">
+						TOTAL
+					</div>
+				</div>
+				<div class="wmsGridRow wmsRepeatRow" data-column="Table1">
+					<div class="invProductGridCell">
+						<span class="wmsCustomRepeatTag">SrNo</span>
+					</div>
+					<div class="invProductGridCell">
+						<span class="wmsCustomRepeatTag">PRODUCT CODE</span>
+					</div>
+					<div class="invProductGridCell">
+						<span class="wmsCustomRepeatTag">FROM PALLET</span>
+					</div>
+					<div class="invProductGridCell">
+						<span class="wmsCustomRepeatTag">TO PALLET</span>
+					</div>
+					<div class="invProductGridCell">
+						<span class="wmsCustomRepeatTag">FROM LOCATION</span>
+					</div>
+					<div class="invProductGridCell">
+						<span class="wmsCustomRepeatTag">TO LOCATION</span>
+					</div>
+					<div class="invProductGridCell">
+						<span class="wmsCustomRepeatTag">TO LOCATION</span>
+					</div>
+					<div class="invProductGridCell">
+						<span class="wmsCustomRepeatTag">TOTAL</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	<!-- Product Details -->
+	<!-- Total and Charges Info -->
+		<div class="invTermsCalcInfoHolder">
+			<div class="invoiceTermsInfo">
+				<div class="invoiceTermsTitle">TERMS AND CONDITIONS</div>
+				<div class="invoiceTerms"></div>
+		</div>
+			
+		</div>
+	<!-- Total and Charges Info -->
+	<!-- Packing Details -->
+		<div class="invoiceAddressInfo">			
+			<div class="invoiceBillingAddress">
+				<div class="invoiceAddressHolder">
+					<div class="invCompRow">
+						<div class="invCompHeader">PACKED BY</div>
+					</div>
+					<div class="invCompRow">
+						<div class="invCompInfo">Signature: ________________________ Date: ____________</div>
+					</div>					
+				</div>
+			</div>
+			<div class="invoiceShippingAddress">
+				<div class="invoiceAddressHolder">
+					<div class="invCompRow">
+						<div class="invCompHeader">CHECKED BY</div>
+					</div>
+					<div class="invCompRow">
+						<div class="invCompInfo">Signature: ________________________ Date: ____________</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	<!-- Packing Details -->
+	<!-- Packing Details -->
+		<!-- <div class="invoiceAddressInfo">
+			<div class="invoiceShippingAddress">
+				<div class="invoiceAddressHolder">
+					<div class="invCompRow">
+						<div class="invCompHeader">RECEIVED IN GOOD ORDER AND CONDTION</div>
+					</div>
+					<div class="invCompRow">
+						<div class="invCompInfo">Name: ________________________Signature: ________________________ Date: ____________</div>
+					</div>
+				</div>
+			</div>
+		</div> -->
+	<!-- Packing Details -->
+    </form>
+</body>
+</html>

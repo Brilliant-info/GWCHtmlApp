@@ -1,0 +1,735 @@
+.winQueryBox {
+    border: solid 1px #cccccc;
+    border-radius: 7px;
+    overflow: hidden;
+}
+
+.winQueryHeader {
+    background-color: var(--wms-color-primary);
+    padding: 7px 10px;
+    color: #fff;
+    font-weight: bold;
+}
+
+.winQueryContent {
+    padding: 10px;
+    height: 250px;
+    overflow-y: auto;
+}
+
+.winQueryObjects ul,
+.winQueryObjects li,
+.winQueryColumnNames ul,
+.winQueryColumnNames li {
+    display: block;
+    padding-left: 0px;
+}
+
+.winQueryObjects li,
+.winQueryColumnNames li,
+#dataColumnHolder div {
+    color: #000000;
+    padding: 7px 10px;
+    border: solid 1px #cccccc;
+
+}
+
+.winQueryObjects li i,
+.winQueryColumnNames li i,
+#dataColumnHolder input[type="checkbox"] {
+    margin-right: 10px;
+    display: inline-block;
+}
+
+a.editSqlColumnName {
+    float: right;
+    display: none;
+}
+
+.frmSqlColumnEdit {
+    display: none;
+}
+
+.themeWMSContentHolder .themeWMS_ctrl_btn i {
+    position: absolute;
+    left: 10px;
+    top: 15px;
+    color: var(--wms-color-primary);
+}
+
+.sqlGroupConditions {
+    color: #ffffff;
+    float: right;
+
+}
+
+.sqlGroupConditions a,
+.sqlGroupConditions a:link,
+.sqlGroupConditions a:active,
+.sqlGroupConditions a:hover,
+.sqlGroupConditions a:focus,
+.sqlGroupConditions a:visited {
+    color: var(--wms-color-primary);
+    font-weight: bold;
+    display: inline-block;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: #ffffff;
+    border: solid 1px #ffffff;
+    border-radius: 7px;
+}
+
+input.btnExecuteSqlQuery {
+    background-color: var(--wms-color-primary) !important;
+    color: #ffffff !important;
+    background-image: none !important;
+    float: right;
+    font-weight: bold;
+}
+
+input.btnExecuteSqlQuery {
+    background-color: var(--wms-color-primary) !important;
+    color: #ffffff !important;
+    background-image: none !important;
+    float: right;
+    font-weight: bold;
+}
+
+.sqlGrpBrCondition {
+    background-color: #ffd800;
+    text-align: center;
+}
+
+.sqlBtnConditionAction {
+    text-align: right;
+}
+
+
+
+.themeWmsSqlQueryPopup {
+    position: fixed;
+    top: 20px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 999999;
+}
+
+#btnCloseSqlQueryPopup {
+    float: right;
+    margin-top: 3px;
+    cursor: pointer;
+}
+
+#btnCloseSqlQueryPopup i {
+    position: static;
+    font-size: 20px;
+}
+
+.themeWmsSqlQueryPopup .themeWmsPopupContent {
+    display: block;
+    width: 80%;
+}
+
+#btnCloseSqlTitlePopup,
+#btnCloseSqlNotificationPopup {
+    font-size: 20px;
+    position: relative;
+    float: right;
+    right: 23px;
+    top: -9px;
+}
+
+.queryBuilderScheduleInterval {
+    border: solid 1px #cccccc;
+    box-shadow: 0px 0px 5px #636363;
+    border-radius: 7px;
+    display: inline-block;
+    overflow: hidden;
+}
+
+.queryBuilderScheduleInterval div {
+    display: table-cell;
+    background-color: #ffffff;
+    padding: 5px 10px;
+    border-left: solid 1px #cccccc;
+}
+
+.queryBuilderScheduleInterval div:first-child {
+    border-left: none;
+}
+
+.queryBuilderScheduleInterval div.qbInteralSelected {
+    background-color: var(--wms-color-primary);
+    color: #ffffff;
+}
+
+#themeQueryBuilderSetNotification .themeWMSPopupLabel {
+    width: 110px;
+    vertical-align: middle;
+    line-height: 12px;
+    display: inline-block;
+}
+
+.queryBuilderScheduleDay,
+.queryBuilderScheduleWeek {
+    display: inline-block;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.queryBuilderScheduleDay div,
+.queryBuilderScheduleWeek div {
+    margin-left: 10px;
+    display: inline-block;
+}
+
+.queryBuilderScheduleDay i,
+.queryBuilderScheduleDay i.fas,
+.queryBuilderScheduleDay i.far,
+.queryBuilderScheduleWeek i,
+.queryBuilderScheduleWeek i.fas,
+.queryBuilderScheduleWeek i.far {
+    margin-right: 5px;
+    color: var(--wms-color-primary);
+    font-size: 16px;
+}
+
+.queryBuilderScheduleDay i.far {
+    color: #cccccc;
+}
+
+.queryBuilderScheduleDay div:first-child {
+    margin-left: 0px;
+}
+
+.divQbFormRow {
+    margin-bottom: 10px;
+}
+
+#themeQueryBuilderSetNotification .themeWmsPopupContentBody div.themeWMS_ctrl input {
+    width: 185px !important;
+    box-shadow: none;
+    border-top: none;
+    border-radius: 0px;
+    border-right: none;
+    border-left: none;
+    border: 1px solid black;
+}
+
+#themeQueryBuilderSetNotification .themeWMS_ctrl {
+    border-radius: 0px;
+    background-color: #ffffff;
+}
+
+#themeQueryBuilderSetNotification .themeWMS_ctrl i {
+    color: var(--wms-color-primary);
+}
+
+#divQbInterval .themeWMSPopupLabel {
+    position: relative;
+    top: -12px;
+}
+
+/*New Changes*/
+
+
+
+.PanelCaption {
+    color: Black;
+    font-size: 13px;
+    font-weight: bold;
+    margin-top: -22px;
+    margin-left: -5px;
+    position: absolute;
+    background-color: White;
+    padding: 0px 2px 0px 2px;
+}
+
+.divHead {
+    border: solid 2px #F5DEB3;
+    width: 99%;
+    text-align: left;
+}
+
+.divHead h4 {
+    color: #483D8B;
+    margin: 3px 3px 3px 3px;
+}
+
+.divHead a {
+    float: right;
+    margin-top: -15px;
+    margin-right: 5px;
+}
+
+.divHead a:hover {
+    cursor: pointer;
+    color: Red;
+}
+
+.divDetailExpand {
+    border: solid 2px #F5DEB3;
+    border-top: none;
+    width: 99%;
+    padding: 5px 0 5px 0;
+    overflow: hidden;
+    height: 92%;
+}
+
+.divDetailCollapse {
+    display: none;
+}
+
+
+
+
+table {
+    width: 100%;
+    background-color: #000000;
+    overflow: scroll;
+}
+
+table td {
+    padding: 3px;
+    font-family: Arial;
+    font-size: 12px;
+    padding: 3px;
+    background-color: #ffffff;
+}
+
+.reportHeader,
+.reportFooter {
+    width: auto !important;
+}
+
+.reportPageTitle,
+.previewPageTitle {
+    font-size: 15px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-weight: bold;
+    text-align: left;
+}
+
+.reportHeaderCell,
+.reportGroupHeaderCell {
+    background-color: #eeeeee;
+    font-weight: bold;
+}
+
+.reportSummationCell {
+    background-color: #cccccc;
+    font-weight: bold;
+}
+
+.reportTotalSummationCell {
+    background-color: #808080;
+    font-weight: bold;
+}
+
+.divPageContentLoader {
+    padding: 0px;
+    /* background-color: var(--wms-color-primary); */
+    color: #808080;
+    font-family: Arial;
+    font-size: 14px;
+    text-align: center;
+}
+
+.reportHeader,
+.reportFooter {
+    box-shadow: none !important;
+    border: solid 1px #000000;
+    width: 100%;
+}
+
+.previewPageFooter {
+    position: absolute;
+}
+
+.previewPage {
+    position: relative;
+    border: solid 1px #000000;
+    background: #ffffff;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.divProgressHolder {
+    display: inline-block;
+    height: 17px;
+    width: 100px;
+    border: solid 1px #ffffff;
+    text-align: left;
+    margin-right: 5px;
+}
+
+.divCurrentProgress {
+    display: inline-block;
+    height: 15px;
+    width: 0px;
+    background-color: #ffffff;
+}
+
+@media print {
+
+    html,
+    body {
+        margin: 0px;
+        padding: 0px;
+    }
+
+    body {
+        background-color: #ffffff;
+    }
+
+    .previewPage {
+        padding: 0px 0px 0px 0px !important;
+        border: none !important;
+        margin-top: 0px;
+        margin-bottom: 0px;
+        page-break-after: always;
+    }
+
+    .previewPageFooter {
+        bottom: 0px !important;
+    }
+
+    /*  body {
+       
+    }
+    html{
+        margin-top: 120px;
+        padding-bottom:100px;
+    }
+    tr.reportPageBreak {
+        page-break-after: always;
+    }
+    .reportHeader {
+        position: fixed;
+        top: 0;        
+    }
+    .reportFooter {
+        position: fixed;
+        bottom: 0;
+    }
+     */
+}
+.wms-srv-search a, .wms-srv-icon-input i {
+    position: absolute;
+    float: right;
+    right: 7px;
+    top: 9px;
+    color: #000000;
+}
+
+#divCPHolder_Form table td {
+    color: #000000;
+}
+
+
+#tblRecordHolder tr.gridAlternetRow td {
+    background-color: #f7f7f7;
+}
+
+#tblRecordHolder tr.gridRow td {
+    background-color: #ffffff;
+}
+
+.dateGridView {
+    margin-right: 10px;
+   z-index: 9999;
+    position: absolute;
+    background-color: #ffffff;
+    padding: 20px;
+    box-shadow: 0px 10px 10px #636363;
+    border: solid 1px #cccccc;
+    border-radius: 7px;
+    margin-left: 32%;
+    /* margin-bottom: 49px; */
+    margin-top: -71px;
+}
+
+.listDateView {
+		margin-right: 10px;
+		z-index: 999999999999;
+		position: absolute;
+		background-color: #ffffff;
+		padding: 20px;
+		box-shadow: 0px 10px 10px #636363;
+		border: solid 1px #cccccc;
+		border-radius: 7px;
+		margin-left: 60%;
+		/* margin-bottom: 49px; */
+		margin-top: -72px;
+}
+
+#pnlQueryBuilder .dateGridView table td, 
+#pnlQueryBuilder .dateGridView table th {
+    padding: 0px 0px !important; 
+}
+#pnlQueryBuilder .dateGridView .ui-state-default, 
+#pnlQueryBuilder .dateGridView .ui-widget-content .ui-state-default, 
+#pnlQueryBuilder .dateGridView .ui-widget-header .ui-state-default, 
+#pnlQueryBuilder .dateGridView .ui-button, 
+#pnlQueryBuilder .dateGridView .ui-button.ui-state-disabled:hover, 
+#pnlQueryBuilder .dateGridView .ui-button.ui-state-disabled:active {
+    border: 1px solid #f1f1f1;    
+    font-weight: normal;
+    color: #454545;
+}
+
+#pnlQueryBuilder .listDateView table td, 
+#pnlQueryBuilder .listDateView table th {
+    padding: 0px 0px !important; 
+}
+#pnlQueryBuilder .listDateView .ui-state-default, 
+#pnlQueryBuilder .listDateView .ui-widget-content .ui-state-default, 
+#pnlQueryBuilder .listDateView .ui-widget-header .ui-state-default, 
+#pnlQueryBuilder .listDateView .ui-button, 
+#pnlQueryBuilder .listDateView .ui-button.ui-state-disabled:hover, 
+#pnlQueryBuilder .listDateView .ui-button.ui-state-disabled:active {
+    border: 1px solid #f1f1f1;    
+    font-weight: normal;
+    color: #454545;
+}
+
+
+
+
+.text-center {
+    background-color: #0059c1;
+    color: #fff;
+    line-height: 1.8;
+    border-radius: 2px;
+    width: 96%;
+    text-align: center;
+}
+.text-center2 {
+    background-color: #0059c1;
+    color: #fff;
+    line-height: 1.8;
+    border-radius: 2px;
+    width: 95%;
+    text-align: center;
+}
+
+.ui-datepicker .ui-datepicker-prev span, .ui-datepicker .ui-datepicker-next span {
+    display: block;
+    position: absolute;
+    left: 50%;
+    margin-left: -8px;
+    top: 50%;
+    margin-top: -8px;
+    text-align: initial;
+}
+.txtFixDates
+{
+    color: #48576a;
+    padding-left: 15px;
+    padding-bottom: 5px;
+    float: left;
+}
+.txtFixDates:hover
+{
+    color: #2483ffec;
+    padding-left: 15px;
+    padding-bottom: 5px;
+    float: left;
+}
+
+.mx-calendar-header {
+    padding: 0 4px;
+    height: 34px;
+    line-height: 34px;
+    text-align: center;
+    overflow: hidden;
+}
+#pnlQueryBuilder .dateGridView .section .mx-calendar a {
+    color: #444;
+}
+#pnlQueryBuilder .listDateView .section .mx-calendar a {
+    color: #444;
+}
+.mx-calendar-header > a {
+    color: inherit;
+    text-decoration: none;
+    cursor: pointer;
+}
+#pnlQueryBuilder a {
+    /*color: #0059c1;*/
+    text-decoration: none;
+}
+#pnlQueryBuilder .dateGridView .section .mx-calendar a {
+    color: #444;
+}
+#pnlQueryBuilder .listDateView .section .mx-calendar a {
+    color: #444;
+}
+.mx-calendar {
+    float: left;
+    color: #73879c;
+    padding: 6px 12px;
+    font: 14px/1.5 Helvetica Neue,Helvetica,Arial,Microsoft Yahei,sans-serif;
+}
+.mx-icon-last-month, .mx-icon-last-year, .mx-icon-next-month, .mx-icon-next-year {
+    padding: 0 6px;
+    font-size: 20px;
+    line-height: 30px;
+}
+.mx-icon-last-month, .mx-icon-last-year, .mx-icon-next-month, .mx-icon-next-year {
+    padding: 0 6px;
+    font-size: 20px;
+    line-height: 30px;
+}
+.mx-icon-last-month, .mx-icon-last-year, .mx-icon-next-month, .mx-icon-next-year {
+    padding: 0 6px;
+    font-size: 20px;
+    line-height: 30px;
+}
+.mx-icon-last-month, .mx-icon-last-year, .mx-icon-next-month, .mx-icon-next-year {
+    padding: 0 6px;
+    font-size: 20px;
+    line-height: 30px;
+}
+.mx-calendar-header {
+    padding: 0 4px;
+    height: 34px;
+    line-height: 34px;
+    text-align: center;
+    overflow: hidden;
+}
+.monthView
+{
+    margin-right:25px;
+}
+.yearView
+{
+    margin-right:25px;
+}
+.iconClose {
+    float: right;   
+    font-size: 18px;
+}
+.ui-datepicker-calendar {
+    background-color: #ffffff;
+}
+.datepickerInput
+{
+	width:100%;
+	z-index:9999;
+	padding-left:10px;
+	padding-right:10px;
+}
+.dividesLines {
+	color: #cccccc;
+	width: 374px;
+	margin-left: 7px;
+	/* margin-right: 20px; */
+	margin-top: 6px;
+	margin-bottom: 9px;
+}
+.dateGrid {
+    padding: 148px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.startContent{
+margin-left: -22px;
+
+}	
+.titleContent{
+margin-left: 25px;
+
+}	
+.inputContent{
+margin-left: 25px;
+
+}	
+
+
+.txtEmailNotification1
+{
+    border: 1px solid black;
+    width: 100%;
+    height: 31px;
+    display: flex;
+    border-radius: 3px;
+    margin-left: 48px;
+    padding-left: 43px;
+}
+
+.btnAddProductKeyword1 {
+    /* margin-top: 8px;
+margin-left: 215px; */
+    margin-top: 8px;
+    margin-left: 215px;
+}
+
+.keyblockEmailNotification {
+    border: solid 1px #636363;
+    padding: 8px;
+    border-radius: 7px;
+    background-color: #fbfbfb;
+    display: inline-block;
+    margin-right: 3px;
+    font-size: 11px;
+    margin-top: 4px;
+    margin-left: 10px;
+    display: none;
+    width: 76%;
+    height: 40px;
+}
+
+
+.txtAddEmailNotication{
+    width: 130px;
+}
+
+.txtSMS {
+    border: 1px solid black;
+    width: 94%;
+    height: 35px;
+    display: flex;
+    border-radius: 3px;
+    margin-left: 48px
+}
+
+.pnlAddEmail {
+    border: solid 1px #636363;
+    padding: 7px;
+    border-radius: 7px;
+    background-color: #fbfbfb;
+    display: inline-block;
+    margin-right: 3px;
+    font-size: 11px;
+}
+
+.txtSubjectCSS {
+    margin-left: 64px;
+    width: 1150px;
+    margin-top: -21px;
+}
+
+.btnAddEmailInToFieldNotification {
+    position: absolute;
+    left: 4px;
+    top: 2px;
+}
+
+.pnlAddEmailNotification{
+    position: absolute;
+    top: 28px;
+    left: 18px;
+}
+.pnlEmailBlockNotification 
+{
+    border: solid 1px #636363;
+    border-radius: 7px;
+    background-color: #efefef;
+    padding: 0px 12px;
+    margin: 2px;
+}

@@ -1,0 +1,280 @@
+<div class="wms-srv-content-area pnlInbound" id="pnlInbound">
+    <div class="wms-srv-page-title">
+        <i class="fas fa-ticket-alt"></i><span class="wms-srv-data-title">Gate Pass</span>
+    </div>
+    <div class="wms-srv-grid-holder">
+        <div class="wms-srv-grid-action-panel">
+            <div class="wms-srv-grid-common-action"><a href="#" class="wms-srv-icononly"><i
+                        class="fas fa-ticket-alt"></i></a></div>
+            <div class="wms-srv-search">
+                <label>Vendor: </label>
+                <select class="wms-srv-input wms-srv-search-filter" id="ddlfilter">
+                    <option value="All">-- Filters --</option>
+                    <option value="">V-1</option>
+                    <option value="">V-2</option>
+                    <option value="">V-3</option>
+                    <option value="">V-4</option>
+                </select>
+                <input type="text" value="" placeholder="P.O." id="txtfilter"
+                    class="wms-srv-input wms-srv-simple-search">
+                <button class="wms-srv-input wms-srv-button wms-srv-highlight-btn" type="button" title="CreateGatepass"
+                    data-prefix="AN" onclick="">
+                    <i class="fas fa-plus"></i><span>Create Gatepass</span></button>
+                <button class="wms-srv-input wms-srv-button wms-srv-highlight-btn-secondary" type="button"
+                    title="Search"><span>Search</span></button>
+            </div>
+            <div class="wms-srv-grid-title" style="font-size: 18px;">
+                Gate Pass List
+            </div>
+        </div>
+        <div class="wms-srv-grid-scroller" style="width: 100%;">
+            <div class="wms-srv-grid">
+                <div class="wms-srv-grid-header">
+                    <div class="wms-srv-grid-cell" style="text-align: center;width: 4%;"></div>
+                    <div class="wms-srv-grid-cell" style="text-align: center;width: 12%">Gatepass No.</div>
+                    <div class="wms-srv-grid-cell" style="text-align: center;width: 12%">Inward No.</div>
+                    <div class="wms-srv-grid-cell" style="text-align: center;width: 12%">Order Date</div>
+                    <div class="wms-srv-grid-cell" style="text-align: center;width: 12%">Vendor</div>
+                    <div class="wms-srv-grid-cell" style="text-align: center;width: 12%">Order Qty</div>
+                    <div class="wms-srv-grid-cell" style="text-align: center;width: 12%">Received Qty</div>
+                    <div class="wms-srv-grid-cell" style="text-align: center;width: 12%">Remark</div>
+                    <div class="wms-srv-grid-cell" style="text-align: center;width: 12%">Action</div>
+                </div>
+                <div class="wms-srv-grid-row">
+                    <div class="wms-srv-grid-cell" style="text-align: center;"><input type="checkbox" value="ID"></div>
+                    <div class="wms-srv-grid-cell" style="text-align: center;">2905</div>
+                    <div class="wms-srv-grid-cell" style="text-align: center;">1308</div>
+                    <div class="wms-srv-grid-cell" style="text-align: center;">13/08/2019</div>
+                    <div class="wms-srv-grid-cell" style="text-align: center;">V-1</div>
+                    <div class="wms-srv-grid-cell" style="text-align: center;">25</div>
+                    <div class="wms-srv-grid-cell" style="text-align: center;"><input type="text" value=""
+                        style="width: 100%;text-align: center;"></div>
+                    <div class="wms-srv-grid-cell" style="text-align: center;"><input type="text" value=""
+                            style="width: 100%;text-align: center;"></div>
+                    <div class="wms-srv-grid-cell">
+                        <div class="wms-srv-grid-action">
+                            <a href="#" title="Save" class="wms-srv-save" data-prefix="SV"><i
+                                    class="fas fa-check-circle"></i></a>
+                            <div class="wms-srv-action-sep">|</div>
+                            <a href="#" title="View" onclick="openTransportpopup();"><i class="fas fa-eye"></i></a>
+                            <div class="wms-srv-action-sep">|</div>
+                            <a href="#" title="Print"><i class="fas fa-print" title="Print"></i></a>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="wms-srv-grid-row">
+                    <div class="wms-srv-grid-cell" style="text-align: center;"><input type="checkbox" value="ID"></div>
+                    <div class="wms-srv-grid-cell" style="text-align: center;">2905</div>
+                    <div class="wms-srv-grid-cell" style="text-align: center;">1308</div>
+                    <div class="wms-srv-grid-cell" style="text-align: center;">13/08/2019</div>
+                    <div class="wms-srv-grid-cell" style="text-align: center;">V-1</div>
+                    <div class="wms-srv-grid-cell" style="text-align: center;">25</div>
+                    <div class="wms-srv-grid-cell" style="text-align: center;"><input type="text" value=""
+                        style="width: 100%;text-align: center;"></div>
+                    <div class="wms-srv-grid-cell" style="text-align: center;"><input type="text" value=""
+                            style="width: 100%;text-align: center;"></div>
+                    <div class="wms-srv-grid-cell">
+                        <div class="wms-srv-grid-action">
+                            <a href="#" title="Save" class="wms-srv-save" data-prefix="SV"><i
+                                    class="fas fa-check-circle"></i></a>
+                            <div class="wms-srv-action-sep">|</div>
+                            <a href="#" title="View" onclick="openTransportpopup();"><i class="fas fa-eye"></i></a>
+                            <div class="wms-srv-action-sep">|</div>
+                            <a href="#" title="Print"><i class="fas fa-print" title="Print"></i></a>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="wms-srv-grid-row">
+                    <div class="wms-srv-grid-cell" style="text-align: center;"><input type="checkbox" value="ID"></div>
+                    <div class="wms-srv-grid-cell" style="text-align: center;">2905</div>
+                    <div class="wms-srv-grid-cell" style="text-align: center;">1308</div>
+                    <div class="wms-srv-grid-cell" style="text-align: center;">13/08/2019</div>
+                    <div class="wms-srv-grid-cell" style="text-align: center;">V-1</div>
+                    <div class="wms-srv-grid-cell" style="text-align: center;">25</div>
+                    <div class="wms-srv-grid-cell" style="text-align: center;"><input type="text" value=""
+                        style="width: 100%;text-align: center;"></div>
+                    <div class="wms-srv-grid-cell" style="text-align: center;"><input type="text" value=""
+                            style="width: 100%;text-align: center;"></div>
+                    <div class="wms-srv-grid-cell">
+                        <div class="wms-srv-grid-action">
+                            <a href="#" title="Save" class="wms-srv-save" data-prefix="SV"><i
+                                    class="fas fa-check-circle"></i></a>
+                            <div class="wms-srv-action-sep">|</div>
+                            <a href="#" title="View" onclick="openTransportpopup();"><i class="fas fa-eye"></i></a>
+                            <div class="wms-srv-action-sep">|</div>
+                            <a href="#" title="Print"><i class="fas fa-print" title="Print"></i></a>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="wms-srv-grid-row">
+                    <div class="wms-srv-grid-cell" style="text-align: center;"><input type="checkbox" value="ID"></div>
+                    <div class="wms-srv-grid-cell" style="text-align: center;">2905</div>
+                    <div class="wms-srv-grid-cell" style="text-align: center;">1308</div>
+                    <div class="wms-srv-grid-cell" style="text-align: center;">13/08/2019</div>
+                    <div class="wms-srv-grid-cell" style="text-align: center;">V-1</div>
+                    <div class="wms-srv-grid-cell" style="text-align: center;">25</div>
+                    <div class="wms-srv-grid-cell" style="text-align: center;"><input type="text" value=""
+                        style="width: 100%;text-align: center;"></div>
+                    <div class="wms-srv-grid-cell" style="text-align: center;"><input type="text" value=""
+                            style="width: 100%;text-align: center;"></div>
+                    <div class="wms-srv-grid-cell">
+                        <div class="wms-srv-grid-action">
+                            <a href="#" title="Save" class="wms-srv-save" data-prefix="SV"><i
+                                    class="fas fa-check-circle"></i></a>
+                            <div class="wms-srv-action-sep">|</div>
+                            <a href="#" title="View" onclick="openTransportpopup();"><i class="fas fa-eye"></i></a>
+                            <div class="wms-srv-action-sep">|</div>
+                            <a href="#" title="Print"><i class="fas fa-print" title="Print"></i></a>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="wms-srv-grid-row">
+                    <div class="wms-srv-grid-cell" style="text-align: center;"><input type="checkbox" value="ID"></div>
+                    <div class="wms-srv-grid-cell" style="text-align: center;">2905</div>
+                    <div class="wms-srv-grid-cell" style="text-align: center;">1308</div>
+                    <div class="wms-srv-grid-cell" style="text-align: center;">13/08/2019</div>
+                    <div class="wms-srv-grid-cell" style="text-align: center;">V-1</div>
+                    <div class="wms-srv-grid-cell" style="text-align: center;">25</div>
+                    <div class="wms-srv-grid-cell" style="text-align: center;"><input type="text" value=""
+                        style="width: 100%;text-align: center;"></div>
+                    <div class="wms-srv-grid-cell" style="text-align: center;"><input type="text" value=""
+                            style="width: 100%;text-align: center;"></div>
+                    <div class="wms-srv-grid-cell">
+                        <div class="wms-srv-grid-action">
+                            <a href="#" title="Save" class="wms-srv-save" data-prefix="SV"><i
+                                    class="fas fa-check-circle"></i></a>
+                            <div class="wms-srv-action-sep">|</div>
+                            <a href="#" title="View" onclick="openTransportpopup();"><i class="fas fa-eye"></i></a>
+                            <div class="wms-srv-action-sep">|</div>
+                            <a href="#" title="Print"><i class="fas fa-print" title="Print"></i></a>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- GetPass Popup -->
+<div class="wms-srv-popup-holder" id="wms-srv-transport-popup" style="display: none;">
+    <div class="wms-srv-popup-bg">
+    </div>
+    <div class="wms-srv-popup">
+        <div class="wms-srv-popup-content">
+            <!-- Popup Title -->
+            <div class="wms-srv-popup-title">
+                <div class="wms-srv-page-title">
+                    <i class="fas fa-file-alt"></i><span>Gate Pass Details</span>
+                </div>
+                <a href="#" title="Close" id="wms-srv-transport-popup-close" class="wms-srv-popup-close"><i
+                        class="fas fa-times-circle"></i></a>
+            </div>
+            <!-- Popup Title -->
+            <div class="wms-srv-popup-content-body pnlFormGrid" id="wms-srv-popup-content-body">
+                <div id="popupContentDocument">
+                    <div id="pnlCreatePurchaseOrder">
+                        <!-- Grid Head -->
+                        <div class="wms-srv-grid-holder pnlWmsHead" id="pnlTransportHead">
+                            <div class="wms-srv-grid">
+                                <div class="wms-srv-grid-header">
+                                    <div class="wms-srv-grid-cell" style="text-align: center;width: 20%;">Inward No.
+                                    </div>
+                                    <div class="wms-srv-grid-cell" style="text-align: center;width: 20%;">Order Date
+                                    </div>
+                                    <div class="wms-srv-grid-cell" style="text-align: center;width: 20%;">Vendor</div>
+                                    <div class="wms-srv-grid-cell" style="text-align: center;width: 20%;">Order Qty
+                                    </div>
+                                </div>
+                                <div class="wms-srv-grid-row">
+                                    <div class="wms-srv-grid-cell" style="text-align: center;">2905</div>
+                                    <div class="wms-srv-grid-cell" style="text-align: center;">13/08/2019</div>
+                                    <div class="wms-srv-grid-cell" style="text-align: center;">V-1</div>
+                                    <div class="wms-srv-grid-cell" style="text-align: center;">25</div>
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+                        <!-- Grid Head -->
+                        <!-- Grid -->
+                        <div class="wms-srv-grid-holder pnlWmsHead" id="pnlWmsHead">
+                            <div class="wms-srv-grid" style="text-align: center;">
+                                <!-- Object Head Data Will be Here -->
+                                <div class="wms-srv-grid-header">
+                                    <div class="wms-srv-grid-cell">Transporter Name</div>
+                                    <div class="wms-srv-grid-cell">Truck No.</div>
+                                    <div class="wms-srv-grid-cell">LR No.</div>
+                                    <div class="wms-srv-grid-cell">Container ID</div>
+                                    <div class="wms-srv-grid-cell">Trailer</div>
+                                    <div class="wms-srv-grid-cell">In Time</div>
+                                    <div class="wms-srv-grid-cell">Out Time</div>
+                                    <div class="wms-srv-grid-cell">Remark</div>
+                                    <div class="wms-srv-grid-cell">Action</div>
+                                </div>
+                                <div class="wms-srv-grid-row">
+                                    <div class="wms-srv-grid-cell">
+                                        <div class="wms-srv-suggestion-holder">
+                                            <input type="text" data-prefix="SESKU" data-id="" value=""
+                                                class="wms-srv-grid-cell-input"><a href="#"><i
+                                                    class="fas fa-search"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="wms-srv-grid-cell">
+                                        <input type="text" id="" value="" class="wms-srv-grid-cell-input">
+                                    </div>
+                                    <div class="wms-srv-grid-cell">
+                                        <input type="text" id="" value="" class="wms-srv-grid-cell-input">
+                                    </div>
+                                    <div class="wms-srv-grid-cell">
+                                        <input type="text" id="" value="" class="wms-srv-grid-cell-input">
+                                    </div>
+                                    <div class="wms-srv-grid-cell">
+                                        <input class="wms-srv-grid-cell-input" id="txtTransporterName"></input>
+                                    </div>
+                                    <div class="wms-srv-grid-cell">
+                                        <input class="wms-srv-grid-cell-input" id="txtTransporterName"></input>
+                                    </div>
+                                    <div class="wms-srv-grid-cell">
+                                        <input class="wms-srv-grid-cell-input" id="txtTransporterName"></input>
+                                    </div>
+                                    <div class="wms-srv-grid-cell">
+                                        <input class="wms-srv-grid-cell-input" id="txtTransporterName"></input>
+                                    </div>
+                                    <div class="wms-srv-grid-cell">
+                                        <div class="wms-srv-grid-action">
+                                            <i class="fas fa-print" title="Print"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <br />
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="container-fluid">
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="wms-srv-grid-action">
+                                                    <button class="wms-srv-input wms-srv-button "
+                                                        id="btnSaveGrnTransport" onclick="saveTransport();" data-id="0"
+                                                        title="Save" data-prefix="SV" type="button"><i
+                                                            class="fas fa-check-circle"></i><span>Save</span></button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- GetPass Popup -->

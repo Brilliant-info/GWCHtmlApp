@@ -1,0 +1,47 @@
+.foo 
+{
+    float: left;
+    width: 20px;
+    height: 21px;
+    margin: 21px;
+    border: 1px solid rgba(0, 0, 0, .2);
+ }
+ .Red {
+    background: red;
+ }
+ .Blue {
+    background:blue;
+ }
+ .wine {
+    background: burlywood;
+ }
+ 
+ .wms-srv-grid-occupiedCell
+ {
+   
+   width: 53px;
+    border: solid 1px black;
+    display: table-cell;
+    text-align: center;
+ }
+ .wms-srv-grid-occupiedRow
+ {
+   /* width:1085px; */
+   max-width:1085px;
+   display:inline-flex;
+ }
+ 
+ #header-wrap 
+{
+    position:sticky;
+    top:0;
+    height: auto;
+    width: 100%;
+    z-index: 100;
+}
+#header-wrap .wms-srv-grid-cell
+{
+	background-color:#efefef !important;
+	color:#000000 !important;
+	font-weight:bold !important;
+}

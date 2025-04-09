@@ -1,0 +1,20 @@
+{
+    "Status": "200",
+    "StatusCode": "Success",
+    "Result": {
+        "Table": [
+            {
+                "TotalRecord": 1
+            }
+        ],
+        "Table1": [
+            {
+                "Srno": 212,
+                "ImageTitle": "This is test box image",
+                "Description": "Test Box",
+                "Attachment": "370676/box_test.jpg",
+                "ImageDownloadPath": "Image/370676/box_test.jpg"
+            }
+        ]
+    }
+}

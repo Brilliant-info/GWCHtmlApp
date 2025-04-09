@@ -1,0 +1,629 @@
+<div id="pnlEmailConfiguration" class="wmsMasterTypePage" style="display: none;">
+    <div class="wms-srv-content-area pnlInbound">
+        <!-- Dashboard Area -->
+        <div class="container-fluid wms-srv-dashboard-panel">
+            <div class="row">
+                <div class="col-md-4 nopadding">
+                    <!-- Page Title -->
+                    <div class="wms-srv-page-title">
+                        <i class="fas fa-envelope"></i><span class="wms-srv-data-title">Email Template</span>
+                    </div>
+                    <!-- Page Title -->
+                </div>
+                <div class="col-md-8 nopadding">
+                </div>
+            </div>
+        </div>
+        <!-- Dashboard Area -->
+        <!-- Head Grid -->
+        <div class="wms-srv-grid-holder pnlWmsHead" id="pnlWmsHead" style="display: none;">
+            <div class="wms-srv-grid">
+                <!-- Object Head Data Will be Here -->
+            </div>
+        </div>
+        <br>
+        <!-- Head Grid -->
+        <!-- Grid -->
+        <div class="wms-srv-obj-main-grid pnlWmsDetail">
+            <div class="wms-srv-grid-action-panel">
+                <div class="wms-srv-grid-common-action">
+                    <a href="#" class="wms-srv-icononly">
+                        <i class="fas fa-list"></i>
+                    </a>
+                </div>
+                <div class="wms-srv-search">
+                    <label>Search Filter: </label>
+                    <select type="text" id="ddlsearch" class="wms-srv-input wms-srv-search-filter">
+                        <option value="">--Select Filter--</option>
+                        <option value="TemplateTitle">Template Title</option>
+                        <option value="Customer">Customer</option>
+                        <option value="Department">Department</option>
+                        <option value="Activity">Activity</option>
+                        <option value="Active">Active</option>
+                    </select>
+                    <input type="text" value="" id="txtvalue" class="wms-srv-input wms-srv-simple-search"><a href="#" data-prefix="SE">
+                        <i class="fas fa-search" title="Search"
+                           onclick="SearchCustomer();"></i>
+                    </a>
+                </div>
+                <button class="wms-srv-input wms-srv-button wms-srv-highlight-btn" title="Add New" data-prefix="AN"
+                        type="button" onclick="openAddNewTemplatePopup();" style="display:none;">
+                    <i class="fas fa-plus"
+                       id="btnAddNewCustomerData"></i><span>Add New</span>
+                </button>
+
+                <div class="wms-srv-grid-title">
+                    Email Template List
+                </div>
+            </div>
+            <div class="wms-srv-grid-scroller" style="width: 100%;">
+                <div class="wms-srv-grid" id="emailTemplateList">
+                </div>
+
+                <!-- Content Holder -->
+                <!-- Save Record Structure -->
+                <div class="wms-srv-alert-popup" data-type="" style="display: none;">
+                    <div class="wms-alert-title">Success</div>
+                    <div class="wms-alert-message">Your transaction has been saved!!</div>
+                </div>
+                <!-- Save Record Structure -->
+            </div>
+        </div>
+        <!-- Grid -->
+    </div>
+    <!-- ALL POPUP AREA -->
+    <!--Edit popup-->
+    <div class="wms-srv-popup-holder" id="wms-srv-email-template-popup" style="display:none;">
+        <div class="wms-srv-popup-bg">
+        </div>
+        <div class="wms-srv-popup">
+            <div class="wms-srv-popup-content">
+                <div class="wms-srv-popup-title">
+                    <div class="wms-srv-page-title">
+                        <i class="fas fa-envelope"></i><span>Template Details</span>
+                    </div>
+                    <a href="#" title="Close" id="wms-srv-email-template-popup-close"
+                       class="wms-srv-popup-close"><i class="fas fa-times-circle"></i></a>
+                </div>
+                <div class="wms-srv-popup-content-body" id="wms-srv-popup-content-body">
+                    <div class="wms-srv-grid-holder pnlWmsDetail" id="wms-srv-edit-popup">
+                        <div class="wms-srv-grid">
+                            <div class="wms-srv-grid-header">
+                                <div class="wms-srv-grid-cell">Customer <span class="requiredStar">*</span></div>
+                                <div class="wms-srv-grid-cell">Department <span class="requiredStar">*</span></div>
+                                <div class="wms-srv-grid-cell">Activity <span class="requiredStar">*</span></div>
+                                <div class="wms-srv-grid-cell">Template Title <span class="requiredStar">*</span></div>
+                                <div class="wms-srv-grid-cell">Active</div>
+                                <div class="wms-srv-grid-cell">Subject</div>
+                                <div class="wms-srv-grid-cell">Language</div>
+                            </div>
+                            <div class="wms-srv-grid-row">
+                                <div class="wms-srv-grid-cell">
+                                    <select class="wms-srv-grid-cell-input" id="ddlEmailCustomer">
+                                        <option value="0">-- Select --</option>
+                                        <option value="1" selected="selected">Vodafone Technical</option>
+                                    </select>
+                                </div>
+                                <div class="wms-srv-grid-cell">
+                                    <select class="wms-srv-grid-cell-input" id="ddlEmailDepartment">
+                                        <option value="0">-- Select --</option>
+                                        <option value="1" selected="selected">Vodafone Enterprise</option>
+                                    </select>
+                                </div>
+                                <div class="wms-srv-grid-cell">
+                                    <select class="wms-srv-grid-cell-input" id="ddlEmailActivity">
+                                        <option value="0">-- Select --</option>
+                                        <option value="1" selected="selected">Order Reject</option>
+                                    </select>
+                                </div>
+                                <div class="wms-srv-grid-cell">
+                                    <input type="text" value="" id="txtEmailTemplateTitle" class="wms-srv-grid-cell-input" />
+                                </div>
+                                <div class="wms-srv-grid-cell" style="text-align:center;">
+                                    <input type="radio" name="emailTemplActive" id="emailTemplActiveY" data-id="" value="" checked="checked"><a href="#" style="margin-right: 20px;">Yes</a>
+                                    <input type="radio" name="emailTemplActive" id="emailTemplActiveN" data-id="" value=""><a href="#">No</a>
+                                </div>
+                                <div class="wms-srv-grid-cell">
+                                    <input type="text" value="" id="txtEmailSubject" class="wms-srv-grid-cell-input" />
+                                </div>
+                                <div class="wms-srv-grid-cell">
+                                    <select class="wms-srv-grid-cell-input" id="ddlEmailLanguage">
+                                        <option value="">-- Select --</option>
+                                        <option value="1" selected="selected">English</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="btnSaveCustomerMasterHolder" style="text-align:center;">
+                            <button class="wms-srv-input wms-srv-button wms-srv-highlight-btn-secondary"
+                                    type="button" title="Save">
+                                <span>Save</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Edit popup-->
+    <!-- Additional Distribution Popup -->
+    <div class="wms-srv-popup-holder" id="wms-srv-additional-distribution-popup" style="display:none;">
+        <div class="wms-srv-popup-bg">
+        </div>
+        <div class="wms-srv-popup">
+            <div class="wms-srv-popup-content">
+                <div class="wms-srv-popup-title">
+                    <div class="wms-srv-page-title">
+                        <i class="fas fa-address-book"></i><span>Additional Distribution</span>
+                    </div>
+                    <a href="#" title="Close" id="wms-srv-additional-distribution-popup-close"
+                       class="wms-srv-popup-close"><i class="fas fa-times-circle"></i></a>
+                </div>
+                <div class="wms-srv-popup-content-body" id="wms-srv-popup-content-body">
+                    <div class="wms-srv-grid-holder pnlWmsDetail" id="wms-srv-edit-popup">
+                        <!-- Popup Content Will be Here -->
+                        <div class="wms-srv-grid-holder pnlWmsDetail" id="wms-srv-edit-popup">
+                            <div class="wms-srv-obj-main-grid pnlWmsDetail">
+                                <div class="wms-srv-grid-action-panel">
+                                    <div class="wms-srv-grid-common-action">
+                                        <a href="#" class="wms-srv-icononly">
+                                            <i class="fas fa-list"></i>
+                                        </a>
+                                    </div>
+                                    <div class="wms-srv-search">
+                                        <label>Search Filter: </label>
+                                        <select type="text" id="ddlsearch" class="wms-srv-input wms-srv-search-filter">
+                                            <option value="">--Select Filter--</option>
+                                            <option>Company Name</option>
+                                            <option>Store</option>
+                                            <option>Name</option>
+                                            <option>Email ID</option>
+                                        </select>
+                                        <input type="text" value="" id="txtvalue" class="wms-srv-input wms-srv-simple-search"><a href="#" data-prefix="SE">
+                                            <i class="fas fa-search" title="Search"></i>
+                                        </a>
+                                    </div>
+                                    <button class="wms-srv-input wms-srv-button wms-srv-highlight-btn" title="Add New" data-prefix="AN" type="button" onclick="openAllDistributionList();">
+                                        <i class="fas fa-plus"></i><span>Add Contact</span>
+                                    </button>
+
+                                    <div class="wms-srv-grid-title">
+                                        Additional Distribution
+                                    </div>
+                                </div>
+                                <div class="wms-srv-grid-scroller">
+                                    <div class="wms-srv-grid">
+                                        <div class="wms-srv-grid-header">
+                                            <div class="wms-srv-grid-cell">Company Name</div>
+                                            <div class="wms-srv-grid-cell">Store</div>
+                                            <div class="wms-srv-grid-cell">Name</div>
+                                            <div class="wms-srv-grid-cell">Email Id</div>
+                                            <div class="wms-srv-grid-cell">Action</div>
+                                        </div>
+                                        <div class="wms-srv-grid-row">
+                                            <div class="wms-srv-grid-cell">
+                                                Vodafone Technical
+                                            </div>
+                                            <div class="wms-srv-grid-cell">
+                                                Vodafone Business
+                                            </div>
+                                            <div class="wms-srv-grid-cell">
+                                                Mahesh Marne
+                                            </div>
+                                            <div class="wms-srv-grid-cell">
+                                                mahesh@gwclogistics.com
+                                            </div>
+                                            <div class="wms-srv-grid-cell">
+                                                <div class="wms-srv-grid-action">
+                                                    <i class="fas fa-trash" title="Remove"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="wms-srv-grid-row">
+                                            <div class="wms-srv-grid-cell">
+                                                Vodafone Technical
+                                            </div>
+                                            <div class="wms-srv-grid-cell">
+                                                Vodafone Business
+                                            </div>
+                                            <div class="wms-srv-grid-cell">
+                                                Mahesh Marne
+                                            </div>
+                                            <div class="wms-srv-grid-cell">
+                                                mahesh@gwclogistics.com
+                                            </div>
+                                            <div class="wms-srv-grid-cell">
+                                                <div class="wms-srv-grid-action">
+                                                    <i class="fas fa-trash" title="Remove"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="wms-srv-grid-row">
+                                            <div class="wms-srv-grid-cell">
+                                                Vodafone Technical
+                                            </div>
+                                            <div class="wms-srv-grid-cell">
+                                                Vodafone Business
+                                            </div>
+                                            <div class="wms-srv-grid-cell">
+                                                Sunil Kulkarni
+                                            </div>
+                                            <div class="wms-srv-grid-cell">
+                                                sunil@gwclogistics.com
+                                            </div>
+                                            <div class="wms-srv-grid-cell">
+                                                <div class="wms-srv-grid-action">
+                                                    <i class="fas fa-trash" title="Remove"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="wms-srv-grid-row">
+                                            <div class="wms-srv-grid-cell">
+                                                Vodafone Technical
+                                            </div>
+                                            <div class="wms-srv-grid-cell">
+                                                Vodafone Business
+                                            </div>
+                                            <div class="wms-srv-grid-cell">
+                                                Priyanka Jadhav
+                                            </div>
+                                            <div class="wms-srv-grid-cell">
+                                                priyanka@gwclogistics.com
+                                            </div>
+                                            <div class="wms-srv-grid-cell">
+                                                <div class="wms-srv-grid-action">
+                                                    <i class="fas fa-trash" title="Remove"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Popup Content Will be Here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Additional Distribution Popup -->
+    <!-- All Distribution Popup -->
+    <div class="wms-srv-popup-holder" id="wms-srv-all-distribution-popup" style="display:none;">
+        <div class="wms-srv-popup-bg">
+        </div>
+        <div class="wms-srv-popup">
+            <div class="wms-srv-popup-content">
+                <div class="wms-srv-popup-title">
+                    <div class="wms-srv-page-title">
+                        <i class="fas fa-address-book"></i><span>Contact Person List</span>
+                    </div>
+                    <a href="#" title="Close" id="wms-srv-all-distribution-popup-close"
+                       class="wms-srv-popup-close"><i class="fas fa-times-circle"></i></a>
+                </div>
+                <div class="wms-srv-popup-content-body" id="wms-srv-popup-content-body">
+                    <div class="wms-srv-grid-holder pnlWmsDetail" id="wms-srv-edit-popup">
+                        <!-- Popup Content Will be Here -->
+                        <div class="wms-srv-grid-holder pnlWmsDetail" id="wms-srv-edit-popup">
+                            <div class="wms-srv-obj-main-grid pnlWmsDetail">
+                                <div class="wms-srv-grid-action-panel">
+                                    <div class="wms-srv-grid-common-action">
+                                        <a href="#" class="wms-srv-icononly">
+                                            <i class="fas fa-list"></i>
+                                        </a>
+                                    </div>
+                                    <div class="wms-srv-search">
+                                        <label>Search Filter: </label>
+                                        <select type="text" id="ddlsearch" class="wms-srv-input wms-srv-search-filter">
+                                            <option value="">--Select Filter--</option>
+                                            <option>Company Name</option>
+                                            <option>Store</option>
+                                            <option>Name</option>
+                                            <option>Email ID</option>
+                                        </select>
+                                        <input type="text" value="" id="txtvalue" class="wms-srv-input wms-srv-simple-search"><a href="#" data-prefix="SE">
+                                            <i class="fas fa-search" title="Search"></i>
+                                        </a>
+                                    </div>
+                                    <button class="wms-srv-input wms-srv-button wms-srv-highlight-btn" onclick="btnAddSelectedDistribution();" title="Submit" type="button">
+                                        <i class="fas fa-plus"></i><span>Submit</span>
+                                    </button>
+
+                                    <div class="wms-srv-grid-title">
+                                        Contact Person List
+                                    </div>
+                                </div>
+                                <div class="wms-srv-grid-scroller">
+                                    <div class="wms-srv-grid">
+                                        <div class="wms-srv-grid-header">
+                                            <div class="wms-srv-grid-cell" style="text-align:center;"><input type="checkbox" name="chkSelectAllDist" /></div>
+                                            <div class="wms-srv-grid-cell">Company Name</div>
+                                            <div class="wms-srv-grid-cell">Store</div>
+                                            <div class="wms-srv-grid-cell">Name</div>
+                                            <div class="wms-srv-grid-cell">Email Id</div>
+                                        </div>
+                                        <div class="wms-srv-grid-row">
+                                            <div class="wms-srv-grid-cell" style="text-align:center;">
+                                                <input type="checkbox" name="chkSelectDist" />
+                                            </div>
+                                            <div class="wms-srv-grid-cell">
+                                                Vodafone Technical
+                                            </div>
+                                            <div class="wms-srv-grid-cell">
+                                                Vodafone Business
+                                            </div>
+                                            <div class="wms-srv-grid-cell">
+                                                Mahesh Marne
+                                            </div>
+                                            <div class="wms-srv-grid-cell">
+                                                mahesh@gwclogistics.com
+                                            </div>
+                                        </div>
+                                        <div class="wms-srv-grid-row">
+                                            <div class="wms-srv-grid-cell" style="text-align:center;">
+                                                <input type="checkbox" name="chkSelectDist" />
+                                            </div>
+                                            <div class="wms-srv-grid-cell">
+                                                Vodafone Technical
+                                            </div>
+                                            <div class="wms-srv-grid-cell">
+                                                Vodafone Business
+                                            </div>
+                                            <div class="wms-srv-grid-cell">
+                                                Mahesh Marne
+                                            </div>
+                                            <div class="wms-srv-grid-cell">
+                                                mahesh@gwclogistics.com
+                                            </div>
+                                        </div>
+                                        <div class="wms-srv-grid-row">
+                                            <div class="wms-srv-grid-cell" style="text-align:center;">
+                                                <input type="checkbox" name="chkSelectDist" />
+                                            </div>
+                                            <div class="wms-srv-grid-cell">
+                                                Vodafone Technical
+                                            </div>
+                                            <div class="wms-srv-grid-cell">
+                                                Vodafone Business
+                                            </div>
+                                            <div class="wms-srv-grid-cell">
+                                                Sunil Kulkarni
+                                            </div>
+                                            <div class="wms-srv-grid-cell">
+                                                sunil@gwclogistics.com
+                                            </div>
+                                        </div>
+                                        <div class="wms-srv-grid-row">
+                                            <div class="wms-srv-grid-cell" style="text-align:center;">
+                                                <input type="checkbox" name="chkSelectDist" />
+                                            </div>
+                                            <div class="wms-srv-grid-cell">
+                                                Vodafone Technical
+                                            </div>
+                                            <div class="wms-srv-grid-cell">
+                                                Vodafone Business
+                                            </div>
+                                            <div class="wms-srv-grid-cell">
+                                                Priyanka Jadhav
+                                            </div>
+                                            <div class="wms-srv-grid-cell">
+                                                priyanka@gwclogistics.com
+                                            </div>
+                                        </div>
+                                        <div class="wms-srv-grid-row">
+                                            <div class="wms-srv-grid-cell" style="text-align:center;">
+                                                <input type="checkbox" name="chkSelectDist" />
+                                            </div>
+                                            <div class="wms-srv-grid-cell">
+                                                Vodafone Technical
+                                            </div>
+                                            <div class="wms-srv-grid-cell">
+                                                Vodafone Business
+                                            </div>
+                                            <div class="wms-srv-grid-cell">
+                                                Mahesh Marne
+                                            </div>
+                                            <div class="wms-srv-grid-cell">
+                                                mahesh@gwclogistics.com
+                                            </div>
+                                        </div>
+                                        <div class="wms-srv-grid-row">
+                                            <div class="wms-srv-grid-cell" style="text-align:center;">
+                                                <input type="checkbox" name="chkSelectDist" />
+                                            </div>
+                                            <div class="wms-srv-grid-cell">
+                                                Vodafone Technical
+                                            </div>
+                                            <div class="wms-srv-grid-cell">
+                                                Vodafone Business
+                                            </div>
+                                            <div class="wms-srv-grid-cell">
+                                                Mahesh Marne
+                                            </div>
+                                            <div class="wms-srv-grid-cell">
+                                                mahesh@gwclogistics.com
+                                            </div>
+                                        </div>
+                                        <div class="wms-srv-grid-row">
+                                            <div class="wms-srv-grid-cell" style="text-align:center;">
+                                                <input type="checkbox" name="chkSelectDist" />
+                                            </div>
+                                            <div class="wms-srv-grid-cell">
+                                                Vodafone Technical
+                                            </div>
+                                            <div class="wms-srv-grid-cell">
+                                                Vodafone Business
+                                            </div>
+                                            <div class="wms-srv-grid-cell">
+                                                Sunil Kulkarni
+                                            </div>
+                                            <div class="wms-srv-grid-cell">
+                                                sunil@gwclogistics.com
+                                            </div>
+                                        </div>
+                                        <div class="wms-srv-grid-row">
+                                            <div class="wms-srv-grid-cell" style="text-align:center;">
+                                                <input type="checkbox" name="chkSelectDist" />
+                                            </div>
+                                            <div class="wms-srv-grid-cell">
+                                                Vodafone Technical
+                                            </div>
+                                            <div class="wms-srv-grid-cell">
+                                                Vodafone Business
+                                            </div>
+                                            <div class="wms-srv-grid-cell">
+                                                Priyanka Jadhav
+                                            </div>
+                                            <div class="wms-srv-grid-cell">
+                                                priyanka@gwclogistics.com
+                                            </div>
+                                        </div>
+                                        <div class="wms-srv-grid-row">
+                                            <div class="wms-srv-grid-cell" style="text-align:center;">
+                                                <input type="checkbox" name="chkSelectDist" />
+                                            </div>
+                                            <div class="wms-srv-grid-cell">
+                                                Vodafone Technical
+                                            </div>
+                                            <div class="wms-srv-grid-cell">
+                                                Vodafone Business
+                                            </div>
+                                            <div class="wms-srv-grid-cell">
+                                                Mahesh Marne
+                                            </div>
+                                            <div class="wms-srv-grid-cell">
+                                                mahesh@gwclogistics.com
+                                            </div>
+                                        </div>
+                                        <div class="wms-srv-grid-row">
+                                            <div class="wms-srv-grid-cell" style="text-align:center;">
+                                                <input type="checkbox" name="chkSelectDist" />
+                                            </div>
+                                            <div class="wms-srv-grid-cell">
+                                                Vodafone Technical
+                                            </div>
+                                            <div class="wms-srv-grid-cell">
+                                                Vodafone Business
+                                            </div>
+                                            <div class="wms-srv-grid-cell">
+                                                Mahesh Marne
+                                            </div>
+                                            <div class="wms-srv-grid-cell">
+                                                mahesh@gwclogistics.com
+                                            </div>
+                                        </div>
+                                        <div class="wms-srv-grid-row">
+                                            <div class="wms-srv-grid-cell" style="text-align:center;">
+                                                <input type="checkbox" name="chkSelectDist" />
+                                            </div>
+                                            <div class="wms-srv-grid-cell">
+                                                Vodafone Technical
+                                            </div>
+                                            <div class="wms-srv-grid-cell">
+                                                Vodafone Business
+                                            </div>
+                                            <div class="wms-srv-grid-cell">
+                                                Sunil Kulkarni
+                                            </div>
+                                            <div class="wms-srv-grid-cell">
+                                                sunil@gwclogistics.com
+                                            </div>
+                                        </div>
+                                        <div class="wms-srv-grid-row">
+                                            <div class="wms-srv-grid-cell" style="text-align:center;">
+                                                <input type="checkbox" name="chkSelectDist" />
+                                            </div>
+                                            <div class="wms-srv-grid-cell">
+                                                Vodafone Technical
+                                            </div>
+                                            <div class="wms-srv-grid-cell">
+                                                Vodafone Business
+                                            </div>
+                                            <div class="wms-srv-grid-cell">
+                                                Priyanka Jadhav
+                                            </div>
+                                            <div class="wms-srv-grid-cell">
+                                                priyanka@gwclogistics.com
+                                            </div>
+                                        </div>
+                                        <div class="wms-srv-grid-row">
+                                            <div class="wms-srv-grid-cell" style="text-align:center;">
+                                                <input type="checkbox" name="chkSelectDist" />
+                                            </div>
+                                            <div class="wms-srv-grid-cell">
+                                                Vodafone Technical
+                                            </div>
+                                            <div class="wms-srv-grid-cell">
+                                                Vodafone Business
+                                            </div>
+                                            <div class="wms-srv-grid-cell">
+                                                Mahesh Marne
+                                            </div>
+                                            <div class="wms-srv-grid-cell">
+                                                mahesh@gwclogistics.com
+                                            </div>
+                                        </div>
+                                        <div class="wms-srv-grid-row">
+                                            <div class="wms-srv-grid-cell" style="text-align:center;">
+                                                <input type="checkbox" name="chkSelectDist" />
+                                            </div>
+                                            <div class="wms-srv-grid-cell">
+                                                Vodafone Technical
+                                            </div>
+                                            <div class="wms-srv-grid-cell">
+                                                Vodafone Business
+                                            </div>
+                                            <div class="wms-srv-grid-cell">
+                                                Mahesh Marne
+                                            </div>
+                                            <div class="wms-srv-grid-cell">
+                                                mahesh@gwclogistics.com
+                                            </div>
+                                        </div>
+                                        <div class="wms-srv-grid-row">
+                                            <div class="wms-srv-grid-cell" style="text-align:center;">
+                                                <input type="checkbox" name="chkSelectDist" />
+                                            </div>
+                                            <div class="wms-srv-grid-cell">
+                                                Vodafone Technical
+                                            </div>
+                                            <div class="wms-srv-grid-cell">
+                                                Vodafone Business
+                                            </div>
+                                            <div class="wms-srv-grid-cell">
+                                                Sunil Kulkarni
+                                            </div>
+                                            <div class="wms-srv-grid-cell">
+                                                sunil@gwclogistics.com
+                                            </div>
+                                        </div>
+                                        <div class="wms-srv-grid-row">
+                                            <div class="wms-srv-grid-cell" style="text-align:center;">
+                                                <input type="checkbox" name="chkSelectDist" />
+                                            </div>
+                                            <div class="wms-srv-grid-cell">
+                                                Vodafone Technical
+                                            </div>
+                                            <div class="wms-srv-grid-cell">
+                                                Vodafone Business
+                                            </div>
+                                            <div class="wms-srv-grid-cell">
+                                                Priyanka Jadhav
+                                            </div>
+                                            <div class="wms-srv-grid-cell">
+                                                priyanka@gwclogistics.com
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Popup Content Will be Here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- All Distribution Popup -->
+    <!-- ALL POPUP AREA -->
+</div>

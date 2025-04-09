@@ -1,0 +1,6 @@
+.dashboardActiveTab {
+    background-color: #fafafa !important;
+    font-weight: bold;
+    color: #0686a7;
+    box-shadow: inset 0px 0px 5px #ccc;
+}

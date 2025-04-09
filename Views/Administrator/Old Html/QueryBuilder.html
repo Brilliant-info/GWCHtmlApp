@@ -1,0 +1,1310 @@
+<input type="hidden" name="hdnQueryId" id="hdnQueryId" value="0">
+<input type="hidden" name="hdnHtmlWhereObj" id="hdnHtmlWhereObj" value="">
+<div id="pnlQueryBuilder" class="wmsMasterTypePage" style="display: none;">
+   <div class="wms-srv-content-area pnlInbound" id="pnlInbound">
+      <div class="wms-srv-page-title">
+         <i class="fas fa-coins"></i><span class="wms-srv-data-title">My Query List</span>
+      </div>
+      <br>
+      <div class="wms-srv-grid-holder">
+         <!-- <div class="wms-srv-grid-action-panel">
+            <button class="wms-srv-input wms-srv-button wms-srv-highlight-btn wms-srv-add-order" type="button"
+               title="Add New" data-prefix="AN" onclick="opennewquery();"><i class="fas fa-plus"></i><span>Add
+                  New</span></button>
+         </div> -->
+         <div class="wms-srv-grid-scroller" style="width: 100%;">
+            <div class="wms-srv-grid" id="txtquarybuilder">
+               <!-- <div class="wms-srv-grid-header">
+                  <div class="wms-srv-grid-cell" style="text-align: center;">Query ID</div>
+                  <div class="wms-srv-grid-cell" style="text-align: center;">Title</div>
+                  <div class="wms-srv-grid-cell" style="text-align: center;">SQL Query</div>
+                  <div class="wms-srv-grid-cell" style="text-align: center;">Object Name</div>
+                  <div class="wms-srv-grid-cell" style="text-align: center;">Action</div>
+               </div>
+               <div class="wms-srv-grid-row">
+                  <div class="wms-srv-grid-cell" style="text-align: center;">QI-0529</div>
+                  <div class="wms-srv-grid-cell" style="text-align: center;">Test</div>
+				 
+                  <div class="wms-srv-grid-cell" style="text-align: center;">Select * from V_WMS_PurchaseOrderObj</div>
+                  <div class="wms-srv-grid-cell" style="text-align: center;">Inward</div>
+                  
+			   <div class="wms-srv-grid-cell" style="text-align: center;">
+					 <div class="wms-srv-grid-action">
+						<a href="#" title="Edit" data-prefix="" class="wms-srv-icononly" onclick="openEditPopup();">
+						   <i class="fas fa-edit"></i></a>
+						
+						<div class="wms-srv-action-sep">|</div>
+						<a href="#" title="Execute Query" data-prefix="" class="wms-srv-icononly"
+						   onclick="opennewquery();">
+						   <i class="fas fa-play"></i></a>
+						   <div class="wms-srv-action-sep">|</div>
+						<a href="#" title="Alert" data-prefix="" class="wms-srv-icononly"
+						   onclick="openquerybuildernotification();">
+						   <i class="fas fa-envelope"></i></a>
+						<div class="wms-srv-action-sep">|</div>
+						<a href="#" title="Set Private" data-prefix="" class="wms-srv-icononly" onclick="">
+						   <i class="fas fa-flag"></i></a>
+					 </div>
+				  </div>
+            </div> -->
+			
+         </div>
+         <!-- <div class="wms-srv-grid-pager" id="tlbOutboundSOGridPager">
+            <span class="wms-srv-pager-records">1-1 of 70 Records</span>
+            <span class="wms-srv-empty-space"></span>
+            <span class="wms-srv-pager-links"><a href="#" data-page="firstpage"><i
+                     class="fas fa-angle-double-left"></i></a><a href="#" data-page="previous"><i
+                     class="fas fa-angle-left"></i></a><a href="#" class="wms-srv-active" data-page="1">1</a><a href="#"
+                  data-page="2">2</a><a href="#" data-page="3">3</a><a href="#" data-page="4">4</a><a href="#"
+                  data-page="5">5</a><a href="#" data-page="6">6</a><a href="#" data-page="7">7</a><a href="#"
+                  data-page="next"><i class="fas fa-angle-right"></i></a><a href="#" data-page="lastpage"><i
+                     class="fas fa-angle-double-right"></i></a></span>
+            <span class="wms-srv-empty-space"></span>
+            <input type="text" name="txtGridPageNo" class="wms-srv-input notranslate" value="0" style="width: 80px;">
+            <a href="#" title="Jump To" class="wms-srv-pager-go"><i class="fas fa-play-circle"></i></a>
+         </div> -->
+      </div>
+
+   </div>
+   <!-- Add New Query Popup -->
+   <div class="wms-srv-popup-holder" id="wms-srv-newquery-popup" style="display: none">
+      <div class="wms-srv-popup-bg">
+      </div>
+      <div class="wms-srv-popup">
+         <div class="wms-srv-popup-content">
+            <!-- Popup Title -->
+            <div class="wms-srv-popup-title">
+               <div class="wms-srv-page-title">
+                  <i class="fas fa-coins"></i><span>Execute Query</span>
+               </div>
+               <a href="#" id="wms-srv-newquery-popup-close" class="wms-srv-popup-close"><i
+                     class="fas fa-times-circle"></i></a>
+            </div>
+            <!-- Popup Title -->
+            <div class="wms-srv-popup-content-body" id="wms-srv-popup-content-body">
+               <div id="popupContentQCdetail">
+                  <div id="pnlQCdetail">
+                     <!-- <div class="wms-srv-grid-action-panel" style="border:none">
+                        <button class="wms-srv-input wms-srv-button" id="btnExecuteQuery" type="button" title="Save"
+                           data-prefix="AN" onclick=""> <i class="fas fa-play"></i><span>Execute</span></button>
+                        <button class="wms-srv-input wms-srv-button" type="button" title="Export" data-prefix="AN"
+                           onclick="saveQuery();"><i class="fas fa-save"></i><span>Save</span></button>
+                        <button class="wms-srv-input wms-srv-button" type="button" title="Export" data-prefix="AN"
+                           onclick=""><i class="fas fa-file-export"></i><span>Export</span></button>
+                     </div> -->
+                     <!-- Grid -->
+                     <div class="wms-srv-grid-holder pnlWmsHead" id="pnlWmsHead">
+                        <div class="wms-srv-grid">
+                           <div class="wms-srv-grid-header">
+                              <div class="wms-srv-grid-cell" style="text-align: center;">QueryID</div>
+                              <div class="wms-srv-grid-cell" style="text-align: center;">Title</div>
+                              <div class="wms-srv-grid-cell" style="text-align: center;">SQL Query</div>
+                              <div class="wms-srv-grid-cell" style="text-align: center;">Select From-TO Date</div>
+                              <div class="wms-srv-grid-cell" style="text-align: center;">Object Name</div>
+							         <div class="wms-srv-grid-cell" style="text-align: center;">Customer</div>
+							         <div class="wms-srv-grid-cell" style="text-align: center;">Warehouse</div>
+                              <div class="wms-srv-grid-cell" style="text-align: center;">Action</div>
+
+                           </div>
+                           <div class="wms-srv-grid-row">
+                              <div class="wms-srv-grid-cell" style="text-align: center;" id="txtqueryID"></div>
+                              <div class="wms-srv-grid-cell" style="text-align: center;" id="txttitle1"></div>
+                              <div class="wms-srv-grid-cell" style="text-align: center;display: block ruby;
+                              height: 44px;font-size: 22px" >
+                                 <div><i class="fas fa-solid fa-eye" onclick="openQuery()";></i></div>
+                                 <div class="wms-srv-action-sep">|</div>
+                                 <div>
+                                     <a href="#" title="Edit" data-prefix="" class="wms-srv-icononly" onclick="openEditPopup();">
+                                      <i class="fas fa-edit"></i></a> 
+                                 </div>
+                              </div>
+						              <div class="wms-srv-grid-cell">
+							           <input type="text" id="txtFromToDate" class="datepickerInput" placeholder="eg: From To To" onclick="getDate();" autocomplete="off" autocorrect="off" maxlength="25" step="1" noerror="true" staticlabel="true" animate="true" label="Symbol" rules="" class="">
+							           <input type="hidden" id="hideFromDate" value=""></input>
+							           <input type="hidden" id="hideToDate" value=""></input>
+								
+						        </div>
+                              <div class="wms-srv-grid-cell" style="text-align: center;" id="txtobjectName"></div>
+							        <div class="wms-srv-grid-cell" style="text-align: center;">
+                              <select class="wms-srv-grid-cell-input" id="ddlQryCustomer">
+                                 <option>--Select--</option>
+                                 <!-- <option value="80">Royal Brunei Tech Service</option>
+                                 <option value="258">Dummy Customer</option> -->
+                              </select>
+                            </div>
+							        <div class="wms-srv-grid-cell" style="text-align: center;">
+                              <select class="wms-srv-grid-cell-input" id="ddlQryWarehouse">
+                                 <option>--Select--</option>
+                                 <!-- <option value="80">Royal Brunei Service</option>
+                                 <option value="258">Dummy Warehouse</option> -->
+                              </select>
+                           </div>
+                              <div class="wms-srv-grid-cell" style="text-align: center;">
+                                 <div class="wms-srv-grid-action">
+                                    <a href="#" title="Execute" data-prefix="" class="wms-srv-icononly"></a>
+                                    <i class="fas fa-play" value="Execute Query"
+                                    onclick="openqueryresult(); return false;" id="btnExecuteQuery"
+                                    class="btnExecuteSqlQuery"></i>
+                                    <!-- <div class="wms-srv-action-sep">|</div>
+                                    <a href="#" title="Edit" data-prefix="" class="wms-srv-icononly" onclick="openEditPopup();">
+                                    <i class="fas fa-edit"></i></a> -->
+                                    <div class="wms-srv-action-sep">|</div>
+                                    <a href="#" title="Save" data-prefix="" class="wms-srv-icononly"
+                                       onclick="saveQuery();">
+                                       <i class="fas fa-save"></i></a>
+                                    <div class="wms-srv-action-sep">|</div>
+                                    <a href="#" title="Export" data-prefix="" class="wms-srv-icononly" onclick="printQueryBuilderReport();">
+                                       <i class="fas fa-file-export"></i></a>
+                                 </div>
+
+                              </div>
+                           </div>
+                        </div>
+                        <br>
+                        <!-- <div class="wms-srv-grid-holder"   style="display: none;"> -->
+                           <div class="wms-srv-grid  wms-srv-grid-holder" id="wms-srv-executequery" style="display: none;">
+                              <!-- <div class="wms-srv-grid-header">
+                                 <div class="wms-srv-grid-cell" style="text-align: center;">Product Code</div>
+                                 <div class="wms-srv-grid-cell" style="text-align: center;">Description</div>
+                                 <div class="wms-srv-grid-cell" style="text-align: center;">Sequence</div>
+                                 <div class="wms-srv-grid-cell" style="text-align: center;">Data Type</div>
+                                 <div class="wms-srv-grid-cell" style="text-align: center;">Lottable</div>
+                                 <div class="wms-srv-grid-cell" style="text-align: center;">Lottable Value</div>
+                              </div>
+                              <div class="wms-srv-grid-header">
+                                 <div class="wms-srv-grid-cell" style="text-align: center;">
+                                    <select id="" class="wms-srv-grid-cell-input" value="" onchange="">
+                                       <option value="">No Filter</option>
+                                       <option value="Contains">Contains</option>
+                                       <option value="Does Not Contain">Does Not Contain</option>
+                                       <option value="Starts With">Starts With</option>
+                                       <option value="Ends With">Ends With</option>
+                                       <option value="Equal To">Equal To</option>
+                                       <option value="Not Equal To">Not Equal To</option>
+                                       <option value="In Between">In Between</option>
+                                       <option value="Smaller Than">Smaller Than</option>
+                                       <option value="Greater Than">Greater Than</option>
+                                       <option value="Smaller Than Or Equal To">Smaller Than Or Equal To</option>
+                                       <option value="Greater Than Or Equal To">Greater Than Or Equal To</option>
+                                       <option value="Is Null">Is Null</option>
+                                       <option value="Is Not Null">Is Not Null</option>
+                                       <option value="Is Empty">Is Empty</option>
+                                       <option value="Is Not Empty">Is Not Empty</option>
+                                    </select>
+                                    <input class="wms-srv-grid-cell-input" type="text" id="inFl_FirstName" value="">
+                                 </div>
+                                 <div class="wms-srv-grid-cell" style="text-align: center;">
+                                    <select id="" class="wms-srv-grid-cell-input">
+                                       <option value="">No Filter</option>
+                                       <option value="Contains">Contains</option>
+                                       <option value="Does Not Contain">Does Not Contain</option>
+                                       <option value="Starts With">Starts With</option>
+                                       <option value="Ends With">Ends With</option>
+                                       <option value="Equal To">Equal To</option>
+                                       <option value="Not Equal To">Not Equal To</option>
+                                       <option value="In Between">In Between</option>
+                                       <option value="Smaller Than">Smaller Than</option>
+                                       <option value="Greater Than">Greater Than</option>
+                                       <option value="Smaller Than Or Equal To">Smaller Than Or Equal To</option>
+                                       <option value="Greater Than Or Equal To">Greater Than Or Equal To</option>
+                                       <option value="Is Null">Is Null</option>
+                                       <option value="Is Not Null">Is Not Null</option>
+                                       <option value="Is Empty">Is Empty</option>
+                                       <option value="Is Not Empty">Is Not Empty</option>
+                                    </select>
+                                    <input type="text" class="wms-srv-grid-cell-input" id="inFl_FirstName" value="">
+                                 </div>
+                                 <div class="wms-srv-grid-cell" style="text-align: center;">
+                                    <select id="" class="wms-srv-grid-cell-input" value="" onchange="">
+                                       <option value="">No Filter</option>
+                                       <option value="Contains">Contains</option>
+                                       <option value="Does Not Contain">Does Not Contain</option>
+                                       <option value="Starts With">Starts With</option>
+                                       <option value="Ends With">Ends With</option>
+                                       <option value="Equal To">Equal To</option>
+                                       <option value="Not Equal To">Not Equal To</option>
+                                       <option value="In Between">In Between</option>
+                                       <option value="Smaller Than">Smaller Than</option>
+                                       <option value="Greater Than">Greater Than</option>
+                                       <option value="Smaller Than Or Equal To">Smaller Than Or Equal To</option>
+                                       <option value="Greater Than Or Equal To">Greater Than Or Equal To</option>
+                                       <option value="Is Null">Is Null</option>
+                                       <option value="Is Not Null">Is Not Null</option>
+                                       <option value="Is Empty">Is Empty</option>
+                                       <option value="Is Not Empty">Is Not Empty</option>
+                                    </select>
+                                    <input class="wms-srv-grid-cell-input" type="text" id="inFl_FirstName" value="">
+                                 </div>
+                                 <div class="wms-srv-grid-cell" style="text-align: center;">
+                                    <select id="" class="wms-srv-grid-cell-input" value="" onchange="">
+                                       <option value="">No Filter</option>
+                                       <option value="Contains">Contains</option>
+                                       <option value="Does Not Contain">Does Not Contain</option>
+                                       <option value="Starts With">Starts With</option>
+                                       <option value="Ends With">Ends With</option>
+                                       <option value="Equal To">Equal To</option>
+                                       <option value="Not Equal To">Not Equal To</option>
+                                       <option value="In Between">In Between</option>
+                                       <option value="Smaller Than">Smaller Than</option>
+                                       <option value="Greater Than">Greater Than</option>
+                                       <option value="Smaller Than Or Equal To">Smaller Than Or Equal To</option>
+                                       <option value="Greater Than Or Equal To">Greater Than Or Equal To</option>
+                                       <option value="Is Null">Is Null</option>
+                                       <option value="Is Not Null">Is Not Null</option>
+                                       <option value="Is Empty">Is Empty</option>
+                                       <option value="Is Not Empty">Is Not Empty</option>
+                                    </select>
+                                    <input class="wms-srv-grid-cell-input" type="text" id="inFl_FirstName" value="">
+                                 </div>
+                                 <div class="wms-srv-grid-cell" style="text-align: center;">
+                                    <select id="" class="wms-srv-grid-cell-input" value="" onchange="">
+                                       <option value="">No Filter</option>
+                                       <option value="Contains">Contains</option>
+                                       <option value="Does Not Contain">Does Not Contain</option>
+                                       <option value="Starts With">Starts With</option>
+                                       <option value="Ends With">Ends With</option>
+                                       <option value="Equal To">Equal To</option>
+                                       <option value="Not Equal To">Not Equal To</option>
+                                       <option value="In Between">In Between</option>
+                                       <option value="Smaller Than">Smaller Than</option>
+                                       <option value="Greater Than">Greater Than</option>
+                                       <option value="Smaller Than Or Equal To">Smaller Than Or Equal To</option>
+                                       <option value="Greater Than Or Equal To">Greater Than Or Equal To</option>
+                                       <option value="Is Null">Is Null</option>
+                                       <option value="Is Not Null">Is Not Null</option>
+                                       <option value="Is Empty">Is Empty</option>
+                                       <option value="Is Not Empty">Is Not Empty</option>
+                                    </select>
+                                    <input class="wms-srv-grid-cell-input" type="text" id="inFl_FirstName" value="">
+                                 </div>
+                                 <div class="wms-srv-grid-cell" style="text-align: center;">
+                                    <select id="" class="wms-srv-grid-cell-input" value="" onchange="">
+                                       <option value="">No Filter</option>
+                                       <option value="Contains">Contains</option>
+                                       <option value="Does Not Contain">Does Not Contain</option>
+                                       <option value="Starts With">Starts With</option>
+                                       <option value="Ends With">Ends With</option>
+                                       <option value="Equal To">Equal To</option>
+                                       <option value="Not Equal To">Not Equal To</option>
+                                       <option value="In Between">In Between</option>
+                                       <option value="Smaller Than">Smaller Than</option>
+                                       <option value="Greater Than">Greater Than</option>
+                                       <option value="Smaller Than Or Equal To">Smaller Than Or Equal To</option>
+                                       <option value="Greater Than Or Equal To">Greater Than Or Equal To</option>
+                                       <option value="Is Null">Is Null</option>
+                                       <option value="Is Not Null">Is Not Null</option>
+                                       <option value="Is Empty">Is Empty</option>
+                                       <option value="Is Not Empty">Is Not Empty</option>
+                                    </select>
+                                    <input class="wms-srv-grid-cell-input" type="text" id="inFl_FirstName" value="">
+                                 </div>
+                                 
+                              </div>
+                              <div class="wms-srv-grid-row">
+                                 <div class="wms-srv-grid-cell" style="text-align: center;">Sku1001010</div>
+                                 <div class="wms-srv-grid-cell" style="text-align: center;">Test P1</div>
+                                 <div class="wms-srv-grid-cell" style="text-align: center;">1</div>
+                                 <div class="wms-srv-grid-cell" style="text-align: center;">Date Time</div>
+                                 <div class="wms-srv-grid-cell" style="text-align: center;">Exp Date</div>
+                                 <div class="wms-srv-grid-cell" style="text-align: center;">01/05/2023</div>
+                              </div>
+                              <div class="wms-srv-grid-row">
+                                 <div class="wms-srv-grid-cell" style="text-align: center;">Sku1001010</div>
+                                 <div class="wms-srv-grid-cell" style="text-align: center;">Test P1</div>
+                                 <div class="wms-srv-grid-cell" style="text-align: center;">1</div>
+                                 <div class="wms-srv-grid-cell" style="text-align: center;">Date Time</div>
+                                 <div class="wms-srv-grid-cell" style="text-align: center;">Exp Date</div>
+                                 <div class="wms-srv-grid-cell" style="text-align: center;">01/05/2023</div>
+                              </div>
+                              <div class="wms-srv-grid-row">
+                                 <div class="wms-srv-grid-cell" style="text-align: center;">Sku1001010</div>
+                                 <div class="wms-srv-grid-cell" style="text-align: center;">Test P1</div>
+                                 <div class="wms-srv-grid-cell" style="text-align: center;">1</div>
+                                 <div class="wms-srv-grid-cell" style="text-align: center;">Date Time</div>
+                                 <div class="wms-srv-grid-cell" style="text-align: center;">Exp Date</div>
+                                 <div class="wms-srv-grid-cell" style="text-align: center;">01/05/2023</div>
+                              </div>
+                              <div class="wms-srv-grid-row">
+                                 <div class="wms-srv-grid-cell" style="text-align: center;">Sku1001010</div>
+                                 <div class="wms-srv-grid-cell" style="text-align: center;">Test P1</div>
+                                 <div class="wms-srv-grid-cell" style="text-align: center;">1</div>
+                                 <div class="wms-srv-grid-cell" style="text-align: center;">Date Time</div>
+                                 <div class="wms-srv-grid-cell" style="text-align: center;">Exp Date</div>
+                                 <div class="wms-srv-grid-cell" style="text-align: center;">01/05/2023</div>
+                              </div>
+                              <div class="wms-srv-grid-row">
+                                 <div class="wms-srv-grid-cell" style="text-align: center;">Sku1001010</div>
+                                 <div class="wms-srv-grid-cell" style="text-align: center;">Test P1</div>
+                                 <div class="wms-srv-grid-cell" style="text-align: center;">1</div>
+                                 <div class="wms-srv-grid-cell" style="text-align: center;">Date Time</div>
+                                 <div class="wms-srv-grid-cell" style="text-align: center;">Exp Date</div>
+                                 <div class="wms-srv-grid-cell" style="text-align: center;">01/05/2023</div>
+                              </div> -->
+                           </div> 
+
+                        <!-- </div> -->
+
+
+                        <!-- Grid -->
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <!-- Add New Query Popup -->
+
+   <!-- Edit Popup -->
+   <div class="wms-srv-popup-holder" id="wms-srv-editquery-popup" style="display: none">
+      <div class="wms-srv-popup-bg">
+      </div>
+      <div class="wms-srv-popup">
+         <div class="wms-srv-popup-content">
+            <!-- Popup Title -->
+            <div class="wms-srv-popup-title">
+               <div class="wms-srv-page-title">
+                  <i class="fas fa-coins"></i><span>Edit Query</span>
+               </div>
+               <a href="#" id="wms-srv-editquery-popup-close" class="wms-srv-popup-close"><i
+                     class="fas fa-times-circle"></i></a>
+            </div>
+            <!-- Popup Title -->
+            <div class="wms-srv-popup-content-body" id="wms-srv-popup-content-body">
+               <div id="popupContentAddCondition">
+                  <div id="pnlAddCondition">
+                     <!-- Grid -->
+                     <div class="container-fluid">
+                        <div class="row">
+                           <div class="col-md-6">
+                              <div class="winQueryBox" >
+                                 <div class="winQueryHeader" id="winQueryHeader">V_WMS_UserObj</div>
+                                 <div class="winQueryContent">
+                                    <div class="winQueryColumnNames">
+                                       <div id="dataColumnHolder" class="ui-sortable">
+                                          <div id="sqlCol-FirstName" data-type="nvarchar" data-label="FirstName"
+                                          class="winQueryColumnItem ui-sortable-handle sqlActiveQueryColumn">                                         
+                                             <div class="frmSqlColumnEdit" style="display: block;">display as <input
+                                                   type="text" value="FirstName"
+                                                   onkeyup="editSqlColumnName('FirstName',this);">
+                                             </div>
+                                          </div>
+                                          <div id="sqlCol-LastName" data-type="nvarchar" data-label="LastName"
+                                             class="winQueryColumnItem ui-sortable-handle">
+                                             <input type="checkbox" id="" value="LastName"
+                                                onclick="addColumnToSqlQuery('LastName', this);">LastName<a href="#"
+                                                class="editSqlColumnName"><i class="fas fa-pen"></i></a>
+                                             <div class="frmSqlColumnEdit">display as <input type="text"
+                                                   value="LastName" onkeyup="editSqlColumnName('LastName',this);"></div>
+                                          </div>
+                                          <div id="sqlCol-RoleName" data-type="nvarchar" data-label="RoleName"
+                                             class="winQueryColumnItem ui-sortable-handle">
+                                             <input type="checkbox" id="" value="RoleName"
+                                                onclick="addColumnToSqlQuery('RoleName', this);">RoleName<a href="#"
+                                                class="editSqlColumnName"><i class="fas fa-pen"></i></a>
+                                             <div class="frmSqlColumnEdit">display as <input type="text"
+                                                   value="RoleName" onkeyup="editSqlColumnName('RoleName',this);"></div>
+                                          </div>
+                                          <div id="sqlCol-Warehouse" data-type="varchar" data-label="Warehouse"
+                                             class="winQueryColumnItem ui-sortable-handle">
+                                             <input type="checkbox" id="" value="Warehouse"
+                                                onclick="addColumnToSqlQuery('Warehouse', this);">Warehouse<a href="#"
+                                                class="editSqlColumnName"><i class="fas fa-pen"></i></a>
+                                             <div class="frmSqlColumnEdit">display as <input type="text"
+                                                   value="Warehouse" onkeyup="editSqlColumnName('Warehouse',this);">
+                                             </div>
+                                          </div>
+                                          <div id="sqlCol-CompanyID" data-type="bigint" data-label="CompanyID"
+                                             class="winQueryColumnItem ui-sortable-handle">
+                                             <input type="checkbox" id="" value="CompanyID"
+                                                onclick="addColumnToSqlQuery('CompanyID', this);">CompanyID<a href="#"
+                                                class="editSqlColumnName"><i class="fas fa-pen"></i></a>
+                                             <div class="frmSqlColumnEdit">display as <input type="text"
+                                                   value="CompanyID" onkeyup="editSqlColumnName('CompanyID',this);">
+                                             </div>
+                                          </div>
+                                          <div id="sqlCol-Company" data-type="nvarchar" data-label="Company"
+                                             class="winQueryColumnItem ui-sortable-handle">
+                                             <input type="checkbox" id="" value="Company"
+                                                onclick="addColumnToSqlQuery('Company', this);">Company<a href="#"
+                                                class="editSqlColumnName"><i class="fas fa-pen"></i></a>
+                                             <div class="frmSqlColumnEdit">display as <input type="text" value="Company"
+                                                   onkeyup="editSqlColumnName('Company',this);"></div>
+                                          </div>
+                                          <div id="sqlCol-Customer" data-type="nvarchar" data-label="Customer"
+                                             class="winQueryColumnItem ui-sortable-handle">
+                                             <input type="checkbox" id="" value="Customer"
+                                                onclick="addColumnToSqlQuery('Customer', this);">Customer<a href="#"
+                                                class="editSqlColumnName"><i class="fas fa-pen"></i></a>
+                                             <div class="frmSqlColumnEdit">display as <input type="text"
+                                                   value="Customer" onkeyup="editSqlColumnName('Customer',this);"></div>
+                                          </div>
+                                          <div id="sqlCol-MobileAccess" data-type="varchar" data-label="MobileAccess"
+                                             class="winQueryColumnItem ui-sortable-handle">
+                                             <input type="checkbox" id="" value="MobileAccess"
+                                                onclick="addColumnToSqlQuery('MobileAccess', this);">MobileAccess<a
+                                                href="#" class="editSqlColumnName"><i class="fas fa-pen"></i></a>
+                                             <div class="frmSqlColumnEdit">display as <input type="text"
+                                                   value="MobileAccess"
+                                                   onkeyup="editSqlColumnName('MobileAccess',this);"></div>
+                                          </div>
+                                          <div id="sqlCol-Active" data-type="bit" data-label="Active"
+                                             class="winQueryColumnItem ui-sortable-handle">
+                                             <input type="checkbox" id="" value="Active"
+                                                onclick="addColumnToSqlQuery('Active', this);">Active<a href="#"
+                                                class="editSqlColumnName"><i class="fas fa-pen"></i></a>
+                                             <div class="frmSqlColumnEdit">display as <input type="text" value="Active"
+                                                   onkeyup="editSqlColumnName('Active',this);"></div>
+                                          </div>
+                                          <div id="sqlCol-ModifiedBy" data-type="nvarchar" data-label="ModifiedBy"
+                                             class="winQueryColumnItem ui-sortable-handle">
+                                             <input type="checkbox" id="" value="ModifiedBy"
+                                                onclick="addColumnToSqlQuery('ModifiedBy', this);">ModifiedBy<a href="#"
+                                                class="editSqlColumnName"><i class="fas fa-pen"></i></a>
+                                             <div class="frmSqlColumnEdit">display as <input type="text"
+                                                   value="ModifiedBy" onkeyup="editSqlColumnName('ModifiedBy',this);">
+                                             </div>
+                                          </div>
+                                       </div>
+                                       <br>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-md-6">
+						   <!--New Code -->
+						   <!-- <div class="winQueryBox">
+                                 <div class="winQueryHeader" id="winQueryConditionHeader">Condition</div>
+                                 <div class="winQueryContent" style="height: 63px; overflow: hidden;">
+                                    <div class="winQueryColumnNames">                                     
+                                          <!-- Condition Row -->
+                                          <!-- <div class="container startContent">
+                                             <div class="row">
+											   
+                                                <div class="col-md-1 titleContent">
+														<span> Customer </span>
+                                                </div>
+											
+                                                <div class="col-md-2 inputContent">
+                                                   <select>
+														<option>Customer001</option>
+														<option>Customer002</option>
+														<option>Customer003</option>
+                                                   </select>
+                                                </div>
+											
+												 <div class="col-md-1 titleContent">
+														<span> Warehouse </span>
+                                                </div>
+												
+												 <div class="col-md-2 inputContent">
+                                                   <select>
+                                                      <option>Warehouse001</option>
+														<option>Warehouse002</option>
+														<option>Warehouse003</option>
+                                                   </select>
+                                                </div>
+												<div class="col-md-1">
+														
+                                                </div>
+												
+                                                <div class="col-md-2">
+<input type="text" id="" class="notranslate" placeholder="eg: From To To" onclick="editgetDate();" autocomplete="off" autocorrect="off" maxlength="25" step="1" noerror="true" staticlabel="true" animate="true" label="Symbol" rules="">
+                                                  
+                                                </div>
+                                             
+                                             </div>
+											  <div class="row">
+											  <div class="col-md-1">
+														
+                                                </div>
+												<div class="col-md-2">
+													<input type="radio"  name="condition"/> AND	
+                                                </div>
+												<div class="col-md-1">
+														
+                                                </div>
+												<div class="col-md-2">
+													<input type="radio" name="condition"/>	OR
+                                                </div>
+												<div class="col-md-6">
+														
+                                                </div>
+											  </div>
+                                          </div>
+                                    </div>
+                                 </div> -->
+                              <!-- </div> --> 
+							 
+							  <br>
+						   
+						   <!-- New Code -->
+						   
+						   
+						   
+						   
+						   
+                              <!-- Section for Object List -->
+                              <div class="winQueryBox"  style="margin-top: -21px;">
+                                 <div class="winQueryHeader" id="winQueryConditionHeader">Condition</div>
+                                 <div class="winQueryContent" style="height: 63px; overflow: hidden;">
+                                    <div class="winQueryColumnNames">
+                                       <div>
+                                          <!-- Condition Row -->
+                                          <div class="container-fluid">
+                                             <div class="row">
+                                                <div class="col-md-3" id="txtSqlConditionColumn">
+                                                </div>
+                                                <div class="col-md-3">
+                                                   <select id="txtSqlCondition" class="notranslate">
+                                                      <option>=</option>
+                                                      <option>!=</option>
+                                                      <option>&lt;&gt;</option>
+                                                      <option>&lt;</option>
+                                                      <option>&lt;=</option>
+                                                      <option>&gt;</option>
+                                                      <option>&gt;=</option>
+                                                      <option>LIKE</option>
+                                                      <option>NOT LIKE</option>
+                                                   </select>
+                                                </div>
+                                                <div class="col-md-3">
+                                                   <input type="text" value="" id="txtSqlConditionValue"
+                                                      class="notranslate">
+                                                </div>
+                                                <div class="col-md-3">
+                                                   <div class="themeWMS_ctrl_btn wms_show_ctrl"
+                                                      style="position: relative;top: -9px;margin-left: 18px;">
+                                                      <i class="fas fa-plus"></i>
+                                                      <input type="button" value="Add" class="buttonON"
+                                                         style="height: 24px; width: 65px;margin: 6px;"
+                                                         onclick="saveAndAddCondition();">
+                                                   </div>
+                                                   <!-- <a href="#"><i class="fas fa-pencil-alt"></i></a> | <a href="#" onclick="saveAndAddCondition();"><i class="fas fa-plus"></i></a> -->
+                                                </div>
+                                             </div>
+                                          </div>
+                                          <!-- Condition Row -->
+                                       </div>
+                                       <br>
+                                    </div>
+                                 </div>
+                              </div>
+                              <br>
+                              <!-- Section for Object List -->
+                              <!-- Section for Query Rules -->
+                              <div class="winQueryBox" style="height: 158px;">
+                                 <div class="winQueryHeader">
+                                    Conditions
+                                    <div class="sqlGroupConditions">
+                                       Group Bracket / Bracket Conditions:
+                                       <select id="txtSqlGroupBrackets" class="notranslate">
+                                          <option>-- Select --</option>
+                                          <option>(</option>
+                                          <option>)</option>
+                                          <option>AND</option>
+                                          <option>OR</option>
+                                          <option>NOT</option>
+                                          <option>LIKE</option>
+                                          <option>=</option>
+                                          <option>&gt;</option>
+                                          <option>&gt;=</option>
+                                          <option>&lt;</option>
+                                          <option>&lt;=</option>
+                                       </select>
+                                       <a href="#" onclick="addSqlGroupCondition();return false;">ADD</a>
+                                    </div>
+                                 </div>
+                                 <div class="" style="height: 35px;">
+                                    <div class="winQueryColumnNames">
+                                       <div>
+                                          <!-- Condition Row -->
+                                          <div class="container-fluid" id="dataConditionHolder">
+                                          </div>
+                                          <!-- Condition Row -->
+                                       </div>
+                                       <br>
+                                    </div>
+                                 </div>
+                              </div>
+                              <!-- Section for Query Rules -->
+                           </div>
+                        </div>
+                        <div class="row">
+                           <div class="col-md-12">
+                              <div id="UpdatePanelTabPanelQueryBuilder">
+                                 <!-- <div id="ctl00_CPHolder_Form_TabContainerQueryBuilder_tabQueryBuilderEditor_progress1" style="display:none;" role="status" aria-hidden="true">
+                                    <div id="ctl00_CPHolder_Form_TabContainerQueryBuilder_tabQueryBuilderEditor_pnlProgressBar" class="ProgressBarPanel">
+                                       <div class="themeWMSLoading" style="display: block;">
+                                          <div class="themeWMSModelHolder">
+                                             <div class="themeWMSModel">
+                                                <img src="../App_Themes/Blue/img/ajax-loader.gif" style="top: 50%;"><span class="themeWMSLoadingProcessing"><br>
+                                                Please Wait. Processing...</span>
+                                             </div>
+                                          </div>
+                                       </div>
+                                    </div>
+                                    </div> -->
+                                 <br>
+                                 <!-- <div id="TabContainerQueryResult" class="Tab ajax__tab_container ajax__tab_default"
+                                    style="visibility: visible; text-align: left;display:none;">
+                                    <div id="TabContainerQueryResult" class="ajax__tab_header">
+                                       <span id="TabPanelUserInformation" class="ajax__tab_active"><a
+                                             class="ajax__tab_tab" id="TabPanelUserInformation" href="#"
+                                             onclick="openquerytext(oid); return false;"
+                                             style="text-decoration:none; color: black;"><span><i
+                                                   class="fas fa-code"></i>SQL Query Text</span></a></span>
+                                       <a class="ajax__tab_tab" id="TabPanel2" href="#"
+                                          style="text-decoration:none; color: black;"><span><i
+                                                class="fas fa-list"></i>SQL Result</span></a>
+                                    </div> -->
+                                    <div id="TabContainerQueryResult" class="ajax__tab_body ajax__scroll_none"
+                                       style="height:100%;display:block;">
+                                       <div id="wms-srv-querytext" class="winQuerySQLConsole"
+                                          style="visibility: visible;background-color: black;height: 50px;padding: 10px;">
+                                          <input type="hidden" id="hdnSQLQueryText">
+                                          <span id="lblSQLQueryText" style="color: white;">SQL -&gt; </span>
+                                          <input type="submit" name="ctl00$CPHolder_Form$TabContainerQueryBuilder$tabQueryBuilderEditor$TabContainerQueryResult$TabPanelUserInformation$btnExecuteQuery" value="Execute Query" onclick="return callAPItoGetQueryResultNew();" id="ctl00_CPHolder_Form_TabContainerQueryBuilder_tabQueryBuilderEditor_TabContainerQueryResult_TabPanelUserInformation_btnExecuteQuery" class="btnExecuteSqlQuery">
+                                       </div>
+                                    </div>
+                                    <div class="wms-srv-grid-scroller" id="wms-srv-grid-queryresult"
+                                       style="width: 100%; display: none;">
+                                       <div class="wms-srv-grid">
+                                          <!-- <div class="wms-srv-grid-header">
+                                             <div class="wms-srv-grid-cell" style="text-align: center;">First Name</div>
+                                             <div class="wms-srv-grid-cell" style="text-align: center;">Last Name</div>
+                                             <div class="wms-srv-grid-cell" style="text-align: center;">Role Name</div>
+                                             <div class="wms-srv-grid-cell" style="text-align: center;">Warehouse</div>
+                                             <div class="wms-srv-grid-cell" style="text-align: center;">Company ID</div>
+                                             <div class="wms-srv-grid-cell" style="text-align: center;">Comapany</div>
+                                             <div class="wms-srv-grid-cell" style="text-align: center;">Customer</div>
+                                             <div class="wms-srv-grid-cell" style="text-align: center;">Mobile Access
+                                             </div>
+                                             <div class="wms-srv-grid-cell" style="text-align: center;">Active</div>
+                                             <div class="wms-srv-grid-cell" style="text-align: center;">Modified By
+                                             </div>
+                                          </div>
+                                          <div class="wms-srv-grid-header">
+                                             <div class="wms-srv-grid-cell" style="text-align: center;">
+                                                <select id="" class="wms-srv-grid-cell-input" value="" onchange="">
+                                                   <option value="">No Filter</option>
+                                                   <option value="Contains">Contains</option>
+                                                   <option value="Does Not Contain">Does Not Contain</option>
+                                                   <option value="Starts With">Starts With</option>
+                                                   <option value="Ends With">Ends With</option>
+                                                   <option value="Equal To">Equal To</option>
+                                                   <option value="Not Equal To">Not Equal To</option>
+                                                   <option value="In Between">In Between</option>
+                                                   <option value="Smaller Than">Smaller Than</option>
+                                                   <option value="Greater Than">Greater Than</option>
+                                                   <option value="Smaller Than Or Equal To">Smaller Than Or Equal To
+                                                   </option>
+                                                   <option value="Greater Than Or Equal To">Greater Than Or Equal To
+                                                   </option>
+                                                   <option value="Is Null">Is Null</option>
+                                                   <option value="Is Not Null">Is Not Null</option>
+                                                   <option value="Is Empty">Is Empty</option>
+                                                   <option value="Is Not Empty">Is Not Empty</option>
+                                                </select>
+                                                <input class="wms-srv-grid-cell-input" type="text" id="inFl_FirstName"
+                                                   value="">
+                                             </div>
+                                             <div class="wms-srv-grid-cell" style="text-align: center;">
+                                                <select id="" class="wms-srv-grid-cell-input">
+                                                   <option value="">No Filter</option>
+                                                   <option value="Contains">Contains</option>
+                                                   <option value="Does Not Contain">Does Not Contain</option>
+                                                   <option value="Starts With">Starts With</option>
+                                                   <option value="Ends With">Ends With</option>
+                                                   <option value="Equal To">Equal To</option>
+                                                   <option value="Not Equal To">Not Equal To</option>
+                                                   <option value="In Between">In Between</option>
+                                                   <option value="Smaller Than">Smaller Than</option>
+                                                   <option value="Greater Than">Greater Than</option>
+                                                   <option value="Smaller Than Or Equal To">Smaller Than Or Equal To
+                                                   </option>
+                                                   <option value="Greater Than Or Equal To">Greater Than Or Equal To
+                                                   </option>
+                                                   <option value="Is Null">Is Null</option>
+                                                   <option value="Is Not Null">Is Not Null</option>
+                                                   <option value="Is Empty">Is Empty</option>
+                                                   <option value="Is Not Empty">Is Not Empty</option>
+                                                </select>
+                                                <input type="text" class="wms-srv-grid-cell-input" id="inFl_FirstName"
+                                                   value="">
+                                             </div>
+                                             <div class="wms-srv-grid-cell" style="text-align: center;">
+                                                <select id="" class="wms-srv-grid-cell-input" value="" onchange="">
+                                                   <option value="">No Filter</option>
+                                                   <option value="Contains">Contains</option>
+                                                   <option value="Does Not Contain">Does Not Contain</option>
+                                                   <option value="Starts With">Starts With</option>
+                                                   <option value="Ends With">Ends With</option>
+                                                   <option value="Equal To">Equal To</option>
+                                                   <option value="Not Equal To">Not Equal To</option>
+                                                   <option value="In Between">In Between</option>
+                                                   <option value="Smaller Than">Smaller Than</option>
+                                                   <option value="Greater Than">Greater Than</option>
+                                                   <option value="Smaller Than Or Equal To">Smaller Than Or Equal To
+                                                   </option>
+                                                   <option value="Greater Than Or Equal To">Greater Than Or Equal To
+                                                   </option>
+                                                   <option value="Is Null">Is Null</option>
+                                                   <option value="Is Not Null">Is Not Null</option>
+                                                   <option value="Is Empty">Is Empty</option>
+                                                   <option value="Is Not Empty">Is Not Empty</option>
+                                                </select>
+                                                <input class="wms-srv-grid-cell-input" type="text" id="inFl_FirstName"
+                                                   value="">
+                                             </div>
+                                             <div class="wms-srv-grid-cell" style="text-align: center;">
+                                                <select id="" class="wms-srv-grid-cell-input" value="" onchange="">
+                                                   <option value="">No Filter</option>
+                                                   <option value="Contains">Contains</option>
+                                                   <option value="Does Not Contain">Does Not Contain</option>
+                                                   <option value="Starts With">Starts With</option>
+                                                   <option value="Ends With">Ends With</option>
+                                                   <option value="Equal To">Equal To</option>
+                                                   <option value="Not Equal To">Not Equal To</option>
+                                                   <option value="In Between">In Between</option>
+                                                   <option value="Smaller Than">Smaller Than</option>
+                                                   <option value="Greater Than">Greater Than</option>
+                                                   <option value="Smaller Than Or Equal To">Smaller Than Or Equal To
+                                                   </option>
+                                                   <option value="Greater Than Or Equal To">Greater Than Or Equal To
+                                                   </option>
+                                                   <option value="Is Null">Is Null</option>
+                                                   <option value="Is Not Null">Is Not Null</option>
+                                                   <option value="Is Empty">Is Empty</option>
+                                                   <option value="Is Not Empty">Is Not Empty</option>
+                                                </select>
+                                                <input class="wms-srv-grid-cell-input" type="text" id="inFl_FirstName"
+                                                   value="">
+                                             </div>
+                                             <div class="wms-srv-grid-cell" style="text-align: center;">
+                                                <select id="" class="wms-srv-grid-cell-input" value="" onchange="">
+                                                   <option value="">No Filter</option>
+                                                   <option value="Contains">Contains</option>
+                                                   <option value="Does Not Contain">Does Not Contain</option>
+                                                   <option value="Starts With">Starts With</option>
+                                                   <option value="Ends With">Ends With</option>
+                                                   <option value="Equal To">Equal To</option>
+                                                   <option value="Not Equal To">Not Equal To</option>
+                                                   <option value="In Between">In Between</option>
+                                                   <option value="Smaller Than">Smaller Than</option>
+                                                   <option value="Greater Than">Greater Than</option>
+                                                   <option value="Smaller Than Or Equal To">Smaller Than Or Equal To
+                                                   </option>
+                                                   <option value="Greater Than Or Equal To">Greater Than Or Equal To
+                                                   </option>
+                                                   <option value="Is Null">Is Null</option>
+                                                   <option value="Is Not Null">Is Not Null</option>
+                                                   <option value="Is Empty">Is Empty</option>
+                                                   <option value="Is Not Empty">Is Not Empty</option>
+                                                </select>
+                                                <input class="wms-srv-grid-cell-input" type="text" id="inFl_FirstName"
+                                                   value="">
+                                             </div>
+                                             <div class="wms-srv-grid-cell" style="text-align: center;">
+                                                <select id="" class="wms-srv-grid-cell-input" value="" onchange="">
+                                                   <option value="">No Filter</option>
+                                                   <option value="Contains">Contains</option>
+                                                   <option value="Does Not Contain">Does Not Contain</option>
+                                                   <option value="Starts With">Starts With</option>
+                                                   <option value="Ends With">Ends With</option>
+                                                   <option value="Equal To">Equal To</option>
+                                                   <option value="Not Equal To">Not Equal To</option>
+                                                   <option value="In Between">In Between</option>
+                                                   <option value="Smaller Than">Smaller Than</option>
+                                                   <option value="Greater Than">Greater Than</option>
+                                                   <option value="Smaller Than Or Equal To">Smaller Than Or Equal To
+                                                   </option>
+                                                   <option value="Greater Than Or Equal To">Greater Than Or Equal To
+                                                   </option>
+                                                   <option value="Is Null">Is Null</option>
+                                                   <option value="Is Not Null">Is Not Null</option>
+                                                   <option value="Is Empty">Is Empty</option>
+                                                   <option value="Is Not Empty">Is Not Empty</option>
+                                                </select>
+                                                <input class="wms-srv-grid-cell-input" type="text" id="inFl_FirstName"
+                                                   value="">
+                                             </div>
+                                             <div class="wms-srv-grid-cell" style="text-align: center;">
+                                                <select id="" class="wms-srv-grid-cell-input" value="" onchange="">
+                                                   <option value="">No Filter</option>
+                                                   <option value="Contains">Contains</option>
+                                                   <option value="Does Not Contain">Does Not Contain</option>
+                                                   <option value="Starts With">Starts With</option>
+                                                   <option value="Ends With">Ends With</option>
+                                                   <option value="Equal To">Equal To</option>
+                                                   <option value="Not Equal To">Not Equal To</option>
+                                                   <option value="In Between">In Between</option>
+                                                   <option value="Smaller Than">Smaller Than</option>
+                                                   <option value="Greater Than">Greater Than</option>
+                                                   <option value="Smaller Than Or Equal To">Smaller Than Or Equal To
+                                                   </option>
+                                                   <option value="Greater Than Or Equal To">Greater Than Or Equal To
+                                                   </option>
+                                                   <option value="Is Null">Is Null</option>
+                                                   <option value="Is Not Null">Is Not Null</option>
+                                                   <option value="Is Empty">Is Empty</option>
+                                                   <option value="Is Not Empty">Is Not Empty</option>
+                                                </select>
+                                                <input class="wms-srv-grid-cell-input" type="text" id="inFl_FirstName"
+                                                   value="">
+                                             </div>
+                                             <div class="wms-srv-grid-cell" style="text-align: center;">
+                                                <select id="" class="wms-srv-grid-cell-input" value="" onchange="">
+                                                   <option value="">No Filter</option>
+                                                   <option value="Contains">Contains</option>
+                                                   <option value="Does Not Contain">Does Not Contain</option>
+                                                   <option value="Starts With">Starts With</option>
+                                                   <option value="Ends With">Ends With</option>
+                                                   <option value="Equal To">Equal To</option>
+                                                   <option value="Not Equal To">Not Equal To</option>
+                                                   <option value="In Between">In Between</option>
+                                                   <option value="Smaller Than">Smaller Than</option>
+                                                   <option value="Greater Than">Greater Than</option>
+                                                   <option value="Smaller Than Or Equal To">Smaller Than Or Equal To
+                                                   </option>
+                                                   <option value="Greater Than Or Equal To">Greater Than Or Equal To
+                                                   </option>
+                                                   <option value="Is Null">Is Null</option>
+                                                   <option value="Is Not Null">Is Not Null</option>
+                                                   <option value="Is Empty">Is Empty</option>
+                                                   <option value="Is Not Empty">Is Not Empty</option>
+                                                </select>
+                                                <input class="wms-srv-grid-cell-input" type="text" id="inFl_FirstName"
+                                                   value="">
+                                             </div>
+                                             <div class="wms-srv-grid-cell" style="text-align: center;">
+                                                <select id="" class="wms-srv-grid-cell-input" value="" onchange="">
+                                                   <option value="">No Filter</option>
+                                                   <option value="Contains">Contains</option>
+                                                   <option value="Does Not Contain">Does Not Contain</option>
+                                                   <option value="Starts With">Starts With</option>
+                                                   <option value="Ends With">Ends With</option>
+                                                   <option value="Equal To">Equal To</option>
+                                                   <option value="Not Equal To">Not Equal To</option>
+                                                   <option value="In Between">In Between</option>
+                                                   <option value="Smaller Than">Smaller Than</option>
+                                                   <option value="Greater Than">Greater Than</option>
+                                                   <option value="Smaller Than Or Equal To">Smaller Than Or Equal To
+                                                   </option>
+                                                   <option value="Greater Than Or Equal To">Greater Than Or Equal To
+                                                   </option>
+                                                   <option value="Is Null">Is Null</option>
+                                                   <option value="Is Not Null">Is Not Null</option>
+                                                   <option value="Is Empty">Is Empty</option>
+                                                   <option value="Is Not Empty">Is Not Empty</option>
+                                                </select>
+                                                <input class="wms-srv-grid-cell-input" type="text" id="inFl_FirstName"
+                                                   value="">
+                                             </div>
+                                             <div class="wms-srv-grid-cell" style="text-align: center;">
+                                                <select id="" class="wms-srv-grid-cell-input" value="" onchange="">
+                                                   <option value="">No Filter</option>
+                                                   <option value="Contains">Contains</option>
+                                                   <option value="Does Not Contain">Does Not Contain</option>
+                                                   <option value="Starts With">Starts With</option>
+                                                   <option value="Ends With">Ends With</option>
+                                                   <option value="Equal To">Equal To</option>
+                                                   <option value="Not Equal To">Not Equal To</option>
+                                                   <option value="In Between">In Between</option>
+                                                   <option value="Smaller Than">Smaller Than</option>
+                                                   <option value="Greater Than">Greater Than</option>
+                                                   <option value="Smaller Than Or Equal To">Smaller Than Or Equal To
+                                                   </option>
+                                                   <option value="Greater Than Or Equal To">Greater Than Or Equal To
+                                                   </option>
+                                                   <option value="Is Null">Is Null</option>
+                                                   <option value="Is Not Null">Is Not Null</option>
+                                                   <option value="Is Empty">Is Empty</option>
+                                                   <option value="Is Not Empty">Is Not Empty</option>
+                                                </select>
+                                                <input class="wms-srv-grid-cell-input" type="text" id="inFl_FirstName"
+                                                   value="">
+                                             </div>
+                                          </div>
+                                          <div class="wms-srv-grid-row">
+                                             <div class="wms-srv-grid-cell" style="text-align: center;">Brilliant</div>
+                                             <div class="wms-srv-grid-cell" style="text-align: center;">Admin</div>
+                                             <div class="wms-srv-grid-cell" style="text-align: center;">Super Admin
+                                             </div>
+                                             <div class="wms-srv-grid-cell" style="text-align: center;">Westcoast</div>
+                                             <div class="wms-srv-grid-cell" style="text-align: center;">2905</div>
+                                             <div class="wms-srv-grid-cell" style="text-align: center;">Westcoast</div>
+                                             <div class="wms-srv-grid-cell" style="text-align: center;">Brilliant</div>
+                                             <div class="wms-srv-grid-cell" style="text-align: center;">1</div>
+                                             <div class="wms-srv-grid-cell" style="text-align: center;">True</div>
+                                             <div class="wms-srv-grid-cell" style="text-align: center;">0529</div>
+                                          </div>
+                                          <div class="wms-srv-grid-row">
+                                             <div class="wms-srv-grid-cell" style="text-align: center;">Brilliant</div>
+                                             <div class="wms-srv-grid-cell" style="text-align: center;">Admin</div>
+                                             <div class="wms-srv-grid-cell" style="text-align: center;">Super Admin
+                                             </div>
+                                             <div class="wms-srv-grid-cell" style="text-align: center;">Westcoast</div>
+                                             <div class="wms-srv-grid-cell" style="text-align: center;">2905</div>
+                                             <div class="wms-srv-grid-cell" style="text-align: center;">Westcoast</div>
+                                             <div class="wms-srv-grid-cell" style="text-align: center;">Brilliant</div>
+                                             <div class="wms-srv-grid-cell" style="text-align: center;">1</div>
+                                             <div class="wms-srv-grid-cell" style="text-align: center;">True</div>
+                                             <div class="wms-srv-grid-cell" style="text-align: center;">0529</div>
+                                          </div>
+                                          <div class="wms-srv-grid-row">
+                                             <div class="wms-srv-grid-cell" style="text-align: center;">Brilliant</div>
+                                             <div class="wms-srv-grid-cell" style="text-align: center;">Admin</div>
+                                             <div class="wms-srv-grid-cell" style="text-align: center;">Super Admin
+                                             </div>
+                                             <div class="wms-srv-grid-cell" style="text-align: center;">Westcoast</div>
+                                             <div class="wms-srv-grid-cell" style="text-align: center;">2905</div>
+                                             <div class="wms-srv-grid-cell" style="text-align: center;">Westcoast</div>
+                                             <div class="wms-srv-grid-cell" style="text-align: center;">Brilliant</div>
+                                             <div class="wms-srv-grid-cell" style="text-align: center;">1</div>
+                                             <div class="wms-srv-grid-cell" style="text-align: center;">True</div>
+                                             <div class="wms-srv-grid-cell" style="text-align: center;">0529</div>
+                                          </div>
+                                          <div class="wms-srv-grid-row">
+                                             <div class="wms-srv-grid-cell" style="text-align: center;">Brilliant</div>
+                                             <div class="wms-srv-grid-cell" style="text-align: center;">Admin</div>
+                                             <div class="wms-srv-grid-cell" style="text-align: center;">Super Admin
+                                             </div>
+                                             <div class="wms-srv-grid-cell" style="text-align: center;">Westcoast</div>
+                                             <div class="wms-srv-grid-cell" style="text-align: center;">2905</div>
+                                             <div class="wms-srv-grid-cell" style="text-align: center;">Westcoast</div>
+                                             <div class="wms-srv-grid-cell" style="text-align: center;">Brilliant</div>
+                                             <div class="wms-srv-grid-cell" style="text-align: center;">1</div>
+                                             <div class="wms-srv-grid-cell" style="text-align: center;">True</div>
+                                             <div class="wms-srv-grid-cell" style="text-align: center;">0529</div>
+                                          </div>
+                                          <div class="wms-srv-grid-row">
+                                             <div class="wms-srv-grid-cell" style="text-align: center;">Brilliant</div>
+                                             <div class="wms-srv-grid-cell" style="text-align: center;">Admin</div>
+                                             <div class="wms-srv-grid-cell" style="text-align: center;">Super Admin
+                                             </div>
+                                             <div class="wms-srv-grid-cell" style="text-align: center;">Westcoast</div>
+                                             <div class="wms-srv-grid-cell" style="text-align: center;">2905</div>
+                                             <div class="wms-srv-grid-cell" style="text-align: center;">Westcoast</div>
+                                             <div class="wms-srv-grid-cell" style="text-align: center;">Brilliant</div>
+                                             <div class="wms-srv-grid-cell" style="text-align: center;">1</div>
+                                             <div class="wms-srv-grid-cell" style="text-align: center;">True</div>
+                                             <div class="wms-srv-grid-cell" style="text-align: center;">0529</div>
+                                          </div> -->
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <!-- Edit Popup -->
+
+   <!-- SQL Notification Pop up -->
+   <div class="themeWmsPopup" id="themeQueryBuilderSetNotification" style="display:none;">
+      <div class="themeWmsPopupContent" style="display: table; margin-top: 30px;">
+         <div class="themeWmsPopupTitle">
+            Query Builder Notification
+            <div class="themeWMS_ctrl_btn wms_show_ctrl" id="btnCloseSqlNotificationPopup"><i
+                  class="fas fa-times-circle"></i></div>
+         </div>
+         <!-- <div class="wms-srv-grid-holder pnlWmsHead">
+         <div class="wms-srv-grid" style="min-width: 522px;">
+            <div class="wms-srv-grid-header">
+               <div class="wms-srv-grid-cell" style="text-align: center;width:111px">QueryID</div>
+               <div class="wms-srv-grid-cell" style="text-align: center;">Title</div>
+               <div class="wms-srv-grid-cell" style="text-align: center;">Object</div>
+            </div>
+            <div class="wms-srv-grid-row" style="height: 33px;background-color: white;">
+               <div class="wms-srv-grid-cell" style="text-align: center;" id="">1001</div>
+               <div class="wms-srv-grid-cell" style="text-align: center;" id="">Receiving Data Will Show</div>
+               <div class="wms-srv-grid-cell" style="text-align: center;" id="">Inward</div>
+            </div>
+         </div>
+         </div> -->
+         <div class="themeWmsPopupContentBody">
+            <input type="hidden" name="ctl00$CPHolder_Form$hdnQueryIdForNotification" id="hdnQueryIdForNotification"
+               value="40">
+            <input type="hidden" name="ctl00$CPHolder_Form$hdnNotificationId" id="hdnNotificationId" value="0">
+            <input type="hidden" name="ctl00$CPHolder_Form$hdnQueryInterval" id="hdnQueryInterval" value="DAILY">
+            <input type="hidden" name="ctl00$CPHolder_Form$hdnQuerySendAt" id="hdnQuerySendAt" value="">
+            <input type="hidden" name="ctl00$CPHolder_Form$hdnQueryDayOfWeek" id="hdnQueryDayOfWeek"
+               value="MON:TUE:WED:THU:FRI:SAT:SUN:">
+            <input type="hidden" name="ctl00$CPHolder_Form$hdnQueryDayOfMonth" id="hdnQueryDayOfMonth" value="">
+            <div id="divQbInterval" class="divQbFormRow">
+               <span class="themeWMSPopupLabel"><b>QueryID</b></span>
+               <div class="" data-value="" style="width: 353px;display: inline-block;overflow: hidden;">
+               <input type="text"  value="" id="queryIDnotification" class="wms-srv-grid-cell-input" placeholder="" disabled>
+               </div>
+            </div>
+            <div id="divQbInterval" class="divQbFormRow">
+               <span class="themeWMSPopupLabel"><b>Title</b></span>
+               <div class="" data-value="" style="width: 353px;display: inline-block;overflow: hidden;">
+               <input type="text"  value="" id="querybuildertitle" class="wms-srv-grid-cell-input" placeholder="" disabled>
+               </div>
+            </div>
+            <div id="divQbInterval" class="divQbFormRow">
+               <span class="themeWMSPopupLabel"><b>Object</b></span>
+               <div class="" data-value="" style="width: 353px;display: inline-block;overflow: hidden;">
+               <input type="text"  value="" id="querybuilderObject" class="wms-srv-grid-cell-input" placeholder="" disabled>
+               </div>
+            </div>
+            <div id="divQbNotificationFor" class="divQbFormRow">
+               <span class="themeWMSPopupLabel" style="margin-top:-17px;"><b>Notification To</b></span>
+               <div class="themeWMS_ctrl">
+                  <!-- <i class="fas fa-address-book"></i> -->
+                  <!-- <input name="ctl00$CPHolder_Form$txtQueryNotificationTo" type="text"
+                     value="" id="txtQueryNotificationTo" class="inputElement notranslate"
+                     onblur="validateCtl(this);" style="width: 300px"> -->
+
+                   <div style="position: relative;">
+                                    <div style="margin-left:-48px;display:flex;width:400px;">
+                                        
+                                        <div id="pnlEmailAddGroup1" class="txtEmailNotification1">
+
+                                        </div>
+                                    </div>
+                                    <i class="fas fa-plus-circle btnAddEmailInToFieldNotification" onclick="showNotification();"></i>
+                                    <div class="pnlAddEmailNotification keyblockEmailNotification" id="txtshowEmail" style="display: none;">
+                                        <div class=""></div>
+                                        <input type="text" value="" class="txtAddEmailNotification " id="txtEmailNotificationsave" style="margin-top: -2px;">
+                                        <i class="fas fa-check-circle" style="color:black !important;font-size: 13px;margin-top: -26px;" onclick="AddNotification()"></i>
+                                        <i class="fas fa-times-circle" id="txthideEmail" style="font-size: 13px;color:black !important;margin-top: -26px;"></i>
+                                        
+                                    </div>
+                    </div>         
+               </div>
+            </div>
+            <div id="divQbInterval" class="divQbFormRow">
+               <span class="themeWMSPopupLabel"><b>Interval</b></span>
+               <div class="queryBuilderScheduleInterval" data-value="">
+                  <div id="intDaily" class="txtdaily" data-value="DAILY"  style="Background:var(--wms-color-primary)" onclick="myFunction1()"; >DAILY</div>
+                  <div id="intWeekly" class="txtWEEKLY" data-value="WEEKLY"   onclick="myFunction2()";>WEEKLY</div>
+                  <div id="intMonthly" class="txtMONTHLY" data-value="MONTHLY"   onclick="myFunction3()";>MONTHLY</div>
+               </div>
+            </div>
+            <div id="divQbSentAt" class="divQbFormRow">
+               <span class="themeWMSPopupLabel"><b>Send At</b></span>
+               <select name="ctl00$CPHolder_Form$qbDDListHH" id="txtHH" class="inputElement notranslate"
+                  onblur="validateCtl(this);">
+                  <option value="--HH--">--HH--</option>
+                  <option value="01">01</option>
+                  <option value="02">02</option>
+                  <option value="03">03</option>
+                  <option value="04">04</option>
+                  <option value="05">05</option>
+                  <option value="06">06</option>
+                  <option value="07">07</option>
+                  <option value="08">08</option>
+                  <option value="09">09</option>
+                  <option value="10">10</option>
+                  <option value="11">11</option>
+                  <option value="12">12</option>
+               </select>
+               <select name="ctl00$CPHolder_Form$qbDDListMM" id="txtMM" class="inputElement notranslate"
+                  onblur="validateCtl(this);">
+                  <option value="--MM--">--MM--</option>
+                  <option value="00">00</option>
+                  <option value="15">15</option>
+                  <option value="30">30</option>
+                  <option value="45">45</option>
+               </select>
+               <select name="ctl00$CPHolder_Form$qbDDListAMPM" id="txtAMPM" class="inputElement notranslate"
+                  onblur="validateCtl(this);">
+                  <option value="AM">AM</option>
+                  <option value="PM">PM</option>
+               </select>
+            </div>
+            <div id="divDayOfWeek" class="divQbFormRow">
+               <span class="themeWMSPopupLabel"><b>Day of Week</b></span>
+               <div class="queryBuilderScheduleDay">
+                  <div id="ntdMON" data-value="MON" data-isselected="no"><input type="checkbox" id="txtMon" checked>&nbsp;MON</div>
+                  <div id="ntdTUE" data-value="TUE" data-isselected="no"><input type="checkbox" id="txtTUE" checked>&nbsp;TUE</div>
+                  <div id="ntdWED" data-value="WED" data-isselected="no"><input type="checkbox" id="txtWED" checked>&nbsp;WED</div>
+                  <div id="ntdTHU" data-value="THU" data-isselected="no"><input type="checkbox" id="txtTHU" checked>&nbsp;THU</div>
+                  <div id="ntdFRI" data-value="FRI" data-isselected="no"><input type="checkbox" id="txtFRI" checked>&nbsp;FRI</div>
+                  <div id="ntdSAT" data-value="SAT" data-isselected="no"><input type="checkbox" id="txtSAT" checked>&nbsp;SAT</div>
+                  <div id="ntdSUN" data-value="SUN" data-isselected="no"><input type="checkbox" id="txtSUN" checked>&nbsp;SUN</div>
+               </div>
+            </div>
+            <div id="divDayOfMonth" class="divQbFormRow" style="display: none;">
+               <span class="themeWMSPopupLabel"><b>Day of Month</b></span>
+               <div class="queryBuilderScheduleWeek">
+                  <div id="dmFirstDayOfMonth" data-value="FirstDayOfMonth" data-isselected="no"><i
+                        class="far fa-dot-circle"></i>First Day of Month</div>
+                  <div id="dmLastDayOfMonth" data-value="LastDayOfMonth" data-isselected="no"><i
+                        class="far fa-circle"></i>Last Day of Month</div>
+                  <div id="dmMidDayOfMonth" data-value="MidDayOfMonth" data-isselected="no"><i
+                        class="far fa-circle"></i>Specific Day of Month</div>
+               </div>
+            </div>
+            <div id="divQbCalendarDate" class="divQbFormRow" style="display: none;">
+               <span class="themeWMSPopupLabel"><b>Select Day</b></span>
+               <select name="ctl00$CPHolder_Form$qbDDListDate" id="qbDDListDate" class="inputElement notranslate"
+                  onblur="validateCtl(this);">
+                  <option value="--Select Date--">--Select Date--</option>
+                  <option value="01">01</option>
+                  <option value="02">02</option>
+                  <option value="03">03</option>
+                  <option value="04">04</option>
+                  <option value="05">05</option>
+                  <option value="06">06</option>
+                  <option value="07">07</option>
+                  <option value="08">08</option>
+                  <option value="09">09</option>
+                  <option value="10">10</option>
+                  <option value="11">11</option>
+                  <option value="12">12</option>
+                  <option value="13">13</option>
+                  <option value="14">14</option>
+                  <option value="15">15</option>
+                  <option value="16">16</option>
+                  <option value="17">17</option>
+                  <option value="18">18</option>
+                  <option value="19">19</option>
+                  <option value="20">20</option>
+                  <option value="21">21</option>
+                  <option value="22">22</option>
+                  <option value="23">23</option>
+                  <option value="24">24</option>
+                  <option value="25">25</option>
+                  <option value="26">26</option>
+                  <option value="27">27</option>
+                  <option value="28">28</option>
+                  <option value="29">29</option>
+                  <option value="30">30</option>
+                  <option value="31">31</option>
+               </select>
+            </div>
+            <div id="divQbSaveNotification">
+               <span class="themeWMSPopupLabel"><b>&nbsp;</b></span>
+               <div class="themeWMS_ctrl_btn wms_show_ctrl" id="divBtnSaveNotification">
+                  <!-- <i class="fas fa-plus" style="top: 11px; left: 12px;"></i>
+                  <input type="submit" name="ctl00$CPHolder_Form$Button1" value="Save Notification"
+                     id="ctl00_CPHolder_Form_Button1" class="buttonON" onclick=SaveNotification();> -->
+
+                     <button class="wms-srv-input wms-srv-button  wms-srv-add-order" type="button" onclick=SaveNotification(); style="background-color: grey;color:#ffffff;"><span>Save Notification</span></button>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="themeWmsPopupBg">
+      </div>
+   </div>
+   <!-- SQL Notification Pop up -->
+
+   <!-- Save Query Popup -->
+   <div class="themeWmsPopup" id="theme-savequery-popup" style="display: none;">
+      <div class="themeWmsPopupContent" style="display: table; margin-top: 30px;">
+         <div class="themeWmsPopupTitle">
+            Save Query
+            <a href="#" title="Close" id="theme-savequery-popup-close" class="wms-srv-popup-close"><i
+                  class="fas fa-times-circle"></i></a>
+         </div>
+         <div class="themeWmsPopupContentBody">
+            <div id="divQbNotificationFor" class="divQbFormRow">
+               <span class="themeWMSPopupLabel"><b>Title</b></span>
+               <div class="themeWMS_ctrl">
+                  <input type="text" value="" id="txtQueryTitle" class="inputElement notranslate" style="width: 300px">
+               </div>
+            </div>
+            <br>
+            <div style="text-align: center;">
+               <button class="wms-srv-input wms-srv-button wms-srv-highlight-btn-secondary" type="button" title="Submit"
+                  style="text-align:-moz-right;" onclick="SaveQuery()">
+                  <span>Save</span></button>
+            </div>
+         </div>
+      </div>
+      <div class="themeWmsPopupBg">
+      </div>
+   </div>
+   <!-- Save Query Popup -->
+
+   <!-- Open Query Popup -->
+   <div class="themeWmsPopup" id="theme-openquery-popup" style="display: none;">
+      <div class="themeWmsPopupContent" style="display: table; margin-top:55px;width: 634px">
+         <div class="themeWmsPopupTitle">
+            SQL Query
+            <a href="#" title="Close" id="theme-openquery-popup-close" class="wms-srv-popup-close"><i
+                  class="fas fa-times-circle"></i></a>
+         </div>
+         <div class="themeWmsPopupContentBody">
+            <div id="divQbNotificationFor" class="divQbFormRow">
+               <!-- <span class="themeWMSPopupLabel"><b>Title</b></span> -->
+               
+                  <!-- <input type="text" value="" id="" class="inputElement notranslate" style="width: 300px"> -->
+                  <span id="txtopenquery"></span>
+               
+            </div>
+            <br>
+           
+         </div>
+      </div>
+      <div class="themeWmsPopupBg">
+      </div>
+   </div>
+   <!-- Open Query Popup -->
+
+   <!-- Openlist Query Popup -->
+   <div class="themeWmsPopup" id="theme-openquerylist-popup" style="display: none;">
+      <div class="themeWmsPopupContent" style="display: table; margin-top:55px;width: 634px">
+         <div class="themeWmsPopupTitle">
+            SQL Query
+            <a href="#" title="Close" id="theme-openquerylist-popup-close" class="wms-srv-popup-close"><i
+                  class="fas fa-times-circle"></i></a>
+         </div>
+         <div class="themeWmsPopupContentBody">
+            <div id="divQbNotificationFor" class="divQbFormRow">
+               <!-- <span class="themeWMSPopupLabel"><b>Title</b></span> -->
+               
+                  <!-- <input type="text" value="" id="" class="inputElement notranslate" style="width: 300px"> -->
+                  <span id="txtQRBuilderQuery"></span>
+               
+            </div>
+            <br>
+           
+         </div>
+      </div>
+      <div class="themeWmsPopupBg">
+      </div>
+   </div>
+   <!-- Openlist Query Popup -->
+
+
+   <!--Date Format-->
+				<div class="" id="dateSelecter" style="display:none;margin-top:-292px;">
+	   <div>
+		<span> <label class="txtFixDates" onclick="getPreviousdate (1);"> Prev. day | </label></span><i class="fas fa-times-circle iconClose" title="Cancel"></i>		
+		<span><label class="txtFixDates" onclick="getSevenDateData(7);">Last 7 days | </label></span>
+		<span><label class="txtFixDates" onclick="getThirtyDateData(30);" >Last 30 days | </label></span>
+		<span><label class="txtFixDates" onclick="getcurrentFYData('2023/04/24');">Current FY </label></span>
+		
+		
+	</div><br>
+	<span><hr class="dividesLines"><span>
+	
+
+				   <table class="dateGrid" id="gridDatePicker">
+					  <tr>
+						 <td>
+							<div class="text-center"><strong>From</strong></div>
+							<div id="txt_FromdatePicker">
+							</div>
+						 </td>
+						 <td>
+							<div class="text-center2"><strong>To</strong></div>
+							<div id="txt_TodatePicker">
+							</div>
+						 </td>
+					  </tr>
+				   </table>
+				</div>
+	<!--Date Format-->

@@ -1,0 +1,998 @@
+<div class="wms-srv-content-area pnlImportDesigner wmsMasterTypePage" id="pnlImportDesigner" style="display: none;">
+    <div class="wms-srv-page-title">
+        <i class="fas fa-list"></i><span class="wms-srv-data-title">My Import List</span>
+    </div>
+    <br>
+    <div class="wms-srv-grid-holder">
+        <div class="wms-srv-grid-action-panel">
+            <div class="wms-srv-grid-common-action"><a href="#" class="wms-srv-icononly"><i class="fas fa-list"></i></a>
+            </div>
+            <button class="wms-srv-input wms-srv-button wms-srv-highlight-btn wms-srv-add-order" type="button"
+                title="Add New" data-prefix="AN" onclick="openAddNewImport()"><i class="fas fa-plus"></i><span>Add/Edit
+                </span></button>
+            <div class="wms-srv-grid-title">Import Designer List</div>
+        </div>
+        <div class="wms-srv-grid-scroller" style="width: 100%;">
+            <div class="wms-srv-grid" id="BindGrid">
+                <!--
+                <div class="wms-srv-grid-header">
+                    <div class="wms-srv-grid-cell" style="text-align: center;">Import File</div>
+                    <div class="wms-srv-grid-cell" style="text-align: center;">Description</div>
+                    <div class="wms-srv-grid-cell" style="text-align: center;">Object</div>
+                    <div class="wms-srv-grid-cell" style="text-align: center;">Company</div>
+                    <div class="wms-srv-grid-cell" style="text-align: center;">Customer</div>
+                    <div class="wms-srv-grid-cell" style="text-align: center;">Creation Date</div>
+                    <div class="wms-srv-grid-cell" style="text-align: center;">Action</div>
+                </div>
+                <div class="wms-srv-grid-row">
+                    <div class="wms-srv-grid-cell" style="text-align: center;">Client</div>
+                    <div class="wms-srv-grid-cell" style="text-align: center;">Details Of Client</div>
+                    <div class="wms-srv-grid-cell" style="text-align: center;">Client</div>
+                    <div class="wms-srv-grid-cell" style="text-align: center;">West Coast</div>
+                    <div class="wms-srv-grid-cell" style="text-align: center;">Mr.Crown</div>
+                    <div class="wms-srv-grid-cell" style="text-align: center;">29/05/2022</div>
+                    <div class="wms-srv-grid-cell" style="text-align: center;">
+                        <div class="wms-srv-grid-action">
+                            <a href="#" title="Edit" class="wms-srv-icononly" onclick="openAddNewImport()">
+                                <i class="fas fa-edit"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="wms-srv-grid-row">
+                    <div class="wms-srv-grid-cell" style="text-align: center;">Client</div>
+                    <div class="wms-srv-grid-cell" style="text-align: center;">Details Of Client</div>
+                    <div class="wms-srv-grid-cell" style="text-align: center;">Client</div>
+                    <div class="wms-srv-grid-cell" style="text-align: center;">West Coast</div>
+                    <div class="wms-srv-grid-cell" style="text-align: center;">Mr.Crown</div>
+                    <div class="wms-srv-grid-cell" style="text-align: center;">29/05/2022</div>
+                    <div class="wms-srv-grid-cell" style="text-align: center;">
+                        <div class="wms-srv-grid-action">
+                            <a href="#" title="Edit" data-prefix="" class="wms-srv-icononly"
+                                onclick="openAddNewImport()">
+                                <i class="fas fa-edit"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="wms-srv-grid-row">
+                    <div class="wms-srv-grid-cell" style="text-align: center;">Client</div>
+                    <div class="wms-srv-grid-cell" style="text-align: center;">Details Of Client</div>
+                    <div class="wms-srv-grid-cell" style="text-align: center;">Client</div>
+                    <div class="wms-srv-grid-cell" style="text-align: center;">West Coast</div>
+                    <div class="wms-srv-grid-cell" style="text-align: center;">Mr.Crown</div>
+                    <div class="wms-srv-grid-cell" style="text-align: center;">29/05/2022</div>
+                    <div class="wms-srv-grid-cell" style="text-align: center;">
+                        <div class="wms-srv-grid-action">
+                            <a href="#" title="Edit" data-prefix="" class="wms-srv-icononly"
+                                onclick="openAddNewImport()">
+                                <i class="fas fa-edit"></i></a>
+                        </div>
+                    </div>
+                </div> 
+                -->
+            </div>
+        </div>
+        <!-- <div class="wms-srv-grid-pager" id="tblImportGridPager">
+            <span class="wms-srv-pager-records">1-1 of 10 Records</span>
+            <span class="wms-srv-empty-space"></span>
+            <span class="wms-srv-pager-links"><a href="#" data-page="firstpage"><i
+                        class="fas fa-angle-double-left"></i></a><a href="#" data-page="previous"><i
+                        class="fas fa-angle-left"></i></a><a href="#" class="wms-srv-active" data-page="1">1</a><a
+                    href="#" data-page="2">2</a><a href="#" data-page="3">3</a><a href="#" data-page="4">4</a><a
+                    href="#" data-page="5">5</a><a href="#" data-page="6">6</a><a href="#" data-page="7">7</a><a
+                    href="#" data-page="next"><i class="fas fa-angle-right"></i></a><a href="#" data-page="lastpage"><i
+                        class="fas fa-angle-double-right"></i></a></span>
+            <span class="wms-srv-empty-space"></span>
+            <input type="text" name="txtGridPageNo" class="wms-srv-input notranslate" value="0" style="width: 80px;">
+            <a href="#" title="Jump To" class="wms-srv-pager-go"><i class="fas fa-play-circle"></i></a>
+        </div> -->
+    </div>
+
+</div>
+
+<!-- Add New Import Designer Popup -->
+<div class="wms-srv-popup-holder" id="wms-srv-newimportdesigner-popup" style="display: none">
+    <div class="wms-srv-popup-bg">
+    </div>
+    <div class="wms-srv-popup">
+        <div class="wms-srv-popup-content">
+            <!-- Popup Title -->
+            <div class="wms-srv-popup-title">
+                <div class="wms-srv-page-title">
+                    <i class="fas fa-coins"></i><span>Add Import Designer</span>
+                </div>
+                <a href="#" title="Close" id="wms-srv-newimportdesigner-popup-close" class="wms-srv-popup-close"><i
+                        class="fas fa-times-circle"></i></a>
+            </div>
+            <!-- Popup Title -->
+            <div class="wms-srv-popup-content-body" id="wms-srv-popup-content-body">
+                <div id="popupContentQCdetail">
+                    <div id="pnlQCdetail">
+                        <!-- Grid -->
+                        <div class="wms-srv-grid-holder pnlWmsHead" id="pnlWmsHead">
+                            <div class="wms-srv-grid-action-panel" style="border:none">
+                                <button class="wms-srv-input wms-srv-button" type="button" title="Save" data-prefix="AN"
+                                    onclick="SaveImportDesigner()"><i class="fas fa-save"></i><span>Save</span></button>
+                            </div>
+                        </div>
+                        <!-- Grid -->
+                    </div>
+                </div>
+            </div>
+            <div class="container-fluid">
+                <!-- Row Start -->
+                <div class="row">
+                    <div class="col-lg-3">
+                        <!-- Cell Content -->
+                        <div class="container-fluid">
+                            <div class="row">
+                                <!-- <div class="col-md-4">
+                                    
+                                    Object:
+                                   
+                                </div> -->
+                                <div class="col-md-8 " style="display: none;">
+                                    <!-- Control -->
+                                    <select id="Objecttype">
+                                        <option selected="selected">-Select-</option>
+                                        <option>SalesOrder</option>
+                                        <option>PurchaseOrder</option>
+                                        <option>Location</option>
+                                        <option>Cyclecount</option>
+                                        <option>Product</option>
+                                    </select>
+                                    <!-- Control -->
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Cell Content -->
+                    </div>
+                    <div class="col-lg-4">
+                        <!-- Cell Content -->
+                        <div class="container-fluid">
+                            <!-- <div class="row">
+                                <div class="col-md-4">
+                                    Label 
+                                    Customer:
+                                     Label 
+                                </div> -->
+                            <!-- <div class="col-md-8">
+                                     Control -->
+                            <!--  <select class="inputElement">
+                                        <option selected="selected" value="">-Select-</option>
+                                        <option value="">White Horse Logistics Inc..</option>
+                                        <option value="">SCEMANS</option>
+                                        <option value="">UNIVERSAL BRAND MERCHANDISING</option>
+                                        <option value="">WC01</option>
+                                        <option value="">3PLCustomer</option>
+                                        <option value="">madhuri</option>
+                                    </select>
+                                  //   Control 
+                                </div> -->
+                        </div>
+                    </div>
+                    <!-- Cell Content -->
+                </div>
+                <div class="col-lg-4">
+                    <!-- Cell Content -->
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <!-- Label -->
+                                <!-- Label -->
+                            </div>
+                            <div class="col-md-8">
+                                <!-- Control -->
+                                <!-- Control -->
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Cell Content -->
+                </div>
+            </div>
+            <!-- Row End -->
+        </div>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-3">
+                    <!-- Section for Object List -->
+                    <div class="winQueryBox">
+                        <div class="winQueryHeader">Name of View</div>
+                        <div class="winQueryContent">
+                            <div class="winQueryObjects">
+                                <ul id="dataObjectHolder">
+                                    <li data-value="" id="SalesOrder" onclick="CommonImportList('SalesOrder');"><i
+                                            class="fas fa-caret-right"></i></li>
+                                    <li data-value="" id="PurchaseOrder" onclick="CommonImportList('PurchaseOrder');"><i
+                                            class="fas fa-caret-right"></i></li>
+                                    <li data-value="" id="Location" onclick="CommonImportList('Location');"><i
+                                            class="fas fa-caret-right"></i></li>
+                                    <li data-value="" id="Cyclecount" onclick="CommonImportList('Cyclecount');"><i
+                                            class="fas fa-caret-right"></i></li>
+                                    <li data-value="" id="Product" onclick="CommonImportList('Product');"><i
+                                            class="fas fa-caret-right"></i></li>
+                                    <li data-value="" id="Receiving" onclick="CommonImportList('Receiving');"><i
+                                            class="fas fa-caret-right"></i></li>
+                                    <li data-value="" id="Client" onclick="CommonImportList('Client');"><i
+                                            class="fas fa-caret-right"></i></li>
+                                    <li data-value="" id="Vendor" onclick="CommonImportList('Vendor');"><i
+                                            class="fas fa-caret-right"></i></li>
+                                    <!-- <li data-value="CrossDock"><i class="fas fa-caret-right"></i>CrossDock</li>
+                                        <li data-value="DomesticOrder"><i class="fas fa-caret-right"></i>DomesticOrder
+                                        </li>
+                                        <li data-value="ContainerOrder"><i class="fas fa-caret-right"></i>ContainerOrder
+                                        </li>
+                                        <li data-value="DomesticTransfer"><i
+                                                class="fas fa-caret-right"></i>DomesticTransfer</li>
+                                        <li data-value="ContainerTransfer"><i
+                                                class="fas fa-caret-right"></i>ContainerTransfer</li>
+                                        <li data-value="Inbound"><i class="fas fa-caret-right"></i>Inbound</li>
+                                        <li data-value="Vendor"><i class="fas fa-caret-right"></i>Vendor</li>
+                                        <li data-value="Client"><i class="fas fa-caret-right"></i>Client</li>
+                                        <li data-value="Activity"><i class="fas fa-caret-right"></i>Activity</li>
+                                        <li data-value="Activity1"><i class="fas fa-caret-right"></i>Activity1</li> -->
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <input type="hidden"
+                        name="ctl00$CPHolder_Form$TabContainerQueryBuilder$tabQueryBuilderEditor$hdnObjectName"
+                        id="hdnObjectName" value="SalesOrder">
+                    <!-- Section for Object List -->
+                </div>
+                <div class="col-md-8">
+                    <!-- Section for Object List -->
+                    <div class="winQueryBox">
+                        <input type="hidden"
+                            name="ctl00$CPHolder_Form$TabContainerQueryBuilder$tabQueryBuilderEditor$hdngetSaveColumnData"
+                            id="hdngetSaveColumnData">
+                        <div class="winQueryHeader" id="winQueryHeader">
+                            <table style="text-align:left" width="100%">
+                                <tbody>
+                                    <tr>
+                                        <td style="width:15% ; background-color: #38abd9; color: white;">Column Name
+                                        </td>
+                                        <td
+                                            style="text-align:center; width:15% ; background-color: #38abd9;color: white;">
+                                            Datatype</td>
+                                        <td style="width:5% ; background-color: #38abd9; color: white;">Is Null</td>
+                                        <td style="width:25% ; background-color: #38abd9; color: white;">DataType Length
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="winQueryContent">
+                            <div class="winQueryColumnNames" id="gridlist">
+                                <ul id="dataColumnHolder" class="ui-sortable" id="listfield">
+                                    <!-- <div class="winQueryColumnItem sqlCol" data-type="varchar" data-label="ID" id="">
+                                            <li>
+                                                <table class="dataTable" style="width:99%">
+                                                    <tbody>
+                                                        <tr>
+                                                            <td style="width:31%"><input type="checkbox"
+                                                                    class="chkIsSelected" value="" id="chkbox1"><span id="row1"></span></td>
+                                                                   
+                                                            <td style="width:20%" align="center">
+                                                                <select name="dataType" class="dataType" id="" value="">
+                                                                    <option value="Number">Number</option>
+                                                                    <option value="string">string</option>
+                                                                    <option value="Float">Float</option>
+                                                                    <option value="DD/MM/YYYY">DD/MM/YYYY</option>
+                                                                    <option value="MM/DD/YYYY">MM/DD/YYYY</option>
+                                                                    <option value="YYYY/MM/DD">YYYY/MM/DD</option>
+                                                                </select>
+                                                            </td>
+                                                            <td style="width:10%"><input type="checkbox" class="isNull"
+                                                                    value="" id="txtnull1"></td>
+                                                            <td style="width:20%"><input type="Text" maxlength="4"
+                                                                    size="4" class="length" value="" id="length1"></td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </li>
+                                        </div> -->
+                                    <!-- <div class="winQueryColumnItem sqlCol" data-type="varchar"
+                                            data-label="CustomerPONo">
+                                            <li>
+                                                <table class="dataTable" style="width:99%">
+                                                    <tbody>
+                                                        <tr>
+                                                            <td style="width:31%"><input type="checkbox"
+                                                                    class="chkIsSelected"
+                                                                    value=""><span id="row2"></span></td>
+                                                            <td style="width:20%" align="center">
+                                                                <select name="dataType" class="dataType" id="drpdwn2">
+                                                                    <option value="Number">Number</option>
+                                                                    <option value="string">String</option>
+                                                                    <option value="Float">Float</option>
+                                                                    <option value="DD/MM/YYYY">DD/MM/YYYY</option>
+                                                                    <option value="MM/DD/YYYY">MM/DD/YYYY</option>
+                                                                    <option value="YYYY/MM/DD">YYYY/MM/DD</option>
+                                                                </select>
+                                                            </td>
+                                                            <td style="width:10%"><input type="checkbox" class="isNull"
+                                                                    value="" id="txtnull2"></td>
+                                                            <td style="width:20%"><input type="Text" maxlength="4"
+                                                                    size="4" class="length" value="" id="length2"></td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </li>
+                                        </div>
+                                        <div class="winQueryColumnItem sqlCol" data-type="varchar" data-label="UPCCode">
+                                            <li>
+                                                <table class="dataTable" style="width:99%">
+                                                    <tbody>
+                                                        <tr>
+                                                            <td style="width:31%"><input type="checkbox"
+                                                                    class="chkIsSelected" value=""><span id="row3"></span></td>
+                                                            <td style="width:20%" align="center">
+                                                                <select name="dataType" class="dataType" id="drpdwn3">
+                                                                    <option value="Number">Number</option>
+                                                                    <option value="string">String</option>
+                                                                    <option value="Float">Float</option>
+                                                                    <option value="DD/MM/YYYY">DD/MM/YYYY</option>
+                                                                    <option value="MM/DD/YYYY">MM/DD/YYYY</option>
+                                                                    <option value="YYYY/MM/DD">YYYY/MM/DD</option>
+                                                                </select>
+                                                            </td>
+                                                            <td style="width:10%"><input type="checkbox" class="isNull"
+                                                                    value="" id="txtnull3"></td>
+                                                            <td style="width:20%"><input type="Text" maxlength="4"
+                                                                    size="4" class="length" value="" id="length3"></td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </li>
+                                        </div>
+                                        <div class="winQueryColumnItem sqlCol" data-type="varchar" data-label="SKUCode">
+                                            <li>
+                                                <table class="dataTable" style="width:99%">
+                                                    <tbody>
+                                                        <tr>
+                                                            <td style="width:31%"><input type="checkbox"
+                                                                    class="chkIsSelected" value=""><span id="row4"></span></td>
+                                                            <td style="width:20%" align="center">
+                                                                <select name="dataType" class="dataType" id="drpdwn4">
+                                                                    <option value="Number">Number</option>
+                                                                    <option value="string">String</option>
+                                                                    <option value="Float">Float</option>
+                                                                    <option value="DD/MM/YYYY">DD/MM/YYYY</option>
+                                                                    <option value="MM/DD/YYYY">MM/DD/YYYY</option>
+                                                                    <option value="YYYY/MM/DD">YYYY/MM/DD</option>
+                                                                </select>
+                                                            </td>
+                                                            <td style="width:10%"><input type="checkbox" class="isNull"
+                                                                    value="" id="txtnull4"></td>
+                                                            <td style="width:20%"><input type="Text" maxlength="4"
+                                                                    size="4" class="length" value="" id="length4"></td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </li>
+                                        </div>
+                                        <div class="winQueryColumnItem sqlCol" data-type="numeric"
+                                            data-label="OrderQty">
+                                            <li>
+                                                <table class="dataTable" style="width:99%">
+                                                    <tbody>
+                                                        <tr>
+                                                            <td style="width:31%"><input type="checkbox"
+                                                                    class="chkIsSelected" value=""><span id="row5"></span></td>
+                                                            <td style="width:20%" align="center">
+                                                                <select name="dataType" class="dataType" id="drpdwn5">
+                                                                    <option value="Number">Number</option>
+                                                                    <option value="string">String</option>
+                                                                    <option value="Float">Float</option>
+                                                                    <option value="DD/MM/YYYY">DD/MM/YYYY</option>
+                                                                    <option value="MM/DD/YYYY">MM/DD/YYYY</option>
+                                                                    <option value="YYYY/MM/DD">YYYY/MM/DD</option>
+                                                                </select>
+                                                            </td>
+                                                            <td style="width:10%"><input type="checkbox" class="isNull"
+                                                                    value="" id="txtnull5"></td>
+                                                            <td style="width:20%"><input type="Text" maxlength="4"
+                                                                    size="4" class="length" value="" id="length5"></td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </li>
+                                        </div>
+                                        <div class="winQueryColumnItem sqlCol" data-type="varchar" data-label="UOMName">
+                                            <li>
+                                                <table class="dataTable" style="width:99%">
+                                                    <tbody>
+                                                        <tr>
+                                                            <td style="width:31%"><input type="checkbox"
+                                                                    class="chkIsSelected" value=""><span id="row6"></span></td>
+                                                            <td style="width:20%" align="center">
+                                                                <select name="dataType" class="dataType" id="drpdwn6">
+                                                                    <option value="Number">Number</option>
+                                                                    <option value="string">String</option>
+                                                                    <option value="Float">Float</option>
+                                                                    <option value="DD/MM/YYYY">DD/MM/YYYY</option>
+                                                                    <option value="MM/DD/YYYY">MM/DD/YYYY</option>
+                                                                    <option value="YYYY/MM/DD">YYYY/MM/DD</option>
+                                                                </select>
+                                                            </td>
+                                                            <td style="width:10%"><input type="checkbox" class="isNull"
+                                                                    value="" id="txtnull6"></td>
+                                                            <td style="width:20%"><input type="Text" maxlength="4"
+                                                                    size="4" class="length" value="" id="length6"></td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </li>
+                                        </div>
+                                        <div class="winQueryColumnItem sqlCol" data-type="varchar"
+                                            data-label="WarehouseCode">
+                                            <li>
+                                                <table class="dataTable" style="width:99%">
+                                                    <tbody>
+                                                        <tr>
+                                                            <td style="width:31%"><input type="checkbox"
+                                                                    class="chkIsSelected"
+                                                                    value=""><span id="row7"></span></td>
+                                                            <td style="width:20%" align="center">
+                                                                <select name="dataType" class="dataType" id="drpdwn7">
+                                                                    <option value="Number">Number</option>
+                                                                    <option value="string">String</option>
+                                                                    <option value="Float">Float</option>
+                                                                    <option value="DD/MM/YYYY">DD/MM/YYYY</option>
+                                                                    <option value="MM/DD/YYYY">MM/DD/YYYY</option>
+                                                                    <option value="YYYY/MM/DD">YYYY/MM/DD</option>
+                                                                </select>
+                                                            </td>
+                                                            <td style="width:10%"><input type="checkbox" class="isNull"
+                                                                    value="" id="txtnull7"></td>
+                                                            <td style="width:20%"><input type="Text" maxlength="4"
+                                                                    size="4" class="length" value="" id="length7"></td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </li>
+                                        </div>
+                                        <div class="winQueryColumnItem sqlCol" data-type="varchar"
+                                            data-label="StartDate">
+                                            <li>
+                                                <table class="dataTable" style="width:99%">
+                                                    <tbody>
+                                                        <tr>
+                                                            <td style="width:31%"><input type="checkbox"
+                                                                    class="chkIsSelected" value=""><span id="row8"></span>
+                                                            </td>
+                                                            <td style="width:20%" align="center">
+                                                                <select name="dataType" class="dataType" id="drpdwn8">
+                                                                    <option value="Number">Number</option>
+                                                                    <option value="string">String</option>
+                                                                    <option value="Float">Float</option>
+                                                                    <option value="DD/MM/YYYY">DD/MM/YYYY</option>
+                                                                    <option value="MM/DD/YYYY">MM/DD/YYYY</option>
+                                                                    <option value="YYYY/MM/DD">YYYY/MM/DD</option>
+                                                                </select>
+                                                            </td>
+                                                            <td style="width:10%"><input type="checkbox" class="isNull"
+                                                                    value="" id="txtnull8"></td>
+                                                            <td style="width:20%"><input type="Text" maxlength="4"
+                                                                    size="4" class="length" value="" id="length8"></td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </li>
+                                        </div>
+                                        <div class="winQueryColumnItem sqlCol" data-type="varchar"
+                                            data-label="DeliveryDate">
+                                            <li>
+                                                <table class="dataTable" style="width:99%">
+                                                    <tbody>
+                                                        <tr>
+                                                            <td style="width:31%"><input type="checkbox"
+                                                                    class="chkIsSelected"
+                                                                    value=""><span id="row9"></span></td>
+                                                            <td style="width:20%" align="center">
+                                                                <select name="dataType" class="dataType" id="drpdwn9">
+                                                                    <option value="Number">Number</option>
+                                                                    <option value="string">String</option>
+                                                                    <option value="Float">Float</option>
+                                                                    <option value="DD/MM/YYYY">DD/MM/YYYY</option>
+                                                                    <option value="MM/DD/YYYY">MM/DD/YYYY</option>
+                                                                    <option value="YYYY/MM/DD">YYYY/MM/DD</option>
+                                                                </select>
+                                                            </td>
+                                                            <td style="width:10%"><input type="checkbox" class="isNull"
+                                                                    value="" id="txtnull9"></td>
+                                                            <td style="width:20%"><input type="Text" maxlength="4"
+                                                                    size="4" class="length" value="" id="length9"></td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </li>
+                                        </div>
+                                        <div class="winQueryColumnItem sqlCol" data-type="varchar"
+                                            data-label="DeliveryCenterCode">
+                                            <li>
+                                                <table class="dataTable" style="width:99%">
+                                                    <tbody>
+                                                        <tr>
+                                                            <td style="width:31%"><input type="checkbox"
+                                                                    class="chkIsSelected"
+                                                                    value=""><span id="row10"></span></td>
+                                                            <td style="width:20%" align="center">
+                                                                <select name="dataType" class="dataType" id="drpdwn10">
+                                                                    <option value="Number">Number</option>
+                                                                    <option value="string">String</option>
+                                                                    <option value="Float">Float</option>
+                                                                    <option value="DD/MM/YYYY">DD/MM/YYYY</option>
+                                                                    <option value="MM/DD/YYYY">MM/DD/YYYY</option>
+                                                                    <option value="YYYY/MM/DD">YYYY/MM/DD</option>
+                                                                </select>
+                                                            </td>
+                                                            <td style="width:10%"><input type="checkbox" class="isNull"
+                                                                    value="" id="txtnull10"></td>
+                                                            <td style="width:20%"><input type="Text" maxlength="4"
+                                                                    size="4" class="length" value="" id="length10"></td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </li>
+                                        </div>
+                                        <div class="winQueryColumnItem sqlCol" data-type="varchar"
+                                            data-label="BillingAddress1">
+                                            <li>
+                                                <table class="dataTable" style="width:99%">
+                                                    <tbody>
+                                                        <tr>
+                                                            <td style="width:31%"><input type="checkbox"
+                                                                    class="chkIsSelected"
+                                                                    value=""><span id="row11"></span></td>
+                                                            <td style="width:20%" align="center">
+                                                                <select name="dataType" class="dataType" id="drpdwn11">
+                                                                    <option value="Number">Number</option>
+                                                                    <option value="string">String</option>
+                                                                    <option value="Float">Float</option>
+                                                                    <option value="DD/MM/YYYY">DD/MM/YYYY</option>
+                                                                    <option value="MM/DD/YYYY">MM/DD/YYYY</option>
+                                                                    <option value="YYYY/MM/DD">YYYY/MM/DD</option>
+                                                                </select>
+                                                            </td>
+                                                            <td style="width:10%"><input type="checkbox" class="isNull"
+                                                                    value="" id="txtnull11"></td>
+                                                            <td style="width:20%"><input type="Text" maxlength="4"
+                                                                    size="4" class="length" value="" id="length11"></td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </li>
+                                        </div>
+                                        <div class="winQueryColumnItem sqlCol" data-type="varchar"
+                                            data-label="BillingAddress2">
+                                            <li>
+                                                <table class="dataTable" style="width:99%">
+                                                    <tbody>
+                                                        <tr>
+                                                            <td style="width:31%"><input type="checkbox"
+                                                                    class="chkIsSelected"
+                                                                    value=""><span id="row12"></span></td>
+                                                            <td style="width:20%" align="center">
+                                                                <select name="dataType" class="dataType" id="drpdwn12">
+                                                                    <option value="Number">Number</option>
+                                                                    <option value="string">String</option>
+                                                                    <option value="Float">Float</option>
+                                                                    <option value="DD/MM/YYYY">DD/MM/YYYY</option>
+                                                                    <option value="MM/DD/YYYY">MM/DD/YYYY</option>
+                                                                    <option value="YYYY/MM/DD">YYYY/MM/DD</option>
+                                                                </select>
+                                                            </td>
+                                                            <td style="width:10%"><input type="checkbox" class="isNull"
+                                                                    value="" id="txtnull12"></td>
+                                                            <td style="width:20%"><input type="Text" maxlength="4"
+                                                                    size="4" class="length" value=""  id="length12"></td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </li>
+                                        </div>
+                                        <div class="winQueryColumnItem sqlCol" data-type="varchar"
+                                            data-label="BillingCity">
+                                            <li>
+                                                <table class="dataTable" style="width:99%">
+                                                    <tbody>
+                                                        <tr>
+                                                            <td style="width:31%"><input type="checkbox"
+                                                                    class="chkIsSelected"
+                                                                    value=""><span id="row13"></span></td>
+                                                            <td style="width:20%" align="center">
+                                                                <select name="dataType" class="dataType" id="drpdwn13">
+                                                                    <option value="Number">Number</option>
+                                                                    <option value="string">String</option>
+                                                                    <option value="Float">Float</option>
+                                                                    <option value="DD/MM/YYYY">DD/MM/YYYY</option>
+                                                                    <option value="MM/DD/YYYY">MM/DD/YYYY</option>
+                                                                    <option value="YYYY/MM/DD">YYYY/MM/DD</option>
+                                                                </select>
+                                                            </td>
+                                                            <td style="width:10%"><input type="checkbox" class="isNull"
+                                                                    value="" id="txtnull13"></td>
+                                                            <td style="width:20%"><input type="Text" maxlength="4"
+                                                                    size="4" class="length" value="" id="length13"></td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </li>
+                                        </div>
+                                        <div class="winQueryColumnItem sqlCol" data-type="varchar"
+                                            data-label="BillingState">
+                                            <li>
+                                                <table class="dataTable" style="width:99%">
+                                                    <tbody>
+                                                        <tr>
+                                                            <td style="width:31%"><input type="checkbox"
+                                                                    class="chkIsSelected"
+                                                                    value=""><span id="row14"></span></td>
+                                                            <td style="width:20%" align="center">
+                                                                <select name="dataType" class="dataType" id="drpdwn14">
+                                                                    <option value="Number">Number</option>
+                                                                    <option value="string">String</option>
+                                                                    <option value="Float">Float</option>
+                                                                    <option value="DD/MM/YYYY">DD/MM/YYYY</option>
+                                                                    <option value="MM/DD/YYYY">MM/DD/YYYY</option>
+                                                                    <option value="YYYY/MM/DD">YYYY/MM/DD</option>
+                                                                </select>
+                                                            </td>
+                                                            <td style="width:10%"><input type="checkbox" class="isNull"
+                                                                    value="" id="txtnull14"></td>
+
+                                                            <td style="width:20%"><input type="Text" maxlength="4"
+                                                                    size="4" class="length" value="" id="length14"></td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </li>
+                                        </div>
+                                        <div class="winQueryColumnItem sqlCol" data-type="varchar"
+                                            data-label="BillingZip">
+                                            <li>
+                                                <table class="dataTable" style="width:99%">
+                                                    <tbody>
+                                                        <tr>
+                                                            <td style="width:31%"><input type="checkbox"
+                                                                    class="chkIsSelected" value=""><span id="row15"></span>
+                                                            </td>
+                                                            <td style="width:20%" align="center">
+                                                                <select name="dataType" class="dataType" id="drpdwn15">
+                                                                    <option value="Number">Number</option>
+                                                                    <option value="string">String</option>
+                                                                    <option value="Float">Float</option>
+                                                                    <option value="DD/MM/YYYY">DD/MM/YYYY</option>
+                                                                    <option value="MM/DD/YYYY">MM/DD/YYYY</option>
+                                                                    <option value="YYYY/MM/DD">YYYY/MM/DD</option>
+                                                                </select>
+                                                            </td>
+                                                            <td style="width:10%"><input type="checkbox" class="isNull"
+                                                                    value="Is Null"></td>
+                                                            <td style="width:20%"><input type="Text" maxlength="4"
+                                                                    size="4" class="length" value=""></td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </li>
+                                        </div>
+                                        <div class="winQueryColumnItem sqlCol" data-type="varchar"
+                                            data-label="BillingCountry">
+                                            <li>
+                                                <table class="dataTable" style="width:99%">
+                                                    <tbody>
+                                                        <tr>
+                                                            <td style="width:31%"><input type="checkbox"
+                                                                    class="chkIsSelected"
+                                                                    value=""><span id="row16"></span></td>
+                                                            <td style="width:20%" align="center">
+                                                                <select name="dataType" class="dataType" id="drpdwn16">
+                                                                    <option value="Number">Number</option>
+                                                                    <option value="string">String</option>
+                                                                    <option value="Float">Float</option>
+                                                                    <option value="DD/MM/YYYY">DD/MM/YYYY</option>
+                                                                    <option value="MM/DD/YYYY">MM/DD/YYYY</option>
+                                                                    <option value="YYYY/MM/DD">YYYY/MM/DD</option>
+                                                                </select>
+                                                            </td>
+                                                            <td style="width:10%"><input type="checkbox" class="isNull"
+                                                                    value="Is Null"></td>
+                                                            <td style="width:20%"><input type="Text" maxlength="4"
+                                                                    size="4" class="length" value=""></td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </li>
+                                        </div>
+                                        <div class="winQueryColumnItem sqlCol" data-type="varchar"
+                                            data-label="ShippingAddress1">
+                                            <li>
+                                                <table class="dataTable" style="width:99%">
+                                                    <tbody>
+                                                        <tr>
+                                                            <td style="width:31%"><input type="checkbox"
+                                                                    class="chkIsSelected"
+                                                                    value=""><span id="row17"></span></td>
+                                                            <td style="width:20%" align="center">
+                                                                <select name="dataType" class="dataType">
+                                                                    <option value="Number">Number</option>
+                                                                    <option value="string">String</option>
+                                                                    <option value="Float">Float</option>
+                                                                    <option value="DD/MM/YYYY">DD/MM/YYYY</option>
+                                                                    <option value="MM/DD/YYYY">MM/DD/YYYY</option>
+                                                                    <option value="YYYY/MM/DD">YYYY/MM/DD</option>
+                                                                </select>
+                                                            </td>
+                                                            <td style="width:10%"><input type="checkbox" class="isNull"
+                                                                    value="Is Null"></td>
+                                                            <td style="width:20%"><input type="Text" maxlength="4"
+                                                                    size="4" class="length" value=""></td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </li>
+                                        </div>
+                                        <div class="winQueryColumnItem sqlCol" data-type="varchar"
+                                            data-label="ShippingAddress2">
+                                            <li>
+                                                <table class="dataTable" style="width:99%">
+                                                    <tbody>
+                                                        <tr>
+                                                            <td style="width:31%"><input type="checkbox"
+                                                                    class="chkIsSelected"
+                                                                    value=""><span id="row18"></span></td>
+                                                            <td style="width:20%" align="center">
+                                                                <select name="dataType" class="dataType">
+                                                                    <option value="Number">Number</option>
+                                                                    <option value="string">String</option>
+                                                                    <option value="Float">Float</option>
+                                                                    <option value="DD/MM/YYYY">DD/MM/YYYY</option>
+                                                                    <option value="MM/DD/YYYY">MM/DD/YYYY</option>
+                                                                    <option value="YYYY/MM/DD">YYYY/MM/DD</option>
+                                                                </select>
+                                                            </td>
+                                                            <td style="width:10%"><input type="checkbox" class="isNull"
+                                                                    value="Is Null"></td>
+                                                            <td style="width:20%"><input type="Text" maxlength="4"
+                                                                    size="4" class="length" value=""></td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </li>
+                                        </div>
+                                        <div class="winQueryColumnItem sqlCol" data-type="varchar"
+                                            data-label="ShippingCity">
+                                            <li>
+                                                <table class="dataTable" style="width:99%">
+                                                    <tbody>
+                                                        <tr>
+                                                            <td style="width:31%"><input type="checkbox"
+                                                                    class="chkIsSelected"
+                                                                    value=""><span id="row19"></span></td>
+                                                            <td style="width:20%" align="center">
+                                                                <select name="dataType" class="dataType">
+                                                                    <option value="Number">Number</option>
+                                                                    <option value="string">String</option>
+                                                                    <option value="Float">Float</option>
+                                                                    <option value="DD/MM/YYYY">DD/MM/YYYY</option>
+                                                                    <option value="MM/DD/YYYY">MM/DD/YYYY</option>
+                                                                    <option value="YYYY/MM/DD">YYYY/MM/DD</option>
+                                                                </select>
+                                                            </td>
+                                                            <td style="width:10%"><input type="checkbox" class="isNull"
+                                                                    value="Is Null"></td>
+                                                            <td style="width:20%"><input type="Text" maxlength="4"
+                                                                    size="4" class="length" value=""></td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </li>
+                                        </div>
+                                        <div class="winQueryColumnItem sqlCol" data-type="varchar"
+                                            data-label="ShippingState">
+                                            <li>
+                                                <table class="dataTable" style="width:99%">
+                                                    <tbody>
+                                                        <tr>
+                                                            <td style="width:31%"><input type="checkbox"
+                                                                    class="chkIsSelected"
+                                                                    value=""><span id="row20"></span></td>
+                                                            <td style="width:20%" align="center">
+                                                                <select name="dataType" class="dataType">
+                                                                    <option value="Number">Number</option>
+                                                                    <option value="string">String</option>
+                                                                    <option value="Float">Float</option>
+                                                                    <option value="DD/MM/YYYY">DD/MM/YYYY</option>
+                                                                    <option value="MM/DD/YYYY">MM/DD/YYYY</option>
+                                                                    <option value="YYYY/MM/DD">YYYY/MM/DD</option>
+                                                                </select>
+                                                            </td>
+                                                            <td style="width:10%"><input type="checkbox" class="isNull"
+                                                                    value="Is Null"></td>
+                                                            <td style="width:20%"><input type="Text" maxlength="4"
+                                                                    size="4" class="length" value=""></td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </li>
+                                        </div>
+                                        <div class="winQueryColumnItem sqlCol" data-type="varchar"
+                                            data-label="ShippingZip">
+                                            <li>
+                                                <table class="dataTable" style="width:99%">
+                                                    <tbody>
+                                                        <tr>
+                                                            <td style="width:31%"><input type="checkbox"
+                                                                    class="chkIsSelected"
+                                                                    value=""><span id="row21"></span></td>
+                                                            <td style="width:20%" align="center">
+                                                                <select name="dataType" class="dataType">
+                                                                    <option value="Number">Number</option>
+                                                                    <option value="string">String</option>
+                                                                    <option value="Float">Float</option>
+                                                                    <option value="DD/MM/YYYY">DD/MM/YYYY</option>
+                                                                    <option value="MM/DD/YYYY">MM/DD/YYYY</option>
+                                                                    <option value="YYYY/MM/DD">YYYY/MM/DD</option>
+                                                                </select>
+                                                            </td>
+                                                            <td style="width:10%"><input type="checkbox" class="isNull"
+                                                                    value="Is Null"></td>
+                                                            <td style="width:20%"><input type="Text" maxlength="4"
+                                                                    size="4" class="length" value=""></td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </li>
+                                        </div>
+                                        <div class="winQueryColumnItem sqlCol" data-type="varchar"
+                                            data-label="ShippingCountry">
+                                            <li>
+                                                <table class="dataTable" style="width:99%">
+                                                    <tbody>
+                                                        <tr>
+                                                            <td style="width:31%"><input type="checkbox"
+                                                                    class="chkIsSelected"
+                                                                    value=""><span id="row22"></span></td>
+                                                            <td style="width:20%" align="center">
+                                                                <select name="dataType" class="dataType">
+                                                                    <option value="Number">Number</option>
+                                                                    <option value="string">String</option>
+                                                                    <option value="Float">Float</option>
+                                                                    <option value="DD/MM/YYYY">DD/MM/YYYY</option>
+                                                                    <option value="MM/DD/YYYY">MM/DD/YYYY</option>
+                                                                    <option value="YYYY/MM/DD">YYYY/MM/DD</option>
+                                                                </select>
+                                                            </td>
+                                                            <td style="width:10%"><input type="checkbox" class="isNull"
+                                                                    value="Is Null"></td>
+                                                            <td style="width:20%"><input type="Text" maxlength="4"
+                                                                    size="4" class="length" value=""></td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </li>
+                                        </div>
+                                        <div class="winQueryColumnItem sqlCol" data-type="varchar"
+                                            data-label="CustomerCode">
+                                            <li>
+                                                <table class="dataTable" style="width:99%">
+                                                    <tbody>
+                                                        <tr>
+                                                            <td style="width:31%"><input type="checkbox"
+                                                                    class="chkIsSelected"
+                                                                    value=""><span id="row23"></span></td>
+                                                            <td style="width:20%" align="center">
+                                                                <select name="dataType" class="dataType">
+                                                                    <option value="Number">Number</option>
+                                                                    <option value="string">String</option>
+                                                                    <option value="Float">Float</option>
+                                                                    <option value="DD/MM/YYYY">DD/MM/YYYY</option>
+                                                                    <option value="MM/DD/YYYY">MM/DD/YYYY</option>
+                                                                    <option value="YYYY/MM/DD">YYYY/MM/DD</option>
+                                                                </select>
+                                                            </td>
+                                                            <td style="width:10%"><input type="checkbox" class="isNull"
+                                                                    value="Is Null"></td>
+                                                            <td style="width:20%"><input type="Text" maxlength="4"
+                                                                    size="4" class="length" value=""></td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </li>
+                                        </div>
+                                        <div class="winQueryColumnItem sqlCol" data-type="varchar"
+                                            data-label="CarrierCode">
+                                            <li>
+                                                <table class="dataTable" style="width:99%">
+                                                    <tbody>
+                                                        <tr>
+                                                            <td style="width:31%"><input type="checkbox"
+                                                                    class="chkIsSelected"
+                                                                    value=""><span id="row24"></span></td>
+                                                            <td style="width:20%" align="center">
+                                                                <select name="dataType" class="dataType">
+                                                                    <option value="Number">Number</option>
+                                                                    <option value="string">String</option>
+                                                                    <option value="Float">Float</option>
+                                                                    <option value="DD/MM/YYYY">DD/MM/YYYY</option>
+                                                                    <option value="MM/DD/YYYY">MM/DD/YYYY</option>
+                                                                    <option value="YYYY/MM/DD">YYYY/MM/DD</option>
+                                                                </select>
+                                                            </td>
+                                                            <td style="width:10%"><input type="checkbox" class="isNull"
+                                                                    value="Is Null"></td>
+                                                            <td style="width:20%"><input type="Text" maxlength="4"
+                                                                    size="4" class="length" value=""></td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </li>
+                                        </div>
+                                        <div class="winQueryColumnItem sqlCol" data-type="varchar" data-label="Lot#">
+                                            <li>
+                                                <table class="dataTable" style="width:99%">
+                                                    <tbody>
+                                                        <tr>
+                                                            <td style="width:31%"><input type="checkbox"
+                                                                    class="chkIsSelected" value=""><span id="row25"></span></td>
+                                                            <td style="width:20%" align="center">
+                                                                <select name="dataType" class="dataType">
+                                                                    <option value="Number">Number</option>
+                                                                    <option value="string">String</option>
+                                                                    <option value="Float">Float</option>
+                                                                    <option value="DD/MM/YYYY">DD/MM/YYYY</option>
+                                                                    <option value="MM/DD/YYYY">MM/DD/YYYY</option>
+                                                                    <option value="YYYY/MM/DD">YYYY/MM/DD</option>
+                                                                </select>
+                                                            </td>
+                                                            <td style="width:10%"><input type="checkbox" class="isNull"
+                                                                    value="Is Null"></td>
+                                                            <td style="width:20%"><input type="Text" maxlength="4"
+                                                                    size="4" class="length" value=""></td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </li>
+                                        </div> -->
+                                </ul>
+                                <br>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Section for Object List -->
+                </div>
+                <!-- Section for Query Rules -->
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div
+                        id="ctl00_CPHolder_Form_TabContainerQueryBuilder_tabQueryBuilderEditor_UpdatePanelTabPanelQueryBuilder">
+                        <div id="ctl00_CPHolder_Form_TabContainerQueryBuilder_tabQueryBuilderEditor_progress1"
+                            style="display:none;" role="status" aria-hidden="true">
+                            <div id="ctl00_CPHolder_Form_TabContainerQueryBuilder_tabQueryBuilderEditor_pnlProgressBar"
+                                class="ProgressBarPanel">
+                                <div class="themeWMSLoading" style="display: block;">
+                                    <div class="themeWMSModelHolder">
+                                        <div class="themeWMSModel">
+                                            <img src="../App_Themes/Blue/img/ajax-loader.gif" style="top: 50%;"><span
+                                                class="themeWMSLoadingProcessing"><br>
+                                                Please Wait. Processing...</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+                        <input type="hidden"
+                            name="ctl00$CPHolder_Form$TabContainerQueryBuilder$tabQueryBuilderEditor$hdnSQLQueryText"
+                            id="hdnSQLQueryText" value="Select * from SalesOrder">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+</div>
+<!-- Add New Import Designer Popup -->

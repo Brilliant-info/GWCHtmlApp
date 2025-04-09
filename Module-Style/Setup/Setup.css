@@ -1,0 +1,72 @@
+.wmssetup-steps-line {
+    position: relative;
+    /* z-index: 1; */
+    top: 47px;
+    border: none;
+    border-bottom: dashed 1px #636363;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.wmssetup-steps {
+    display: table;
+    width: 100%;
+    position: relative;
+    /* z-index: 2; */
+    margin-top: 25px;
+    border: none;
+}
+
+.wmssetup-steps-holder {
+    display: table-cell;
+    text-align: center;
+    width:33%;
+}
+
+.stepsNumberHolder {
+    display: table;
+    border: solid 1px #00acd7;
+    background-color: #00acd7;
+    color: #ffffff;
+    margin-left: auto;
+    margin-right: auto;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.stepsNumberHolder span {
+    text-align: center;
+    font-size: 20px;
+}
+
+.stepsLable {
+    margin-top: 10px;
+    font-weight: bold;
+    color: #686868;
+    margin-bottom: 10px;
+}
+.stepsNumberHolder i {
+    position: relative;
+    top: 5px;
+}
+.activestep {
+    font-weight: bold;
+    color: #ffffff;
+    background-color: #006c87;
+
+}
+.wmsWizardButtonGroup{
+	text-align:right;
+	padding:20px 0px;
+}
+
+.wmsWizardButtonGroup button i{
+	margin-left:5px;
+	margin-right:5px;
+}
+
+.disabledStep .stepsNumberHolder{
+    border: #a4edff;
+    background-color: #a4edff;
+}

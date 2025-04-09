@@ -1,0 +1,12 @@
+﻿:root {
+    --wms-color-primary: #f29023;
+    --wms-color-secondary: #c26600;
+    --wms-color-third: #713f08;
+    --wms-color-main-text: #cb6e08;
+    --wms-color-btnSearch: #98550a;
+    --wms-color-required: Maroon;
+    /* GRID COLORS */
+    --wms-grid-gradient-start: #ffffff;
+    --wms-grid-gradient-end: #cccccc;
+    /* GRID COLORS */
+}

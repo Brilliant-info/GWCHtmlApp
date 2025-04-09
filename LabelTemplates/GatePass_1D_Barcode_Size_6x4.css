@@ -1,0 +1,13 @@
+/* .printLabelTitle{
+    font-size:0.25in;
+} */
+body{
+    font-size:0.16in;
+}
+.printRow{
+    margin-bottom: 0.15in;
+}
+.BarcodeStringToPrint{
+    font-size:0.25in;
+    transform:scale(1, 10.5);
+}

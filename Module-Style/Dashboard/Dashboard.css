@@ -1,0 +1,41 @@
+.dashboardBox {
+    border: solid 1px #aca8a8;
+    padding: 20px;
+    display: block;
+    /* height: 361px; */
+    margin: 10px;
+    position: relative;
+}
+.dashboardBox i {
+	float: right;
+	position: absolute;
+	right: 10px;
+	top: 10px;
+	font-size: 17px;
+	color: #126a80;
+    cursor: pointer;
+}
+.wms-srv-search-pending-inbound{
+    margin-bottom: 10px !important;
+    right:20px;
+    position: absolute;
+    top:15px;
+}
+#tlbGridPendingOrder a{
+    text-decoration: underline;
+    font-weight: bold;
+    color: #00acd7;
+}
+canvas{
+  /*  width:300px !important;
+    height:70px !important; */
+}
+.pnlQuickLinks .card-body{
+    background-color:#efefef;
+}
+.pnlQuickLinks .card-body{
+    background-color:#ffffff;
+}
+.wmsDashboardCountBoxHolder {
+    width: 19.6%;
+}

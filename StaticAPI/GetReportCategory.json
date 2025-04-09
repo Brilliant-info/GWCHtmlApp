@@ -1,0 +1,44 @@
+{
+    "Status": "200",
+    "StatusCode": "Success",
+    "Result": {
+        "Table": [
+            {
+                "Id": 1,
+                "Title": "Request Report",
+                "ReportDescription": "Report regarding to all order request activities",
+                "icon": "fas fa-truck-moving"
+            },
+            {
+                "Id": 2,
+                "Title": "Dispatch",
+                "ReportDescription": "Report regarding to all dispatch activities",
+                "icon": "fas fa-truck-moving fa-flip-horizontal"
+            },
+            {
+                "Id": 3,
+                "Title": "Inventory Report",
+                "ReportDescription": "Report regarding to SKU stock",
+                "icon": "fas fa-boxes"
+            },
+            {
+                "Id": 4,
+                "Title": "Ecommerce Report",
+                "ReportDescription": "Report regarding to Ecommerce",
+                "icon": "fas fa-dolly-flatbed"
+            },
+            {
+                "Id": 5,
+                "Title": "Log Report",
+                "ReportDescription": "Report regarding to warehouse transactions",
+                "icon": "fas fa-clipboard-list"
+            },
+            {
+                "Id": 6,
+                "Title": "Other Report",
+                "ReportDescription": "Report regarding to Asset Report",
+                "icon": "fas fa-clipboard-list"
+            }
+        ]
+    }
+}

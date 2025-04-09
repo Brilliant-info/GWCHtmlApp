@@ -1,0 +1,2160 @@
+<div id="pnlThirdPartyConfiguration" class="wmsMasterTypePage" style="display: none;">
+    <div class="WMSLastScanned" style="display: none;"></div>
+
+    <!-- Content Holder -->
+    <div class="wms-srv-content-area pnlInbound" id="pnlAppointmentList">
+        <!-- Content Area -->
+
+        <div class="container-fluid wms-srv-dashboard-panel">
+            <div class="row">
+                <div class="col-md-4 nopadding">
+                    <!-- Page Title -->
+                    <div class="wms-srv-page-title">
+                        <i class="fas fa-list"></i><span class="wms-srv-data-title">Third Party API List</span>
+                    </div>
+                    <!-- Page Title -->
+                </div>
+                <div class="col-md-8 nopadding">
+                </div>
+            </div>
+        </div>
+
+        <!-- Head Grid -->
+        <div class="wms-srv-grid-holder pnlWmsHead" id="pnlWmsHead" style="display: none;">
+            <div class="wms-srv-grid">
+                <!-- Object Head Data Will be Here -->
+            </div>
+        </div>
+        <br>
+        <!-- Head Grid -->
+
+
+
+        <!-- Grid -->
+        <div class="wms-srv-obj-main-grid pnlWmsDetail">
+            <div class="wms-srv-grid-holder">
+                <div class="wms-srv-grid-action-panel">
+                    <div class="wms-srv-search">
+                        <!-- <label>Search Filter: </label>
+                        <select type="text" class="wms-srv-input  wms-srv-search-filter"
+                            id="wms-srv-search-filter-ProductMasterList">
+                            <option value="">-- Select All--</option>
+                            <option value="SkuCode">API Code</option>
+                            <option value="SkuName">API Name</option>
+                            <option value="UPCCode">Description</option>
+                            <option value="ProductCategory">Application</option>
+                            <option value="ProductSubCategory">Sub-Category</option> 
+    
+                        </select> -->
+
+                        <!-- <input type="text" value="" class="wms-srv-input wms-srv-simple-search" title="Search"
+                            id="wms-srv-simple-search-ProductMasterList"><a href="#" data-prefix="SE"
+                            onclick="SearchProduct()"><i class="fas fa-search" title="Search"></i></a> -->
+
+                    </div>
+                    <select type="text" class="wms-srv-input wms-srv-search-by-year" style="display: none;">
+                        <option value="">-- Select Month --</option>
+                        <option value="January 2022">January 2022</option>
+                        <option value="February 2022">February 2022</option>
+                        <option value="January 2012">January 2012</option>
+                    </select>
+                    <!-- <button class="wms-srv-input wms-srv-button wms-srv-highlight-btn" title="Add New" data-prefix="AN"
+                        type="button" onclick="OpenAddNewSKUPopup();"><i class="fas fa-plus"></i><span>Add
+                            New</span></button> -->
+                    <div class="wms-srv-grid-title"><i class="fas fa-list"></i>
+                        API List
+                    </div>
+                </div>
+                <div class="wms-srv-grid-scroller" style="width: 100%;">
+                    <div class="wms-srv-grid wms-srv-grid2" data-gridobjectid="gridObject_Appointment_Book_Book">
+                    </div>
+                    <!-- <div class="wms-srv-grid-pager" id="wms-srv-grid-pager-ProductMaster">
+                        <span class="wms-srv-pager-records">1-1 of 82 Records</span>
+                        <span class="wms-srv-empty-space"></span>
+                        <span class="wms-srv-pager-links"><a href="#" data-page="firstpage"><i
+                                    class="fas fa-angle-double-left"></i></a><a href="#" data-page="previous"><i
+                                    class="fas fa-angle-left"></i></a><a href="#" class="wms-srv-active"
+                                data-page="1">1</a><a href="#" data-page="2">2</a><a href="#" data-page="3">3</a><a href="#"
+                                data-page="4">4</a><a href="#" data-page="5">5</a><a href="#" data-page="6">6</a><a href="#"
+                                data-page="7">7</a><a href="#" data-page="8">8</a><a href="#" data-page="9">9</a><a href="#"
+                                data-page="next"><i class="fas fa-angle-right"></i></a><a href="#" data-page="lastpage"><i
+                                    class="fas fa-angle-double-right"></i></a></span>
+                        <span class="wms-srv-empty-space"></span>
+                        <input type="text" name="txtGridPageNo" onkeypress="return isNumber(event)"
+                            class="wms-srv-input notranslate" value="0" style="width: 80px;">
+                        <a href="#" title="Jump To" class="wms-srv-pager-go"><i class="fas fa-play-circle"></i></a>
+                    </div> -->
+                </div>
+            </div>
+            <!-- Grid -->
+            <!-- Content Area -->
+        </div><br>
+    </div>
+    <!-- Content Holder -->
+    <div class="wms-srv-action-popupmenu" id="wmsSrvActionPopupMenu" style="display: none; top: 0px; left: 0px;">
+        <a href="expected-receipt-details.html">
+            <div class="wms-srv-dot wms-srv-green"></div>
+            Expected Receipt
+        </a>
+        <a href="grn-details.html">
+            <div class="wms-srv-dot wms-srv-red"></div>
+            Receiving
+        </a>
+        <a href="put-away-details.html">
+            <div class="wms-srv-dot wms-srv-gray"></div>
+            Put Away
+        </a>
+    </div>
+
+
+    <!--UOM-popup-->
+    <div class="wms-srv-popup-holder" id="wms-srv-UOM-popup" style="display: none;">
+        <div class="wms-srv-popup-bg">
+        </div>
+        <div class="wms-srv-popup">
+            <div class="wms-srv-popup-content">
+                <!-- Popup Title -->
+                <div class="wms-srv-popup-title">
+                    <div class="wms-srv-page-title">
+                        <i class="fas fa-pen-square"></i><span>API Parameter </span>
+                    </div>
+                    <a href="#" title="Close" id="wms-srv-UOM-popup-close" class="wms-srv-popup-close"><i
+                            class="fas fa-times-circle"></i></a>
+                </div>
+                <!-- Popup Title -->
+                <div class="wms-srv-popup-content-body" id="wms-srv-popup-content-body">
+                    <!-- Grid 2-->
+
+                    <div class="wms-srv-grid-holder pnlWmsDetail" id="pnlWmsDetail">
+                        <div class="wms-srv-grid-action-panel">
+                            <div class="wms-srv-grid-common-action"><a href="#" title="" class="wms-srv-icononly"><i
+                                        class="fas fa-list"></i></a></div>
+                            <div class="wms-srv-grid-title">
+                                API Parameter
+                            </div>
+                        </div>
+
+                        <!-- Popup Title -->
+                        <div class="wms-srv-popup-content-body" id="wms-srv-popup-content-body">
+                            <div id="popupContentcreateorderapi">
+                                <div id="pnlcreateorderapin">
+                                    <p>You can use this method to create a new order or update an existing order. If the
+                                        orderKey is
+                                        specified, BrilliantWMS will attempt to locate the order with the specified
+                                        orderKey. If
+                                        found, the
+                                        existing order with that key will be updated. If the orderKey is not found, a
+                                        new order
+                                        will
+                                        be
+                                        created with that orderKey. </p>
+                                    <p>For split orders, this key is always required.</p>
+                                    <p>This call does not currently support partial updates; the entire resource must be
+                                        provided in
+                                        the
+                                        body of the request.</p>
+                                    <!-- Grid -->
+                                    <div class="wms-srv-grid-holder pnlWmsHead" id="pnlWmsHead">
+                                        <div class="wms-srv-grid" style="min-width: 488px;">
+                                            <div class="wms-srv-grid-header">
+                                                <div class="wms-srv-grid-cell" style="text-align: center;">Name</div>
+                                                <div class="wms-srv-grid-cell" style="text-align: center;">Data Type
+                                                </div>
+                                                <div class="wms-srv-grid-cell" style="text-align: center;">Required
+                                                </div>
+                                                <div class="wms-srv-grid-cell" style="text-align: center;">Description
+                                                </div>
+                                            </div>
+                                            <div class="wms-srv-grid-row">
+                                                <div class="wms-srv-grid-cell" style="text-align: center;">OrderNumber
+                                                </div>
+                                                <div class="wms-srv-grid-cell" style="text-align: center;">
+                                                    String</div>
+                                                <div class="wms-srv-grid-cell" style="text-align: center;">
+                                                    Yes</div>
+                                                <div class="wms-srv-grid-cell" style="text-align: center;">A
+                                                    user-defined unique
+                                                    order
+                                                    number used to
+                                                    identify an order.</div>
+                                            </div>
+                                            <div class="wms-srv-grid-row">
+                                                <div class="wms-srv-grid-cell" style="text-align: center;">Warehouse
+                                                </div>
+                                                <div class="wms-srv-grid-cell" style="text-align: center;">String</div>
+                                                <div class="wms-srv-grid-cell" style="text-align: center;">
+                                                    Yes</div>
+                                                <div class="wms-srv-grid-cell" style="text-align: center;">The Warehouse
+                                                    Code
+                                                    from where order process .
+                                                </div>
+                                            </div>
+                                            <div class="wms-srv-grid-row">
+                                                <div class="wms-srv-grid-cell" style="text-align: center;">RequestDate
+                                                </div>
+                                                <div class="wms-srv-grid-cell" style="text-align: center;">
+                                                    String(MM/dd/yyyy)
+                                                </div>
+                                                <div class="wms-srv-grid-cell" style="text-align: center;">
+                                                    Yes</div>
+                                                <div class="wms-srv-grid-cell" style="text-align: center;">The date the
+                                                    order
+                                                    was placed.
+                                                </div>
+                                            </div>
+                                            <div class="wms-srv-grid-row">
+                                                <div class="wms-srv-grid-cell" style="text-align: center;">StartDate
+                                                </div>
+                                                <div class="wms-srv-grid-cell" style="text-align: center;">
+                                                    String(MM/dd/yyyy)
+                                                </div>
+                                                <div class="wms-srv-grid-cell" style="text-align: center;">
+                                                    Yes</div>
+                                                <div class="wms-srv-grid-cell" style="text-align: center;">The date the
+                                                    order
+                                                    start processing
+                                                </div>
+                                            </div>
+                                            <div class="wms-srv-grid-row">
+                                                <div class="wms-srv-grid-cell" style="text-align: center;">EndDate</div>
+                                                <div class="wms-srv-grid-cell" style="text-align: center;">
+                                                    String(MM/dd/yyyy)
+                                                </div>
+                                                <div class="wms-srv-grid-cell" style="text-align: center;">
+                                                    Yes</div>
+                                                <div class="wms-srv-grid-cell" style="text-align: center;">The date the
+                                                    order
+                                                    will cancel.</div>
+                                            </div>
+                                            <div class="wms-srv-grid-row">
+                                                <div class="wms-srv-grid-cell" style="text-align: center;">ClientCode
+                                                </div>
+                                                <div class="wms-srv-grid-cell" style="text-align: center;">String</div>
+                                                <div class="wms-srv-grid-cell" style="text-align: center;">
+                                                    Yes</div>
+                                                <div class="wms-srv-grid-cell" style="text-align: center;">The code of
+                                                    client
+                                                    where order is shipping</div>
+                                            </div>
+                                            <div class="wms-srv-grid-row">
+                                                <div class="wms-srv-grid-cell" style="text-align: center;">ClientName
+                                                </div>
+                                                <div class="wms-srv-grid-cell" style="text-align: center;">String</div>
+                                                <div class="wms-srv-grid-cell" style="text-align: center;">
+                                                </div>
+                                                <div class="wms-srv-grid-cell" style="text-align: center;">The name of
+                                                    the
+                                                    Client.</div>
+                                            </div>
+                                            <div class="wms-srv-grid-row">
+                                                <div class="wms-srv-grid-cell" style="text-align: center;">BillTo</div>
+                                                <div class="wms-srv-grid-cell" style="text-align: center;">String</div>
+                                                <div class="wms-srv-grid-cell" style="text-align: center;">
+                                                    Yes</div>
+                                                <div class="wms-srv-grid-cell" style="text-align: center;">The
+                                                    recipients
+                                                    billing address. Use the <a href="#" onclick="openPopUp();"
+                                                        style="color:rgb(197, 11, 11);">Address</a> model.</div>
+                                            </div>
+                                            <div class="wms-srv-grid-row">
+                                                <div class="wms-srv-grid-cell" style="text-align: center;">ShipTo</div>
+                                                <div class="wms-srv-grid-cell" style="text-align: center;">String</div>
+                                                <div class="wms-srv-grid-cell" style="text-align: center;">
+                                                    Yes</div>
+                                                <div class="wms-srv-grid-cell" style="text-align: center;">The
+                                                    recipient's
+                                                    shipping address. Use the <a href="#" onclick="openPopUp();"
+                                                        style="color:rgb(197, 11, 11);">Address</a> model.</div>
+                                            </div>
+                                            <div class="wms-srv-grid-row">
+                                                <div class="wms-srv-grid-cell" style="text-align: center;">Remark</div>
+                                                <div class="wms-srv-grid-cell" style="text-align: center;">String</div>
+                                                <div class="wms-srv-grid-cell" style="text-align: center;">
+                                                </div>
+                                                <div class="wms-srv-grid-cell" style="text-align: center;">The remark,
+                                                    if any.
+                                                </div>
+                                            </div>
+                                            <div class="wms-srv-grid-row">
+                                                <div class="wms-srv-grid-cell" style="text-align: center;">Items</div>
+                                                <div class="wms-srv-grid-cell" style="text-align: center;">Order Item
+                                                </div>
+                                                <div class="wms-srv-grid-cell" style="text-align: center;">
+                                                    Yes</div>
+                                                <div class="wms-srv-grid-cell" style="text-align: center;">An array of
+                                                    item
+                                                    objects. Use an array of <a href="#" onclick="openItemPopUp();"
+                                                        style="color:rgb(197, 11, 11);">OrderItem</a> models.</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <br><br><br><br>
+                                    <h2><a href="" style="text-decoration: none;color:red;">Example Request</a></h2>
+                                    <div class="wms-code-wrapper">
+                                        <button class="wms-srv-input wms-srv-button"
+                                            style="float: right;margin-right: 10px;" type="button" title="Copy"
+                                            onclick="copyText();"><i class="fas fa-copy"></i><span>Copy</span></button>
+                                        <div class="wms-srv-grid-row">
+                                            <div class="wms-srv-grid-cell-content">POST /so/createorders HTTP/1.1</div>
+                                        </div>
+                                        <div class="wms-srv-grid-row">
+                                            <div class="wms-srv-grid-cell-content">Host:
+                                                164.68.123.40/BrilliantWMSAPI/api/staging/v1
+                                            </div>
+                                        </div>
+                                        <div class="wms-srv-grid-row">
+                                            <div class="wms-srv-grid-cell-content">Authorization: __YOUR_AUTH_HERE__
+                                            </div>
+                                        </div>
+                                        <div class="wms-srv-grid-row">
+
+                                            <div class="wms-srv-grid-cell-content">Content-Type: application/json</div>
+                                        </div>
+                                        <div class="wms-srv-grid-row">
+
+                                            <div class="wms-srv-grid-cell-content"></div>
+                                        </div>
+                                        <div class="wms-srv-grid-row">
+                                            <div class="wms-srv-grid-cell-content">[{</div>
+                                        </div>
+                                        <div class="wms-srv-grid-row">
+                                            <div class="wms-srv-grid-cell-content"> "OrderNumber":
+                                                "TEST-ORDER-API-DOCS",</div>
+                                        </div>
+                                        <div class="wms-srv-grid-row">
+                                            <div class="wms-srv-grid-cell-content"> "Warehouse": "WH001",</div>
+                                        </div>
+                                        <div class="wms-srv-grid-row">
+
+                                            <div class="wms-srv-grid-cell-content">"RequestDate": "12/30/2022",</div>
+                                        </div>
+                                        <div class="wms-srv-grid-row">
+
+                                            <div class="wms-srv-grid-cell-content">"StartDate": "12/30/2022",</div>
+                                        </div>
+                                        <div class="wms-srv-grid-row">
+
+                                            <div class="wms-srv-grid-cell-content">"EndDate": "01/05/2022",
+                                            </div>
+                                        </div>
+                                        <div class="wms-srv-grid-row">
+
+                                            <div class="wms-srv-grid-cell-content">"ClientCode": "CL001",
+                                            </div>
+                                        </div>
+                                        <div class="wms-srv-grid-row">
+
+                                            <div class="wms-srv-grid-cell-content">"ClientName": "John New",</div>
+                                        </div>
+                                        <div class="wms-srv-grid-row">
+
+                                            <div class="wms-srv-grid-cell-content">"Remark": "Test",</div>
+                                        </div>
+                                        <div class="wms-srv-grid-row">
+                                            <div class="wms-srv-grid-cell-content">"BillTo": {</div>
+                                        </div>
+                                        <div class="wms-srv-grid-row">
+
+                                            <div class="wms-srv-grid-cell-content">"Address": "ST Willa, Compton",</div>
+                                        </div>
+                                        <div class="wms-srv-grid-row">
+
+                                            <div class="wms-srv-grid-cell-content">"City": "California",</div>
+                                        </div>
+                                        <div class="wms-srv-grid-row">
+
+                                            <div class="wms-srv-grid-cell-content">"State": "CA",</div>
+                                        </div>
+                                        <div class="wms-srv-grid-row">
+
+                                            <div class="wms-srv-grid-cell-content">"PostalCode": "25463",</div>
+                                        </div>
+                                        <div class="wms-srv-grid-row">
+
+                                            <div class="wms-srv-grid-cell-content">"Country": "US",</div>
+                                        </div>
+                                        <div class="wms-srv-grid-row">
+
+                                            <div class="wms-srv-grid-cell-content"> "Phone": "654-5454-545"</div>
+                                        </div>
+                                        <div class="wms-srv-grid-row">
+                                            <div class="wms-srv-grid-cell-content">},</div>
+                                        </div>
+                                        <div class="wms-srv-grid-row">
+                                            <div class="wms-srv-grid-cell-content">"ShipTo": {</div>
+                                        </div>
+                                        <div class="wms-srv-grid-row">
+
+                                            <div class="wms-srv-grid-cell-content">"Address": "ST Willa, Compton",</div>
+                                        </div>
+                                        <div class="wms-srv-grid-row">
+
+                                            <div class="wms-srv-grid-cell-content">"City": "California",</div>
+                                        </div>
+                                        <div class="wms-srv-grid-row">
+
+                                            <div class="wms-srv-grid-cell-content">"State": "CA",</div>
+                                        </div>
+                                        <div class="wms-srv-grid-row">
+
+                                            <div class="wms-srv-grid-cell-content">"PostalCode": "25463",</div>
+                                        </div>
+                                        <div class="wms-srv-grid-row">
+
+                                            <div class="wms-srv-grid-cell-content">"Country": "US",</div>
+                                        </div>
+                                        <div class="wms-srv-grid-row">
+
+                                            <div class="wms-srv-grid-cell-content"> "Phone": "654-5454-545"</div>
+                                        </div>
+                                        <div class="wms-srv-grid-row">
+                                            <div class="wms-srv-grid-cell-content">},</div>
+                                        </div>
+                                        <div class="wms-srv-grid-row">
+                                            <div class="wms-srv-grid-cell-content">"Items": [{</div>
+                                        </div>
+                                        <div class="wms-srv-grid-row">
+
+                                            <div class="wms-srv-grid-cell-content">"SKUCode": "SKU001",</div>
+                                        </div>
+                                        <div class="wms-srv-grid-row">
+
+                                            <div class="wms-srv-grid-cell-content">"UPCCode": "SKU001",</div>
+                                        </div>
+                                        <div class="wms-srv-grid-row">
+
+                                            <div class="wms-srv-grid-cell-content">"Name": "Test item 1",</div>
+                                        </div>
+                                        <div class="wms-srv-grid-row">
+                                            <div class="wms-srv-grid-cell-content">"UOM": "Each",</div>
+                                        </div>
+                                        <div class="wms-srv-grid-row">
+
+                                            <div class="wms-srv-grid-cell-content">"Quantity": 2,</div>
+                                        </div>
+                                        <div class="wms-srv-grid-row">
+
+                                            <div class="wms-srv-grid-cell-content">"UnitPrice": 99.99,</div>
+                                        </div>
+                                        <div class="wms-srv-grid-row">
+                                            <div class="wms-srv-grid-cell-content"> "Lottable1": "",</div>
+                                        </div>
+                                        <div class="wms-srv-grid-row">
+                                            <div class="wms-srv-grid-cell-content"> "Lottable2": "",</div>
+                                        </div>
+                                        <div class="wms-srv-grid-row">
+                                            <div class="wms-srv-grid-cell-content"> "Lottable3": ""</div>
+                                        </div>
+                                        <div class="wms-srv-grid-row">
+                                            <div class="wms-srv-grid-cell-content">},</div>
+                                        </div>
+                                        <div class="wms-srv-grid-row">
+                                            <div class="wms-srv-grid-cell-content">{</div>
+                                        </div>
+                                        <div class="wms-srv-grid-row">
+
+                                            <div class="wms-srv-grid-cell-content">"SKUCode": "SKU002",</div>
+                                        </div>
+                                        <div class="wms-srv-grid-row">
+
+                                            <div class="wms-srv-grid-cell-content">"UPCCode": "SKU002",</div>
+                                        </div>
+                                        <div class="wms-srv-grid-row">
+
+                                            <div class="wms-srv-grid-cell-content">"Name": "Test item 2",</div>
+                                        </div>
+                                        <div class="wms-srv-grid-row">
+                                            <div class="wms-srv-grid-cell-content">"UOM": "Each",</div>
+                                        </div>
+                                        <div class="wms-srv-grid-row">
+
+                                            <div class="wms-srv-grid-cell-content">"Quantity": 3,</div>
+                                        </div>
+                                        <div class="wms-srv-grid-row">
+
+                                            <div class="wms-srv-grid-cell-content">"UnitPrice": 10.00,</div>
+                                        </div>
+                                        <div class="wms-srv-grid-row">
+                                            <div class="wms-srv-grid-cell-content"> "Lottable1": "",</div>
+                                        </div>
+                                        <div class="wms-srv-grid-row">
+                                            <div class="wms-srv-grid-cell-content"> "Lottable2": "",</div>
+                                        </div>
+                                        <div class="wms-srv-grid-row">
+                                            <div class="wms-srv-grid-cell-content"> "Lottable3": ""</div>
+                                        </div>
+                                        <div class="wms-srv-grid-row">
+                                            <div class="wms-srv-grid-cell-content">}</div>
+                                        </div>
+                                        <div class="wms-srv-grid-row">
+                                            <div class="wms-srv-grid-cell-content">]</div>
+                                        </div>
+                                        <div class="wms-srv-grid-row">
+                                            <div class="wms-srv-grid-cell-content">},</div>
+                                        </div>
+                                        <div class="wms-srv-grid-row">
+                                            <div class="wms-srv-grid-cell-content">{</div>
+                                        </div>
+                                        <div class="wms-srv-grid-row">
+
+                                            <div class="wms-srv-grid-cell-content"> "OrderNumber":
+                                                "TEST-ORDER-API-DOCS-2",
+                                            </div>
+                                        </div>
+                                        <div class="wms-srv-grid-row">
+                                            <div class="wms-srv-grid-cell-content"> "Warehouse": "WH001",</div>
+                                        </div>
+                                        <div class="wms-srv-grid-row">
+                                            <div class="wms-srv-grid-cell-content">"RequestDate": "12/30/2022",</div>
+                                        </div>
+                                        <div class="wms-srv-grid-row">
+
+                                            <div class="wms-srv-grid-cell-content">"StartDate": "12/30/2022",</div>
+                                        </div>
+                                        <div class="wms-srv-grid-row">
+
+                                            <div class="wms-srv-grid-cell-content">"EndDate": "01/05/2022",
+                                            </div>
+                                        </div>
+                                        <div class="wms-srv-grid-row">
+
+                                            <div class="wms-srv-grid-cell-content">"ClientCode": "CL002",
+                                            </div>
+                                        </div>
+                                        <div class="wms-srv-grid-row">
+
+                                            <div class="wms-srv-grid-cell-content">"ClientName": "Boby New",</div>
+                                        </div>
+                                        <div class="wms-srv-grid-row">
+
+                                            <div class="wms-srv-grid-cell-content">"Remark": "Test",</div>
+                                        </div>
+                                        <div class="wms-srv-grid-row">
+                                            <div class="wms-srv-grid-cell-content">"BillTo": {</div>
+                                        </div>
+                                        <div class="wms-srv-grid-row">
+
+                                            <div class="wms-srv-grid-cell-content">"Address": "ST Willa, Compton",</div>
+                                        </div>
+                                        <div class="wms-srv-grid-row">
+
+                                            <div class="wms-srv-grid-cell-content">"City": "California",</div>
+                                        </div>
+                                        <div class="wms-srv-grid-row">
+
+                                            <div class="wms-srv-grid-cell-content">"State": "CA",</div>
+                                        </div>
+                                        <div class="wms-srv-grid-row">
+
+                                            <div class="wms-srv-grid-cell-content">"PostalCode": "25463",</div>
+                                        </div>
+                                        <div class="wms-srv-grid-row">
+
+                                            <div class="wms-srv-grid-cell-content">"Country": "US",</div>
+                                        </div>
+                                        <div class="wms-srv-grid-row">
+
+                                            <div class="wms-srv-grid-cell-content"> "Phone": "654-5454-545"</div>
+                                        </div>
+                                        <div class="wms-srv-grid-row">
+                                            <div class="wms-srv-grid-cell-content">},</div>
+                                        </div>
+                                        <div class="wms-srv-grid-row">
+                                            <div class="wms-srv-grid-cell-content">"ShipTo": {</div>
+                                        </div>
+                                        <div class="wms-srv-grid-row">
+
+                                            <div class="wms-srv-grid-cell-content">"Address": "ST Willa, Compton",</div>
+                                        </div>
+                                        <div class="wms-srv-grid-row">
+
+                                            <div class="wms-srv-grid-cell-content">"City": "California",</div>
+                                        </div>
+                                        <div class="wms-srv-grid-row">
+
+                                            <div class="wms-srv-grid-cell-content">"State": "CA",</div>
+                                        </div>
+                                        <div class="wms-srv-grid-row">
+
+                                            <div class="wms-srv-grid-cell-content">"PostalCode": "25463",</div>
+                                        </div>
+                                        <div class="wms-srv-grid-row">
+
+                                            <div class="wms-srv-grid-cell-content">"Country": "US",</div>
+                                        </div>
+                                        <div class="wms-srv-grid-row">
+
+                                            <div class="wms-srv-grid-cell-content"> "Phone": "654-5454-545"</div>
+                                        </div>
+                                        <div class="wms-srv-grid-row">
+                                            <div class="wms-srv-grid-cell-content">},</div>
+                                        </div>
+                                        <div class="wms-srv-grid-row">
+                                            <div class="wms-srv-grid-cell-content">"Items": [{</div>
+                                        </div>
+                                        <div class="wms-srv-grid-row">
+
+                                            <div class="wms-srv-grid-cell-content">"SKUCode": "SKU001",</div>
+                                        </div>
+                                        <div class="wms-srv-grid-row">
+
+                                            <div class="wms-srv-grid-cell-content">"UPCCode": "SKU001",</div>
+                                        </div>
+                                        <div class="wms-srv-grid-row">
+
+                                            <div class="wms-srv-grid-cell-content">"Name": "Test item 1",</div>
+                                        </div>
+                                        <div class="wms-srv-grid-row">
+                                            <div class="wms-srv-grid-cell-content">"UOM": "Each",</div>
+                                        </div>
+                                        <div class="wms-srv-grid-row">
+
+                                            <div class="wms-srv-grid-cell-content">"Quantity": 2,</div>
+                                        </div>
+                                        <div class="wms-srv-grid-row">
+
+                                            <div class="wms-srv-grid-cell-content">"UnitPrice": 99.99,</div>
+                                        </div>
+                                        <div class="wms-srv-grid-row">
+                                            <div class="wms-srv-grid-cell-content"> "Lottable1": "",</div>
+                                        </div>
+                                        <div class="wms-srv-grid-row">
+                                            <div class="wms-srv-grid-cell-content"> "Lottable2": "",</div>
+                                        </div>
+                                        <div class="wms-srv-grid-row">
+                                            <div class="wms-srv-grid-cell-content"> "Lottable3": ""</div>
+                                        </div>
+                                        <div class="wms-srv-grid-row">
+                                            <div class="wms-srv-grid-cell-content">},</div>
+                                        </div>
+                                        <div class="wms-srv-grid-row">
+                                            <div class="wms-srv-grid-cell-content">{</div>
+                                        </div>
+                                        <div class="wms-srv-grid-row">
+
+                                            <div class="wms-srv-grid-cell-content">"SKUCode": "SKU002",</div>
+                                        </div>
+                                        <div class="wms-srv-grid-row">
+
+                                            <div class="wms-srv-grid-cell-content">"UPCCode": "SKU002",</div>
+                                        </div>
+                                        <div class="wms-srv-grid-row">
+
+                                            <div class="wms-srv-grid-cell-content">"Name": "Test item 2",</div>
+                                        </div>
+                                        <div class="wms-srv-grid-row">
+                                            <div class="wms-srv-grid-cell-content">"UOM": "Each",</div>
+                                        </div>
+                                        <div class="wms-srv-grid-row">
+
+                                            <div class="wms-srv-grid-cell-content">"Quantity": 3,</div>
+                                        </div>
+                                        <div class="wms-srv-grid-row">
+
+                                            <div class="wms-srv-grid-cell-content">"UnitPrice": 10.00,</div>
+                                        </div>
+                                        <div class="wms-srv-grid-row">
+                                            <div class="wms-srv-grid-cell-content"> "Lottable1": "",</div>
+                                        </div>
+                                        <div class="wms-srv-grid-row">
+                                            <div class="wms-srv-grid-cell-content"> "Lottable2": "",</div>
+                                        </div>
+                                        <div class="wms-srv-grid-row">
+                                            <div class="wms-srv-grid-cell-content"> "Lottable3": ""</div>
+                                        </div>
+                                        <div class="wms-srv-grid-row">
+                                            <div class="wms-srv-grid-cell-content">}</div>
+                                        </div>
+                                        <div class="wms-srv-grid-row">
+                                            <div class="wms-srv-grid-cell-content">]</div>
+                                        </div>
+                                        <div class="wms-srv-grid-row">
+                                            <div class="wms-srv-grid-cell-content">}</div>
+                                        </div>
+                                        <div class="wms-srv-grid-row">
+                                            <div class="wms-srv-grid-cell-content">]</div>
+                                        </div>
+                                    </div>
+
+                                    <br><br><br><br>
+                                    <h2><a href="" style="text-decoration: none;color:red;">Example Response</a></h2>
+                                    <div class="wms-code-wrapper">
+                                        <button class="wms-srv-input wms-srv-button"
+                                            style="float: right;margin-right: 10px;" type="button" title="Copy"
+                                            onclick="copyText();"><i class="fas fa-copy"></i><span>Copy</span></button>
+                                        <div class="wms-srv-grid-row">
+                                            <div class="wms-srv-grid-cell-content">POST /so/createorders HTTP/1.1</div>
+                                        </div>
+                                        <div class="wms-srv-grid-row">
+                                            <div class="wms-srv-grid-cell-content">Host:
+                                                164.68.123.40/BrilliantWMSAPI/api/staging/v1
+                                            </div>
+                                        </div>
+                                        <div class="wms-srv-grid-row">
+                                            <div class="wms-srv-grid-cell-content">Authorization: __YOUR_AUTH_HERE__
+                                            </div>
+                                        </div>
+                                        <div class="wms-srv-grid-row">
+
+                                            <div class="wms-srv-grid-cell-content">Content-Type: application/json</div>
+                                        </div>
+                                        <div class="wms-srv-grid-row">
+
+                                            <div class="wms-srv-grid-cell-content"></div>
+                                        </div>
+                                        <div class="wms-srv-grid-row">
+
+                                            <div class="wms-srv-grid-cell-content">{</div>
+                                        </div>
+                                        <div class="wms-srv-grid-row">
+
+                                            <div class="wms-srv-grid-cell-content"> "Result": [{</div>
+                                        </div>
+                                        <div class="wms-srv-grid-row">
+
+                                            <div class="wms-srv-grid-cell-content">"OrderId": 58345234,</div>
+                                        </div>
+                                        <div class="wms-srv-grid-row">
+
+                                            <div class="wms-srv-grid-cell-content">"OrderNumber":
+                                                "TEST-ORDER-API-DOCS-1",</div>
+                                        </div>
+                                        <div class="wms-srv-grid-row">
+
+                                            <div class="wms-srv-grid-cell-content">"Status": "success",
+                                            </div>
+                                        </div>
+                                        <div class="wms-srv-grid-row">
+                                            <div class="wms-srv-grid-cell-content">"ErrorMessage": ""
+                                            </div>
+                                        </div>
+                                        <div class="wms-srv-grid-row">
+                                            <div class="wms-srv-grid-cell-content">},
+                                            </div>
+                                        </div>
+                                        <div class="wms-srv-grid-row">
+                                            <div class="wms-srv-grid-cell-content">{
+                                            </div>
+                                        </div>
+                                        <div class="wms-srv-grid-row">
+                                            <div class="wms-srv-grid-cell-content">"OrderId": 58345289,
+                                            </div>
+                                        </div>
+                                        <div class="wms-srv-grid-row">
+                                            <div class="wms-srv-grid-cell-content">"OrderNumber":
+                                                "TEST-ORDER-API-DOCS-2",</div>
+                                        </div>
+                                        <div class="wms-srv-grid-row">
+                                            <div class="wms-srv-grid-cell-content">"Status": "failed",
+                                            </div>
+                                        </div>
+                                        <div class="wms-srv-grid-row">
+                                            <div class="wms-srv-grid-cell-content">"ErrorMessage": "Item not available
+                                                for
+                                                Customer"
+                                            </div>
+                                        </div>
+                                        <div class="wms-srv-grid-row">
+                                            <div class="wms-srv-grid-cell-content">}
+                                            </div>
+                                        </div>
+                                        <div class="wms-srv-grid-row">
+                                            <div class="wms-srv-grid-cell-content">]
+                                            </div>
+                                        </div>
+                                        <div class="wms-srv-grid-row">
+                                            <div class="wms-srv-grid-cell-content">}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Grid 2-->
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--UOM-popup-->
+
+
+    <!--Request-popup-->
+    <div class="wms-srv-popup-holder" id="wms-requestpopup" style="display: none;">
+        <div class="wms-srv-popup-bg">
+        </div>
+        <div class="wms-srv-popup">
+            <div class="wms-srv-popup-content">
+                <!-- Popup Title -->
+                <div class="wms-srv-popup-title">
+                    <div class="wms-srv-page-title">
+                        <i class="fas fa-pen-square"></i><span>Request Json </span>
+                    </div>
+                    <a href="#" title="Close" id="wms-request-popup-close" class="wms-srv-popup-close"><i
+                            class="fas fa-times-circle"></i></a>
+                </div>
+                <!-- Popup Title -->
+                <div id="RequestJsonDisplay">
+                    <div class="wms-code-wrapper">
+                        <button class="wms-srv-input wms-srv-button" style="float: right;margin-right: 10px;"
+                            type="button" title="Copy" onclick="copyText();"><i
+                                class="fas fa-copy"></i><span>Copy</span></button>
+                        <div class="wms-srv-grid-row">
+                            <div class="wms-srv-grid-cell-content">POST /so/createorders HTTP/1.1</div>
+                        </div>
+                        <div class="wms-srv-grid-row">
+                            <div class="wms-srv-grid-cell-content">Host:
+                                164.68.123.40/BrilliantWMSAPI/api/staging/v1
+                            </div>
+                        </div>
+                        <div class="wms-srv-grid-row">
+                            <div class="wms-srv-grid-cell-content">Authorization: __YOUR_AUTH_HERE__</div>
+                        </div>
+                        <div class="wms-srv-grid-row">
+
+                            <div class="wms-srv-grid-cell-content">Content-Type: application/json</div>
+                        </div>
+                        <!-- <div id="databind-txtarea-request"> -->
+
+                        <textarea class="form-control" id="databind-txtarea-request" rows="10"></textarea>
+
+                    </div>
+
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<!--Request-popup-->
+
+<!--Response-popup-->
+<div class="wms-srv-popup-holder" id="wms-responsepopup" style="display: none;">
+    <div class="wms-srv-popup-bg">
+    </div>
+    <div class="wms-srv-popup">
+        <div class="wms-srv-popup-content">
+            <!-- Popup Title -->
+            <div class="wms-srv-popup-title">
+                <div class="wms-srv-page-title">
+                    <i class="fas fa-pen-square"></i><span>Response Json </span>
+                </div>
+                <div id="ResponseJsonDisplay">
+                    <div class="wms-code-wrapper">
+                        <button class="wms-srv-input wms-srv-button" style="float: right;margin-right: 10px;"
+                            type="button" title="Copy" onclick="copyText();"><i
+                                class="fas fa-copy"></i><span>Copy</span></button>
+                        <div class="wms-srv-grid-row">
+                            <div class="wms-srv-grid-cell-content">POST /so/createorders HTTP/1.1</div>
+                        </div>
+                        <div class="wms-srv-grid-row">
+                            <div class="wms-srv-grid-cell-content">Host:
+                                164.68.123.40/BrilliantWMSAPI/api/staging/v1
+                            </div>
+                        </div>
+                        <div class="wms-srv-grid-row">
+                            <div class="wms-srv-grid-cell-content">Authorization: __YOUR_AUTH_HERE__</div>
+                        </div>
+                        <div class="wms-srv-grid-row">
+
+                            <div class="wms-srv-grid-cell-content">Content-Type: application/json</div>
+                        </div>
+                        <!-- <div id="databind-txtarea-Response"></div> -->
+                        <textarea class="form-control" id="databind-txtarea-Response" rows="10"></textarea>
+                        <!-- <textarea id="w3review" disabled="disabled" name="w3review" 
+                            style="width:100%;height:500px;background-color: #efefef;font-family: Courier New;color: #030303;">{
+                                    "Status": 200,
+                                    "StatusCode": "Success",
+                                    "Result": ""
+                                }
+                            </textarea> -->
+                    </div>
+                </div>
+                <a href="#" title="Close" id="wms-response-popup-close" class="wms-srv-popup-close"><i
+                        class="fas fa-times-circle"></i></a>
+            </div>
+            <!-- Popup Title -->
+
+        </div>
+    </div>
+</div>
+<!--Response-popup-->
+
+<!--Lottable-popup-->
+<div class="wms-srv-popup-holder" id="wms-srv-Lottable-popup" style="display: none;">
+    <div class="wms-srv-popup-bg">
+    </div>
+    <div class="wms-srv-popup">
+        <div class="wms-srv-popup-content">
+            <!-- Popup Title -->
+            <div class="wms-srv-popup-title">
+                <div class="wms-srv-page-title">
+                    <i class="fas fa-tag"></i><span>Parameter List</span>
+                </div>
+                <a href="#" title="Close" id="wms-srv-Lottable-popup-close" class="wms-srv-popup-close"><i
+                        class="fas fa-times-circle"></i></a>
+            </div>
+            <!-- Popup Title -->
+            <div class="wms-srv-popup-content-body" id="wms-srv-popup-content-body">
+                <!-- Grid 2-->
+
+                <div class="wms-srv-grid-holder pnlWmsDetail" id="pnlWmsDetail">
+                    <div class="wms-srv-grid-action-panel">
+                        <div class="wms-srv-grid-common-action"><a href="#" title="Customize Grid" data-prefix="CG"
+                                class="wms-srv-icononly"><i class="fas fa-list"></i></a></div>
+
+
+                        <div class="wms-srv-grid-title">
+                            Parameter List
+                        </div>
+                    </div>
+                    <div class="wms-srv-grid-scroller" style="width: 100%; ">
+                        <div class="wms-srv-grid" style="text-align: center;" id="GetLottableList">
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <!-- Grid 2-->
+
+    </div>
+</div>
+
+
+<!--Lottable-popup-->
+<div class="wms-srv-popup-holder" id="wms-srv-help-popup" style="display: none;">
+    <div class="wms-srv-popup-bg">
+    </div>
+    <div class="wms-srv-popup">
+        <div class="wms-srv-popup-content">
+            <!-- Popup Title -->
+            <div class="wms-srv-popup-title">
+                <div class="wms-srv-page-title">
+                    <i class="fas fa-tag"></i><span>Parameter</span>
+                </div>
+                <a href="#" title="Close" id="wms-srv-help-popup-close" class="wms-srv-popup-close"><i
+                        class="fas fa-times-circle"></i></a>
+            </div>
+            <!-- Popup Title -->
+            <div class="wms-srv-popup-content-body" id="wms-srv-popup-content-body">
+                <!-- Grid 2-->
+
+                <div class="wms-srv-grid-holder pnlWmsDetail" id="pnlWmsDetail">
+                    <div class="wms-srv-grid-action-panel">
+                        <div class="wms-srv-grid-common-action"><a href="#" title="Customize Grid" data-prefix="CG"
+                                class="wms-srv-icononly"><i class="fas fa-list"></i></a></div>
+
+
+                        <div class="wms-srv-grid-title">
+                            Parameter List
+                        </div>
+                    </div>
+                    <div class="wms-srv-grid-scroller" style="width: 100%; ">
+                        <div class="wms-srv-grid" style="text-align: center;" id="GethelpList">
+
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="wms-srv-popup-content-body" id="wms-srv-popup-content-body1">
+                <!-- Grid 2-->
+
+                <div class="wms-srv-grid-holder pnlWmsDetail" id="pnlWmsDetail1">
+                    <div class="wms-srv-grid-action-panel">
+                        <div class="wms-srv-grid-common-action"><a href="#" title="Customize Grid" data-prefix="CG"
+                                class="wms-srv-icononly"><i class="fas fa-code"></i></a></div>
+
+
+                        <div class="wms-srv-grid-title">
+                            Sample JSON
+                        </div>
+                    </div>
+                    <div class="wms-srv-grid-scroller" style="width: 100%; ">
+                        <div class="wms-srv-grid" style="text-align: center;" id="GethelpList1">
+                            <button class="wms-srv-input wms-srv-button"
+                                style="float: right;margin-right: 10px;margin-top:4px;margin-bottom: 4px;" type="button"
+                                title="Copy" onclick="myFunction();"><i
+                                    class="fas fa-copy"></i><span>Copy</span></button>
+                            <textarea class="form-control" id="databind-txtarea-samplejson" rows="10"></textarea>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- <div class="wms-srv-popup-content-body" id="wms-srv-popup-content-body"> -->
+            <!-- Grid 2-->
+
+            <!-- <div class="wms-srv-grid-holder pnlWmsDetail" id="pnlWmsDetailJson">
+                        <div class="wms-srv-grid-action-panel">
+                            <div class="wms-srv-grid-common-action"><a href="#" title="Customize Grid" data-prefix="CG"
+                                    class="wms-srv-icononly"><i class="fas fa-list"></i></a></div>
+                
+                
+                            <div class="wms-srv-grid-title">
+                                Sample Json
+                            </div>
+                        </div>
+                        <div class="wms-srv-grid-scroller" style="width: 100%; ">
+                            <div class="wms-srv-grid" style="text-align: center;" id="GethelpListjson">
+                                <div class="wms-code-wrapper">
+                                    <button class="wms-srv-input wms-srv-button" style="float: right;margin-right: 10px;" type="button" title="Copy"
+                                        onclick="copyText();"><i class="fas fa-copy"></i><span>Copy</span></button>
+                                    <div class="wms-srv-grid-row">
+                                        <div class="wms-srv-grid-cell-content">POST /so/createorders HTTP/1.1</div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+                                        <div class="wms-srv-grid-cell-content">Host:
+                                            164.68.123.40/BrilliantWMSAPI/api/staging/v1
+                                        </div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+                                        <div class="wms-srv-grid-cell-content">Authorization: __YOUR_AUTH_HERE__</div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+                                
+                                        <div class="wms-srv-grid-cell-content">Content-Type: application/json</div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+                                
+                                        <div class="wms-srv-grid-cell-content"></div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+                                        <div class="wms-srv-grid-cell-content">[{</div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+                                        <div class="wms-srv-grid-cell-content"> "OrderNumber": "TEST-ORDER-API-DOCS",</div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+                                        <div class="wms-srv-grid-cell-content"> "Warehouse": "WH001",</div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+                                
+                                        <div class="wms-srv-grid-cell-content">"RequestDate": "12/30/2022",</div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+                                
+                                        <div class="wms-srv-grid-cell-content">"StartDate": "12/30/2022",</div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+                                
+                                        <div class="wms-srv-grid-cell-content">"EndDate": "01/05/2022",
+                                        </div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+                                
+                                        <div class="wms-srv-grid-cell-content">"ClientCode": "CL001",
+                                        </div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+                                
+                                        <div class="wms-srv-grid-cell-content">"ClientName": "John New",</div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+                                
+                                        <div class="wms-srv-grid-cell-content">"Remark": "Test",</div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+                                        <div class="wms-srv-grid-cell-content">"BillTo": {</div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+                                
+                                        <div class="wms-srv-grid-cell-content">"Address": "ST Willa, Compton",</div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+                                
+                                        <div class="wms-srv-grid-cell-content">"City": "California",</div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+                                
+                                        <div class="wms-srv-grid-cell-content">"State": "CA",</div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+                                
+                                        <div class="wms-srv-grid-cell-content">"PostalCode": "25463",</div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+                                
+                                        <div class="wms-srv-grid-cell-content">"Country": "US",</div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+                                
+                                        <div class="wms-srv-grid-cell-content"> "Phone": "654-5454-545"</div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+                                        <div class="wms-srv-grid-cell-content">},</div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+                                        <div class="wms-srv-grid-cell-content">"ShipTo": {</div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+                                
+                                        <div class="wms-srv-grid-cell-content">"Address": "ST Willa, Compton",</div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+                                
+                                        <div class="wms-srv-grid-cell-content">"City": "California",</div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+                                
+                                        <div class="wms-srv-grid-cell-content">"State": "CA",</div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+                                
+                                        <div class="wms-srv-grid-cell-content">"PostalCode": "25463",</div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+                                
+                                        <div class="wms-srv-grid-cell-content">"Country": "US",</div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+                                
+                                        <div class="wms-srv-grid-cell-content"> "Phone": "654-5454-545"</div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+                                        <div class="wms-srv-grid-cell-content">},</div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+                                        <div class="wms-srv-grid-cell-content">"Items": [{</div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+                                
+                                        <div class="wms-srv-grid-cell-content">"SKUCode": "SKU001",</div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+                                
+                                        <div class="wms-srv-grid-cell-content">"UPCCode": "SKU001",</div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+                                
+                                        <div class="wms-srv-grid-cell-content">"Name": "Test item 1",</div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+                                        <div class="wms-srv-grid-cell-content">"UOM": "Each",</div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+                                
+                                        <div class="wms-srv-grid-cell-content">"Quantity": 2,</div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+                                
+                                        <div class="wms-srv-grid-cell-content">"UnitPrice": 99.99,</div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+                                        <div class="wms-srv-grid-cell-content"> "Lottable1": "",</div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+                                        <div class="wms-srv-grid-cell-content"> "Lottable2": "",</div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+                                        <div class="wms-srv-grid-cell-content"> "Lottable3": ""</div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+                                        <div class="wms-srv-grid-cell-content">},</div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+                                        <div class="wms-srv-grid-cell-content">{</div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+                                
+                                        <div class="wms-srv-grid-cell-content">"SKUCode": "SKU002",</div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+                                
+                                        <div class="wms-srv-grid-cell-content">"UPCCode": "SKU002",</div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+                                
+                                        <div class="wms-srv-grid-cell-content">"Name": "Test item 2",</div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+                                        <div class="wms-srv-grid-cell-content">"UOM": "Each",</div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+                                
+                                        <div class="wms-srv-grid-cell-content">"Quantity": 3,</div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+                                
+                                        <div class="wms-srv-grid-cell-content">"UnitPrice": 10.00,</div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+                                        <div class="wms-srv-grid-cell-content"> "Lottable1": "",</div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+                                        <div class="wms-srv-grid-cell-content"> "Lottable2": "",</div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+                                        <div class="wms-srv-grid-cell-content"> "Lottable3": ""</div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+                                        <div class="wms-srv-grid-cell-content">}</div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+                                        <div class="wms-srv-grid-cell-content">]</div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+                                        <div class="wms-srv-grid-cell-content">},</div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+                                        <div class="wms-srv-grid-cell-content">{</div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+                                
+                                        <div class="wms-srv-grid-cell-content"> "OrderNumber": "TEST-ORDER-API-DOCS-2",
+                                        </div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+                                        <div class="wms-srv-grid-cell-content"> "Warehouse": "WH001",</div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+                                        <div class="wms-srv-grid-cell-content">"RequestDate": "12/30/2022",</div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+                                
+                                        <div class="wms-srv-grid-cell-content">"StartDate": "12/30/2022",</div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+                                
+                                        <div class="wms-srv-grid-cell-content">"EndDate": "01/05/2022",
+                                        </div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+                                
+                                        <div class="wms-srv-grid-cell-content">"ClientCode": "CL002",
+                                        </div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+                                
+                                        <div class="wms-srv-grid-cell-content">"ClientName": "Boby New",</div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+                                
+                                        <div class="wms-srv-grid-cell-content">"Remark": "Test",</div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+                                        <div class="wms-srv-grid-cell-content">"BillTo": {</div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+                                
+                                        <div class="wms-srv-grid-cell-content">"Address": "ST Willa, Compton",</div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+                                
+                                        <div class="wms-srv-grid-cell-content">"City": "California",</div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+                                
+                                        <div class="wms-srv-grid-cell-content">"State": "CA",</div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+                                
+                                        <div class="wms-srv-grid-cell-content">"PostalCode": "25463",</div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+                                
+                                        <div class="wms-srv-grid-cell-content">"Country": "US",</div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+                                
+                                        <div class="wms-srv-grid-cell-content"> "Phone": "654-5454-545"</div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+                                        <div class="wms-srv-grid-cell-content">},</div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+                                        <div class="wms-srv-grid-cell-content">"ShipTo": {</div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+                                
+                                        <div class="wms-srv-grid-cell-content">"Address": "ST Willa, Compton",</div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+                                
+                                        <div class="wms-srv-grid-cell-content">"City": "California",</div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+                                
+                                        <div class="wms-srv-grid-cell-content">"State": "CA",</div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+                                
+                                        <div class="wms-srv-grid-cell-content">"PostalCode": "25463",</div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+                                
+                                        <div class="wms-srv-grid-cell-content">"Country": "US",</div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+                                
+                                        <div class="wms-srv-grid-cell-content"> "Phone": "654-5454-545"</div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+                                        <div class="wms-srv-grid-cell-content">},</div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+                                        <div class="wms-srv-grid-cell-content">"Items": [{</div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+                                
+                                        <div class="wms-srv-grid-cell-content">"SKUCode": "SKU001",</div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+                                
+                                        <div class="wms-srv-grid-cell-content">"UPCCode": "SKU001",</div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+                                
+                                        <div class="wms-srv-grid-cell-content">"Name": "Test item 1",</div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+                                        <div class="wms-srv-grid-cell-content">"UOM": "Each",</div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+                                
+                                        <div class="wms-srv-grid-cell-content">"Quantity": 2,</div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+                                
+                                        <div class="wms-srv-grid-cell-content">"UnitPrice": 99.99,</div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+                                        <div class="wms-srv-grid-cell-content"> "Lottable1": "",</div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+                                        <div class="wms-srv-grid-cell-content"> "Lottable2": "",</div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+                                        <div class="wms-srv-grid-cell-content"> "Lottable3": ""</div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+                                        <div class="wms-srv-grid-cell-content">},</div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+                                        <div class="wms-srv-grid-cell-content">{</div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+                                
+                                        <div class="wms-srv-grid-cell-content">"SKUCode": "SKU002",</div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+                                
+                                        <div class="wms-srv-grid-cell-content">"UPCCode": "SKU002",</div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+                                
+                                        <div class="wms-srv-grid-cell-content">"Name": "Test item 2",</div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+                                        <div class="wms-srv-grid-cell-content">"UOM": "Each",</div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+                                
+                                        <div class="wms-srv-grid-cell-content">"Quantity": 3,</div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+                                
+                                        <div class="wms-srv-grid-cell-content">"UnitPrice": 10.00,</div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+                                        <div class="wms-srv-grid-cell-content"> "Lottable1": "",</div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+                                        <div class="wms-srv-grid-cell-content"> "Lottable2": "",</div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+                                        <div class="wms-srv-grid-cell-content"> "Lottable3": ""</div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+                                        <div class="wms-srv-grid-cell-content">}</div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+                                        <div class="wms-srv-grid-cell-content">]</div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+                                        <div class="wms-srv-grid-cell-content">}</div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+                                        <div class="wms-srv-grid-cell-content">]</div>
+                                    </div>
+                                </div>
+                
+                            </div>
+                        </div>
+                
+                    </div> -->
+            <!-- </div> -->
+
+        </div>
+        <!-- Grid 2-->
+
+    </div>
+</div>
+
+
+
+<!--API LOGLIST-popup-->
+<div class="wms-srv-popup-holder" id="wms-srv-apiloglist-popup" style="display: none;">
+    <div class="wms-srv-popup-bg">
+    </div>
+    <div class="wms-srv-popup">
+        <div class="wms-srv-popup-content">
+
+
+
+            <!-- Popup Title -->
+            <div class="wms-srv-popup-title">
+                <div class="wms-srv-page-title">
+                    <i class="fas fa-tag"></i><span>API Log</span>
+
+
+                </div>
+                <div style="margin-left: 205px;margin-top: -41px;">
+                    <div class="wmsDashboardCountBoxHolder">
+                        <div class="wmsDashboardCountBox">
+                            <!-- #5a75a5 -->
+                            <div class="wmsDashboardCountIcon" style="background-color:#00ff04;"><i
+                                    class="fas fa-clipboard-check"></i>
+                            </div>
+                            <div class="wmsDashboardCountContent">
+                                <div class="wmsDashboardCount" id="cntTotalISuccess">0</div>
+                                <div class="wmsDashboardCountLabel">API Sucess</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="wmsDashboardCountBoxHolder">
+                        <div class="wmsDashboardCountBox">
+                            <!-- #5a75a5 -->
+                            <div class="wmsDashboardCountIcon" style="background-color:#ff3700;"><i
+                                    class="fas fa-exclamation-circle"></i>
+                            </div>
+                            <div class="wmsDashboardCountContent">
+                                <div class="wmsDashboardCount" id="cntTotalFail">0</div>
+                                <div class="wmsDashboardCountLabel">API Failed</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <a href="#" title="Close" id="wms-srv-apiloglist-popup-close" class="wms-srv-popup-close"><i
+                        class="fas fa-times-circle"></i></a>
+            </div>
+
+            <!-- Popup Title -->
+            <div class="wms-srv-popup-content-body" id="wms-srv-popup-content-body">
+                <!-- Grid 2-->
+
+                <div class="wms-srv-grid-holder pnlWmsDetail" id="pnlWmsDetail">
+                    <div class="wms-srv-grid-action-panel">
+
+                        <div class="wms-srv-grid-common-action"><a href="#" title="Customize Grid" data-prefix="CG"
+                                class="wms-srv-icononly"></a></div>
+                        <div class="wms-srv-grid-common-action"><a href="#" class="wms-srv-icononly"><i
+                                    class="fas fa-list"></i></a></div>
+                        <div class="wms-srv-search" style="margin-right:10px; ">
+                            <label>Search:</label>
+                            <!-- <select class="wms-srv-input wms-srv-search-filter" id="ddlfilter">
+                                            <option value="All">-- Filters --</option>
+                                            <option value="">OrderNo</option>
+                                            <option value="">OrderRefNo</option>
+                                            <option value="">Company</option>
+                                            <option value="">Customer</option>
+                                        </select> -->
+                            <input type="" value="" placeholder="eg:id" id="txtfilterSearch" class="">
+                            <!-- <label>Date:</label>
+
+                            <input type="text" id="txtFromToDateobjrexta" placeholder="eg: From To To"
+                                onclick="getDate();" autocomplete="off" autocorrect="off" maxlength="25" step="1"
+                                noerror="true" staticlabel="true" animate="true" label="Symbol" rules="" class="">
+                            <inout type="hidden" id="hideFromDateobjrexta" value="">
+                            </inout>
+                            <inout type="hidden" id="hideToDateobjrexta" value="">
+                            </inout> -->
+
+
+                            <button class="wms-srv-input wms-srv-button wms-srv-highlight-btn-secondary" type="button"
+                                title="Search" onclick="searchfilterAPILog()"><span>Search</span></button>
+                        </div>
+                        <div class="wms-srv-grid-title">
+                            API Log
+
+                        </div>
+                    </div>
+
+                    <div class="wms-srv-grid-scroller" style="width: 100%; ">
+                        <div class="wms-srv-grid" style="text-align: center;" id="GetAPIList">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+        </div>
+        <!-- Grid 2-->
+
+    </div>
+</div>
+</div>
+
+<!--UOM-popup-->
+<div class="wms-srv-popup-holder" id="wms-srv-UOM-popup" style="display: none;">
+    <div class="wms-srv-popup-bg">
+    </div>
+    <div class="wms-srv-popup">
+        <div class="wms-srv-popup-content">
+            <!-- Popup Title -->
+            <div class="wms-srv-popup-title">
+                <div class="wms-srv-page-title">
+                    <i class="fas fa-pen-square"></i><span>API Parameter </span>
+                </div>
+                <a href="#" title="Close" id="wms-srv-UOM-popup-close" class="wms-srv-popup-close"><i
+                        class="fas fa-times-circle"></i></a>
+            </div>
+            <!-- Popup Title -->
+            <div class="wms-srv-popup-content-body" id="wms-srv-popup-content-body">
+                <!-- Grid 2-->
+
+                <div class="wms-srv-grid-holder pnlWmsDetail" id="pnlWmsDetail">
+                    <div class="wms-srv-grid-action-panel">
+                        <div class="wms-srv-grid-common-action"><a href="#" title="" class="wms-srv-icononly"><i
+                                    class="fas fa-list"></i></a></div>
+                        <div class="wms-srv-grid-title">
+                            API Parameter
+                        </div>
+                    </div>
+
+                    <!-- Popup Title -->
+                    <div class="wms-srv-popup-content-body" id="wms-srv-popup-content-body">
+                        <div id="popupContentcreateorderapi">
+                            <div id="pnlcreateorderapin">
+                                <p>You can use this method to create a new order or update an existing order. If the
+                                    orderKey is
+                                    specified, BrilliantWMS will attempt to locate the order with the specified
+                                    orderKey. If
+                                    found, the
+                                    existing order with that key will be updated. If the orderKey is not found, a new
+                                    order
+                                    will
+                                    be
+                                    created with that orderKey. </p>
+                                <p>For split orders, this key is always required.</p>
+                                <p>This call does not currently support partial updates; the entire resource must be
+                                    provided in
+                                    the
+                                    body of the request.</p>
+                                <!-- Grid -->
+                                <div class="wms-srv-grid-holder pnlWmsHead" id="pnlWmsHead">
+                                    <div class="wms-srv-grid" style="min-width: 488px;">
+                                        <div class="wms-srv-grid-header">
+                                            <div class="wms-srv-grid-cell" style="text-align: center;">Name</div>
+                                            <div class="wms-srv-grid-cell" style="text-align: center;">Data Type</div>
+                                            <div class="wms-srv-grid-cell" style="text-align: center;">Required</div>
+                                            <div class="wms-srv-grid-cell" style="text-align: center;">Description</div>
+                                        </div>
+                                        <div class="wms-srv-grid-row">
+                                            <div class="wms-srv-grid-cell" style="text-align: center;">OrderNumber</div>
+                                            <div class="wms-srv-grid-cell" style="text-align: center;">
+                                                String</div>
+                                            <div class="wms-srv-grid-cell" style="text-align: center;">
+                                                Yes</div>
+                                            <div class="wms-srv-grid-cell" style="text-align: center;">A user-defined
+                                                unique
+                                                order
+                                                number used to
+                                                identify an order.</div>
+                                        </div>
+                                        <div class="wms-srv-grid-row">
+                                            <div class="wms-srv-grid-cell" style="text-align: center;">Warehouse</div>
+                                            <div class="wms-srv-grid-cell" style="text-align: center;">String</div>
+                                            <div class="wms-srv-grid-cell" style="text-align: center;">
+                                                Yes</div>
+                                            <div class="wms-srv-grid-cell" style="text-align: center;">The Warehouse
+                                                Code
+                                                from where order process .
+                                            </div>
+                                        </div>
+                                        <div class="wms-srv-grid-row">
+                                            <div class="wms-srv-grid-cell" style="text-align: center;">RequestDate</div>
+                                            <div class="wms-srv-grid-cell" style="text-align: center;">
+                                                String(MM/dd/yyyy)
+                                            </div>
+                                            <div class="wms-srv-grid-cell" style="text-align: center;">
+                                                Yes</div>
+                                            <div class="wms-srv-grid-cell" style="text-align: center;">The date the
+                                                order
+                                                was placed.
+                                            </div>
+                                        </div>
+                                        <div class="wms-srv-grid-row">
+                                            <div class="wms-srv-grid-cell" style="text-align: center;">StartDate</div>
+                                            <div class="wms-srv-grid-cell" style="text-align: center;">
+                                                String(MM/dd/yyyy)
+                                            </div>
+                                            <div class="wms-srv-grid-cell" style="text-align: center;">
+                                                Yes</div>
+                                            <div class="wms-srv-grid-cell" style="text-align: center;">The date the
+                                                order
+                                                start processing
+                                            </div>
+                                        </div>
+                                        <div class="wms-srv-grid-row">
+                                            <div class="wms-srv-grid-cell" style="text-align: center;">EndDate</div>
+                                            <div class="wms-srv-grid-cell" style="text-align: center;">
+                                                String(MM/dd/yyyy)
+                                            </div>
+                                            <div class="wms-srv-grid-cell" style="text-align: center;">
+                                                Yes</div>
+                                            <div class="wms-srv-grid-cell" style="text-align: center;">The date the
+                                                order
+                                                will cancel.</div>
+                                        </div>
+                                        <div class="wms-srv-grid-row">
+                                            <div class="wms-srv-grid-cell" style="text-align: center;">ClientCode</div>
+                                            <div class="wms-srv-grid-cell" style="text-align: center;">String</div>
+                                            <div class="wms-srv-grid-cell" style="text-align: center;">
+                                                Yes</div>
+                                            <div class="wms-srv-grid-cell" style="text-align: center;">The code of
+                                                client
+                                                where order is shipping</div>
+                                        </div>
+                                        <div class="wms-srv-grid-row">
+                                            <div class="wms-srv-grid-cell" style="text-align: center;">ClientName</div>
+                                            <div class="wms-srv-grid-cell" style="text-align: center;">String</div>
+                                            <div class="wms-srv-grid-cell" style="text-align: center;">
+                                            </div>
+                                            <div class="wms-srv-grid-cell" style="text-align: center;">The name of the
+                                                Client.</div>
+                                        </div>
+                                        <div class="wms-srv-grid-row">
+                                            <div class="wms-srv-grid-cell" style="text-align: center;">BillTo</div>
+                                            <div class="wms-srv-grid-cell" style="text-align: center;">String</div>
+                                            <div class="wms-srv-grid-cell" style="text-align: center;">
+                                                Yes</div>
+                                            <div class="wms-srv-grid-cell" style="text-align: center;">The recipients
+                                                billing address. Use the <a href="#" onclick="openPopUp();"
+                                                    style="color:rgb(197, 11, 11);">Address</a> model.</div>
+                                        </div>
+                                        <div class="wms-srv-grid-row">
+                                            <div class="wms-srv-grid-cell" style="text-align: center;">ShipTo</div>
+                                            <div class="wms-srv-grid-cell" style="text-align: center;">String</div>
+                                            <div class="wms-srv-grid-cell" style="text-align: center;">
+                                                Yes</div>
+                                            <div class="wms-srv-grid-cell" style="text-align: center;">The recipient's
+                                                shipping address. Use the <a href="#" onclick="openPopUp();"
+                                                    style="color:rgb(197, 11, 11);">Address</a> model.</div>
+                                        </div>
+                                        <div class="wms-srv-grid-row">
+                                            <div class="wms-srv-grid-cell" style="text-align: center;">Remark</div>
+                                            <div class="wms-srv-grid-cell" style="text-align: center;">String</div>
+                                            <div class="wms-srv-grid-cell" style="text-align: center;">
+                                            </div>
+                                            <div class="wms-srv-grid-cell" style="text-align: center;">The remark, if
+                                                any.
+                                            </div>
+                                        </div>
+                                        <div class="wms-srv-grid-row">
+                                            <div class="wms-srv-grid-cell" style="text-align: center;">Items</div>
+                                            <div class="wms-srv-grid-cell" style="text-align: center;">Order Item</div>
+                                            <div class="wms-srv-grid-cell" style="text-align: center;">
+                                                Yes</div>
+                                            <div class="wms-srv-grid-cell" style="text-align: center;">An array of item
+                                                objects. Use an array of <a href="#" onclick="openItemPopUp();"
+                                                    style="color:rgb(197, 11, 11);">OrderItem</a> models.</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <br><br><br><br>
+                                <h2><a href="" style="text-decoration: none;color:red;">Example Request</a></h2>
+                                <div class="wms-code-wrapper">
+                                    <button class="wms-srv-input wms-srv-button"
+                                        style="float: right;margin-right: 10px;" type="button" title="Copy"
+                                        onclick="copyText();"><i class="fas fa-copy"></i><span>Copy</span></button>
+                                    <div class="wms-srv-grid-row">
+                                        <div class="wms-srv-grid-cell-content">POST /so/createorders HTTP/1.1</div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+                                        <div class="wms-srv-grid-cell-content">Host:
+                                            164.68.123.40/BrilliantWMSAPI/api/staging/v1
+                                        </div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+                                        <div class="wms-srv-grid-cell-content">Authorization: __YOUR_AUTH_HERE__</div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+
+                                        <div class="wms-srv-grid-cell-content">Content-Type: application/json</div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+
+                                        <div class="wms-srv-grid-cell-content"></div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+                                        <div class="wms-srv-grid-cell-content">[{</div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+                                        <div class="wms-srv-grid-cell-content"> "OrderNumber": "TEST-ORDER-API-DOCS",
+                                        </div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+                                        <div class="wms-srv-grid-cell-content"> "Warehouse": "WH001",</div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+
+                                        <div class="wms-srv-grid-cell-content">"RequestDate": "12/30/2022",</div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+
+                                        <div class="wms-srv-grid-cell-content">"StartDate": "12/30/2022",</div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+
+                                        <div class="wms-srv-grid-cell-content">"EndDate": "01/05/2022",
+                                        </div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+
+                                        <div class="wms-srv-grid-cell-content">"ClientCode": "CL001",
+                                        </div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+
+                                        <div class="wms-srv-grid-cell-content">"ClientName": "John New",</div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+
+                                        <div class="wms-srv-grid-cell-content">"Remark": "Test",</div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+                                        <div class="wms-srv-grid-cell-content">"BillTo": {</div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+
+                                        <div class="wms-srv-grid-cell-content">"Address": "ST Willa, Compton",</div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+
+                                        <div class="wms-srv-grid-cell-content">"City": "California",</div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+
+                                        <div class="wms-srv-grid-cell-content">"State": "CA",</div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+
+                                        <div class="wms-srv-grid-cell-content">"PostalCode": "25463",</div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+
+                                        <div class="wms-srv-grid-cell-content">"Country": "US",</div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+
+                                        <div class="wms-srv-grid-cell-content"> "Phone": "654-5454-545"</div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+                                        <div class="wms-srv-grid-cell-content">},</div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+                                        <div class="wms-srv-grid-cell-content">"ShipTo": {</div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+
+                                        <div class="wms-srv-grid-cell-content">"Address": "ST Willa, Compton",</div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+
+                                        <div class="wms-srv-grid-cell-content">"City": "California",</div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+
+                                        <div class="wms-srv-grid-cell-content">"State": "CA",</div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+
+                                        <div class="wms-srv-grid-cell-content">"PostalCode": "25463",</div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+
+                                        <div class="wms-srv-grid-cell-content">"Country": "US",</div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+
+                                        <div class="wms-srv-grid-cell-content"> "Phone": "654-5454-545"</div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+                                        <div class="wms-srv-grid-cell-content">},</div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+                                        <div class="wms-srv-grid-cell-content">"Items": [{</div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+
+                                        <div class="wms-srv-grid-cell-content">"SKUCode": "SKU001",</div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+
+                                        <div class="wms-srv-grid-cell-content">"UPCCode": "SKU001",</div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+
+                                        <div class="wms-srv-grid-cell-content">"Name": "Test item 1",</div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+                                        <div class="wms-srv-grid-cell-content">"UOM": "Each",</div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+
+                                        <div class="wms-srv-grid-cell-content">"Quantity": 2,</div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+
+                                        <div class="wms-srv-grid-cell-content">"UnitPrice": 99.99,</div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+                                        <div class="wms-srv-grid-cell-content"> "Lottable1": "",</div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+                                        <div class="wms-srv-grid-cell-content"> "Lottable2": "",</div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+                                        <div class="wms-srv-grid-cell-content"> "Lottable3": ""</div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+                                        <div class="wms-srv-grid-cell-content">},</div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+                                        <div class="wms-srv-grid-cell-content">{</div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+
+                                        <div class="wms-srv-grid-cell-content">"SKUCode": "SKU002",</div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+
+                                        <div class="wms-srv-grid-cell-content">"UPCCode": "SKU002",</div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+
+                                        <div class="wms-srv-grid-cell-content">"Name": "Test item 2",</div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+                                        <div class="wms-srv-grid-cell-content">"UOM": "Each",</div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+
+                                        <div class="wms-srv-grid-cell-content">"Quantity": 3,</div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+
+                                        <div class="wms-srv-grid-cell-content">"UnitPrice": 10.00,</div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+                                        <div class="wms-srv-grid-cell-content"> "Lottable1": "",</div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+                                        <div class="wms-srv-grid-cell-content"> "Lottable2": "",</div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+                                        <div class="wms-srv-grid-cell-content"> "Lottable3": ""</div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+                                        <div class="wms-srv-grid-cell-content">}</div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+                                        <div class="wms-srv-grid-cell-content">]</div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+                                        <div class="wms-srv-grid-cell-content">},</div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+                                        <div class="wms-srv-grid-cell-content">{</div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+
+                                        <div class="wms-srv-grid-cell-content"> "OrderNumber": "TEST-ORDER-API-DOCS-2",
+                                        </div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+                                        <div class="wms-srv-grid-cell-content"> "Warehouse": "WH001",</div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+                                        <div class="wms-srv-grid-cell-content">"RequestDate": "12/30/2022",</div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+
+                                        <div class="wms-srv-grid-cell-content">"StartDate": "12/30/2022",</div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+
+                                        <div class="wms-srv-grid-cell-content">"EndDate": "01/05/2022",
+                                        </div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+
+                                        <div class="wms-srv-grid-cell-content">"ClientCode": "CL002",
+                                        </div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+
+                                        <div class="wms-srv-grid-cell-content">"ClientName": "Boby New",</div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+
+                                        <div class="wms-srv-grid-cell-content">"Remark": "Test",</div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+                                        <div class="wms-srv-grid-cell-content">"BillTo": {</div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+
+                                        <div class="wms-srv-grid-cell-content">"Address": "ST Willa, Compton",</div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+
+                                        <div class="wms-srv-grid-cell-content">"City": "California",</div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+
+                                        <div class="wms-srv-grid-cell-content">"State": "CA",</div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+
+                                        <div class="wms-srv-grid-cell-content">"PostalCode": "25463",</div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+
+                                        <div class="wms-srv-grid-cell-content">"Country": "US",</div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+
+                                        <div class="wms-srv-grid-cell-content"> "Phone": "654-5454-545"</div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+                                        <div class="wms-srv-grid-cell-content">},</div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+                                        <div class="wms-srv-grid-cell-content">"ShipTo": {</div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+
+                                        <div class="wms-srv-grid-cell-content">"Address": "ST Willa, Compton",</div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+
+                                        <div class="wms-srv-grid-cell-content">"City": "California",</div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+
+                                        <div class="wms-srv-grid-cell-content">"State": "CA",</div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+
+                                        <div class="wms-srv-grid-cell-content">"PostalCode": "25463",</div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+
+                                        <div class="wms-srv-grid-cell-content">"Country": "US",</div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+
+                                        <div class="wms-srv-grid-cell-content"> "Phone": "654-5454-545"</div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+                                        <div class="wms-srv-grid-cell-content">},</div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+                                        <div class="wms-srv-grid-cell-content">"Items": [{</div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+
+                                        <div class="wms-srv-grid-cell-content">"SKUCode": "SKU001",</div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+
+                                        <div class="wms-srv-grid-cell-content">"UPCCode": "SKU001",</div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+
+                                        <div class="wms-srv-grid-cell-content">"Name": "Test item 1",</div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+                                        <div class="wms-srv-grid-cell-content">"UOM": "Each",</div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+
+                                        <div class="wms-srv-grid-cell-content">"Quantity": 2,</div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+
+                                        <div class="wms-srv-grid-cell-content">"UnitPrice": 99.99,</div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+                                        <div class="wms-srv-grid-cell-content"> "Lottable1": "",</div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+                                        <div class="wms-srv-grid-cell-content"> "Lottable2": "",</div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+                                        <div class="wms-srv-grid-cell-content"> "Lottable3": ""</div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+                                        <div class="wms-srv-grid-cell-content">},</div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+                                        <div class="wms-srv-grid-cell-content">{</div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+
+                                        <div class="wms-srv-grid-cell-content">"SKUCode": "SKU002",</div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+
+                                        <div class="wms-srv-grid-cell-content">"UPCCode": "SKU002",</div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+
+                                        <div class="wms-srv-grid-cell-content">"Name": "Test item 2",</div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+                                        <div class="wms-srv-grid-cell-content">"UOM": "Each",</div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+
+                                        <div class="wms-srv-grid-cell-content">"Quantity": 3,</div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+
+                                        <div class="wms-srv-grid-cell-content">"UnitPrice": 10.00,</div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+                                        <div class="wms-srv-grid-cell-content"> "Lottable1": "",</div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+                                        <div class="wms-srv-grid-cell-content"> "Lottable2": "",</div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+                                        <div class="wms-srv-grid-cell-content"> "Lottable3": ""</div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+                                        <div class="wms-srv-grid-cell-content">}</div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+                                        <div class="wms-srv-grid-cell-content">]</div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+                                        <div class="wms-srv-grid-cell-content">}</div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+                                        <div class="wms-srv-grid-cell-content">]</div>
+                                    </div>
+                                </div>
+
+                                <br><br><br><br>
+                                <h2><a href="" style="text-decoration: none;color:red;">Example Response</a></h2>
+                                <div class="wms-code-wrapper">
+                                    <button class="wms-srv-input wms-srv-button"
+                                        style="float: right;margin-right: 10px;" type="button" title="Copy"
+                                        onclick="copyText();"><i class="fas fa-copy"></i><span>Copy</span></button>
+                                    <div class="wms-srv-grid-row">
+                                        <div class="wms-srv-grid-cell-content">POST /so/createorders HTTP/1.1</div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+                                        <div class="wms-srv-grid-cell-content">Host:
+                                            164.68.123.40/BrilliantWMSAPI/api/staging/v1
+                                        </div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+                                        <div class="wms-srv-grid-cell-content">Authorization: __YOUR_AUTH_HERE__</div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+
+                                        <div class="wms-srv-grid-cell-content">Content-Type: application/json</div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+
+                                        <div class="wms-srv-grid-cell-content"></div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+
+                                        <div class="wms-srv-grid-cell-content">{</div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+
+                                        <div class="wms-srv-grid-cell-content"> "Result": [{</div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+
+                                        <div class="wms-srv-grid-cell-content">"OrderId": 58345234,</div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+
+                                        <div class="wms-srv-grid-cell-content">"OrderNumber": "TEST-ORDER-API-DOCS-1",
+                                        </div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+
+                                        <div class="wms-srv-grid-cell-content">"Status": "success",
+                                        </div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+                                        <div class="wms-srv-grid-cell-content">"ErrorMessage": ""
+                                        </div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+                                        <div class="wms-srv-grid-cell-content">},
+                                        </div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+                                        <div class="wms-srv-grid-cell-content">{
+                                        </div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+                                        <div class="wms-srv-grid-cell-content">"OrderId": 58345289,
+                                        </div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+                                        <div class="wms-srv-grid-cell-content">"OrderNumber": "TEST-ORDER-API-DOCS-2",
+                                        </div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+                                        <div class="wms-srv-grid-cell-content">"Status": "failed",
+                                        </div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+                                        <div class="wms-srv-grid-cell-content">"ErrorMessage": "Item not available for
+                                            Customer"
+                                        </div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+                                        <div class="wms-srv-grid-cell-content">}
+                                        </div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+                                        <div class="wms-srv-grid-cell-content">]
+                                        </div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+                                        <div class="wms-srv-grid-cell-content">}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Grid 2-->
+
+            </div>
+        </div>
+    </div>
+</div>
+<!--UOM-popup-->

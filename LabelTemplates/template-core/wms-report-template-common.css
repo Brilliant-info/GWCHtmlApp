@@ -1,0 +1,84 @@
+ @import url('https://fonts.googleapis.com/css2?family=Libre+Barcode+39&display=swap'); 
+/*@import url('https://fonts.googleapis.com/css?family=Libre+Barcode+128+Text');*/
+@font-face {
+    font-family: BrilliantWMSDataMatrix;
+    src: url(../../Themes/font/BrilliantWMSDataMatrix.woff);
+  }
+
+.Barcode2DStringToPrint{
+    font-weight: normal;
+    font-style: normal;
+    line-height: normal;
+    /*font-family: 'CCodeDataMatrix_Trial', sans-serif;*/   
+    /* font-family: 'BrilliantWMSDataMatrix', sans-serif; */
+    font-family: BrilliantWMSDataMatrix;
+    font-size: 7px;
+    letter-spacing: -1px;
+    line-height: 99.8%;
+    display: inline-block;
+    /* Attributes for right align */
+    text-align: left !important;
+    position: absolute;
+    right: 30px;
+    transform-origin: 80% 10%;
+    transform: scale(0.65); 
+    /* Attributes for right align */
+}
+
+.BarcodeStringToPrint {
+     font-family: 'Libre Barcode 39', cursive; 
+    /*font-family: 'Libre Barcode 128', cursive;*/
+    font-size: 0.40in;
+    margin-bottom: 0%;
+    transform-origin: 50% 35%;
+    transform: scale(1, 2.5); 
+}
+
+body{
+    background:#636363;
+    font-family: Arial;
+    font-size:0.12in;
+}
+label{
+    font-weight:bold;
+    margin-right:0.05in;
+}
+.printDataHolder{
+    text-align: center;
+}
+.printPage{
+    background-color:#ffffff;
+    margin-left:auto;
+    margin-right:auto;
+    margin-top:0.10in;
+    display: inline-block;
+    text-align: left;
+}
+.printTemplate{
+    background-color:#ffffff;
+    margin-left:auto;
+    margin-right:auto;
+    /* margin-top:0.10in; */
+    overflow: hidden;
+    position: relative;
+}
+.printPageBreak {
+    page-break-after: always;
+}
+.printRow{
+    margin-bottom:0.02in;
+}
+
+@media print {
+    body{
+        background:#ffffff !important;
+    }
+    .printTemplate{
+        border:none !important;
+    }
+    .printPage{
+        padding: 0in !important;
+        margin-top:0in !important;
+        margin:0in !important;
+    }
+}

@@ -1,0 +1,88 @@
+{
+    "Status": "200",
+    "StatusCode": "Success",
+    "Result": {
+      "Table": [
+        {
+          "ID": 70524,
+          "TemplateTitle": "Order Reject",
+          "Customer": "Vodafone Technical",
+          "Department": "Vodafone Network Rollout",
+          "Activity": "Order Reject",
+          "IsActive": "Yes"
+        },
+        {
+          "ID": 70525,
+          "TemplateTitle": "Order Reject",
+          "Customer": "Vodafone Support",
+          "Department": "Vodafone Network Rollout",
+          "Activity": "Order Reject",
+          "IsActive": "Yes"
+        },
+        {
+          "ID": 70526,
+          "TemplateTitle": "Order Reject",
+          "Customer": "AT&T Technical",
+          "Department": "AT&T Network Rollout",
+          "Activity": "Order Reject",
+          "IsActive": "Yes"
+        },
+        {
+          "ID": 70527,
+          "TemplateTitle": "Order Reject",
+          "Customer": "T-Mobile Technical",
+          "Department": "T-Mobile Network Rollout",
+          "Activity": "Order Reject",
+          "IsActive": "No"
+        },
+        {
+          "ID": 70528,
+          "TemplateTitle": "Order Reject",
+          "Customer": "Verizon Support",
+          "Department": "Verizon Network Rollout",
+          "Activity": "Order Reject",
+          "IsActive": "Yes"
+        },
+        {
+          "ID": 70529,
+          "TemplateTitle": "Order Reject",
+          "Customer": "Vodafone Technical",
+          "Department": "Vodafone Customer Service",
+          "Activity": "Order Reject",
+          "IsActive": "No"
+        },
+        {
+          "ID": 70530,
+          "TemplateTitle": "Order Reject",
+          "Customer": "AT&T Technical",
+          "Department": "AT&T Customer Service",
+          "Activity": "Order Reject",
+          "IsActive": "Yes"
+        },
+        {
+          "ID": 70531,
+          "TemplateTitle": "Order Reject",
+          "Customer": "T-Mobile Support",
+          "Department": "T-Mobile Network Rollout",
+          "Activity": "Order Reject",
+          "IsActive": "Yes"
+        },
+        {
+          "ID": 70532,
+          "TemplateTitle": "Order Reject",
+          "Customer": "Verizon Technical",
+          "Department": "Verizon Customer Service",
+          "Activity": "Order Reject",
+          "IsActive": "No"
+        },
+        {
+          "ID": 70533,
+          "TemplateTitle": "Order Reject",
+          "Customer": "Vodafone Technical",
+          "Department": "Vodafone Network Rollout",
+          "Activity": "Order Reject",
+          "IsActive": "Yes"
+        }
+      ]
+    }
+}

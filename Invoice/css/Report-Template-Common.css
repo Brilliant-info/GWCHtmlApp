@@ -1,0 +1,166 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Libre+Barcode+39&display=swap');
+@page { margin: 0; }
+@media print {
+ a.printTemplate,
+ .templateListHolder{
+	 display:none !important;
+ }
+}
+body { 
+	margin: 1.6cm; 
+	background-color:#ffffff;
+}
+
+a.printTemplate{
+	display: inline-block;
+	border: solid 1px #00acd7 !important;
+	background-color: #00acd7 !important;
+	border-radius: 7px;
+	padding: 10px 7px 5px 7px;
+	font-size: 14px !important;
+	text-decoration: none !important;
+	color:#ffffff;
+	position: absolute;
+	top: 10px;
+	right: 10px
+}
+
+a.printTemplate i{
+	font-size: 20px !important;
+	display: inline-block;
+	margin-right: 5px;
+}
+.wmsCustomImageTag {
+    display: inline-block;
+    background-color: #fff1a6;
+    border: solid 1px #fff1a6;
+    padding: 20px;
+}
+
+.wmsCustomTag,
+.wmsCustomRepeatTag {
+    display: inline-block;
+    padding: 4px 6px;
+    background-color: #fff1a6;
+    border: solid 1px #fff1a6;
+    border-radius: 7px;
+}
+.wmsGridRow {
+    display:table-row;
+}
+.wmsWidthAuto {
+    width:auto !important;
+}
+
+body, div {
+    font-family: Arial;
+    font-size: 13px;
+}
+
+.WmsReport .invoiceCompanyInfo .invCompLable,
+.WmsReport .invoiceCompanyInfo .invCompInfo {
+    background-color: #ffffff;
+    border-bottom: none;
+    border-right: none;
+}
+
+.WmsReport .invoiceHeader,
+.WmsReport .invoiceAddressInfo,
+.WmsReport .invoiceAddressHolder,
+.WmsReport .invProductGrid,
+.WmsReport .invTermsCalcInfoHolder {
+    display: table;
+    width: 100%;
+}
+
+.WmsReport .invoiceCompanyInfoHolder,
+.WmsReport .invoiceCalculationHolder {
+    display: inline-block;
+    float: right;
+}
+
+.PurchaseOrderTitle,
+.invoiceTitle {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.WmsReport .invoiceHeaderContent,
+.WmsReport .invCompRow,
+.WmsReport .invProductGridHeaderRow,
+.WmsReport .invProductGridRow {
+    display: table-row;
+}
+
+.WmsReport .invoiceHeaderCell,
+.WmsReport .invoiceBillingAddress,
+.WmsReport .invoiceShippingAddress {
+    display: table-cell;
+    width: 50%;
+    vertical-align: top;
+}
+
+.WmsReport .invCompLable {
+    font-weight: bold;
+    background-color: #cccccc;
+}
+
+.WmsReport .invCompLable,
+.WmsReport .invCompInfo,
+.WmsReport .invCompHeader,
+.WmsReport .invProductGridCell,
+.WmsReport .invoiceTermsInfo,
+.WmsReport .invoiceCalculationInfo {
+    display: table-cell;
+    padding: 3px 5px;
+    vertical-align: top;
+}
+
+.WmsReport .invCompHeader,
+.WmsReport .invProductGridHeaderRow .invProductGridCell {
+    background-color: #ceddff;
+    font-weight: bold;
+}
+
+.WmsReport .invCompLable,
+.WmsReport .invCompInfo,
+.WmsReport .invCompHeader,
+.WmsReport .invProductGridCell {
+    border-bottom: solid 1px #000000;
+}
+
+.WmsReport .invCompLable,
+.WmsReport .invoiceBillingAddress,
+.WmsReport .invProductGridCell {
+    border-right: solid 1px #000000;
+}
+
+.WmsReport .invoiceOrderInfo,
+.WmsReport .invProductGrid,
+.WmsReport .invoiceAddressInfo,
+.WmsReport .invoiceCalculationHolder {
+    border: solid 1px #000000;
+}
+
+.WmsReport .invProductGrid,
+.WmsReport .invoiceAddressInfo,
+.WmsReport .invTermsCalcInfoHolder {
+    margin-top: 20px;
+}
+
+.invoiceTermsTitle {
+    font-weight: bold;
+}
+body {
+}
+
+.wmsBarcodeTag {
+	font-family: 'Libre Barcode 39', cursive;
+    font-size:48px;
+	margin-top: 20px;
+	position: relative;
+	top: 10px;
+}
+.wmsCustom64PngImageTag img{
+    max-width: 250px;
+}

@@ -1,0 +1,74 @@
+.adminMenu 
+{
+	display: block;
+	color: #363636;
+}
+
+.adminMenu .adminMenuTitle 
+{
+	font-size: 16px !important;
+	font-family: Arial !important;
+	font-weight: bold;
+	padding: 10px 20px;
+	border-bottom: solid 1px #cccccc;
+	background-color: #00acd7;
+	color: #ffffff;
+}
+
+.adminMenuItems a {
+	/* display:block;
+	font-size: 16px !important;
+	font-family: Arial !important;
+	border-bottom:solid 1px #cccccc;
+	padding:10px 20px;
+	cursor:pointer; */
+	border: solid 1px #cccccc;
+	margin: 10px 0px;
+	font-size: 14px !important;
+	box-shadow: 5px 5px 5px #cccccc;
+	background-color: #ffffff;
+	display: block;
+}
+
+.adminMenuItems a i {
+	font-size: 20px !important;
+	color: #00acd7;
+	margin-right: 5px;
+	padding: 20px 10px;
+	background-color: #fbfafa;
+	border-right: solid 1px #cccccc;
+	width: 70px;
+	text-align: center;
+}
+
+.adminMenuItems a:hover {
+	background-color: #efefef;
+}
+
+.requiredStar{
+    color:#ff0000;
+    font-weight:bold;
+    font-size:16px;
+    line-height:10px;
+}
+
+
+.transferMenuItems a {
+	border: solid 1px #cccccc;
+	margin: 10px 0px;
+	font-size: 14px !important;
+	box-shadow: 5px 5px 5px #cccccc;
+	background-color: #ffffff;
+	display: block;
+}
+
+.transferMenuItems a i {
+	font-size: 20px !important;
+	color: #00acd7;
+	margin-right: 5px;
+	padding: 20px 10px;
+	background-color: #fbfafa;
+	border-right: solid 1px #cccccc;
+	width: 70px;
+	text-align: center;
+}

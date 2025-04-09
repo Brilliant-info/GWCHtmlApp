@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>ABC Analysis Report</title>
+        <!-- Common JS and CSS -->
+        <script src="../../../Themes/js/jquery-3.2.1.min.js"></script>
+        <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js" type="text/javascript"></script> -->
+        <script src="../../../Themes/js/core-js/Chart.min.js" type="text/javascript"></script>    
+        <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+        <script src="../../../Themes/js/wms-app-navigator.js"></script>
+        <script src="../../../Themes/js/wms-app-session.js"></script>
+        <link href="../../css/CustomReport.css" rel="stylesheet" type="text/css" />
+        <link href="../../../Themes/fontawesome/css/all.css" rel="stylesheet" />
+        <link rel="stylesheet" href="../../../Themes/bootstrap-4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
+        <!-- Common JS and CSS -->
+        <!-- Report wise JS and CSS -->
+        <link href="ABC_Analysis_Report.css" rel="stylesheet" type="text/css" />
+        <script src="ABC_Analysis_Report.js"></script>
+        <!-- Report wise JS and CSS -->
+    </head>
+    <body>
+<!-- Example  -->
+<div class="app">
+<div class="wrapper">
+    <div class="page-content ">
+        <div class="page-container tradebook">
+            <h1><span class="icon icon-book"><i
+                        class="fa-solid fa-cart-shopping headIcon"></i></span>
+                       <span class="previewPageTitle">ABC Analysis Report</span>
+            </h1>
+            <hr class="header-hr">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-sm-3">
+                        <div class="su-input-group su-static-label">
+                            <label class="su-input-label"><b>Inventory Report</b></label>
+                            <div class="">
+                                <!-- <input type="text" placeholder="eg: INFY" autocorrect="off" maxlength="25" step="1" noerror="true" staticlabel="true" animate="true" label="Symbol" rules="" class="">   -->
+                                <select id="ddlPageObjectobjrexta"
+                                    style="margin-bottom: 0px;margin-top: 0px;">
+                                    <option value="PurchaseOrder">
+                                        ABC Analysis Order
+                                    </option>
+                                    <!--<option value="SalesReturn">Sales Return</option> -->
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="su-input-group su-static-label">
+                            <label class="su-input-label"><b>Inward Order No</b>
+                                </label>
+                            <div class="">
+                                <input type="text"
+                                    placeholder="eg: 30001"
+                                    id="txtCustomerOrderNoobjrexta"
+                                    autocorrect="off" maxlength="25"
+                                    step="1" noerror="true"
+                                    staticlabel="true"
+                                    animate="true" label="Symbol"
+                                    rules="" class="">
+                                <!---->
+                                <!---->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="su-input-group su-static-label">
+                            <label class="su-input-label"><b>Select Date</b></label>
+                            <div class="">
+                                <input type="text"
+                                    id="txtFromToDateobjrexta"
+                                    placeholder="eg: From To To"
+                                    onclick="getDate();"
+                                    autocomplete="off"
+                                    autocorrect="off" maxlength="25"
+                                    step="1" noerror="true"
+                                    staticlabel="true"
+                                    animate="true" label="Symbol"
+                                    rules="" class="">
+                                <inout type="hidden"
+                                    id="hideFromDateobjrexta"
+                                    value="">
+                                </inout>
+                                <inout type="hidden"
+                                    id="hideToDateobjrexta"
+                                    value="">
+                                </inout>
+                            </div>
+                        </div>
+                        <div class="dateGridView"
+                            id="dateSelecterobjrexta"
+                            style="display:none;">
+                            <i class="fas fa-times-circle" onclick="openDatePopup();" style="margin-left: 471px;"></i>
+                            <div>
+
+                                <span>
+                                    <lable class="txtFixDates"
+                                        onclick="getPreviousdate(1);">
+                                        prev. day
+                                        |
+                                    </lable>
+                                </span><i
+                                    class="fa-solid fa-circle-xmark iconClose"
+                                    title="Cancel"></i>
+                                <span>
+                                    <lable class="txtFixDates"
+                                        onclick="getSevenDateData(7);">
+                                        last 7
+                                        days |
+                                    </lable>
+                                </span>
+                                <span>
+                                    <lable class="txtFixDates"
+                                        onclick="getThirtyDateData(30);">
+                                        last 30
+                                        days |
+                                    </lable>
+                                </span>
+                                <span>
+                                    <lable class="txtFixDates"
+                                        onclick="getcurrentFYData('2023/04/24');">
+                                        current FY
+                                    </lable>
+                                </span>
+                                <hr class="hrLine1">
+
+                            </div>
+                            <table class="dateGrid"
+                                id="gridDatePickerobjrexta">
+
+                                <tr>
+                                    <td>
+
+                                        <div class="text-center">
+                                            <strong>From</strong>
+                                        </div>
+
+
+                                        <div id="txt_FromdatePickerobjrexta"
+                                            class="txt_FromdatePicker">
+
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="text-center2">
+                                            <strong>To</strong>
+                                        </div>
+
+                                        <div
+                                            id="txt_TodatePickerobjrexta">
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="col-sm-1" style="padding-right: 0px;padding-top: 22px;">
+
+                        <button type="submit" class="btn-blue"
+                            id="btnSearchReportobjrexta" style="float:right;">
+                            <span class="icon icon-arrow-right"><i
+                                    class="fas fa-solid fa-arrow-right searchIcon"></i></span>
+                        </button>
+
+                    </div>
+                </div>
+            </div>
+            <!-- Grid -->
+
+            <div class="contentHolder" style="margin-top: 5px;"
+                id="txtGridPurchaseOrderobjrexta">
+                <!-- <div class="wms-srv-grid-scroller"> -->
+                <div class="">
+                    <div style="float:right;">
+                    <input type="text" value="" placeholder="search"
+                        id="txtfilterobjrexta"
+                        class="wms-srv-input wms-srv-simple-search"
+                        style="width: 100px;" ;>
+                    <a href="#" data-prefix="SE"><i
+                            class="fas fa-search" title="Search"
+                            style="position: relative; right: 25px;"
+                            onclick="getPurchaseOrderList('');"></i></a>
+                        
+                    <div class="table-download text-small"><span
+                            class="icon icon-download"></span>
+                        Download:
+                        <a href="#"
+                            data-balloon="Download complete results as Excel"
+                            data-balloon-pos="up"> <a href="#"
+                                data-balloon="Download complete results as CSV"
+                                data-balloon-pos="up" onclick="exportAtClient();">CSV</a>
+                    </div>
+                </div>
+                <div class="wms-srv-grid-scroller" style="width: 100%; max-height:500px !important;overflow:auto">
+                    <div class="wms-srv-grid previewTable"
+                        id="gettopfiveorderobjrexta">
+
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Grid -->
+</div>
+
+</div>
+<!-- Example -->
+    </body>
+</html>

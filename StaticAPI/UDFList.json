@@ -1,0 +1,44 @@
+{
+    "Status": "200",
+    "StatusCode": "Success",
+    "Result": {
+        "Table": [
+          {
+            "ID": 1,
+            "Name": "User Defined Field-1",
+            "FieldValue": "NoonFood",
+            "isActive": "Y"
+          },
+          {
+            "ID": 2,
+            "Name": "User Defined Field-2",
+            "FieldValue": "Services",
+            "isActive": "Y"
+          },
+          {
+            "ID": 3,
+            "Name": "User Defined Field-3",
+            "FieldValue": "Team",
+            "isActive": "Y"
+          },
+          {
+            "ID": 4,
+            "Name": "User Defined Field-4",
+            "FieldValue": "NA",
+            "isActive": "Y"
+          },
+          {
+            "ID": 5,
+            "Name": "User Defined Field-5",
+            "FieldValue": "NA",
+            "isActive": "Y"
+          },
+          {
+            "ID": 6,
+            "Name": "User Defined Field-6",
+            "FieldValue": "NoonFood",
+            "isActive": "Y"
+          }
+        ]
+    }
+}

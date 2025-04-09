@@ -1,0 +1,1235 @@
+<div id="pnlBarcodeConfiguration" style="display: none;">
+    <!-- Content Holder -->
+    <div class="wms-srv-content-area pnlInbound" id="pnlAppointmentList">
+        <!-- Content Area -->
+
+        <div class="container-fluid wms-srv-dashboard-panel">
+            <div class="row">
+                <div class="col-md-4 nopadding">
+                    <!-- Page Title -->
+                    <div class="wms-srv-page-title">
+                        <i class="fas fa-list"></i><span class="wms-srv-data-title">Barcode Format</span>
+                    </div>
+                    <!-- Page Title -->
+                </div>
+                <div class="col-md-8 nopadding">
+                </div>
+            </div>
+        </div>
+
+        <!-- Head Grid -->
+        <div class="wms-srv-grid-holder pnlWmsHead" id="pnlWmsHead" style="display: none;">
+            <div class="wms-srv-grid">
+                <!-- Object Head Data Will be Here -->
+            </div>
+        </div>
+        <br>
+        <!-- Head Grid -->
+
+
+
+        <!-- Grid -->
+
+        <div class="wms-srv-obj-main-grid pnlWmsDetail">
+            <div class="wms-srv-grid-holder">
+                <div class="wms-srv-grid-action-panel">
+
+
+                    <div class="wms-srv-grid-title">
+                        Barcode Format Setup
+                    </div>
+                </div>
+                <div class="wms-srv-grid-scroller" style="width: 100%;" id="Barcodeconfiglist">
+                    <div class="wms-srv-grid" data-gridobjectid="gridObject_Appointment_Book_Book">
+                        <div class="wms-srv-grid-header">
+
+                            <div class="wms-srv-grid-cell wms-srv-align">Object Type</div>
+                            <div class="wms-srv-grid-cell wms-srv-align">Barcode Format </div>
+                            <div class="wms-srv-grid-cell wms-align" style="text-align: center;width:100px;">Action
+                            </div>
+                        </div>
+
+                        <div class="wms-srv-grid-row wms-align">
+                            <div class="wms-srv-grid-cell">Store Pallet</div>
+                            <div class="wms-srv-grid-cell">SP-6732</div>
+
+                            <div class="wms-srv-grid-cell">
+
+                                <div class="wms-srv-grid-action">
+                                    <a href="#" title="Save" class="wms-srv-save" data-prefix="SV"
+                                        onclick="openviewPopupStorePallet();return false;"><i
+                                            class="fas fa-edit"></i></a>
+
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="wms-srv-grid-row wms-align">
+                            <div class="wms-srv-grid-cell"> Shipping Pallet </div>
+                            <div class="wms-srv-grid-cell"> SH-9987</div>
+                            <div class="wms-srv-grid-cell">
+
+
+                                <div class="wms-srv-grid-action">
+                                    <a href="#" title="Save" class="wms-srv-save" data-prefix="SV"
+                                        onclick="openviewPopupPallet();return false;"><i class="fas fa-edit"></i></a>
+                                </div>
+
+
+                            </div>
+                        </div>
+                        <div class="wms-srv-grid-row wms-align">
+                            <div class="wms-srv-grid-cell"> Carton Label</div>
+                            <div class="wms-srv-grid-cell">CA-7624</div>
+
+                            <div class="wms-srv-grid-cell">
+
+
+                                <div class="wms-srv-grid-action">
+                                    <a href="#" title="Save" class="wms-srv-save" data-prefix="SV"
+                                        onclick="openviewPopupCartan();return false;"><i class="fas fa-edit"></i></a>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="wms-srv-grid-row wms-align">
+                            <div class="wms-srv-grid-cell">Location</div>
+                            <div class="wms-srv-grid-cell">Loc-5342</div>
+
+                            <div class="wms-srv-grid-cell">
+
+
+                                <div class="wms-srv-grid-action">
+                                    <a href="#" title="Save" class="wms-srv-save" data-prefix="SV"
+                                        onclick="openviewPopup();return false;"><i class="fas fa-edit"></i></a>
+                                </div>
+
+
+                            </div>
+                        </div>
+
+                        <div class="wms-srv-grid-row wms-align">
+                            <div class="wms-srv-grid-cell">SKU
+                            </div>
+                            <div class="wms-srv-grid-cell">SKU-9677
+                            </div>
+
+                            <div class="wms-srv-grid-cell">
+
+
+                                <div class="wms-srv-grid-action">
+                                    <a href="#" title="Save" class="wms-srv-save" data-prefix="SV"
+                                        onclick="openviewPopupSKU();return false;"><i class="fas fa-edit"></i></a>
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <!-- Grid -->
+            <!-- Content Area -->
+        </div>
+    </div>
+    <!-- Grid -->
+    <!-- Content Area -->
+    <br>
+    <!-- Content Holder -->
+    <div class="wms-srv-action-popupmenu" id="wmsSrvActionPopupMenu" style="display: none; top: 0px; left: 0px;">
+        <a href="expected-receipt-details.html">
+            <div class="wms-srv-dot wms-srv-green"></div>
+            Expected Receipt
+        </a>
+        <a href="grn-details.html">
+            <div class="wms-srv-dot wms-srv-red"></div>
+            Receiving
+        </a>
+        <a href="put-away-details.html">
+            <div class="wms-srv-dot wms-srv-gray"></div>
+            Put Away
+        </a>
+    </div>
+    <!-- POPUP Communication -->
+    <div class="wms-srv-popup-holder" id="wms-srv-popup" style="display: none;">
+        <div class="wms-srv-popup-bg">
+        </div>
+        <div class="wms-srv-popup">
+            <div class="wms-srv-popup-content">
+                <!-- Popup Title -->
+                <div class="wms-srv-popup-title">
+                    <div class="wms-srv-page-title">
+                        <i class="fas fa-envelope"></i><span>Communication</span>
+                    </div>
+                    <a href="#" id="wms-srv-popup-close" class="wms-srv-popup-close"><i
+                            class="fas fa-times-circle"></i></a>
+                </div>
+                <!-- Popup Title -->
+                <div class="wms-srv-popup-content-body" id="wms-srv-popup-content-body">
+                    <div id="popupContentDocument">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- POPUP Communication -->
+    <!-- POPUP Communication -->
+    <div class="wms-srv-popup-holder" id="wms-srv-popup-sku" style="display: none;">
+        <div class="wms-srv-popup-bg">
+        </div>
+        <div class="wms-srv-popup">
+            <div class="wms-srv-popup-content">
+                <!-- Popup Title -->
+                <div class="wms-srv-popup-title">
+                    <div class="wms-srv-page-title">
+                        <i class="fas fa-boxes"></i><span>SKU Details</span>
+                    </div>
+                    <a href="#" id="wms-srv-popup-close" class="wms-srv-popup-close"><i
+                            class="fas fa-times-circle"></i></a>
+                </div>
+                <!-- Popup Title -->
+                <div class="wms-srv-popup-content-body" id="wms-srv-popup-content-body">
+                    <div id="popupContentDocument">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Suggestion List -->
+    <div class="wms-srv-suggestion-list"></div>
+    <!-- POPUP Communication -->
+    <!-- Save Record Structure -->
+    <div class="wms-srv-alert-popup" data-type="" style="display: none;">
+        <div class="wms-alert-title">Success</div>
+        <div class="wms-alert-message">Your transaction has been saved!!</div>
+    </div>
+    <!-- Save Record Structure -->
+
+    <!--Location popup-->
+    <div class="wms-srv-popup-holder" id="wms-srv-view-popup" style="display: none;">
+        <div class="wms-srv-popup-bg">
+        </div>
+        <div class="wms-srv-popup">
+            <div class="wms-srv-popup-content">
+                <!-- Popup Title -->
+                <div class="wms-srv-popup-title">
+                    <div class="wms-srv-page-title">
+                        <i class="fas fa-file-alt"></i><span>  Location Barcode Configuration</span>
+                    </div>
+                    <a href="#" id="wms-srv-view-popup-close" class="wms-srv-popup-close"><i
+                            class="fas fa-times-circle"></i></a>
+                </div>
+
+
+                <!-- Popup Title -->
+                <div class="wms-srv-popup-content-body" id="wms-srv-popup-content-body">
+                    <!-- Grid 2-->
+
+                    <div class="wms-srv-grid-scroller" style="width: 100%;">
+                        <div class="wms-srv-grid-action-panel">
+                            <div class="wms-srv-grid-common-action"><a href="#" title="Customize Grid" data-prefix="CG"
+                                    class="wms-srv-icononly"><i class="fas fa-edit"></i></a></div>
+
+                            <div class="wms-srv-grid-title">
+                                Barcode Format Setup
+                            </div>
+                        </div>
+                        <div class="wms-srv-grid" data-gridobjectid="gridObject_Appointment_Book_Book">
+                            <div class="wms-srv-grid-header">
+
+                                <!-- <div class="wms-srv-grid-cell">Select Object</div> -->
+                                <div class="wms-srv-grid-cell">Enter Prefix</div>
+                                <!-- <div class="wms-srv-grid-cell">Deliminate By</div> -->
+                                <div class="wms-srv-grid-cell">Label Size</div>
+                                <!-- <div class="wms-srv-grid-cell">Barcode Type</div> -->
+
+                            </div>
+                            <div class="wms-srv-grid-row">
+
+                                <!-- <div class="wms-srv-grid-cell">
+                                    <select class="wms-srv-grid-cell-input">
+                                        <option value="">-- Select --</option>
+                                        <option value="1">Sku</option>
+                                        <option value="2">Location</option>
+                                        <option value="3">Shipping Pallet</option>
+                                        <option value="4">Store Pallet</option>
+                                        <option value="5">Carton Label</option>
+                                    </select>
+                                </div> -->
+                                <div class="wms-srv-grid-cell"><input type="text" data-prefix="SESKU" data-id=""
+                                   disabled  id="txtLOCPRFIX"   value="LOC" class="wms-srv-grid-cell-input"></div>
+                                <!-- <div class="wms-srv-grid-cell">
+                                    <div class="wms-srv-radio-group">
+                                        <input type="radio" data-prefix="SESKU" data-id="" value=""
+                                            class="wms-srv-grid-cell-input notranslate" name="DeliminateGroup"> :
+                                        (Colen)
+                                        <input type="radio" data-prefix="SESKU" data-id="" value=""
+                                            class="wms-srv-grid-cell-input notranslate" name="DeliminateGroup"
+                                            checked="checked"> - (Hypen)
+                                        <input type="radio" data-prefix="SESKU" data-id="" value=""
+                                            class="wms-srv-grid-cell-input notranslate" name="DeliminateGroup"> _
+                                        (Underscore)
+                                        <input type="radio" data-prefix="SESKU" data-id="" value=""
+                                            class="wms-srv-grid-cell-input notranslate" name="DeliminateGroup"> None
+                                    </div>
+                                </div> -->
+                                <div class="wms-srv-grid-cell">
+                                    <select class="wms-srv-grid-cell-input">
+                                        <option value="">-- Select --</option>
+                                        <option value="Transfer No" selected="selected">4x2</option>
+                                        <option value="Date Time">4x6</option>
+                                        <option value="Transfer No">2x2</option>
+                                    </select>
+                                </div>
+                                <!-- <div class="wms-srv-grid-cell">
+                                    <div class="wms-srv-suggestion-holder"
+                                        style="display:inline-flexbox; width: 290px;margin-top:-2px;">
+                                        <input type="radio" data-prefix="SESKU" data-id="" value=""
+                                            class="wms-srv-grid-cell-input notranslate" name="checkgroup2"><a
+                                            href="#">1-D</a>
+                                        <input type="radio" data-prefix="SESKU" data-id="" value=""
+                                            class="wms-srv-grid-cell-input notranslate" name="checkgroup2"
+                                            checked="checked"><a href="#">2-D</a>
+                                        <input type="radio" data-prefix="SESKU" data-id="" value=""
+                                            class="wms-srv-grid-cell-input notranslate" name="checkgroup2"><a
+                                            href="#">QR-Code</a>
+                                    </div>
+                                </div> -->
+
+                            </div><br>
+
+
+                        </div>
+                    </div><br>
+
+                    <!-- Grid 2-->
+
+                    <!-- Grid 3-->
+
+                    <div class="wms-srv-grid" data-gridobjectid="gridObject_Appointment_Book_Book">
+                        <div class="wms-srv-grid-header">
+
+                            <div class="wms-srv-grid-cell">Barcode Templet 1 <br> <input type="radio"
+                                    name="TempletPallet" id=""></div>
+                            <div class="wms-srv-grid-cell">Barcode Templet 2 <br> <input type="radio"
+                                    name="TempletPallet" id=""></div>
+                            <div class="wms-srv-grid-cell">Barcode Templet 3 <br> <input type="radio"
+                                    name="TempletPallet" id=""></div>
+
+
+                        </div>
+                        <div class="wms-srv-grid-row">
+
+                            <div class="wms-srv-grid-cell" id="LOCT1" style="">
+                                <a href="#" id="LOCT1Tick"
+                                    style="display:none;vertical-align: top;align-items: left;font-size: 20PX;"><i
+                                        class="fas fa-check-circle"></i></a>
+                                <img src="Images\LOC-002.gif" style="height:100%" id="LOCimgT1" />
+
+
+
+                            </div>
+                            <div class="wms-srv-grid-cell" id="LOCT2" style="text-align: center;">
+                                <a href="#" id="LOCT2Tick"
+                                    style="display:none;vertical-align: top;align-items: left;font-size: 20PX;"><i
+                                        class="fas fa-check-circle"></i></a>
+                                <a href="#"><i class="fas fa-Check-circle"></i></a>
+                                <img src="Images\LOC-2.gif" style="height:100%" id="LOCimgT2" />
+
+
+                            </div>
+                            <div class="wms-srv-grid-cell" id="LOCT3" style="">
+                                <a href="#" id="LOCT3Tick"
+                                    style="display:none;vertical-align: top;align-items: left;font-size: 20PX;"><i
+                                        class="fas fa-check-circle"></i></a>
+                                <img src="Images\002.gif" style="height:100%" id="LOCimgT3" />
+
+
+
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+
+            </div>
+
+            <!-- Grid 4-->
+            <br />
+            <div class="wms-srv-grid-scroller" style="width: 100%;">
+                <div class="wms-srv-grid-action-panel">
+                    <div class="wms-srv-grid-common-action"><a href="#" title="Customize Grid" data-prefix="CG"
+                            class="wms-srv-icononly"><i class="fas fa-edit"></i></a></div>
+
+                    <div class="wms-srv-grid-title">
+                        Preview
+                    </div>
+                </div>
+                <div class="wms-srv-grid" data-gridobjectid="gridObject_Appointment_Book_Book">
+                    <div class="wms-srv-grid-header">
+
+                        <div class="wms-srv-grid-cell">Barcode Preview</div>
+                        <div class="wms-srv-grid-cell">Sample format</div>
+
+                    </div>
+                    <div class="wms-srv-grid-row">
+
+                        <div class="wms-srv-grid-cell">
+                            <img src="Images\LOC-2.gif" style="max-width:450px;" id="LOCSEL" />
+                        </div>
+                        <div class="wms-srv-grid-cell">SKU-BatchCode-MfgCode-Color</div>
+
+
+                    </div>
+
+
+                </div>
+            </div>
+            <br>
+            <div style="text-align: center;">
+                <button class="wms-srv-input wms-srv-button wms-srv-highlight-btn-secondary" type="button" title="Save"
+                    data-prefix="MO[MKCM--wmscmm--CO]"><span style="margin-left: 0px;">Save</span>
+                </button>
+            </div>
+            <!-- Grid 4-->
+        </div><br>
+
+        <!-- Grid 3-->
+
+
+
+    </div>
+</div>
+</div>
+</div>
+<!-- SKU Code Barcode Confugration -->
+<div class="wms-srv-popup-holder" id="wms-srv-view-SKUBarcode-popup" style="display: none;">
+    <div class="wms-srv-popup-bg">
+    </div>
+    <div class="wms-srv-popup">
+        <div class="wms-srv-popup-content">
+            <!-- Popup Title -->
+            <div class="wms-srv-popup-title">
+                <div class="wms-srv-page-title">
+                    <i class="fas fa-file-alt"></i><span> Barcode Configuration</span>
+                </div>
+                <a href="#" id="wms-srv-view-SKUBarcode-popup-close" class="wms-srv-popup-close"><i
+                        class="fas fa-times-circle"></i></a>
+            </div>
+
+
+            <!-- Popup Title -->
+            <div class="wms-srv-popup-content-body" id="wms-srv-view-SKUBarcode-popup-content-body">
+                <!-- Grid 2-->
+
+                <div class="wms-srv-grid-scroller" style="width: 100%;">
+                    <div class="wms-srv-grid-action-panel">
+                        <div class="wms-srv-grid-common-action"><a href="#" title="Customize Grid" data-prefix="CG"
+                                class="wms-srv-icononly"><i class="fas fa-edit"></i></a></div>
+
+                        <div class="wms-srv-grid-title">
+                            Barcode Format Setup
+                        </div>
+                    </div>
+                    <div class="wms-srv-grid" data-gridobjectid="gridObject_Appointment_Book_Book">
+                        <div class="wms-srv-grid-header">
+
+                            <!-- <div class="wms-srv-grid-cell">Select Object</div> -->
+                            <div class="wms-srv-grid-cell">Enter Prefix</div>
+                            <!-- <div class="wms-srv-grid-cell">Deliminate By</div> -->
+                            <div class="wms-srv-grid-cell">Label Size</div>
+                            <!-- <div class="wms-srv-grid-cell">Barcode Type</div> -->
+
+                        </div>
+                        <div class="wms-srv-grid-row">
+
+                            <!-- <div class="wms-srv-grid-cell">
+                                <select class="wms-srv-grid-cell-input">
+                                    <option value="">-- Select --</option>
+                                    <option value="1">Sku</option>
+                                    <option value="2">Location</option>
+                                    <option value="3">Shipping Pallet</option>
+                                    <option value="4">Store Pallet</option>
+                                    <option value="5">Carton Label</option>
+                                </select>
+                            </div> -->
+                            <div class="wms-srv-grid-cell"><input type="text" data-prefix="SESKU" data-id="" value=""
+                                disabled id="txtSKUPRFIX" class="wms-srv-grid-cell-input"></div>
+                            <!-- <div class="wms-srv-grid-cell">
+                                <div class="wms-srv-radio-group">
+                                    <input type="radio" data-prefix="SESKU" data-id="" value=""
+                                        class="wms-srv-grid-cell-input notranslate" name="DeliminateGroup"> :
+                                    (Colen)
+                                    <input type="radio" data-prefix="SESKU" data-id="" value=""
+                                        class="wms-srv-grid-cell-input notranslate" name="DeliminateGroup"
+                                        checked="checked"> - (Hypen)
+                                    <input type="radio" data-prefix="SESKU" data-id="" value=""
+                                        class="wms-srv-grid-cell-input notranslate" name="DeliminateGroup"> _
+                                    (Underscore)
+                                    <input type="radio" data-prefix="SESKU" data-id="" value=""
+                                        class="wms-srv-grid-cell-input notranslate" name="DeliminateGroup"> None
+                                </div>
+                            </div> -->
+                            <div class="wms-srv-grid-cell">
+                                <select class="wms-srv-grid-cell-input">
+                                    <option value="">-- Select --</option>
+                                    <option value="Transfer No" selected="selected">4x2</option>
+                                    <option value="Date Time">4x6</option>
+                                    <option value="Transfer No">2x2</option>
+                                </select>
+                            </div>
+                            <!-- <div class="wms-srv-grid-cell">
+                                <div class="wms-srv-suggestion-holder"
+                                    style="display:inline-flexbox; width: 290px;margin-top:-2px;">
+                                    <input type="radio" data-prefix="SESKU" data-id="" value=""
+                                        class="wms-srv-grid-cell-input notranslate" name="checkgroup2"><a
+                                        href="#">1-D</a>
+                                    <input type="radio" data-prefix="SESKU" data-id="" value=""
+                                        class="wms-srv-grid-cell-input notranslate" name="checkgroup2"
+                                        checked="checked"><a href="#">2-D</a>
+                                    <input type="radio" data-prefix="SESKU" data-id="" value=""
+                                        class="wms-srv-grid-cell-input notranslate" name="checkgroup2"><a
+                                        href="#">QR-Code</a>
+                                </div>
+                            </div> -->
+
+                        </div><br>
+
+
+                    </div>
+                </div><br>
+
+                <!-- Grid 2-->
+
+                <!-- Grid 3-->
+                <div class="wms-srv-grid" data-gridobjectid="gridObject_Appointment_Book_Book">
+                    <div class="wms-srv-grid-header">
+
+                        <div class="wms-srv-grid-cell">Barcode Templet 1 <br> <input type="radio" name="TempletPallet"
+                                id=""></div>
+                        <div class="wms-srv-grid-cell">Barcode Templet 2 <br> <input type="radio" name="TempletPallet"
+                                id=""></div>
+                        <div class="wms-srv-grid-cell">Barcode Templet 3 <br> <input type="radio" name="TempletPallet"
+                                id=""></div>
+
+
+                    </div>
+                    <div class="wms-srv-grid-row">
+
+                        <div class="wms-srv-grid-cell" id="SKUT1" style="">
+                            <a href="#" id="SKUT1Tick"
+                                style="display:none;vertical-align: top;align-items: left;font-size: 20PX;"><i
+                                    class="fas fa-check-circle"></i></a>
+                            <img src="Images\LOC-002.gif" style="height:100%" id="SKUimgT1" />
+
+
+
+                        </div>
+                        <div class="wms-srv-grid-cell" id="SKUT2" style="text-align: center;">
+                            <a href="#" id="SKUT2Tick"
+                                style="display:none;vertical-align: top;align-items: left;font-size: 20PX;"><i
+                                    class="fas fa-check-circle"></i></a>
+                            <a href="#"><i class="fas fa-Check-circle"></i></a>
+                            <img src="Images\LOC-2.gif" style="height:100%" id="SKUimgT2" />
+
+
+                        </div>
+                        <div class="wms-srv-grid-cell" id="SKUT3" style="">
+                            <a href="#" id="SKUT3Tick"
+                                style="display:none;vertical-align: top;align-items: left;font-size: 20PX;"><i
+                                    class="fas fa-check-circle"></i></a>
+                            <img src="Images\002.gif" style="height:100%" id="SKUimgT3" />
+
+
+
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+
+        </div>
+
+        <!-- Grid 4-->
+        <br />
+        <div class="wms-srv-grid-scroller" style="width: 100%;">
+            <div class="wms-srv-grid-action-panel">
+                <div class="wms-srv-grid-common-action"><a href="#" title="Customize Grid" data-prefix="CG"
+                        class="wms-srv-icononly"><i class="fas fa-edit"></i></a></div>
+
+                <div class="wms-srv-grid-title">
+                    Preview
+                </div>
+            </div>
+            <div class="wms-srv-grid" data-gridobjectid="gridObject_Appointment_Book_Book">
+                <div class="wms-srv-grid-header">
+
+                    <div class="wms-srv-grid-cell">Barcode Preview</div>
+                    <div class="wms-srv-grid-cell">Sample format</div>
+
+                </div>
+                <div class="wms-srv-grid-row">
+
+                    <div class="wms-srv-grid-cell">
+                        <img src="Images\SKU-001975.gif" style="max-width:450px;" id="SKUTSEL" />
+                    </div>
+                    <div class="wms-srv-grid-cell">SKU-BatchCode-MfgCode-Color</div>
+
+
+                </div>
+
+
+            </div>
+        </div>
+        <br>
+        <div style="text-align: center;">
+            <button class="wms-srv-input wms-srv-button wms-srv-highlight-btn-secondary" type="button" title="Save"
+                data-prefix="MO[MKCM--wmscmm--CO]"><span style="margin-left: 0px;">Save</span>
+            </button>
+        </div>
+        <!-- Grid 4-->
+    </div><br>
+
+    <!-- Grid 3-->
+
+
+
+</div>
+</div>
+</div>
+<!-- Cartan Barcode Confugration -->
+<div class="wms-srv-popup-holder" id="wms-srv-view-Cartan-popup" style="display: none;">
+    <div class="wms-srv-popup-bg">
+    </div>
+    <div class="wms-srv-popup">
+        <div class="wms-srv-popup-content">
+            <!-- Popup Title -->
+            <div class="wms-srv-popup-title">
+                <div class="wms-srv-page-title">
+                    <i class="fas fa-file-alt"></i><span> Barcode Configuration</span>
+                </div>
+                <a href="#" id="wms-srv-view-Cartan-popup-close" class="wms-srv-popup-close"><i
+                        class="fas fa-times-circle"></i></a>
+            </div>
+
+
+            <!-- Popup Title -->
+            <div class="wms-srv-popup-content-body" id="wms-srv-view-Cartan-popup-content-body">
+                <!-- Grid 2-->
+
+                <div class="wms-srv-grid-scroller" style="width: 100%;">
+                    <div class="wms-srv-grid-action-panel">
+                        <div class="wms-srv-grid-common-action"><a href="#" title="Customize Grid" data-prefix="CG"
+                                class="wms-srv-icononly"><i class="fas fa-edit"></i></a></div>
+
+                        <div class="wms-srv-grid-title">
+                            Barcode Format Setup
+                        </div>
+                    </div>
+                    <div class="wms-srv-grid" data-gridobjectid="gridObject_Appointment_Book_Book">
+                        <div class="wms-srv-grid-header">
+
+                            <!-- <div class="wms-srv-grid-cell">Select Object</div> -->
+                            <div class="wms-srv-grid-cell">Enter Prefix</div>
+                            <!-- <div class="wms-srv-grid-cell">Deliminate By</div> -->
+                            <div class="wms-srv-grid-cell">Label Size</div>
+                            <!-- <div class="wms-srv-grid-cell">Barcode Type</div> -->
+
+                        </div>
+                        <div class="wms-srv-grid-row">
+
+                            <!-- <div class="wms-srv-grid-cell"> -->
+                            <!-- <select class="wms-srv-grid-cell-input">
+                                    <option value="">-- Select --</option>
+                                    <option value="1">Sku</option>
+                                    <option value="2">Location</option>
+                                    <option value="3">Shipping Pallet</option>
+                                    <option value="4">Store Pallet</option>
+                                    <option value="5">Carton Label</option>
+                                </select> -->
+                            <!-- </div> -->
+                            <div class="wms-srv-grid-cell"><input type="text" data-prefix="SESKU" data-id="" value="CT-"
+                              disabled  id="txtCTNPRFIX"class="wms-srv-grid-cell-input"></div>
+                            <!-- <div class="wms-srv-grid-cell"> -->
+                            <!-- <div class="wms-srv-radio-group">
+                                    <input type="radio" data-prefix="SESKU" data-id="" value=""
+                                        class="wms-srv-grid-cell-input notranslate" name="DeliminateGroup"> :
+                                    (Colen)
+                                    <input type="radio" data-prefix="SESKU" data-id="" value=""
+                                        class="wms-srv-grid-cell-input notranslate" name="DeliminateGroup"
+                                        checked="checked"> - (Hypen)
+                                    <input type="radio" data-prefix="SESKU" data-id="" value=""
+                                        class="wms-srv-grid-cell-input notranslate" name="DeliminateGroup"> _
+                                    (Underscore)
+                                    <input type="radio" data-prefix="SESKU" data-id="" value=""
+                                        class="wms-srv-grid-cell-input notranslate" name="DeliminateGroup"> None
+                                </div> -->
+                            <!-- </div> -->
+                            <div class="wms-srv-grid-cell">
+                                <select class="wms-srv-grid-cell-input">
+                                    <option value="">-- Select --</option>
+                                    <option value="Transfer No" selected="selected">4x2</option>
+                                    <option value="Date Time">4x6</option>
+                                    <option value="Transfer No">2x2</option>
+                                </select>
+                            </div>
+                            <!-- <div class="wms-srv-grid-cell"> -->
+                            <!-- <div class="wms-srv-suggestion-holder"
+                                    style="display:inline-flexbox; width: 290px;margin-top:-2px;">
+                                    <input type="radio" data-prefix="SESKU" data-id="" value=""
+                                        class="wms-srv-grid-cell-input notranslate" name="checkgroup2"><a
+                                        href="#">1-D</a>
+                                    <input type="radio" data-prefix="SESKU" data-id="" value=""
+                                        class="wms-srv-grid-cell-input notranslate" name="checkgroup2"
+                                        checked="checked"><a href="#">2-D</a>
+                                    <input type="radio" data-prefix="SESKU" data-id="" value=""
+                                        class="wms-srv-grid-cell-input notranslate" name="checkgroup2"><a
+                                        href="#">QR-Code</a>
+                                </div> -->
+                            <!-- </div> -->
+
+                        </div><br>
+
+
+                    </div>
+                </div><br>
+
+                <!-- Grid 2-->
+
+                <!-- Grid 3-->
+
+                <div class="wms-srv-grid-common-action"><a href="#" title="Customize Grid" data-prefix="CG"
+                        class="wms-srv-icononly"><i class="fas fa-edit"></i></a></div>
+
+                <div class="wms-srv-grid-title">
+                    Image Preview
+                </div>
+            </div>
+            <div class="wms-srv-grid" data-gridobjectid="gridObject_Appointment_Book_Book">
+                <div class="wms-srv-grid-header">
+                    <div class="wms-srv-grid-cell">Barcode Templet 1 <br> <input type="radio" name="TempletPallet"
+                            id=""></div>
+                    <div class="wms-srv-grid-cell">Barcode Templet 2 <br> <input type="radio" name="TempletPallet"
+                            id=""></div>
+                    <div class="wms-srv-grid-cell">Barcode Templet 3 <br> <input type="radio" name="TempletPallet"
+                            id=""></div>
+                </div>
+                <div class="wms-srv-grid-row">
+
+                    <div class="wms-srv-grid-cell" id="CTNT1" style="">
+                        <a href="#" id="CTNT1Tick"
+                            style="display:none;vertical-align: top;align-items: left;font-size: 20PX;"><i
+                                class="fas fa-check-circle"></i></a>
+                        <img src="Images\LOC-002.gif" style="height:100%" id="CTNimgT1" />
+
+
+
+                    </div>
+                    <div class="wms-srv-grid-cell" id="CTNT2" style="text-align: center;">
+                        <a href="#" id="CTNT2Tick"
+                            style="display:none;vertical-align: top;align-items: left;font-size: 20PX;"><i
+                                class="fas fa-check-circle"></i></a>
+                        <a href="#"><i class="fas fa-Check-circle"></i></a>
+                        <img src="Images\LOC-2.gif" style="height:100%" id="CTNimgT2" />
+
+
+                    </div>
+                    <div class="wms-srv-grid-cell" id="CTNT3" style="">
+                        <a href="#" id="CTNT3Tick"
+                            style="display:none;vertical-align: top;align-items: left;font-size: 20PX;"><i
+                                class="fas fa-check-circle"></i></a>
+                        <img src="Images\002.gif" style="height:100%" id="CTNimgT3" />
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <!-- Grid 4-->
+        <br />
+        <div class="wms-srv-grid-scroller" style="width: 100%;">
+            <div class="wms-srv-grid-action-panel">
+                <div class="wms-srv-grid-common-action"><a href="#" title="Customize Grid" data-prefix="CG"
+                        class="wms-srv-icononly"><i class="fas fa-edit"></i></a></div>
+
+                <div class="wms-srv-grid-title">
+                    Preview
+                </div>
+            </div>
+            <div class="wms-srv-grid" data-gridobjectid="gridObject_Appointment_Book_Book">
+                <div class="wms-srv-grid-header">
+
+                    <div class="wms-srv-grid-cell">Barcode Preview</div>
+                    <div class="wms-srv-grid-cell"> Barcode Text</div>
+                </div>
+                <div class="wms-srv-grid-row">
+
+                    <div class="wms-srv-grid-cell">
+                        <img src="Images\Untitled(1).png" id="CTNSEL" />
+                    </div>
+                    <div class="wms-srv-grid-cell"></div>
+
+
+
+                </div>
+
+
+            </div>
+        </div>
+        <br>
+        <div style="text-align: center;">
+            <button class="wms-srv-input wms-srv-button wms-srv-highlight-btn-secondary" type="button" title="Save"
+                data-prefix="MO[MKCM--wmscmm--CO]"><span style="margin-left: 0px;">Save</span>
+            </button>
+        </div>
+        <!-- Grid 4-->
+    </div><br>
+
+    <!-- Grid 3-->
+
+
+
+</div>
+</div>
+</div>
+<!--Shipping Pallet-->
+<div class="wms-srv-popup-holder" id="wms-srv-view-Pallet-popup" style="display: none;">
+    <div class="wms-srv-popup-bg">
+    </div>
+    <div class="wms-srv-popup">
+        <div class="wms-srv-popup-content">
+            <!-- Popup Title -->
+            <div class="wms-srv-popup-title">
+                <div class="wms-srv-page-title">
+                    <i class="fas fa-file-alt"></i><span> Barcode Configuration</span>
+                </div>
+                <a href="#" id="wms-srv-view-Pallet-popup-close" class="wms-srv-popup-close"><i
+                        class="fas fa-times-circle"></i></a>
+            </div>
+
+
+            <!-- Popup Title -->
+            <div class="wms-srv-popup-content-body" id="wms-srv-view-Pallet-popup-content-body">
+                <!-- Grid 2-->
+
+                <div class="wms-srv-grid-scroller" style="width: 100%;">
+                    <div class="wms-srv-grid-action-panel">
+                        <div class="wms-srv-grid-common-action"><a href="#" title="Customize Grid" data-prefix="CG"
+                                class="wms-srv-icononly"><i class="fas fa-edit"></i></a></div>
+
+                        <div class="wms-srv-grid-title">
+                            Barcode Format Setup
+                        </div>
+                    </div>
+                    <div class="wms-srv-grid" data-gridobjectid="gridObject_Appointment_Book_Book">
+                        <div class="wms-srv-grid-header">
+
+                            <!-- <div class="wms-srv-grid-cell">Select Object</div> -->
+                            <div class="wms-srv-grid-cell">Enter Prefix</div>
+                            <!-- <div class="wms-srv-grid-cell">Deliminate By</div> -->
+                            <div class="wms-srv-grid-cell">Label Size</div>
+                            <!-- <div class="wms-srv-grid-cell">Barcode Type</div> -->
+
+                        </div>
+                        <div class="wms-srv-grid-row">
+
+                            <!-- <div class="wms-srv-grid-cell">
+                                <select class="wms-srv-grid-cell-input">
+                                    <option value="">-- Select --</option>
+                                    <option value="1" >Sku</option>
+                                    <option value="2">Location</option>
+                                    <option value="3">Shipping Pallet</option>
+                                    <option value="4">Store Pallet</option>
+                                    <option value="5">Carton Label</option>
+                                </select>
+                            </div> -->
+                            <div class="wms-srv-grid-cell"><input type="text" data-prefix="SESKU" data-id="" value=""
+                                 disabled id="txtSHPRFIX"   class="wms-srv-grid-cell-input"></div>
+                            <!-- <div class="wms-srv-grid-cell">
+                                <div class="wms-srv-radio-group">
+                                    <input type="radio" data-prefix="SESKU" data-id="" value=""
+                                        class="wms-srv-grid-cell-input notranslate" name="DeliminateGroup"> :
+                                    (Colen)
+                                    <input type="radio" data-prefix="SESKU" data-id="" value=""
+                                        class="wms-srv-grid-cell-input notranslate" name="DeliminateGroup"
+                                        checked="checked"> - (Hypen)
+                                    <input type="radio" data-prefix="SESKU" data-id="" value=""
+                                        class="wms-srv-grid-cell-input notranslate" name="DeliminateGroup"> _
+                                    (Underscore)
+                                    <input type="radio" data-prefix="SESKU" data-id="" value=""
+                                        class="wms-srv-grid-cell-input notranslate" name="DeliminateGroup"> None
+                                </div>
+                            </div> -->
+                            <div class="wms-srv-grid-cell">
+                                <select class="wms-srv-grid-cell-input">
+                                    <option value="">-- Select --</option>
+                                    <option value="Transfer No" selected="selected">4x2</option>
+                                    <option value="Date Time">4x6</option>
+                                    <option value="Transfer No">2x2</option>
+                                </select>
+                            </div>
+                            <!-- <div class="wms-srv-grid-cell">
+                                <div class="wms-srv-suggestion-holder"
+                                    style="display:inline-flexbox; width: 290px;margin-top:-2px;">
+                                    <input type="radio" data-prefix="SESKU" data-id="" value=""
+                                        class="wms-srv-grid-cell-input notranslate" name="checkgroup2"><a
+                                        href="#">1-D</a>
+                                    <input type="radio" data-prefix="SESKU" data-id="" value=""
+                                        class="wms-srv-grid-cell-input notranslate" name="checkgroup2"
+                                        checked="checked"><a href="#">2-D</a>
+                                    <input type="radio" data-prefix="SESKU" data-id="" value=""
+                                        class="wms-srv-grid-cell-input notranslate" name="checkgroup2"><a
+                                        href="#">QR-Code</a>
+                                </div>
+                            </div> -->
+
+                        </div><br>
+
+
+                    </div>
+                </div><br>
+
+                <!-- Grid 2-->
+
+                <!-- Grid 3-->
+
+                <div class="wms-srv-grid-scroller" style="width: 100%;">
+                    <div class="wms-srv-grid-action-panel">
+                        <!-- <div class="wms-srv-search">
+                            <label>Select Templet : </label>
+                            <select type="text" class="wms-srv-input wms-srv-search-filter">
+                                <option value="">-- Select --</option>
+                                <option value="Option 1">Option 1</option>
+                                <option value="Option 2">Option 2</option>
+                                <option value="Option 3">Option 3</option>
+                            </select>
+
+                        </div> -->
+                        <div class="wms-srv-grid-common-action"><a href="#" title="Customize Grid" data-prefix="CG"
+                                class="wms-srv-icononly"><i class="fas fa-edit"></i></a></div>
+
+                        <div class="wms-srv-grid-title">
+                            Image Preview
+                        </div>
+                    </div>
+                    <div class="wms-srv-grid" data-gridobjectid="gridObject_Appointment_Book_Book">
+                        <div class="wms-srv-grid-header">
+
+                            <div class="wms-srv-grid-cell">Barcode Templet 1 <br> <input type="radio"
+                                    name="TempletPallet" id=""></div>
+                            <div class="wms-srv-grid-cell">Barcode Templet 2 <br> <input type="radio"
+                                    name="TempletPallet" id=""></div>
+                            <div class="wms-srv-grid-cell">Barcode Templet 3 <br> <input type="radio"
+                                    name="TempletPallet" id=""></div>
+
+
+                        </div>
+                        <div class="wms-srv-grid-row">
+
+                            <div class="wms-srv-grid-cell" id="SHT1" style="">
+                                <a href="#" id="SHT1Tick"
+                                    style="display:none;vertical-align: top;align-items: left;font-size: 20PX;"><i
+                                        class="fas fa-check-circle"></i></a>
+                                <img src="Images\LOC-002.gif" style="height:100%" id="SHimgT1" />
+
+
+
+                            </div>
+                            <div class="wms-srv-grid-cell" id="SHT2" style="text-align: center;">
+                                <a href="#" id="SHT2Tick"
+                                    style="display:none;vertical-align: top;align-items: left;font-size: 20PX;"><i
+                                        class="fas fa-check-circle"></i></a>
+                                <a href="#"><i class="fas fa-Check-circle"></i></a>
+                                <img src="Images\LOC-2.gif" style="height:100%" id="SHimgT2" />
+
+
+                            </div>
+                            <div class="wms-srv-grid-cell" id="SHT3" style="">
+                                <a href="#" id="SHT3Tick"
+                                    style="display:none;vertical-align: top;align-items: left;font-size: 20PX;"><i
+                                        class="fas fa-check-circle"></i></a>
+                                <img src="Images\002.gif" style="height:100%" id="SHimgT3" />
+
+
+
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+
+            </div>
+
+            <!-- Grid 4-->
+            <br />
+            <div class="wms-srv-grid-scroller" style="width: 100%;">
+                <div class="wms-srv-grid-action-panel">
+                    <div class="wms-srv-grid-common-action"><a href="#" title="Customize Grid" data-prefix="CG"
+                            class="wms-srv-icononly"><i class="fas fa-edit"></i></a></div>
+
+                    <div class="wms-srv-grid-title">
+                        Preview
+                    </div>
+                </div>
+                <div class="wms-srv-grid" data-gridobjectid="gridObject_Appointment_Book_Book">
+                    <div class="wms-srv-grid-header">
+
+                        <div class="wms-srv-grid-cell">Selected Barcode Templet</div>
+                        <div class="wms-srv-grid-cell">Barcode Text Format</div>
+
+                    </div>
+                    <div class="wms-srv-grid-row">
+
+                        <div class="wms-srv-grid-cell">
+                            <img src="Images\SH-000001.gif" style="max-width:450px; scale:0.5" id="SHSEL" />
+                        </div>
+                        <div class="wms-srv-grid-cell">Prefix - Six Digit Pallet Number</div>
+
+
+                    </div>
+
+
+                </div>
+            </div>
+            <br>
+            <div style="text-align: center;">
+                <button class="wms-srv-input wms-srv-button wms-srv-highlight-btn-secondary" type="button" title="Save"
+                    data-prefix="MO[MKCM--wmscmm--CO]"><span style="margin-left: 0px;">Save</span>
+                </button>
+            </div>
+            <!-- Grid 4-->
+        </div><br>
+
+        <!-- Grid 3-->
+
+
+
+    </div>
+</div>
+</div>
+
+<!-- Store pallet -->
+<div class="wms-srv-popup-holder" id="wms-srv-view-StorePallet-popup" style="display: none;">
+    <div class="wms-srv-popup-bg">
+    </div>
+    <div class="wms-srv-popup">
+        <div class="wms-srv-popup-content">
+            <!-- Popup Title -->
+            <div class="wms-srv-popup-title">
+                <div class="wms-srv-page-title">
+                    <i class="fas fa-file-alt"></i><span> Barcode Configuration</span>
+                </div>
+                <a href="#" id="wms-srv-view-StorePallet-popup-close" class="wms-srv-popup-close"><i
+                        class="fas fa-times-circle"></i></a>
+            </div>
+
+
+            <!-- Popup Title -->
+            <div class="wms-srv-popup-content-body" id="wms-srv-view-StorePallet-popup-content-body">
+                <!-- Grid 2-->
+
+                <div class="wms-srv-grid-scroller" style="width: 100%;">
+                    <div class="wms-srv-grid-action-panel">
+                        <div class="wms-srv-grid-common-action"><a href="#" title="Customize Grid" data-prefix="CG"
+                                class="wms-srv-icononly"><i class="fas fa-edit"></i></a></div>
+
+                        <div class="wms-srv-grid-title">
+                            Barcode Format Setup
+                        </div>
+                    </div>
+                    <div class="wms-srv-grid" data-gridobjectid="gridObject_Appointment_Book_Book">
+                        <div class="wms-srv-grid-header">
+
+                            <!-- <div class="wms-srv-grid-cell">Select Object</div> -->
+                            <div class="wms-srv-grid-cell">Enter Prefix</div>
+                            <!-- <div class="wms-srv-grid-cell">Deliminate By</div> -->
+                            <div class="wms-srv-grid-cell">Label Size</div>
+                            <!-- <div class="wms-srv-grid-cell">Barcode Type</div> -->
+
+                        </div>
+                        <div class="wms-srv-grid-row">
+
+                            <!-- <div class="wms-srv-grid-cell">
+                                <select class="wms-srv-grid-cell-input">
+                                    <option value="">-- Select --</option>
+                                    <option value="1" >Sku</option>
+                                    <option value="2">Location</option>
+                                    <option value="3">Shipping Pallet</option>
+                                    <option value="4">Store Pallet</option>
+                                    <option value="5">Carton Label</option>
+                                </select>
+                            </div> -->
+                            <div class="wms-srv-grid-cell"><input type="text" data-prefix="SESKU" data-id="" value="CT-"
+                                 disabled id="txtSTPRFIX"   class="wms-srv-grid-cell-input"></div>
+                            <!-- <div class="wms-srv-grid-cell">
+                                <div class="wms-srv-radio-group">
+                                    <input type="radio" data-prefix="SESKU" data-id="" value=""
+                                        class="wms-srv-grid-cell-input notranslate" name="DeliminateGroup"> :
+                                    (Colen)
+                                    <input type="radio" data-prefix="SESKU" data-id="" value=""
+                                        class="wms-srv-grid-cell-input notranslate" name="DeliminateGroup"
+                                        checked="checked"> - (Hypen)
+                                    <input type="radio" data-prefix="SESKU" data-id="" value=""
+                                        class="wms-srv-grid-cell-input notranslate" name="DeliminateGroup"> _
+                                    (Underscore)
+                                    <input type="radio" data-prefix="SESKU" data-id="" value=""
+                                        class="wms-srv-grid-cell-input notranslate" name="DeliminateGroup"> None
+                                </div>
+                            </div> -->
+                            <div class="wms-srv-grid-cell">
+                                <select class="wms-srv-grid-cell-input">
+                                    <option value="">-- Select --</option>
+                                    <option value="Transfer No" selected="selected">4x2</option>
+                                    <option value="Date Time">4x6</option>
+                                    <option value="Transfer No">2x2</option>
+                                </select>
+                            </div>
+                            <!-- <div class="wms-srv-grid-cell">
+                                <div class="wms-srv-suggestion-holder"
+                                    style="display:inline-flexbox; width: 290px;margin-top:-2px;">
+                                    <input type="radio" data-prefix="SESKU" data-id="" value=""
+                                        class="wms-srv-grid-cell-input notranslate" name="checkgroup2"><a
+                                        href="#">1-D</a>
+                                    <input type="radio" data-prefix="SESKU" data-id="" value=""
+                                        class="wms-srv-grid-cell-input notranslate" name="checkgroup2"
+                                        checked="checked"><a href="#">2-D</a>
+                                    <input type="radio" data-prefix="SESKU" data-id="" value=""
+                                        class="wms-srv-grid-cell-input notranslate" name="checkgroup2"><a
+                                        href="#">QR-Code</a>
+                                </div>
+                            </div> -->
+
+                        </div><br>
+
+
+                    </div>
+                </div><br>
+
+                <!-- Grid 2-->
+
+                <!-- Grid 3-->
+
+                <div class="wms-srv-grid-scroller" style="width: 100%;">
+                    <div class="wms-srv-grid-action-panel">
+                        <!-- <div class="wms-srv-search">
+                            <label>Select Templet : </label>
+                            <select type="text" class="wms-srv-input wms-srv-search-filter">
+                                <option value="">-- Select --</option>
+                                <option value="Option 1">Option 1</option>
+                                <option value="Option 2">Option 2</option>
+                                <option value="Option 3">Option 3</option>
+                            </select>
+
+                        </div> -->
+                        <div class="wms-srv-grid-common-action"><a href="#" title="Customize Grid" data-prefix="CG"
+                                class="wms-srv-icononly"><i class="fas fa-edit"></i></a></div>
+
+                        <div class="wms-srv-grid-title">
+                            Image Preview
+                        </div>
+                    </div>
+                    <div class="wms-srv-grid" data-gridobjectid="gridObject_Appointment_Book_Book">
+                        <div class="wms-srv-grid-header">
+
+                            <div class="wms-srv-grid-cell">Barcode Templet 1 <br> <input type="radio"
+                                    name="TempletPallet" id=""></div>
+                            <div class="wms-srv-grid-cell">Barcode Templet 2 <br> <input type="radio"
+                                    name="TempletPallet" id=""></div>
+                            <div class="wms-srv-grid-cell">Barcode Templet 3 <br> <input type="radio"
+                                    name="TempletPallet" id=""></div>
+
+
+                        </div>
+                        <div class="wms-srv-grid-row">
+
+                            <div class="wms-srv-grid-cell" id="STT1" style="">
+                                <a href="#" id="STT1Tick"
+                                    style="display:none;vertical-align: top;align-items: left;font-size: 20PX;"><i
+                                        class="fas fa-check-circle"></i></a>
+                                <img src="Images\LOC-002.gif" style="height:100%" id="STimgT1" />
+
+
+
+                            </div>
+                            <div class="wms-srv-grid-cell" id="STT2" style="text-align: center;">
+                                <a href="#" id="STT2Tick"
+                                    style="display:none;vertical-align: top;align-items: left;font-size: 20PX;"><i
+                                        class="fas fa-check-circle"></i></a>
+                                <a href="#"><i class="fas fa-Check-circle"></i></a>
+                                <img src="Images\LOC-2.gif" style="height:100%" id="STimgT2" />
+
+
+                            </div>
+                            <div class="wms-srv-grid-cell" id="STT3" style="">
+                                <a href="#" id="STT3Tick"
+                                    style="display:none;vertical-align: top;align-items: left;font-size: 20PX;"><i
+                                        class="fas fa-check-circle"></i></a>
+                                <img src="Images\002.gif" style="height:100%" id="STimgT3" />
+
+
+
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+
+            </div>
+
+            <!-- Grid 4-->
+            <br />
+            <div class="wms-srv-grid-scroller" style="width: 100%;">
+                <div class="wms-srv-grid-action-panel">
+                    <div class="wms-srv-grid-common-action"><a href="#" title="Customize Grid" data-prefix="CG"
+                            class="wms-srv-icononly"><i class="fas fa-edit"></i></a></div>
+
+                    <div class="wms-srv-grid-title">
+                        Preview
+                    </div>
+                </div>
+                <div class="wms-srv-grid" data-gridobjectid="gridObject_Appointment_Book_Book">
+                    <div class="wms-srv-grid-header">
+
+                        <div class="wms-srv-grid-cell">Selected Barcode Templet</div>
+                        <div class="wms-srv-grid-cell">Barcode Text Format</div>
+
+                    </div>
+                    <div class="wms-srv-grid-row">
+
+                        <div class="wms-srv-grid-cell">
+                            <img src="Images\ST-000057.gif" style="max-width:450px; scale:0.5" id="STSEL" />
+                        </div>
+                        <div class="wms-srv-grid-cell">Prefix - Six Digit Pallet Number</div>
+
+
+                    </div>
+
+
+                </div>
+            </div>
+            <br>
+            <div style="text-align: center;">
+                <button class="wms-srv-input wms-srv-button wms-srv-highlight-btn-secondary" type="button" title="Save"
+                    data-prefix="MO[MKCM--wmscmm--CO]"><span style="margin-left: 0px;">Save</span>
+                </button>
+            </div>
+            <!-- Grid 4-->
+        </div><br>
+
+        <!-- Grid 3-->
+
+
+
+    </div>
+</div>
+</div>

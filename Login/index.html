@@ -1,0 +1,680 @@
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head id="Head1">
+    <title>
+        GWC | Login
+    </title>
+    <base href="http://localhost/gwchtmlapp/" target="_blank">
+	<link rel="icon" type="image/x-icon" href="Images/GWCIcon.ico" />
+    <!-- <base href="http://localhost/BWMSWebApp2.2/" target="_blank"> -->
+    <!--<base href="http://awswebaap.easycloudwms.com/BWMSWebApp2.2/" target="_blank"> -->
+    <!-- <base href="http://13.234.114.114:5000/EASYCLOUDWMSUAT/" target="_blank"> -->
+    <!--<base href="http://173.212.244.46/BWMSWebApp2.2/" target="_blank">-->
+    <!--<base href="http://38.242.245.55/EasyCloudWMS/" target="_blank">-->
+    <!--<base href="http://awswebaap.easycloudwms.com/BWMSWebApp2.2/" target="_blank"> -->
+    <!-- <base href="http://awswebaap.easycloudwms.com/" target="_blank"> -->
+
+    <script src="../PopupMessages/Scripts/message.js" type="text/javascript"></script>
+    <link href="Themes/App_Themes/Login.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="./Themes/css/wms-style.css" />
+    <link rel="stylesheet" href="./Themes/css/core-css/wms-srv.css" />
+    <link rel="stylesheet" href="Themes/bootstrap-4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
+    <script src="Themes/bootstrap-4.0.0/dist/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <link href="Themes/fontawesome/css/all.css" rel="stylesheet" />
+    <script src="Themes/App_Themes/PIE.js" type="text/javascript"></script>
+    <script src="Themes/App_Themes/PIE_uncompressed.js" type="text/javascript"></script>
+    <link rel="icon" type="image/x-icon" href="../MasterPage/Logo/brillwmslogoNEW.ico" />
+
+    <!-- <link href="Public/css/login.css" rel="stylesheet" type="text/css" />
+    <script src="Public/js/login.js"></script> -->
+    <script src="Themes/js/jquery-3.2.1.min.js"></script>
+    <script src="Themes/js/jquery.easing.1.3.js"></script>
+    <script src="Themes/js/jquery.cycle.all.js"></script>
+    <script src="Themes/js/wms-app-session.js"></script>
+    <script src="Themes/js/wms-app-navigator.js"></script>
+    <script src="/Themes/js/wms-theme.js"></script>
+    <!-- <script src="/Public/js/login.js"></script> -->
+    <link href="Login/css/login.css" rel="stylesheet" type="text/css" />
+    <script src="Login/js/login.js"></script>
+</head>
+
+<body>
+    <div class="pnlLoginBg" id="slideshow1">
+        <img src="Images/slide-1.jpg" style="height:100%;width:100%;" />
+        <img src="Images/slide-2.jpg" style="height:100%;width:100%;" />
+        <img src="Images/slide-3.jpg" style="height:100%;width:100%;" />
+        <img src="Images/slide-4.jpg" style="height:100%;width:100%;" />
+        <img src="Images/slide-5.jpg" style="height:100%;width:100%;" />
+    </div>
+    <div class="themeWMSLoginBannerText" id="themeWMSLoginBannerText">
+        Work Smart. Overhaul your warehouse Operations with Us...
+    </div>
+    <div class="pnlLoginContent">
+        <div class="themeWMSLoginBg">&nbsp;</div>
+        <div class="pnlLoginContentSub">
+            <div>
+                <center>
+                    <table style="margin: 0px 0 0 0;">
+                        <tr>
+                            <td>
+                            </td>
+                            <td>
+                            </td>
+                            <td class="font">
+                                <!--  Sign in -->
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="3" align="center">
+                                <div class="divLoginHolder">
+                                    <!--<div class="divLoginBoxHeader">Sign In</div>-->
+                                    <div id="pnlLoginBox" class="divLoginBoxContent" style="display:block;">
+                                        <table class="tableForm" cellspacing="5" style="position: relative; top: 10px;">
+                                            <tr>
+                                                <td align="center">
+                                                    <div style="text-align: center;"><img id="ElegantLogo"
+                                                            src="images/GWC-Logo.png"
+                                                            style="position: relative; left: 5px; width: 165px; margin-bottom: 20px;" />
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                        <div id="loginuser_validationsummary1" style="display:none;">
+                                        </div>
+                                        <table class="tableForm" cellspacing="5" id="LogInTab">
+                                            <tr>
+                                                <!-- <tr>
+                                        <td style="text-align: left;">
+                                            <req>User Name</req>
+                                        </td>
+                                    </tr> -->
+                                            <tr>
+                                                <td style="text-align: left;">
+                                                    <input name="loginuser$username" type="text" id="username"
+                                                        class="inputElement" Placeholder="User Name"
+                                                        style="width:200px;" />
+                                                    <span id="loginuser_usernamerequired" style="display:none;"></span>
+                                                </td>
+                                            </tr>
+                                            <!--  <tr>
+                                        <td style="text-align: left;">
+                                            <req>Password</req>
+                                        </td>
+                                    </tr> -->
+                                            <tr>
+                                                <td style="text-align: left;">
+                                                    <input name="loginuser$password" type="password" id="password"
+                                                        class="inputElement" placeholder="Password"
+                                                        style="width:200px;" />
+                                                    <span id="loginuser_passwordrequired" style="display:none;"></span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="text-align: left;">
+                                                    <input type="button" name="loginuser$loginbutton" value="Login"
+                                                        onclick="loginForWmsApp();" id="loginuser_loginbutton"
+                                                        style="width:200px;" />
+                                                    <!--<input type="button" value="Reset" onclick="ClearTextboxes();" />-->
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="justify-content: space-between;display: flex;">
+                                                    <a id="loginuser_HyperLink1" href="#"
+                                                        onclick="showForgetPasswordPanel();return false;">Forgot
+                                                        Password</a>
+                                                    <a id="Email_Tab" href="#"
+                                                        onclick="OpneEmailTab(); return false;">Register</a>
+                                                </td>
+
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <span class="spnFailureMsg" id="spnFailureMsg"
+                                                        style="display: none;">
+
+                                                    </span>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                        <table class="tableForm" cellspacing="5" id="EmailTab" style="display: none">
+                                            <tr>
+                                                <td style="text-align: left">
+                                                    <input name="loginuser$username" type="text" maxlength="50"
+                                                        id="txtUserEmailId" class="inputElement"
+                                                        placeholder="Enter E-Mail" style="width: 200px" />
+                                                    <span id="loginuser_usernamerequired" style="display: none"></span>
+
+                                                </td>
+                                            </tr>
+                                            <br>
+                                            <tr>
+                                                <td style="text-align: left">
+                                                    <input type="button" name="loginuser$loginbutton" value="Get OTP"
+                                                        id="OpenOTPTab"
+                                                        onclick="sendNewUserRegOTP(); this.disabled = true;"
+                                                        style="width: 200px" />
+                                                    <!--<input type="button" value="Reset" onclick="ClearTextboxes();" />-->
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="text-align: center">
+                                                    <<a id="loginuser_HyperLink1" href="#"
+                                                        onclick="showLoginPanel();return false;">Back to Login</a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <span class="spnFailureMsg" id="spnFailureMsg"
+                                                        style="display: none">
+                                                    </span>
+                                                    <script>
+                                                        var getErrorHolder =
+                                                            document.getElementById("spnFailureMsg");
+                                                        if (getErrorHolder != null) {
+                                                            var getErrHtml =
+                                                                getErrorHolder.innerHTML.trim();
+                                                            if (getErrHtml != "") {
+                                                                getErrorHolder.style.display = "";
+                                                            }
+                                                        }
+                                                    </script>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                        <table class="tableForm" cellspacing="5" id="OTPTab" style="display: none">
+                                            <tr>
+                                                <td style="text-align: left">
+                                                    <input name="loginuser$username" type="text" disabled maxlength="50"
+                                                        id="txtUserEmailIdView" class="inputElement"
+                                                        style="width: 200px" />
+                                                    <span id="loginuser_usernamerequired" style="display: none"></span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="text-align: left">
+                                                    <input name="" type="Text" maxlength="20" id="" class="inputElement"
+                                                        placeholder="Enter OTP" style="width: 200px" />
+                                                    <span id="loginuser_passwordrequired" style="display: none"></span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="text-align: left">
+                                                    <input type="button" name="loginuser$loginbutton" value="Verify"
+                                                        onclick="VelidateOTP();" style="width: 200px" />
+                                                    <!--<input type="button" value="Reset" onclick="ClearTextboxes();" />-->
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="text-align: center">
+                                                    <a id="loginuser_HyperLink1"
+                                                        href="http://173.212.244.46/BWMSWebApp2.2/Public/login.html"
+                                                        target="_self">Back to
+                                                        login</a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <span class="spnFailureMsg" id="spnFailureMsg"
+                                                        style="display: none">
+                                                    </span>
+                                                    <script>
+                                                        var getErrorHolder =
+                                                            document.getElementById("spnFailureMsg");
+                                                        if (getErrorHolder != null) {
+                                                            var getErrHtml =
+                                                                getErrorHolder.innerHTML.trim();
+                                                            if (getErrHtml != "") {
+                                                                getErrorHolder.style.display = "";
+                                                            }
+                                                        }
+                                                    </script>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                    <div id="pnlForgetPasswordBox" class="divLoginBoxContent" style="display:none;">
+                                        <table class="tableForm" cellspacing="5" style="position: relative; top: 10px;">
+                                            <tr>
+                                                <td align="center">
+												<div style="text-align:center;">
+														<img id="ElegantLogo"
+                                                            src="images/GWC-Logo.png"
+                                                            style="position: relative; left: 5px; width: 165px; margin-bottom: 20px;" />
+												</div>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                        <div id="loginuser_validationsummary1" style="display:none;">
+                                        </div>
+                                        <table class="tableForm" cellspacing="5">
+                                            <tr>
+                                                <!-- <tr>
+                                        <td style="text-align: left;">
+                                            <req>User Name</req>
+                                        </td>
+                                         </tr> -->
+                                            <tr>
+                                                <td style="text-align: left;">
+                                                    <input name="loginuser$username" type="text" id="txtFrEmailId"
+                                                        class="inputElement" Placeholder="Enter Email Id"
+                                                        style="width:200px;" />
+
+                                                    <span id="loginuser_usernamerequired" style="display:none;"></span>
+                                                </td>
+                                            </tr>
+                                            <!--  <tr>
+                                        <td style="text-align: left;">
+                                            <req>Password</req>
+                                        </td>
+                                            </tr> -->
+                                            <tr>
+                                                <td style="text-align: left;">
+                                                    <input name="loginuser$password" type="input" id="txtFrUserId"
+                                                        class="inputElement" placeholder="Enter User Name"
+                                                        style="width:200px;" />
+                                                    <span id="loginuser_passwordrequired" style="display:none;"></span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="text-align: left;">
+                                                    <input type="button" name="loginuser$loginbutton"
+                                                        value="Resend Password" onclick="checkUserName();"
+                                                        id="loginuser_loginbutton" style="width:200px;" />
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="text-align: center;">
+                                                    <a id="loginuser_HyperLink1" href="#"
+                                                        onclick="showLoginPanel();return false;">Back to Login</a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <span class="spnFailureMsg" id="spnFailureMsg"
+                                                        style="display: none;">
+
+                                                    </span>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                    <!-- OTP Verify -->
+
+                                    <div id="pnlOTPValidateBox" class="divLoginBoxContent" style="display:none;">
+                                        <table class="tableForm" cellspacing="5" style="position: relative; top: 10px;">
+                                            <tr>
+                                                <td align="center">
+												 <div style="text-align: center;"><img id="ElegantLogo"
+                                                            src="images/GWC-Logo.png"
+                                                            style="position: relative; left: 5px; width: 165px; margin-bottom: 20px;" />
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                        <div id="loginuser_validationsummary1" style="display:none;">
+                                        </div>
+                                        <table class="tableForm" cellspacing="5">
+                                            <tr>
+                                                <!-- <tr>
+                                        <td style="text-align: left;">
+                                            <req>User Name</req>
+                                        </td>
+                                         </tr> -->
+                                            <tr>
+                                                <td style="text-align: left;">
+                                                    <input name="" type="text" id="txtOTPVal" class="inputElement"
+                                                        Placeholder="Enter OTP" style="width:200px;" />
+                                                    <input type="hidden" id="hdnUserEmailId">
+                                                    <span id="txtOtp" style="display:none;"></span>
+                                                </td>
+                                            </tr>
+
+                                            <tr>
+                                                <td style="text-align: left;">
+                                                    <input type="button" name="" value="OTP Validate"
+                                                        onclick="ConfirmOTP();" id="btnVerifyOTP"
+                                                        style="width:200px;" />
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="text-align: center;">
+                                                    <a id="loginuser_HyperLink1" href="#"
+                                                        onclick="showLoginPanel();return false;">Back to Login</a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <span class="spnFailureMsg" id="spnFailureMsg"
+                                                        style="display: none;">
+
+                                                    </span>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+
+                                    <!-- OtP Verify -->
+
+                                    <!-- Confirm Password -->
+                                    <div id="pnlConfirmPasswordBox" class="divLoginBoxContent" style="display:none;">
+                                        <table class="tableForm" cellspacing="5" style="position: relative; top: 10px;">
+                                            <tr>
+                                                <td align="center">
+												 <div style="text-align: center;"><img id="ElegantLogo"
+                                                            src="images/GWC-Logo.png"
+                                                            style="position: relative; left: 5px; width: 165px; margin-bottom: 20px;" />
+                                                 </div>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                        <div id="loginuser_validationsummary1" style="display:none;">
+                                        </div>
+                                        <table class="tableForm" cellspacing="5">
+                                            <tr>
+                                                <!-- <tr>
+                                        <td style="text-align: left;">
+                                            <req>User Name</req>
+                                        </td>
+                                         </tr> -->
+                                            <tr>
+                                                <td style="text-align: left;">
+                                                    <input name="loginuser$username" type="password" id="txtNewPassword"
+                                                        class="inputElement" Placeholder="New Password"
+                                                        style="width:200px;" />
+                                                    <span id="hdnNewPass" style="display:none;"></span>
+                                                </td>
+                                            </tr>
+                                            <!--  <tr>
+                                        <td style="text-align: left;">
+                                            <req>Password</req>
+                                        </td>
+                                            </tr> -->
+                                            <tr>
+                                                <td style="text-align: left;">
+                                                    <input name="loginuser$password" type="password"
+                                                        id="txtConfirmPassword" class="inputElement"
+                                                        placeholder="Confirm Password" style="width:200px;" />
+                                                    <span id="hdnConfmPass" style="display:none;"></span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="text-align: left;">
+                                                    <input type="button" name="" value="Save"
+                                                        onclick="UpdatePassword();" id="" style="width:200px;" />
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="text-align: center;">
+                                                    <a id="loginuser_HyperLink1" href="#"
+                                                        onclick="showLoginPanel();return false;">Back to Login</a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <span class="spnFailureMsg" id="spnFailureMsg"
+                                                        style="display: none;">
+
+                                                    </span>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                    <!-- Confrim Password -->
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </center>
+            </div>
+        </div>
+    </div>
+    <div class="loginFooter">
+        <table cellpadding="0" cellspacing="0" border="0" width="100%" align="center">
+            <tr>
+                <td colspan="3" style="padding: 10px 0 0 0; border-top: 1px dashed gray">
+                </td>
+            </tr>
+            <tr style="color: Gray; font-size: 14px;">
+                <td colspan="2" style="text-align: left; vertical-align: top;">
+
+                    <a target="_blank" href="#">&copy; 2022 Brilliant WMS</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    Release Version 1.0
+                </td>
+
+                <td style="text-align: right;">
+                    <table align="right" class="tlbPoweredBy">
+                        <tr>
+                            <td>
+                                <!-- Best Viewed In Internet Explorer 11 & Above, Google Chrome & Mozilla Firefox -->
+                                &nbsp;
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <script>
+
+        // $("#Email_Tab").click(function () {
+        //     $("#EmailTab").show();
+        //     $("#LogInTab").hide();
+        //     $("#OTPTab").hide();
+        // });
+
+        function OpneEmailTab() {
+            $("#EmailTab").show();
+            $("#LogInTab").hide();
+            $("#OTPTab").hide();
+        }
+        // $("#OpenOTPTab").click(function () {
+        //     $("#OTPTab").show();
+        //     $("#EmailTab").hide();
+        //     $("#LogInTab").hide();
+        // });
+
+        function CloseCompanyDetailsForm() {
+            $("#wms-srv-companydetails-popup").hide();
+            $("#LogInTab").show();
+        }
+    </script>
+
+    <!-- CompanyDetails-popup -->
+    <div class="wms-srv-popup-holder" id="wms-srv-companydetails-popup" style="display: none">
+        <div class="wms-srv-popup-bg"></div>
+        <div class="wms-srv-popup">
+            <div class="wms-srv-popup-content">
+                <!-- Popup Title -->
+                <div class="wms-srv-popup-title">
+                    <div class="wms-srv-page-title">
+                        <i class="fas fa-file-alt"></i><span>Company Information</span>
+                    </div>
+                    <a href="#" title="Close" id="wms-srv-companydetails-popup-close" class="wms-srv-popup-close"
+                        onclick="CloseCompanyDetailsForm();return false;"><i class="fas fa-times-circle"></i></a>
+                </div>
+                <!-- Popup Title -->
+                <div class="wms-srv-popup-content-body" id="wms-srv-popup-content-body">
+                    <div id="popupContentDocument">
+                        <div id="pnlCreatePurchaseOrder">
+                            <!-- Grid -->
+                            <div class="wms-srv-grid-holder pnlWmsHead" id="pnlWmsHead">
+                                <div class="wms-srv-grid">
+                                    <!-- Object Head Data Will be Here -->
+                                    <div class="wms-srv-grid-header">
+                                        <div class="wms-srv-grid-cell">
+                                            Company Name<span class="requiredStar">*</span>
+                                        </div>
+                                        <div class="wms-srv-grid-cell">
+                                            Website<span class="requiredStar">*</span>
+                                        </div>
+                                        <div class="wms-srv-grid-cell">
+                                            Company Email<span class="requiredStar">*</span>
+                                        </div>
+                                        <div class="wms-srv-grid-cell">
+                                            Phone No<span class="requiredStar">*</span>
+                                        </div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+                                        <div class="wms-srv-grid-cell">
+                                            <input type="text" value="" id="txtCompanyName" required
+                                                class="wms-srv-grid-cell-input wms-srv-datepicker hasDatepicker" />
+                                        </div>
+                                        <div class="wms-srv-grid-cell">
+                                            <input type="text" value="" id="txtWebsiteName" required
+                                                class="wms-srv-grid-cell-input wms-srv-datepicker hasDatepicker" />
+                                        </div>
+                                        <div class="wms-srv-grid-cell">
+                                            <input type="text" value="" id="txtCompanyEmailId"
+                                                class="wms-srv-grid-cell-input" />
+                                        </div>
+                                        <div class="wms-srv-grid-cell">
+                                            <input type="text" value="" id="txtMobileNo"
+                                                class="wms-srv-grid-cell-input wms-srv-datepicker hasDatepicker"
+                                                onkeypress="javascript:return isPhNumber(event)" minlength="10"
+                                                maxlength="10" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <br />
+                            <div class="wms-srv-grid-holder pnlWmsHead" id="pnlWmsHead">
+                                <div class="wms-srv-grid">
+                                    <!-- Object Head Data Will be Here -->
+                                    <div class="wms-srv-grid-header">
+                                        <div class="wms-srv-grid-cell" style="width: 20%">
+                                            Address<span class="requiredStar">*</span>
+                                        </div>
+                                        <div class="wms-srv-grid-cell" style="width: 20%">
+                                            City<span class="requiredStar">*</span>
+                                        </div>
+                                        <div class="wms-srv-grid-cell" style="width: 20%">
+                                            State<span class="requiredStar">*</span>
+                                        </div>
+                                        <div class="wms-srv-grid-cell" style="width: 20%">
+                                            Country<span class="requiredStar">*</span>
+                                        </div>
+                                        <div class="wms-srv-grid-cell" style="width: 20%">
+                                            ZIP Code<span class="requiredStar">*</span>
+                                        </div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+                                        <div class="wms-srv-grid-cell">
+                                            <input type="text" id="txtAddress" value=""
+                                                class="wms-srv-grid-cell-input" />
+                                        </div>
+                                        <div class="wms-srv-grid-cell">
+                                            <input type="text" id="txtCityName" value=""
+                                                class="wms-srv-grid-cell-input" />
+                                        </div>
+                                        <div class="wms-srv-grid-cell">
+                                            <input type="text" id="txtStateName" value=""
+                                                class="wms-srv-grid-cell-input" />
+                                        </div>
+                                        <div class="wms-srv-grid-cell">
+                                            <input type="text" value="" placeholder="" id="txtCountryName"
+                                                class="wms-srv-grid-cell-input" />
+                                        </div>
+                                        <div class="wms-srv-grid-cell">
+                                            <input type="text" value="" placeholder="" id="txtZIPCode"
+                                                class="wms-srv-grid-cell-input wms-srv-datepicker hasDatepicker"
+                                                minlength="6" maxlength="6"
+                                                onkeypress="javascript:return isNumber(event)" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <br />
+                            <div class="wms-srv-grid-holder pnlWmsHead" id="pnlWmsHead">
+                                <div class="wms-srv-grid-action-panel">
+                                    <div class="wms-srv-grid-title">
+                                        User Details
+                                    </div>
+                                </div>
+                                <div class="wms-srv-grid">
+                                    <!-- Object Head Data Will be Here -->
+                                    <div class="wms-srv-grid-header">
+                                        <div class="wms-srv-grid-cell" style="width: 25%">
+                                            First Name<span class="requiredStar">*</span>
+                                        </div>
+                                        <div class="wms-srv-grid-cell" style="width: 25%">
+                                            Last Name<span class="requiredStar">*</span>
+                                        </div>
+                                        <div class="wms-srv-grid-cell" style="width: 25%">
+                                            User Name<span class="requiredStar">*</span>
+                                        </div>
+                                        <div class="wms-srv-grid-cell" style="width: 25%">
+                                            User Email ID<span class="requiredStar">*</span>
+                                        </div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+                                        <div class="wms-srv-grid-cell">
+                                            <input type="text" id="txtFirstName" value=""
+                                                class="wms-srv-grid-cell-input" />
+                                        </div>
+                                        <div class="wms-srv-grid-cell">
+                                            <input type="text" id="txtLastName" value=""
+                                                class="wms-srv-grid-cell-input" />
+                                        </div>
+                                        <div class="wms-srv-grid-cell">
+                                            <input type="text" id="txtUserNameReg" value=""
+                                                class="wms-srv-grid-cell-input" onchange="checkuserval();" />
+                                        </div>
+                                        <div class="wms-srv-grid-cell">
+                                            <input type="text" id="txtUserMailID" disabled value=""
+                                                class="wms-srv-grid-cell-input" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <br>
+                        </div>
+                        <div class="wms-srv-grid-action">
+                            <button class="btnBrokerSave wms-srv-input wms-srv-button wms-srv-highlight-btn-secondary"
+                                onclick="SaveCompanyDetails();return false;">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Submit</span>
+                            </button>
+                        </div>
+                        <!-- Grid -->
+                        <!-- Grid -->
+                        <div class="wms-srv-grid-holder pnlSearchList" id="pnlSearchList" style="display: none">
+                            <div class="wms-srv-grid-action-panel" style="display: none">
+                                <!-- Action Buttons Will be Here -->
+                            </div>
+                            <div class="wms-srv-grid-scroller" style="width: 100%">
+                                <div class="wms-srv-grid">
+                                    <!-- Header Data Will be Here -->
+                                </div>
+                            </div>
+                            <div class="wms-srv-grid-pager">
+                                <span class="wms-srv-pager-records">
+                                    <!-- Page Record Info -->
+                                </span>
+                                <span class="wms-srv-empty-space"></span>
+                                <span class="wms-srv-pager-links">
+                                    <!-- Pagger Links -->
+                                </span>
+                                <span class="wms-srv-empty-space"></span>
+                                <input type="text" name="txtGridPageNo" class="wms-srv-input" value="0"
+                                    style="width: 80px" />
+                                <a href="#" title="Jump To" class="wms-srv-pager-go"><i
+                                        class="fas fa-play-circle"></i></a>
+                            </div>
+                        </div>
+                        <!-- Grid -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- CompanyDetails-popup -->
+
+</body>
+
+</html>

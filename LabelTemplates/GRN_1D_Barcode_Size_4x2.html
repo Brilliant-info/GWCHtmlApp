@@ -1,0 +1,66 @@
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <title>
+        EASYCLOUD WMS
+    </title>
+	<!-- DON'T CHANGE - COMMON FILES FOR REPORT PRINT TEMPLATE -->
+	<script src="../Themes/js/jquery-3.2.1.min.js"></script>
+	<!-- <script src="../Themes/js/wms-app-navigator.js"></script> -->
+	<script src="template-core/wms-report-template-common.js"></script>
+	<link href="template-core/wms-report-template-common.css" rel="stylesheet" />
+	<!--  DON'T CHANGE - COMMON FILES FOR REPORT PRINT TEMPLATE -->
+
+	<!-- CUSTOM FILES FOR REPORT PRINT TEMPLATE -->
+	<script src="GRN_1D_Barcode_Size_4x2.js"></script>
+	 
+	<link href="GRN_1D_Barcode_Size_4x2.css" rel="stylesheet" />
+	<!-- CUSTOM FILES FOR REPORT PRINT TEMPLATE -->
+</head>
+<body>
+	<style id="printTemplateStyle">
+	</style>
+
+	<div class="printTemplate" data-type="defaultTemplate">
+		<div class="printRow">
+			<label>Sku Code:</label>
+			<span data-placeholder="ProductCode">ProductCode</span>
+		</div>
+		<br>
+		<div class="printRow">
+			<!-- <label>Sku Name:</label> -->
+			<span data-placeholder="ProductName">ProductName</span>
+		</div>
+		<!-- as per requirement for imalco client not required  
+		<div class="printRow">
+			<label>GRN QTY:</label>
+			<span data-placeholder="ObjQty">ObjQty</span>
+		</div>
+		
+		<div class="printRow">
+			<label>Lottable:</label>
+			<span data-placeholder="Lottable">Lottable</span>
+		</div>
+		
+		 <div class="printRow">
+			<label>UOM:</label>
+			<span data-placeholder="UOM">UOM</span>
+		</div>  -->
+		 
+		<div class="printRow" style="margin-bottom: 30px;">
+			<span data-placeholder="Lottablewithlabel">Lottablewithlabel</span>
+		</div>
+		<br>
+		<div class="printRow">
+			<div class="BarcodeStringToPrint">
+				<span data-placeholder="Barcode1D">Barcode1D</span>
+			</div>
+		</div>
+	</div>
+	<div class="printDataHolder">
+	
+	</div>   
+</body>
+</html>

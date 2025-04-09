@@ -1,0 +1,33 @@
+{
+    "Status": "200",
+    "StatusCode": "Success",
+    "Result": {
+        "Table": [
+            {
+                "Id": 1,
+                "ReportName": "SKU Report",
+                "Icon": "fas fa-file-invoice"
+            },
+			{
+                "Id": 2,
+                "ReportName": "SKU Detail Report",
+                "Icon": "fas fa-file-invoice"
+            },
+			{
+                "Id": 3,
+                "ReportName": "BOM Detail Report",
+                "Icon": "fas fa-file-invoice"
+            },
+			{
+                "Id": 4,
+                "ReportName": "QNBN Stock Report",
+                "Icon": "fas fa-file-invoice"
+            },
+			{
+                "Id": 5,
+                "ReportName": "SKU Tracking Report",
+                "Icon": "fas fa-file-invoice"
+            }
+        ]
+    }
+}

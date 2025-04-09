@@ -1,0 +1,99 @@
+body, div {
+    font-family: Arial;
+    font-size: 13px;
+}
+
+.WmsReport .invoiceCompanyInfo .invCompLable,
+.WmsReport .invoiceCompanyInfo .invCompInfo {
+    background-color: #ffffff;
+    border-bottom: none;
+    border-right: none;
+}
+
+.WmsReport .invoiceHeader,
+.WmsReport .invoiceAddressInfo,
+.WmsReport .invoiceAddressHolder,
+.WmsReport .invProductGrid,
+.WmsReport .invTermsCalcInfoHolder {
+    display: table;
+    width: 100%;
+}
+
+.WmsReport .invoiceCompanyInfoHolder,
+.WmsReport .invoiceCalculationHolder {
+    display: inline-block;
+    float: right;
+}
+
+.PurchaseOrderTitle {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.WmsReport .invoiceHeaderContent,
+.WmsReport .invCompRow,
+.WmsReport .invProductGridHeaderRow,
+.WmsReport .invProductGridRow {
+    display: table-row;
+}
+
+.WmsReport .invoiceHeaderCell,
+.WmsReport .invoiceBillingAddress,
+.WmsReport .invoiceShippingAddress {
+    display: table-cell;
+    width: 50%;
+    vertical-align: top;
+}
+
+.WmsReport .invCompLable {
+    font-weight: bold;
+    background-color: #cccccc;
+}
+
+.WmsReport .invCompLable,
+.WmsReport .invCompInfo,
+.WmsReport .invCompHeader,
+.WmsReport .invProductGridCell,
+.WmsReport .invoiceTermsInfo,
+.WmsReport .invoiceCalculationInfo {
+    display: table-cell;
+    padding: 3px 5px;
+    vertical-align: top;
+}
+
+.WmsReport .invCompHeader,
+.WmsReport .invProductGridHeaderRow .invProductGridCell {
+    background-color: #ceddff;
+    font-weight: bold;
+}
+
+.WmsReport .invCompLable,
+.WmsReport .invCompInfo,
+.WmsReport .invCompHeader,
+.WmsReport .invProductGridCell {
+    border-bottom: solid 1px #000000;
+}
+
+.WmsReport .invCompLable,
+.WmsReport .invoiceBillingAddress,
+.WmsReport .invProductGridCell {
+    border-right: solid 1px #000000;
+}
+
+.WmsReport .invoiceOrderInfo,
+.WmsReport .invProductGrid,
+.WmsReport .invoiceAddressInfo,
+.WmsReport .invoiceCalculationHolder {
+    border: solid 1px #000000;
+}
+
+.WmsReport .invProductGrid,
+.WmsReport .invoiceAddressInfo,
+.WmsReport .invTermsCalcInfoHolder {
+    margin-top: 20px;
+}
+
+.invoiceTermsTitle {
+    font-weight: bold;
+}
+

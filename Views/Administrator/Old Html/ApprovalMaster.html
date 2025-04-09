@@ -1,0 +1,486 @@
+<div id="pnlApprovalMaster" class="wmsMasterTypePage" style="display: none;">
+    <input type="hidden" name="ctl00$CPHolder_Form$hdnWarehouseId" id="hdnWarehouseId" value="0">
+    <input type="hidden" name="ctl00$CPHolder_Form$hdnCustomerId" id="hdnCustomerId" value="10125">
+    <input type="hidden" name="ctl00$CPHolder_Form$hdnUserId" id="hdnUserId" value="10749">
+    <input type="hidden" name="ctl00$CPHolder_Form$hdnReloadAppointmentId" id="hdnReloadAppointmentId" value="0">
+    <input type="hidden" name="ctl00$CPHolder_Form$hdnDefaultFilter" id="hdnDefaultFilter">
+    <input type="hidden" name="ctl00$CPHolder_Form$hdnDefaultFilter" id="hdnApprovalID">
+    <div class="WMSDeveloperTool" style="display: none;">
+        <span>
+            <input type="checkbox" id="WmsDevShowInput" />
+            Show API Input Params</span><span><input type="checkbox" id="WmsDevShowOutput" />
+            Show API Output Result</span>
+    </div>
+    <div class="WMSLastScanned" style="display: none;"></div>
+    <!-- Content Holder -->
+    <div class="wms-srv-content-area pnlInbound" id="userMasterGrid">
+        <!-- Content Area -->
+
+        <div class="container-fluid wms-srv-dashboard-panel">
+            <div class="row">
+                <div class="col-md-4 nopadding">
+                    <!-- Page Title -->
+                    <div class="wms-srv-page-title">
+                        <i class="fas fa-clipboard-check"></i><span class="wms-srv-data-title">Approval Master</span>
+                    </div>
+                    <!-- Page Title -->
+                </div>
+                <div class="col-md-8 nopadding">
+                </div>
+            </div>
+        </div>
+
+        <!-- Head Grid -->
+        <div class="wms-srv-grid-holder pnlWmsHead" id="pnlWmsHead" style="display: none;">
+            <div class="wms-srv-grid">
+                <!-- Object Head Data Will be Here -->
+            </div>
+        </div>
+
+        <br>
+        <!-- Head Grid -->
+
+        <!-- <div class="wms-srv-grid-action-panel">
+            <button class="wms-srv-input wms-srv-button administratorview" type="button" onclick=""><i
+                    class="fas fa-eye"></i><span>Administrator View</span></button>
+            <button class="wms-srv-input wms-srv-button userview" type="button" onclick=""><i
+                    class="fas fa-eye"></i><span>User View</span></button>
+        </div>-->
+        <!--Main Grid -->
+        <div class="wms-srv-obj-main-grid pnlWmsDetail">
+            <div class="wms-srv-grid-holder">
+                <div class="wms-srv-grid-action-panel">
+                    <div class="wms-srv-search">
+                        <label>Search Filter: </label>
+                        <select type="text" class="wms-srv-input wms-srv-search-filter" type="text" id="ddlUserSearch">
+                            <option value="0">-- Select All--</option>
+                            <option value="UserType">User Type</option>
+                            <option value="FirstName">First Name</option>
+                            <option value="LastName">Last Name</option>
+                            <option value="EmployeeNo">Employee No</option>
+                            <option value="EmailID">Email ID</option>
+                            <option value="MobileNo">Mobile No</option>
+                            <option value="Username">User Name</option>
+                        </select>
+                        <input type="text" value="" class="wms-srv-input wms-srv-simple-search" id="txtsearchuser"
+                            title="Search"><a href="#" data-prefix="SE" onclick="SearchUser();"><i class="fas fa-search"
+                                title="Search"></i></a>
+                    </div>
+                    <div class="wms-srv-grid-title">
+                        Approval List
+                    </div>
+                </div>
+
+                <!-- Administrator View -->
+                <div class="wms-srv-grid-scroller" id="wms-aministratorview-grid" style="width: 100%;">
+                    <div class="wms-srv-grid" data-gridobjectid="gridObject_Appointment_Book_Book"
+                    id="tblApprovalMasterList">
+                </div>
+                </div>
+                <!-- Administrator View -->
+
+
+                <div class="wms-srv-grid-pager" id="tlbApprovalMasterPagging">1-10 of 10 Records <span
+                        class="wms-srv-empty-space"></span><b>Go to Page: </b> <select id="ddlGridPageNo"
+                        class="wms-srv-input ddlGridPageNo" style="width:100px;">
+                        <option>1</option>
+                    </select><a href="#" title="Jump To" class="wms-srv-ddlpager-go" style="font-size:16px;"><i
+                            class="fas fa-play-circle"></i></a></div>
+            </div>
+        </div>
+        <!--Main Grid -->
+        <!-- Content Area -->
+    </div>
+    <!-- Event Popup -->
+    <div class="pnlEventControl" style="top:30px;left:30px;">
+        <div class="eventTitle">Select Event <i class="fas fa-times-circle btnCloseEventPanel"></i></div>
+        <div class="eventItemHolder">
+            <div class="eventItem">On Price Change</div>
+            <div class="eventItem">On Purchase Order</div>
+            <div class="eventItem">On Sales Order</div>
+            <div class="eventItem">On Receiving</div>
+            <div class="eventItem">On PutAway</div>
+        </div>
+    </div>
+    <!-- Event Popup -->
+    <!-- Approver Member Popup -->
+    <div class="pnlEventApprover" style="top:30px;left:30px;">
+        <div class="eventApproverTitle">Add Approver <i class="fas fa-times-circle btnCloseEventApprover"></i></div>
+        <div class="eventCodition">Condition: <input type="radio" name="eventCodition" value="AND" checked="checked" />
+            And <input type="radio" name="eventCodition" value="OR" /> OR 
+            <!-- <button type="button"
+                class="btnAddApprover"><i class="fas fa-user-plus"></i> Add</button> -->
+            </div>
+        <div class="eventApproverHolder">
+            <div class="eventApproverItem approverSelected" data-isselected="yes">
+                <div class="userProfile"><img src="Images/profile-pic/pic1.png"></div>
+                <div class="profileName">Sunita Jaikar</div>
+                <i class="fas fa-check-circle"></i>
+            </div>
+            <div class="eventApproverItem approverSelected" data-isselected="yes">
+                <div class="userProfile"><img src="Images/profile-pic/pic2.png"></div>
+                <div class="profileName">Ramesh Kulkarni</div>
+                <i class="fas fa-check-circle"></i>
+            </div>
+            <div class="eventApproverItem" data-isselected="no">
+                <div class="userProfile"><img src="Images/profile-pic/pic3.png"></div>
+                <div class="profileName">Smita Waghmare</div>
+                <i class="fas fa-check-circle"></i>
+            </div>
+            <div class="eventApproverItem approverSelected" data-isselected="yes">
+                <div class="userProfile"><img src="Images/profile-pic/pic4.png"></div>
+                <div class="profileName">Ganesh Karale</div>
+                <i class="fas fa-check-circle"></i>
+            </div>
+            <div class="eventApproverItem" data-isselected="no">
+                <div class="userProfile"><img src="Images/profile-pic/pic5.png"></div>
+                <div class="profileName">Namita Shahane</div>
+                <i class="fas fa-check-circle"></i>
+            </div>
+            <div class="eventApproverItem" data-isselected="no">
+                <div class="userProfile"><img src="Images/profile-pic/nopic.png"></div>
+                <div class="profileName">Gaurav Deshmukh</div>
+                <i class="fas fa-check-circle"></i>
+            </div>
+            <div class="eventApproverItem" data-isselected="no">
+                <div class="userProfile"><img src="Images/profile-pic/nopic.png"></div>
+                <div class="profileName">Raghunandan Kulkarni</div>
+                <i class="fas fa-check-circle"></i>
+            </div>
+            <div class="eventApproverItem" data-isselected="no">
+                <div class="userProfile"><img src="Images/profile-pic/nopic.png"></div>
+                <div class="profileName">Narayan Waghmare</div>
+                <i class="fas fa-check-circle"></i>
+            </div>
+            <div class="eventApproverItem" data-isselected="no">
+                <div class="userProfile"><img src="Images/profile-pic/nopic.png"></div>
+                <div class="profileName">Sangita Karale</div>
+                <i class="fas fa-check-circle"></i>
+            </div>
+            <div class="eventApproverItem" data-isselected="no">
+                <div class="userProfile"><img src="Images/profile-pic/nopic.png"></div>
+                <div class="profileName">Amita Shahane</div>
+                <i class="fas fa-check-circle"></i>
+            </div>
+            <div class="eventApproverItem" data-isselected="no">
+                <div class="userProfile"><img src="Images/profile-pic/nopic.png"></div>
+                <div class="profileName">Sanjay Talegaonkar</div>
+                <i class="fas fa-check-circle"></i>
+            </div>
+            <div class="eventApproverItem" data-isselected="no">
+                <div class="userProfile"><img src="Images/profile-pic/nopic.png"></div>
+                <div class="profileName">Manish Chowdhari</div>
+                <i class="fas fa-check-circle"></i>
+            </div>
+            <div class="eventApproverItem" data-isselected="no">
+                <div class="userProfile"><img src="Images/profile-pic/nopic.png"></div>
+                <div class="profileName">Supriya Sathe</div>
+                <i class="fas fa-check-circle"></i>
+            </div>
+            <div class="eventApproverItem" data-isselected="no">
+                <div class="userProfile"><img src="Images/profile-pic/nopic.png"></div>
+                <div class="profileName">Kavita Patankar</div>
+                <i class="fas fa-check-circle"></i>
+            </div>
+            <div class="eventApproverItem" data-isselected="no">
+                <div class="userProfile"><img src="Images/profile-pic/nopic.png"></div>
+                <div class="profileName">Ashwin Mane</div>
+                <i class="fas fa-check-circle"></i>
+            </div>
+        </div>
+    </div>
+    <!-- Approver Member Popup -->
+    <!-- Approver Add More Member Popup -->
+    <div class="wms-srv-popup-holder" id="wms-srv-approver-member-list-popup"
+        style="width: 100%; height: 100%; margin-left: auto; margin-right: auto; display: none;">
+        <div class="wms-srv-popup-bg">
+        </div>
+        <div class="wms-srv-popup" style="width: 100%; height: 100%; margin-left: auto; margin-right: auto;">
+            <div class="wms-srv-popup-content">
+                <!-- Popup Title -->
+                <div class="wms-srv-popup-title">
+                    <div class="wms-srv-page-title">
+                        <i class="fas fa-user"></i><span>Select Approver</span>
+                    </div>
+                    <a href="#" title="Close" id="wms-srv-approver-member-list-popup-close"
+                        class="wms-srv-popup-close"><i class="fas fa-times-circle"></i></a>
+                </div>
+
+                <div class="wms-srv-productsearch" data-sku="" data-skuid="" data-pallet="" data-palletid=""
+                    data-location="" data-locationid="" style="float: right;margin-right: 20px;margin-bottom: 5px;">
+                    <label>Search Approver: </label>
+                    <input type="text" id="txtSo_ProdSearchpopup" value="" class="wms-srv-input wms-srv-scan-input">
+                    <label style="position: relative;left: -24px;"><i class="fas fa-search" title="Search"></i></label>
+                    <div style="text-align: center;margin-top: -33px;margin-left: 295px;">
+                        <button class="wms-srv-input wms-srv-button wms-srv-highlight-btn-secondary" type="button"
+                            title="Save" id="btnAddSkuToOutwardOrder">
+                            <span>Add Approver</span></button>
+                    </div>
+                </div>
+                <!-- Popup Title -->
+                <div class="wms-srv-popup-content-body" id="wms-srv-popup-content-body">
+                    <div id="popupContentDocument">
+                        <div id="pnlCreateSalesOrder">
+                            <!-- Grid -->
+                            <div class="wms-srv-grid-holder pnlWmsHead" id="pnlWmsHead">
+                                <div class="pnlPopupProductListHolder">
+                                    <div class="wms-srv-grid" id="pnlSalesOrderProductList">
+                                        <div class="wms-srv-grid-header" id="header-wrap">
+                                            <div class="wms-srv-grid-cell" style="width:80px;text-align:center;">Image
+                                            </div>
+                                            <div class="wms-srv-grid-cell" style="text-align:left;">Employee</div>
+                                            <div class="wms-srv-grid-cell" style="width:80px;text-align:center;">Action
+                                            </div>
+                                        </div>
+                                        <div class="wms-srv-grid-row">
+                                            <div class="wms-srv-grid-cell" style="text-align: center;">
+                                                <div class="userProfile"><img src="Images/profile-pic/pic1.png"></div>
+                                            </div>
+                                            <div class="wms-srv-grid-cell">Sunita Jaikar</div>
+                                            <div class="wms-srv-grid-cell">
+                                                <div class="wms-srv-grid-action"><a href="#"
+                                                        class="wms-srv-icononly btnSelectApproverFromList" data-pos="0"
+                                                        data-isselected="yes"><i class="fas fa-check-circle"
+                                                            style="color:#78b421"></i></a></div>
+                                            </div>
+                                        </div>
+                                        <div class="wms-srv-grid-row">
+                                            <div class="wms-srv-grid-cell" style="text-align: center;">
+                                                <div class="userProfile"><img src="Images/profile-pic/pic2.png"></div>
+                                            </div>
+                                            <div class="wms-srv-grid-cell">Ramesh Kulkarni</div>
+                                            <div class="wms-srv-grid-cell">
+                                                <div class="wms-srv-grid-action"><a href="#"
+                                                        class="wms-srv-icononly btnSelectApproverFromList" data-pos="0"
+                                                        data-isselected="yes"><i class="fas fa-check-circle"
+                                                            style="color:#78b421"></i></a></div>
+                                            </div>
+                                        </div>
+                                        <div class="wms-srv-grid-row">
+                                            <div class="wms-srv-grid-cell" style="text-align: center;">
+                                                <div class="userProfile"><img src="Images/profile-pic/pic3.png"></div>
+                                            </div>
+                                            <div class="wms-srv-grid-cell">Smita Waghmare</div>
+                                            <div class="wms-srv-grid-cell">
+                                                <div class="wms-srv-grid-action"><a href="#"
+                                                        class="wms-srv-icononly btnSelectApproverFromList" data-pos="0"
+                                                        data-isselected="no"><i class="fas fa-check-circle"
+                                                            style="color:#c1c1c1"></i></a></div>
+                                            </div>
+                                        </div>
+                                        <div class="wms-srv-grid-row">
+                                            <div class="wms-srv-grid-cell" style="text-align: center;">
+                                                <div class="userProfile"><img src="Images/profile-pic/pic4.png"></div>
+                                            </div>
+                                            <div class="wms-srv-grid-cell">Ganesh Karale</div>
+                                            <div class="wms-srv-grid-cell">
+                                                <div class="wms-srv-grid-action"><a href="#"
+                                                        class="wms-srv-icononly btnSelectApproverFromList" data-pos="0"
+                                                        data-isselected="no"><i class="fas fa-check-circle"
+                                                            style="color:#c1c1c1"></i></a></div>
+                                            </div>
+                                        </div>
+                                        <div class="wms-srv-grid-row">
+                                            <div class="wms-srv-grid-cell" style="text-align: center;">
+                                                <div class="userProfile"><img src="Images/profile-pic/pic5.png"></div>
+                                            </div>
+                                            <div class="wms-srv-grid-cell">Namita Shahane</div>
+                                            <div class="wms-srv-grid-cell">
+                                                <div class="wms-srv-grid-action"><a href="#"
+                                                        class="wms-srv-icononly btnSelectApproverFromList" data-pos="0"
+                                                        data-isselected="no"><i class="fas fa-check-circle"
+                                                            style="color:#c1c1c1"></i></a></div>
+                                            </div>
+                                        </div>
+                                        <div class="wms-srv-grid-row">
+                                            <div class="wms-srv-grid-cell" style="text-align: center;">
+                                                <div class="userProfile"><img src="Images/profile-pic/pic1.png"></div>
+                                            </div>
+                                            <div class="wms-srv-grid-cell">Sunita Jaikar</div>
+                                            <div class="wms-srv-grid-cell">
+                                                <div class="wms-srv-grid-action"><a href="#"
+                                                        class="wms-srv-icononly btnSelectApproverFromList" data-pos="0"
+                                                        data-isselected="yes"><i class="fas fa-check-circle"
+                                                            style="color:#78b421"></i></a></div>
+                                            </div>
+                                        </div>
+                                        <div class="wms-srv-grid-row">
+                                            <div class="wms-srv-grid-cell" style="text-align: center;">
+                                                <div class="userProfile"><img src="Images/profile-pic/pic2.png"></div>
+                                            </div>
+                                            <div class="wms-srv-grid-cell">Ramesh Kulkarni</div>
+                                            <div class="wms-srv-grid-cell">
+                                                <div class="wms-srv-grid-action"><a href="#"
+                                                        class="wms-srv-icononly btnSelectApproverFromList" data-pos="0"
+                                                        data-isselected="yes"><i class="fas fa-check-circle"
+                                                            style="color:#78b421"></i></a></div>
+                                            </div>
+                                        </div>
+                                        <div class="wms-srv-grid-row">
+                                            <div class="wms-srv-grid-cell" style="text-align: center;">
+                                                <div class="userProfile"><img src="Images/profile-pic/pic3.png"></div>
+                                            </div>
+                                            <div class="wms-srv-grid-cell">Smita Waghmare</div>
+                                            <div class="wms-srv-grid-cell">
+                                                <div class="wms-srv-grid-action"><a href="#"
+                                                        class="wms-srv-icononly btnSelectApproverFromList" data-pos="0"
+                                                        data-isselected="no"><i class="fas fa-check-circle"
+                                                            style="color:#c1c1c1"></i></a></div>
+                                            </div>
+                                        </div>
+                                        <div class="wms-srv-grid-row">
+                                            <div class="wms-srv-grid-cell" style="text-align: center;">
+                                                <div class="userProfile"><img src="Images/profile-pic/pic4.png"></div>
+                                            </div>
+                                            <div class="wms-srv-grid-cell">Ganesh Karale</div>
+                                            <div class="wms-srv-grid-cell">
+                                                <div class="wms-srv-grid-action"><a href="#"
+                                                        class="wms-srv-icononly btnSelectApproverFromList" data-pos="0"
+                                                        data-isselected="no"><i class="fas fa-check-circle"
+                                                            style="color:#c1c1c1"></i></a></div>
+                                            </div>
+                                        </div>
+                                        <div class="wms-srv-grid-row">
+                                            <div class="wms-srv-grid-cell" style="text-align: center;">
+                                                <div class="userProfile"><img src="Images/profile-pic/pic5.png"></div>
+                                            </div>
+                                            <div class="wms-srv-grid-cell">Namita Shahane</div>
+                                            <div class="wms-srv-grid-cell">
+                                                <div class="wms-srv-grid-action"><a href="#"
+                                                        class="wms-srv-icononly btnSelectApproverFromList" data-pos="0"
+                                                        data-isselected="no"><i class="fas fa-check-circle"
+                                                            style="color:#c1c1c1"></i></a></div>
+                                            </div>
+                                        </div>
+                                        <div class="wms-srv-grid-row">
+                                            <div class="wms-srv-grid-cell" style="text-align: center;">
+                                                <div class="userProfile"><img src="Images/profile-pic/pic1.png"></div>
+                                            </div>
+                                            <div class="wms-srv-grid-cell">Sunita Jaikar</div>
+                                            <div class="wms-srv-grid-cell">
+                                                <div class="wms-srv-grid-action"><a href="#"
+                                                        class="wms-srv-icononly btnSelectApproverFromList" data-pos="0"
+                                                        data-isselected="yes"><i class="fas fa-check-circle"
+                                                            style="color:#78b421"></i></a></div>
+                                            </div>
+                                        </div>
+                                        <div class="wms-srv-grid-row">
+                                            <div class="wms-srv-grid-cell" style="text-align: center;">
+                                                <div class="userProfile"><img src="Images/profile-pic/pic2.png"></div>
+                                            </div>
+                                            <div class="wms-srv-grid-cell">Ramesh Kulkarni</div>
+                                            <div class="wms-srv-grid-cell">
+                                                <div class="wms-srv-grid-action"><a href="#"
+                                                        class="wms-srv-icononly btnSelectApproverFromList" data-pos="0"
+                                                        data-isselected="yes"><i class="fas fa-check-circle"
+                                                            style="color:#78b421"></i></a></div>
+                                            </div>
+                                        </div>
+                                        <div class="wms-srv-grid-row">
+                                            <div class="wms-srv-grid-cell" style="text-align: center;">
+                                                <div class="userProfile"><img src="Images/profile-pic/pic3.png"></div>
+                                            </div>
+                                            <div class="wms-srv-grid-cell">Smita Waghmare</div>
+                                            <div class="wms-srv-grid-cell">
+                                                <div class="wms-srv-grid-action"><a href="#"
+                                                        class="wms-srv-icononly btnSelectApproverFromList" data-pos="0"
+                                                        data-isselected="no"><i class="fas fa-check-circle"
+                                                            style="color:#c1c1c1"></i></a></div>
+                                            </div>
+                                        </div>
+                                        <div class="wms-srv-grid-row">
+                                            <div class="wms-srv-grid-cell" style="text-align: center;">
+                                                <div class="userProfile"><img src="Images/profile-pic/pic4.png"></div>
+                                            </div>
+                                            <div class="wms-srv-grid-cell">Ganesh Karale</div>
+                                            <div class="wms-srv-grid-cell">
+                                                <div class="wms-srv-grid-action"><a href="#"
+                                                        class="wms-srv-icononly btnSelectApproverFromList" data-pos="0"
+                                                        data-isselected="no"><i class="fas fa-check-circle"
+                                                            style="color:#c1c1c1"></i></a></div>
+                                            </div>
+                                        </div>
+                                        <div class="wms-srv-grid-row">
+                                            <div class="wms-srv-grid-cell" style="text-align: center;">
+                                                <div class="userProfile"><img src="Images/profile-pic/pic5.png"></div>
+                                            </div>
+                                            <div class="wms-srv-grid-cell">Namita Shahane</div>
+                                            <div class="wms-srv-grid-cell">
+                                                <div class="wms-srv-grid-action"><a href="#"
+                                                        class="wms-srv-icononly btnSelectApproverFromList" data-pos="0"
+                                                        data-isselected="no"><i class="fas fa-check-circle"
+                                                            style="color:#c1c1c1"></i></a></div>
+                                            </div>
+                                        </div>
+                                        <div class="wms-srv-grid-row">
+                                            <div class="wms-srv-grid-cell" style="text-align: center;">
+                                                <div class="userProfile"><img src="Images/profile-pic/pic1.png"></div>
+                                            </div>
+                                            <div class="wms-srv-grid-cell">Sunita Jaikar</div>
+                                            <div class="wms-srv-grid-cell">
+                                                <div class="wms-srv-grid-action"><a href="#"
+                                                        class="wms-srv-icononly btnSelectApproverFromList" data-pos="0"
+                                                        data-isselected="yes"><i class="fas fa-check-circle"
+                                                            style="color:#78b421"></i></a></div>
+                                            </div>
+                                        </div>
+                                        <div class="wms-srv-grid-row">
+                                            <div class="wms-srv-grid-cell" style="text-align: center;">
+                                                <div class="userProfile"><img src="Images/profile-pic/pic2.png"></div>
+                                            </div>
+                                            <div class="wms-srv-grid-cell">Ramesh Kulkarni</div>
+                                            <div class="wms-srv-grid-cell">
+                                                <div class="wms-srv-grid-action"><a href="#"
+                                                        class="wms-srv-icononly btnSelectApproverFromList" data-pos="0"
+                                                        data-isselected="yes"><i class="fas fa-check-circle"
+                                                            style="color:#78b421"></i></a></div>
+                                            </div>
+                                        </div>
+                                        <div class="wms-srv-grid-row">
+                                            <div class="wms-srv-grid-cell" style="text-align: center;">
+                                                <div class="userProfile"><img src="Images/profile-pic/pic3.png"></div>
+                                            </div>
+                                            <div class="wms-srv-grid-cell">Smita Waghmare</div>
+                                            <div class="wms-srv-grid-cell">
+                                                <div class="wms-srv-grid-action"><a href="#"
+                                                        class="wms-srv-icononly btnSelectApproverFromList" data-pos="0"
+                                                        data-isselected="no"><i class="fas fa-check-circle"
+                                                            style="color:#c1c1c1"></i></a></div>
+                                            </div>
+                                        </div>
+                                        <div class="wms-srv-grid-row">
+                                            <div class="wms-srv-grid-cell" style="text-align: center;">
+                                                <div class="userProfile"><img src="Images/profile-pic/pic4.png"></div>
+                                            </div>
+                                            <div class="wms-srv-grid-cell">Ganesh Karale</div>
+                                            <div class="wms-srv-grid-cell">
+                                                <div class="wms-srv-grid-action"><a href="#"
+                                                        class="wms-srv-icononly btnSelectApproverFromList" data-pos="0"
+                                                        data-isselected="no"><i class="fas fa-check-circle"
+                                                            style="color:#c1c1c1"></i></a></div>
+                                            </div>
+                                        </div>
+                                        <div class="wms-srv-grid-row">
+                                            <div class="wms-srv-grid-cell" style="text-align: center;">
+                                                <div class="userProfile"><img src="Images/profile-pic/pic5.png"></div>
+                                            </div>
+                                            <div class="wms-srv-grid-cell">Namita Shahane</div>
+                                            <div class="wms-srv-grid-cell">
+                                                <div class="wms-srv-grid-action"><a href="#"
+                                                        class="wms-srv-icononly btnSelectApproverFromList" data-pos="0"
+                                                        data-isselected="no"><i class="fas fa-check-circle"
+                                                            style="color:#c1c1c1"></i></a></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Grid -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Approver Add More Member Popup -->
+</div>

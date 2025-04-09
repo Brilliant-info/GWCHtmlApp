@@ -1,0 +1,41 @@
+.keyblock{
+    border:solid 1px #636363;
+    padding:7px;
+    border-radius: 7px;
+    background-color:#fbfbfb;
+    display: inline-block;
+    margin-right: 3px;
+    font-size: 11px;
+}
+.keyblock i{
+    margin-left: 3px;
+}
+.btnAddProductKeyword{
+    color: #00acd7;
+}
+.requiredStar {
+    color: #ff0000;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 10px;
+  }
+.pnlAddKeyword{
+    position: absolute;
+    box-shadow: 5px 5px 5px #ccc;
+}
+#pnlNoSkuRecord{
+    border:solid 1px #cccccc;
+    padding:10px;
+    text-align:center;
+    font-size: 13px;
+    font-style: italic;
+}
+.pnlPopupProductListHolder{
+    width:100%;
+    overflow:auto;
+    height:430px;
+}
+.pnlBtnAddSkuHolder{
+    text-align: center;
+    margin-top: 20px;
+}

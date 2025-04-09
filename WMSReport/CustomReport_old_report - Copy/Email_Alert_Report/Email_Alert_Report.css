@@ -1,0 +1,94 @@
+#header-wrap {
+    position: sticky;
+    top: 0;
+    height: auto;
+    width: 100%;
+    z-index: 100;
+}
+
+#header-wrap .wms-srv-grid-cell {
+    background-color: #efefef !important;
+    color: #000000 !important;
+    font-weight: bold !important;
+}
+
+/*prachi*/
+@media(max-width:767px) {
+    #dateSelecterobjrexta {
+        height: 295px !important;
+        /* width: 226px !important; */
+        left: -13px !important;
+        padding: 0px !important;
+    }
+
+    #gridDatePickerobjrexta .container {
+        min-height: 0px !important;
+    }
+
+    #dateSelecterobjrexta .fa-times-circle {
+        margin-left: 512px !important;
+    }
+
+    .text-center {
+        width: 17em;
+    }
+
+    .text-center2 {
+        width: 17em;
+    }
+
+    .app .page-content {
+        padding-bottom: 150px;
+    }
+
+    #gridDatePickerobjrexta .row {
+        margin-right: -12px;
+        margin-left: -3px;
+    }
+}
+
+@media(max-width:575px) {
+    .dateGridView {
+        padding: 0px;
+    }
+
+    #dateSelecterobjrexta {
+        height: 580px !important;
+        width: 238px;
+        left: -12px;
+    }
+
+    #dateSelecterobjrexta .fa-times-circle {
+        margin-left: 217px !important;
+    }
+
+    .text-center {
+        width: 14em;
+    }
+
+    .text-center2 {
+        width: 14em;
+    }
+}
+
+@media(min-width:767px) {
+    #dateSelecterobjrexta {
+        height: 340px !important;
+    }
+
+    #gridDatePickerobjrexta {
+        height: 246px !important;
+    }
+
+    #gridDatePickerobjrexta .container {
+        min-height: 0px !important;
+    }
+}
+
+@media(max-width:800px) {
+    .app .page-content {
+        padding-bottom: 150px !important;
+    }
+}
+
+/*prachi*/

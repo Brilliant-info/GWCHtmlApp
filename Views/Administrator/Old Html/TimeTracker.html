@@ -1,0 +1,312 @@
+<div id="pnlTimeTrackerMaster" class="wmsMasterTypePage" style="display: none;">
+    <input type="hidden" name="ctl00$CPHolder_Form$hdnWarehouseId" id="hdnWarehouseId" value="0">
+    <input type="hidden" name="ctl00$CPHolder_Form$hdnCustomerId" id="hdnCustomerId" value="10125">
+    <input type="hidden" name="ctl00$CPHolder_Form$hdnUserId" id="hdnUserId" value="10749">
+    <input type="hidden" name="ctl00$CPHolder_Form$hdnReloadAppointmentId" id="hdnReloadAppointmentId" value="0">
+    <input type="hidden" name="ctl00$CPHolder_Form$hdnDefaultFilter" id="hdnDefaultFilter">
+
+    <div class="WMSLastScanned" ></div>
+    <!-- Content Holder -->
+    <div class="wms-srv-content-area pnlInbound" id="userMasterGrid">
+        <!-- Content Area -->
+        <div class="container-fluid wms-srv-dashboard-panel">
+            <div class="row">
+                <div class="col-md-4 nopadding">
+                    <!-- Page Title -->
+                    <div class="wms-srv-page-title">
+                        <i class="fas fa-solid fa-user"></i><span class="wms-srv-data-title">Time Tracker Master</span>
+                    </div>
+                    <!-- Page Title -->
+                </div>
+                <div class="col-md-8 nopadding">
+                </div>
+            </div>
+        </div>
+
+        <!-- Head Grid -->
+        <div class="wms-srv-grid-holder pnlWmsHead" id="pnlWmsHead" style="display: none;">
+            <div class="wms-srv-grid">
+                <!-- Object Head Data Will be Here -->
+            </div>
+        </div>
+        <br>
+        <!-- Head Grid -->
+
+       <!-- <div class="wms-srv-grid-action-panel">
+            <button class="wms-srv-input wms-srv-button administratorview" type="button" onclick=""><i
+                    class="fas fa-eye"></i><span>Administrator View</span></button>
+            <button class="wms-srv-input wms-srv-button userview" type="button" onclick=""><i
+                    class="fas fa-eye"></i><span>User View</span></button>
+        </div>-->
+        <!--Main Grid -->
+        <div class="wms-srv-obj-main-grid pnlWmsDetail">
+            <div class="wms-srv-grid-holder">
+                <div class="wms-srv-grid-action-panel">
+                    <div class="wms-srv-search">
+                        <label>Search Filter: </label>
+                        <select type="text" class="wms-srv-input wms-srv-search-filter" type="text" id="ddlUserSearch">
+                            <option value="0">-- Select All--</option>
+                            <option value="Vendor">Activity</option>
+                            <option value="Labor Code">Zone</option>
+                            <option value="LastName">Order</option>
+                            <option value="EmployeeNo">Unit Type</option>
+                            <option value="EmailID">Qty</option>
+                            <option value="End Date">Start Time</option>
+                            <option value="End Date">End Time</option>
+                            <option value="Ledger Code">Labour</option>
+                            <option value="Ledger Code">Time</option>
+                        </select>
+                        <input type="text" value="" class="wms-srv-input wms-srv-simple-search" id="txtsearchuser" title="Search"><a href="#"
+                            data-prefix="SE" onclick="SearchUser();"><i class="fas fa-search" title="Search"></i></a>
+                    </div>
+                    <div class="wms-srv-grid-title">
+                        Time Tracker List
+                    </div>
+                </div>
+
+                <!-- Administrator View -->
+            <div class="wms-srv-grid-scroller" id="wms-aministratorview-grid" style="width: 100%;">
+                <div class="wms-srv-grid" data-gridobjectid="gridObject_Appointment_Book_Book" id="tbluserlist">
+                   <div class="wms-srv-grid-header">
+                        <div class="wms-srv-grid-cell wms-align">Activity</div>
+                        <div class="wms-srv-grid-cell wms-align">Zone</div>
+                        <div class="wms-srv-grid-cell wms-align">Order</div>
+                        <div class="wms-srv-grid-cell wms-align">Unit Type</div>
+                        <div class="wms-srv-grid-cell wms-align">Qty</div>
+                        <div class="wms-srv-grid-cell wms-align">Start Time</div>
+                        <div class="wms-srv-grid-cell wms-align">End Time</div>
+                        <div class="wms-srv-grid-cell wms-align">Labour</div>
+                        <div class="wms-srv-grid-cell wms-align">Time</div>
+                        <div class="wms-srv-grid-cell wms-align">Action</div>
+                    </div>
+
+                    <!-- <div class="wms-srv-grid-row wms-align">
+                        <div class="wms-srv-grid-cell"><input type="text" id="txtActivityName" value="" class="wms-srv-grid-cell-input"></div>
+                        <div class="wms-srv-grid-cell"><input type="text" id="txtZoneName" value="" class="wms-srv-grid-cell-input"></div>
+                        <div class="wms-srv-grid-cell"><input type="text" id="txtLabourName" value="" class="wms-srv-grid-cell-input"></div>
+                        <div class="wms-srv-grid-cell"><input type="text" data-prefix="SESKU" data-id="" value=""
+                                class="wms-srv-grid-cell-input"></div>
+                        <div class="wms-srv-grid-cell"> <input type="text" data-prefix="SESKU" data-id="" value=""
+                                class="wms-srv-grid-cell-input"></div>
+                        <div class="wms-srv-grid-cell">
+                        <input type="text" value="" id="txtStartDatePick" class="wms-srv-grid-cell-input" readonly>
+                        </div>
+                        <div class="wms-srv-grid-cell">
+                            <input type="text" id="txtEndDatePick" value=""
+                                class="wms-srv-grid-cell-input" readonly>
+                            </div>
+                            <div class="wms-srv-grid-cell"> <input type="text" data-prefix="SESKU" data-id="" value=""
+                                class="wms-srv-grid-cell-input"></div>
+                                <div class="wms-srv-grid-cell"> <input type="text" data-prefix="SESKU" data-id="" value=""
+                                    class="wms-srv-grid-cell-input"></div>
+                        <div class="wms-srv-grid-cell">
+                            <div class="wms-srv-grid-action">
+                                <a href="#" title="Save" class="wms-srv-save" data-prefix="SV" onclick=""><i
+                                        class="fas fa-check-circle"></i></a>
+                                    <div class="wms-srv-action-sep">  |  </div>
+                                        <a href="#" title="view Labour" class="wms-srv-save" data-prefix="SV" onclick="showLabourDetailReport();"><i
+                                            class="fas fa-users"></i></a> 
+                            </div>
+                        </div>
+                    </div>-->
+                    <!-- Row Start -->
+                        <div class="wms-srv-grid-row wms-align" id="gridLabourRow_1">
+                            <div class="wms-srv-grid-cell">Repacking</div>
+                            <div class="wms-srv-grid-cell">Loading</div>
+                            <div class="wms-srv-grid-cell">58952</div>
+                            <div class="wms-srv-grid-cell"></div>
+                            <div class="wms-srv-grid-cell">25</div>
+                            <div class="wms-srv-grid-cell">09:30</div>
+                            <div class="wms-srv-grid-cell">08:00</div>
+                            <div class="wms-srv-grid-cell">10</div>
+                            <div class="wms-srv-grid-cell">100Hr</div>
+                            <div class="wms-srv-grid-cell">
+                                <!-- <div class="wms-srv-grid-action">
+             
+                    <a href="#" title="Save" class="wms-srv-save" onclick="">
+                        <i class="fas fa-edit"></i></a>                 
+                                            <div class="wms-srv-action-sep">  |  </div>
+                <a href="#" title="view Labour" class="wms-srv-save" data-prefix="SV" onclick="">
+                    <i class="fas fa-users"></i></a>
+                                </div> -->
+                            </div>
+                        </div>
+                        <div class="wms-srv-grid-row wms-align" id="gridLabourRow_1">
+                            <div class="wms-srv-grid-cell">Repacking</div>
+                            <div class="wms-srv-grid-cell">Loading</div>
+                            <div class="wms-srv-grid-cell">58952</div>
+                            <div class="wms-srv-grid-cell"></div>
+                            <div class="wms-srv-grid-cell">25</div>
+                            <div class="wms-srv-grid-cell">09:30</div>
+                            <div class="wms-srv-grid-cell">08:00</div>
+                            <div class="wms-srv-grid-cell">10</div>
+                            <div class="wms-srv-grid-cell">100Hr</div>
+                            <div class="wms-srv-grid-cell">
+                                <!-- <div class="wms-srv-grid-action">
+             
+                    <a href="#" title="Save" class="wms-srv-save" onclick="">
+                        <i class="fas fa-edit"></i></a>                 
+                                            <div class="wms-srv-action-sep">  |  </div>
+                <a href="#" title="view Labour" class="wms-srv-save" data-prefix="SV" onclick="">
+                    <i class="fas fa-users"></i></a>
+                                </div> -->
+                            </div>
+                        </div>
+                        <div class="wms-srv-grid-row wms-align" id="gridLabourRow_1">
+                            <div class="wms-srv-grid-cell">Repacking</div>
+                            <div class="wms-srv-grid-cell">Loading</div>
+                            <div class="wms-srv-grid-cell">58952</div>
+                            <div class="wms-srv-grid-cell"></div>
+                            <div class="wms-srv-grid-cell">25</div>
+                            <div class="wms-srv-grid-cell">09:30</div>
+                            <div class="wms-srv-grid-cell">08:00</div>
+                            <div class="wms-srv-grid-cell">10</div>
+                            <div class="wms-srv-grid-cell">100Hr</div>
+                            <div class="wms-srv-grid-cell">
+                                <!-- <div class="wms-srv-grid-action">
+             
+                    <a href="#" title="Save" class="wms-srv-save" onclick="">
+                        <i class="fas fa-edit"></i></a>                 
+                                            <div class="wms-srv-action-sep">  |  </div>
+                <a href="#" title="view Labour" class="wms-srv-save" data-prefix="SV" onclick="">
+                    <i class="fas fa-users"></i></a>
+                                </div> -->
+                            </div>
+                        </div>
+                        
+                        
+                <!-- Edit Grid Details-->    
+                    <div class="wms-srv-grid-row wms-align" id="editusergridValues" style="display: none;">
+                        <div class="wms-srv-grid-cell">
+                            <select>
+                                <option>Admin</option>
+                                <option>Test Admin</option>
+                                <option>Super Admin</option>
+                            </select>
+                        </div>
+                        <div class="wms-srv-grid-cell"><input type="text" data-prefix="SESKU" data-id="" value=""
+                                class="wms-srv-grid-cell-input"></div>
+                        <div class="wms-srv-grid-cell"><input type="text" data-prefix="SESKU" data-id="" value=""
+                                class="wms-srv-grid-cell-input"></div>
+                        <div class="wms-srv-grid-cell"><input type="text" data-prefix="SESKU" data-id="" value=""
+                                class="wms-srv-grid-cell-input"></div>
+                        <div class="wms-srv-grid-cell"> <input type="text" data-prefix="SESKU" data-id="" value=""
+                                class="wms-srv-grid-cell-input"></div>
+                        <div class="wms-srv-grid-cell"><input type="text" data-prefix="SESKU" data-id="" value=""
+                                class="wms-srv-grid-cell-input"></div>
+                        <div class="wms-srv-grid-cell">WMS_James</div>
+                        <div class="wms-srv-grid-cell">-</div>
+                        <div class="wms-srv-grid-cell">
+                            <div class="wms-srv-grid-action">
+                                <a href="#" title="Save" class="wms-srv-save" data-prefix="SV" onclick=""><i
+                                        class="fas fa-check-circle"></i></a>
+                                <div class="wms-srv-action-sep">|</div>
+                                <a href="#" title="Cancel" class="wms-srv-save" data-prefix="SV"><i
+                                        class="fas fa-times-circle" id="hideGridEditRow"></i></a>
+
+
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Edit Grid Details-->
+
+                </div>
+            </div>
+                <div class="wms-srv-grid-pager" id="pagingUserMaster">
+                    <span class="wms-srv-pager-records">1-1 of 82 Records</span>
+                    <span class="wms-srv-empty-space"></span>
+                    <span class="wms-srv-pager-links"><a href="#" data-page="firstpage"><i
+                                class="fas fa-angle-double-left"></i></a><a href="#" data-page="previous"><i
+                                class="fas fa-angle-left"></i></a><a href="#" class="wms-srv-active"
+                            data-page="1">1</a><a href="#" data-page="2">2</a><a href="#" data-page="3">3</a><a href="#"
+                            data-page="4">4</a><a href="#" data-page="5">5</a><a href="#" data-page="6">6</a><a href="#"
+                            data-page="7">7</a><a href="#" data-page="8">8</a><a href="#" data-page="9">9</a><a href="#"
+                            data-page="next"><i class="fas fa-angle-right"></i></a><a href="#" data-page="lastpage"><i
+                                class="fas fa-angle-double-right"></i></a></span>
+                    <span class="wms-srv-empty-space"></span>
+                    <input type="text" name="txtGridPageNo" onkeypress="return isNumber(event)" class="wms-srv-input notranslate" value="0"
+                        style="width: 80px;">
+                    <a href="#" title="Jump To" class="wms-srv-pager-go"><i class="fas fa-play-circle"></i></a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    
+    <!-- Labour Details -->
+ <!-- POPUP  -->
+ <div class="wms-srv-popup-holder" id="wms-srv-LabourDetails-popup" style="display: none;">
+    <div class="wms-srv-popup-bg">
+    </div>
+    <div class="wms-srv-popup">
+        <div class="wms-srv-popup-content">
+            <!-- Popup Title -->
+            <div class="wms-srv-popup-title">
+                <div class="wms-srv-page-title">
+                    <i class="fas fa-file-alt"></i><span>Labour Details List</span>
+                </div>
+                <a href="#" id="wms-srv-LabourDetails-popup-close" class="wms-srv-popup-close"><i class="fas fa-times-circle"></i></a>
+            </div>
+            <!-- Popup Title -->
+            <div class="wms-srv-popup-content-body" id="wms-srv-popup-content-body">
+                <div id="popupContentDocument">
+                    <div id="pnlCreatePurchaseOrder">                            
+                        <!-- Grid -->
+                        <div class="wms-srv-grid-holder pnlWmsRateGrid" id="pnlWmsRateGrid" style="display: none;">
+                            <div class="wms-srv-grid"></div>
+                        </div>
+                        <br>
+                        <!-- Grid -->
+                        <!-- Header Details -->
+                        <!-- Grid -->
+                        <div class="wms-srv-grid-holder pnlWmsDetail" id="pnlWmsDetail">
+                            <div class="wms-srv-grid-action-panel">
+                                <div class="wms-srv-grid-common-action"><a href="#" title="Customize Grid" data-prefix="CG" class="wms-srv-icononly"><i class="fas fa-edit"></i></a></div>                              
+                                <div class="wms-srv-grid-title">
+                                    Labour List                                       
+                                    <input type="hidden" name="" id="hdnTransDtlsID" value="0">
+                                </div>
+                            </div>
+                            <div class="wms-srv-grid-scroller" style="width: 100%;">
+                               <div class="wms-srv-grid" id="div-add-pallet-list">
+                                   <div class="wms-srv-grid-header">
+                                        <div class="wms-srv-grid-cell">Labour Name</div>
+                                        <div class="wms-srv-grid-cell">Start Time</div>
+                                        <div class="wms-srv-grid-cell">End Time</div>
+                                        <div class="wms-srv-grid-cell">Elapsed</div>
+                                        <div class="wms-srv-grid-cell">Unit Type</div>                                       
+                                        <div class="wms-srv-grid-cell">Qty</div>                                 
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+                                         <div class="wms-srv-grid-cell wms-srv-container-search">
+                                           66643
+                                        </div>
+                                         <div class="wms-srv-grid-cell wms-srv-container-search">
+                                          09:30
+                                        </div>
+                                         <div class="wms-srv-grid-cell wms-srv-container-search">
+                                            08:00
+                                        </div>
+                                         <div class="wms-srv-grid-cell">
+                                          01:30
+                                        </div>  
+                                         <div class="wms-srv-grid-cell wms-srv-container-search">
+                                          Inward
+                                        </div>
+                                        <div class="wms-srv-grid-cell wms-srv-container-search">
+                                           56
+                                         </div>                                        
+                                    </div>
+                                </div>
+                            </div>                        
+                        </div>
+                        <!-- Grid -->
+                       
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    <!-- Labour Details -->
+</div>

@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head runat="server">
+	<title>Packing Detail</title>
+
+	<link href="../../WMSTheme/fontawesome/css/all.css" rel="stylesheet" />
+	<link href="Report-Template-Common.css" rel="stylesheet" />
+	<link href="Packing-Template.css" rel="stylesheet" />
+	<link href="Purchase-Order.css" rel="stylesheet" />
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+	<script src="../../Themes/js/wms-app-session.js"></script>
+	<script src="../../Themes/js/wms-app-navigator.js"></script>
+	<link href="../../Themes/fontawesome/css/all.css" rel="stylesheet" />
+
+</head>
+
+<body class="WmsReport">
+	<form id="form1" runat="server">
+		<asp:Label ID="JsDataHolder" runat="server"></asp:Label>
+		<script src="Report-Template-Common.js" type="text/javascript"></script>
+		<script src="Packing-Template.js" type="text/javascript"></script>
+		<asp:HiddenField ID="hdnDataId" runat="server" ClientIDMode="Static" />
+		<a href="#" class="printTemplate" id="btnFilterLottable" onclick="showLottableConfigurationpacking();"
+			style="margin-right:80px;"><i class="fas fa-cog"></i>Lottable Filter</a>
+		<a href="#" class="printTemplate" onclick="window.print();"><i class="fas fa-print"></i>Print</a>
+		<!-- Header -->
+		<div class="invoiceHeader">
+			<div class="invoiceHeaderContent">
+				<div class="invoiceHeaderCell">
+					<!-- Company Details -->
+					<div class="invoiceLogo">
+						<span class="wmsCustomLogoTag">logopath</span>
+					</div>
+					<div class="invoiceCompanyInfo">
+						<div class="invCompRow">
+							<div class="invCompLable">Address</div>
+							<div class="invCompInfo"><span class="wmsCustomTag">address</span></div>
+						</div>
+						<div class="invCompRow">
+							<div class="invCompLable">Email</div>
+							<div class="invCompInfo"><span class="wmsCustomTag">EmailID</span></div>
+						</div>
+						<div class="invCompRow">
+							<div class="invCompLable">Phone No</div>
+							<div class="invCompInfo"><span class="wmsCustomTag">PhoneNo</span></div>
+						</div>
+					</div>
+					<!-- Company Details -->
+				</div>
+				<div class="invoiceHeaderCell">
+					<!-- Company Details -->
+					<div class="invoiceCompanyInfoHolder">
+						<div class="invoiceTitle">
+							Packing Detail
+
+						</div>
+						<div class="invoiceLogo-B">
+							<span class="wmsBarcodeTag">orderNumber</span>
+						</div>
+						<div class="invoiceOrderInfo" style="width:100%;display: table;">
+							<div class="invCompRow">
+								<div class="invCompLable">Packing No</div>
+								<div class="invCompInfo"><span class="wmsCustomTag">PackingNo</span></div>
+							</div>
+							<div class="invCompRow">
+								<div class="invCompLable">Batch ID</div>
+								<div class="invCompInfo"><span class="wmsCustomTag">batchID</span></div>
+							</div>
+							<div class="invCompRow">
+								<div class="invCompLable">Batch Name</div>
+								<div class="invCompInfo"><span class="wmsCustomTag">BatchName</span></div>
+							</div>
+
+							<!-- <div class="invCompRow">
+								<div class="invCompLable">Outward Order No</div>
+								<div class="invCompInfo"><span class="wmsCustomTag">OutwardOrderNo</span></div>
+							</div>
+							<div class="invCompRow">
+								<div class="invCompLable">Order Reference No</div>
+								<div class="invCompInfo"><span class="wmsCustomTag">OrderReferenceno</span></div>
+							</div> -->
+							<div class="invCompRow">
+								<div class="invCompLable">Order Date
+								</div>
+								<div class="invCompInfo"><span class="wmsCustomTag">Dispatchdate</span></div>
+							</div>
+							<div class="invCompRow">
+								<div class="invCompLable">Order Type
+
+								</div>
+								<div class="invCompInfo"><span class="wmsCustomTag">Object</span></div>
+							</div>
+						</div>
+					</div>
+					<!-- Company Details -->
+				</div>
+			</div>
+		</div>
+
+		<!-- Billing Details Holder -->
+		<div class="invoiceAddressInfo">
+			<div class="invCompRow">
+				<div class="invCompHeader">Order Details</div>
+				<div class="invCompHeader"></div>
+			</div>
+			<div class="invoiceBillingAddress">
+				<div class="invoiceAddressHolder">
+
+					<div class="invCompRow">
+						<div class="invCompLable">Client Code</div>
+						<div class="invCompInfo"><span class="wmsCustomTag">clientcode</span></div>
+					</div>
+
+					<div class="invCompRow">
+						<div class="invCompLable">Warehouse Name</div>
+						<div class="invCompInfo"><span class="wmsCustomTag">WarehouseName</span></div>
+					</div>
+					<div class="invCompRow">
+						<div class="invCompLable">Packing Location</div>
+						<div class="invCompInfo"><span class="wmsCustomTag">Code</span></div>
+					</div>
+				</div>
+			</div>
+			<div class="invoiceShippingAddress">
+				<div class="invoiceAddressHolder">
+					<!-- <div class="invCompRow">
+								<div class="invCompHeader">ORDER DETAILS</div>
+								<div class="invCompHeader"></div>
+							</div> -->
+					<div class="invCompRow">
+						<div class="invCompLable">Client/WH Address</div>
+						<div class="invCompInfo"><span class="wmsCustomTag">BillingAddress</span></div>
+					</div>
+					<div class="invCompRow">
+						<div class="invCompLable">Customer Name</div>
+						<div class="invCompInfo"><span class="wmsCustomTag">CustomerName</span></div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+		<!-- Header -->
+		<!-- Billing Details Holder -->
+		<div class="invoiceAddressInfo">
+
+			<div class="invoiceBillingAddress">
+				<div class="invoiceAddressHolder">
+					<div class="invCompRow">
+						<div class="invCompHeader">Bill To </div>
+						<div class="invCompHeader"></div>
+					</div>
+					<div class="invCompRow">
+						<div class="invCompLable">Client Name</div>
+						<div class="invCompInfo"><span class="wmsCustomTag">BillingName</span></div>
+					</div>
+					<div class="invCompRow">
+						<div class="invCompLable">Address </div>
+						<div class="invCompInfo"><span class="wmsCustomTag">BillingAddress</span></div>
+					</div>
+					<div class="invCompRow">
+						<div class="invCompLable">Phone No </div>
+						<div class="invCompInfo"><span class="wmsCustomTag">BillingPhone</span></div>
+					</div>
+				</div>
+			</div>
+			<div class="invoiceShippingAddress">
+				<div class="invoiceAddressHolder">
+					<div class="invCompRow">
+						<div class="invCompHeader">Ship To</div>
+						<div class="invCompHeader"></div>
+					</div>
+					<div class="invCompRow">
+						<div class="invCompLable">Client Name</div>
+						<div class="invCompInfo"><span class="wmsCustomTag">ShippingName</span></div>
+					</div>
+					<div class="invCompRow">
+						<div class="invCompLable">Address</div>
+						<div class="invCompInfo"><span class="wmsCustomTag">ShippingAddress</span></div>
+					</div>
+					<div class="invCompRow">
+						<div class="invCompLable">Phone No</div>
+						<div class="invCompInfo"><span class="wmsCustomTag">ShippingPhone</span></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- Billing Details Holder -->
+
+
+		<!-- Product Details -->
+		<div class="invoiceProductDetails">
+			<div class="invProductGrid gridLottable">
+				<div class="invProductGridHeaderRow">
+					<div class="invProductGridCell">
+						Sr.No
+					</div>
+					<div class="invProductGridCell">
+						SKU
+						Code
+					</div>
+					<div class="invProductGridCell">
+						Outward Order No
+					</div>
+					<div class="invProductGridCell">
+						Order Reference No
+					</div>
+					<div class="invProductGridCell">
+						SKU Description
+
+					</div>
+					<div class="invProductGridCell invLotHead" data-lotindex="0" data-lotlabel="Lottable1">
+						Lottable1
+					</div>
+					<div class="invProductGridCell invLotHead" data-lotindex="1" data-lotlabel="Lottable2">
+						Lottable2
+					</div>
+					<div class="invProductGridCell invLotHead" data-lotindex="2" data-lotlabel="Lottable3">
+						Lottable3
+					</div>
+					<div class="invProductGridCell invLotHead" data-lotindex="3" data-lotlabel="Lottable4">
+						Lottable4
+					</div>
+					<div class="invProductGridCell invLotHead" data-lotindex="4" data-lotlabel="Lottable5">
+						Lottable5
+					</div>
+					<div class="invProductGridCell invLotHead" data-lotindex="5" data-lotlabel="Lottable6">
+						Lottable6
+					</div>
+					<div class="invProductGridCell invLotHead" data-lotindex="6" data-lotlabel="Lottable7">
+						Lottable7
+					</div>
+					<div class="invProductGridCell invLotHead" data-lotindex="7" data-lotlabel="Lottable8">
+						Lottable8
+					</div>
+					<div class="invProductGridCell invLotHead" data-lotindex="8" data-lotlabel="Lottable9">
+						Lottable9
+					</div>
+					<div class="invProductGridCell invLotHead" data-lotindex="9" data-lotlabel="Lottable10">
+						Lottable10
+					</div>
+					<div class="invProductGridCell">
+						Carton
+					</div>
+					<div class="invProductGridCell">
+						UOM
+					</div>
+					<div class="invProductGridCell">
+						Dimension
+					</div>
+
+
+
+
+
+					<div class="invProductGridCell">
+						Weight
+					</div>
+					<div class="invProductGridCell">
+						Picking /QC Quantity
+					</div>
+					<div class="invProductGridCell">
+						Packing
+						Quantity
+					</div>
+					<div class="invProductGridCell">
+						Packing
+						By
+					</div>
+				</div>
+				<div class="wmsGridRow wmsRepeatRow" data-column="Table1">
+					<div class="invProductGridCell">
+						<span class="wmsCustomRepeatTag">Id</span>
+					</div>
+					<div class="invProductGridCell">
+						<span class="wmsCustomRepeatTag">SKUCode</span>
+					</div>
+					<div class="invProductGridCell">
+						<span class="wmsCustomRepeatTag">OutwardOrderNo</span>
+					</div>
+					<div class="invProductGridCell">
+						<span class="wmsCustomRepeatTag">OrderReferenceno</span>
+					</div>
+					<div class="invProductGridCell">
+						<span class="wmsCustomRepeatTag">ProductDescription</span>
+					</div>
+					<div class="invProductGridCell invLotCell" data-lotlabel="Lottable1">
+						<span class="wmsCustomRepeatTag invLotCell">Lottable1</span>
+					</div>
+					<div class="invProductGridCell invLotCell" data-lotlabel="Lottable2">
+						<span class="wmsCustomRepeatTag invLotCell">Lottable2</span>
+					</div>
+					<div class="invProductGridCell invLotCell" data-lotlabel="Lottable3">
+						<span class="wmsCustomRepeatTag invLotCell">Lottable3</span>
+					</div>
+					<div class="invProductGridCell invLotCell" data-lotlabel="Lottable4">
+						<span class="wmsCustomRepeatTag invLotCell">Lottable4</span>
+					</div>
+					<div class="invProductGridCell invLotCell" data-lotlabel="Lottable5">
+						<span class="wmsCustomRepeatTag invLotCell">Lottable5</span>
+					</div>
+					<div class="invProductGridCell invLotCell" data-lotlabel="Lottable6">
+						<span class="wmsCustomRepeatTag invLotCell">Lottable6</span>
+					</div>
+					<div class="invProductGridCell invLotCell" data-lotlabel="Lottable7">
+						<span class="wmsCustomRepeatTag invLotCell">Lottable7</span>
+					</div>
+					<div class="invProductGridCell invLotCell" data-lotlabel="Lottable8">
+						<span class="wmsCustomRepeatTag invLotCell">Lottable8</span>
+					</div>
+					<div class="invProductGridCell invLotCell" data-lotlabel="Lottable9">
+						<span class="wmsCustomRepeatTag invLotCell">Lottable9</span>
+					</div>
+					<div class="invProductGridCell invLotCell" data-lotlabel="Lottable10">
+						<span class="wmsCustomRepeatTag invLotCell">Lottable10</span>
+					</div>
+					<div class="invProductGridCell">
+						<span class="wmsCustomRepeatTag">CartonName</span>
+					</div>
+					<div class="invProductGridCell">
+						<span class="wmsCustomRepeatTag">ProductUomNo</span>
+					</div>
+
+
+					<div class="invProductGridCell">
+						<span class="wmsCustomRepeatTag">Dimension</span>
+					</div>
+					<div class="invProductGridCell">
+						<span class="wmsCustomRepeatTag">PrdWeight</span>
+					</div>
+					<div class="invProductGridCell">
+						<span class="wmsCustomRepeatTag">PickUpQty</span>
+					</div>
+					<div class="invProductGridCell">
+						<span class="wmsCustomRepeatTag">Packingqty</span>
+					</div>
+					<div class="invProductGridCell">
+						<span class="wmsCustomRepeatTag">Username</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- Product Details -->
+		<!-- Total and Charges Info -->
+		<div class="invoiceProductDetails">
+			<div class="invProductGrid"
+				style="margin-right:2px;width:220px;text-align: center; display: flex; margin-top: 1px;float: right;">
+				<div class="invProductGridHeaderRow">
+					<div class="invProductGridCell" style="width: 81px;">
+						TOTAL
+					</div>
+				</div>
+				<div class="wmsGridRow wmsRepeatRow" data-column="Table2">
+					<div class="">
+						<span class="wmsCustomRepeatTag" style="margin-left: 35px;">Total</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- Product Details -->
+		<!-- Total and Charges Info -->
+		<!-- <div class="invTermsCalcInfoHolder">
+			<div class="invoiceTermsInfo">
+				<div class="invoiceTermsTitle">TERMS AND CONDITION</div>
+				<div class="invoiceTerms"></div>
+			</div>
+			
+		</div> -->
+		<div style="margin-top: 100px;">
+			<div class="invTermsCalcInfoHolder">
+				<div class="invoiceTermsInfo">
+					<div class="invoiceTermsTitle">TERMS AND CONDITIONS</div>
+					<div class="invoiceTerms"></div>
+				</div>
+
+			</div>
+			<!-- Packing Details -->
+			<div class="invoiceAddressInfo">
+				<div class="invoiceShippingAddress">
+					<div class="invoiceAddressHolder">
+						<div class="invCompRow">
+							<div class="invCompHeader">PACKING IN GOOD ORDER AND CONDITION
+							</div>
+						</div>
+						<div class="wmsGridRow wmsRepeatRow" data-column="Table3">
+							<div class="invCompInfo">Name: <span class="wmsCustomRepeatTag">Username</span> Signature:
+								________________________ <span style="float: right;">Date: <span
+										class="wmsCustomRepeatTag">CurrentDate</span></span></div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- Packing Details -->
+		</div>
+
+	</form>
+	<!-- POPUP CODE -->
+	<div class="wms-srv-popup-holder" id="wms-srv-lottableconfig-popup" style="display: none;">
+		<div class="wms-srv-popup-bg">
+		</div>
+		<div class="wms-srv-popup" style="">
+			<div class="wms-srv-popup-content">
+				<!-- Popup Title -->
+				<div class="wms-srv-popup-title">
+					<div class="wms-srv-page-title">
+						<!-- <i class="fas fa-file-alt"></i> -->
+						<span>Lottable Filter</span>
+					</div>
+					<a href="#" id="wms-srv-lottableconfig-popup-close" class="wms-srv-popup-close"><i
+							class="fas fa-times-circle"></i></a>
+				</div>
+				<!-- Popup Title -->
+				<div class="wms-srv-popup-content-body" id="wms-srv-popup-content-body">
+					<!-- Grid 2-->
+					<!-- <div class="invLottableTitleLabel">Select lottable to show or hide in detail report.</div> -->
+					<div id="pnlLotConfigHolder">
+						<div class="pnlLotConfigCell">
+						</div>
+						<div class="pnlSaveConfigHolder">
+							<a href="#" class="printTemplate" onclick="saveLottableConfigurationpacking();"
+								style="position:static;"><i class="fas fa-check-circle"></i>Filter</a>
+						</div>
+					</div>
+					<!-- Grid 2-->
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- POPUP CODE -->
+</body>
+
+</html>

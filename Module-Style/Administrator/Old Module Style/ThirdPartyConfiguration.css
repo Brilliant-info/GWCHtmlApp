@@ -1,0 +1,98 @@
+label {
+    margin: 4px !important;
+}
+
+.APICategory {
+    background-color: #efefef;
+    padding: 10px 0px;
+}
+
+.APICategory a {
+    display: block;
+    color: #000000;
+    font-size: 14px;
+    padding: 10px 30px;
+}
+
+.APICategory i {
+    margin-right: 10px;
+}
+
+.themWMSSearchReportHolder {
+    position: static;
+}
+
+.themeWMSSearchReport {
+    padding: 10px 20px;
+    background-color: #efefef;
+
+}
+
+.themWMSSearchReport {
+    min-width: 250px !important;
+}
+
+.themWMSSearchReportHolder {
+    background-color: #ffffff;
+    margin: 10px 30px;
+}
+
+.themWMSSearchReportHolder i {
+    margin-right: 10px;
+}
+.printablesType {
+    border: solid 1px #cccccc;
+    margin: 10px 20px;
+    font-size: 18px !important;
+    box-shadow: 5px 5px 5px #cccccc;
+}
+
+.printablesType i {
+    font-size: 20px !important;
+    color: #00acd7;
+    margin-right: 5px;
+    padding: 20px;
+    background-color: #fbfafa;
+    border-right: solid 1px #cccccc;
+}
+
+.printablesTitle {
+    font-size: 14px !important;
+    color: #000000;
+    display: inline;
+}
+
+/* BOX STYLE FOR LIST */
+
+.wms-srv-api-group-item {
+    padding-left: 20px;
+
+}
+
+.wms-srv-page-title {
+    margin: 0px !important;
+}
+
+.wms-code-wrapper {
+    background-color: #efefef;
+    border-radius: 5px;
+    height: 600px;
+    padding-top: 10px;
+    overflow-y: scroll;
+}
+
+.wms-srv-grid-cell-number {
+    display: table-cell;
+    font-size: 13px;
+    border-right: 1px solid black;
+    padding: 5px;
+    vertical-align: middle;
+}
+
+.wms-srv-grid-cell-content {
+    display: table-cell;
+    font-size: 13px;
+    border: none;
+    padding: 5px;
+    vertical-align: middle;
+}

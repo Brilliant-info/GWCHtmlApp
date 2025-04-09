@@ -1,0 +1,295 @@
+<div class="ProductionIssue" class="wmsMasterTypePage" style="display:none;">
+
+    <!-- MAIN GRID SECTION -->
+    <div class="wms-srv-content-area pnlInbound">
+        <!-- Content Area -->
+
+
+        <!-- Grid -->
+        
+
+        <div class="wms-srv-content-area pnlInbound">
+            <!-- Popup Title -->
+            <div class="wms-srv-popup-title">
+                <div class="wms-srv-page-title">
+                    <i class="fas fa-file-alt"></i><span>Production Issue</span>
+                </div>
+                <!-- <a href="#" title="Close" id="wms-srv-addtransfer-popup-close" class="wms-srv-popup-close"><i
+                        class="fas fa-times-circle"></i></a> -->
+            </div>
+            <!-- Popup Title -->
+            <div class="wms-srv-popup-content-body" id="wms-srv-popup-content-body" style="text-align: center;">
+                <div>
+                    <div>
+                        <!-- Grid -->
+                        <div class="wms-srv-grid-holder pnlWmsHead" id="pnlHeadDocument">
+                            <div class="wms-srv-grid">
+                                <!-- Object Head Data Will be Here -->
+                                <div class="wms-srv-grid-header">
+                                    <div class="wms-srv-grid-cell">Issue No</div>
+                                    <div class="wms-srv-grid-cell">Issue Date</div>
+                                    <div class="wms-srv-grid-cell">Request Ref No</div>
+                                    <div class="wms-srv-grid-cell">Issue By</div>
+                                    <div class="wms-srv-grid-cell">Remark</div>
+                                    <div class="wms-srv-grid-cell">Status</div>
+                                </div>
+                                <div class="wms-srv-grid-row">
+                                    <div class="wms-srv-grid-cell">
+                                        <span id="spnTransferid">To be Generated</span>
+                                        <input type="hidden" id="hdnTransferId" value="0">
+                                    </div>
+        
+                                    <div class="wms-srv-grid-cell">
+                                        <input type="text" value="12-AUG" id="AssignDate"
+                                            class="wms-srv-grid-cell-input wms-srv-datepicker">
+                                    </div>
+                                    <div class="wms-srv-grid-cell">
+                                        <input type="text" value="143143" id="AssignDate" class="wms-srv-grid-cell-input wms-srv-datepicker">
+                                    </div>
+                                    <div class="wms-srv-grid-cell">
+                                        <label for="" id="transferby" value="">HB</label>
+                                    </div>
+                                    <div class="wms-srv-grid-cell">
+                                        <input type="text" value="" class="wms-srv-grid-cell-input notranslate"
+                                            id="txtTransferRemark">
+                                    </div>
+                                    <div class="wms-srv-grid-cell">
+                                        <label id="txtHeadStatus" value="">Pending</label>
+        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+                        <!-- Grid -->
+                        <!-- Header Details -->
+        
+                        <!-- Grid -->
+                        <div class="wms-srv-grid-holder pnlWmsDetail">
+                            <div class="wms-srv-grid-action-panel">
+                                <div class="wms-srv-grid-common-action"><a href="#" class="wms-srv-icononly"><i
+                                            class="fas fa-list"></i></a></div>
+        
+                                <div class="wms-srv-grid-title">
+                                    <div>
+                                        SKU List
+        
+                                    </div>
+                                </div>
+        
+                                <!-- Scanning popup-->
+        
+                                <div class="wms-srv-grid-scroller" id="wmsScannerHolder"
+                                    style="width: 100%; text-align: center; display: none">
+                                    <div class="wms-srv-grid" data-gridobjectid="gridObject_Inbound_PurchaseOrder_DOC">
+                                        <div class="wms-srv-grid-header">
+                                            <div class="wms-srv-grid-cell">Location Type</div>
+                                            <div class="wms-srv-grid-cell">From Location</div>
+                                            <div class="wms-srv-grid-cell">From Pallet</div>
+                                            <div class="wms-srv-grid-cell">Sku Code</div>
+                                            <div class="wms-srv-grid-cell">Lottable</div>
+                                            <div class="wms-srv-grid-cell">To Location</div>
+                                            <div class="wms-srv-grid-cell">To Pallet</div>
+        
+                                        </div>
+                                        <div class="wms-srv-grid-row wms-srv-grid-add">
+                                            <div class="wms-srv-grid-cell">
+                                                <select class="wms-srv-grid-cell-input" id="ddlLocationType"
+                                                    onclick="LocationType();">
+                                                    <option>--Select List--</option>
+                                                </select>
+                                            </div>
+                                            <div class="wms-srv-grid-cell">Loc-211</div>
+                                            <div class="wms-srv-grid-cell">ST-0000123</div>
+                                            <div class="wms-srv-grid-cell">Sku-00021</div>
+                                            <div class="wms-srv-grid-cell">Dark Blue</div>
+                                            <div class="wms-srv-grid-cell">Loc-1123</div>
+                                            <div class="wms-srv-grid-cell">ST-123145</div>
+                                        </div>
+                                    </div>
+                                    <div style="display: flex">
+                                        <input type="text" title="Scan" class="wms-srv-grid-cell-input"
+                                            placeholder="Scan/Enter Location/Pallet/Sku"
+                                            style="width: 300px;height: 25px;margin-top: 7px;margin-left: 10px;" />
+                                        <i class="fas fa-chevron-circle-right  wms-logo"
+                                            style="margin:5px; font-size: 30px;"></i>
+                                        <div class="" style="float: right;margin-top: 3px; margin-left: 20px">Enter
+                                            QTY:<input style="margin: 5px" type="text" value="" /></div>
+                                        <a href="#" title="Save" class="wms-srv-save" data-prefix="SV"><i
+                                                class="fas fa-check-circle"
+                                                style="font-size: 30px; color: black; margin-top: 5px;"></i></a>
+        
+                                    </div>
+                                </div>
+                            </div>
+                            <!--Scanning popup-->
+                        </div>
+                    </div>
+                    <!-- Grid -->
+                    <div class="wms-srv-grid-scroller" style="width: 100%;">
+                        <div class="wms-srv-grid" id="tblTransferDetailsgrid">
+                            <div class="wms-srv-grid-header" style="white-space: nowrap;">
+                                <!-- <div class="wms-srv-grid-cell">From Location Type</div> -->
+                                <div class="wms-srv-grid-cell">From Location</div>
+                                <div class="wms-srv-grid-cell">From Pallet</div>
+                                <div class="wms-srv-grid-cell">SKU Code</div>
+                                <div class="wms-srv-grid-cell" style="width: 195px;">Lottable</div>
+                                <div class="wms-srv-grid-cell">Available Quantity</div>
+                                <div class="wms-srv-grid-cell">Quantity</div>
+                                <!-- <div class="wms-srv-grid-cell">To Location Type</div> -->
+                                <div class="wms-srv-grid-cell">Production Line</div>
+                                <!-- <div class="wms-srv-grid-cell">To Pallet</div> -->
+                                <div class="wms-srv-grid-cell">Action</div>
+        
+                            </div>
+                            <div class="wms-srv-grid-row wmsFrmAddRow">
+                                <!-- <div class="wms-srv-grid-cell">
+                                    <select class="wms-srv-grid-cell-input" id="ddlLocationType" onclick="">
+                                        <option>--Select List--</option>
+                                    </select>
+                                </div> -->
+                                <div class="wms-srv-grid-cell">
+                                    <div class="wms-srv-suggestion-holder">
+                                        <input type="text" data-prefix="SESKU" id="textFromLocation" data-id="" value=""
+                                            class="wms-srv-grid-cell-input notranslate"><a href="#"
+                                            onclick="getFromLocation();return false;"><i class="fas fa-search"></i></a>
+                                        <input type="hidden" data-prefix="SESKU" id="texthdnFromLocationID" data-id="" value=""
+                                            class="wms-srv-grid-cell-input notranslate">
+                                    </div>
+                                </div>
+                                <div class="wms-srv-grid-cell">
+                                    <div class="wms-srv-suggestion-holder">
+                                        <input type="text" data-prefix="SESKU" data-id="" value=""
+                                            class="wms-srv-grid-cell-input notranslate" id="textfromPallet"><a href="#"
+                                            onclick="getFromPalletList();return false;"><i class="fas fa-search"></i></a>
+                                        <input type="hidden" data-prefix="SESKU" id="texthdnFromPalletID" data-id="" value=""
+                                            class="wms-srv-grid-cell-input notranslate">
+                                    </div>
+                                </div>
+                                <div class="wms-srv-grid-cell">
+                                    <div class="wms-srv-suggestion-holder">
+                                        <input type="text" data-prefix="SESKU" id="textSKUCode" data-id="" value=""
+                                            class="wms-srv-grid-cell-input notranslate"><a href="#"
+                                            onclick="getSKUList();return false;"><i class="fas fa-search"></i></a>
+                                        <input type="hidden" data-prefix="SESKU" id="texthdnSKUID" data-id="" value=""
+                                            class="wms-srv-grid-cell-input notranslate">
+                                    </div>
+                                </div>
+                                <div class="wms-srv-grid-cell">
+                                    <div class="wms-srv-suggestion-holder">
+                                        <input type="text" data-prefix="SESKU" id="textLottable" data-id="" value=""
+                                            class="wms-srv-grid-cell-input notranslate"><a href="#"
+                                            onclick="getLottableList();return false;"><i class="fas fa-search"></i></a>
+                                    </div>
+                                </div>
+                                <div class="wms-srv-grid-cell">
+                                    <input type="text" id="textinputQuantity" value="" class="wms-srv-grid-cell-input">
+                                </div>
+                                <div class="wms-srv-grid-cell">
+                                    <input type="text" id="textinputQuantity" value="" class="wms-srv-grid-cell-input">
+                                </div>
+                                <!-- <div class="wms-srv-grid-cell">
+                                    <select class="wms-srv-grid-cell-input" id="ddlToLocationType" onclick="">
+                                        <option>--Select List--</option>
+                                    </select>
+                                </div> -->
+                                <div class="wms-srv-grid-cell">
+                                    <div class="wms-srv-suggestion-holder">
+                                        <input type="text" data-prefix="SESKU" id="textToLocation" data-id="" value=""
+                                            class="wms-srv-grid-cell-input notranslate"><a href="#"
+                                            onclick="getToLocation();return false;"><i class="fas fa-search"></i></a>
+                                        <input type="hidden" data-prefix="SESKU" id="texthdnToLocationID" data-id="" value=""
+                                            class="wms-srv-grid-cell-input notranslate">
+                                    </div>
+                                </div>
+                                <!-- <div class="wms-srv-grid-cell">
+                                    <div class="wms-srv-suggestion-holder">
+                                        <input type="text" data-prefix="SESKU" data-id="" id="textToPallet" value=""
+                                            class="wms-srv-grid-cell-input notranslate"><a href="#"
+                                            onclick=" getToPalletList();return false;"><i class="fas fa-search"></i></a>
+                                        <input type="hidden" data-prefix="SESKU" id="texthdnToPalletID" data-id="" value=""
+                                            class="wms-srv-grid-cell-input notranslate">
+                                    </div>
+                                </div> -->
+                                <div class="wms-srv-grid-cell">
+                                    <div class="wms-srv-grid-action">
+                                        <div class="wms-srv-grid-action">
+                                            <a href="#" title="Save" class="wms-srv-save" data-prefix="SV"><i
+                                                    class="fas fa-check-circle" onclick="SaveTransfer(); return false;"></i></a>
+                                            <div class="wms-srv-action-sep">|</div>
+                                            <a href="#" title="Cancel" class="wms-srv-cancel" data-prefix="CN"><i
+                                                    class="fas fa-times-circle"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> 
+                            <!-- <div class="wms-srv-grid-row">
+                                                <div class="wms-srv-grid-cell">
+                                                    Loc-001
+                                                </div>
+                                                <div class="wms-srv-grid-cell">
+                                                    ST-000001
+                                                </div>
+                                                <div class="wms-srv-grid-cell">
+                                                    sku-0001
+                                                </div>
+                                                <div class="wms-srv-grid-cell wms-lottable-blocks">
+                                                    <span>Batch-9923</span><span>Dark Blue</span> <span>14-Oct-2022</span>
+                                                </div>
+                                                <div class="wms-srv-grid-cell">
+                                                    25.00
+                                                </div>
+                                                <div class="wms-srv-grid-cell">
+                                                    Loc-9112
+                                                </div>
+                                                <div class="wms-srv-grid-cell">
+                                                    ST-99384
+                                                </div>
+                                                <div class="wms-srv-grid-cell">
+                                                    <a href="#" title="Cancel" class="wms-srv-cancel" data-prefix="CN"><i
+                                                            class="fas fa-times-circle"></i></a>
+                                                </div>
+                                            </div>
+                                            <div class="wms-srv-grid-row">
+                                                <div class="wms-srv-grid-cell">
+                                                    Loc-001
+                                                </div>
+                                                <div class="wms-srv-grid-cell">
+                                                    ST-000001
+                                                </div>
+                                                <div class="wms-srv-grid-cell">
+                                                    sku-0001
+                                                </div>
+                                                <div class="wms-srv-grid-cell wms-lottable-blocks">
+                                                    <span>Batch-9923</span><span>Dark Blue</span> <span>14-Oct-2022</span>
+                                                </div>
+                                                <div class="wms-srv-grid-cell">
+                                                    25.00
+                                                </div>
+                                                <div class="wms-srv-grid-cell">
+                                                    Loc-9112
+                                                </div>
+                                                <div class="wms-srv-grid-cell">
+                                                    ST-99384
+                                                </div>
+                                                <div class="wms-srv-grid-cell">
+                                                    <a href="#" title="Cancel" class="wms-srv-cancel" data-prefix="CN"><i
+                                                            class="fas fa-times-circle"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+        Grid -->
+        <!-- Content Area -->
+    </div>
+    <!-- MAIN GRID SECTION -->
+
+
+
+
+
+    

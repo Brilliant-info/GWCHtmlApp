@@ -1,0 +1,140 @@
+<!-- MAIN GRID SECTION -->
+<div class="wms-srv-content-area"style="padding-bottom: 0px;">
+    <div class="container-fluid wms-srv-dashboard-panel" style="margin-bottom: 0px;">
+        <div class="row">
+            <div class="col-md-10 nopadding">
+                <!-- Page Title -->
+                <div class="wms-srv-page-title">
+                    <i class="fas fa-truck-moving fa-flip-horizontal"></i><span class="wms-srv-data-title">Outward
+                        Order List</span>
+                </div>
+                <!-- Page Title -->
+            </div>
+            <div class="col-md-2 nopadding">
+                <span class="wms-srv-child-obj">
+                    <div class="wms-srv-fieldset">
+                        <div class="wms-srv-fieldset-title">Outward Order Type</div>
+                        <select style="margin-bottom: 0px; margin-top: 0px;" id="ddlOrderType">
+                            <option value="SalesOrder">Sales Order</option>
+                            <option value="TransferOut">Transfer Out</option>
+                            <option value="ScrapOrder">Scrap Order</option>
+                            <!-- <option value="VendorReturn">Vendor Return</option> -->
+                        </select>
+                    </div>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- MAIN GRID SECTION -->
+
+<!-- Counter Dashboard -->
+<div class="wms-srv-content-area pnlInbound">
+    <span class="wms-srv-counter-dashboard">
+        <div class="container-fluid wms-srv-dashboard-panel">
+            <div class="row">
+                <div class="col-md-2 nopadding dashBoard">
+                    <div class="wms-srv-count-box-holder btnHeadOutbound dashboardActiveTab">
+                        <div class="wms-srv-count-box">
+                            <div class="wms-srv-count-icon" style="background-color: #47d108;"><i
+                                    class="fas fa-receipt"></i></div>
+                            <div class="wms-srv-count-content">
+                                <div class="wms-srv-count" id="dashOutboundOrdercount"></div>
+                                <div class="wms-srv-count-label">Outward Order</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2 nopadding">
+                    <div class="wms-srv-count-box-holder btnHeadAllocate">
+                        <div class="wms-srv-count-box">
+                            <div class="wms-srv-count-icon" style="background-color: #68bbd4;"><i
+                                    class="fas fa-receipt"></i></div>
+                            <div class="wms-srv-count-content">
+                                <div class="wms-srv-count" id="dashAllocatedcount"></div>
+                                <div class="wms-srv-count-label">Allocated</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2 nopadding">
+                    <div class="wms-srv-count-box-holder btnHeadPicking">
+                        <div class="wms-srv-count-box">
+                            <div class="wms-srv-count-icon" style="background-color: #ffc107;"><i
+                                    class="fas fa-people-carry"></i></div>
+                            <div class="wms-srv-count-content">
+                                <div class="wms-srv-count" id="dashPickingcount"></div>
+                                <div class="wms-srv-count-label">Picking</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2 nopadding" id="OutQualityCheck" style="display: none;">
+                    <div class="wms-srv-count-box-holder btnHeadQualityCheck" >
+                        <div class="wms-srv-count-box">
+                            <div class="wms-srv-count-icon" style="background-color: #bd82ce;"><i
+                                    class="fas fa-receipt"></i></div>
+                            <div class="wms-srv-count-content">
+                                <div class="wms-srv-count" id="dashQualityCheckcount"></div>
+                                <div class="wms-srv-count-label">Quality Check</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="col-md-2 nopadding">
+                    <div class="wms-srv-count-box-holder btnHeadStaging" onclick="stagingalert()">
+                        <div class="wms-srv-count-box">
+                            <div class="wms-srv-count-icon" style="background-color: #ff2f2f;"><i
+                                    class="fas fa-file-invoice"></i></div>
+                            <div class="wms-srv-count-content">
+                                <div class="wms-srv-count" id="dashStagingcount"></div>
+                                <div class="wms-srv-count-label">Packing</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2 nopadding dashBoard" >
+                    <div class="wms-srv-count-box-holder btnHeadPassedBatch">
+                        <div class="wms-srv-count-box">
+                            <div class="wms-srv-count-icon"><i class="fas fa-file-invoice"></i></div>
+                            <div class="wms-srv-count-content">
+                                <div class="wms-srv-count" id="dashPassedBatchcount"></div>
+                                <div class="wms-srv-count-label">
+                                    Dispatch
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- <div class="col-md-2 nopadding dashBoard" >
+                    <div class="wms-srv-count-box-holder btnTaskCompleted">
+                        <div class="wms-srv-count-box">
+                            <div class="wms-srv-count-icon"><i class="fas fa-file-invoice"></i></div>
+                            <div class="wms-srv-count-content">
+                                <div class="wms-srv-count" id="dashtaskCompletedcount"></div>
+                                <div class="wms-srv-count-label">
+                                    Completed
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div> -->
+                <!-- <%--<div class="col-md-2 nopadding"> -->
+                <!-- <div class="wms-srv-count-box-holder"> -->
+                <!-- <div class="wms-srv-count-box"> -->
+                <!-- <div class="wms-srv-count-icon" style="background-color: #47d108;"><i class="fas fa-receipt"></i></div> -->
+                <!-- <div class="wms-srv-count-content"> -->
+                <!-- <div class="wms-srv-count">344</div> -->
+                <!-- <div class="wms-srv-count-label">Marked for Return</div> -->
+                <!-- </div> -->
+                <!-- </div> -->
+                <!-- </div> -->
+                <!-- </div>--%> -->
+            </div>
+        </div>
+    </span>
+</div>
+
+<!-- Counter Dashboard -->
+

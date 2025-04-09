@@ -1,0 +1,241 @@
+<div id="pnlEmailNotification" class="wmsMasterTypePage" style="display: none;">
+
+    <!-- Content Holder -->
+    <div class="wms-srv-content-area pnlInbound" id="pnlAppointmentList">
+        <!-- Content Area -->
+        <div class="container-fluid wms-srv-dashboard-panel">
+            <div class="row">
+                <div class="col-md-4 nopadding">
+                    <!-- Page Title -->
+                    <div class="wms-srv-page-title">
+                        <i class="fas fa-cog"></i><span class="wms-srv-data-title">Notification Setup</span>
+                    </div>
+                    <!-- Page Title -->
+                </div>
+                <div class="col-md-8 nopadding">
+                </div>
+            </div>
+        </div>
+        <!-- Grid -->
+        <div class="wms-srv-obj-main-grid pnlWmsDetail">
+            <div class="wms-srv-grid-holder">
+                <div class="wms-srv-grid-action-panel">
+
+                </div>
+                <div class="wms-srv-grid-scroller" style="width:100%;">
+                    <div class="wms-srv-grid" id="emailsmsList">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Content Holder -->
+
+    <!-- Whatsapp Template popup -->
+    <div class="wms-srv-popup-holder" id="wms-srv-Template-Whatsapp-popup-show" style="display: none;">
+        <div class="wms-srv-popup-bg"><br></div>
+        <div class="wms-srv-popup">
+            <div class="wms-srv-popup-content">
+                <!-- Popup Title -->
+                <div class="wms-srv-popup-title">
+                    <div class="wms-srv-page-title"><i class="fab fa-whatsapp-square"></i><span>WhatsApp Template
+                            list</span></div>
+                    <a href="#" id="wms-srv-Template-Whatsapp-popup-close" class="wms-srv-popup-close"><i
+                            class="fas fa-times-circle"></i></a>
+                </div>
+                <!-- Popup Title -->
+
+                <div class="wms-srv-popup-content-body" id="wms-srv-popup-content-body">
+                    <!-- Grid 2-->
+                    <div class="wms-srv-grid-holder pnlWmsDetail" id="pnlWmsDetail">
+
+                        <div class="wms-srv-grid">
+                            <div class="wms-srv-grid-cell"><br>
+                                <div style="position: relative;">
+                                    <div style="display: flex;">
+                                        <div>To:</div>
+                                        <div id="pnlWhatsupAddGroup" class="txtEmail">
+
+                                        </div>
+                                    </div>
+                                    <br>
+                                    <div style="display: flex;">
+                                        <div>Role:</div>
+                                        <div id="pnlRolesAddGroup" class="txtwhatRole">
+
+                                        </div>
+                                    </div>
+                                    <i class="fas fa-plus-circle btnAddEmailInToField" onclick="showWhatsapp()"></i>
+                                    <i class="fas fa-plus-circle btnAddRolesInToField" onclick="showRoles()"></i>
+                                    <div class="pnlAddEmail keyblockEmail" id="txtshowWatsapp">
+                                        <div class=""></div>
+                                        <input type="text" value="" onkeypress="return isNumber(event)"
+                                            class="txtAddEmail" id="txtAddWhatsup">
+                                        <i class="fas fa-check-circle" style="color:black !important"
+                                            onclick="AddWhatsup();"></i>
+                                        <i class="fas fa-times-circle" id="txthideWatsapp"></i>
+                                    </div>
+                                    <div class="pnlAddRole keyblockEmail" id="txtshowRoles">
+                                        <div class=""></div>
+                                        <input type="text" value="" class="txtAddEmail txtAddRoles"
+                                            id="txtAddRolesWhatsup">
+                                        <i class="fas fa-check-circle" style="color:black !important"
+                                            onclick="AddRolesWhatsup();RolesValidation();"></i>
+                                        <i class="fas fa-times-circle" id="txthideRoles"></i>
+                                    </div>
+                                </div><br>
+
+
+                                <textarea name="body" rows="15" id="txtWhatsupbody" cols="167"
+                                    style="width: 100%;"></textarea><br><br>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Grid 2-->
+            </div>
+        </div>
+    </div>
+    <!-- Whatsapp Template popup -->
+
+    <!-- Email Template popup -->
+    <div class="wms-srv-popup-holder" id="wms-srv-Template-popup-show" style="display: none;">
+        <div class="wms-srv-popup-bg"><br></div>
+        <div class="wms-srv-popup">
+            <div class="wms-srv-popup-content">
+                <!-- Popup Title -->
+                <div class="wms-srv-popup-title">
+                    <div class="wms-srv-page-title"><i class="fas fa-solid fa-envelope"></i><span>Email Template
+                            list</span></div>
+                    <a href="#" id="wms-srv-Template-popup-close" class="wms-srv-popup-close"><i
+                            class="fas fa-times-circle"></i></a>
+                </div><!-- Popup Title -->
+
+                <div class="wms-srv-popup-content-body" id="wms-srv-popup-content-body">
+                    <!-- Grid 2-->
+                    <div class="wms-srv-grid-holder pnlWmsDetail" id="pnlWmsDetail">
+
+                        <div class="wms-srv-grid">
+                            <div class="wms-srv-grid-cell"><br>
+                                <div style="position: relative;">
+                                    <div style="display: flex;">
+                                        <div>To:</div>
+                                        <div id="pnlEmailAddGroup" class="txtEmail">
+
+                                        </div>
+                                    </div>
+                                    <br>
+                                    <div style="display: flex;">
+                                        <div>Role:</div>
+                                        <div id="pnlEmailRolesAddGroup" class="txtEmailRole">
+
+                                        </div>
+                                    </div>
+                                    <i class="fas fa-plus-circle btnAddEmailInToField" onclick="showEmail();"></i>
+                                    <i class="fas fa-plus-circle btnAddRolesInToField" onclick="showRolesEmail()"></i>
+                                    <div class="pnlAddEmail keyblockEmail" id="txtshow">
+                                        <div class=""></div>
+                                        <input type="text" value="" class="txtAddEmail " id="txtEmailsave">
+                                        <i class="fas fa-check-circle" style="color:black !important"
+                                            onclick="AddEmail()"></i>
+                                        <i class="fas fa-times-circle" id="txthide"></i>
+                                    </div>
+                                    <div class="pnlAddRole keyblockEmail" id="txtshowRolesEmail">
+                                        <div class=""></div>
+                                        <input type="text" value="" class="txtAddEmail txtAddRoles"
+                                            id="txtAddRolesEmail">
+                                        <i class="fas fa-check-circle" style="color:black !important"
+                                            onclick="AddRolesEmail();EmailRolesValidation();"></i>
+                                        <i class="fas fa-times-circle" id="txthideRolesEmail"></i>
+                                    </div>
+                                </div>
+                                <br>
+                                Subject:<input type="text" class="wms-srv-input txtSubjectCSS" id="txtSubject"
+                                    style="width: 94%;"><br><br>
+                                <textarea name="body" rows="15" cols="167" id="txtbody" id="txtfooter"
+                                    style="width: 100%;"></textarea><br><br>
+                            </div>
+
+                        </div>
+                    </div>
+                </div><!-- Grid 2-->
+            </div>
+        </div>
+    </div>
+    <!-- Email Template popup -->
+
+    <!-- SMS Template popup -->
+    <div class="wms-srv-popup-holder" id="wms-srv-Template-SMS-popup-show" style="display:none;">
+        <div class="wms-srv-popup-bg"><br></div>
+        <div class="wms-srv-popup">
+            <div class="wms-srv-popup-content">
+                <!-- Popup Title -->
+                <div class="wms-srv-popup-title">
+                    <div class="wms-srv-page-title"><i class="fas fa-sms"></i><span>SMS Template list</span></div>
+                    <a href="#" id="wms-srv-Template-SMS-popup-close" class="wms-srv-popup-close"><i
+                            class="fas fa-times-circle"></i></a>
+                    <!-- <a href="#" id="wms-srv-Email-popup-close"><i class="fas fa-times-circle"></i></a> -->
+                </div><!-- Popup Title -->
+
+                <div class="wms-srv-popup-content-body" id="wms-srv-popup-content-body">
+                    <!-- Grid 2-->
+                    <div class="wms-srv-grid-holder pnlWmsDetail" id="pnlWmsDetail">
+
+                        <div class="wms-srv-grid">
+                            <div class="wms-srv-grid-cell"><br>
+                                <div style="position: relative;">
+                                    <div style="display: flex;">
+                                        <div>To:</div>
+                                        <div id="pnlSMSAddGroup" class="txtEmail">
+
+                                        </div>
+                                    </div>
+                                    <br>
+                                    <div style="display: flex;">
+                                        <div>Role:</div>
+                                        <div id="pnlSMSRolesAddGroup" class="txtSMSRole">
+
+                                        </div>
+                                    </div>
+
+                                    <i class="fas fa-plus-circle btnAddEmailInToField" onclick="showSMS()"></i>
+                                    <i class="fas fa-plus-circle btnAddRolesInToField" onclick="showRolesSMS()"></i>
+                                    <div class="pnlAddEmail keyblockEmail" id="txtshowSMS">
+                                        <div class=""></div>
+                                        <input type="text" value="" onkeypress="return isNumber(event)"
+                                            class="txtAddEmail" id="txtAddSMS">
+                                        <i class="fas fa-check-circle" style="color:black !important"
+                                            onclick="AddSMS();SMSValidation();"></i>
+                                        <i class="fas fa-times-circle" id="txthideSMS"></i>
+                                    </div>
+                                    <div class="pnlAddRole keyblockEmail" id="txtshowRoleSMS">
+                                        <div class=""></div>
+                                        <input type="text" value="" class="txtAddEmail txtAddRoles" id="txtAddRoleSMS">
+                                        <i class="fas fa-check-circle" style="color:black !important"
+                                            onclick="AddRolesSMS();SMSRoleValidation();"></i>
+                                        <i class="fas fa-times-circle" id="txthideRoleSMS"></i>
+                                    </div>
+                                </div><br>
+
+
+                                <textarea name="body" rows="15" id="txtsmsbody" cols="167"
+                                    style="width: 100%;"></textarea><br><br>
+                                <!-- <input type="text" class="wms-srv-input" style="width: 1246px;height: 350px;"><br><br> -->
+                                <!-- <button class="wms-srv-input wms-srv-button wms-srv-highlight-btn-secondary"
+                                    type="button" title="" style="margin-left: 582px;">
+                                    <span>Save</span>
+                                    <div></div>
+                                </button> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div><!-- Grid 2-->
+        </div>
+    </div>
+</div>
+<!-- SMS Template popup -->
+
+</div>

@@ -1,0 +1,321 @@
+<html xmlns="http://www.w3.org/1999/xhtml"><head runat="server">
+	<title></title>
+	<link href="../../WMSTheme/fontawesome/css/all.css" rel="stylesheet">
+	<link href="css/Report-Template-Common.css" rel="stylesheet">
+	<link href="css/Invoice-Template-style-2.css" rel="stylesheet">
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+	<script src="../../Themes/js/wms-app-session.js"></script>
+	<script src="../../Themes/js/wms-app-navigator.js"></script>
+</head>
+
+<body class="WmsReport">
+	<form id="form1" runat="server">
+		<asp:label id="JsDataHolder" runat="server"></asp:label>
+		<script src="Report-Template-Common.js" type="text/javascript"></script>
+		<script src="Invoice-Template.js" type="text/javascript"></script>
+		<a href="#" class="printTemplate" onclick="window.print();"><i class="fas fa-print"></i>Print</a>
+		<!-- Header -->
+		<div class="invoiceHeadTitle">TAX INVOICE</div>
+		<div class="invoiceHeader">
+			<div class="invoiceHeaderContent">
+				<div class="invoiceHeaderCell borderOnlyLeft">
+					<!-- Billing Details Holder -->
+					<div class="invoiceAddressInfo noBackgroundNoBorder borderNoLeftNoBottom">
+						<div class="invCompRow">
+							<div class="invCompHeader">Company Address</div>
+						</div>
+						<div class="invCompRow">
+							<div class="invoiceBillingAddress" style="width: 100%;">
+								<div class="invoiceAddressHolder">
+									<div class="invCompRow">
+										<div class="invCompLable">Address</div>
+										<div class="invCompInfo"><span class="">Kothrud, Pune, Maharashtra, Pune - 411038</span></div>
+									</div>
+									<div class="invCompRow">
+										<div class="invCompLable">Email</div>
+										<div class="invCompInfo"><span class="">sales@brilliantinfosys.com</span></div>
+									</div>
+									<div class="invCompRow">
+										<div class="invCompLable">Phone No</div>
+										<div class="invCompInfo"><span class="">+917218370532</span></div>
+									</div>
+									<div class="invCompRow">
+										<div class="invCompLable">GSTIN/UIN</div>
+										<div class="invCompInfo"><span class="">GSTIN</span></div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- Billing Details Holder -->
+					<!-- Billing Details Holder -->
+					<div class="invoiceAddressInfo noBackgroundNoBorder borderNoLeftNoBottom">
+						<div class="invCompRow">
+							<div class="invCompHeader">Bill To</div>
+						</div>
+						<div class="invCompRow">
+							<div class="invoiceBillingAddress" style="width: 100%;">
+								<div class="invoiceAddressHolder">
+									<div class="invCompRow">
+										<div class="invCompLable">Customer/Client Name</div>
+										<div class="invCompInfo"><span class="">Big Sam</span></div>
+									</div>
+									<div class="invCompRow">
+										<div class="invCompLable">Address</div>
+										<div class="invCompInfo"><span class="">1st Floor, Kohinoor Commercial-2, Tower-1, "Kohino</span></div>
+									</div>
+									<div class="invCompRow">
+										<div class="invCompLable">Phone No</div>
+										<div class="invCompInfo"><span class="">9324854346</span></div>
+									</div>
+									<div class="invCompRow">
+										<div class="invCompLable">GSTIN/UIN</div>
+										<div class="invCompInfo"><span class="">GSTIN</span></div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- Billing Details Holder -->
+				</div>
+				<div class="invoiceHeaderCell borderOnlyRight">
+					<!-- Table for Invoice -->
+					<div class="invoiceHeader">
+						<div class="invoiceHeaderContent">
+							<div class="invoiceHeaderCell onlyBorder borderNoRightNoBottom borderContentPadding">
+								<b>Invoice No.</b><br>
+								<span class="">278881</span>
+							</div>
+							<div class="invoiceHeaderCell onlyBorder borderNoRightNoBottom borderContentPadding">
+								<b>Dated</b><br>
+								<span class="">01/01/2024</span>
+							</div>
+						</div>
+
+						<div class="invoiceHeaderContent">
+							<div class="invoiceHeaderCell onlyBorder borderNoRightNoBottom borderContentPadding"></div>
+							<div class="invoiceHeaderCell onlyBorder borderNoRightNoBottom borderContentPadding">
+								<b>Mode/Terms of Payment</b><br>
+							</div>
+						</div>
+						<div class="invoiceHeaderContent">
+							<div class="invoiceHeaderCell onlyBorder borderNoRightNoBottom borderContentPadding">
+								<b>Reference No. &amp; Date.</b><br>
+							</div>
+							<div class="invoiceHeaderCell onlyBorder borderNoRightNoBottom borderContentPadding">
+								<b>Other References</b><br>
+								<span class="">278881</span>
+							</div>
+						</div>
+					</div>
+					<div class="onlyBorder borderNoRightNoBottom borderContentPadding">
+						<div class="invoiceTermsTitle">Terms and Condition</div>
+						<div class="invoiceTerms">
+							1. Goods once sold cannot be taken back or exchanged. <br>
+							2. We are not the manufacturers, company will stand for warranty as per their terms and
+							conditions. <br>
+							3. Subject to local Jurisdiction. <br>
+
+						</div>
+					</div>
+					<!-- Table for Invoice -->
+					<!-- Company Details -->
+				</div>
+			</div>
+		</div>
+		<!-- Header -->
+
+		<!-- Product Details -->
+		<div class="invoiceProductDetails">
+			<div class="invProductGrid">
+				<div class="invProductGridHeaderRow">
+					<div class="invProductGridCell">
+						Sr. No
+					</div>
+					<div class="invProductGridCell">
+						Application Code
+					</div>
+					<div class="invProductGridCell">
+						Application Name
+					</div>
+					<div class="invProductGridCell">
+						SAAS/On Premise
+					</div>
+					<div class="invProductGridCell">
+						Subscription Type
+					</div>
+					<div class="invProductGridCell">
+						Amount
+					</div>
+
+				</div>
+				<div class="wmsGridRow wmsRepeatRow" data-column="Table1">
+					<div class="invProductGridCell">
+						<span class="">1</span>
+					</div>
+					<div class="invProductGridCell">
+						<span class="">BISPL-APP-WMS</span>
+					</div>
+					<div class="invProductGridCell">
+						<span class="">
+							<b>WMS Professional Package</b><br />
+							5 Warehouse, 25 Users, 150 Customers
+						</span>
+					</div>
+					<div class="invProductGridCell">
+						<span class="">SAAS</span>
+					</div>
+					<div class="invProductGridCell">
+						<span class="">Yearly</span>
+					</div>
+					<div class="invProductGridCell">
+						<span class="">350000</span>
+					</div>
+				</div>
+			<div class="wmsGridRow wmsRepeatRow" data-column="Table1">
+					<div class="invProductGridCell">
+						<span class="">2</span>
+					</div>
+					<div class="invProductGridCell">
+						<span class="">BISPL-APP-OMS</span>
+					</div>
+					<div class="invProductGridCell">
+						<span class="">
+							<b>Order Management System</b><br />
+							10 Users, 300 Customers
+						</span>
+					</div>
+					<div class="invProductGridCell">
+						<span class="">SAAS</span>
+					</div>
+					<div class="invProductGridCell">
+						<span class="">Yearly</span>
+					</div>
+					<div class="invProductGridCell">
+						<span class="">250000</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<br>
+		<div class="invoiceProductDetails" style="float:right;width: 303px;text-align: center;">
+			<div class="invProductGrid" style="display: flex; border-bottom:solid 1px #ffffff;">
+				<div class="invProductGridHeaderRow" style="border-bottom:none;">
+					<div class="invProductGridCell" style="width: 142px;border-bottom:none;">
+						TOTAL
+					</div>
+				</div>
+				<div class="wmsGridRow wmsRepeatRow" data-column="Table3" style="border-bottom:none;">
+					<div class="" style="border-bottom:none;">
+						<span class="" style="margin-left: 6px;">600000</span>
+					</div>
+				</div>
+			</div>
+			<div class="invProductGrid" style="display: flex; border-bottom: solid 1px #ffffff;">
+				<div class="invProductGridHeaderRow">
+					<div class="invProductGridCell" style="width: 142px;border-bottom:none;">
+						TAX 18%
+					</div>
+				</div>
+				<div class="wmsGridRow wmsRepeatRow" data-column="Table2">
+					<div class="" style="border-bottom:none;">
+						<span class="" style="margin-left: 6px;">108000</span>
+					</div>
+				</div>
+			</div>
+			<div class="invProductGrid" style="display: flex; border-bottom: solid 1px #ffffff;">
+				<div class="invProductGridHeaderRow">
+					<div class="invProductGridCell" style="width: 142px;border-bottom:none;">
+						TDS 10%
+					</div>
+				</div>
+				<div class="wmsGridRow wmsRepeatRow" data-column="Table2">
+					<div class="" style="border-bottom:none;">
+						<span class="" style="margin-left: 6px;">60000</span>
+					</div>
+				</div>
+			</div>
+			<div class="invProductGrid" style="display: flex; border-bottom: solid 1px #000000;">
+				<div class="invProductGridHeaderRow">
+					<div class="invProductGridCell" style="width: 142px;border-bottom:none;">
+						NET PAYABLE
+					</div>
+				</div>
+				<div class="wmsGridRow wmsRepeatRow" data-column="Table2">
+					<div class="" style="border-bottom:none;">
+						<span class="" style="margin-left: 6px;">768000</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- Billing Details Holder -->
+		<div class="invoiceHeader" style="margin-top: 60px;">
+			<div class="invoiceHeaderContent">
+				<div class="invoiceHeaderCell">
+					<b>Amount Chargeable (in words)</b> <br>
+				</div>
+				<div class="invoiceHeaderCell noBackgroundNoBorder ">
+					<!-- BANK DETAILS -->
+					<div class="invoiceAddressInfo">
+						<div class="invCompRow">
+							<div class="invCompHeader">Bank Details</div>
+						</div>
+						<div class="invCompRow">
+							<div class="invoiceBillingAddress" style="width: 100%;">
+								<div class="invoiceAddressHolder">
+
+									<div class="invCompRow">
+										<div class="invCompLable">Account Holder's Name</div>
+										<div class="invCompInfo"><span class=""></span></div>
+									</div>
+									<div class="invCompRow">
+										<div class="invCompLable">Bank Name</div>
+										<div class="invCompInfo"><span class=""></span></div>
+									</div>
+									<div class="invCompRow">
+										<div class="invCompLable">Account Number</div>
+										<div class="invCompInfo"><span class=""></span></div>
+									</div>
+									<div class="invCompRow">
+										<div class="invCompLable">Branch</div>
+										<div class="invCompInfo"><span class=""></span></div>
+									</div>
+									<div class="invCompRow">
+										<div class="invCompLable">IFSC Code</div>
+										<div class="invCompInfo"><span class=""></span></div>
+									</div>
+									<div class="invCompRow">
+										<div class="invCompLable">Swift Code</div>
+										<div class="invCompInfo"><span class=""></span></div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- BANK DETAILS -->
+				</div>
+			</div>
+			<div class="invoiceHeaderContent">
+				<div class="invoiceHeaderCell">
+					<div style="padding:5px;margin-top:20px;">
+					<b>Declaration</b> <br>
+					We declare that this invoice shows the actual price of the goods described and that all particulars
+					are true and correct.
+					</div>
+				</div>
+				<div class="invoiceHeaderCell">
+					<div class="onlyBorder" style="text-align: right;padding:5px;margin-top:20px;">
+						<b>for EasyCloudWMS.com</b><br>
+						<div style="height:60px;">
+
+						</div>
+						Authorised Signatory
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- Billing Details Holder -->
+	
+
+
+</asp:hiddenfield></form></body></html>

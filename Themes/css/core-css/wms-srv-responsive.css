@@ -1,0 +1,177 @@
+/* .horizontal-scollable>.row {
+	overflow-x: auto;
+	white-space: nowrap;
+} */
+
+.removeMinWidth {
+	min-width: auto !important;
+}
+
+.responsive-wms-grid div[class^="col-"] {
+	padding-right: 0px;
+	padding-left: 0px;
+}
+
+.responsive-wms-grid .wms-srv-grid {
+	margin-bottom: 10px;
+}
+
+.responsive-wms-grid .container {
+	max-width: 100% !important;
+}
+
+
+/* For mobile phones: */
+[class*="col-"] {
+	width: 100%;
+}
+
+@media only screen and (max-width: 548px) {
+	.wms-srv-grid-action-panel {
+		padding: 5px 15px;
+	}
+
+	.wms-srv-search label {
+		margin-bottom: 10px;
+		display: block;
+		text-align: left;
+	}
+
+	.wms-srv-search input,
+	.wms-srv-search select {
+		width: 100%;
+		margin-bottom: 10px;
+	}
+
+	.wms-srv-grid-action-panel button {
+		margin-top: 10px;
+	}
+
+	.wms-srv-grid-action-panel .wms-srv-search {
+		display: block !important;
+	}
+
+	.wms-srv-search a,
+	.wms-srv-icon-input i {
+		position: absolute;
+		float: right;
+		right: 7px;
+		top: auto;
+		color: #000000;
+		bottom: 9px;
+	}
+}
+
+@media only screen and (max-width: 600px) {}
+
+@media only screen and (max-width: 1024px) {
+	.wms-srv-search {
+		display: block;
+	}
+}
+
+@media only screen and (max-width: 768px) {}
+
+.wms-srv-dashboard-panel div[class*="col-"] {
+	width: 100%;
+	/* max-width: 100%; */
+	flex: 1;
+}
+
+/* ========== RESPONSIVE CSS STYLE ========== */
+@media (min-width: 320px) {}
+
+@media (min-width: 576px) {
+	.themeWMSTopNav #ddlcustomer {
+		width: 100px !important;
+	}
+
+	.themeWMSTopNav #ddlwarehouse {
+		width: 100px !important;
+	}
+}
+
+@media (min-width: 768px) {
+	.themeWMSTopNav #ddlcustomer {
+		width: 150px !important;
+	}
+
+	.themeWMSTopNav #ddlwarehouse {
+		width: 150px !important;
+	}
+}
+
+@media (min-width: 992px) {
+	.themeWMSTopNav #ddlcustomer {
+		width: 200px !important;
+	}
+
+	.themeWMSTopNav #ddlwarehouse {
+		width: 200px !important;
+	}
+}
+
+@media (min-width: 1200px) {}
+
+
+@media (max-width: 575.98px) {
+	.themeWMSTopNav #ddlcustomer {
+		width: 75px !important;
+	}
+
+	.themeWMSTopNav #ddlwarehouse {
+		width: 75px !important;
+	}
+}
+
+@media (max-width: 767.98px) {
+	body #themeWMSNavPanel {
+		display: none;
+	}
+
+	body.wmsNavActive #themeWMSNavPanel {
+		display: block;
+	}
+
+	body .themeWMSNavHolder {
+		display: none;
+	}
+
+	body.wmsNavActive .themeWMSNavHolder {
+		display: table-cell;
+	}
+
+	.wms-srv-grid-title {
+		position: absolute;
+		top: 0px;
+		left: 0px;
+		width: 100%;
+		text-align: left;
+		background-color: #fcfcfc;
+		padding: 5px 15px;
+		border-bottom: solid 1px #ccc;
+	}
+
+	.wms-srv-grid-action-panel {
+		position: relative;
+	}
+
+	.wms-srv-search {
+		display: block;
+		margin-top: 40px;
+	}
+
+	.gridHeaderControls {
+		margin-top: 40px;
+	}
+}
+
+@media (max-width: 991.98px) {}
+
+@media (max-width: 1199.98px) {
+	.wms-srv-grid-action-panel .wms-srv-search {
+		display: inline-block;
+	}
+}
+
+/* ========== RESPONSIVE CSS STYLE ========== */

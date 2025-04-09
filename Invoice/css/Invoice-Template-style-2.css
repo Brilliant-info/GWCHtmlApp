@@ -1,0 +1,151 @@
+body, div {
+    font-family: Arial;
+    font-size: 13px;
+}
+
+.WmsReport .invoiceCompanyInfo .invCompLable,
+.WmsReport .invoiceCompanyInfo .invCompInfo {
+    background-color: #ffffff;
+    border-bottom: none;
+    border-right: none;
+}
+
+.WmsReport .invoiceHeader,
+.WmsReport .invoiceAddressInfo,
+.WmsReport .invoiceAddressHolder,
+.WmsReport .invProductGrid,
+.WmsReport .invTermsCalcInfoHolder {
+    display: table;
+    width: 100%;
+}
+
+.WmsReport .invoiceCompanyInfoHolder,
+.WmsReport .invoiceCalculationHolder {
+    display: inline-block;
+    float: right;
+}
+
+.PurchaseOrderTitle {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.WmsReport .invoiceHeaderContent,
+.WmsReport .invCompRow,
+.WmsReport .invProductGridHeaderRow,
+.WmsReport .invProductGridRow {
+    display: table-row;
+}
+
+.WmsReport .invoiceHeaderCell,
+.WmsReport .invoiceBillingAddress,
+.WmsReport .invoiceShippingAddress {
+    display: table-cell;
+    width: 50%;
+    vertical-align: top;
+}
+
+.WmsReport .invCompLable {
+    font-weight: bold;
+    background-color: #cccccc;
+}
+
+.WmsReport .invCompLable,
+.WmsReport .invCompInfo,
+.WmsReport .invCompHeader,
+.WmsReport .invProductGridCell,
+.WmsReport .invoiceTermsInfo,
+.WmsReport .invoiceCalculationInfo {
+    display: table-cell;
+    padding: 1px 5px;
+    vertical-align: top;
+}
+
+.WmsReport .invCompHeader,
+.WmsReport .invProductGridHeaderRow .invProductGridCell {
+    background-color: #000000;
+    font-weight: bold;
+}
+
+.WmsReport .invCompLable,
+.WmsReport .invCompInfo,
+.WmsReport .invCompHeader,
+.WmsReport .invProductGridCell {
+    border-bottom: solid 1px #000000;
+}
+
+.invCompHeader,
+.invProductGridHeaderRow{
+    color: #ffffff;
+}
+
+.WmsReport .invCompLable,
+.WmsReport .invoiceBillingAddress,
+.WmsReport .invProductGridCell {
+    border-right: solid 1px #000000;
+}
+
+.WmsReport .invoiceOrderInfo,
+.WmsReport .invProductGrid,
+.WmsReport .invoiceAddressInfo,
+.WmsReport .invoiceCalculationHolder {
+    border: solid 1px #000000;
+}
+
+.WmsReport .invProductGrid,
+.WmsReport .invoiceAddressInfo,
+.WmsReport .invTermsCalcInfoHolder {
+    margin-top: 0px;
+}
+
+.invoiceTermsTitle {
+    font-weight: bold;
+}
+.invoiceRightInfoPanelHolder{
+    display: block;
+    position: relative;
+}
+.invoiceRightInfoPanel{
+    margin-top: 40px;
+    width: 303px;
+    float: none !important;
+    position: absolute;
+    right:0px;
+}
+.onlyBorder{
+    border:solid 1px #000000;
+}
+.borderContentPadding{
+    padding:5px;
+}
+.noBackgroundNoBorder,
+.noBackgroundOnlyBorder{
+    padding: 0px;
+}
+.noBackgroundNoBorder .invCompHeader{
+    font-size: 16px;
+}
+.noBackgroundNoBorder div{
+    border:none !important; 
+    color:#000000 !important;
+    background-color: #ffffff !important;
+}
+.invoiceHeadTitle{
+    text-align: center;
+    font-weight: bold;
+    font-size: 18px;
+}
+.borderNoLeftNoBottom{
+    border-left:none !important;
+    border-bottom: none !important;
+}
+.borderNoRightNoBottom{
+    border-right:none !important;
+    border-bottom: none !important;
+}
+.borderOnlyLeft{
+    border-left:solid 1px #000000 !important;
+}
+.borderOnlyRight{
+    border-right:solid 1px #000000 !important;
+}

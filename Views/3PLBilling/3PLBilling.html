@@ -1,0 +1,1908 @@
+<div id="3plBilling"  style="display:none;">
+    <input type="hidden" ID="hdnUserID" value="1" />
+    <input type="hidden" ID="hdnCompanyID" value="1" />
+    <input type="hidden" id="hdnorderid" value="" />    
+    <input type="hidden" id="hdngrnid" value="0" />  
+    <input type="hidden" id="hdnQCid" value="0"/>	
+    <input type="hidden" id="hdnqcid" value="0" />
+  <input type="hidden" id="hdnObject" value="0"/>
+  <input type="hidden" id="hdndirecpkupodr" value="0"/>
+    <!-- MAIN GRID SECTION -->
+    <div class="wms-srv-content-area pnlInbound" id="pnlInbound">
+        <!-- Content Area -->
+
+        <div class="container-fluid wms-srv-dashboard-panel" style="margin-bottom: 0px;">
+            <div class="row">
+                <div class="col-md-10 nopadding">
+                    <!-- Page Title -->
+                    <div class="wms-srv-page-title">
+                        <i class="fas fa-list"></i><span class="wms-srv-data-title">3PL Billing</span>
+                    </div>
+                    <!-- Page Title -->
+                </div>
+                <!-- <div class="col-md-2 nopadding">
+                    <span class="wms-srv-child-obj">
+                        <div class="wms-srv-fieldset">
+                            <div class="wms-srv-fieldset-title">Inward Order Type</div>
+                            <select id="ddlPageObject" style="margin-bottom: 0px;margin-top: 0px;">
+                                <option value="PurchaseOrder">Purchase Order</option> 
+                                <option value="SalesReturn">Sales Return</option>
+                                <option value="Transfer">Transfer In</option>                            
+                            </select>
+                        </div>
+                    </span>
+                </div> -->
+            </div>
+        </div>
+
+        <!-- Head Grid -->
+        <div class="wms-srv-grid-holder pnlWmsHead" id="pnlWmsHead" style="display: none;">
+            <div class="wms-srv-grid">
+                <!-- Object Head Data Will be Here -->
+            </div>
+        </div>
+        <br>
+        <!-- Head Grid -->
+
+        <!-- Counter Dashboard -->
+        <span class="wms-srv-counter-dashboard">
+            <div class="container-fluid wms-srv-dashboard-panel">
+                <div class="row">
+                    <div class="col-md-3 nopadding">
+                        <div class="wms-srv-count-box-holder dashboardActiveTab" data-id="ExpectedReceipt">
+                            <div class="wms-srv-count-box">
+                                <div class="wms-srv-count-icon" style="background-color: #47d108;"><i class="fas fa-receipt"></i></div>
+                                <div class="wms-srv-count-content">
+                                    <div class="wms-srv-count" id="dashUnbilledInvoice">95</div>
+                                    <div class="wms-srv-count-label" id="lblExpectedReceipt">Unbilled Invoice</div>                                    
+                                    <div class="wms-srv-count-label" id="lblExpectedReceiptreturn" style="display:none;">Return Receipt</div>
+                                    <div class="wms-srv-count-label" id="lblExpectedReceipttransfer" style="display:none;">Transfer In Receipt</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 nopadding">
+                        <div class="wms-srv-count-box-holder" data-id="Receiving">
+                            <div class="wms-srv-count-box">
+                                <div class="wms-srv-count-icon" style="background-color: #ff2f2f;"><i class="fas fa-file-invoice"></i></div>
+                                <div class="wms-srv-count-content">
+                                    <div class="wms-srv-count" id="dashPendingApprvl">210</div>
+                                    <div class="wms-srv-count-label">Pending For Approval</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                     <div class="col-md-3 nopadding" style="display: none;">
+                        <div class="wms-srv-count-box-holder" data-id="QualityCheck">
+                            <div class="wms-srv-count-box">
+                                <div class="wms-srv-count-icon" style="background-color: #de84ff;"><i class="fas fa-solid fa-clipboard-check"></i></div>
+                                <div class="wms-srv-count-content">
+                                    <div class="wms-srv-count" id="dashUnpaidInvoice">8</div>
+                                    <div class="wms-srv-count-label">Unpaid Invoice > 30</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 nopadding">
+                        <div class="wms-srv-count-box-holder" data-id="PutAway">
+                            <div class="wms-srv-count-box">
+                                <div class="wms-srv-count-icon" style="background-color: #ffc107;"><i class="fas fa-people-carry"></i></div>
+                                <div class="wms-srv-count-content">
+                                    <div class="wms-srv-count" id="dashUnpaid60">26</div>
+                                    <div class="wms-srv-count-label">Unpaid Invoice > 60</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 nopadding"  >
+                        <div class="wms-srv-count-box-holder" data-id="CompletedOrder">
+                            <div class="wms-srv-count-box">
+                                <div class="wms-srv-count-icon" style="background-color: #47d108;"><i class=" fas fa-solid fa-check"></i></div>
+                                <div class="wms-srv-count-content">
+                                    <div class="wms-srv-count" id="dashUnpaid90">18</div>
+                                    <div class="wms-srv-count-label">
+                                        Unpaid Invoice > 90
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                   <div class="col-md-3 nopadding"  >
+                        <div class="wms-srv-count-box-holder" data-id="CancelOrder">
+                            <div class="wms-srv-count-box">
+                                <div class="wms-srv-count-icon" ><i class="fas fa-window-close"></i></div>
+                                <div class="wms-srv-count-content">
+                                    <div class="wms-srv-count" id="dashTotal">25</div>
+                                    <div class="wms-srv-count-label">
+                                       Total Outstanding
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </span>
+        <!-- Counter Dashboard -->
+
+        <!-- Grid -->
+        <div class="wms-srv-obj-main-grid pnlWmsDetail">
+            <div class="wms-srv-grid-holder">
+                <div class="wms-srv-grid-action-panel">
+                    <div class="wms-srv-grid-common-action"><a href="#" title="Customize Grid" data-prefix="CG" class="wms-srv-icononly"><i class="fas fa-edit"></i></a></div>
+                    <div class="wms-srv-grid-common-action"><a href="#" title="Archive" data-prefix="AR" class="wms-srv-icononly"><i class="fas fa-archive"></i></a></div>
+                    <!-- <a href="#" title="Invoice Setting" class="wms-srv-icononly" ><i class="fas fa-cog"></i></a> -->
+                    <div class="wms-srv-search">
+                        <label>Search Filter: </label>
+                        <select type="text" class="wms-srv-input wms-srv-search-filter" id="ddlsearch">
+                            <option value="0">-- Filters --</option>
+                                <option value="InvoiceNo">Invoice No</option>
+                                <option value="InvoiceDate">Invoice Date</option>
+                                <option value="Name">Account Name</option>
+                                <option value="ERPCode">ERP Code</option>                               
+                                <option value="Aging">Aging</option>
+                                <option value="Amount">Amount</option>
+                                <option value="RecAmt">Recover Amount</option>
+                                <!-- <option value="OutAmt">OutStanding Amount</option> -->
+                        </select>
+                        <input type="text"  class="wms-srv-input wms-srv-simple-search" id="txtvalue"><a href="#" data-prefix="SE"><i class="fas fa-search" title="Search" onclick="invoiceSearch();"></i></a>
+                    </div>
+                    <select type="text" class="wms-srv-input wms-srv-search-by-year" style="display: none;">
+                        <option value="">-- Select Month --</option>
+                        <option value="January 2022">January 2022</option>
+                        <option value="February 2022">February 2022</option>
+                        <option value="March 2022">March 2022</option>
+                        <option value="April 2022">April 2022</option>
+                        <option value="May 2022">May 2022</option>
+                        <option value="June 2022">June 2022</option>
+                        <option value="July 2022">July 2022</option>
+                        <option value="August 2022">August 2022</option>
+                        <option value="September 2022">September 2022</option>
+                        <option value="October 2022">October 2022</option>
+                        <option value="November 2022">November 2022</option>
+                        <option value="December 2022">December 2022</option>
+                    </select>
+                   
+                    <button class="wms-srv-input wms-srv-button " title="Export" data-prefix="EX"><i class="fas fa-file-export"></i><span>Export</span></button>
+                    <button class="wms-srv-input wms-srv-button wms-srv-highlight-btn wms-srv-add-order" type="button" title="Add New" data-prefix="AN" onclick="showAddNewInvoice();"><i class="fas fa-plus"></i><span>Add New</span></button>
+             
+                 
+                    <!---   <button class="wms-srv-input wms-srv-buttons" type="button" title="Direct Pikup Order" onclick="DirectPickupOrder()"><span>Direct Pikup Order</span></button>--->
+                   <!--- <div class="wms-srv-more-btn-holder">
+                        <button class="wms-srv-input wms-srv-button wms-srv-highlight-btn-secondary" type="button" title="More" data-prefix="MO[MKCM--wmscmm--CO]"><span>More</span><i class="fas fa-chevron-down"></i></button><div class="wms-srv-grid-more-navbar" style="display: none;"><a href="#" data-prefix="MKCM"><i class="fas fa-clipboard-check" ></i>Mark as Order</a><a href="#" data-prefix="CO"><i class="fas fa-times-circle"></i> Cancel Order</a></div>
+                    </div>-->
+                    <div class="wms-srv-grid-title">
+                  Invoice List
+                    </div>
+                </div>
+                <div class="wms-srv-grid-scroller" style="width: 100%;">
+                    <input type="hidden" id="hdnSelectedInboundOrder">
+                    <input type="hidden" id="hdnSelectedRecevingOrder">
+                    <div class="wms-srv-grid" id="dvInvoiceList" data-gridobjectid="gridObject_Inbound_PurchaseOrder">
+                        <!-- <div class="wms-srv-grid-header" style="text-align: center;">
+                            <div class="wms-srv-grid-cell"></div>
+                            <div class="wms-srv-grid-cell"> Invoice No</div>
+                            <div class="wms-srv-grid-cell"> Invoice Date</div>
+                            <div class="wms-srv-grid-cell">Account Name</div>
+                            <div class="wms-srv-grid-cell">ERP Code</div>
+                            <div class="wms-srv-grid-cell">Aging</div>
+                            <div class="wms-srv-grid-cell">Amount</div>
+                            <div class="wms-srv-grid-cell">Recover Amount</div>
+                            <div class="wms-srv-grid-cell">OutStanding Amount</div>
+                            <div class="wms-srv-grid-cell">Action</div>
+                         </div>
+                         <div class="wms-srv-grid-row" style="text-align: center;">
+                            <div class="wms-srv-grid-cell"><input type="checkbox" onclick="selectAllTask(This);" class="messageCheckbox" data-id="234503"></div>
+                            <div class="wms-srv-grid-cell">234503</div>
+                            <div class="wms-srv-grid-cell">02-12-2023</div>
+                            <div class="wms-srv-grid-cell">PurchaseOrder</div>
+                            <div class="wms-srv-grid-cell">ER001</div>
+                            <div class="wms-srv-grid-cell">TESTGRN11111</div>
+                            <div class="wms-srv-grid-cell">25</div>
+                            <div class="wms-srv-grid-cell">56200</div>
+                            <div class="wms-srv-grid-cell">1258965</div>    
+                            <div class="wms-srv-grid-cell">
+                               <div class="wms-srv-grid-action">
+                                    <a href="#" title="Invoice List"  class="wms-srv-icononly" onclick="OpenInvoiceReport();"><i class="fas fa-tasks"></i></a> 
+                                    <div class="wms-srv-action-sep">|</div>
+                                    <a href="#" title="ApproveTab"  class="wms-srv-icononly" onclick="showApproveTab();"><i class="fas fa-clipboard-check"></i></a>
+                                    <div class="wms-srv-action-sep">|</div>
+                                    <a href="#" title="Payment"  class="wms-srv-icononly" onclick="shwoPaymentPopUp();"><i class="fas fa-receipt"></i></a>
+                                    <div class="wms-srv-action-sep">|</div>
+                                    <a href="#" title="Document"  class="wms-srv-icononly" onclick="openDocumentObject(207345, 'outward', 'Order No|207345,Order Date|11/30/2023,Delivery Date|11/30/2023,Order Reference No|,Priority|High,Delivery Type|Standard');"><i class="fas fa-file-alt"></i></a>
+                                </div>
+                            </div>
+                         </div>
+                         <div class="wms-srv-grid-row" style="text-align: center;">
+                            <div class="wms-srv-grid-cell"><input type="checkbox" onclick="selectAllTask(This);" class="messageCheckbox" data-id="234503"></div>
+                            <div class="wms-srv-grid-cell">234503</div>
+                            <div class="wms-srv-grid-cell">09-01-2023</div>
+                            <div class="wms-srv-grid-cell">PurchaseOrder</div>
+                            <div class="wms-srv-grid-cell">ER002</div>
+                            <div class="wms-srv-grid-cell">TESTGRN11111</div>
+                            <div class="wms-srv-grid-cell">25</div>
+                            <div class="wms-srv-grid-cell">56200</div>
+                            <div class="wms-srv-grid-cell">1258965</div>    
+                            <div class="wms-srv-grid-cell">
+                               <div class="wms-srv-grid-action">
+                                    <a href="#" title="Invoice List"  class="wms-srv-icononly" onclick="showInvoiceList();"><i class="fas fa-tasks"></i></a> 
+                                    <div class="wms-srv-action-sep">|</div>
+                                    <a href="#" title="ApproveTab"  class="wms-srv-icononly" onclick="showApproveTab();"><i class="fas fa-clipboard-check"></i></a>
+                                    <div class="wms-srv-action-sep">|</div>
+                                    <a href="#" title="Payment"  class="wms-srv-icononly" onclick="shwoPaymentPopUp();"><i class="fas fa-receipt"></i></a>
+                                    <div class="wms-srv-action-sep">|</div>
+                                    <a href="#" title="Document"  class="wms-srv-icononly" onclick="openDocumentObject(207345, 'outward', 'Order No|207345,Order Date|11/30/2023,Delivery Date|11/30/2023,Order Reference No|,Priority|High,Delivery Type|Standard');"><i class="fas fa-file-alt"></i></a>
+                                </div>
+                            </div>
+                         </div>
+                         <div class="wms-srv-grid-row" style="text-align: center;">
+                            <div class="wms-srv-grid-cell"><input type="checkbox" onclick="selectAllTask(This);" class="messageCheckbox" data-id="234503"></div>
+                            <div class="wms-srv-grid-cell">234503</div>
+                            <div class="wms-srv-grid-cell">14-11-2023</div>
+                            <div class="wms-srv-grid-cell">PurchaseOrder</div>
+                            <div class="wms-srv-grid-cell">ER003</div>
+                            <div class="wms-srv-grid-cell">TESTGRN11111</div>
+                            <div class="wms-srv-grid-cell">25</div>
+                            <div class="wms-srv-grid-cell">56200</div>
+                            <div class="wms-srv-grid-cell">1258965</div>    
+                            <div class="wms-srv-grid-cell">
+                                <div class="wms-srv-grid-action">
+                                    <a href="#" title="Invoice List"  class="wms-srv-icononly" onclick="showInvoiceList();"><i class="fas fa-tasks"></i></a> 
+                                    <div class="wms-srv-action-sep">|</div>
+                                    <a href="#" title="ApproveTab"  class="wms-srv-icononly" onclick="showApproveTab();"><i class="fas fa-clipboard-check"></i></a>
+                                    <div class="wms-srv-action-sep">|</div>
+                                    <a href="#" title="Payment"  class="wms-srv-icononly" onclick="shwoPaymentPopUp();"><i class="fas fa-receipt"></i></a>
+                                    <div class="wms-srv-action-sep">|</div>
+                                    <a href="#" title="Document"  class="wms-srv-icononly" onclick="openDocumentObject(207345, 'outward', 'Order No|207345,Order Date|11/30/2023,Delivery Date|11/30/2023,Order Reference No|,Priority|High,Delivery Type|Standard');"><i class="fas fa-file-alt"></i></a>
+                                </div>
+                            </div>
+                         </div> -->
+                         
+                    </div>
+                </div>
+                <div class="wms-srv-grid-pager" id="tlbInboundGridPager" id="paging-invoicelist">
+                    <span class="wms-srv-pager-records">1-1 of 0 Records</span>
+                    <span class="wms-srv-empty-space"></span>
+                    <span class="wms-srv-pager-links"><a href="#" data-page="firstpage"><i class="fas fa-angle-double-left"></i></a><a href="#" data-page="previous"><i class="fas fa-angle-left"></i></a><a href="#" class="wms-srv-active" data-page="1">1</a><a href="#" data-page="next"><i class="fas fa-angle-right"></i></a><a href="#" data-page="lastpage"><i class="fas fa-angle-double-right"></i></a></span>
+                    <span class="wms-srv-empty-space"></span>
+                    <input type="text" name="txtGridPageNo" class="wms-srv-input notranslate" value="0" style="width: 80px;">
+                    <a href="#" title="Jump To" class="wms-srv-pager-go"><i class="fas fa-play-circle"></i></a>
+                </div>
+            </div>
+        </div>
+        <!-- Grid -->
+        <!-- Content Area -->
+    </div>
+    <!-- MAIN GRID SECTION -->
+
+
+    
+
+     <!-- 3PL POPUP -->
+    <div class="wms-srv-popup-holder" id="wms-srv-3pl-popup" style="display: none;">
+        <div class="wms-srv-popup-bg">
+        </div>
+        <div class="wms-srv-popup">
+            <div class="wms-srv-popup-content">
+                <!-- Popup Title -->
+                <div class="wms-srv-popup-title">
+                    <div class="wms-srv-page-title">
+                        <i class="fas fa-file-alt"></i><span>3PL Billing</span>
+                    </div>
+                    <a href="#" id="wms-srv-3pl-popup-close" class="wms-srv-popup-close"><i class="fas fa-times-circle"></i></a>
+                </div>
+                <!-- Popup Title -->
+                <div class="wms-srv-popup-content-body" id="wms-srv-popup-content-body">
+                    <div id="popupContentDocument">
+                        <div id="pnlCreatePurchaseOrder">
+                            <!-- Grid Head -->
+                            <div class="wms-srv-grid-holder pnlWmsHead" id="pnlHead3PL">
+                                </div>
+                            
+                            <!-- Grid Head -->
+                            <!-- Grid -->
+                     <div class="wms-srv-grid-holder pnlWmsRateGrid" id="pnlWmsRateGrid" style="display: none;">
+                                <div class="wms-srv-grid"></div>
+                            </div>
+                            <br>
+                            <!-- Grid -->
+                            <!-- Header Details -->
+                            <!-- Grid 1-->
+                            </div>
+						</div>
+                            <!-- Grid 1-->
+							                            <!-- Grid 2-->
+                            <div class="wms-srv-grid-holder pnlWmsDetail" id="pnlWmsDetail">
+                                <div class="wms-srv-grid-action-panel">
+                                    <div class="wms-srv-grid-common-action"><a href="#" title="Customize Grid" data-prefix="CG" class="wms-srv-icononly"><i class="fas fa-edit"></i></a>
+									</div>
+                                    <div class="wms-srv-grid-title">
+                                       Details
+                                    </div>
+                                </div>
+                                <div class="wms-srv-grid-scroller" style="width: 100%;"  id="pnl3PlDetails">
+                                    
+                                </div>
+                            </div>
+                            <!-- Grid 2-->
+                            <!-- Grid -->
+                            <div class="wms-srv-grid-holder pnlSearchList" id="pnlSearchList" style="display: none;">
+                                <div class="wms-srv-grid-action-panel" style="display: none;">
+                                    <!-- Action Buttons Will be Here -->
+                                </div>
+                                <div class="wms-srv-grid-scroller" style="width: 100%;">
+                                    <div class="wms-srv-grid">
+                                        <!-- Header Data Will be Here -->
+                                    </div>
+                                </div>
+                                <div class="wms-srv-grid-pager">
+                                    <span class="wms-srv-pager-records">
+                                        <!-- Page Record Info -->
+                                    </span><span class="wms-srv-empty-space"></span><span class="wms-srv-pager-links">
+                                        <!-- Pagger Links -->
+                                    </span><span class="wms-srv-empty-space"></span>
+                                    <input type="text" name="txtGridPageNo" class="wms-srv-input" value="0" style="width: 80px;">
+                                    <a href="#" title="Jump To" class="wms-srv-pager-go"><i class="fas fa-play-circle"></i></a>
+                                </div>
+                            </div>
+                            <!-- Grid -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+    <!-- 3PL POPUP -->
+
+    <!-- SKU SEARCH POPUP -->
+    <div class="wms-srv-popup-holder" id="wms-srv-skusearch-popup" style="display:none;">
+        <div class="wms-srv-popup-bg">
+        </div>
+        <div class="wms-srv-popup">
+            <div class="wms-srv-popup-content">
+                <!-- Popup Title -->
+                <div class="wms-srv-popup-title">
+                    <div class="wms-srv-page-title">
+                        <i class="fas fa-file-alt"></i><span>SKU Search</span>
+                    </div>
+                    <a href="#" id="wms-srv-skusearch-popup-close" class="wms-srv-popup-close"><i class="fas fa-times-circle"></i></a>
+                </div>
+                <!-- Popup Title -->
+                <div class="wms-srv-popup-content-body" id="wms-srv-popup-content-body">
+                            <!-- Grid 2-->
+                            <div class="wms-srv-grid-holder pnlWmsDetail" id="pnlWmsDetail">
+                                <div class="wms-srv-grid-action-panel">
+                                    <div class="wms-srv-grid-common-action"><a href="#" title="Customize Grid" data-prefix="CG" class="wms-srv-icononly"><i class="fas fa-edit"></i></a>
+									</div>
+                                    <div class="wms-srv-grid-title">
+                                       SKU Search
+                                    </div>
+                                </div>
+                                <div class="wms-srv-grid-scroller" style="width: 100%;">
+                                    <div class="wms-srv-grid" id="popupSkuSearchList">
+                                       
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Grid 2-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+    <!-- SKU SEARCH POPUP -->
+
+    <!-- Popup Menu -->
+    <div class="wms-srv-action-popupmenu" id="wmsSrvActionPopupMenu" style="top: 0px; left: 0px; display: none;">
+        <a href="#" data-id="56350" data-color="green">
+            <div class="wms-srv-dot wms-srv-green"></div>
+            Expected Receipt
+        </a>
+        <a href="#" data-id="56350" data-color="red">
+            <div class="wms-srv-dot wms-srv-red"></div>
+            Receiving
+        </a>
+        <a href="#" data-id="56350" data-color="gray">
+            <div class="wms-srv-dot wms-srv-gray"></div>
+            Put Away
+        </a>
+    </div>
+    <!-- Popup Menu -->
+    
+    <!-- Task Completed Order SKU List PopUp-->
+<div class="wms-srv-popup-holder" id="wms-srv-order-task-Completed-popup" style="display:none;">
+    <div class="wms-srv-popup-bg">
+    </div>
+    <div class="wms-srv-popup">
+        <div class="wms-srv-popup-content">
+            <!-- Popup Title -->
+            <div class="wms-srv-popup-title">
+                <!-- <div class="wms-srv-page-title">
+                    <i class="fas fa-file-alt"></i><span>Inward Order</span>
+                </div> -->
+            <a href="#" id="wms-srv-order-task-Completed-popup-close" class="wms-srv-popup-close"><i
+                    class="fas fa-times-circle" onclick="TASKPOPupclosepopup();"></i></a>
+            </div>
+            <!-- Popup Title -->
+            <div class="wms-srv-popup-content-body" id="wms-srv-popup-content-body">
+                <div id="popupContentDocument">
+                   <!--  <div id="pnlCreatePurchaseOrder">-->
+				   <div id="pnltaskcompleted">
+                        
+                        <!--<div class="wms-srv-grid-holder pnlWmsRateGrid" id="pnlWmsRateGrid" style="display: none;">-->
+						<div class="wms-srv-grid-holder pnlWmsRateGrid" id="pnlWmstaskcomplete" style="display: none;">
+                            <div class="wms-srv-grid"></div>
+                        </div>
+                        <br>
+                        <!-- Grid -->
+                        <!-- Header Details -->
+                        <!-- Grid -->
+                        <div class="wms-srv-grid-holder pnlWmsDetail" id="pnlWmsDetail">
+                            <div class="wms-srv-grid-action-panel">
+                            <div class="wms-srv-grid-common-action"><a href="#" title="" data-prefix="CG"
+                                    class="wms-srv-icononly"><i class="fas fa-edit"></i></a></div>
+                               
+                                <div class="wms-srv-grid-title">
+                                     SKU List
+                                </div>
+                            </div>
+                            <div class="wms-srv-grid-scroller" style="width: 100%;">
+                                 <!--<div class="wms-srv-grid" id="tlbTaskAssignmentPoOrderDetailsGrid"> -->
+								 <div class="wms-srv-grid" id="tlbTaskcompletedGrid">
+                                 </div>                                                                                             
+                            </div>                           
+                       <!--Save button Start    --->
+                      <br />
+                       
+                        </div>
+                        <!-- Grid -->
+                        <!-- Grid -->
+                        <div class="wms-srv-grid-holder pnlSearchList" id="pnlSearchList" style="display: none;">
+                            <div class="wms-srv-grid-action-panel" style="display: none;">
+                                <!-- Action Buttons Will be Here -->
+                            </div>
+                            <div class="wms-srv-grid-scroller" style="width: 100%;">
+                                <div class="wms-srv-grid">
+                                    <!-- Header Data Will be Here -->
+                                </div>
+                            </div>
+                            <div class="wms-srv-grid-pager">
+                                <span class="wms-srv-pager-records">
+                                    <!-- Page Record Info -->
+                                </span>
+                                <span class="wms-srv-empty-space"></span>
+                                <span class="wms-srv-pager-links">
+                                    <!-- Pagger Links -->
+                                </span>
+                                <span class="wms-srv-empty-space"></span>
+                            <input type="text" name="txtGridPageNo" class="wms-srv-input" value="0"
+                                style="width: 80px;">
+                            <a href="#" title="Jump To" class="wms-srv-pager-go"><i
+                                    class="fas fa-play-circle"></i></a>
+                            </div>
+                        </div>
+                        <!-- Grid -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Task Completed Order SKU List PopUp-->
+
+
+<!--3PL Code Rahul-->
+<!-- Add Transfer Popup with Scan -->
+<div class="wms-srv-popup-holder" id="wms-srv-showPayment-popup" style="display: none;">
+    <div class="wms-srv-popup-bg">
+    </div>
+    <div class="wms-srv-popup">
+        <div class="wms-srv-popup-content">
+            <!-- Popup Title -->
+            <div class="wms-srv-popup-title">
+                <div class="wms-srv-page-title">
+                    <i class="fas fa-file-alt"></i><span>Payment</span>
+                </div>
+                <a href="#" title="Close" id="wms-srv-showPayment-popup-close" class="wms-srv-popup-close"><i
+                        class="fas fa-times-circle"></i></a>
+            </div>
+            <!-- Popup Title -->
+            <div class="wms-srv-popup-content-body" id="wms-srv-popup-content-body" style="text-align: center;">
+           
+                    <div class="row">  
+                        <!-- <div class="col-sm-4">
+                            <div class="su-input-group su-static-label">
+                               <label class="su-input-label"><b>Select Date</b></label>
+                               <div class="">
+                                <input type="text" id="txtFromToDate"
+                                placeholder="eg: From To To"
+                                onclick="getDate();" autocomplete="off"
+                                autocorrect="off" maxlength="25" step="1"
+                                noerror="true" staticlabel="true"
+                                animate="true" label="Symbol" rules=""
+                                class="">
+                            <inout type="hidden" id="hideFromDate"
+                                value="">
+                            </inout>
+                            <inout type="hidden" id="hideToDate"
+                                value="">
+                            </inout>
+                               </div>
+                            </div>
+                            <div class="dateGridView" id="dateSelecter" style="margin-top: -22px;display: none;">
+                              
+                               <div>
+                                  <span>
+                                     <lable class="txtFixDates" onclick="getPreviousdate(1);">
+                                        prev. day
+                                        |
+                                     </lable>
+                                  </span>
+                                  <i class="fa-solid fa-circle-xmark iconClose" title="Cancel"></i>
+                                  <span>
+                                     <lable class="txtFixDates" onclick="getSevenDateData(7);">
+                                        last 7
+                                        days |
+                                     </lable>
+                                  </span>
+                                  <span>
+                                     <lable class="txtFixDates" onclick="getThirtyDateData(30);">
+                                        last 30
+                                        days |
+                                     </lable>
+                                  </span>
+                                  <span>
+                                     <lable class="txtFixDates" onclick="getcurrentFYData('2023/04/24');">
+                                        current FY
+                                     </lable>
+                                  </span>
+                                  <hr class="hrLine1">
+                               </div>
+                               <table class="dateGrid" id="gridDatePickerobjrexta">
+                                    <tr>
+                                        <td>
+
+                                            <div class="text-center">
+                                                <strong>From</strong>
+                                            </div>
+
+
+                                            <div id="txt_FromdatePickerobjrexta"
+                                                class="txt_FromdatePicker">
+
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="text-center2">
+                                                <strong>To</strong>
+                                            </div>
+
+                                            <div
+                                                id="txt_TodatePickerobjrexta">
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                               <table class="dateGrid" id="gridDatePickerobjrexta">
+                                  <tbody>
+                                     <tr>
+                                        <td>
+                                           <div class="text-center">
+                                              <strong>From</strong>
+                                           </div>
+                                           <div id="txt_FromdatePickerobjrexta" class="txt_FromdatePicker hasDatepicker">
+                                              <div class="ui-datepicker-inline ui-datepicker ui-widget ui-widget-content ui-helper-clearfix ui-corner-all" style="display: block;">
+                                                 <div class="ui-datepicker-header ui-widget-header ui-helper-clearfix ui-corner-all">
+                                                    <a class="ui-datepicker-prev ui-corner-all" data-handler="prev" data-event="click" title="Prev"><span class="ui-icon ui-icon-circle-triangle-w">Prev</span></a><a class="ui-datepicker-next ui-corner-all" data-handler="next" data-event="click" title="Next"><span class="ui-icon ui-icon-circle-triangle-e">Next</span></a>
+                                                    <div class="ui-datepicker-title"><span class="ui-datepicker-month">December</span>&nbsp;<span class="ui-datepicker-year">2023</span></div>
+                                                 </div>
+                                                 <table class="ui-datepicker-calendar">
+                                                    <thead>
+                                                       <tr>
+                                                          <th scope="col" class="ui-datepicker-week-end"><span title="Sunday">Su</span></th>
+                                                          <th scope="col"><span title="Monday">Mo</span></th>
+                                                          <th scope="col"><span title="Tuesday">Tu</span></th>
+                                                          <th scope="col"><span title="Wednesday">We</span></th>
+                                                          <th scope="col"><span title="Thursday">Th</span></th>
+                                                          <th scope="col"><span title="Friday">Fr</span></th>
+                                                          <th scope="col" class="ui-datepicker-week-end"><span title="Saturday">Sa</span></th>
+                                                       </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                       <tr>
+                                                          <td class="ui-datepicker-week-end ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td>
+                                                          <td class="ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td>
+                                                          <td class="ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td>
+                                                          <td class="ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td>
+                                                          <td class="ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td>
+                                                          <td class="ui-datepicker-current-day" data-handler="selectDay" data-event="click" data-month="11" data-year="2023"><a class="ui-state-default" href="#">1</a></td>
+                                                          <td class="ui-datepicker-week-end" data-handler="selectDay" data-event="click" data-month="11" data-year="2023"><a class="ui-state-default" href="#">2</a></td>
+                                                       </tr>
+                                                       <tr>
+                                                          <td class="ui-datepicker-week-end" data-handler="selectDay" data-event="click" data-month="11" data-year="2023"><a class="ui-state-default" href="#">3</a></td>
+                                                          <td class="ui-datepicker-current-day" data-handler="selectDay" data-event="click" data-month="11" data-year="2023"><a class="ui-state-default" href="#">4</a></td>
+                                                          <td class="ui-datepicker-current-day" data-handler="selectDay" data-event="click" data-month="11" data-year="2023"><a class="ui-state-default" href="#">5</a></td>
+                                                          <td class="ui-datepicker-current-day" data-handler="selectDay" data-event="click" data-month="11" data-year="2023"><a class="ui-state-default" href="#">6</a></td>
+                                                          <td class="ui-datepicker-current-day" data-handler="selectDay" data-event="click" data-month="11" data-year="2023"><a class="ui-state-default" href="#">7</a></td>
+                                                          <td class="ui-datepicker-current-day" data-handler="selectDay" data-event="click" data-month="11" data-year="2023"><a class="ui-state-default" href="#">8</a></td>
+                                                          <td class="ui-datepicker-week-end" data-handler="selectDay" data-event="click" data-month="11" data-year="2023"><a class="ui-state-default" href="#">9</a></td>
+                                                       </tr>
+                                                       <tr>
+                                                          <td class="ui-datepicker-week-end" data-handler="selectDay" data-event="click" data-month="11" data-year="2023"><a class="ui-state-default" href="#">10</a></td>
+                                                          <td class="ui-datepicker-current-day" data-handler="selectDay" data-event="click" data-month="11" data-year="2023"><a class="ui-state-default" href="#">11</a></td>
+                                                          <td class="ui-datepicker-current-day" data-handler="selectDay" data-event="click" data-month="11" data-year="2023"><a class="ui-state-default" href="#">12</a></td>
+                                                          <td class="ui-datepicker-current-day" data-handler="selectDay" data-event="click" data-month="11" data-year="2023"><a class="ui-state-default" href="#">13</a></td>
+                                                          <td class="ui-datepicker-days-cell-over  ui-datepicker-current-day ui-datepicker-today" data-handler="selectDay" data-event="click" data-month="11" data-year="2023"><a class="ui-state-default ui-state-highlight ui-state-active" href="#">14</a></td>
+                                                          <td class="ui-datepicker-current-day" data-handler="selectDay" data-event="click" data-month="11" data-year="2023"><a class="ui-state-default" href="#">15</a></td>
+                                                          <td class="ui-datepicker-week-end" data-handler="selectDay" data-event="click" data-month="11" data-year="2023"><a class="ui-state-default" href="#">16</a></td>
+                                                       </tr>
+                                                       <tr>
+                                                          <td class="ui-datepicker-week-end" data-handler="selectDay" data-event="click" data-month="11" data-year="2023"><a class="ui-state-default" href="#">17</a></td>
+                                                          <td class="ui-datepicker-current-day" data-handler="selectDay" data-event="click" data-month="11" data-year="2023"><a class="ui-state-default" href="#">18</a></td>
+                                                          <td class="ui-datepicker-current-day" data-handler="selectDay" data-event="click" data-month="11" data-year="2023"><a class="ui-state-default" href="#">19</a></td>
+                                                          <td class="ui-datepicker-current-day" data-handler="selectDay" data-event="click" data-month="11" data-year="2023"><a class="ui-state-default" href="#">20</a></td>
+                                                          <td class="ui-datepicker-current-day" data-handler="selectDay" data-event="click" data-month="11" data-year="2023"><a class="ui-state-default" href="#">21</a></td>
+                                                          <td class="ui-datepicker-current-day" data-handler="selectDay" data-event="click" data-month="11" data-year="2023"><a class="ui-state-default" href="#">22</a></td>
+                                                          <td class="ui-datepicker-week-end" data-handler="selectDay" data-event="click" data-month="11" data-year="2023"><a class="ui-state-default" href="#">23</a></td>
+                                                       </tr>
+                                                       <tr>
+                                                          <td class="ui-datepicker-week-end" data-handler="selectDay" data-event="click" data-month="11" data-year="2023"><a class="ui-state-default" href="#">24</a></td>
+                                                          <td class="ui-datepicker-current-day" data-handler="selectDay" data-event="click" data-month="11" data-year="2023"><a class="ui-state-default" href="#">25</a></td>
+                                                          <td class="ui-datepicker-current-day" data-handler="selectDay" data-event="click" data-month="11" data-year="2023"><a class="ui-state-default" href="#">26</a></td>
+                                                          <td class="ui-datepicker-current-day" data-handler="selectDay" data-event="click" data-month="11" data-year="2023"><a class="ui-state-default" href="#">27</a></td>
+                                                          <td class="ui-datepicker-current-day" data-handler="selectDay" data-event="click" data-month="11" data-year="2023"><a class="ui-state-default" href="#">28</a></td>
+                                                          <td class="ui-datepicker-current-day" data-handler="selectDay" data-event="click" data-month="11" data-year="2023"><a class="ui-state-default" href="#">29</a></td>
+                                                          <td class="ui-datepicker-week-end" data-handler="selectDay" data-event="click" data-month="11" data-year="2023"><a class="ui-state-default" href="#">30</a></td>
+                                                       </tr>
+                                                       <tr>
+                                                          <td class="ui-datepicker-week-end" data-handler="selectDay" data-event="click" data-month="11" data-year="2023"><a class="ui-state-default" href="#">31</a></td>
+                                                          <td class="ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td>
+                                                          <td class="ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td>
+                                                          <td class="ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td>
+                                                          <td class="ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td>
+                                                          <td class="ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td>
+                                                          <td class="ui-datepicker-week-end ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td>
+                                                       </tr>
+                                                    </tbody>
+                                                 </table>
+                                              </div>
+                                           </div>
+                                        </td>
+                                        <td>
+                                           <div class="text-center2">
+                                              <strong>To</strong>
+                                           </div>
+                                           <div id="txt_TodatePickerobjrexta" class="hasDatepicker">
+                                              <div class="ui-datepicker-inline ui-datepicker ui-widget ui-widget-content ui-helper-clearfix ui-corner-all" style="display: block;">
+                                                 <div class="ui-datepicker-header ui-widget-header ui-helper-clearfix ui-corner-all">
+                                                    <a class="ui-datepicker-prev ui-corner-all" data-handler="prev" data-event="click" title="Prev"><span class="ui-icon ui-icon-circle-triangle-w">Prev</span></a><a class="ui-datepicker-next ui-corner-all" data-handler="next" data-event="click" title="Next"><span class="ui-icon ui-icon-circle-triangle-e">Next</span></a>
+                                                    <div class="ui-datepicker-title"><span class="ui-datepicker-month">December</span>&nbsp;<span class="ui-datepicker-year">2023</span></div>
+                                                 </div>
+                                                 <table class="ui-datepicker-calendar">
+                                                    <thead>
+                                                       <tr>
+                                                          <th scope="col" class="ui-datepicker-week-end"><span title="Sunday">Su</span></th>
+                                                          <th scope="col"><span title="Monday">Mo</span></th>
+                                                          <th scope="col"><span title="Tuesday">Tu</span></th>
+                                                          <th scope="col"><span title="Wednesday">We</span></th>
+                                                          <th scope="col"><span title="Thursday">Th</span></th>
+                                                          <th scope="col"><span title="Friday">Fr</span></th>
+                                                          <th scope="col" class="ui-datepicker-week-end"><span title="Saturday">Sa</span></th>
+                                                       </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                       <tr>
+                                                          <td class=" ui-datepicker-week-end ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td>
+                                                          <td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td>
+                                                          <td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td>
+                                                          <td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td>
+                                                          <td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td>
+                                                          <td class=" " data-handler="selectDay" data-event="click" data-month="11" data-year="2023"><a class="ui-state-default" href="#">1</a></td>
+                                                          <td class=" ui-datepicker-week-end " data-handler="selectDay" data-event="click" data-month="11" data-year="2023"><a class="ui-state-default" href="#">2</a></td>
+                                                       </tr>
+                                                       <tr>
+                                                          <td class=" ui-datepicker-week-end " data-handler="selectDay" data-event="click" data-month="11" data-year="2023"><a class="ui-state-default" href="#">3</a></td>
+                                                          <td class=" " data-handler="selectDay" data-event="click" data-month="11" data-year="2023"><a class="ui-state-default" href="#">4</a></td>
+                                                          <td class=" " data-handler="selectDay" data-event="click" data-month="11" data-year="2023"><a class="ui-state-default" href="#">5</a></td>
+                                                          <td class=" " data-handler="selectDay" data-event="click" data-month="11" data-year="2023"><a class="ui-state-default" href="#">6</a></td>
+                                                          <td class=" " data-handler="selectDay" data-event="click" data-month="11" data-year="2023"><a class="ui-state-default" href="#">7</a></td>
+                                                          <td class=" " data-handler="selectDay" data-event="click" data-month="11" data-year="2023"><a class="ui-state-default" href="#">8</a></td>
+                                                          <td class=" ui-datepicker-week-end " data-handler="selectDay" data-event="click" data-month="11" data-year="2023"><a class="ui-state-default" href="#">9</a></td>
+                                                       </tr>
+                                                       <tr>
+                                                          <td class=" ui-datepicker-week-end " data-handler="selectDay" data-event="click" data-month="11" data-year="2023"><a class="ui-state-default" href="#">10</a></td>
+                                                          <td class=" " data-handler="selectDay" data-event="click" data-month="11" data-year="2023"><a class="ui-state-default" href="#">11</a></td>
+                                                          <td class=" " data-handler="selectDay" data-event="click" data-month="11" data-year="2023"><a class="ui-state-default" href="#">12</a></td>
+                                                          <td class=" " data-handler="selectDay" data-event="click" data-month="11" data-year="2023"><a class="ui-state-default" href="#">13</a></td>
+                                                          <td class=" ui-datepicker-days-cell-over  ui-datepicker-current-day ui-datepicker-today" data-handler="selectDay" data-event="click" data-month="11" data-year="2023"><a class="ui-state-default ui-state-highlight ui-state-active" href="#">14</a></td>
+                                                          <td class=" " data-handler="selectDay" data-event="click" data-month="11" data-year="2023"><a class="ui-state-default" href="#">15</a></td>
+                                                          <td class=" ui-datepicker-week-end " data-handler="selectDay" data-event="click" data-month="11" data-year="2023"><a class="ui-state-default" href="#">16</a></td>
+                                                       </tr>
+                                                       <tr>
+                                                          <td class=" ui-datepicker-week-end " data-handler="selectDay" data-event="click" data-month="11" data-year="2023"><a class="ui-state-default" href="#">17</a></td>
+                                                          <td class=" " data-handler="selectDay" data-event="click" data-month="11" data-year="2023"><a class="ui-state-default" href="#">18</a></td>
+                                                          <td class=" " data-handler="selectDay" data-event="click" data-month="11" data-year="2023"><a class="ui-state-default" href="#">19</a></td>
+                                                          <td class=" " data-handler="selectDay" data-event="click" data-month="11" data-year="2023"><a class="ui-state-default" href="#">20</a></td>
+                                                          <td class=" " data-handler="selectDay" data-event="click" data-month="11" data-year="2023"><a class="ui-state-default" href="#">21</a></td>
+                                                          <td class=" " data-handler="selectDay" data-event="click" data-month="11" data-year="2023"><a class="ui-state-default" href="#">22</a></td>
+                                                          <td class=" ui-datepicker-week-end " data-handler="selectDay" data-event="click" data-month="11" data-year="2023"><a class="ui-state-default" href="#">23</a></td>
+                                                       </tr>
+                                                       <tr>
+                                                          <td class=" ui-datepicker-week-end " data-handler="selectDay" data-event="click" data-month="11" data-year="2023"><a class="ui-state-default" href="#">24</a></td>
+                                                          <td class=" " data-handler="selectDay" data-event="click" data-month="11" data-year="2023"><a class="ui-state-default" href="#">25</a></td>
+                                                          <td class=" " data-handler="selectDay" data-event="click" data-month="11" data-year="2023"><a class="ui-state-default" href="#">26</a></td>
+                                                          <td class=" " data-handler="selectDay" data-event="click" data-month="11" data-year="2023"><a class="ui-state-default" href="#">27</a></td>
+                                                          <td class=" " data-handler="selectDay" data-event="click" data-month="11" data-year="2023"><a class="ui-state-default" href="#">28</a></td>
+                                                          <td class=" " data-handler="selectDay" data-event="click" data-month="11" data-year="2023"><a class="ui-state-default" href="#">29</a></td>
+                                                          <td class=" ui-datepicker-week-end " data-handler="selectDay" data-event="click" data-month="11" data-year="2023"><a class="ui-state-default" href="#">30</a></td>
+                                                       </tr>
+                                                       <tr>
+                                                          <td class=" ui-datepicker-week-end " data-handler="selectDay" data-event="click" data-month="11" data-year="2023"><a class="ui-state-default" href="#">31</a></td>
+                                                          <td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td>
+                                                          <td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td>
+                                                          <td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td>
+                                                          <td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td>
+                                                          <td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td>
+                                                          <td class=" ui-datepicker-week-end ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td>
+                                                       </tr>
+                                                    </tbody>
+                                                 </table>
+                                              </div>
+                                           </div>
+                                        </td>
+                                     </tr>
+                                  </tbody>
+                               </table> 
+                              
+                            </div>
+                           
+                         </div> -->
+                       
+                        <button type="submit" class="btn-blue" id="btnSearchReportobjrexta" style="float:right;height: 36px;margin-top: 22px;">
+                            <span class="icon icon-arrow-right"><i class="fas fa-solid fa-arrow-right searchIcon"></i></span>
+                            </button>
+                            <br>
+                           <div style="margin-left: 500px;margin-top: 25px;">
+
+                         
+                                <input type="text" value="" placeholder="search" id="txtfilterobjrexta"
+                                    class="wms-srv-input wms-srv-simple-search">
+                                <a href="#" data-prefix="SE"><i class="fas fa-search" title="Search"
+                                        onclick="getPurchaseOrderList('');"></i></a>
+                                        <div class="table-download text-small"><span class="icon icon-download"></span>
+                                            Download:
+                                            <a href="#" data-balloon="Download complete results as Excel" data-balloon-pos="up"> </a><a href="#"
+                                                data-balloon="Download complete results as CSV" data-balloon-pos="up"
+                                                onclick="exportAtClient();">CSV</a>
+                                        </div>
+                                    </div>
+                           
+                </div>
+          
+<!-- <div class="container-fluid">
+
+    <div class="row">
+        <div class="col-sm-6">
+
+        </div>
+        <div class="col-sm-3">
+            
+        </div>
+        
+    </div>
+</div> -->
+               
+                    
+                
+ 
+       
+                    <div>
+                        <!-- Grid -->
+                        <div class="wms-srv-grid-holder pnlWmsHead" id="pnlViewHeadTransfer">
+                       
+                        </div>
+                        <br>
+                        <!-- Grid -->
+                        <!-- Header Details -->
+                        
+                    </div>
+                    <!-- Grid -->
+                   
+                    <div class="wms-srv-grid-scroller" style="width: 100%;">
+                        <div class="wms-srv-grid" id="ViewTransferDetail">
+                            <br>
+<table class="tblMain" border="1">
+        <thead class="tblHead">
+            <tr>
+                <th class="txtBoldText">Client/Vendor Name</th>
+                <th colspan="6">Header 2</th>                
+                
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="txtBoldText">Address</td>
+                <td colspan="6">Kothrud Pune</td>                
+            </tr>
+            <tr>
+                <td class="txtBoldText">Opening Balance($)</td>               
+                <td colspan="6">Kothrud Pune</td>  
+            </tr>
+            <tr style="height: 15px;">
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td class="txtBoldText">Month</td>
+                <td class="txtBoldText">Invoice No</td>
+                <td class="txtBoldText">Transaction</td>
+                <td class="txtBoldText">Account No</td>
+                <td class="txtBoldText">Credit</td>
+                <td class="txtBoldText">Debit</td>
+                <td class="txtBoldText">closing Balance</td>
+            </tr>
+            <tr>
+                <td class="txtBoldText">Jan</td>
+                <td class="txtBoldText">259855</td>
+                <td class="txtBoldText">Inward</td>
+                <td class="txtBoldText">8596225555</td>
+                <td class="txtBoldText">20$</td>
+                <td class="txtBoldText">30$</td>
+                <td class="txtBoldText"></td>
+            </tr>
+            <tr>
+                <td>Feb</td>
+                <td>259855</td>
+                <td>Outward</td>
+                <td>8596225555</td>
+                <td>20$</td>
+                <td>30$</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Nov</td>
+                <td>259855</td>
+                <td>Storage Charges</td>
+                <td>8596225555</td>
+                <td>20$</td>
+                <td>30$</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Jan</td>
+                <td>259855</td>
+                <td>Inward</td>
+                <td>8596225555</td>
+                <td>20$</td>
+                <td>30$</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Feb</td>
+                <td>259855</td>
+                <td>Outward</td>
+                <td>8596225555</td>
+                <td>20$</td>
+                <td>30$</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Nov</td>
+                <td>259855</td>
+                <td>Storage Charges</td>
+                <td>8596225555</td>
+                <td>20$</td>
+                <td>30$</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Jan</td>
+                <td>259855</td>
+                <td>Inward</td>
+                <td>8596225555</td>
+                <td>20$</td>
+                <td>30$</td>
+                <td></td>
+            </tr>
+            
+            <tr style="height: 15px;">
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>25985</td>
+                <td>25698</td>
+                <td>3698</td>
+            </tr>
+            <tr style="height: 15px;">
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>                            
+                        </div>
+                    </div>
+                    <div class="wms-srv-grid-pager" id="tlbInboundGridPager">
+                        <span class="wms-srv-pager-records">1-1 of 0 Records</span>
+                        <span class="wms-srv-empty-space"></span>
+                        <span class="wms-srv-pager-links"><a href="#" data-page="firstpage"><i class="fas fa-angle-double-left"></i></a><a href="#" data-page="previous"><i class="fas fa-angle-left"></i></a><a href="#" class="wms-srv-active" data-page="1">1</a><a href="#" data-page="next"><i class="fas fa-angle-right"></i></a><a href="#" data-page="lastpage"><i class="fas fa-angle-double-right"></i></a></span>
+                        <span class="wms-srv-empty-space"></span>
+                        <input type="text" name="txtGridPageNo" class="wms-srv-input notranslate" value="0" style="width: 80px;">
+                        <a href="#" title="Jump To" class="wms-srv-pager-go"><i class="fas fa-play-circle"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<!-- Add Invoice Master popup-->
+<div class="wms-srv-popup-holder" id="wms-srv-AddNewInovice-popup" style="display: none;">
+    <div class="wms-srv-popup-bg">
+    </div>
+    <div class="wms-srv-popup">
+        <div class="wms-srv-popup-content">
+            <!-- Popup Title -->
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-sm-4">
+                        <div class="wms-srv-popup-title">
+                            <div class="wms-srv-page-title">
+                                <i class="fas fa-file-alt"></i><span>3PL Billings</span>
+                            </div>
+                           
+                        </div>
+                    </div>
+                    <div class="col-sm-5">
+
+                    </div>
+                    <div class="col-sm-3">
+                    <div class="addNewInvoiceIcon">
+                            <div class="">
+           <a href="#" id="iconBlurStatus1"><i class="fas fa-file-invoice txt3PlIcon"></i></a>
+                                <br>
+                                <div style="margin-left: -5px;color: #ff2f2f;">Setup</div>    
+                            </div>                             
+                                                  
+                            <div class="">
+                                <i class="fas fa-arrow-right iconArrow"></i>
+                            </div>
+                           
+                            <div style="margin-left:14px;">
+                                <a href="#" id="iconBlurReview"><i class="fas fa-solid iconBlurReview fa-paste iconblur"></i></a>
+                            
+                                <br>
+                                <div style="margin-left: -7px;">Review</div>  
+                            </div>
+                            <div class="">
+                                <i class="fas fa-arrow-right iconArrow"></i>
+                            </div>
+                            <div style="margin-left: 14px;">
+                                <a href="#" id="iconBlurStatus2"><i class="fas fa-clipboard-check txt3PlIcon" ></i></a>
+                                <br>
+                                <div style="margin-left: -20px;">Confirmation</div>                                 
+                            </div>
+                          
+                    </div>
+                </div>
+            </div>
+            </div>
+            <a href="#" id="wms-srv-AddNewInovice-popup-close" class="wms-srv-popup-close"><i
+                class="fas fa-times-circle"></i></a>
+           
+                <div class="container-fluid">
+                    <div class="row" style="border: 1px solid #ababab;margin-left: -4px;margin-right: -2px;">                       
+                        <div class="col-sm-2">
+                          
+                                <div class="su-input-group su-static-label">
+                                   <label class="su-input-label"><b>Select Date</b></label>
+                                   <div class="">
+                                      <input type="text" id="txtFromToDateobjrexta" placeholder="eg: From To To" onclick="getDate();" autocomplete="off" autocorrect="off" maxlength="25" step="1" noerror="true" staticlabel="true" animate="true" label="Symbol" rules="" style="width: 185px;">
+                                      <inout type="hidden" id="hideFromDateobjrexta" value="">
+                                      </inout>
+                                      <inout type="hidden" id="hideToDateobjrexta" value="">
+                                      </inout>
+                                   </div>
+                                   <!-- <div style="margin-top: -6px;">
+                                    <span class="invoiceSubDates"><label class="txtDateFilter">Weekly</label> | <label class="txtDateFilter">Monthly</label> | <label class="txtDateFilter">Yearly</label></span>
+                                   </div> -->
+                                </div>
+                                <div class="dateGridView" id="dateSelecterobjrexta" style="display: none;">
+                                   <i class="fas fa-times-circle" onclick="openDatePopup();" style="font-size: 18px;float: right;"></i>
+                                   <div>
+                                      <span>
+                                         <lable class="txtFixDates" onclick="getPreviousdate(1);">
+                                            prev. day
+                                            |
+                                         </lable>
+                                      </span>
+                                      <i class="fa-solid fa-circle-xmark iconClose" title="Cancel"></i>
+                                      <span>
+                                         <lable class="txtFixDates" onclick="getSevenDateData(7);">
+                                            last 7
+                                            days |
+                                         </lable>
+                                      </span>
+                                      <span>
+                                         <lable class="txtFixDates" onclick="getThirtyDateData(30);">
+                                            last 30
+                                            days |
+                                         </lable>
+                                      </span>
+                                      <span>
+                                         <lable class="txtFixDates" onclick="getcurrentFYData('2023/04/24');">
+                                            current FY
+                                         </lable>
+                                      </span>
+                                      <hr class="hrLine1">
+                                   </div>
+                                   <table class="dateGrid" id="gridDatePickerobjrexta">
+                                      <tbody>
+                                         <tr>
+                                            <td>
+                                               <div class="text-center">
+                                                  <strong>From</strong>
+                                               </div>
+                                               <div id="txt_FromdatePickerobjrexta" class="txt_FromdatePicker">
+                                                  <!-- <div class="ui-datepicker-inline ui-datepicker ui-widget ui-widget-content ui-helper-clearfix ui-corner-all" style="display: block;">
+                                                     <div class="ui-datepicker-header ui-widget-header ui-helper-clearfix ui-corner-all">
+                                                        <a class="ui-datepicker-prev ui-corner-all" data-handler="prev" data-event="click" title="Prev"><span class="ui-icon ui-icon-circle-triangle-w">Prev</span></a><a class="ui-datepicker-next ui-corner-all" data-handler="next" data-event="click" title="Next"><span class="ui-icon ui-icon-circle-triangle-e">Next</span></a>
+                                                        <div class="ui-datepicker-title"><span class="ui-datepicker-month">December</span>&nbsp;<span class="ui-datepicker-year">2023</span></div>
+                                                     </div>
+                                                     <table class="ui-datepicker-calendar">
+                                                        <thead>
+                                                           <tr>
+                                                              <th scope="col" class="ui-datepicker-week-end"><span title="Sunday">Su</span></th>
+                                                              <th scope="col"><span title="Monday">Mo</span></th>
+                                                              <th scope="col"><span title="Tuesday">Tu</span></th>
+                                                              <th scope="col"><span title="Wednesday">We</span></th>
+                                                              <th scope="col"><span title="Thursday">Th</span></th>
+                                                              <th scope="col"><span title="Friday">Fr</span></th>
+                                                              <th scope="col" class="ui-datepicker-week-end"><span title="Saturday">Sa</span></th>
+                                                           </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                           <tr>
+                                                              <td class=" ui-datepicker-week-end ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td>
+                                                              <td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td>
+                                                              <td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td>
+                                                              <td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td>
+                                                              <td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td>
+                                                              <td class=" " data-handler="selectDay" data-event="click" data-month="11" data-year="2023"><a class="ui-state-default" href="#">1</a></td>
+                                                              <td class=" ui-datepicker-week-end " data-handler="selectDay" data-event="click" data-month="11" data-year="2023"><a class="ui-state-default" href="#">2</a></td>
+                                                           </tr>
+                                                           <tr>
+                                                              <td class=" ui-datepicker-week-end " data-handler="selectDay" data-event="click" data-month="11" data-year="2023"><a class="ui-state-default" href="#">3</a></td>
+                                                              <td class=" " data-handler="selectDay" data-event="click" data-month="11" data-year="2023"><a class="ui-state-default" href="#">4</a></td>
+                                                              <td class=" " data-handler="selectDay" data-event="click" data-month="11" data-year="2023"><a class="ui-state-default" href="#">5</a></td>
+                                                              <td class=" " data-handler="selectDay" data-event="click" data-month="11" data-year="2023"><a class="ui-state-default" href="#">6</a></td>
+                                                              <td class=" " data-handler="selectDay" data-event="click" data-month="11" data-year="2023"><a class="ui-state-default" href="#">7</a></td>
+                                                              <td class=" " data-handler="selectDay" data-event="click" data-month="11" data-year="2023"><a class="ui-state-default" href="#">8</a></td>
+                                                              <td class=" ui-datepicker-week-end " data-handler="selectDay" data-event="click" data-month="11" data-year="2023"><a class="ui-state-default" href="#">9</a></td>
+                                                           </tr>
+                                                           <tr>
+                                                              <td class=" ui-datepicker-week-end " data-handler="selectDay" data-event="click" data-month="11" data-year="2023"><a class="ui-state-default" href="#">10</a></td>
+                                                              <td class=" " data-handler="selectDay" data-event="click" data-month="11" data-year="2023"><a class="ui-state-default" href="#">11</a></td>
+                                                              <td class=" " data-handler="selectDay" data-event="click" data-month="11" data-year="2023"><a class="ui-state-default" href="#">12</a></td>
+                                                              <td class=" " data-handler="selectDay" data-event="click" data-month="11" data-year="2023"><a class="ui-state-default" href="#">13</a></td>
+                                                              <td class=" ui-datepicker-days-cell-over  ui-datepicker-current-day ui-datepicker-today" data-handler="selectDay" data-event="click" data-month="11" data-year="2023"><a class="ui-state-default ui-state-highlight ui-state-active" href="#">14</a></td>
+                                                              <td class=" " data-handler="selectDay" data-event="click" data-month="11" data-year="2023"><a class="ui-state-default" href="#">15</a></td>
+                                                              <td class=" ui-datepicker-week-end " data-handler="selectDay" data-event="click" data-month="11" data-year="2023"><a class="ui-state-default" href="#">16</a></td>
+                                                           </tr>
+                                                           <tr>
+                                                              <td class=" ui-datepicker-week-end " data-handler="selectDay" data-event="click" data-month="11" data-year="2023"><a class="ui-state-default" href="#">17</a></td>
+                                                              <td class=" " data-handler="selectDay" data-event="click" data-month="11" data-year="2023"><a class="ui-state-default" href="#">18</a></td>
+                                                              <td class=" " data-handler="selectDay" data-event="click" data-month="11" data-year="2023"><a class="ui-state-default" href="#">19</a></td>
+                                                              <td class=" " data-handler="selectDay" data-event="click" data-month="11" data-year="2023"><a class="ui-state-default" href="#">20</a></td>
+                                                              <td class=" " data-handler="selectDay" data-event="click" data-month="11" data-year="2023"><a class="ui-state-default" href="#">21</a></td>
+                                                              <td class=" " data-handler="selectDay" data-event="click" data-month="11" data-year="2023"><a class="ui-state-default" href="#">22</a></td>
+                                                              <td class=" ui-datepicker-week-end " data-handler="selectDay" data-event="click" data-month="11" data-year="2023"><a class="ui-state-default" href="#">23</a></td>
+                                                           </tr>
+                                                           <tr>
+                                                              <td class=" ui-datepicker-week-end " data-handler="selectDay" data-event="click" data-month="11" data-year="2023"><a class="ui-state-default" href="#">24</a></td>
+                                                              <td class=" " data-handler="selectDay" data-event="click" data-month="11" data-year="2023"><a class="ui-state-default" href="#">25</a></td>
+                                                              <td class=" " data-handler="selectDay" data-event="click" data-month="11" data-year="2023"><a class="ui-state-default" href="#">26</a></td>
+                                                              <td class=" " data-handler="selectDay" data-event="click" data-month="11" data-year="2023"><a class="ui-state-default" href="#">27</a></td>
+                                                              <td class=" " data-handler="selectDay" data-event="click" data-month="11" data-year="2023"><a class="ui-state-default" href="#">28</a></td>
+                                                              <td class=" " data-handler="selectDay" data-event="click" data-month="11" data-year="2023"><a class="ui-state-default" href="#">29</a></td>
+                                                              <td class=" ui-datepicker-week-end " data-handler="selectDay" data-event="click" data-month="11" data-year="2023"><a class="ui-state-default" href="#">30</a></td>
+                                                           </tr>
+                                                           <tr>
+                                                              <td class=" ui-datepicker-week-end " data-handler="selectDay" data-event="click" data-month="11" data-year="2023"><a class="ui-state-default" href="#">31</a></td>
+                                                              <td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td>
+                                                              <td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td>
+                                                              <td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td>
+                                                              <td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td>
+                                                              <td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td>
+                                                              <td class=" ui-datepicker-week-end ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td>
+                                                           </tr>
+                                                        </tbody>
+                                                     </table>
+                                                  </div> -->
+                                               </div>
+                                            </td>
+                                            <td>
+                                               <div class="text-center2">
+                                                  <strong>To</strong>
+                                               </div>
+                                               <div id="txt_TodatePickerobjrexta">
+                                                  <!-- <div class="ui-datepicker-inline ui-datepicker ui-widget ui-widget-content ui-helper-clearfix ui-corner-all" style="display: block;">
+                                                     <div class="ui-datepicker-header ui-widget-header ui-helper-clearfix ui-corner-all">
+                                                        <a class="ui-datepicker-prev ui-corner-all" data-handler="prev" data-event="click" title="Prev"><span class="ui-icon ui-icon-circle-triangle-w">Prev</span></a><a class="ui-datepicker-next ui-corner-all" data-handler="next" data-event="click" title="Next"><span class="ui-icon ui-icon-circle-triangle-e">Next</span></a>
+                                                        <div class="ui-datepicker-title"><span class="ui-datepicker-month">December</span>&nbsp;<span class="ui-datepicker-year">2023</span></div>
+                                                     </div>
+                                                     <table class="ui-datepicker-calendar">
+                                                        <thead>
+                                                           <tr>
+                                                              <th scope="col" class="ui-datepicker-week-end"><span title="Sunday">Su</span></th>
+                                                              <th scope="col"><span title="Monday">Mo</span></th>
+                                                              <th scope="col"><span title="Tuesday">Tu</span></th>
+                                                              <th scope="col"><span title="Wednesday">We</span></th>
+                                                              <th scope="col"><span title="Thursday">Th</span></th>
+                                                              <th scope="col"><span title="Friday">Fr</span></th>
+                                                              <th scope="col" class="ui-datepicker-week-end"><span title="Saturday">Sa</span></th>
+                                                           </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                           <tr>
+                                                              <td class=" ui-datepicker-week-end ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td>
+                                                              <td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td>
+                                                              <td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td>
+                                                              <td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td>
+                                                              <td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td>
+                                                              <td class=" " data-handler="selectDay" data-event="click" data-month="11" data-year="2023"><a class="ui-state-default" href="#">1</a></td>
+                                                              <td class=" ui-datepicker-week-end " data-handler="selectDay" data-event="click" data-month="11" data-year="2023"><a class="ui-state-default" href="#">2</a></td>
+                                                           </tr>
+                                                           <tr>
+                                                              <td class=" ui-datepicker-week-end " data-handler="selectDay" data-event="click" data-month="11" data-year="2023"><a class="ui-state-default" href="#">3</a></td>
+                                                              <td class=" " data-handler="selectDay" data-event="click" data-month="11" data-year="2023"><a class="ui-state-default" href="#">4</a></td>
+                                                              <td class=" " data-handler="selectDay" data-event="click" data-month="11" data-year="2023"><a class="ui-state-default" href="#">5</a></td>
+                                                              <td class=" " data-handler="selectDay" data-event="click" data-month="11" data-year="2023"><a class="ui-state-default" href="#">6</a></td>
+                                                              <td class=" " data-handler="selectDay" data-event="click" data-month="11" data-year="2023"><a class="ui-state-default" href="#">7</a></td>
+                                                              <td class=" " data-handler="selectDay" data-event="click" data-month="11" data-year="2023"><a class="ui-state-default" href="#">8</a></td>
+                                                              <td class=" ui-datepicker-week-end " data-handler="selectDay" data-event="click" data-month="11" data-year="2023"><a class="ui-state-default" href="#">9</a></td>
+                                                           </tr>
+                                                           <tr>
+                                                              <td class=" ui-datepicker-week-end " data-handler="selectDay" data-event="click" data-month="11" data-year="2023"><a class="ui-state-default" href="#">10</a></td>
+                                                              <td class=" " data-handler="selectDay" data-event="click" data-month="11" data-year="2023"><a class="ui-state-default" href="#">11</a></td>
+                                                              <td class=" " data-handler="selectDay" data-event="click" data-month="11" data-year="2023"><a class="ui-state-default" href="#">12</a></td>
+                                                              <td class=" " data-handler="selectDay" data-event="click" data-month="11" data-year="2023"><a class="ui-state-default" href="#">13</a></td>
+                                                              <td class=" ui-datepicker-days-cell-over  ui-datepicker-current-day ui-datepicker-today" data-handler="selectDay" data-event="click" data-month="11" data-year="2023"><a class="ui-state-default ui-state-highlight ui-state-active" href="#">14</a></td>
+                                                              <td class=" " data-handler="selectDay" data-event="click" data-month="11" data-year="2023"><a class="ui-state-default" href="#">15</a></td>
+                                                              <td class=" ui-datepicker-week-end " data-handler="selectDay" data-event="click" data-month="11" data-year="2023"><a class="ui-state-default" href="#">16</a></td>
+                                                           </tr>
+                                                           <tr>
+                                                              <td class=" ui-datepicker-week-end " data-handler="selectDay" data-event="click" data-month="11" data-year="2023"><a class="ui-state-default" href="#">17</a></td>
+                                                              <td class=" " data-handler="selectDay" data-event="click" data-month="11" data-year="2023"><a class="ui-state-default" href="#">18</a></td>
+                                                              <td class=" " data-handler="selectDay" data-event="click" data-month="11" data-year="2023"><a class="ui-state-default" href="#">19</a></td>
+                                                              <td class=" " data-handler="selectDay" data-event="click" data-month="11" data-year="2023"><a class="ui-state-default" href="#">20</a></td>
+                                                              <td class=" " data-handler="selectDay" data-event="click" data-month="11" data-year="2023"><a class="ui-state-default" href="#">21</a></td>
+                                                              <td class=" " data-handler="selectDay" data-event="click" data-month="11" data-year="2023"><a class="ui-state-default" href="#">22</a></td>
+                                                              <td class=" ui-datepicker-week-end " data-handler="selectDay" data-event="click" data-month="11" data-year="2023"><a class="ui-state-default" href="#">23</a></td>
+                                                           </tr>
+                                                           <tr>
+                                                              <td class=" ui-datepicker-week-end " data-handler="selectDay" data-event="click" data-month="11" data-year="2023"><a class="ui-state-default" href="#">24</a></td>
+                                                              <td class=" " data-handler="selectDay" data-event="click" data-month="11" data-year="2023"><a class="ui-state-default" href="#">25</a></td>
+                                                              <td class=" " data-handler="selectDay" data-event="click" data-month="11" data-year="2023"><a class="ui-state-default" href="#">26</a></td>
+                                                              <td class=" " data-handler="selectDay" data-event="click" data-month="11" data-year="2023"><a class="ui-state-default" href="#">27</a></td>
+                                                              <td class=" " data-handler="selectDay" data-event="click" data-month="11" data-year="2023"><a class="ui-state-default" href="#">28</a></td>
+                                                              <td class=" " data-handler="selectDay" data-event="click" data-month="11" data-year="2023"><a class="ui-state-default" href="#">29</a></td>
+                                                              <td class=" ui-datepicker-week-end " data-handler="selectDay" data-event="click" data-month="11" data-year="2023"><a class="ui-state-default" href="#">30</a></td>
+                                                           </tr>
+                                                           <tr>
+                                                              <td class=" ui-datepicker-week-end " data-handler="selectDay" data-event="click" data-month="11" data-year="2023"><a class="ui-state-default" href="#">31</a></td>
+                                                              <td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td>
+                                                              <td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td>
+                                                              <td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td>
+                                                              <td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td>
+                                                              <td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td>
+                                                              <td class=" ui-datepicker-week-end ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td>
+                                                           </tr>
+                                                        </tbody>
+                                                     </table>
+                                                  </div> -->
+                                               </div>
+                                            </td>
+                                         </tr>
+                                      </tbody>
+                                   </table>
+                                  
+                                </div>
+                               
+                         </div>
+           
+                        <div class="col-sm-10">
+                           
+                            <div class="container-fluid">
+                                <div class="row">
+                                    <div class="col-sm-3">
+                                        <div class="su-input-group su-static-label">
+                                            <label class="su-input-label"><b>Rate</b></label>
+                                            <div class="headSearchData">                                    
+                                                <select class="dropdownDLL" id="ddlRateCard">
+                                                </select>                                    
+                         </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <div class="su-input-group su-static-label">
+                                            <label class="su-input-label"><b>Billing Group</b></label>
+                                            <div class="headSearchData">                                    
+                                                <select class="dropdownDLL" id="ddlBillingGroup">
+                                                </select>                                    
+                         </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <div class="su-input-group su-static-label">
+                                            <label class="su-input-label"><b>Billing Status</b></label>
+                                            <div class="headSearchData">                                    
+                                                <select class="dropdownDLL" id="ddlStatus">
+                                                    <option value="0"> Un-Billed </option>
+                                                    <option value="1"> Billed </option>
+                                                </select>                                    
+                         </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="col-sm-1" style="padding-right: 0px;padding-top: 22px;">
+                
+                                        <button type="submit" class="btn-blue" onclick="getTransactionList();" id="btnSearchReportobjrexta" style="float:right;">
+                                            <span class="icon icon-arrow-right"><i class="fas fa-solid fa-arrow-right searchIcon"></i></span>
+                                        </button>
+                
+                                    </div>
+                                    <div class="col-sm-1">
+
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+
+
+            <!-- Popup Title -->
+            <div class="wms-srv-popup-content-body" id="wms-srv-popup-content-body">
+                <!-- Grid 2-->
+
+                <div class="wms-srv-obj-main-grid pnlWmsDetail">
+                    <div class="wms-srv-grid-holder">
+                        <div class="wms-srv-grid-action-panel">
+                            <div class="wms-srv-grid-common-action"><a href="#" class="wms-srv-icononly"><i
+                                        class="fas fa-list"></i></a></div>
+                            <div class="wms-srv-grid-title">
+                                3PL Billing
+                            </div>
+                            <div style="float: right;">                                          
+                                    <button class="btnInvoiceClick" onclick="save3plData();"><a href="#" class="wms-srv-icononly"><i
+                                        class="fas fa-list" style="color: #ffffff;"></i></a> Process Invoice</button>           
+                            </div>
+                        </div>
+                        <div class="wms-srv-grid-scroller" style="width: 1308px; height: 315px;">
+                            <input type="hidden" id="hdnSelectedInboundOrder">
+                            <input type="hidden" id="hdnSelectedRecevingOrder">
+                            <div class="wms-srv-grid" data-gridobjectid="gridObject_Inbound_PurchaseOrder" id="dvTransactionList">
+                                <!-- <div class="wms-srv-grid-header" style="text-align: center;">
+                                    <div class="wms-srv-grid-cell"></div>
+                                    <div class="wms-srv-grid-cell"> Seq No</div>
+                                    <div class="wms-srv-grid-cell"> Rate Title</div>
+                                    <div class="wms-srv-grid-cell"> Rate Type</div>
+                                    <div class="wms-srv-grid-cell">Account Code</div>
+                                    <div class="wms-srv-grid-cell">Unit</div>
+                                    <div class="wms-srv-grid-cell">Rate Per Unit</div>
+                                    <div class="wms-srv-grid-cell">System Qty</div>
+                                    <div class="wms-srv-grid-cell">Bill Qty</div>
+                                    <div class="wms-srv-grid-cell">Line Total</div>
+                                    <div class="wms-srv-grid-cell">Billing Status</div>
+                                    <div class="wms-srv-grid-cell">Action</div>
+                                 </div>
+                                 <div class="wms-srv-grid-row" style="text-align: center;">
+                                    <div class="wms-srv-grid-cell"><input type="checkbox" onclick="selectAllTask(This);" class="messageCheckbox" data-id="234503"></div>
+                                    <div class="wms-srv-grid-cell">1</div>
+                                    <div class="wms-srv-grid-cell">KBC Unloading Charge</div>
+                                    <div class="wms-srv-grid-cell">Unload</div>
+                                    <div class="wms-srv-grid-cell">10110100</div>
+                                    <div class="wms-srv-grid-cell">Carton</div>
+                                    <div class="wms-srv-grid-cell">12.00</div>
+                                    <div class="wms-srv-grid-cell">25.00</div>
+                                    <div class="wms-srv-grid-cell">56200.00</div>
+                                    <div class="wms-srv-grid-cell">58955.00</div>
+                                    <div class="wms-srv-grid-cell">Billed</div>    
+                                    <div class="wms-srv-grid-cell">
+                                        <div class="wms-srv-grid-action">                                          
+                                            <a href="#" title="ApproveTab" class="wms-srv-icononly" onclick="showApproveTab();"><i class="fas fa-clipboard-check"></i></a>
+                                            <div class="wms-srv-action-sep">|</div>                                           
+                                            <a href="#" title="Document" class="wms-srv-icononly" onclick="openDocumentObject(207345, 'outward', 'Order No|207345,Order Date|11/30/2023,Delivery Date|11/30/2023,Order Reference No|,Priority|High,Delivery Type|Standard');"><i class="fas fa-file-alt"></i></a>
+                                            <div class="wms-srv-action-sep">|</div>                                           
+                                            <a href="#" title="Document" class="wms-srv-icononly" onclick="showDetailsTransaction();"><i class="fas fa-solid fa-eye"></i></a>
+                                        </div>
+                                    </div>
+                                 </div>
+                                 <div class="wms-srv-grid-row" style="text-align: center;">
+                                    <div class="wms-srv-grid-cell"><input type="checkbox" onclick="selectAllTask(This);" class="messageCheckbox" data-id="234503"></div>
+                                    <div class="wms-srv-grid-cell">1</div>
+                                    <div class="wms-srv-grid-cell">KBC Unloading Charge</div>
+                                    <div class="wms-srv-grid-cell">Unload</div>
+                                    <div class="wms-srv-grid-cell">10110100</div>
+                                    <div class="wms-srv-grid-cell">Carton</div>
+                                    <div class="wms-srv-grid-cell">12.00</div>
+                                    <div class="wms-srv-grid-cell">25.00</div>
+                                    <div class="wms-srv-grid-cell">56200.00</div>
+                                    <div class="wms-srv-grid-cell">58955.00</div>
+                                    <div class="wms-srv-grid-cell">Billed</div>    
+                                    <div class="wms-srv-grid-cell">
+                                        <div class="wms-srv-grid-action">                                          
+                                            <a href="#" title="ApproveTab" class="wms-srv-icononly" onclick="showApproveTab();"><i class="fas fa-clipboard-check"></i></a>
+                                            <div class="wms-srv-action-sep">|</div>                                           
+                                            <a href="#" title="Document" class="wms-srv-icononly" onclick="openDocumentObject(207345, 'outward', 'Order No|207345,Order Date|11/30/2023,Delivery Date|11/30/2023,Order Reference No|,Priority|High,Delivery Type|Standard');"><i class="fas fa-file-alt"></i></a>
+                                            <div class="wms-srv-action-sep">|</div>                                           
+                                            <a href="#" title="Document" class="wms-srv-icononly" onclick="showDetailsTransaction();"><i class="fas fa-solid fa-eye"></i></a>
+                                        </div>
+                                    </div>
+                                 </div>
+                                 <div class="wms-srv-grid-row" style="text-align: center;">
+                                    <div class="wms-srv-grid-cell"><input type="checkbox" onclick="selectAllTask(This);" class="messageCheckbox" data-id="234503"></div>
+                                    <div class="wms-srv-grid-cell">1</div>
+                                    <div class="wms-srv-grid-cell">KBC Unloading Charge</div>
+                                    <div class="wms-srv-grid-cell">Unload</div>
+                                    <div class="wms-srv-grid-cell">10110100</div>
+                                    <div class="wms-srv-grid-cell">Carton</div>
+                                    <div class="wms-srv-grid-cell">12.00</div>
+                                    <div class="wms-srv-grid-cell">25.00</div>
+                                    <div class="wms-srv-grid-cell">56200.00</div>
+                                    <div class="wms-srv-grid-cell">58955.00</div>
+                                    <div class="wms-srv-grid-cell">Billed</div>    
+                                    <div class="wms-srv-grid-cell">
+                                        <div class="wms-srv-grid-action">                                          
+                                            <a href="#" title="ApproveTab" class="wms-srv-icononly" onclick="showApproveTab();"><i class="fas fa-clipboard-check"></i></a>
+                                            <div class="wms-srv-action-sep">|</div>                                           
+                                            <a href="#" title="Document" class="wms-srv-icononly" onclick="openDocumentObject(207345, 'outward', 'Order No|207345,Order Date|11/30/2023,Delivery Date|11/30/2023,Order Reference No|,Priority|High,Delivery Type|Standard');"><i class="fas fa-file-alt"></i></a>
+                                            <div class="wms-srv-action-sep">|</div>                                           
+                                            <a href="#" title="Document" class="wms-srv-icononly" onclick="showDetailsTransaction();"><i class="fas fa-solid fa-eye"></i></a>
+                                        </div>
+                                    </div>
+                                 </div> -->
+                                 
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Grid -->
+                    <!-- Content Area -->
+                </div><br>
+            </div>
+
+        </div>
+    </div>
+</div>
+<!-- Add Invoice Maste popup-->
+
+<!-- Review Invoice Master popup-->
+<div class="wms-srv-popup-holder" id="wms-srv-ReviewInovice-popup" style="display: none;">
+    <div class="wms-srv-popup-bg">
+    </div>
+    <div class="wms-srv-popup">
+        <div class="wms-srv-popup-content">
+            <!-- Popup Title -->
+       
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-sm-4">
+                        <div class="wms-srv-popup-title">
+                            <div class="wms-srv-page-title">
+                                <i class="fas fa-file-alt"></i><span>3PL Billing</span>
+                            </div>
+                           
+                        </div>
+                    </div>
+                    <div class="col-sm-5">
+
+                    </div>
+                    <div class="col-sm-3">
+                    <div class="addNewInvoiceIcon">
+                            <div class="">
+                                <i class="fas fa-file-invoice SetBlur txt3PlIcon"></i>
+                                <br>
+                                <div style="margin-left: -5px;">Setup</div>  
+                            </div>
+                            <div class="">
+                                <i class="fas fa-arrow-right iconArrow"></i>
+                            </div>
+                           
+                            <div style="margin-left: 14px;">
+                                <i class="fas fa-solid fa-paste setActive txt3PlIcon"></i>
+                                <br>
+                                <div style="margin-left: -5px; color: #ff2f2f;">Review</div>  
+                            </div>
+                            <div class="">
+                                <i class="fas fa-arrow-right iconArrow"></i>
+                            </div>
+                            <div style="margin-left: 14px;">
+                                <i class="fas fa-clipboard-check SetBlur txt3PlIcon"></i>
+                                <br>
+                                <div style="margin-left: -18px;">Confirmation</div>  
+                            </div>
+                          
+                    </div>
+                </div>
+            </div>
+            </div>
+            <a href="#" id="wms-srv-ReviewInovice-popup-close" class="wms-srv-popup-close"><i
+                class="fas fa-times-circle"></i></a>
+           
+                <div class="container-fluid invoiceAddNewHead">
+                        <div class="row">                            
+                            <div class="col-sm-2">
+                                <span><label>Invoice no :</label><label id="lblInvoiceno">To Be Generated</label> </span>
+                            </div>
+                            <div class="col-sm-2">
+                                <span><label>Date :</label><label id="lblDate">01-DEc-202</label> </span>
+                            </div>
+                            <div class="col-sm-2">
+                                <span><label>Customer Name :</label><label id="lblCustomername">Rahul Patil</label> </span>
+                            </div>
+                            <div class="col-sm-2">
+                                <span><label>Tax Code :</label><label id="lblTaxcode">GST012343234</label> </span>
+                            </div>
+                            <div class="col-sm-2">
+                                <span><label>Account Code :</label><label id="lblAccCode">AC-23209</label> </span>
+                            </div>
+                            <div class="col-sm-2">
+                               
+                            </div>
+                        </div>
+                        <div class="gridlinedivied">
+
+                        </div>
+                <div class="row ">
+                    <div class="col-sm-2" style="margin-top:7px;">
+                                <label class="">Billing Period :</label>
+                                <label class=""><label id="lblfrmbilldate">2024-01-01</label> - <label id="lbltobilldate">2024-01-31</label></label>
+                    </div>
+                    <!-- <div class="col-sm-2" style="margin-top:7px;">                   
+                            <span><label>Invoice no :</label><label>To Be Generated</label> </span>
+                    </div> -->
+                    <!-- <div class="col-sm-3" style="margin-top:9px;"> 
+                        <div class="gridHeadSearch">
+                            <label class="txtTitleInvoice">Bill To Address</label>
+                            <div class="gridSelectInvoiceAccount"> </div>                          
+                        </div>
+                    </div>  -->                        
+                        <div class="col-sm-3">
+                            <div class="su-input-group su-static-label">
+                                <label class="su-input-label"><b>Bill To Address</b></label>
+                                <div class="">
+                                    <input type="text" placeholder="" id="txtBilltoAddress" autocorrect="off" maxlength="25" step="1" noerror="true" staticlabel="true" animate="true" label="Symbol" rules="" class="">
+                                 
+                                </div>
+                            </div>
+                        </div> 
+                        <div class="col-sm-3">
+                            <div class="su-input-group su-static-label">
+                                <label class="su-input-label"><b>Ship To Address</b></label>
+                                <div class="">
+                                    <input type="text" placeholder="" id="txtShiptoAddress" autocorrect="off" maxlength="25" step="1" noerror="true" staticlabel="true" animate="true" label="Symbol" rules="" class="">
+                                 
+                                </div>
+                            </div>
+                        </div>  
+                        <div class="col-sm-4">
+                        <div class="gridSelectInvoiceAccount">
+                            <div class="lbl3PLReview">Bill AMOUNT : <label id="lblBillAmt">00.00</label> </div>
+                            <div class="lbl3PLReview">TAX AMOUNT : <label id="lblTaxAmt">00.00</label></div >
+                            <div class="lbl3PLReview">TOTAL AMOUNT : <label id="lblTotalAmt">00.00</label></div>
+                        </div>    
+                    </div>                                
+                             
+                    
+                </div>            
+            </div>
+
+
+            <!-- Popup Title -->
+            <div class="wms-srv-popup-content-body" id="wms-srv-popup-content-body">
+                <!-- Grid 2-->
+
+                <div class="wms-srv-obj-main-grid pnlWmsDetail">
+                    <div class="wms-srv-grid-holder">
+                        <div class="wms-srv-grid-action-panel">
+                            <div class="wms-srv-grid-common-action"><a href="#" class="wms-srv-icononly"><i
+                                        class="fas fa-list"></i></a></div>
+                            <div class="wms-srv-grid-title">
+                                3PL Billings
+                            </div>
+                            <div style="float: right;">                                          
+                                    <button class="btnInvoiceClick" onclick="generateInvoice();"><a href="#" class="wms-srv-icononly"><i
+                                        class="fas fa-list" style="color: #ffffff;"></i></a>Generate Invoice</button>           
+                            </div>
+                        </div>
+                        <div class="wms-srv-grid-scroller" style="width: 1308px; height: 315px;">
+                            <input type="hidden" id="hdnSelectedInboundOrder">
+                            <input type="hidden" id="hdnSelectedRecevingOrder">
+                            <div class="wms-srv-grid" id="dvPreBillDetail" data-gridobjectid="gridObject_Inbound_PurchaseOrder">
+                                <!-- <div class="wms-srv-grid-header" style="text-align: center;">
+                                    <div class="wms-srv-grid-cell"></div>
+                                    <div class="wms-srv-grid-cell"> Seq No</div>
+                                    <div class="wms-srv-grid-cell"> Rate Title</div>
+                                    <div class="wms-srv-grid-cell"> Rate Type</div>
+                                    <div class="wms-srv-grid-cell">Account Code</div>
+                                    <div class="wms-srv-grid-cell">Unit</div>
+                                    <div class="wms-srv-grid-cell">Rate Per Unit</div>
+                                    <div class="wms-srv-grid-cell">System Qty</div>
+                                    <div class="wms-srv-grid-cell">Bill Qty</div>
+                                    <div class="wms-srv-grid-cell">Line Total</div>
+                                    <div class="wms-srv-grid-cell">Billing Status</div>
+                                    <div class="wms-srv-grid-cell">Action</div>
+                                 </div>
+                                 <div class="wms-srv-grid-row" style="text-align: center;">
+                                    <div class="wms-srv-grid-cell"><input type="checkbox" onclick="selectAllTask(This);" class="messageCheckbox" data-id="234503"></div>
+                                    <div class="wms-srv-grid-cell">1</div>
+                                    <div class="wms-srv-grid-cell">KBC Unloading Charge</div>
+                                    <div class="wms-srv-grid-cell">Unload</div>
+                                    <div class="wms-srv-grid-cell">10110100</div>
+                                    <div class="wms-srv-grid-cell">Carton</div>
+                                    <div class="wms-srv-grid-cell">12.00</div>
+                                    <div class="wms-srv-grid-cell">1000.00</div>
+                                    <div class="wms-srv-grid-cell">1000.00</div>
+                                    <div class="wms-srv-grid-cell">12,000.00</div>
+                                    <div class="wms-srv-grid-cell">Un-Billed</div>   
+                                    <div class="wms-srv-grid-cell">
+                                        <div class="wms-srv-grid-action">                                          
+                                            <a href="#" title="ApproveTab" class="wms-srv-icononly" onclick="showApproveTab();"><i class="fas fa-clipboard-check"></i></a>
+                                            <div class="wms-srv-action-sep">|</div>                                           
+                                            <a href="#" title="Document" class="wms-srv-icononly" onclick="showDocumentList();"><i class="fas fa-file-alt"></i></a>
+                                        </div>
+                                    </div>
+                                 </div>
+                                 <div class="wms-srv-grid-row" style="text-align: center;">
+                                    <div class="wms-srv-grid-cell"><input type="checkbox" onclick="selectAllTask(This);" class="messageCheckbox" data-id="234503"></div>
+                                    <div class="wms-srv-grid-cell">2</div>
+                                    <div class="wms-srv-grid-cell">KBC Unloading Charge</div>
+                                    <div class="wms-srv-grid-cell">Unload</div>
+                                    <div class="wms-srv-grid-cell">10110100</div>
+                                    <div class="wms-srv-grid-cell">Carton</div>
+                                    <div class="wms-srv-grid-cell">12.00</div>
+                                    <div class="wms-srv-grid-cell">1000.00</div>
+                                    <div class="wms-srv-grid-cell">1000.00</div>
+                                    <div class="wms-srv-grid-cell">12,000.00</div>
+                                    <div class="wms-srv-grid-cell">Un-Billed</div>  
+                                    <div class="wms-srv-grid-cell">
+                                        <div class="wms-srv-grid-action">                                          
+                                            <a href="#" title="ApproveTab" class="wms-srv-icononly" onclick="showApproveTab();"><i class="fas fa-clipboard-check"></i></a>
+                                            <div class="wms-srv-action-sep">|</div>                                           
+                                            <a href="#" title="Document" class="wms-srv-icononly" onclick="showDocumentList();"><i class="fas fa-file-alt"></i></a>
+                                        </div>
+                                    </div>
+                                 </div>
+                                 <div class="wms-srv-grid-row" style="text-align: center;">
+                                    <div class="wms-srv-grid-cell"><input type="checkbox" onclick="selectAllTask(This);" class="messageCheckbox" data-id="234503"></div>
+                                    <div class="wms-srv-grid-cell">3</div>
+                                    <div class="wms-srv-grid-cell">KBC Unloading Charge</div>
+                                    <div class="wms-srv-grid-cell">Unload</div>
+                                    <div class="wms-srv-grid-cell">10110100</div>
+                                    <div class="wms-srv-grid-cell">Carton</div>
+                                    <div class="wms-srv-grid-cell">12.00</div>
+                                    <div class="wms-srv-grid-cell">1000.00</div>
+                                    <div class="wms-srv-grid-cell">1000.00</div>
+                                    <div class="wms-srv-grid-cell">12,000.00</div>
+                                    <div class="wms-srv-grid-cell">Billed</div>    
+                                    <div class="wms-srv-grid-cell">
+                                        <div class="wms-srv-grid-action">                                          
+                                            <a href="#" title="ApproveTab" class="wms-srv-icononly" onclick="showApproveTab();"><i class="fas fa-clipboard-check"></i></a>
+                                            <div class="wms-srv-action-sep">|</div>                                           
+                                            <a href="#" title="Document" class="wms-srv-icononly" onclick="showDocumentList();"><i class="fas fa-file-alt"></i></a>
+                                        </div>
+                                    </div>
+                                 </div>                              
+                                 <div class="wms-srv-grid-row" style="text-align: center;">
+                                    <div class="wms-srv-grid-cell"></div>
+                                    <div class="wms-srv-grid-cell"></div>
+                                    <div class="wms-srv-grid-cell"></div>
+                                    <div class="wms-srv-grid-cell"></div>
+                                    <div class="wms-srv-grid-cell"></div>
+                                    <div class="wms-srv-grid-cell"></div>
+                                    <div class="wms-srv-grid-cell"></div>
+                                    <div class="wms-srv-grid-cell"></div>
+                                    <div class="wms-srv-grid-cell"></div>                                   
+                                    <div class="wms-srv-grid-cell">BILL TOTAL</div>
+                                    <div class="wms-srv-grid-cell"></div>
+                                                                    
+                                 </div> 
+                                 <div class="wms-srv-grid-row" style="text-align: center;">
+                                    <div class="wms-srv-grid-cell"></div>
+                                    <div class="wms-srv-grid-cell"></div>
+                                    <div class="wms-srv-grid-cell"></div>
+                                    <div class="wms-srv-grid-cell"></div>
+                                    <div class="wms-srv-grid-cell"></div>
+                                    <div class="wms-srv-grid-cell"></div>
+                                    <div class="wms-srv-grid-cell"></div>
+                                    <div class="wms-srv-grid-cell"></div>
+                                    <div class="wms-srv-grid-cell"></div>                                   
+                                    <div class="wms-srv-grid-cell">TAX AMOUNT</div>
+                                    <div class="wms-srv-grid-cell"></div>
+                                                                    
+                                 </div>
+                                 <div class="wms-srv-grid-row" style="text-align: center;">
+                                    <div class="wms-srv-grid-cell"></div>
+                                    <div class="wms-srv-grid-cell"></div>
+                                    <div class="wms-srv-grid-cell"></div>
+                                    <div class="wms-srv-grid-cell"></div>
+                                    <div class="wms-srv-grid-cell"></div>
+                                    <div class="wms-srv-grid-cell"></div>
+                                    <div class="wms-srv-grid-cell"></div>
+                                    <div class="wms-srv-grid-cell"></div>
+                                    <div class="wms-srv-grid-cell"></div>                                   
+                                    <div class="wms-srv-grid-cell">TOTAL</div>
+                                    <div class="wms-srv-grid-cell"></div>
+                                                                    
+                                 </div> -->
+                            </div>   
+                        </div> 
+                    </div>
+                    <!-- Grid -->
+                    <!-- Content Area -->
+                </div><br>
+            </div>
+
+        </div>
+    </div>
+</div>
+<!-- Review Invoice Maste popup-->
+
+ <!-- SKU SEARCH POPUP -->
+ <div class="wms-srv-popup-holder" id="wms-srv-DetailTransaction-popup" style="display:none;">
+    <div class="wms-srv-popup-bg">
+    </div>
+    <div class="wms-srv-popup">
+        <div class="wms-srv-popup-content">
+            <!-- Popup Title -->
+            <div class="wms-srv-popup-title">
+                <div class="wms-srv-page-title">
+                    <i class="fas fa-file-alt"></i><span>Details Transaction</span>
+                </div>
+                <a href="#" id="wms-srv-DetailTransaction-popup-close" class="wms-srv-popup-close"><i class="fas fa-times-circle"></i></a>
+            </div>
+            <!-- Popup Title -->
+            <div class="wms-srv-popup-content-body" id="wms-srv-popup-content-body">
+                        <!-- Grid 2-->
+                        <div class="wms-srv-grid-holder pnlWmsDetail" id="pnlWmsDetail">
+                            <div class="wms-srv-grid-action-panel">
+                                <div class="wms-srv-grid-common-action"><a href="#" title="Customize Grid" data-prefix="CG" class="wms-srv-icononly"><i class="fas fa-edit"></i></a>
+                                </div>
+                                <div class="wms-srv-grid-title">
+                                    Details Transaction List
+                                </div>
+                            </div>
+                            <div class="wms-srv-grid-scroller" style="width: 1158px !important; max-height:500px !important;" >
+                                <div class="wms-srv-grid" id="gridbind">
+            
+                                </div>
+                                <div class="wms-srv-grid" id="dvTransactionDetail" data-gridobjectid="gridObject_Appointment_Book_Book">
+                                
+                                    <!-- <div class="wms-srv-grid-header">
+                                        <div class="wms-srv-grid-cell " style="width:115px;text-align:center">TransactionID</div>
+                                        <div class="wms-srv-grid-cell" style="text-align:center">TransactionDate</div>
+                                        <div class="wms-srv-grid-cell " style="text-align:center">Container ID</div>
+                                        <div class="wms-srv-grid-cell " style="text-align:center">Rate Type</div>
+                                        <div class="wms-srv-grid-cell " style="text-align:center">Rate Per Unit</div>
+                                        <div class="wms-srv-grid-cell " style="text-align:center">Quantity</div>
+                                        <div class="wms-srv-grid-cell " style="text-align:center">Rate</div>
+                                        <div class="wms-srv-grid-cell " style="text-align:center">Total</div>
+                                     
+                                    </div>
+                                    <div class="wms-srv-grid-row wms-align" id="wms-srv-edit-beforeclient">
+                                        <div class="wms-srv-grid-cell">256985</div>
+                                        <div class="wms-srv-grid-cell">25/12/2023</div>
+                                        <div class="wms-srv-grid-cell">Container03</div>
+                                        <div class="wms-srv-grid-cell">58955Outbound</div>
+                                        <div class="wms-srv-grid-cell">1.05</div>
+                                        <div class="wms-srv-grid-cell">58</div>
+                                        <div class="wms-srv-grid-cell">2568</div>  
+                                        <div class="wms-srv-grid-cell">98569</div>                                        
+                                    </div>
+                                    <div class="wms-srv-grid-row wms-align" id="wms-srv-edit-beforeclient">
+                                        <div class="wms-srv-grid-cell">256985</div>
+                                        <div class="wms-srv-grid-cell">25/12/2023</div>
+                                        <div class="wms-srv-grid-cell">Container03</div>
+                                        <div class="wms-srv-grid-cell">58955Outbound</div>
+                                        <div class="wms-srv-grid-cell">1.05</div>
+                                        <div class="wms-srv-grid-cell">58</div>
+                                        <div class="wms-srv-grid-cell">2568</div>  
+                                        <div class="wms-srv-grid-cell">98569</div>                                        
+                                    </div>
+                                    <div class="wms-srv-grid-row wms-align" id="wms-srv-edit-beforeclient">
+                                        <div class="wms-srv-grid-cell">256985</div>
+                                        <div class="wms-srv-grid-cell">25/12/2023</div>
+                                        <div class="wms-srv-grid-cell">Container03</div>
+                                        <div class="wms-srv-grid-cell">58955Outbound</div>
+                                        <div class="wms-srv-grid-cell">1.05</div>
+                                        <div class="wms-srv-grid-cell">58</div>
+                                        <div class="wms-srv-grid-cell">2568</div>  
+                                        <div class="wms-srv-grid-cell">98569</div>                                        
+                                    </div>
+                                    <div class="wms-srv-grid-row wms-align" id="wms-srv-edit-beforeclient">
+                                        <div class="wms-srv-grid-cell">256985</div>
+                                        <div class="wms-srv-grid-cell">25/12/2023</div>
+                                        <div class="wms-srv-grid-cell">Container03</div>
+                                        <div class="wms-srv-grid-cell">58955Outbound</div>
+                                        <div class="wms-srv-grid-cell">1.05</div>
+                                        <div class="wms-srv-grid-cell">58</div>
+                                        <div class="wms-srv-grid-cell">2568</div>  
+                                        <div class="wms-srv-grid-cell">98569</div>                                        
+                                    </div>
+                                    <div class="wms-srv-grid-row wms-align" id="wms-srv-edit-beforeclient">
+                                        <div class="wms-srv-grid-cell">256985</div>
+                                        <div class="wms-srv-grid-cell">25/12/2023</div>
+                                        <div class="wms-srv-grid-cell">Container03</div>
+                                        <div class="wms-srv-grid-cell">58955Outbound</div>
+                                        <div class="wms-srv-grid-cell">1.05</div>
+                                        <div class="wms-srv-grid-cell">58</div>
+                                        <div class="wms-srv-grid-cell">2568</div>  
+                                        <div class="wms-srv-grid-cell">98569</div>                                        
+                                    </div>
+                                    <div class="wms-srv-grid-row wms-align" id="wms-srv-edit-beforeclient">
+                                        <div class="wms-srv-grid-cell">256985</div>
+                                        <div class="wms-srv-grid-cell">25/12/2023</div>
+                                        <div class="wms-srv-grid-cell">Container03</div>
+                                        <div class="wms-srv-grid-cell">58955Outbound</div>
+                                        <div class="wms-srv-grid-cell">1.05</div>
+                                        <div class="wms-srv-grid-cell">58</div>
+                                        <div class="wms-srv-grid-cell">2568</div>  
+                                        <div class="wms-srv-grid-cell">98569</div>                                        
+                                    </div> -->
+                                </div>
+                              
+            
+                            <!--rahul code-->
+                            <div class="wms-srv-grid-pager" id="paging-Transdetail">
+                                <span class="wms-srv-pager-records">1-1 of 82 Records</span>
+                                <span class="wms-srv-empty-space"></span>
+                                <span class="wms-srv-pager-links"><a href="#" data-page="firstpage">
+                                        <i class="fas fa-angle-double-left"></i></a><a href="#" data-page="previous">
+                                        <i class="fas fa-angle-left"></i></a>
+                                    <a href="#" class="wms-srv-active" data-page="1">1</a>
+                                    <a href="#" data-page="2">2</a>
+                                    <a href="#" data-page="3">3</a>
+                                    <a href="#" data-page="4">4</a>
+                                    <a href="#" data-page="5">5</a>
+                                    <a href="#" data-page="6">6</a>
+                                    <a href="#" data-page="7">7</a>
+                                    <a href="#" data-page="8">8</a>
+                                    <a href="#" data-page="9">9</a>
+                                    <a href="#" data-page="next"><i class="fas fa-angle-right"></i></a>
+                                    <a href="#" data-page="lastpage"><i class="fas fa-angle-double-right"></i></a>
+                                </span>
+                                <span class="wms-srv-empty-space"></span>
+                                <input type="text" name="txtGridPageNo" id="txtSearchPageRecord" onkeypress="return isNumber(event)"
+                                    class="wms-srv-input notranslate" value="0" style="width:80px;">
+                                <a href="#" title="Jump To" id="txtSearchPage" class="wms-srv-pager-go"><i
+                                        class="fas fa-play-circle" id="txtSearchRecord"></i></a>
+                            </div>
+                            <!--rahul code-->
+            
+                            </div>
+                        </div>
+                        <!-- Grid 2-->
+                    </div>
+                </div>
+            </div>
+        </div>
+<!-- SKU SEARCH POPUP -->
+
+
+  <!-- Payment Method PopUp Start -->
+  <div class="wms-srv-popup-holder" id="wms-srv-3PLPaymentMethod-view" style="display: none;">
+    <div class="wms-srv-popup-bg">
+    </div>
+    <div class="wms-srv-popup">
+        <div class="wms-srv-popup-content">
+            <!-- Popup Title -->
+            <div class="wms-srv-popup-title">
+                <div class="wms-srv-page-title">
+                    <i class="fas fa-file-alt"></i><span>Payment Method</span>
+                </div>
+                <a href="#" title="Close" id="wms-srv-3PLPaymentMethod-close" class="wms-srv-popup-close"><i
+                        class="fas fa-times-circle"></i></a>
+            </div>
+            <!-- Popup Title -->
+            
+             <!-- Grid -->
+                        <div class="wms-srv-grid-holder pnlWmsDetail" id="pnlWmsDetail">
+                            <div class="wms-srv-grid-action-panel">
+                                <div class="wms-srv-grid-common-action"><a href="#" class="wms-srv-icononly"><i
+                                            class="fas fa-list"></i></a></div>
+
+                                <div class="wms-srv-grid-title">
+                                    Payment Method Information
+                                </div>
+                            </div>
+                        </div>
+            <div class="wms-srv-popup-content-body" id="wms-srv-popup-content-body">
+                <div id="popupContentDocument">
+                    <div id="pnlCreateSalesOrder">
+
+                        <div class="wms-srv-grid-holder pnlWmsHead" id="pnlPaymentMethodHead">
+                            <div class="wms-srv-grid" style="text-align: center;">
+                                <div class="wms-srv-grid" style="text-align: center;" id="dvPaymentDetail">
+                                    <!-- <div class="wms-srv-grid-header" style="white-space: nowrap;">
+                                    <div class="wms-srv-grid-cell  wms-srv-align">Date</div>
+                                    <div class="wms-srv-grid-cell  wms-srv-align">Doc Ref No</div>
+                                    <div class="wms-srv-grid-cell  wms-srv-align">Transaction Type</div>
+                                    <div class="wms-srv-grid-cell  wms-srv-align">Particular</div>
+                                    <div class="wms-srv-grid-cell  wms-srv-align">Transaction Amount</div>
+                                    <div class="wms-srv-grid-cell  wms-srv-align">Credit</div>
+                                    <div class="wms-srv-grid-cell  wms-srv-align">Debit</div>
+                                    <div class="wms-srv-grid-cell  wms-srv-align">Closing Balance</div>
+                                    <div class="wms-srv-grid-cell  wms-srv-align">Action</div>
+                                    </div>
+                                    <div class="wms-srv-grid-row" style="white-space: nowrap;">
+                                    <div class="wms-srv-grid-cell" >
+                                    <input type="text" value=""  id="txtDate" class="wms-srv-grid-cell-input wms-srv-datepicker ">
+                                    </div>
+                                    <div class="wms-srv-grid-cell" ><input type="text" value="" autocomplete="off" id="txtDocRefNo" class="wms-srv-grid-cell-input wms-srv-datepicker hasDatepicker getDateTemplate"></div>
+                                    <div class="wms-srv-grid-cell">
+                                    <select  class="wms-srv-grid-cell-input" id="">  
+                                        <option> --Select-- </option>         
+                                    </select>
+                                    </div>
+                                    <div class="wms-srv-grid-cell"><input type="text" value="" autocomplete="off" id="txtParticular" class="wms-srv-grid-cell-input "></div>
+                                    <div class="wms-srv-grid-cell"><input type="text" value="" autocomplete="off" id="txtAmount" class="wms-srv-grid-cell-input"></div>
+                                    <div class="wms-srv-grid-cell"><input type="text" value="" autocomplete="off" id="txtcredit" class="wms-srv-grid-cell-input"></div>
+                                    <div class="wms-srv-grid-cell"><input type="text" value="" autocomplete="off" id="txtdebit" class="wms-srv-grid-cell-input "></div>
+                                    <div class="wms-srv-grid-cell"><input type="text" value="" autocomplete="off" id="txtclosingbalance" class="wms-srv-grid-cell-input"></div>
+                                    <div class="wms-srv-grid-cell"><a href="#" title="Save" class="wms-srv-save" data-prefix="SV"><i class="fas fa-check-circle" onclick="SavePaymentInfoDetails('+getOrderId+')"></i></a></div>
+                                    
+                                    </div>
+                                    <div class="wms-srv-grid-row wms-align" style="text-align: center;">
+                                        <div class="wms-srv-grid-cell">27/12/2023</div>
+                                        <div class="wms-srv-grid-cell">Inward</div>
+                                        <div class="wms-srv-grid-cell">SKU</div>
+                                        <div class="wms-srv-grid-cell">102555</div>
+                                        <div class="wms-srv-grid-cell">5005</div>
+                                        <div class="wms-srv-grid-cell">958</div>
+                                        <div class="wms-srv-grid-cell">520</div>
+                                        <div class="wms-srv-grid-cell">0.256</div>
+                                        <div class="wms-srv-grid-cell"></div>                                        
+                                    </div>    
+                                    <div class="wms-srv-grid-row wms-align" style="text-align: center;">
+                                        <div class="wms-srv-grid-cell">02/12/2023</div>
+                                        <div class="wms-srv-grid-cell">Storage Charge</div>
+                                        <div class="wms-srv-grid-cell">SKU</div>
+                                        <div class="wms-srv-grid-cell">89578</div>
+                                        <div class="wms-srv-grid-cell">1589</div>
+                                        <div class="wms-srv-grid-cell">325</div>
+                                        <div class="wms-srv-grid-cell">60</div>
+                                        <div class="wms-srv-grid-cell">0.256</div>
+                                        <div class="wms-srv-grid-cell"></div>                                        
+                                    </div>  
+                                    <div class="wms-srv-grid-row wms-align" style="text-align: center;">
+                                        <div class="wms-srv-grid-cell">15/12/2023</div>
+                                        <div class="wms-srv-grid-cell">Outward</div>
+                                        <div class="wms-srv-grid-cell">SKU</div>
+                                        <div class="wms-srv-grid-cell">58982</div>
+                                        <div class="wms-srv-grid-cell">7894</div>
+                                        <div class="wms-srv-grid-cell">1299</div>
+                                        <div class="wms-srv-grid-cell">369</div>
+                                        <div class="wms-srv-grid-cell">784</div>
+                                        <div class="wms-srv-grid-cell"></div>                                        
+                                    </div>                                   -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Payment Method PopUp End -->
+
+
+</div>

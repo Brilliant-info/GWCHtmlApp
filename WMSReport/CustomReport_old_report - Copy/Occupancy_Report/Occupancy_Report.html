@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>PURCHASE ORDER</title>
+        <!-- Common JS and CSS -->
+        <script src="../../../Themes/js/jquery-3.2.1.min.js"></script>
+        <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js" type="text/javascript"></script> -->
+        <script src="../../../Themes/js/core-js/Chart.min.js" type="text/javascript"></script>    
+        <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+        <script src="../../../Themes/js/wms-app-navigator.js"></script>
+        <script src="../../../Themes/js/wms-app-session.js"></script>
+        <link href="../../css/CustomReport.css" rel="stylesheet" type="text/css" />
+        <link href="../../../Themes/fontawesome/css/all.css" rel="stylesheet" />
+        <link rel="stylesheet" href="../../../Themes/bootstrap-4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" 
+        integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+        <!-- Common JS and CSS -->
+        <!-- Report wise JS and CSS -->
+        <link href="Occupancy_Report.css" rel="stylesheet" type="text/css" />
+        <script src="Occupancy_Report.js"></script>
+        <script src="../../../Themes/js/core-js/Chart.min.js"></script>
+        <!-- Report wise JS and CSS -->
+    </head>
+    <body>
+<!-- Example  -->
+<div class="app">
+<div class="wrapper">
+    <div class="page-content ">
+        <div class="page-container tradebook">
+            <h1><span class="icon icon-book"><i
+                class="fa-solid fa-cart-shopping headIcon"></i></span>
+               <span class="previewPageTitle"> Occupancy Report</span>
+       </h1>
+       <hr class="header-hr">
+       <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-3" style="max-width: 21%">
+                <div class="su-input-group su-static-label">
+                    <label class="su-input-label">
+                        <b>Location Type</b>
+                    </label>
+                    <div class="">
+                        <!-- <input type="text" placeholder="eg: INFY" autocorrect="off" maxlength="25" step="1" noerror="true" staticlabel="true" animate="true" label="Symbol" rules="" class="">   -->
+
+                        <select id="txtbuildingdropdown"
+                            style="margin-bottom: 0px;margin-top: 0px; width: 163px;text-align: center">
+                            <!-- <option value="PurchaseOrder">
+                                Building
+                            </option> -->
+                            <!--<option value="SalesReturn">Sales Return</option> -->
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4" style="max-width: 21%">
+                <div class="su-input-group su-static-label">
+                    <label class="su-input-label">
+                        <b>Building </b>
+                    </label>
+                    <div class="">
+                        <select id="txtFloordropdown"
+                        style="margin-bottom: 0px;margin-top: 0px;width: 163px; text-align: center">
+                        <!-- <option value="PurchaseOrder">
+                            Floor
+                        </option> -->
+                        <!--<option value="SalesReturn">Sales Return</option> -->
+                    </select>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4" style="max-width: 21%">
+                <div class="su-input-group su-static-label">
+                    <label class="su-input-label">
+                        <b>Section </b>
+                    </label>
+                    <div class="">
+                        <div class="">
+                            <select id="txtSectiondropdown"
+                            style="margin-bottom: 0px;margin-top:0px;width: 163px;text-align: center">
+                            <!-- <option value="PurchaseOrder">
+                                Section
+                            </option> -->
+                            <!--<option value="SalesReturn">Sales Return</option> -->
+                        </select>
+                    </div>
+                </div>
+            </div>
+            </div>
+            <div class="col-sm-4" style="max-width: 21%">
+                <div class="su-input-group su-static-label">
+                    <label class="su-input-label">
+                       <b>Passage </b>
+                    </label>
+                    <div class="">
+                        <div class="">
+                            <select id="txtPassagedropdown"
+                            style="margin-bottom: 0px;margin-top: 0px;width:163px;text-align: center">
+                            <!-- <option value="PurchaseOrder">
+                                Passage
+                            </option> -->
+                            <!--<option value="SalesReturn">Sales Return</option> -->
+                        </select>
+                    </div>
+                </div>
+            </div>
+            </div>
+            <div class="col-sm-4" style="max-width:10%">
+                <div class="su-input-group su-static-label">
+                    <label class="su-input-label">
+                        <b>Rack </b>
+                    </label>
+                    <div class="">
+                        <div class="">
+                            <select id="txtRackdropdown"
+                            style="margin-bottom: 0px;margin-top: 0px;width:163px;text-align: center">
+                            <!-- <option value="PurchaseOrder">
+                                Rack
+                            </option> -->
+                            <!--<option value="SalesReturn">Sales Return</option> -->
+                        </select>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+
+      
+            <div class="row">
+                <div class="col-md-12">
+                    <div style="overflow:auto;">
+                        <!-- Chart Area  -->
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="dashboardBox">
+                                       
+                                        <canvas Id="pnlInboundOrder" width="280" height="265"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <!-- Chart Area  -->
+                    </div>
+                </div>
+            </div>
+            <div class="card pnlWms" style="width:626px;margin-left:444px;margin-top:-265px;">
+                <div class="reportTitles">
+
+
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title"><i class="fas fa-file-invoice"></i> Occupied Orders</h5>
+                    <p class="card-text">
+                    </p>
+                    <!-- <div class="wms-srv-search wms-srv-search-pending-inbound">
+                        <input type="text" value="" class="wms-srv-input wms-srv-simple-search"><a href="#" data-prefix="SE"><i class="fas fa-search"></i></a>
+                    </div> -->
+                    <div class="wms-srv-grid-scroller" style="overflow: auto;">
+                        <div class="wms-srv-grid" style="min-width:auto !important;" id="txtoccupidorder" style="width:100%;">
+                            <!-- <div class="wms-srv-grid-header">
+                                <div class="wms-srv-grid-cell" style="text-align: center;">Location Code</div>
+                                <div class="wms-srv-grid-cell" style="text-align: center;">Matrial</div>
+                                <div class="wms-srv-grid-cell" style="text-align: center;">Quantity</div>
+                            </div>
+                            <div class="wms-srv-grid-row">
+                                <div class="wms-srv-grid-cell" style="text-align: center;">A1</div>
+                                <div class="wms-srv-grid-cell" style="text-align: center;">4459</div>
+                                <div class="wms-srv-grid-cell" style="text-align: center;">12</div>
+                            </div>
+                            <div class="wms-srv-grid-row">
+                                <div class="wms-srv-grid-cell" style="text-align: center;">A2</div>
+                                <div class="wms-srv-grid-cell" style="text-align: center;">5698</div>
+                                <div class="wms-srv-grid-cell" style="text-align: center;">21</div>
+                                
+                            </div>
+                            <div class="wms-srv-grid-row">
+                                <div class="wms-srv-grid-cell" style="text-align: center;">A3</div>
+                                <div class="wms-srv-grid-cell" style="text-align: center;">7788</div>
+                                <div class="wms-srv-grid-cell" style="text-align: center;">44</div>
+                            </div>
+                            <div class="wms-srv-grid-row">
+                                <div class="wms-srv-grid-cell" style="text-align: center;">A4</div>
+                                <div class="wms-srv-grid-cell" style="text-align: center;">6699</div>
+                                <div class="wms-srv-grid-cell" style="text-align: center;">22</div>
+                            </div>
+                            <div class="wms-srv-grid-row">
+                                <div class="wms-srv-grid-cell" style="text-align: center;">A5</div>
+                                <div class="wms-srv-grid-cell" style="text-align: center;">7339</div>
+                                <div class="wms-srv-grid-cell" style="text-align: center;">55</div>
+                                
+                            </div>
+                            <div class="wms-srv-grid-row">
+                                <div class="wms-srv-grid-cell" style="text-align: center;">A6</div>
+                                <div class="wms-srv-grid-cell" style="text-align: center;">2211</div>
+                                <div class="wms-srv-grid-cell" style="text-align: center;">53</div>
+                               
+                            </div>
+                            <div class="wms-srv-grid-row">
+                                <div class="wms-srv-grid-cell" style="text-align: center;">A7</div>
+                                <div class="wms-srv-grid-cell" style="text-align: center;">9911</div>
+                                <div class="wms-srv-grid-cell" style="text-align: center;">53</div>
+                               
+                            </div> -->
+                        </div>
+                    </div>
+                </div>
+            </div><br>
+            
+            <hr class="header-hr">
+            <!-- Grid -->
+            <div class="contentHolder" style="margin-top: 5px;"
+            id="txtGridPurchaseOrderobjrexta">
+            <!-- <div class="wms-srv-grid-scroller"> -->
+            <div class="">
+                
+            </div>
+            <div class="wms-srv-grid-scroller" style="overflow: auto;">
+                <div class="wms-srv-grid previewTable"  id="getlist" style="border: 1px solid black;">            
+                       
+                </div>
+                </div>
+            </div><br><br>
+           
+
+        </div>
+    
+        </div>
+    </div>
+
+
+    <!-- Grid -->
+</div>
+
+</div>
+<!-- Example -->
+    </body>
+</html>

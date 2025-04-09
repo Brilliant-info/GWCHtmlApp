@@ -1,0 +1,358 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="generator" content="HelpNDoc Personal Edition 8.8.0.547">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" href="favicon.ico"/>
+
+  <title>Add New Order</title>
+  <meta name="description" content="" /> 
+  <meta name="keywords" content="">
+
+
+
+  
+  
+
+  <!-- Twitter Card data -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Add New Order">
+  <meta name="twitter:description" content="">
+
+  <!-- Open Graph data -->
+  <meta property="og:title" content="Add New Order" />
+  <meta property="og:type" content="article" />
+  <meta property="og:description" content="" />
+  <meta property="og:site_name" content="Easycloudwms" /> 
+
+  <!-- Bootstrap core CSS -->
+  <link href="vendors/bootstrap-3.4.1/css/bootstrap.min.css" rel="stylesheet"/>
+
+  <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+  <link href="vendors/bootstrap-3.4.1/css/ie10-viewport-bug-workaround.css" rel="stylesheet"/>
+
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+      <script src="vendors/html5shiv-3.7.3/html5shiv.min.js"></script>
+      <script src="vendors/respond-1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+  <!-- JsTree styles -->
+  <link href="vendors/jstree-3.3.10/themes/default/style.min.css" rel="stylesheet"/>
+
+  <!-- Hnd styles -->
+  <link href="css/layout.min.css" rel="stylesheet" />
+  <link href="css/effects.min.css" rel="stylesheet" />
+  <link href="css/theme-light-blue.min.css" rel="stylesheet" />
+  <link href="css/print.min.css" rel="stylesheet" media="print" />
+  <style type="text/css">nav { width: 350px} @media screen and (min-width:769px) { body.md-nav-expanded div#main { margin-left: 350px} body.md-nav-expanded header { padding-left: 364px} }</style>
+  <style type="text/css">.navigation #inline-toc { width: auto !important}</style>
+
+  <!-- Content style -->
+  <link href="css/hnd.content.css" rel="stylesheet" />
+
+  
+
+
+
+</head>
+
+<body class="md-nav-expanded">
+
+
+
+  
+
+  <div id="skip-link">
+    <a href="#main-content" class="element-invisible">Skip to main content</a>
+  </div>
+
+  <header class="headroom">
+    <button class="hnd-toggle btn btn-default">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>        
+    </button>
+    <h1>Easycloudwms</h1>
+    
+  </header>
+
+  <nav id="panel-left" class="md-nav-expanded">
+    <!-- Nav tabs -->
+    <ul class="tab-tabs nav nav-tabs" role="tablist">
+      <li id="nav-close" role="presentation"> 
+        <button class="hnd-toggle btn btn-default" aria-label="close">
+          <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+        </button>
+      </li>
+      
+	  
+        <li role="presentation" class="tab active">
+            <a href="#contents" id="tab-contents" aria-controls="contents" role="tab" data-toggle="tab">
+                <i class="glyphicon glyphicon-list"></i>
+                Contents
+            </a>
+        </li>
+      
+        <li role="presentation" class="tab">
+            <a href="#index" id="tab-index" aria-controls="index" role="tab" data-toggle="tab">
+                <i class="glyphicon glyphicon-asterisk"></i>
+                Index
+            </a>
+        </li>
+      
+        <li role="presentation" class="tab">
+            <a href="#search" id="tab-search" aria-controls="search" role="tab" data-toggle="tab">
+                <i class="glyphicon glyphicon-search"></i>
+                Search
+            </a>
+        </li>
+      
+    </ul>  <!-- /Nav tabs -->
+
+    <!-- Tab panes -->
+    <div class="tab-content">
+	  
+      <div role="tabpanel" class="tab-pane active" id="contents">
+        <div id="toc" class="tree-container unselectable"
+            data-url="_toc.json"
+            data-openlvl="1"
+        >
+            
+        </div>
+      </div>  <!-- /contents-->
+      
+      <div role="tabpanel" class="tab-pane" id="index">
+        <div id="keywords" class="tree-container unselectable"
+            data-url="_keywords.json"
+            data-openlvl="1"
+        >
+            
+        </div>
+      </div>  <!-- /index-->
+      
+      <div role="tabpanel" class="tab-pane" id="search">
+        <div class="search-content">
+          <div class="search-input">
+            <form id="search-form">
+              <div class="form-group">
+                <div class="input-group">
+                  <input type="text" class="form-control" id="input-search" name="input-search" placeholder="Search..." aria-label="Search..." />
+                  <span class="input-group-btn">
+                    <button class="btn btn-default" type="submit" aria-label="Search...">
+                      <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+                    </button>
+                  </span>
+                </div>
+              </div>
+            </form>
+          </div>  <!-- /search-input -->
+          <div class="search-result">
+            <div id="search-info"></div>
+            <div class="tree-container unselectable" id="search-tree"></div>
+          </div>  <!-- /search-result -->
+        </div>  <!-- /search-content -->
+      </div>  <!-- /search-->
+      
+    </div>  <!-- /Tab panes -->
+
+  </nav>
+
+  <div id="main">
+
+    <article>
+        <div id="topic-content" class="container-fluid" 
+		  data-hnd-id="AddNewOrder1"
+		  data-hnd-context="107"
+		  data-hnd-title="Add New Order"
+		>
+            
+                <div class="navigation">
+                    <ol class="breadcrumb">
+                        <li><a href="OutwardOrderList.html">Outward Order List</a></li>
+                    </ol>
+                    <div class="nav-arrows">
+                        <div class="btn-group btn-group" role="group"><a class="btn btn-default" href="OutwardOrderList.html" title="Outward Order List" role="button"><span class="glyphicon glyphicon-menu-up" aria-hidden="true"></span></a><a class="btn btn-default" href="OutwardOrderList.html" title="Outward Order List" role="button"><span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span></a><a class="btn btn-default" href="Allocation.html" title="Allocation " role="button"><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span></a></div>
+                    </div>
+                </div> 
+            
+
+            <a id="main-content"></a>
+
+            <h2>Add New Order</h2>
+
+            <div class="main-content">
+                
+<h2 class="rvps5"><span class="rvts0"><span class="rvts18">Outward Order List</span></span></h2>
+<p class="rvps21"><img width="528" height="270" alt="" style="padding : 1px;" src="lib/NewItem15.png"></p>
+<p class="rvps12"><span class="rvts33"><br/></span></p>
+<p class="rvps12"><span class="rvts33">To view Outward Order list, use the "Outward" menu and click the "Add New" button. This will open the new project wizard dialog. Based on Outward Order Type user able to view the order List also order status count display.</span></p>
+<p class="rvps12"><span class="rvts33">The various parts of this dialog are:</span></p>
+<ol style="text-indent: -24px; padding: 0; margin: 0 0 0 72px; list-style-position: outside;">
+ <li style="margin-left: 0px" class="rvps16"><span class="rvts38">Outward Order Type:</span><span class="rvts33"> Specify the type of the Outward Order- Sales Order, Transfer Out, Scrap Order</span></li>
+ <li style="margin-left: 0px" class="rvps16"><span class="rvts38">Order status count display:</span><span class="rvts33"> Outward Order, Allocated, Picking, Quality Check, Packing, Dispatch</span></li>
+ <li style="margin-left: 0px" class="rvps16"><span class="rvts38">Search filter:</span><span class="rvts33"> Search order by Order No, Order Reference No, Group Name, Priority, Delivery Type, Shipping Address, Status</span></li>
+ <li style="margin-left: 0px" class="rvps16"><span class="rvts38">Allocation Plan:</span><span class="rvts33"> System suggest the location, pallet and quantity the SKU need to Pick.</span></li>
+ <li style="margin-left: 0px" class="rvps16"><span class="rvts38">More:</span><span class="rvts33"> contains two options &nbsp;</span></li>
+</ol>
+<p class="rvps26"><span class="rvts33">5.1 </span><span class="rvts38">Cancel Order:</span><span class="rvts33"> Before Picking user able to cancel the order.</span></p>
+<p class="rvps26"><span class="rvts33">5.2 </span><span class="rvts38">De-Allocated:</span><span class="rvts33"> After Allocation user will be able to De-allocate the order.</span></p>
+<ol style="text-indent: -24px; padding: 0; margin: 0 0 0 72px; list-style-position: outside;">
+ <li value="6" style="margin-left: 0px" class="rvps16"><span class="rvts38">Outward Order List : </span><span class="rvts33">This List contains Order No, Reference No, Group Name, Order Date, Expected Delivery Date, Priority, Delivery Type, Shipping Address, Status, Action.</span></li>
+ <li style="margin-left: 0px" class="rvps16"><span class="rvts38">Action : </span><span class="rvts33">Action contains Document and Communication.</span></li>
+</ol>
+<p class="rvps27"><span class="rvts33">Outward Order List data should display</span></p>
+<h2 class="rvps5"><span class="rvts0"><span class="rvts17">Add New Sales Order</span></span></h2>
+<h2 class="rvps11"><span class="rvts0"><span class="rvts17">&nbsp;</span></span><img width="556" height="272" alt="" style="padding : 1px;" src="lib/NewItem14.png"></h2>
+<p class="rvps12"><span class="rvts33">To add New Outward Order list, use the “Outward” menu click the "Add New" button. This will open create Sales Order wizard dialog.&nbsp;</span></p>
+<p class="rvps12"><span class="rvts33">The various parts of this dialog are:</span></p>
+<ol style="text-indent: -24px; padding: 0; margin: 0 0 0 72px; list-style-position: outside;">
+ <li style="margin-left: 0px" class="rvps16"><span class="rvts38">Outward No:</span><span class="rvts33"> After saving the Sales order system will generate a order no i.e outward order number.</span></li>
+ <li style="margin-left: 0px" class="rvps16"><span class="rvts38">Requested Date:</span><span class="rvts33"> By default, system will take current date.</span></li>
+ <li style="margin-left: 0px" class="rvps16"><span class="rvts38">Exp. Delivery Date:</span><span class="rvts33"> It is a expiry date of the order to be delivered.</span></li>
+ <li style="margin-left: 0px" class="rvps16"><span class="rvts38">Reference No:</span><span class="rvts33"> Every order should have unique reference no.</span></li>
+ <li style="margin-left: 0px" class="rvps16"><span class="rvts38">Delivery Type:</span><span class="rvts33"> Contains two type Standard and Urgent.</span></li>
+ <li style="margin-left: 0px" class="rvps16"><span class="rvts38">Client:</span><span class="rvts33"> When clicked on search icon clients name will display. User need to select one client.</span></li>
+ <li style="margin-left: 0px" class="rvps16"><span class="rvts38">Bill To Address:</span><span class="rvts33"> After client selection by default Address should display.</span></li>
+ <li style="margin-left: 0px" class="rvps16"><span class="rvts38">Ship To Address:</span><span class="rvts33"> After client selection by default Address should display.</span></li>
+ <li style="margin-left: 0px" class="rvps16"><span class="rvts38">Priority:</span><span class="rvts33"> Order contains 3 priorities- Routine, Urgent, Very Urgent.</span></li>
+ <li style="margin-left: 0px" class="rvps16"><span class="rvts38">Created By:</span><span class="rvts33"> Login User name will display.</span></li>
+ <li style="margin-left: 0px" class="rvps16"><span class="rvts38">Remark:</span><span class="rvts33"> User can &nbsp;enter Remark text if any.</span></li>
+ <li style="margin-left: 0px" class="rvps16"><span class="rvts38">Add SKU:</span><span class="rvts33"> When clicked on Add SKU, SKU list will be displayed. Need to select SKU from list. After selection SKU Details will display.</span></li>
+ <li style="margin-left: 0px" class="rvps16"><span class="rvts38">Requested Quantity:</span><span class="rvts33"> Against SKU user need to enter Requested Quantity and click on save SKU button. Same process needs to repeat for all SKUs.</span></li>
+ <li style="margin-left: 0px" class="rvps16"><span class="rvts38">Save:</span><span class="rvts33"> &nbsp;After adding SKU in order user need to click on Save button.</span></li>
+</ol>
+<p class="rvps26"><span class="rvts6"><br/></span></p>
+<p class="rvps27"><span class="rvts33">Sales Order will be created and displayed in Outward Order List of Sales Order.</span></p>
+<p class="rvps27"><span class="rvts33"><br/></span></p>
+<p class="rvps27"><span class="rvts33"><br/></span></p>
+<h2 class="rvps5"><span class="rvts0"><span class="rvts17">Add New Transfer Out Order&nbsp;</span></span></h2>
+<p class="rvps21"><img width="604" height="215" alt="" style="padding : 1px;" src="lib/NewItem13.png"></p>
+<p class="rvps12"><span class="rvts33">To add New Transfer Out Order, use the “Outward” menu select the Order Type as Transfer Out then click the </span><span class="rvts38">"Add New"</span><span class="rvts33"> button. This will open create Sales Order wizard dialog.&nbsp;</span></p>
+<p class="rvps12"><span class="rvts33">The various parts of this dialog are:</span></p>
+<ol style="text-indent: 0px; padding: 0; margin: 0 0 0 71px; list-style-position: outside;">
+ <li style="margin-left: 0px; text-indent: 0px" class="rvps28"><span class="rvts38">Outward No:</span><span class="rvts33"> After saving the order system will generate Outward No.</span></li>
+ <li style="margin-left: 0px; text-indent: 0px" class="rvps16"><span class="rvts38">Requested Date:</span><span class="rvts33"> By default, system will take current date.</span></li>
+ <li style="margin-left: 0px; text-indent: 0px" class="rvps16"><span class="rvts38">Exp. Delivery Date:</span><span class="rvts33"> When clicked on text box system will display calendar from that user will be able to select the date..</span></li>
+ <li style="margin-left: 0px; text-indent: 0px" class="rvps16"><span class="rvts38">Reference No:</span><span class="rvts33"> Every order should have unique reference no.</span></li>
+ <li style="margin-left: 0px; text-indent: 0px" class="rvps16"><span class="rvts38">Delivery Type:</span><span class="rvts33"> Contains two types Standard and Urgent.</span></li>
+ <li style="margin-left: 0px; text-indent: 0px" class="rvps16"><span class="rvts38">Warehouse:</span><span class="rvts33"> When clicked on search icon warehouse name will display expect warehouse display in filter. User need to select one warehouse.</span></li>
+ <li style="margin-left: 0px; text-indent: 0px" class="rvps16"><span class="rvts38">Bill to Address:</span><span class="rvts33"> After warehouse selection by default Address should display.</span></li>
+ <li style="margin-left: 0px; text-indent: 0px" class="rvps16"><span class="rvts38">Ship to Address:</span><span class="rvts33"> When clicked on search icon address list should display. User need to select one address.</span></li>
+ <li style="margin-left: 0px; text-indent: 0px" class="rvps16"><span class="rvts38">Priority:</span><span class="rvts33"> Order contains 3 priorities- Routine, Urgent, Very Urgent.</span></li>
+ <li style="margin-left: 0px; text-indent: 0px" class="rvps16"><span class="rvts38">Created By:</span><span class="rvts33"> Login User name will be displayed.</span></li>
+ <li style="margin-left: 0px; text-indent: 0px" class="rvps16"><span class="rvts38">Remark:</span><span class="rvts33"> User can enter Remark text if any.</span></li>
+ <li style="margin-left: 0px; text-indent: 0px" class="rvps16"><span class="rvts38">Add SKU:</span><span class="rvts33"> When clicked on Add SKU, SKU list will be displayed. Need to select SKU from list. After selection SKU Details will be displayed.</span></li>
+ <li style="margin-left: 0px; text-indent: 0px" class="rvps16"><span class="rvts38">Requested Quantity:</span><span class="rvts33"> Against SKU user need to enter Requested Quantity and click on save SKU button. Same process needs to repeat for all SKUs.</span></li>
+ <li style="margin-left: 0px; text-indent: 0px" class="rvps16"><span class="rvts38">Save:</span><span class="rvts33"> &nbsp;after adding SKU in order need to click on Save button.</span></li>
+</ol>
+<p class="rvps26"><span class="rvts6"><br/></span></p>
+<p class="rvps27"><span class="rvts51"><br/></span></p>
+<p class="rvps2"><span class="rvts33">Transfer Out Order will be created and display in Outward Order List of Transfer Out Order.</span></p>
+<p class="rvps2"><span class="rvts33"><br/></span></p>
+<p class="rvps2"><span class="rvts33"><br/></span></p>
+<p class="rvps2"><span class="rvts33"><br/></span></p>
+<h2 class="rvps5"><span class="rvts0"><span class="rvts17">Add New Scrap Order&nbsp;</span></span></h2>
+<p class="rvps21"><img width="602" height="248" alt="" style="padding : 1px;" src="lib/NewItem12.png"></p>
+<p class="rvps12"><span class="rvts33">To add New Transfer Out Order, use the “Outward” menu select the Order Type as Scrap Order then click the</span><span class="rvts38"> "Add New"</span><span class="rvts33"> button. This will open create Sales Order wizard dialog.&nbsp;</span></p>
+<p class="rvps12"><span class="rvts33">The various parts of this dialog are:</span></p>
+<ol style="text-indent: 0px; padding: 0; margin: 0 0 0 71px; list-style-position: outside;">
+ <li style="margin-left: 0px; text-indent: 0px" class="rvps28"><span class="rvts38">Outward No:</span><span class="rvts33"> After saving the order, system will generate Outward No.</span></li>
+ <li style="margin-left: 0px; text-indent: 0px" class="rvps16"><span class="rvts38">Requested Date:</span><span class="rvts33"> By default, system will take current date.</span></li>
+ <li style="margin-left: 0px; text-indent: 0px" class="rvps16"><span class="rvts38">Exp. Delivery Date:</span><span class="rvts33"> When clicked on text box system will display calendar from that user able to select date.</span></li>
+ <li style="margin-left: 0px; text-indent: 0px" class="rvps16"><span class="rvts38">Reference No:</span><span class="rvts33"> Every order should have unique reference no.</span></li>
+ <li style="margin-left: 0px; text-indent: 0px" class="rvps16"><span class="rvts38">Delivery Type:</span><span class="rvts33"> Contains two type Standard and Urgent.</span></li>
+ <li style="margin-left: 0px; text-indent: 0px" class="rvps16"><span class="rvts38">Client:</span><span class="rvts33"> When clicked on search icon client name will be displayed. User need to select one warehouse.</span></li>
+ <li style="margin-left: 0px; text-indent: 0px" class="rvps16"><span class="rvts38">Bill To Address:</span><span class="rvts33"> After client selection by default Address should display.</span></li>
+ <li style="margin-left: 0px; text-indent: 0px" class="rvps16"><span class="rvts38">Ship To Address:</span><span class="rvts33"> When clicked on search icon address list should be displayed. User need to select one address.</span></li>
+ <li style="margin-left: 0px; text-indent: 0px" class="rvps16"><span class="rvts38">Priority:</span><span class="rvts33"> Order contains 3 priorities- Routine, Urgent, Very Urgent.</span></li>
+ <li style="margin-left: 0px; text-indent: 0px" class="rvps16"><span class="rvts38">Created By:</span><span class="rvts33"> Login User name will display.</span></li>
+ <li style="margin-left: 0px; text-indent: 0px" class="rvps16"><span class="rvts38">Remark:</span><span class="rvts33"> User can enter Remark text if any.</span></li>
+ <li style="margin-left: 0px; text-indent: 0px" class="rvps16"><span class="rvts38">Add SKU:</span><span class="rvts33"> When clicked on Add SKU, SKU list will be displayed. Need to select SKU from list. After selecting SKU Details will be displayed.</span></li>
+ <li style="margin-left: 0px; text-indent: 0px" class="rvps16"><span class="rvts38">Requested Quantity: </span><span class="rvts33">Against SKU user need to enter Requested Quantity and click on save SKU button. Same process needs to repeat for all SKUs.</span></li>
+ <li style="margin-left: 0px; text-indent: 0px" class="rvps16"><span class="rvts38">Save:</span><span class="rvts33"> &nbsp;After adding SKU in order need to click on Save button.</span></li>
+</ol>
+<p class="rvps26"><span class="rvts6"><br/></span></p>
+<p class="rvps2"><span class="rvts33">Scrap Order will be created and display in Outward Order List of Scrap Order.</span></p>
+<p class="rvps2"><span class="rvts6"></span><span class="rvts6"></span></p>
+<p class="rvps4" style="clear: both;"><span class="rvts15">Created with the Personal Edition of HelpNDoc: </span><a class="rvts16" href="https://www.helpndoc.com/step-by-step-guides/how-to-convert-a-word-docx-file-to-an-epub-or-kindle-ebook/">Maximize Your Reach: Convert Your Word Document to an ePub or Kindle eBook</a></p>
+
+            </div>
+            
+            <div id="topic_footer"><div id="topic_footer_content">Copyright &copy; &lt;Dates&gt; by &lt;Authors&gt;. All Rights Reserved.</div></div>
+        </div>  <!-- /#topic-content -->
+    </article>
+
+    <footer></footer>
+
+  </div>  <!-- /#main -->
+
+  <div class="mask" data-toggle="sm-nav-expanded"></div>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="hndModal" tabindex="-1" role="dialog" aria-labelledby="hndModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="hndModalLabel"></h4>
+        </div>
+        <div class="modal-body">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary modal-btn-close" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Splitter -->
+  <div id="hnd-splitter" style="left: 350px"></div>  
+
+  <!-- Scripts -->
+  <script src="vendors/jquery-3.5.1/jquery.min.js"></script>
+  <script src="vendors/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+  <script src="vendors/bootstrap-3.4.1/js/ie10-viewport-bug-workaround.js"></script>
+  <script src="vendors/markjs-8.11.1/jquery.mark.min.js"></script>
+  <script src="vendors/uri-1.19.11/uri.min.js"></script>
+  <script src="vendors/imageMapResizer-1.0.10/imageMapResizer.min.js"></script>
+  <script src="vendors/headroom-0.11.0/headroom.min.js"></script>
+  <script src="vendors/jstree-3.3.10/jstree.min.js"></script>  
+  <script src="vendors/interactjs-1.9.22/interact.min.js"></script>  
+
+  <!-- HelpNDoc scripts -->
+  <script src="js/polyfill.object.min.js"></script>
+  <script src="_translations.js"></script>
+  <script src="js/hndsd.min.js"></script>
+  <script src="js/hndse.min.js"></script>
+  <script src="js/app.min.js"></script>
+
+  <!-- Init script -->
+  <script>
+    $(function() {
+      // Create the app
+      var app = new Hnd.App({
+        searchEngineMinChars: 3
+      });
+      // Update translations
+      hnd_ut(app);
+	  // Instanciate imageMapResizer
+	  imageMapResize();
+	  // Custom JS
+	  
+      // Boot the app
+      app.Boot();
+    });
+  </script>
+
+
+
+</body>
+
+</html>
+

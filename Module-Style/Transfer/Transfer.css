@@ -1,0 +1,19 @@
+.transferMenuItems a {
+	border: solid 1px #cccccc;
+	margin: 10px 0px;
+	font-size: 14px !important;
+	box-shadow: 5px 5px 5px #cccccc;
+	background-color: #ffffff;
+	display: block;
+}
+
+.transferMenuItems a i {
+	font-size: 20px !important;
+	color: #575757;
+	margin-right: 5px;
+	padding: 20px 10px;
+	background-color: #fbfafa;
+	border-right: solid 1px #cccccc;
+	width: 70px;
+	text-align: center;
+}

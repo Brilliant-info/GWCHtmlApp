@@ -1,0 +1,323 @@
+     <!-- Quality Check Popup -->
+     <div class="wms-srv-popup-holder" id="wms-srv-qualitycheck-popup" style="display: none;">
+        <div class="wms-srv-popup-bg">
+        </div>
+        <div class="wms-srv-popup">
+            <div class="wms-srv-popup-content">
+                <!-- Popup Title -->
+                <div class="wms-srv-popup-title">
+                    <div class="wms-srv-page-title">
+                        <i class="fas fa-file-alt"></i><span>Select Record for Quality Check</span>
+                    </div>
+                    <a href="#" id="wms-srv-qualitycheck-popup-close" class="wms-srv-popup-close"><i class="fas fa-times-circle"></i></a>
+                </div>
+                <!-- Popup Title -->
+                <div class="wms-srv-popup-content-body pnlFormGrid" id="wms-srv-popup-content-body">
+                    <div id="popupContentDocument">
+                        <div id="pnlCreatePurchaseOrder">
+ <!-- Grid -->
+                            <div class="wms-srv-grid-holder pnlWmsHead"  style="width: 100%;">
+                                <div class="wms-srv-grid-scroller">
+                                <div class="wms-srv-grid" id="gridqcList" style="text-align: center;">
+                                    <!-- Object Head Data Will be Here -->
+                                    
+                                    
+                                </div>
+                                </div>
+                            </div>
+                          
+                        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+     <!-- Quality Check Popup -->
+
+      <!-- Quality Check Details Popup -->
+    <div class="wms-srv-popup-holder" id="wms-srv-qualitycheckdetails-popup" style="display: none;">
+        <div class="wms-srv-popup-bg">
+        </div>
+        <div class="wms-srv-popup">
+            <div class="wms-srv-popup-content">
+                <!-- Popup Title -->
+                <div class="wms-srv-popup-title">
+                    <div class="wms-srv-page-title">
+                        <i class="fas fa-file-alt"></i><span>Quality Check</span>
+                    </div>
+                    <a href="#" id="wms-srv-qualitycheckdetails-popup-close" class="wms-srv-popup-close" ><i class="fas fa-times-circle"></i></a>  <!--onclick="qualitycheckdetails(); return false;"-->
+                </div>
+                <!-- Popup Title -->
+                <div class="wms-srv-popup-content-body" id="wms-srv-popup-content-body">
+                    <div id="popupContentDocument">
+                        <div id="pnlCreatePurchaseOrder">
+ <!-- Grid -->
+                            <div class="wms-srv-grid-holder pnlWmsHead" id="pnlGrnHeadList">
+                                <div class="wms-srv-grid-scroller">
+                                <div class="wms-srv-grid" style="text-align: center;">
+                                    <!-- Object Head Data Will be Here -->
+                                    <div class="wms-srv-grid-header">
+                                        <div class="wms-srv-grid-cell" style="width:16.6%;">Inward Order No</div>
+                                        <div class="wms-srv-grid-cell" style="width:16.6%;">GRN Number</div>
+                                        <div class="wms-srv-grid-cell" style="width:16.6%;">QC Numbers</div>
+                                        <div class="wms-srv-grid-cell" style="width:16.6%;">QC Date</div>
+                                        <div class="wms-srv-grid-cell" style="width:16.6%;">QC By</div>
+                                        
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+                                        <div class="wms-srv-grid-cell"><label id="lblpo" /></div>
+                                        <div class="wms-srv-grid-cell"><label id="lblgrnno" /></div>
+                                        <div class="wms-srv-grid-cell">
+                                            <select class="wms-srv-grid-cell-input" id="QCdll">
+                                               
+                                            </select>
+                                        </div>
+                                        <div class="wms-srv-grid-cell">
+                                            <input type="text" value="" id="dtQcDate" class="wms-srv-grid-cell-input wms-srv-datepicker" />
+                                        </div>
+                                        <div class="wms-srv-grid-cell"><label id="lblqcby" /></div>
+                                        
+                                    </div>
+                                </div>
+                                </div>
+                            </div>
+                        <br />
+                          <div class="wms-srv-grid-holder pnlWmsDetail" id="pnlWmsDetail">
+   <div class="wms-srv-grid-action-panel">
+      <div class="wms-srv-grid-title">
+         Quality Check Details
+      </div>
+      <div><button class="wms-srv-input wms-srv-button" style="align-items: right;display: none;" type="button" onclick="printBarcodeLabelForQC()" id="btnPrintQcBarcodeLabel"><i class="fas fa-print"></i><span>Print
+        Selected</span></button>
+        <button
+        class="wms-srv-input wms-srv-button wms-srv-highlight-btn-secondary"
+        type="button" title="Save" id="qcsavebnt"
+        onclick="UpdateQCStatus('QC')"><span>Save</span></button>
+    </div>
+	   <div class="wms-srv-grid-title" style="margin-left: 30px;display: none;">
+                                    <input type="checkbox" class="qcscancheck" style="margin-right: 5px" />Enable Scanning
+                                </div>
+      <!-- <input type="checkbox" name="chkRunInScanMode" id="chkRunInScanMode" value="runInScanMode" /> <span class="spnRunInScanMode">Run in scan mode </span>-->
+   </div>
+   <!---Enable QC scanning----->
+   <div class="wms-srv-grid-scroller qcenablescan"
+                                style="width: 100%; text-align: center;">
+                                <div class="wms-srv-grid" data-gridobjectid="gridObject_Inbound_PurchaseOrder_DOC">
+                                    <div class="wms-srv-grid-header">
+                                        <div class="wms-srv-grid-cell">Scanned Qty</div>
+                                        <div class="wms-srv-grid-cell">SKU Code</div>
+                                        <div class="wms-srv-grid-cell">Action</div>
+                                    </div>
+                                    <div class="wms-srv-grid-row wms-srv-grid-add">
+                                        <div class="wms-srv-grid-cell"><label id="lblscanqcqty"/>/<label id="lblscanqctotalqty"/></div>
+                                        <div class="wms-srv-grid-cell">
+										<label id="lblscanQCcode"/>
+										<hidden id="hdnscanQCskuID"/>
+										</div>
+                                        <div class="wms-srv-grid-cell">
+                                            <a href="#" title="View Details" onclick="openviewdetail('QC');"
+                                                style="text-decoration: none;"><i class="fas fa-file"
+                                                    style="padding-right: 3px"></i>View Detail</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div style="display: flex">
+                                    <div class=""
+                                        style="float: left; width: 300px; margin-left: 10px; margin-top: 10px; border-radius: 10px;">
+                                        <input type="text" class="wms-srv-grid-cell-input" id="txtQcscanvalue"
+                                            placeholder="Scan SKU" style="text-align: center;" />
+                                    </div>
+                                    <a href="#" title="Save" class="wms-srv-save" data-prefix="SV"><i
+                                            class="fas fa-chevron-circle-right" style="margin: 15px;" onclick="scanInboundAPI('QC')"></i></a>
+                                    <div class="" style="float: right; width: 300px; margin: 5px; margin-right: 25%">
+                                        Enter
+                                        QTY:<input style="margin: 5px" type="text" value=""  id="txtscanqcqty"/><a href="#" title="Save"
+                                            class="wms-srv-save" data-prefix="SV"><i
+                                                class="fas fa-check-circle" onclick="saveQCDetails('ScanQC')"></i></a>
+                                    </div>
+
+                                </div>
+                            </div>
+   <!----End scanning------>
+   
+   <div class="wms-srv-grid-scroller" style="width: 100%;">
+      <div class="wms-srv-grid" id="tblQCGrid" style="text-align: center;">
+        
+      </div>
+   </div>
+</div>
+
+
+ <!--Save button QualityCheck--->
+<br />
+                            <div class="container-fluid" style="display: none;">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="container-fluid">
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <div class="wms-srv-grid-action qcsavebnt">
+                                                    <!--    <input type="button" class="btngrnSave" value="save" onclick="UpdateGrnStatus()" />-->
+														
+<button class="wms-srv-input wms-srv-button wms-srv-highlight-btn-secondary" type="button" title="Save"  onclick="UpdateQCStatus('QC')" id="qcsavebnt" ><span>Save</span></button>
+                                                       </div>
+													   
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+							
+							<!--------END Quality check save----------------->
+
+                        
+                        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+     <!-- Quality Check Details Popup -->
+     
+
+<!--QC View Detail Popup -->
+<div class="" id="wms-srv-QCviewdetail-popup"
+    style="display: none; position: absolute; left: 10%; top: 25px; overflow: auto">
+    <div class="wms-srv-popup-bg">
+    </div>
+    <div class="wms-srv-popup">
+        <div class="wms-srv-popup-content">
+            <!-- Popup Title -->
+            <div class="wms-srv-popup-title">
+                <div class="wms-srv-page-title">
+                    <i class="fas fa-file-alt"></i><span>View Detail</span>
+                </div>
+                <a href="#" title="Close" id="wms-srv-QCviewdetail-popup-close" class="wms-srv-popup-close"><i
+                        class="fas fa-times-circle"></i></a>
+            </div>
+            <!-- Popup Title -->
+            <div class="wms-srv-popup-content-body" id="wms-srv-popup-content-body">
+                <div id="popupContentQCviewdetail">
+                    <div id="pnlQCviewdetail">
+                        <!-- Grid -->
+                        <div class="wms-srv-grid-holder pnlWmsHead" id="pnlWmsHead">
+                            <div class="wms-srv-grid" id="viewQCgrid">
+                                <!-- Object Head Data Will be Here -->
+                                
+                            </div>
+                        </div>
+                        <!-- Grid -->
+                        <!-- Header Details -->
+                        <!-- Grid -->
+                        <div class="wms-srv-grid-holder pnlWmsDetail" id="pnlWmsDetail">
+                            <div class="wms-srv-grid-pager">
+                                <span class="wms-srv-pager-records">0-1 of 0 Records</span>
+                                <span class="wms-srv-empty-space"></span>
+                                <span class="wms-srv-pager-links"><a href="#" data-page="firstpage"><i
+                                            class="fas fa-angle-double-left"></i></a><a href="#" data-page="previous"><i
+                                            class="fas fa-angle-left"></i></a><a href="#" class="wms-srv-active"
+                                        data-page="1">1</a><a href="#" data-page="next"><i
+                                            class="fas fa-angle-right"></i></a><a href="#" data-page="lastpage"><i
+                                            class="fas fa-angle-double-right"></i></a></span>
+                                <span class="wms-srv-empty-space"></span>
+                                <input type="text" name="txtGridPageNo" class="wms-srv-input" value="0"
+                                    style="width: 80px;">
+                                <a href="#" title="Jump To" class="wms-srv-pager-go"><i
+                                        class="fas fa-play-circle"></i></a>
+                            </div>
+                        </div>
+                        <!-- Grid -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--QC View Detail Popup -->
+<!--QC Product Popup -->
+<div class="wms-srv-popup-holder" id="wms-srv-qc-product-list-popup" style="display: none;">
+    <div class="wms-srv-popup-bg">
+    </div>
+    <div class="wms-srv-popup">
+        <div class="wms-srv-popup-content">
+            <!-- Popup Title -->
+            <div class="wms-srv-popup-title">
+                <div class="wms-srv-page-title">
+                    <i class="fas fa-user"></i><span>Product List</span>
+                </div>
+                <a href="#" title="Close" id="wms-srv-qc-product-list-popup-close" class="wms-srv-popup-close">
+                    <i class="fas fa-times-circle"></i></a>
+            </div>
+
+            <!-- <div class="wms-srv-productsearch" data-sku="" data-skuid="" data-pallet=""
+                data-palletid="" data-location="" data-locationid="" style="float: right;margin-right: 20px;margin-bottom: 5px;">
+                <label>Search Product: </label>
+                <input type="text" id="txtSo_ProdSearchpopup" value="" class="wms-srv-input wms-srv-scan-input">
+                <select class="wms-srv-input wms-srv-scan-input notranslate"
+                    style="width: 62px; position: absolute; padding: 7px; background-color: #efefef;">
+                    <option>Lot1</option>
+                    <option>Lot2</option>
+                    <option>Lot3</option>
+                    <option>Lot4</option>
+                    <option>Lot5</option>
+                    <option>Lot6</option>
+                </select>
+                <input type="text" id="txtSo_ProdSearchLottablepopup" value="" class="wms-srv-input wms-srv-scan-input notranslate"
+                    style="padding-left: 65px; width: 170px;">
+
+                <a href="#" data-prefix="PRSE" class="wms-srv-search-button"
+                onclick="loadSalesProductList();return false;"><i class="fas fa-search"></i></a>
+            </div> -->
+            <!-- Popup Title -->
+            <div class="wms-srv-popup-content-body" id="wms-srv-popup-content-body">
+                <div id="popupContentDocument">
+                    <div id="pnlCreateSalesOrder">
+                        <!-- Grid -->
+                        <div class="wms-srv-grid-holder pnlWmsHead" id="pnlWmsHead">
+                            <div class="wms-srv-grid" id="pnlQCProductList">
+                               
+                            </div>
+                        </div>
+                        <!-- Grid -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--QC Product Popup -->
+<!-- Barcode Print Label -->
+<div class="wms-srv-popup-holder wms-srv-printbarcode-popup" id="wms-srv-printbarcode-popup" style="display: none;">
+    <div class="wms-srv-popup-bg">
+    </div>
+    <div class="wms-srv-popup">
+        <div class="wms-srv-popup-content">
+            <!-- Popup Title -->
+            <div class="wms-srv-popup-title">
+                <div class="wms-srv-page-title">
+                    <i class="fas fa-list"></i><span>Barcode Print Label</span>
+                </div>
+                <a href="#" id="wms-srv-printbarcode-popup-close" class="wms-srv-popup-close"><i
+                        class="fas fa-times-circle"></i></a>
+            </div>
+            <!-- Popup Title -->
+            <div class="wms-srv-popup-content-body" id="wms-srv-popup-content-body">
+                <div id="popupContentprintbarcode">
+                    <div style="text-align: center;">
+                        <Span Id="BarcodeID" class="Barcode"></Span>
+                        <Span Id="BarcodeTxt" class="BarcodeTxt" style="font-size: 200%;"></Span>
+                    </div>
+                    <div style="text-align: center;">
+                        <button class="wms-srv-input wms-srv-button wms-srv-highlight-btn-secondary"
+                            onclick="printIt();" type="button" title="Print"><span
+                                style="margin: 0px;">Print</span></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Barcode Print Label  End -->
+
+

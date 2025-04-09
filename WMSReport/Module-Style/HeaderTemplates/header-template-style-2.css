@@ -1,0 +1,48 @@
+.reportHeader{
+	background-color:#efefef;
+	padding:10px;
+	box-shadow:0px 0px 5px #636363;
+	margin:0px;
+	width:850px;
+	margin-left:auto;
+	margin-right:auto;
+}
+.reportHeader .reportHeaderHolder{
+	display:table;
+	width:100%;
+	font-family:Arial;
+	font-size:12px;
+	line-height:1.5;
+	text-align:left;
+}
+.reportHeader .reportHeaderLogo,
+.reportHeader .reportHeaderAddress,
+.reportHeader .reportPhoneNumber{
+	display:table-cell;
+	vertical-align:middle;
+}
+.reportHeader .reportHeaderLogo{
+	width:300px;
+}
+    .reportHeader .reportHeaderLogo img {
+        width: 268px;
+        /*height:auto;*/
+        height: 150px;
+    }
+.reportHeader .reportPhoneNumber{
+	width:auto;
+	text-align:left;
+	padding-right:20px;
+}
+.reportHeader .reportAddressTitle{
+	font-size:16px;
+	font-weight:bold;
+	
+}
+.reportHeader .reportContactTitle{
+	font-size:13px;
+	font-weight:bold;
+	display:inline-block;
+	margin-top:10px;
+	
+}

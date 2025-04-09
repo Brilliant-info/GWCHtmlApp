@@ -1,0 +1,53 @@
+.wms-align
+{
+    text-align: center;
+}
+#txtCubicValue1, #txtCubicValue2, #txtCubicValue3 {
+    width: 45px;
+    display: inline;
+  }
+  #txtAreaValue1, #txtAreaValue2 {
+    width: 65px;
+    display: inline;
+  }
+  .btnSaveWarhouseList{
+    background-color: #178FFF;
+    border-radius: 14px;
+    color: #ffffff;
+    border: 1px solid #ffffff;
+    padding-left: 5px;
+    /* font-size: 52px; */
+    width: 77px;
+    margin-right: 14px;
+  }
+  .iconSave{
+    padding-right: 6px;
+  }
+  .txtComAlignCenter{
+    text-align: center;
+  }
+
+.wms-srv-group-head{
+    background-color: #ecf8ff;
+    font-weight: bold;
+}
+.wms-srv-group-item{
+    padding-left: 25px;
+}
+.wms-srv-group-item-level-2{
+    padding-left: 50px;
+}
+.wms-srv-group-item-level-3{
+    padding-left:75px;
+}
+.gridReportSetup i{
+    cursor: pointer;
+}
+/*
+.fa-lock-open{
+  color: #00acd7;
+}
+.fa-lock{
+  color: #d4d4d4;
+}
+*/

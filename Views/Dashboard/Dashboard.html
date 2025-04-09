@@ -1,0 +1,227 @@
+<script>
+    isWmsDashboard = 'yes';
+</script>
+
+<div id="wmsDashboardCountHolder" class="wmsDashboardCountHolder">
+
+    <div class="wmsDashboardCountBoxHolder">
+        <div class="wmsDashboardCountBox">
+            <!-- #5a75a5 -->
+            <div class="wmsDashboardCountIcon" style="background-color:#FFA500;"><i class="fas fa-truck-moving"></i>
+            </div>
+            <div class="wmsDashboardCountContent">
+                <div class="wmsDashboardCount" id="cntTotalInward">-</div>
+                <div class="wmsDashboardCountLabel">Total Inward</div>
+            </div>
+        </div>
+    </div>&nbsp;<div class="wmsDashboardCountBoxHolder">
+        <div class="wmsDashboardCountBox">
+            <!-- #ff3f3f -->
+            <div class="wmsDashboardCountIcon" style="background-color:#008080;"><i class="fas fa-truck-loading"></i>
+            </div>
+            <div class="wmsDashboardCountContent">
+                <div class="wmsDashboardCount" id="cntTotalReceived">-</div>
+                <div class="wmsDashboardCountLabel">Total Received</div>
+            </div>
+        </div>
+    </div>&nbsp;<div class="wmsDashboardCountBoxHolder">
+        <div class="wmsDashboardCountBox">
+            <!-- #548235; -->
+            <div class="wmsDashboardCountIcon" style="background-color:#84e15a;"><i class="fas fa-people-carry"></i>
+            </div>
+            <div class="wmsDashboardCountContent">
+                <div class="wmsDashboardCount" id="cntTotalOutward">-</div>
+                <div class="wmsDashboardCountLabel">Total Outward</div>
+            </div>
+        </div>
+    </div>&nbsp;<div class="wmsDashboardCountBoxHolder">
+        <div class="wmsDashboardCountBox">
+            <div class="wmsDashboardCountIcon" style="background-color:#DA70D6;"><i
+                    class="fas fa-truck-moving fa-flip-horizontal"></i></div>
+            <div class="wmsDashboardCountContent">
+                <div class="wmsDashboardCount" id="cntTotalDispatch">-</div>
+                <div class="wmsDashboardCountLabel">Total Dispatch</div>
+            </div>
+        </div>
+    </div>&nbsp;<div class="wmsDashboardCountBoxHolder">
+        <div class="wmsDashboardCountBox">
+            <div class="wmsDashboardCountIcon" style="background-color:#00acd7;"><i
+                    class="fas fa-truck-moving fa-flip-horizontal"></i></div>
+            <div class="wmsDashboardCountContent">
+                <div class="wmsDashboardCount" id="cntTotalCancel">-</div>
+                <div class="wmsDashboardCountLabel">Total Cancel</div>
+            </div>
+        </div>
+    </div>&nbsp;
+</div>
+
+<div id="wmsDashboardExceptAsset">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div style="overflow:auto;">
+                    <!-- Chart Area  -->
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="dashboardBox">
+                                    <i class="fas fa-sync-alt"></i>
+                                    <canvas id="pnlInboundOrderStatus" width="300" height="361"></canvas>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="dashboardBox">
+                                    <i class="fas fa-sync-alt"></i>
+                                    <canvas id="pnlInboundOrder" width="300" height="361"></canvas>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="dashboardBox">
+                                    <i class="fas fa-sync-alt"></i>
+                                    <canvas id="pnlDispatchSalesOrder" width="300" height="361"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Chart Area  -->
+                </div>
+            </div>
+        </div>
+    
+    
+        <!-- <div class="row">
+            <div class="col-md-12">
+    
+                // PENDING INBOUND GRID 
+    
+                <div class="card pnlWms">
+                    <div class="reportTitles">
+    
+    
+                    </div>
+                    <div class="col-md-12">
+                        <br />
+    
+                       //  PENDING INBOUND GRID 
+    
+    
+                        <div class="card pnlWms">
+                            <div class="reportTitles">
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title"><i class="fas fa-file-invoice"></i> Pending Orders</h5>
+                                <p class="card-text">
+                                </p>
+                                <div class="wms-srv-search wms-srv-search-pending-inbound" style="display: none;">
+                                    <input type="text" value="" class="wms-srv-input wms-srv-simple-search"><a href="#"
+                                        data-prefix="SE"><i class="fas fa-search"></i></a>
+                                </div>
+                                <div class="wms-srv-grid-scroller" style="width:100%;">
+                                    <div class="wms-srv-grid" data-gridobjectid="gridObject_Inbound_PurchaseOrder"
+                                        style="min-width:auto !important;" id="tlbPendingOrderDashboard">
+    
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+    
+                      //   PENDING INBOUND GRID 
+    
+                    </div>
+                    
+    
+                   //PENDING INBOUND GRID 
+    
+                    <div class="card pnlWms">
+                        <div class="reportTitles">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title"><i class="fas fa-file-invoice"></i> Pending Orders</h5>
+                            <p class="card-text">
+                            </p>
+                            <div class="wms-srv-search wms-srv-search-pending-inbound" style="display: none;">
+                                <input type="text" value="" class="wms-srv-input wms-srv-simple-search"><a href="#"
+                                    data-prefix="SE"><i class="fas fa-search"></i></a>
+                            </div>
+                            <div class="wms-srv-grid-scroller" style="width:100%;">
+                                <div class="wms-srv-grid" data-gridobjectid="gridObject_Inbound_PurchaseOrder"
+                                    style="min-width:auto !important;" id="tlbPendingOrderDashboard">
+    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+    
+    
+    
+                    //PENDING INBOUND GRID 
+    
+    
+    
+                    <div class="card-body" style="display: none;">
+                        <h5 class="card-title"><i class="fas fa-file-invoice"></i> SKU Inventory</h5>
+                        <p class="card-text">
+                        </p>
+                        <div class="wms-srv-search wms-srv-search-pending-inbound" style="display: none;">
+                            <input type="text" value="" class="wms-srv-input wms-srv-simple-search"><a href="#"
+                                data-prefix="SE"><i class="fas fa-search"></i></a>
+                        </div>
+                        <div class="wms-srv-grid-scroller">
+                            <div class="wms-srv-grid" data-gridobjectid="gridObject_Inbound_PurchaseOrder"
+                                style="min-width:auto !important; text-align: center;" id="tlbSkuInventoryDashboard">
+                                <div class="wms-srv-grid-header">
+                                    <div class="wms-srv-grid-cell">SKU Code</div>
+                                    <div class="wms-srv-grid-cell">Description</div>
+                                    <div class="wms-srv-grid-cell">Qty In Hand</div>
+                                    <div class="wms-srv-grid-cell">Allocated Qty</div>
+                                    <div class="wms-srv-grid-cell">Hold Qty</div>
+                                    <div class="wms-srv-grid-cell">Total Qty</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div> 
+                </div>
+            </div>
+        </div>-->
+    </div>
+</div>
+
+<div id="wmsDashboardAssetReport">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="dashboardBox">
+                                <!-- <select id="ddlDashAssetReport" style="float: right;">
+                                    <option>-- Select Month --</option>
+                                </select> -->
+                                <canvas id="pnlDashAssetReport"></canvas>
+                            </div>
+                        </div>
+                        <div class="col-md-8">
+                            <div class="dashboardBox">
+                                <div style="margin-bottom: 10px;font-size: 14px;"><b>Asset Orders</b></div>
+                                <div class="wms-srv-grid" style="min-width:auto !important;" id="pnlDashAssetDept">
+                                           
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</div>
+
+<div id="DummyDataLoading" class="themeWMSLoading" style="display:block;background-color:#ffffff;">
+    <div class="themeWMSModelHolder">
+        <div class="themeWMSModel">
+            <img src="App_Themes/Blue/img/ajax-loader.gif" style="top: 50%;">
+            <!-- <span class="themeWMSLoadingProcessing" style="display: block;"><br />Please Wait. Dummy Data Is loading...</span> -->
+
+        </div>
+    </div>
+</div>

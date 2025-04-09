@@ -1,0 +1,245 @@
+<!--Task Assignment Popup -->
+<div class="themeWmsPopup" id="theme-taskassignment-popup" style="display:none; z-index: 1;">
+    <div class="themeWmsPopupContent" style="display: table; margin-top: 30px;">
+        <div class="themeWmsPopupTitle">
+            Task Assignment
+            <a href="#" title="Close" id="theme-taskassignment-popup-close" class="wms-srv-popup-close"><i
+                    class="fas fa-times-circle"></i></a>
+        </div>
+        <div class="themeWmsPopupContentBody">
+            <div id="divQbNotificationFor" class="divQbFormRow">
+                <span class="themeWMSPopupLabel" style="width: 70px;"><b>Object Type</b></span>
+                <div class="themeWMS_ctrl">
+                    <select class="wms-srv-input wms-srv-search-filter" id="ddlOutwardsearch">
+                        <option value="All">Type 1</option>
+                        <option value="Source">Type 2</option>
+                        <option value="OrderNo">Type 3</option>
+                        <option value="CustomerPo">Type 4</option>
+                    </select>
+                </div>
+            </div>
+            <br>
+            <div id="divQbNotificationFor" class="divQbFormRow">
+                <span class="themeWMSPopupLabel"><b>User</b></span>
+                <div class="themeWMS_ctrl wms-srv-search" style="margin-left: 10px;background-color: white;">
+                    <input type=" text" value="" placeholder="Enter Filter Value" id="txtOutwardvalue"
+                    class="wms-srv-input wms-srv-simple-search">
+                    <a href="#" onclick="openUser()"style="top: 0px;"><i class="fas fa-search" title="Search" style="color: black; font-size: 15px;"></i></a>
+                </div>
+            </div>
+            <br>
+            <div id="divQbNotificationFor" class="divQbFormRow">
+                <span class="themeWMSPopupLabel"><b>Date</b></span>
+                <div class="themeWMS_ctrl" style="margin-left: 10px;">
+                    <input type="text" value="" id="" class="wms-srv-grid-cell-input wms-srv-datepicker">
+                </div>
+            </div>
+            <br>
+            <div id="divQbNotificationFor" class="divQbFormRow">
+                <span class="themeWMSPopupLabel"><b>Time</b></span>
+                <div class="themeWMS_ctrl" style="margin-left: 10px;background-color: white;">
+                    <select class="wms-srv-input wms-srv-search-filter" id="ddlOutwardsearch">
+                        <option value="All">--HH--</option>
+                        <option value="">01</option>
+                        <option value="">02</option>
+                        <option value="">03</option>
+                        <option value="">04</option>
+                        <option value="">05</option>
+                        <option value="">06</option>
+                        <option value="">07</option>
+                        <option value="">08</option>
+                        <option value="">09</option>
+                        <option value="">10</option>
+                        <option value="">11</option>
+                        <option value="">12</option>
+                    </select>
+                    <select class="wms-srv-input wms-srv-search-filter" id="ddlOutwardsearch">
+                        <option value="All">--MM--</option>
+                        <option value="">00</option>
+                        <option value="">01</option>
+                        <option value="">02</option>
+                        <option value="">03</option>
+                        <option value="">04</option>
+                        <option value="">05</option>
+                        <option value="">06</option>
+                        <option value="">07</option>
+                        <option value="">08</option>
+                        <option value="">09</option>
+                        <option value="">10</option>
+                        <option value="">11</option>
+                        <option value="">12</option>
+                        <option value="">13</option>
+                        <option value="">14</option>
+                        <option value="">15</option>
+                        <option value="">16</option>
+                        <option value="">17</option>
+                        <option value="">18</option>
+                        <option value="">19</option>
+                        <option value="">20</option>
+                        <option value="">21</option>
+                        <option value="">22</option>
+                        <option value="">23</option>
+                        <option value="">24</option>
+                        <option value="">25</option>
+                        <option value="">26</option>
+                        <option value="">27</option>
+                        <option value="">28</option>
+                        <option value="">29</option>
+                        <option value="">30</option>
+                        <option value="">31</option>
+                        <option value="">32</option>
+                        <option value="">33</option>
+                        <option value="">34</option>
+                        <option value="">35</option>
+                        <option value="">36</option>
+                        <option value="">37</option>
+                        <option value="">38</option>
+                        <option value="">39</option>
+                        <option value="">40</option>
+                        <option value="">41</option>
+                        <option value="">42</option>
+                        <option value="">43</option>
+                        <option value="">44</option>
+                        <option value="">45</option>
+                        <option value="">46</option>
+                        <option value="">47</option>
+                        <option value="">48</option>
+                        <option value="">49</option>
+                        <option value="">50</option>
+                        <option value="">51</option>
+                        <option value="">52</option>
+                        <option value="">54</option>
+                        <option value="">55</option>
+                        <option value="">56</option>
+                        <option value="">57</option>
+                        <option value="">58</option>
+                        <option value="">59</option>
+                    </select>
+                    <select class="wms-srv-input wms-srv-search-filter" id="ddlOutwardsearch">
+                        <option value="All">AM</option>
+                        <option value="Source">PM</option>
+                    </select>
+                </div>
+            </div>
+            <br>
+            <div style="text-align: center;">
+                <button class="wms-srv-input wms-srv-button wms-srv-highlight-btn-secondary" type="button"
+                    onclick="SaveCycleCount()" title="Submit"
+                    style="/*! width: 100%; *//*! margin: auto; */text-align: -moz-right;">
+                    <span>Submit</span></button>
+            </div>
+        </div>
+    </div>
+    <div class="themeWmsPopupBg">
+    </div>
+</div>
+<!--Task Assignment Popup -->
+
+<!-- User popup -->
+<div class="wms-srv-popup-holder" id="wms-srv-user-popup" style="display: none;">
+    <div class="wms-srv-popup-bg">
+    </div>
+    <div class="wms-srv-popup">
+        <div class="wms-srv-popup-content">
+            <!-- Popup Title -->
+            <div class="wms-srv-popup-title">
+                <div class="wms-srv-page-title">
+                    <i class="fas fa-list"></i><span>User List</span>
+                </div>
+                <a href="#" title="Close" id="wms-srv-user-popup-close" class="wms-srv-popup-close"><i
+                        class="fas fa-times-circle"></i></a>
+            </div>
+            <!-- Popup Title -->
+            <div class="wms-srv-popup-content-body" id="wms-srv-popup-content-body">
+                <div id="popupContentDocument">
+                    <div id="pnlApproval">
+                        <!-- Grid -->
+                        <div class="wms-srv-grid-holder pnlWmsHead" id="pnlWmsHead">
+                            <div class="wms-srv-grid" style="text-align: center;">
+                                <!-- Object Head Data Will be Here -->
+                                <div class="wms-srv-grid-header">
+                                    <div class="wms-srv-grid-cell">Sr. No</div>
+                                    <div class="wms-srv-grid-cell">User Name</div>
+                                    <div class="wms-srv-grid-cell">Action</div>
+                                </div>
+                                <div class="wms-srv-grid-row">
+                                    <div class="wms-srv-grid-cell">1</div>
+                                    <div class="wms-srv-grid-cell">Brilliant</div>
+                                    <div class="wms-srv-grid-cell">
+                                        <div class="wms-srv-grid-action">
+                                            <i class="fas fa-check-circle" style="opacity: 1;"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="wms-srv-grid-row">
+                                    <div class="wms-srv-grid-cell">2</div>
+                                    <div class="wms-srv-grid-cell">Brilliant</div>
+                                    <div class="wms-srv-grid-cell">
+                                        <div class="wms-srv-grid-action">
+                                            <i class="fas fa-check-circle" style="opacity: 1;"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="wms-srv-grid-row">
+                                    <div class="wms-srv-grid-cell">3</div>
+                                    <div class="wms-srv-grid-cell">Brilliant</div>
+                                    <div class="wms-srv-grid-cell">
+                                        <div class="wms-srv-grid-action">
+                                            <i class="fas fa-check-circle" style="opacity: 1;"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="wms-srv-grid-row">
+                                    <div class="wms-srv-grid-cell">4</div>
+                                    <div class="wms-srv-grid-cell">Brilliant</div>
+                                    <div class="wms-srv-grid-cell">
+                                        <div class="wms-srv-grid-action">
+                                            <i class="fas fa-check-circle" style="opacity: 1;"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="wms-srv-grid-row">
+                                    <div class="wms-srv-grid-cell">5</div>
+                                    <div class="wms-srv-grid-cell">Brilliant</div>
+                                    <div class="wms-srv-grid-cell">
+                                        <div class="wms-srv-grid-action">
+                                            <i class="fas fa-check-circle" style="opacity: 1;"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="wms-srv-grid-row">
+                                    <div class="wms-srv-grid-cell">6</div>
+                                    <div class="wms-srv-grid-cell">Brilliant</div>
+                                    <div class="wms-srv-grid-cell">
+                                        <div class="wms-srv-grid-action">
+                                            <i class="fas fa-check-circle" style="opacity: 1;"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="wms-srv-grid-row">
+                                    <div class="wms-srv-grid-cell">7</div>
+                                    <div class="wms-srv-grid-cell">Brilliant</div>
+                                    <div class="wms-srv-grid-cell">
+                                        <div class="wms-srv-grid-action">
+                                            <i class="fas fa-check-circle" style="opacity: 1;"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="wms-srv-grid-row">
+                                    <div class="wms-srv-grid-cell">8</div>
+                                    <div class="wms-srv-grid-cell">Brilliant</div>
+                                    <div class="wms-srv-grid-cell">
+                                        <div class="wms-srv-grid-action">
+                                            <i class="fas fa-check-circle" style="opacity: 1;"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- User Popup -->

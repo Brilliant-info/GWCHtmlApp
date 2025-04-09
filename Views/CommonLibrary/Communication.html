@@ -1,0 +1,88 @@
+<!-- Communication Popup -->
+<div class="wms-srv-popup-holder" id="wms-srv-communication-popup" style="display: none;">
+    <div class="wms-srv-popup-bg">
+    </div>
+    <div class="wms-srv-popup">
+        <div class="wms-srv-popup-content">
+            <!-- Popup Title -->
+            <div class="wms-srv-popup-title">
+                <div class="wms-srv-page-title">
+                    <i class="fas fa-envelope"></i><span>Communication</span>
+                </div>
+                <a href="#" title="Close" id="wms-srv-communication-popup-close" class="wms-srv-popup-close"><i
+                        class="fas fa-times-circle"></i></a>
+            </div>
+            <!-- Popup Title -->
+            <div class="wms-srv-popup-content-body" id="wms-srv-popup-content-body">
+                <div id="popupContentDocument">
+                    <div id="pnlCommunication">
+                        <!-- Grid -->
+                        <div class="wms-srv-grid-holder pnlWmsHead" id="pnlWmsHead">
+                            <div class="wms-srv-grid" style="text-align: center;" id="pnlCommonCommunicationHead">
+                              <!-- Dynamic Object Head Data Will be Here -->
+                            </div>
+                        </div>
+                        <br>
+                        <!-- Grid -->
+                        <!-- Header Details -->
+                        <!-- Grid -->
+                        <div class="wms-srv-grid-holder pnlWmsDetail" id="pnlWmsDetail">
+                            <div class="wms-srv-grid-action-panel">
+                                <button class="wms-srv-input wms-srv-button wms-srv-highlight-btn" title="Add New"
+                                    data-prefix="AN" type="button" onclick="addNewCommunication();"><i class="fas fa-plus"></i><span>Add New</span></button> 
+                                <span id="wms-srv-attachment-files"></span>
+                                <label class="wms-srv-input wms-srv-button" for="wms-srv-ctrl-file-upload"
+                                    title="Attach" data-prefix="AT" style="display: none;"><i
+                                        class="fas fa-paperclip"></i><span>Attach</span></label><input type="file"
+                                    id="wms-srv-ctrl-file-upload" onchange="uploadAttachment();" data-srvpath="">
+                                &nbsp;<button class="wms-srv-input wms-srv-button " title="Send" data-prefix="SN"
+                                    style="display: none;" type="button" onclick="SaveCommunication();"><i class="fas fa-paper-plane"></i><span>Send</span></button>
+                                &nbsp;<button class="wms-srv-input wms-srv-button " title="Cancel" data-prefix="CN"
+                                    style="display: none;" type="button" onclick="switchToCommunicationList();"><i
+                                        class="fas fa-times-circle"></i><span>Cancel</span></button>
+                                <div class="wms-srv-grid-title">
+                                    Communication Detail
+                                </div>
+                            </div>
+                            <!-- Editor -->
+                            <div class="pnlAddCommunicationMsg" style="display: none;">
+                                <div class="wms-srv-richtexteditor">
+                                    <textarea id="txtWmsSrvRichEditor" style="display: none;"></textarea>
+                                </div>
+                            </div>
+                            <!-- Editor -->
+                            <!-- Chat Grid -->
+                            <div class="wms-srv-grid-holder pnlCommunicationGrid">
+                                <div class="wms-srv-grid-scroller" style="width: 100%;">
+                                    <!-- Chat Communication -->
+                                    <div class="container-fluid" id="wmsCommunicationListHolder">
+                                       
+                                    </div>
+                                    <!-- Chat Communication -->
+                                </div>
+                            </div>
+                            <!-- Chat Grid -->
+                            <div class="wms-srv-grid-pager">
+                                <span class="wms-srv-pager-records">0-1 of 2 Records</span>
+                                <span class="wms-srv-empty-space"></span>
+                                <span class="wms-srv-pager-links"><a href="#" data-page="firstpage"><i
+                                            class="fas fa-angle-double-left"></i></a><a href="#" data-page="previous"><i
+                                            class="fas fa-angle-left"></i></a><a href="#" class="wms-srv-active"
+                                        data-page="1">1</a><a href="#" data-page="next"><i
+                                            class="fas fa-angle-right"></i></a><a href="#" data-page="lastpage"><i
+                                            class="fas fa-angle-double-right"></i></a></span>
+                                <span class="wms-srv-empty-space"></span>
+                                <input type="text" name="txtGridPageNo" class="wms-srv-input" value="0"
+                                    style="width: 80px;">
+                                <a href="#" title="Jump To" class="wms-srv-pager-go"><i
+                                        class="fas fa-play-circle"></i></a>
+                            </div>
+                        </div>
+                        <!-- Grid -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Communication Popup -->

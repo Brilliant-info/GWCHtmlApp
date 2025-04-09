@@ -1,0 +1,16 @@
+.wms-align {
+  text-align: center;
+}
+
+#txtCubicValue1,
+#txtCubicValue2,
+#txtCubicValue3 {
+  width: 45px;
+  display: inline;
+}
+
+#txtAreaValue1,
+#txtAreaValue2 {
+  width: 65px;
+  display: inline;
+}

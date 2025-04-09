@@ -1,0 +1,214 @@
+.wms-srv-upload
+{
+    margin-left: 27px;
+    margin-top: -12px;
+}
+#wms-srv-upload1
+{
+    margin-left: 595px;
+    margin-bottom: 80px;
+    margin-top: 23px;
+}
+
+.pnlWizardNavigation{
+	text-align:center;
+	margin-top:20px;
+}
+.pnlWizardNavigation button{
+	width:120px;
+	margin-left:5px;
+	margin-right:5px;
+}
+.pnlWizardPage label{
+	display:block;
+	font-weight:bold;
+	color:#007bff;
+	margin-top:5px;
+}
+
+.pnlWizardPage input,
+.pnlWizardPage select
+{
+	display:block;
+	width:100%;
+	border-radius:7px;
+	/* border:solid 1px #cccccc; */
+	border:solid 1px #a4a4a4;
+	padding:5px;
+}
+
+.pnlWizardPage .wms-srv-grid-holder select{
+	display:inline-block;
+}
+.pnlWizardPage .wms-srv-grid-scroller{
+	width:auto !important;
+}
+.pnlWizardPage .wms-srv-search input,
+.pnlWizardPage .wms-srv-search select,
+.pnlWizardPage .wms-srv-search label
+{
+	display:inline-block;
+	width:auto;
+	font-weight:normal;
+	color:#000000;
+}
+
+.pnlWizardPage .wms-srv-grid input, 
+.pnlWizardPage .wms-srv-grid select {
+	/* display: block;
+	width: 100%;
+	border-radius: 0px; 
+	border: solid 1px #000000; 
+	padding: 0px;  */
+}
+
+.wizardActiveProgressDot,
+.wizardProgressDot {
+	background-color: #cccccc;
+	width: 20px;
+	height: 20px;
+	border: solid 1px #cccccc;
+	border-radius: 50%;
+	margin-left:auto;
+	margin-right:auto;
+}
+
+.wizardActiveProgressDot {
+	background-color: #007bff;
+	border: solid 1px #007bff;
+}
+
+.pnlWizardProgess{
+	margin-bottom:20px;
+	position:relative;
+}
+.pnlWizardProgess hr {
+	border-bottom: solid 1px #cccccc;
+	position: absolute;
+	top: -7px;
+	width: 100%;
+}
+.packagePrice {
+	text-align: center;
+	font-size: 19px;
+	font-weight: bold;
+	margin-bottom: 10px;
+	color: #007bff;
+	height:50px;
+}
+.pricingcardheader{
+	font-size:16px;
+	text-align:center;
+}
+.packagePrice sup{
+	top:0px;
+	padding:7px;
+	display:block;
+}
+
+.pnlWizardPage .card-header {
+	padding: .75rem 1.25rem;
+	margin-bottom: 0;
+	background-color: #007bff;
+	border-bottom: 1px solid #007bff;
+	color: #ffffff;
+	border-radius: 12px !important;
+}
+.wizardBillingGrid{
+	border-left:none;
+	border-bottom:none;
+}
+
+.removeWizardGridBorder{
+	border-right:none;
+	border-bottom:none;
+}
+
+.removeWizardGridBottomBorder{
+	border-bottom:none;
+}
+
+.addWizardGridBottomBorder{
+	border-left:solid 1px #cccccc;
+}
+.wizardPaybleAmount{
+	background-color:#efefef;
+	color:#000000;
+}
+.lblFinishWizard {
+	text-align: center;
+	font-size: 18px;
+	padding: 30px;
+}
+.icoFinishWizard {
+	font-size: 110px;
+	color: #00cfff;
+	margin-bottom: 30px;
+}
+
+.wizardCustomPackageForm input {
+	display: inline-block;
+	width: auto;
+	max-width: 50px;
+}
+
+.wizardCustomPackageForm input[type="text"] {
+	margin-bottom:3px;
+	padding:4px;
+}
+
+.gridCenterText{
+	text-align:center;
+}
+.txtPkgWarehouseCnt,
+.txtPkgUserCnt,
+.txtPkgCustomerCnt{
+	text-align:center;
+}
+
+.WmsImport_Type {
+	text-align: center;
+	border: solid 1px #636363;
+	border-radius: 7px;
+	box-shadow: 5px 5px 5px #636363;
+	padding: 20px;
+	margin-bottom: 20px;
+	margin-top: 10px;
+}
+
+.WmsImport_Icon i {
+	font-size: 100px;
+	color: #398c4a;
+}
+.WmsImport_Description {
+	font-size: 18px !important;
+	margin-top: 10px;
+}
+.wmsWizNavBack, .wmsWizNavNext {
+	background-color: var(--wms-color-primary);
+	color: #ffffff;
+	padding: 10px;
+	text-decoration: none;
+	border: solid 1px var(--wms-color-primary);
+	border-radius: 7px;
+	display: inline-block;
+}
+.WMSImport_StepsPages {
+	padding: 20px;
+	margin: 40px;
+	/* margin-top: 10px; */
+	margin-top: 0px;
+	margin-bottom: 10px;
+	border: solid 1px #636363;
+	border-radius: 12px;
+}
+.WmsImport_DownloadTemplate {
+	text-align: center;
+	margin-bottom: 0px;
+}
+
+.lblWizardH1 {
+	text-align: center;
+	font-size: 18px;
+	padding: 5px;
+}

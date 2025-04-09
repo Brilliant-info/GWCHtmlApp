@@ -1,0 +1,565 @@
+<div id="pnlLabourMaster" class="wmsMasterTypePage" style="display: none;">
+    <input type="hidden" name="ctl00$CPHolder_Form$hdnWarehouseId" id="hdnWarehouseId" value="0">
+    <input type="hidden" name="ctl00$CPHolder_Form$hdnCustomerId" id="hdnCustomerId" value="10125">
+    <input type="hidden" name="ctl00$CPHolder_Form$hdnUserId" id="hdnUserId" value="10749">
+    <input type="hidden" name="ctl00$CPHolder_Form$hdnReloadAppointmentId" id="hdnReloadAppointmentId" value="0">
+    <input type="hidden" name="ctl00$CPHolder_Form$hdnDefaultFilter" id="hdnDefaultFilter">
+
+    
+    <div class="WMSLastScanned" ></div>
+    <!-- Content Holder -->
+    <div class="wms-srv-content-area pnlInbound" id="userMasterGrid">
+        <!-- Content Area -->
+        <div class="container-fluid wms-srv-dashboard-panel">
+            <div class="row">
+                <div class="col-md-4 nopadding">
+                    <!-- Page Title -->
+                    <div class="wms-srv-page-title">
+                        <i class="fas fa-solid fa-user"></i><span class="wms-srv-data-title">Labour Master</span>
+                    </div>
+                    <!-- Page Title -->
+                </div>
+                <div class="col-md-8 nopadding">
+                </div>
+            </div>
+        </div>
+
+        <!-- Head Grid -->
+        <div class="wms-srv-grid-holder pnlWmsHead" id="pnlWmsHead" style="display: none;">
+            <div class="wms-srv-grid">
+                <!-- Object Head Data Will be Here -->
+            </div>
+        </div>
+        <br>
+        <!-- Head Grid -->
+
+       <!-- <div class="wms-srv-grid-action-panel">
+            <button class="wms-srv-input wms-srv-button administratorview" type="button" onclick=""><i
+                    class="fas fa-eye"></i><span>Administrator View</span></button>
+            <button class="wms-srv-input wms-srv-button userview" type="button" onclick=""><i
+                    class="fas fa-eye"></i><span>User View</span></button>
+        </div>-->
+        <!--Main Grid -->
+        <div class="wms-srv-obj-main-grid pnlWmsDetail" id="pnlCreateLabourTask">
+            <div class="wms-srv-grid-holder">
+                <div class="wms-srv-grid-action-panel">
+                    <div class="wms-srv-search">
+                        <label>Search Filter: </label>
+                        <select type="text" class="wms-srv-input wms-srv-search-filter" type="text" id="ddlLbrSeachFilter">
+                            <option value="0">-- Select All--</option>
+                            <option value="labourCode">Labour Code</option>
+                            <option value="labourName">Labour Name</option>
+                            <option value="ChargeableCost">Chargeable Rate</option>
+                            <option value="BillableCost">Bilable Rate</option>
+                            <option value="VendorName">Vendor</option>
+                            <option value="LedgerCode">Ledger Code</option>
+                            <option value="ShiftName">Shift</option>
+                            <option value="StartDate">Start Date</option>
+                            <option value="Enddate">End Date</option>
+                        </select>
+                        <input type="text" value="" class="wms-srv-input wms-srv-simple-search" id="txtsearchLabourVal" title="Search"><a href="#"
+                            data-prefix="SE" onclick="labourList();"><i class="fas fa-search" title="Search"></i></a>
+                    </div>
+                    <div class="wms-srv-grid-title">
+                        Labour List
+                    </div>
+                </div>
+
+                <!-- Administrator View -->
+            <div class="wms-srv-grid-scroller" id="wms-aministratorview-grid" style="width: 100%;">
+                <div class="wms-srv-grid" data-gridobjectid="gridObject_Appointment_Book_Book" id="tblGridLabourlist">
+                   <div class="wms-srv-grid-header">
+                        <div class="wms-srv-grid-cell"></div>
+                        <div class="wms-srv-grid-cell wms-align">Labour Code</div>
+                        <div class="wms-srv-grid-cell wms-align">Labour Name</div>
+                        <div class="wms-srv-grid-cell wms-align">Chargeable Rate</div>
+                        <div class="wms-srv-grid-cell wms-align">Bilable Rate</div>
+                        <div class="wms-srv-grid-cell wms-align">Vendor</div>
+                        <div class="wms-srv-grid-cell wms-align">Ledger Code</div>
+                        <div class="wms-srv-grid-cell wms-align">Add Shift</div>
+                        <div class="wms-srv-grid-cell wms-align">Start Date</div>
+                        <div class="wms-srv-grid-cell wms-align">End Date</div>
+                        <div class="wms-srv-grid-cell wms-align">Action</div>
+                    </div>
+
+                    <div class="wms-srv-grid-row wms-align">                        
+            <div class="wms-srv-grid-cell">
+                <input type="checkbox" onclick="selectAllTask(This);" class="messageCheckbox" data-id="234503">
+            </div>
+                        <div class="wms-srv-grid-cell">
+                            <!-- <input type="text" data-prefix="SESKU" data-id="" value="" class="wms-srv-grid-cell-input"> -->
+                            <label id="txtGenerateId">0</label>
+                        </div>
+                        <div class="wms-srv-grid-cell"><input type="text" id="txtLabourName" value="" class="wms-srv-grid-cell-input"></div>
+                        <div class="wms-srv-grid-cell"><input type="text" data-prefix="SESKU" data-id="" value=""
+                                class="wms-srv-grid-cell-input"></div>
+                        <div class="wms-srv-grid-cell"> <input type="text" data-prefix="SESKU" data-id="" value=""
+                                class="wms-srv-grid-cell-input"></div>
+                                <div class="wms-srv-grid-cell">
+                                    <select id="txtddlVendorId">
+                                        <option> --Select-- </option>
+                                        <option>Vendor 1</option>
+                                        <option>Vendor 2</option>
+                                    </select>
+                                </div>
+                        <div class="wms-srv-grid-cell">
+                        <input type="text" data-prefix="SESKU" data-id="" value=""
+                                class="wms-srv-grid-cell-input">
+                        </div>
+                        <div class="wms-srv-grid-cell" style="width: 170px;">
+                            <div class="wms-srv-suggestion-holder">
+                               <select>
+                                <option value="">-- Select --</option>
+                                <option value=""> Day </option>
+                                <option value=""> Night </option>
+                                <option value=""> Morning </option>
+                               </select>
+                               <a href="#" onclick="showAddNewShift();">
+                                    <i class="fas fa-plus-circle" title="Search"></i></a>
+                            </div>
+                        </div>
+                            <div class="wms-srv-grid-cell"> 
+                               
+                                <input type="text" value="" id="" class="wms-srv-grid-cell-input wms-srv-datepicker" readonly>
+                            </div>
+                                <div class="wms-srv-grid-cell"> 
+                                    <input type="text" data-prefix="SESKU" id="" data-id="" value=""
+                                    class="wms-srv-grid-cell-input wms-srv-datepicker">
+                                </div>
+                        <div class="wms-srv-grid-cell">
+                            <div class="wms-srv-grid-action">
+                                <a href="#" title="Save" class="wms-srv-save" data-prefix="SV" onclick=""><i
+                                        class="fas fa-check-circle"></i></a>
+                                        <!-- <div class="wms-srv-action-sep">  |  </div>
+                                        <a href="#" title="view Labour" class="wms-srv-save" data-prefix="SV" onclick="showLabourDetailReport();"><i
+                                            class="fas fa-users"></i></a> -->
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Row Start -->
+                        
+                        <div class="wms-srv-grid-row wms-align" id="gridLabourRow_3">
+                            <div class="wms-srv-grid-cell">
+                                <input type="checkbox" onclick="selectAllTask(This);" class="messageCheckbox" data-id="234503">
+                            </div>
+                            <div class="wms-srv-grid-cell">LR0059</div>
+                            <div class="wms-srv-grid-cell">Devid</div>
+                            <div class="wms-srv-grid-cell">7412</div>
+                            <div class="wms-srv-grid-cell">96852</div>
+                            <div class="wms-srv-grid-cell">Vendor 1</div>
+                            <div class="wms-srv-grid-cell">LR1d</div>
+                            <div class="wms-srv-grid-cell">Day</div>
+                            <div class="wms-srv-grid-cell">06/01/2024</div>
+                            <div class="wms-srv-grid-cell">15/02/2024</div>
+                            <div class="wms-srv-grid-cell">
+                                <div class="wms-srv-grid-action">
+              
+                    <a href="#" title="Save" class="wms-srv-save" data-prefix="SV" onclick="editLabourDetails(3);">
+                        <i class="fas fa-edit"></i></a>                 
+                                            <div class="wms-srv-action-sep">  |  </div>
+                <a href="#" title="view Labour" class="wms-srv-save" data-prefix="SV" onclick="showLabourDetailReport();">
+                    <i class="fas fa-users"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="wms-srv-grid-row wms-align" id="gridLabourRow_4">
+                            <div class="wms-srv-grid-cell">
+                                <input type="checkbox" onclick="selectAllTask(This);" class="messageCheckbox" data-id="234503">
+                            </div>
+                            <div class="wms-srv-grid-cell">Vendor 4</div>
+                            <div class="wms-srv-grid-cell">LR0012</div>
+                            <div class="wms-srv-grid-cell">John</div>
+                            <div class="wms-srv-grid-cell">8595</div>
+                            <div class="wms-srv-grid-cell">12059</div>
+                            <div class="wms-srv-grid-cell">01/01/2024</div>
+                            <div class="wms-srv-grid-cell">15/02/2024</div>
+                            <div class="wms-srv-grid-cell">Morning</div>
+                            <div class="wms-srv-grid-cell">LR1d</div>
+                            <div class="wms-srv-grid-cell">
+                                <div class="wms-srv-grid-action">
+              
+                    <a href="#" title="Save" class="wms-srv-save" data-prefix="SV" onclick="editLabourDetails(4);">
+                        <i class="fas fa-edit"></i></a>                 
+                                            <div class="wms-srv-action-sep">  |  </div>
+                <a href="#" title="view Labour" class="wms-srv-save" data-prefix="SV" onclick="showLabourDetailReport();">
+                    <i class="fas fa-users"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                <!-- Edit Grid Details-->    
+                    <div class="wms-srv-grid-row wms-align" id="editusergridValues" style="display: none;">
+                        <div class="wms-srv-grid-cell">
+                            <select>
+                                <option>Admin</option>
+                                <option>Test Admin</option>
+                                <option>Super Admin</option>
+                            </select>
+                        </div>
+                        <div class="wms-srv-grid-cell"><input type="text" data-prefix="SESKU" data-id="" value=""
+                                class="wms-srv-grid-cell-input"></div>
+                        <div class="wms-srv-grid-cell"><input type="text" data-prefix="SESKU" data-id="" value=""
+                                class="wms-srv-grid-cell-input"></div>
+                        <div class="wms-srv-grid-cell"><input type="text" data-prefix="SESKU" data-id="" value=""
+                                class="wms-srv-grid-cell-input"></div>
+                        <div class="wms-srv-grid-cell"> <input type="text" data-prefix="SESKU" data-id="" value=""
+                                class="wms-srv-grid-cell-input"></div>
+                        <div class="wms-srv-grid-cell"><input type="text" data-prefix="SESKU" data-id="" value=""
+                                class="wms-srv-grid-cell-input"></div>
+                        <div class="wms-srv-grid-cell">WMS_James</div>
+                        <div class="wms-srv-grid-cell">-</div>
+                        <div class="wms-srv-grid-cell">
+                            <div class="wms-srv-grid-action">
+                                <a href="#" title="Save" class="wms-srv-save" data-prefix="SV" onclick=""><i
+                                        class="fas fa-check-circle"></i></a>
+                                <div class="wms-srv-action-sep">|</div>
+                                <a href="#" title="Cancel" class="wms-srv-save" data-prefix="SV"><i
+                                        class="fas fa-times-circle" id="hideGridEditRow"></i></a>
+
+
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Edit Grid Details-->
+                </div>
+            </div>
+                <div class="wms-srv-grid-pager" id="pagingabourMaster">
+                    <span class="wms-srv-pager-records">1-1 of 82 Records</span>
+                    <span class="wms-srv-empty-space"></span>
+                    <span class="wms-srv-pager-links"><a href="#" data-page="firstpage"><i
+                                class="fas fa-angle-double-left"></i></a><a href="#" data-page="previous"><i
+                                class="fas fa-angle-left"></i></a><a href="#" class="wms-srv-active"
+                            data-page="1">1</a><a href="#" data-page="2">2</a><a href="#" data-page="3">3</a><a href="#"
+                            data-page="4">4</a><a href="#" data-page="5">5</a><a href="#" data-page="6">6</a><a href="#"
+                            data-page="7">7</a><a href="#" data-page="8">8</a><a href="#" data-page="9">9</a><a href="#"
+                            data-page="next"><i class="fas fa-angle-right"></i></a><a href="#" data-page="lastpage"><i
+                                class="fas fa-angle-double-right"></i></a></span>
+                    <span class="wms-srv-empty-space"></span>
+                    <input type="text" name="txtGridPageNo" onkeypress="return isNumber(event)" class="wms-srv-input notranslate" value="0"
+                        style="width: 80px;">
+                    <a href="#" title="Jump To" class="wms-srv-pager-go"><i class="fas fa-play-circle"></i></a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+ <!--Add Shift popup-->
+ <div class="wms-srv-popup-holder" id="wms-srv-AddNewShift-popup" style="display: none; z-index: 99999;">
+    <div class="wms-srv-popup-bg">
+    </div>
+    <div class="wms-srv-popup" style="width: 100%; margin-left: auto; height: 100%; margin-right: auto;">
+        <div class="wms-srv-popup-content">
+            <!-- Popup Title -->
+            <div class="wms-srv-popup-title">
+                <div class="wms-srv-page-title">
+                    <i class="fas fa-file-alt"></i><span>Add Shift</span>
+                </div>
+                <a href="#" id="wms-srv-AddNewShift-popup-close" class="wms-srv-popup-close"><i class="fas fa-times-circle"></i></a>
+            </div>
+            <!-- Popup Title -->
+            <div class="wms-srv-popup-content-body" id="wms-srv-popup-content-body">
+                <!-- Grid 2-->
+
+                <div class="wms-srv-grid-holder pnlWmsDetail" id="pnlWmsDetail">
+                    <div class="wms-srv-grid-action-panel">
+                        <div class="wms-srv-grid-common-action"><a href="#" data-prefix="CG" class="wms-srv-icononly"><i class="fas fa-list"></i></a></div>
+                        <div class="wms-srv-grid-title">Add Shift List</div>
+                    </div>
+                    <div class="wms-srv-grid-scroller" style="height: 129.067px;">
+                <div class="wms-srv-grid" style="text-align: center; min-width: auto; width: 100%;"  id="wms-srv-ShfitList">
+                            <div class="wms-srv-grid-header">
+                                <div class="wms-srv-grid-cell  wms-srv-align">Shift Name</div>
+                                <div class="wms-srv-grid-cell  wms-srv-align">Start Time</div>
+                                <div class="wms-srv-grid-cell  wms-srv-align">End Time</div>
+                                <div class="wms-srv-grid-cell  wms-srv-align">Action</div>
+                            </div>
+                            <div class="wms-srv-grid-row wms-srv-grid-add">
+            <div class="wms-srv-grid-cell">
+                <input type="text" data-prefix="SESKU" value="" id="txtAddNewShiftName" name="" class="wms-srv-grid-cell-input">
+            </div>
+            <div class="wms-srv-grid-cell">
+                <input type="time" data-prefix="SESKU" value="" id="txtShiftStartTime" name="" class="wms-srv-grid-cell-input">
+            </div>
+            <div class="wms-srv-grid-cell"><input type="time" data-prefix="SESKU" data-id="" value=""
+                id="txtShiftEndTime" class="wms-srv-grid-cell-input">
+            </div>
+                                <div class="wms-srv-grid-cell">
+                                    <div class="wms-srv-grid-action"><a href="#" title="Save" onclick="addNewShift();" class="wms-srv-save" data-prefix="SV"><i
+                                                class="fas fa-check-circle" ></i></a></div>
+                                </div>
+                            </div>
+                            <div class="wms-srv-grid-row wms-align" id="rowParameter_80438">
+                                <div class="wms-srv-grid-cell  wms-srv-align">Day</div>
+                                <div class="wms-srv-grid-cell  wms-srv-align">09:30</div>
+                                <div class="wms-srv-grid-cell  wms-srv-align">06:30</div>
+                                <div class="wms-srv-grid-cell  wms-srv-align"></div>
+                               
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+                <!-- Grid 2-->
+            </div>
+        </div>
+    </div>
+</div>
+<!--Add Shift popup-->
+
+
+    
+    <!-- Labour Details -->
+ <!-- POPUP  -->
+ <div class="wms-srv-popup-holder" id="wms-srv-LabourDetails-popup" style="display: none;">
+    <div class="wms-srv-popup-bg">
+    </div>
+    <div class="wms-srv-popup">
+        <div class="wms-srv-popup-content">
+            <!-- Popup Title -->
+            <div class="wms-srv-popup-title">
+                <div class="wms-srv-page-title">
+                    <i class="fas fa-file-alt"></i><span>Labour Details List</span>
+                </div>
+                <a href="#" id="wms-srv-LabourDetails-popup-close" class="wms-srv-popup-close"><i class="fas fa-times-circle"></i></a>
+            </div>
+            <div class="container-fluid">
+                <div class="row" style="border: 1px solid #ababab;margin-left: -4px;margin-right: -2px;">                       
+                    <div class="col-sm-4">
+                      
+                            <div class="su-input-group su-static-label">
+                               <label class="su-input-label"><b>Select Date</b></label>
+                               <div class="">
+                                  <input type="text" id="txtFromToDateobjrexta" placeholder="eg: From To To" onclick="getDate();" autocomplete="off" autocorrect="off" maxlength="25" step="1" noerror="true" staticlabel="true" animate="true" label="Symbol" rules="">
+                                  <input type="hidden" id="hideFromDateobjrexta" value="">
+                                  </input>
+                                  <input type="hidden" id="hideToDateobjrexta" value="">
+                                  </input>
+                               </div>
+                               <!-- <div style="margin-top: -6px;">
+                                <span class="invoiceSubDates"><label class="txtDateFilter">Weekly</label>  <label class="txtDateFilter">| Monthly</label> <label class="txtDateFilter"> | Yearly</label></span>
+                               </div> -->
+                            </div>
+                            <div class="dateGridView" id="dateSelecterobjrexta" style="display: none;">
+                               <i class="fas fa-times-circle" onclick="openDatePopup();" style="font-size: 18px;float: right;"></i>
+                               <div>
+                                  <span>
+                                     <lable class="txtFixDates" onclick="getPreviousdate(1);">
+                                        prev. day
+                                        |
+                                     </lable>
+                                  </span>
+                                  <i class="fa-solid fa-circle-xmark iconClose" title="Cancel"></i>
+                                  <span>
+                                     <lable class="txtFixDates" onclick="getSevenDateData(7);">
+                                        last 7
+                                        days |
+                                     </lable>
+                                  </span>
+                                  <span>
+                                     <lable class="txtFixDates" onclick="getThirtyDateData(30);">
+                                        last 30
+                                        days |
+                                     </lable>
+                                  </span>
+                                  <span>
+                                     <lable class="txtFixDates" onclick="getcurrentFYData('2023/04/24');">
+                                        current FY
+                                     </lable>
+                                  </span>
+                                  <hr class="hrLine1">
+                               </div>
+                               <table class="dateGrid"
+                               id="gridDatePickerobjrexta">
+
+                               <tr>
+                                   <td>
+
+                                       <div class="text-center">
+                                           <strong>From</strong>
+                                       </div>
+
+
+                                       <div id="txt_FromdatePickerobjrexta"
+                                           class="txt_FromdatePicker">
+
+                                       </div>
+                                   </td>
+                                   <td>
+                                       <div class="text-center2">
+                                           <strong>To</strong>
+                                       </div>
+
+                                       <div
+                                           id="txt_TodatePickerobjrexta">
+                                       </div>
+                                   </td>
+                               </tr>
+                           </table>
+                              
+                            </div>
+                           
+                     </div>
+       
+                    <div class="col-sm-8">                       
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-sm-3">
+                                 <div class="su-input-group su-static-label">
+                                    <label class="su-input-label"><b>Zone</b></label>
+                        <div class="headSearchData">                                    
+                                    <select class="dropdownDLL" id="ZoneDropDownList">
+                                       <option> --Select-- </option>
+                                       <option> Zone 1 </option>
+                                       <option> Zone 2 </option>
+                                    </select>                                    
+                         </div>
+                        </div>
+                                 </div>
+                                <div class="col-sm-3">
+                                    <div class="su-input-group su-static-label">
+                                        <label class="su-input-label"><b>Activity</b></label>
+                                        <div class="headSearchData" >                                    
+                                                            <select class="dropdownDLL" id="ActivityDropDown">
+                                                                <option> --Select-- </option>
+                                                                <option> Activity 1</option>
+                                                                <option> Activity 2</option>                                                                
+                                                            </select>                                    
+                                     </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-3">
+                                    <div class="su-input-group su-static-label">
+                                        <label class="su-input-label"><b>Order</b></label>
+                                        <div class="">                                    
+                                           <input type="text" data-prefix="SESKU"
+                                                id="txtLbrTimeTrackOrderId" data-id="" value=""
+                                                class="wms-srv-grid-cell-input" style="width:210px;">                                
+                                      </div>
+                                    </div>
+                                </div>
+                               
+                                <div class="col-sm-2">
+                                    <!-- <div class="su-input-group su-static-label">
+                                        <label class="su-input-label"><b>Billing Status</b></label>
+                                        <div class="headSearchData">                                    
+                                            <select class="dropdownDLL">
+                                                <option> --Select-- </option>
+                                            </select>                                    
+                     </div>
+                                    </div> -->
+                                </div>
+                                
+                                <div class="col-sm-1" style="padding-right: 0px;padding-top: 22px;">
+            
+                                    <button type="submit" class="btn-blue" id="btnSearchReportobjrexta" onclick="searchTimeTrackingReport();" style="float:right;">
+                                        <span class="icon icon-arrow-right"><i class="fas fa-solid fa-arrow-right searchIcon"></i></span>
+                                    </button>               
+                                </div>
+                                <div class="col-sm-1">
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+            <!-- Popup Title -->
+            <div class="wms-srv-popup-content-body" id="wms-srv-popup-content-body">
+                <div id="popupContentDocument">
+                    <div id="pnlCreatePurchaseOrder">                            
+                        <!-- Grid -->
+                        <div class="wms-srv-grid-holder pnlWmsRateGrid" id="pnlWmsRateGrid" style="display: none;">
+                            <div class="wms-srv-grid"></div>
+                        </div>
+                        <br>
+                        <!-- Grid -->
+                        <!-- Header Details -->
+                        <!-- Grid -->
+                        <div class="wms-srv-grid-holder pnlWmsDetail" id="pnlWmsDetail">
+                            <div class="wms-srv-grid-action-panel">
+                                <div class="wms-srv-grid-common-action"><a href="#" title="Customize Grid" data-prefix="CG" class="wms-srv-icononly"><i class="fas fa-edit"></i></a></div>                              
+                                <div class="wms-srv-grid-title">
+                                    Labour List                                       
+                                    <input type="hidden" name="" id="hdnTransDtlsID" value="0">
+                                </div>
+                            </div>
+                            <div class="wms-srv-grid-scroller newClass" style="width: 100%;">
+                               <div class="wms-srv-grid" id="gridLabourDetailsList">
+                                   <div class="wms-srv-grid-header">
+                                    <div class="wms-srv-grid-cell">Date</div> 
+                                    <div class="wms-srv-grid-cell">Customer</div> 
+                                    <div class="wms-srv-grid-cell">Zone</div> 
+                                    <div class="wms-srv-grid-cell">Activity</div> 
+                                    <div class="wms-srv-grid-cell">Order</div> 
+                                    <div class="wms-srv-grid-cell">Unit Type</div>                                       
+                                    <div class="wms-srv-grid-cell">Qty</div> 
+                                    <div class="wms-srv-grid-cell">Start Time</div>
+                                    <div class="wms-srv-grid-cell">End Time</div>
+                                    <div class="wms-srv-grid-cell">Elapsed</div>   
+                                    <div class="wms-srv-grid-cell">Action</div>                                                             
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+                                        <div class="wms-srv-grid-cell">
+                                            <input type="text" value="" id="" class="wms-srv-grid-cell-input wms-srv-datepicker hasDatepicker" readonly="">
+                                         </div> 
+                                         <div class="wms-srv-grid-cell">
+                                            <input type="text" id="" value="" class="wms-srv-grid-cell-input">
+                                         </div> 
+                                         <div class="wms-srv-grid-cell">
+                                            <select id="ddlZoneDetail">
+                                                <option> --Select-- </option>
+                                                <option>Zone 1</option>
+                                                <option>Zone 2</option>
+                                            </select>
+                                        </div>  
+                                        <div class="wms-srv-grid-cell">
+                                            <select id="ddlZoneDetail">
+                                                <option> --Select-- </option>
+                                                <option>Activity 1</option>
+                                                <option>Activity 2</option>
+                                            </select>
+                                        </div>   
+                                        <div class="wms-srv-grid-cell">
+                                           <input type="text" id="" value="" class="wms-srv-grid-cell-input">
+                                         </div> 
+                                         <div class="wms-srv-grid-cell">
+                                           <input type="text" id="" value="" class="wms-srv-grid-cell-input">
+                                         </div> 
+                                         <div class="wms-srv-grid-cell">
+                                          <input type="text" id="" value="" class="wms-srv-grid-cell-input">
+                                         </div> 
+                                         <div class="wms-srv-grid-cell">
+                                            <input type="time" id="" value="" class="wms-srv-grid-cell-input">
+                                         </div> 
+                                         <div class="wms-srv-grid-cell">
+                                           <input type="time" id="" value="" class="wms-srv-grid-cell-input">
+                                         </div> 
+                                         <div class="wms-srv-grid-cell">
+                                            <input type="text" id="" value="" class="wms-srv-grid-cell-input">
+                                         </div> 
+                                       
+                                         <div class="wms-srv-grid-cell">
+                                            <div class="wms-srv-grid-action">
+                                                <a href="#" title="Save" class="wms-srv-save" data-prefix="SV" onclick=""><i class="fas fa-check-circle"></i></a>
+                                                       <div class="wms-srv-action-sep">  |  </div>
+                                                       <a href="#" title="Save" class="wms-srv-save" onclick="">
+                                                        <i class="fas fa-edit"></i></a>
+                                            </div>
+                                        </div>                                                                          
+                                    </div>
+                                    
+                                </div>
+                            </div>                        
+                        </div>
+                        <!-- Grid -->
+                       
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    <!-- Labour Details -->
+</div>

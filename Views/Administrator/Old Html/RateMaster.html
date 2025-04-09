@@ -1,0 +1,1169 @@
+<div id="pnlRateMaster" class="wmsMasterTypePage" style="display: none;">
+    <div class="WMSLastScanned" style="display: none;"></div>
+    <!-- Content Holder -->
+    <div class="wms-srv-content-area pnlInbound" id="pnlAppointmentList">
+        <!-- Content Area -->
+
+        <div class="container-fluid wms-srv-dashboard-panel">
+            <div class="row">
+                <div class="col-md-4 nopadding">
+                    <!-- Page Title -->
+                    <div class="wms-srv-page-title">
+                        <i class="fas fa-list"></i><span class="wms-srv-data-title">Rate Card Master</span>
+                    </div>
+                    <!-- Page Title -->
+                </div>
+                <div class="col-md-8 nopadding">
+                </div>
+            </div>
+        </div>
+
+        <!-- Head Grid -->
+        <div class="wms-srv-grid-holder pnlWmsHead" id="pnlWmsHead" style="display: none;">
+            <div class="wms-srv-grid">
+                <!-- Object Head Data Will be Here -->
+            </div>
+        </div>
+        <br>
+        <!-- Head Grid -->
+
+
+        <!-- Grid -->
+        <div class="wms-srv-obj-main-grid pnlWmsDetail">
+            <div class="wms-srv-grid-holder">
+                <div class="wms-srv-grid-action-panel">
+                    <div class="wms-srv-grid-common-action"><a href="#" class="wms-srv-icononly"><i
+                                class="fas fa-list"></i></a></div>
+                    <div class="wms-srv-search">
+                        <label>Search Filter: </label>
+                        <select type="text" class="wms-srv-input wms-srv-search-filter" id="drop-down-search">
+                            <option value="0">-- Select --</option>
+                            <option value="AccountType">Account Type</option>
+                            <option value="AccountName">Account Name</option>
+                            <option value="ActivityType">Activity Type</option>
+                            <option value="ERPCode">ERP Code</option>
+                            <option value="RateTitle">Rate Title</option>
+                            <option value="Rate">Rate</option>
+                            <option value="RateForUnit">Rate Per Unit</option>
+                            <option value="UnitType">Unit Type</option>
+                            <option value="BillingFrequency">Billing Frequency</option>
+                            <option value="BillingMethod">Billing Method</option>
+                            <option value="BillingGroup">Billing Group</option>
+
+
+                            <!-- <option value="Ledgerno">Ledger No</option> -->
+                        </select>
+                        <input type="text" value="" class="wms-srv-input wms-srv-simple-search"
+                            id="text-value-search"><a href="#" data-prefix="SE" onclick="SearchRateMaster();"><i
+                                class="fas fa-search" title="search"></i></a>
+                    </div>
+                    <select type="text" class="wms-srv-input wms-srv-search-by-year" style="display: none;">
+                        <option value="0">-- Select Month --</option>
+                        <option value="January 2022">January 2022</option>
+                        <option value="February 2022">February 2022</option>
+                        <option value="January 2012">January 2012</option>
+                    </select>
+
+                    <div class="wms-srv-grid-title">
+                        Rate Card Master List
+                    </div>
+                </div>
+                <div class="wms-srv-grid-scroller" style="width: 100%; max-height:500px !important;">
+                    <input type="hidden" id="hdnaccountid" value="0">
+                    <div class="wms-srv-grid" id="gridRateMaster">
+
+                    </div>
+                    <div class="wms-srv-grid" data-gridobjectid="gridObject_Appointment_Book_Book">
+
+                        <!-- <div class="wms-srv-grid-header">
+
+                            <div class="wms-srv-grid-cell " style="text-align:center">Account Type</div>
+                            <div class="wms-srv-grid-cell " style="text-align:center">Account Name</div>
+                            <div class="wms-srv-grid-cell " style="text-align:center">Activity Type</div>
+                            <div class="wms-srv-grid-cell " style="text-align:center">ERP Code</div>
+                            <div class="wms-srv-grid-cell " style="text-align:center">Rate Code</div>
+                            <div class="wms-srv-grid-cell " style="text-align:center">Rate</div>
+                            <div class="wms-srv-grid-cell " style="text-align:center">Rate Per Unit</div>
+                            <div class="wms-srv-grid-cell " style="text-align:center">Unit Type</div>
+                            <div class="wms-srv-grid-cell " style="text-align:center">Billing Frequency</div>
+                            <div class="wms-srv-grid-cell " style="text-align:center">Billing Group</div>
+                            <div class="wms-srv-grid-cell " style="text-align:center">Billing Method</div>
+                            <div class="wms-srv-grid-cell " style="text-align:center">Action</div>
+                        </div>
+
+                        <div class="wms-srv-grid-row wms-align">
+                            <div class="wms-srv-grid-cell">
+                                <select id="gridAccountName" class="wms-srv-grid-cell-input">
+                                    <option value="0">-- Select --</option>
+                                    <option value="Vendor">Vendor</option>
+                                    <option value="Client">Client</option>
+                                    <option value="Carrier">Carrier</option>
+                                    <option value="Customer">Customer</option>
+                                </select>
+                            </div>
+                            <div class="wms-srv-grid-cell">
+                                <div class="wms-srv-suggestion-holder">
+                                    <input type="text" id="textAccName" value=""
+                                        class="wms-srv-grid-cell-input notranslate"><a href="#"
+                                        onclick="showActiveNamePopupList();"><i class="fas fa-search"></i></a>
+                                    <input type="hidden" data-prefix="SESKU" id="texthdnAccNameID" value=""
+                                        class="wms-srv-grid-cell-input notranslate">
+                                </div>
+                            </div>
+                            <div class="wms-srv-grid-cell">
+                                <div class="wms-srv-suggestion-holder">
+                                    <input type="text" id="textActType" value=""
+                                        class="wms-srv-grid-cell-input notranslate"><a href="#"
+                                        onclick="showActivityList();return false;"><i class="fas fa-search"></i></a>
+                                    <input type="hidden" data-prefix="SESKU" id="texthdntextActTypeID" value=""
+                                        class="wms-srv-grid-cell-input notranslate">
+                                </div>
+                            </div>
+                            <div class="wms-srv-grid-cell"><input type="text" value="" class="wms-srv-grid-cell-input">
+                            </div>
+                            <div class="wms-srv-grid-cell"><input type="text" value="" class="wms-srv-grid-cell-input">
+                            </div>
+                            <div class="wms-srv-grid-cell"><input type="text" value="" class="wms-srv-grid-cell-input">
+                            </div>
+                            <div class="wms-srv-grid-cell"><input type="text" value="" class="wms-srv-grid-cell-input">
+                            </div>
+                            <div class="wms-srv-grid-cell">
+                                <select class="wms-srv-grid-cell-input"></select>
+                                    <option value="">-- Select --</option>
+                                    <option value="">Each</option>
+                                    <option value="">Box</option>
+                                    <option value="">Carton</option>
+                                    <option value="">Container</option>
+                                    <option value="">Pallet</option>
+                                    <option value="">Order</option>
+                                    <option value="">CBF</option>
+                                    <option value="">Hours</option>
+                                </select>
+                            </div>
+                            <div class="wms-srv-grid-cell">
+                                <select class="wms-srv-grid-cell-input">
+                                    <option value="">-- Select --</option>
+                                    <option value="Weekly">Weekly</option>
+                                    <option value="Weekly">Yearly</option>
+                                    <option value="Weekly">Quaterly</option>
+                                    <option value="Weekly">Daily</option>
+                                </select>
+                            </div>
+                            <div class="wms-srv-grid-cell">
+                                <div class="wms-srv-grid-cell" id="cellKeyWordHolder_1"><i class="fas fa-plus-circle btnAddProductKeyword" onclick="showAddKeywordPanel(96748,1)"></i> </div>
+                            </div>
+                            <div class="wms-srv-grid-cell">
+                                <select class="wms-srv-grid-cell-input">
+                                    <option value="">-- Select --</option>
+                                    <option value="">Activity 1</option>
+                                    <option value="">Activity 2</option>
+                                </select>
+                            </div>
+                            <div class="wms-srv-grid-cell">
+                                <div class="wms-srv-grid-action">
+                                    <a href="#" title="Rate Parameter" onclick="editRateMaster();" class="wms-srv-save"><i class="fas fa-edit"></i></a>
+                                        <div class="wms-srv-action-sep"> | </div>
+                                        <a href="#" title="Rate Parameter" onclick="showRateParameter();"
+                                        class="wms-srv-save"><i class="fas fa-clipboard-check"></i></a>
+                                    <div class="wms-srv-action-sep"> | </div>
+                                    <a href="#" title="Rate History" onclick="showRateHistory();"
+                                        class="wms-srv-save"><i class="fas fa-file-invoice"></i></a>
+                                    <div class="wms-srv-action-sep"> | </div>
+                                    <a href="#" title="Save" class="wms-srv-save"><i
+                                            class="fas fa-check-circle"></i></a>
+                                    <div class="wms-srv-action-sep"> | </div>
+                                    <label class="switch"><input type="checkbox"><span
+                                            class="slider round"></span></label>
+
+                                </div>
+                            </div>
+                        </div>
+
+                       
+                        <div class="wms-srv-grid-row wms-align">
+                            <div class="wms-srv-grid-cell">Client</div>
+                            <div class="wms-srv-grid-cell">UserAccount</div>
+                            <div class="wms-srv-grid-cell">GRN</div>
+                            <div class="wms-srv-grid-cell">ER0293</div>
+                            <div class="wms-srv-grid-cell">RC923</div>
+                            <div class="wms-srv-grid-cell">4352</div>
+                            <div class="wms-srv-grid-cell">23</div>
+                            <div class="wms-srv-grid-cell">Pallet</div>
+                            <div class="wms-srv-grid-cell">Weekly</div>
+                            <div class="wms-srv-grid-cell">Sum</div>
+                            <div class="wms-srv-grid-cell">Activity 1</div>
+                            <div class="wms-srv-grid-cell">
+                                <div class="wms-srv-grid-action">
+                                    <a href="#" title="Rate Parameter" onclick="editRateMaster();" class="wms-srv-save"><i class="fas fa-edit"></i></a>
+                                        <div class="wms-srv-action-sep"> | </div>
+                                        <a href="#" title="Rate Parameter" onclick="showRateParameter();"
+                                        class="wms-srv-save"><i class="fas fa-clipboard-check"></i></a>
+                                    <div class="wms-srv-action-sep"> | </div>
+                                    <a href="#" title="Rate History" onclick="showRateHistory();"
+                                        class="wms-srv-save"><i class="fas fa-file-invoice"></i></a>
+                                    <div class="wms-srv-action-sep"> | </div>
+                                    <a href="#" title="Save" class="wms-srv-save"><i
+                                            class="fas fa-check-circle"></i></a>
+                                    <div class="wms-srv-action-sep"> | </div>
+                                    <label class="switch"><input type="checkbox"><span
+                                            class="slider round"></span></label>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="wms-srv-grid-row wms-align">
+                            <div class="wms-srv-grid-cell">Customer</div>
+                            <div class="wms-srv-grid-cell">TestUser</div>
+                            <div class="wms-srv-grid-cell">Inward</div>
+                            <div class="wms-srv-grid-cell">ER9825</div>
+                            <div class="wms-srv-grid-cell">RC2255</div>
+                            <div class="wms-srv-grid-cell">4352</div>
+                            <div class="wms-srv-grid-cell">58</div>
+                            <div class="wms-srv-grid-cell">Pallet</div>
+                            <div class="wms-srv-grid-cell">Weekly</div>
+                            <div class="wms-srv-grid-cell">Average</div>
+                            <div class="wms-srv-grid-cell">Activity 2</div>
+                            <div class="wms-srv-grid-cell">
+                                <div class="wms-srv-grid-action">
+                                    <a href="#" title="Rate Parameter" onclick="editRateMaster();" class="wms-srv-save"><i class="fas fa-edit"></i></a>
+                                        <div class="wms-srv-action-sep"> | </div>
+                                        <a href="#" title="Rate Parameter" onclick="showRateParameter();"
+                                        class="wms-srv-save"><i class="fas fa-clipboard-check"></i></a>
+                                    <div class="wms-srv-action-sep"> | </div>
+                                    <a href="#" title="Rate History" onclick="showRateHistory();"
+                                        class="wms-srv-save"><i class="fas fa-file-invoice"></i></a>
+                                    <div class="wms-srv-action-sep"> | </div>
+                                    <a href="#" title="Save" class="wms-srv-save"><i
+                                            class="fas fa-check-circle"></i></a>
+                                    <div class="wms-srv-action-sep"> | </div>
+                                    <label class="switch"><input type="checkbox"><span
+                                            class="slider round"></span></label>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="wms-srv-grid-row wms-align">
+                            <div class="wms-srv-grid-cell">Customer</div>
+                            <div class="wms-srv-grid-cell">TestUser</div>
+                            <div class="wms-srv-grid-cell">Inward</div>
+                            <div class="wms-srv-grid-cell">ER9825</div>
+                            <div class="wms-srv-grid-cell">RC2255</div>
+                            <div class="wms-srv-grid-cell">4352</div>
+                            <div class="wms-srv-grid-cell">58</div>
+                            <div class="wms-srv-grid-cell">Pallet</div>
+                            <div class="wms-srv-grid-cell">Weekly</div>
+                            <div class="wms-srv-grid-cell">Average</div>
+                            <div class="wms-srv-grid-cell">Activity 2</div>
+                            <div class="wms-srv-grid-cell">
+                                <div class="wms-srv-grid-action">
+                                    <a href="#" title="Rate Parameter" onclick="editRateMaster();" class="wms-srv-save"><i class="fas fa-edit"></i></a>
+                                        <div class="wms-srv-action-sep"> | </div>
+                                        <a href="#" title="Rate Parameter" onclick="showRateParameter();"
+                                        class="wms-srv-save"><i class="fas fa-clipboard-check"></i></a>
+                                    <div class="wms-srv-action-sep"> | </div>
+                                    <a href="#" title="Rate History" onclick="showRateHistory();"
+                                        class="wms-srv-save"><i class="fas fa-file-invoice"></i></a>
+                                    <div class="wms-srv-action-sep"> | </div>
+                                    <a href="#" title="Save" class="wms-srv-save"><i
+                                            class="fas fa-check-circle"></i></a>
+                                    <div class="wms-srv-action-sep"> | </div>
+                                    <label class="switch"><input type="checkbox"><span
+                                            class="slider round"></span></label>
+                                </div>
+                            </div>
+                        </div> -->
+                    </div>
+
+                   
+
+                    <!--rahul code-->
+                    <div class="wms-srv-grid-pager" id="paging-ratemaster">
+                        <span class="wms-srv-pager-records">1-1 of 82 Records</span>
+                        <span class="wms-srv-empty-space"></span>
+                        <span class="wms-srv-pager-links"><a href="#" data-page="firstpage">
+                                <i class="fas fa-angle-double-left"></i></a><a href="#" data-page="previous">
+                                <i class="fas fa-angle-left"></i></a>
+                            <a href="#" class="wms-srv-active" data-page="1">1</a>
+                            <a href="#" data-page="2">2</a>
+                            <a href="#" data-page="3">3</a>
+                            <a href="#" data-page="4">4</a>
+                            <a href="#" data-page="5">5</a>
+                            <a href="#" data-page="6">6</a>
+                            <a href="#" data-page="7">7</a>
+                            <a href="#" data-page="8">8</a>
+                            <a href="#" data-page="9">9</a>
+                            <a href="#" data-page="next"><i class="fas fa-angle-right"></i></a>
+                            <a href="#" data-page="lastpage"><i class="fas fa-angle-double-right"></i></a>
+                        </span>
+                        <span class="wms-srv-empty-space"></span>
+                        <input type="text" name="txtGridPageNo" id="txtSearchPageRecord"
+                            onkeypress="return isNumber(event)" class="wms-srv-input notranslate" value="0"
+                            style="width:80px;">
+                        <a href="#" title="Jump To" id="txtSearchPage" class="wms-srv-pager-go"><i
+                                class="fas fa-play-circle" id="txtSearchRecord"></i></a>
+                    </div>
+                    <!--rahul code-->
+
+
+
+
+                </div>
+            </div>
+            <!-- Grid -->
+            <!-- Content Area -->
+        </div><br>
+</div>
+
+<!-- Edit  Rate Master popup-->
+   <div class="wms-srv-popup-holder" id="wms-srv-EditRateMaster-popup" style="display: none;">
+    <div class="wms-srv-popup-bg">
+    </div>
+    <div class="wms-srv-popup">
+        <div class="wms-srv-popup-content">
+
+            <div class="wms-srv-popup-title">
+                <div class="wms-srv-page-title">
+                    <i class="fas fa-file-alt"></i><span>Edit Rate Master</span>
+                </div>
+<a href="#" title="Close" id="wms-srv-EditRateMaster-popup-close" class="wms-srv-popup-close"><i class="fas fa-times-circle"></i></a>
+            </div>
+
+            <div class="wms-srv-popup-content-body" id="wms-srv-popup-content-body">
+                <input type="hidden" id="hdnRateID" value="">
+                <div class="wms-srv-grid-holder pnlWmsDetail" id="wms-srv-edit-popup">
+
+                    <div class="wms-srv-grid" data-gridobjectid="gridObject_Appointment_Book_Book">
+                        <div class="wms-srv-grid-header">
+                            
+                            <div class="wms-srv-grid-cell " style="text-align:center">Account Type</div>
+                            <div class="wms-srv-grid-cell " style="text-align:center">Account Name</div>
+                            <div class="wms-srv-grid-cell " style="text-align:center">Activity Type</div>
+                            <div class="wms-srv-grid-cell " style="text-align:center">ERP Code</div>
+                            <div class="wms-srv-grid-cell " style="text-align:center">Rate Title</div>
+                            <div class="wms-srv-grid-cell " style="text-align:center">Rate</div>
+                            <div class="wms-srv-grid-cell " style="text-align:center">Rate For unite</div>
+                        </div>
+                        <div class="wms-srv-grid-row">
+
+                            <div class="wms-srv-grid-cell">
+                               <select class="wms-srv-grid-cell-input" id="ddlaccounttypeedit">
+                                <option value="0">-- Select --</option>
+                                <option value="Vendor">Vendor</option>
+                                <option value="Client">Client</option>
+                                <option value="Carrier">Carrier</option>
+                                <option value="Customer">Customer</option>
+                            </select>
+                             </div>
+                           <div class="wms-srv-grid-cell">
+                            <div class="wms-srv-suggestion-holder">
+                                <input type="text" id="txtAccountNameedit" value="" class="wms-srv-grid-cell-input notranslate"><a href="#" onclick="showActiveNamePopupListEdit();return false;"><i class="fas fa-search"></i></a>
+                                 <input type="hidden" data-prefix="SESKU" id="texthdnaccnameedit" value="" class="wms-srv-grid-cell-input notranslate">
+                                 <input type="hidden" data-prefix="SESKU" id="hdnaccidedit" value="0" class="wms-srv-grid-cell-input notranslate">
+                             </div>
+                            </div>
+                           <div class="wms-srv-grid-cell">
+                            <div class="wms-srv-suggestion-holder">
+                                <input type="text" id="txtActivityTypeedit" value="" class="wms-srv-grid-cell-input notranslate"><a href="#" onclick="showActivityListEdit();return false;"><i class="fas fa-search"></i></a>
+                                <input type="hidden" data-prefix="SESKU" id="texthdnactivitytypeedit" value="" class="wms-srv-grid-cell-input notranslate">
+                                <input type="hidden" data-prefix="SESKU" id="hdnactivitytypeidedit" value="0" class="wms-srv-grid-cell-input notranslate">
+                            </div>    
+                           </div>                                    
+                            <div class="wms-srv-grid-cell">
+                                <input type="text" id="txtERPCodeedit" data-prefix="SESKU" data-id=""
+                                    value="" class="wms-srv-grid-cell-input"
+                                    style="width:122px;">
+                            </div>
+                            <div class="wms-srv-grid-cell">
+                                <input type="text" data-prefix="SESKU" data-id=""
+                                    value="" id="txtRateTitleedit" class="wms-srv-grid-cell-input"
+                                    style="width:122px;">
+                            </div>
+                            <div class="wms-srv-grid-cell">
+                                <input type="text" data-prefix="SESKU" data-id=""
+                                    value="" id="txtRateedit" class="wms-srv-grid-cell-input"
+                                    style="width:122px;">
+                            </div>
+                            <div class="wms-srv-grid-cell">
+                                <input type="text" data-prefix="SESKU" data-id=""
+                                    value="" id="txtRateForUnitedit" class="wms-srv-grid-cell-input"
+                                    style="width:122px;">
+                            </div>
+                       
+                        </div>
+
+                    </div><br>
+                    <div class="wms-srv-grid" data-gridobjectid="gridObject_Appointment_Book_Book">
+                        <div class="wms-srv-grid-header">
+                            <div class="wms-srv-grid-cell " style="text-align:center">Unit Type</div>
+                            <div class="wms-srv-grid-cell " style="text-align:center">Billing Frequency</div>
+                            <!-- <div class="wms-srv-grid-cell " style="text-align:center">Billing Group</div> -->
+                            <div class="wms-srv-grid-cell " style="text-align:center">Billing Method</div>
+                            <!-- <div class="wms-srv-grid-cell " style="text-align:center">Action</div>  -->
+                        </div>
+                        <div class="wms-srv-grid-row">
+                    
+                    <div class="wms-srv-grid-cell">
+                        <select class="wms-srv-grid-cell-input" id="ddlUnitTypeedit"> 
+                        <!-- <option value="">-- Select --</option>
+                        <option value="">Each</option>
+                        <option value="">Box</option>
+                        <option selected value="">Carton</option>
+                        <option value="">Container</option>
+                        <option value="">Pallet</option>
+                        <option value="">Order</option>
+                        <option value="">CBF</option>
+                        <option value="">Hours</option> -->
+                                 </select>
+                     </div>
+
+                    <div class="wms-srv-grid-cell">
+                        <select class="wms-srv-grid-cell-input" id="ddlBillFreqncyedit">
+                            <option value="0">-- Select --</option>
+                            <option value="Weekly">Weekly</option>
+                            <option selected value="Weekly">Yearly</option>
+                            <option value="Weekly">Quaterly</option>
+                            <option value="Weekly">Daily</option>
+                        </select>
+                    </div>
+                    <!-- <div class="wms-srv-grid-cell">
+                    <div class="wms-srv-grid-cell" id="EditCellKeyWordHolder_">
+                        <i class="fas fa-plus-circle btnAddProductKeyword" onclick="showEditKeywordPanel(96748,1)"></i> 
+                    </div>
+                    </div> -->
+                    <div class="wms-srv-grid-cell">                    
+                        <select class="wms-srv-grid-cell-input" id="ddlBillMethodedit">
+                        <!-- <option  value="">-- Select --</option>
+                        <option selected value="">Activity 1</option>
+                        <option value="">Activity 2</option> -->
+                    </select>
+                      </div>
+                            
+                        </div>
+                    </div>
+                    <br>
+                    <div class="btnSaveCustomerMasterHolder" style="margin-left:50%;">
+                        <button class="wms-srv-input wms-srv-button wms-srv-highlight-btn-secondary"
+                            type="button" title="Save" onclick="saveRateCardEdit();"
+                            data-prefix="MO[MKCM--wmscmm--CO]"><span>Save</span></button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Edit  Rate Master popup-->
+
+
+
+
+<!--Rate Parameter popup-->
+    <div class="wms-srv-popup-holder" id="wms-srv-RatePayment-popup" style="display: none;">
+        <div class="wms-srv-popup-bg">
+        </div>
+        <div class="wms-srv-popup">
+            <div class="wms-srv-popup-content">
+                <!-- Popup Title -->
+                <div class="wms-srv-popup-title">
+                    <div class="wms-srv-page-title">
+                        <i class="fas fa-file-alt"></i><span>Rate Parameter</span>
+                    </div>
+                    <a href="#" id="wms-srv-RatePayment-popup-close" class="wms-srv-popup-close"><i
+                            class="fas fa-times-circle"></i></a>
+                </div>
+                <!-- Popup Title -->
+                <div class="wms-srv-popup-content-body" id="wms-srv-popup-content-body">
+                    <!-- Grid 2-->
+
+                    <div class="wms-srv-obj-main-grid pnlWmsDetail">
+                        <div class="wms-srv-grid-holder">
+                            <div class="wms-srv-grid-action-panel">
+                                <div class="wms-srv-grid-common-action"><a href="#" class="wms-srv-icononly"><i
+                                            class="fas fa-list"></i></a></div>
+                                <div class="wms-srv-search">
+                                    <label>Search Filter: </label>
+                                    <select type="text" class="wms-srv-input wms-srv-search-filter"
+                                        id="drop-down-search-parameter">
+                                        <option value="0">-- Select --</option>
+                                        <option value="">Parameter</option>
+                                        <option value="">Values</option>
+                                        <option value="">From</option>
+                                        <option value="">To</option>
+                                        <option value="">From Date</option>
+                                        <option value="">To Date</option>
+                                        <option value="">Effective Date</option>
+
+                                        <!-- <option value="Ledgerno">Ledger No</option> -->
+                                    </select>
+                                    <input type="text" value="" class="wms-srv-input wms-srv-simple-search"
+                                        id="text-value-search-parameter"><a href="#" data-prefix="SE" onclick="SearchClient();"><i
+                                            class="fas fa-search" title="search"></i></a>
+                                </div>
+                                <select type="text" class="wms-srv-input wms-srv-search-by-year" style="display: none;">
+                                    <option value="0">-- Select Month --</option>
+                                    <option value="January 2022">January 2022</option>
+                                    <option value="February 2022">February 2022</option>
+                                    <option value="January 2012">January 2012</option>
+                                </select>
+
+                                <div class="wms-srv-grid-title">
+                                    Rate Parameter List
+                                </div>
+                            </div>
+                            <div class="wms-srv-grid-scroller">
+                                <input type="hidden" id="hdnRateIdParam" value="0">
+                                <div class="wms-srv-grid" id="gridbindRateParameter">
+
+                                </div>
+                                <div class="wms-srv-grid" data-gridobjectid="gridObject_Appointment_Book_Book">
+
+                                    <!-- <div class="wms-srv-grid-header">
+
+                                        <div class="wms-srv-grid-cell " style="text-align:center">Parameter</div>
+                                        <div class="wms-srv-grid-cell " style="text-align:center">Values</div>
+                                        <div class="wms-srv-grid-cell " style="text-align:center">From</div>
+                                        <div class="wms-srv-grid-cell " style="text-align:center">To</div>
+                                        <div class="wms-srv-grid-cell " style="text-align:center">From Date</div>
+                                        <div class="wms-srv-grid-cell " style="text-align:center">To Date</div>
+                                        <div class="wms-srv-grid-cell " style="text-align:center">Effective Date</div>
+                                        <div class="wms-srv-grid-cell " style="text-align:center">Action</div>
+                                    </div>
+
+                                    <div class="wms-srv-grid-row wms-align">
+                                        <div class="wms-srv-grid-cell">
+                                            <select>
+                                                <option>-- Select --</option>
+                                                <option>Sku Type Count</option>
+                                                <option>Sku Count</option>
+                                                <option>Days</option>
+                                                <option>Value Matric</option>
+                                                <option>Minimum Billing</option>
+                                                <option>Minimum VAS Job</option>
+                                                <option>Add from Invoice</option>
+                                                <option>Not Visible</option>
+                                                <option>Can Remove</option>
+                                                <option>Rate On Rate</option>
+                                            </select>
+                                        </div>
+                                        <div class="wms-srv-grid-cell"><input type="text" value=""
+                                                class="wms-srv-grid-cell-input">
+                                        </div>
+                                        <div class="wms-srv-grid-cell"><input type="text" value=""
+                                                class="wms-srv-grid-cell-input">
+                                        </div>
+                                        <div class="wms-srv-grid-cell"><input type="text" value=""
+                                                class="wms-srv-grid-cell-input">
+                                        </div>
+                                        <div class="wms-srv-grid-cell"><input type="text" value=""
+                                                class="wms-srv-grid-cell-input">
+                                        </div>
+                                        <div class="wms-srv-grid-cell"><input type="text" value=""
+                                                class="wms-srv-grid-cell-input">
+                                        </div>
+                                        <div class="wms-srv-grid-cell"><input type="text" value=""
+                                                class="wms-srv-grid-cell-input">
+                                        </div>
+                                        <div class="wms-srv-grid-cell">
+                                            <div class="wms-srv-grid-action">
+                                                <a href="#" title="Save" class="wms-srv-save"><i
+                                                        class="fas fa-check-circle"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div id="RowParameter4123" class="wms-srv-grid-row wms-align">
+                                        <div class="wms-srv-grid-cell">Sku Type Count </div>
+                                        <div class="wms-srv-grid-cell">Text</div>
+                                        <div class="wms-srv-grid-cell">Text</div>
+                                        <div class="wms-srv-grid-cell">Text</div>
+                                        <div class="wms-srv-grid-cell">NA</div>
+                                        <div class="wms-srv-grid-cell">NA</div>
+                                        <div class="wms-srv-grid-cell">25/01/2024</div>
+                                        <div class="wms-srv-grid-cell">
+                                            <div class="wms-srv-grid-action">
+                                                <a href="#" title="Save" onclick="editRatePara('4123');" class="wms-srv-save"><i
+                                                        class="fas fa-edit"></i></a>
+                                            </div>
+                                        </div>                                    
+                                    </div>
+
+                                    <div  id="RowParameter4124" class="wms-srv-grid-row wms-align">
+                                        <div class="wms-srv-grid-cell">Sku Count</div>
+                                        <div class="wms-srv-grid-cell">Text</div>
+                                        <div class="wms-srv-grid-cell">Text</div>
+                                        <div class="wms-srv-grid-cell">Text</div>
+                                        <div class="wms-srv-grid-cell">Text</div>
+                                        <div class="wms-srv-grid-cell">Text</div>
+                                        <div class="wms-srv-grid-cell">14/01/2024</div>
+                                        <div class="wms-srv-grid-cell"> 
+                                            <div class="wms-srv-grid-action">
+                                                <a href="#" title="Save"  onclick="editRatePara('4124');" class="wms-srv-save"><i
+                                                        class="fas fa-edit"></i></a>
+                                            </div>
+                                         </div>                                       
+                                    </div>
+
+                                    <div class="wms-srv-grid-row wms-align">
+                                        <div class="wms-srv-grid-cell">Days</div>
+                                        <div class="wms-srv-grid-cell">Text</div>
+                                        <div class="wms-srv-grid-cell">Text</div>
+                                        <div class="wms-srv-grid-cell">Text</div>
+                                        <div class="wms-srv-grid-cell">Text</div>
+                                        <div class="wms-srv-grid-cell">Text</div>
+                                        <div class="wms-srv-grid-cell">11/01/2024</div>
+                                        <div class="wms-srv-grid-cell"> 
+                                            <div class="wms-srv-grid-action">
+                                                <a href="#" title="Save" class="wms-srv-save"><i
+                                                        class="fas fa-edit"></i></a>
+                                            </div>
+                                        </div>                                          
+                                    </div>
+
+                                    <div class="wms-srv-grid-row wms-align">
+                                        <div class="wms-srv-grid-cell">Value Matric</div>
+                                        <div class="wms-srv-grid-cell">Text</div>
+                                        <div class="wms-srv-grid-cell">Text</div>
+                                        <div class="wms-srv-grid-cell">Text</div>
+                                        <div class="wms-srv-grid-cell">Text</div>
+                                        <div class="wms-srv-grid-cell">Text</div>
+                                        <div class="wms-srv-grid-cell">05/01/2024</div>
+                                        <div class="wms-srv-grid-cell">  
+                                            <div class="wms-srv-grid-action">
+                                                <a href="#" title="Save" class="wms-srv-save"><i
+                                                        class="fas fa-edit"></i></a>
+                                            </div>
+                                        </div>                                   
+                                    </div>
+
+                                    <div class="wms-srv-grid-row wms-align">
+                                        <div class="wms-srv-grid-cell">Minimum Billing</div>
+                                        <div class="wms-srv-grid-cell">Text</div>
+                                        <div class="wms-srv-grid-cell">Text</div>
+                                        <div class="wms-srv-grid-cell">Text</div>
+                                        <div class="wms-srv-grid-cell">Text</div>
+                                        <div class="wms-srv-grid-cell">Text</div>
+                                        <div class="wms-srv-grid-cell">21/01/2024</div>
+                                        <div class="wms-srv-grid-cell"> 
+                                            <div class="wms-srv-grid-action">
+                                                <a href="#" title="Save" class="wms-srv-save"><i
+                                                        class="fas fa-edit"></i></a>
+                                            </div>
+                                        </div>                                 
+                                    </div>
+
+
+                                    <div class="wms-srv-grid-row wms-align">
+                                        <div class="wms-srv-grid-cell">Minimum VAS Job</div>
+                                        <div class="wms-srv-grid-cell">Text</div>
+                                        <div class="wms-srv-grid-cell">Text</div>
+                                        <div class="wms-srv-grid-cell">Text</div>
+                                        <div class="wms-srv-grid-cell">Text</div>
+                                        <div class="wms-srv-grid-cell">Text</div>
+                                        <div class="wms-srv-grid-cell">10/01/2024</div>
+                                        <div class="wms-srv-grid-cell"> 
+                                            <div class="wms-srv-grid-action">
+                                                <a href="#" title="Save" class="wms-srv-save"><i
+                                                        class="fas fa-edit"></i></a>
+                                            </div>
+                                        </div>                                       
+                                    </div>
+
+                                    <div class="wms-srv-grid-row wms-align">
+                                        <div class="wms-srv-grid-cell">Add from Invoice</div>
+                                        <div class="wms-srv-grid-cell">Text</div>
+                                        <div class="wms-srv-grid-cell">Text</div>
+                                        <div class="wms-srv-grid-cell">Text</div>
+                                        <div class="wms-srv-grid-cell">Text</div>
+                                        <div class="wms-srv-grid-cell">Text</div>
+                                        <div class="wms-srv-grid-cell">27/02/2024</div>
+                                        <div class="wms-srv-grid-cell"> 
+                                            <div class="wms-srv-grid-action">
+                                                <a href="#" title="Save" class="wms-srv-save"><i
+                                                        class="fas fa-edit"></i></a>
+                                            </div>
+                                        </div>                                      
+                                    </div>
+
+                                    <div class="wms-srv-grid-row wms-align">
+                                        <div class="wms-srv-grid-cell">Not Visible</div>
+                                        <div class="wms-srv-grid-cell">Text</div>
+                                        <div class="wms-srv-grid-cell">Text</div>
+                                        <div class="wms-srv-grid-cell">Text</div>
+                                        <div class="wms-srv-grid-cell">Text</div>
+                                        <div class="wms-srv-grid-cell">Text</div>
+                                        <div class="wms-srv-grid-cell">18/01/2024</div>
+                                        <div class="wms-srv-grid-cell"> 
+                                            <div class="wms-srv-grid-action">
+                                                <a href="#" title="Save" class="wms-srv-save"><i
+                                                        class="fas fa-edit"></i></a>
+                                            </div>
+                                        </div>                                     
+                                    </div>
+
+                                    <div class="wms-srv-grid-row wms-align">
+                                        <div class="wms-srv-grid-cell">Can Remove</div>
+                                        <div class="wms-srv-grid-cell">Text</div>
+                                        <div class="wms-srv-grid-cell">Text</div>
+                                        <div class="wms-srv-grid-cell">Text</div>
+                                        <div class="wms-srv-grid-cell">Text</div>
+                                        <div class="wms-srv-grid-cell">Text</div>
+                                        <div class="wms-srv-grid-cell">19/01/2024</div>
+                                       <div class="wms-srv-grid-cell"> 
+                                        <div class="wms-srv-grid-action">
+                                            <a href="#" title="Save" class="wms-srv-save"><i
+                                                    class="fas fa-edit"></i></a>
+                                        </div>
+                                         </div>                                        
+                                    </div>
+
+                                    <div class="wms-srv-grid-row wms-align">
+                                        <div class="wms-srv-grid-cell">Rate On Rate</div>
+                                        <div class="wms-srv-grid-cell">Text</div>
+                                        <div class="wms-srv-grid-cell">Text</div>
+                                        <div class="wms-srv-grid-cell">Text</div>
+                                        <div class="wms-srv-grid-cell">Text</div>
+                                        <div class="wms-srv-grid-cell">Text</div>
+                                        <div class="wms-srv-grid-cell">14/01/2024</div>
+                                        <div class="wms-srv-grid-cell"></div>                                       
+                                    </div> -->
+                                </div>
+
+                                <!--Demo Code-->
+
+                                <!--rahul code-->
+                                <!-- <div class="wms-srv-grid-pager" id="paging-client">
+                                    <span class="wms-srv-pager-records">1-1 of 82 Records</span>
+                                    <span class="wms-srv-empty-space"></span>
+                                    <span class="wms-srv-pager-links"><a href="#" data-page="firstpage">
+                                            <i class="fas fa-angle-double-left"></i></a><a href="#"
+                                            data-page="previous">
+                                            <i class="fas fa-angle-left"></i></a>
+                                        <a href="#" class="wms-srv-active" data-page="1">1</a>
+                                        <a href="#" data-page="2">2</a>
+                                        <a href="#" data-page="3">3</a>
+                                        <a href="#" data-page="4">4</a>
+                                        <a href="#" data-page="5">5</a>
+                                        <a href="#" data-page="6">6</a>
+                                        <a href="#" data-page="7">7</a>
+                                        <a href="#" data-page="8">8</a>
+                                        <a href="#" data-page="9">9</a>
+                                        <a href="#" data-page="next"><i class="fas fa-angle-right"></i></a>
+                                        <a href="#" data-page="lastpage"><i class="fas fa-angle-double-right"></i></a>
+                                    </span>
+                                    <span class="wms-srv-empty-space"></span>
+                                    <input type="text" name="txtGridPageNo" id="txtSearchPageRecord"
+                                        onkeypress="return isNumber(event)" class="wms-srv-input notranslate" value="0"
+                                        style="width:80px;">
+                                    <a href="#" title="Jump To" id="txtSearchPage" class="wms-srv-pager-go"><i
+                                            class="fas fa-play-circle" id="txtSearchRecord"></i></a>
+                                </div> -->
+                                <!--rahul code-->
+
+
+
+
+                            </div>
+                        </div>
+                        <!-- Grid -->
+                        <!-- Content Area -->
+                    </div><br>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<!--Rate Parameter popup-->
+
+
+<!-- Rate History Popup -->
+<div class="wms-srv-popup-holder" id="wms-srv-rateHistory-popup" style="display: none;">
+    <div class="wms-srv-popup-bg">
+    </div>
+    <div class="wms-srv-popup">
+        <div class="wms-srv-popup-content">
+            <!-- Popup Title -->
+            <div class="wms-srv-popup-title">
+                <div class="wms-srv-page-title">
+                    <i class="fas fa-file-alt"></i><span>Rate History</span>
+                </div>
+                <a href="#" title="Close" id="wms-srv-rateHistory-popup-close" class="wms-srv-popup-close"><i
+                        class="fas fa-times-circle"></i></a>
+            </div>
+            <!-- Popup Title -->
+            <div class="wms-srv-popup-content-body" id="wms-srv-popup-content-body" style="text-align: center;">
+                <div>
+                    <div>
+                        <!-- Grid -->
+                        <div class="wms-srv-grid-holder pnlWmsHead" id="pnlViewHeadTransfer">
+                           
+                        </div>
+                        <br>
+                        <!-- Grid -->
+                        <!-- Header Details -->
+
+                    </div>
+                    <!-- Grid -->
+                    <div class="wms-srv-grid-scroller" style="width: 100%;">
+                        <div class="wms-srv-grid" id="gridRateHistory">
+                            <!-- <div class="wms-srv-grid-header" style="white-space: nowrap;">
+                                <div class="wms-srv-grid-cell">Account Type</div>
+                                <div class="wms-srv-grid-cell">Account Name</div>
+                                <div class="wms-srv-grid-cell">Activity Type</div>
+                                <div class="wms-srv-grid-cell">ERP Code</div>
+                                <div class="wms-srv-grid-cell">Rate Code</div>
+                                <div class="wms-srv-grid-cell">Rate Title</div>
+                                <div class="wms-srv-grid-cell">New Rate</div>
+                                <div class="wms-srv-grid-cell">Old Rate</div>                               
+                                <div class="wms-srv-grid-cell">Rate Per Unit</div>
+                                <div class="wms-srv-grid-cell">Effective date</div>
+                                <div class="wms-srv-grid-cell">Change date</div>
+                                <div class="wms-srv-grid-cell">Modified by</div>
+                                <div class="wms-srv-grid-cell">Unit Type</div>
+                                <div class="wms-srv-grid-cell">Billing Freq</div>
+                                <div class="wms-srv-grid-cell">Billing Method</div>
+                                <div class="wms-srv-grid-cell">Billing Group</div>  
+                                <div class="wms-srv-grid-cell">Start Date</div>
+                                <div class="wms-srv-grid-cell">End Date</div>
+                            </div>
+                            <div class="wms-srv-grid-row">
+                                <div class="wms-srv-grid-cell">Client</div>
+                                <div class="wms-srv-grid-cell">UserAccount</div>
+                                <div class="wms-srv-grid-cell">GRN</div>
+                                <div class="wms-srv-grid-cell">ER0293</div>
+                                <div class="wms-srv-grid-cell">RC923</div>
+                                <div class="wms-srv-grid-cell">4352</div>
+                                <div class="wms-srv-grid-cell">23</div>                               
+                                <div class="wms-srv-grid-cell">85</div>
+                                <div class="wms-srv-grid-cell">896</div>
+                                <div class="wms-srv-grid-cell">13/12/2023</div>
+                                <div class="wms-srv-grid-cell">25/12/2023</div>
+                                <div class="wms-srv-grid-cell">Pallet</div>
+                                <div class="wms-srv-grid-cell">Weekly</div>
+                                <div class="wms-srv-grid-cell">Sum</div>
+                                <div class="wms-srv-grid-cell">Activity 1</div>
+                                <div class="wms-srv-grid-cell">Change User</div>
+                                <div class="wms-srv-grid-cell">05/01/2024</div>
+                        
+                                <div class="wms-srv-grid-cell">13/12/2023</div>
+                
+
+                            </div> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Rate History Popup -->
+
+
+<!-- Activity List popup-->
+<div class="wms-srv-popup-holder" id="wms-srv-ActivityList-popup" style="display: none;">
+    <div class="wms-srv-popup-bg">
+    </div>
+    <div class="wms-srv-popup">
+        <div class="wms-srv-popup-content">
+            <!-- Popup Title -->
+            <div class="wms-srv-popup-title">
+                <div class="wms-srv-page-title">
+                    <i class="fas fa-file-alt"></i><span>Activity List</span>
+                </div>
+                <a href="#" id="wms-srv-ActivityList-popup-close" class="wms-srv-popup-close"><i
+                        class="fas fa-times-circle"></i></a>
+            </div>
+            <!-- Popup Title -->
+            <div class="wms-srv-popup-content-body" id="wms-srv-popup-content-body">
+                <!-- Grid 2-->
+
+                <div class="wms-srv-obj-main-grid pnlWmsDetail">
+                    <div class="wms-srv-grid-holder">
+                        <div class="wms-srv-grid-action-panel">
+                            <div class="wms-srv-grid-common-action"><a href="#" class="wms-srv-icononly"><i
+                                        class="fas fa-list"></i></a></div>
+                            <div class="wms-srv-search">
+                                <label>Search Filter: </label>
+                                <select type="text" class="wms-srv-input wms-srv-search-filter" id="drop-down-search-activity">
+                                    <option value="0">-- Select --</option>
+                                    <option value="ObjectName">Object</option>
+                                    <option value="ActivityName">Activity Name</option>
+                                    <option value="Remark">Remark</option>
+                                    <option value="ZoneName">Zone</option>
+                                    <option value="Active">Action</option>
+
+
+                                    <!-- <option value="Ledgerno">Ledger No</option> -->
+                                </select>
+                                <input type="text" value="" class="wms-srv-input wms-srv-simple-search"
+                                    id="text-value-search-activity"><a href="#" data-prefix="SE" onclick="SearchActivity();"><i
+                                        class="fas fa-search" title="search"></i></a>
+                            </div>
+                            <select type="text" class="wms-srv-input wms-srv-search-by-year" style="display: none;">
+                                <option value="0">-- Select Month --</option>
+                                <option value="January 2022">January 2022</option>
+                                <option value="February 2022">February 2022</option>
+                                <option value="January 2012">January 2012</option>
+                            </select>
+
+                            <div class="wms-srv-grid-title">
+                                Activity List
+                            </div>
+                        </div>
+                        <div class="wms-srv-grid-scroller">
+                            <input type="hidden" id="hdnactivityid" value="0">
+                            <div class="wms-srv-grid" id="gridbindActivity">
+
+                            </div>
+                            <div class="wms-srv-grid" data-gridobjectid="gridObject_Appointment_Book_Book">
+
+                                 <!-- <div class="wms-srv-grid-header">
+
+                                    <div class="wms-srv-grid-cell " style="text-align:center">Object</div>
+                                    <div class="wms-srv-grid-cell " style="text-align:center">Activity Name</div>
+                                    <div class="wms-srv-grid-cell " style="text-align:center">Remark</div>
+                                    <div class="wms-srv-grid-cell " style="text-align:center">Zone</div>
+                                    <div class="wms-srv-grid-cell " style="text-align:center">Action</div>
+                                </div>
+
+                                <div class="wms-srv-grid-row wms-align">
+                                    <div class="wms-srv-grid-cell">
+                                        <select>
+                                            <option>GRN</option>
+                                            <option>Dispatch</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="wms-srv-grid-cell"><input type="text" value=""
+                                            class="wms-srv-grid-cell-input">
+                                    </div>
+                                    <div class="wms-srv-grid-cell"><input type="text" value=""
+                                            class="wms-srv-grid-cell-input">
+                                    </div>
+                                    <div class="wms-srv-grid-cell">
+
+                                        <div class="wms-srv-suggestion-holder">
+                                            <select>
+                                                <option>select</option>
+                                            </select>
+                                            <a href="#" onclick="showZoneMaster();return false;"><i
+                                                    class="fas fa-plus-circle btnAddEmailInToField"></i></a>
+                                            <input type="hidden" data-prefix="SESKU" id="texthdnFromLocationID" value=""
+                                                class="wms-srv-grid-cell-input notranslate">
+                                        </div>
+                                    </div>
+                                    <div class="wms-srv-grid-cell">
+                                        <div class="wms-srv-grid-action">
+                                            <a href="#" title="Save" class="wms-srv-save"><i
+                                                    class="fas fa-check-circle"></i></a>
+                                            <div class="wms-srv-action-sep"> | </div>
+                                            <label class="switch"><input type="checkbox"><span
+                                                    class="slider round"></span></label>
+                                        </div>
+                                    </div>
+                                </div> -->
+
+
+                            </div>
+
+                            <!--Demo Code-->
+                        </div>
+                    </div>
+                    <!-- Grid -->
+                    <!-- Content Area -->
+                </div><br>
+            </div>
+
+        </div>
+    </div>
+</div>
+<!-- Activity List popup-->
+
+
+<!-- Zone Master popup-->
+<div class="wms-srv-popup-holder" id="wms-srv-ZoneMaster-popup" style="display: none;">
+    <div class="wms-srv-popup-bg">
+    </div>
+    <div class="wms-srv-popup">
+        <div class="wms-srv-popup-content">
+            <!-- Popup Title -->
+            <div class="wms-srv-popup-title">
+                <div class="wms-srv-page-title">
+                    <i class="fas fa-file-alt"></i><span>Zone Master</span>
+                </div>
+                <a href="#" id="wms-srv-ZoneMaster-popup-close" class="wms-srv-popup-close"><i
+                        class="fas fa-times-circle"></i></a>
+            </div>
+            <!-- Popup Title -->
+            <div class="wms-srv-popup-content-body" id="wms-srv-popup-content-body">
+                <!-- Grid 2-->
+
+                <div class="wms-srv-obj-main-grid pnlWmsDetail">
+                    <div class="wms-srv-grid-holder">
+                        <div class="wms-srv-grid-action-panel">
+                            <div class="wms-srv-grid-common-action"><a href="#" class="wms-srv-icononly"><i
+                                        class="fas fa-list"></i></a></div>
+                            <div class="wms-srv-search">
+                                <label>Search Filter: </label>
+                                <select type="text" class="wms-srv-input wms-srv-search-filter" id="drop-down-search-zone">
+                                    <option value="0">-- Select --</option>
+                                    <option value="">Zone Code</option>
+                                    <option value="">Zone Name</option>
+
+                                    <!-- <option value="Ledgerno">Ledger No</option> -->
+                                </select>
+                                <input type="text" value="" class="wms-srv-input wms-srv-simple-search"
+                                    id="text-value-search-zone"><a href="#" data-prefix="SE" onclick="SearchClient();"><i
+                                        class="fas fa-search" title="search"></i></a>
+                            </div>
+                            <select type="text" class="wms-srv-input wms-srv-search-by-year" style="display: none;">
+                                <option value="0">-- Select Month --</option>
+                                <option value="January 2022">January 2022</option>
+                                <option value="February 2022">February 2022</option>
+                                <option value="January 2012">January 2012</option>
+                            </select>
+
+                            <div class="wms-srv-grid-title">
+                                Zone Master
+                            </div>
+                        </div>
+                        <div class="wms-srv-grid-scroller">
+                            <div class="wms-srv-grid" id="gridbindZone">
+
+                            </div>
+                            <div class="wms-srv-grid" data-gridobjectid="gridObject_Appointment_Book_Book">
+
+                                <!-- <div class="wms-srv-grid-header">
+
+                                    <div class="wms-srv-grid-cell " style="text-align:center">Zone Code</div>
+                                    <div class="wms-srv-grid-cell " style="text-align:center">Zone Name</div>
+                                    <div class="wms-srv-grid-cell " style="text-align:center">Action</div>
+                                </div>
+
+                                <div class="wms-srv-grid-row wms-align">
+                                    
+                                    <div class="wms-srv-grid-cell"><input type="text" value=""
+                                            class="wms-srv-grid-cell-input">
+                                    </div>
+                                    <div class="wms-srv-grid-cell"><input type="text" value=""
+                                            class="wms-srv-grid-cell-input">
+                                    </div>
+                                    
+                                    <div class="wms-srv-grid-cell">
+                                        <div class="wms-srv-grid-action">
+                                            <a href="#" title="Save" class="wms-srv-save"><i
+                                                    class="fas fa-check-circle"></i></a>                                           
+                                        </div>
+                                    </div>
+                                </div> -->
+
+
+                            </div>
+
+                            <!--Demo Code-->
+                        </div>
+                    </div>
+                    <!-- Grid -->
+                    <!-- Content Area -->
+                </div><br>
+            </div>
+
+        </div>
+    </div>
+</div>
+<!-- Zone Master popup-->
+
+<!-- Account Name popup-->
+<div class="wms-srv-popup-holder" id="wms-srv-AccountName-popup" style="display: none;">
+    <div class="wms-srv-popup-bg">
+    </div>
+    <div class="wms-srv-popup">
+        <div class="wms-srv-popup-content">
+            <!-- Popup Title -->
+            <div class="wms-srv-popup-title">
+                <div class="wms-srv-page-title">
+                    <i class="fas fa-file-alt"></i><span>Account Name</span>
+                </div>
+                <a href="#" id="wms-srv-AccountName-popup-close" class="wms-srv-popup-close"><i
+                        class="fas fa-times-circle"></i></a>
+            </div>
+            <!-- Popup Title -->
+            <div class="wms-srv-popup-content-body" id="wms-srv-popup-content-body">
+                <!-- Grid 2-->
+
+                <div class="wms-srv-obj-main-grid pnlWmsDetail">
+                    <div class="wms-srv-grid-holder">
+                        <div class="wms-srv-grid-action-panel">
+                            <div class="wms-srv-grid-common-action"><a href="#" class="wms-srv-icononly"><i
+                                        class="fas fa-list"></i></a></div>
+                            <!-- <div class="wms-srv-search">
+                                <label>Search Filter: </label>
+                                <select type="text" class="wms-srv-input wms-srv-search-filter" id="drop-down-search">
+                                    <option value="0">-- Select --</option>
+                                    <option value="">Zone Code</option>
+                                    <option value="">Zone Name</option>
+
+                                  
+                                </select>
+                                <input type="text" value="" class="wms-srv-input wms-srv-simple-search"
+                                    id="text-value-search"><a href="#" data-prefix="SE" onclick="SearchClient();"><i
+                                        class="fas fa-search" title="search"></i></a>
+                            </div> -->
+                            <select type="text" class="wms-srv-input wms-srv-search-by-year" style="display: none;">
+                                <option value="0">-- Select Month --</option>
+                                <option value="January 2022">January 2022</option>
+                                <option value="February 2022">February 2022</option>
+                                <option value="January 2012">January 2012</option>
+                            </select>
+
+                            <div class="wms-srv-grid-title">
+                               Account Name List
+                            </div>
+                        </div>
+                        <div class="wms-srv-grid-scroller">
+                            <div class="wms-srv-grid" id="gridbind">
+
+                            </div>
+                            <div class="wms-srv-grid" id="showGridAccountName">
+
+                                <div class="wms-srv-grid-header">
+
+                                    <div class="wms-srv-grid-cell " style="text-align:center">Zone Code</div>
+                                    <div class="wms-srv-grid-cell " style="text-align:center">Zone Name</div>
+                                    <div class="wms-srv-grid-cell " style="text-align:center">Action</div>
+                                </div>
+
+                                <div class="wms-srv-grid-row wms-align">
+                                    
+                                    <div class="wms-srv-grid-cell"><input type="text" value=""
+                                            class="wms-srv-grid-cell-input">
+                                    </div>
+                                    <div class="wms-srv-grid-cell"><input type="text" value=""
+                                            class="wms-srv-grid-cell-input">
+                                    </div>
+                                    
+                                    <div class="wms-srv-grid-cell">
+                                        <div class="wms-srv-grid-action">
+                                            <a href="#" title="Save" class="wms-srv-save"><i
+                                                    class="fas fa-check-circle"></i></a>                                           
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            </div>
+
+                            <!--Demo Code-->
+                        </div>
+                    </div>
+                    <!-- Grid -->
+                    <!-- Content Area -->
+                </div><br>
+            </div>
+
+        </div>
+    </div>
+</div>
+<!-- Account Name popup-->
+
+</div>

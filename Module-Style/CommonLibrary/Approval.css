@@ -1,0 +1,212 @@
+.ctrlEvent,
+.userProfile,
+.ctrlAdd{
+    background-color:#ffffff;
+    width:25px;
+    height:25px;
+    border:solid 0px #ffffff;
+   /* box-shadow:1px 2px 2px #c1c1c1; */
+    border-radius: 50%;
+    display: inline-block;
+    overflow: hidden;
+    text-align: center;
+    color:#ffffff;
+    font-weight: bold;
+    line-height: 24px;
+    font-size: 18px;
+    cursor: pointer;
+}
+.userProfile img{
+    width:100%;
+    height:100%;
+    display: block;
+}
+.ctrlEvent{
+    position: absolute;
+    left: -16px;
+    background-color:#ffffff;
+    line-height: 1.2;
+}
+.ctrlAdd{
+    background-color:#00acd7;
+}
+
+.pnlApprovalHolder{
+    display: block;
+    vertical-align: top;
+    position: relative;
+    padding-left: 15px;
+}
+.pnlEventControl{
+    background-color: #ffffff;
+    border-radius: 7px;
+    position: absolute;
+    box-shadow: 5px 5px 10px #a5a5a5;
+    overflow: hidden;
+}
+.pnlEventApprover{
+    background-color: #ffffff;
+    border-radius: 7px;
+    position: absolute;
+    box-shadow: 5px 5px 10px #a5a5a5;
+    overflow: hidden;   
+}
+.eventItem {
+	border-bottom: solid 1px #cccccc;
+	padding: 10px 30px;
+    background-color: #ffffff;
+    white-space: nowrap;
+}
+.eventItem:hover {
+    background-color: #efefef;
+}
+.eventApproverItem{
+    border-bottom: solid 1px #cccccc;
+	padding: 10px 30px;
+    background-color: #ffffff;
+}
+.eventApproverItem:hover {
+    background-color: #efefef;
+}
+.pnlEventControl .eventTitle {
+	font-weight: bold;
+	background-color: #00acd7;
+	padding: 10px 30px;
+	color: #ffffff;
+}
+.pnlEventApprover .eventApproverTitle {
+	font-weight: bold;
+	background-color: #00acd7;
+	padding: 10px 30px;
+	color: #ffffff;
+}
+.btnCloseEventPanel {
+	font-size: 16px;
+	margin-top: 1px;
+	position: absolute;
+	right: 10px;
+}
+.btnCloseEventApprover{
+    font-size: 16px;
+	margin-top: 1px;
+	position: absolute;
+	right: 10px;
+}
+.profileName {
+	position: relative;
+	display: inline-block;
+	top: -6px;
+    margin-left: 10px;
+}
+.eventApproverHolder{
+    overflow: auto;
+    height:250px;
+    width:320px;
+}
+.eventCodition {
+	font-size: 13px;
+	font-weight: bold;
+	background-color: #efefef;
+	text-align: left;
+	padding: 5px 20px;
+	border-bottom: solid 1px #cecece;
+}
+.eventApproverItem .fa-trash {
+	position: relative;
+	float: right;
+	top: 8px;
+}
+.eventApproverItem .btnSelectApproverFromList{
+    position: relative;
+	float: right;
+	top: 8px;
+    font-size: 16px;
+}
+.btnAddApprover {
+	background-color: #00acd7;
+	border-radius: 7px;
+	border: solid 1px #00acd7;
+	color: #ffffff;
+	padding: 5px 10px;
+    margin-left: 60px;
+}
+.btnToggle {
+	font-size: 22px !important;
+	color: #00acd7;
+}
+.toggleHolder{
+    text-align: center;
+    cursor: pointer;
+    position: relative;
+}
+.ctrlAdd i {
+	position: relative;
+	top: 7px;
+	left: 2px;
+	font-size: 12px;
+}
+.ctrlEvent i{
+	position: relative;
+	top: 7px;
+	left: 0px;
+	font-size: 14px;
+    color:#ec2b2b;
+}
+.toggleHolder i{
+    /* position: relative;
+	top: 7px;
+	left: 0px;
+	font-size: 12px; */
+}
+.ctrlAddEvent i{
+    color:#00acd7;
+}
+.approvalToolTip{
+    width: 100px !important;
+    max-width: 100px !important;
+    min-width: 100px !important;
+}
+.approvalToolTip div{
+    font-size: 13px !important;
+    padding: 5px !important;
+}
+
+.eventApproverItem i{
+    float: right;
+    font-size: 16px;
+    position: relative;
+    top:8px;
+    color:#c1c1c1;
+}
+.approverSelected{
+    font-weight: bold;
+}
+.approverSelected i{
+    color:#78b421;
+}
+.tooltip{
+    z-index: 999999;
+    margin-bottom:30px;
+}
+.activeUserProfile {
+	border: solid 2px #fff;
+	box-shadow: 5px 5px 10px #979797;
+	width: 36px;
+	height: 36px;
+}
+
+#wmsGridApprovalList .fa-check-circle{
+    color: #cccccc !important;
+}
+#wmsGridApprovalList .currentApprovalRow .fa-check-circle{
+    color: #72b90c !important;
+}
+#wmsGridApprovalList .fa-times-circle{
+    color: #ec2b2b !important;
+}
+#wmsGridApprovalList .currentApproverRow{
+    background-color: #e2f5ff;
+}
+.currentApprovalRow{
+    background-color: #ccf5ff;
+}

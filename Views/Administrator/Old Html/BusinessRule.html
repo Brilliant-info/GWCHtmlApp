@@ -1,0 +1,142 @@
+<div id="pnlBusinessRule" class="wmsMasterTypePage" style="display: none;">
+    <div class="wms-srv-content-area pnlInbound">
+        <!-- <div class="container-fluid wms-srv-dashboard-panel">
+            <div class="row">
+                <div class="col-md-12 nopadding">
+                    <div class="wms-srv-page-title">
+                        <i class="fas fa-list"></i><span class="wms-srv-data-title">Label Printing</span>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+        <!-- <div class="container-fluid">
+            <div class="row"> -->
+                <!-- <div class="col-md-3 nopadding">
+                    <div class="reportCategory" id="bizRuleMenuHolder" style="min-height: 482px;">
+                        <div class="wms-srv-search themWMSSearchReportHolder">
+                            <input type="text" value="" placeholder="Search Rule" id="txtBizRuleFilter"
+                                class="themWMSSearchReport" onkeydown="searchBusinessRule(this);"
+                                onkeyup="searchBusinessRule(this);"><i class="fas fa-search"></i>
+                        </div> -->
+                        <!-- <a href="#" data-id="bizRuleCustomer" data-title="Business Rule - Customer"
+                            style="background-color:#ffffff;"><i class="fas fa-folder-open"></i>Work Flow</a> -->
+                    <!-- </div>
+                </div> -->
+                 <!-- <div class="col-md-9 nopadding">  -->
+                    <!-- Page Title -->
+                    <!-- Page Title -->
+                    <div class="bizRuleContentHolder" id="bizRuleContentHolder">
+
+                        <div class="wms-srv-content-area">
+                            <div class="container-fluid wms-srv-dashboard-panel">
+                                <div class="row">
+                                    <div class="col-md-4 nopadding">
+                                        <!-- Page Title -->
+                                        <div class="wms-srv-page-title">
+                                            
+                                            <i class="fas fa-list"></i><span class="wms-srv-data-title">Business Rule</span>
+                                        
+                                        <!-- Page Title -->
+                                    </div>
+                                    <div class="col-md-8 nopadding">
+                                    </div>
+                                </div>
+                            </div> <br><br>
+
+                        <div class="wms-srv-obj-main-grid pnlWmsDetail">
+                            <div class="wms-srv-grid-holder">
+                                <div class="wms-srv-grid-action-panel" >
+                                          <div class="wms-srv-grid-title" > <i class="fas fa-list"></i> &nbsp; Business Rule List </div>
+                            </div>
+                                <div class="wms-srv-grid" id="BusinessGridList">
+                    
+                                    <!-- <div class="wms-srv-grid" id="GridBind">
+                                      
+                                            
+                                    </div> -->
+                    
+                                    <!-- <div class="wms-srv-grid-header">
+                                        <div class="wms-srv-grid-cell" >Business Rule Code</div>
+                                        <div class="wms-srv-grid-cell" >Business Rule</div>
+                                        <div class="wms-srv-grid-cell">Business Rule Description</div>
+                                        <div class="wms-srv-grid-cell">Module</div>
+                                        <div class="wms-srv-grid-cell">Active</div>
+                                    </div>
+                                    <div class="wms-srv-grid-row wms-align">
+                                        <div class="wms-srv-grid-cell">BR001</div>
+                                        <div class="wms-srv-grid-cell">QUALITY CHECK FOR INWARD</div>
+                                        <div class="wms-srv-grid-cell">
+                                            QUALITY CHECK FOR INWARD OPERATION   
+                                        </div>
+                                        <div class="wms-srv-grid-cell">QUALITY CHCEK
+                                        </div>
+                                        <div class="wms-srv-grid-cell">
+                                            <input class="wms-srv-grid-cell-input" type="checkbox" id="myCheck1" value="">
+                                        </div>  
+                                    </div>   
+                                    <div class="wms-srv-grid-row wms-align">
+                                        <div class="wms-srv-grid-cell">BR002</div>
+                                        <div class="wms-srv-grid-cell">QUALITY CHECK FOR OUTWARD OPERATION</div>
+                                        <div class="wms-srv-grid-cell">
+                                            QUALITY CHECK FOR OUTWARD OPERATION   
+                                        </div>
+                                        <div class="wms-srv-grid-cell">QUALITY CHCEK
+                                        </div>
+                                        <div class="wms-srv-grid-cell">
+                                            <input class="wms-srv-grid-cell-input" type="checkbox" id="myCheck1" value="">  
+                                        </div>  
+                                    </div>   
+                                    <div class="wms-srv-grid-row wms-align">
+                                        <div class="wms-srv-grid-cell">BR003</div>
+                                        <div class="wms-srv-grid-cell">SKU LABEL PRINTING AT QC</div>
+                                        <div class="wms-srv-grid-cell">
+                                            SKU LABEL DIRECT PRINTING ON COMPLETION OF INWARD QUALITY CHECK   
+                                        </div>
+                                        <div class="wms-srv-grid-cell">QUALITY CHCEK
+                                        </div>
+                                        <div class="wms-srv-grid-cell">
+                                            <input class="wms-srv-grid-cell-input" type="checkbox" id="myCheck1" value=""> 
+                                        </div>
+                                    </div> 
+                                    <div class="wms-srv-grid-row wms-align">
+                                        <div class="wms-srv-grid-cell">BR004</div>
+                                        <div class="wms-srv-grid-cell">SKU LABEL PRINTING AT QC</div>
+                                        <div class="wms-srv-grid-cell">
+                                            SKU LABEL DIRECT PRINTING ON COMPLETION OF OUTWARD QUALITY CHECK
+                                        </div>
+                                        <div class="wms-srv-grid-cell">QUALITY CHCEK
+                                        </div>
+                                        <div class="wms-srv-grid-cell">
+                                            <input class="wms-srv-grid-cell-input" type="checkbox" id="myCheck1" value="">    
+                                        </div>
+                                    </div> 
+                                    <div class="wms-srv-grid-row wms-align">
+                                        <div class="wms-srv-grid-cell">BR005</div>
+                                        <div class="wms-srv-grid-cell">USE OF PALLET</div>
+                                        <div class="wms-srv-grid-cell"> 
+                                          WITHOUGHT USE PALLET FOR ENTIRE OPERATION   
+                                        </div>
+                                        <div class="wms-srv-grid-cell">WMS
+                                        </div>
+                                        <div class="wms-srv-grid-cell">
+                                            <input class="wms-srv-grid-cell-input" type="checkbox" id="myCheck1" value="">   
+                                        </div>  -->
+                                </div> 
+                                </div>
+                            </div>
+                        </div>
+                        <!-- <div class="wms-srv-grid-pager">
+                            <span class="wms-srv-pager-records">1-1 of 82 Records</span>
+                            <span class="wms-srv-empty-space"></span>
+                            <span class="wms-srv-pager-links"><a href="#" data-page="firstpage"><i class="fas fa-angle-double-left"></i></a><a href="#" data-page="previous"><i class="fas fa-angle-left"></i></a><a href="#" class="wms-srv-active" data-page="1">1</a><a href="#" data-page="2">2</a><a href="#" data-page="3">3</a><a href="#" data-page="4">4</a><a href="#" data-page="5">5</a><a href="#" data-page="6">6</a><a href="#" data-page="7">7</a><a href="#" data-page="8">8</a><a href="#" data-page="9">9</a><a href="#" data-page="next"><i class="fas fa-angle-right"></i></a><a href="#" data-page="lastpage"><i class="fas fa-angle-double-right"></i></a></span>
+                            <span class="wms-srv-empty-space"></span>
+                            <input type="text" name="txtGridPageNo" class="wms-srv-input notranslate" value="0" style="width: 80px;">
+                            <a href="#" title="Jump To" class="wms-srv-pager-go"><i class="fas fa-play-circle"></i></a>
+                        </div> -->
+                        </div>
+                    </div>
+                <!-- </div> -->
+            </div>
+        </div>
+    </div>
+</div>

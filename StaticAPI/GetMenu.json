@@ -1,0 +1,112 @@
+{
+    "Status": "200",
+    "StatusCode": "Success",
+    "Result": {
+        "Table": [
+            {
+                "MenuID": 1,
+                "MenuLable": "Dashboard",
+                "MenuLevel": 1,
+                "parentID": 0,
+                "MenuIcon": "fas fa-home",
+                "MenuURL": "Dashboard",
+                "GroupName": null,
+                "Add": 1,
+                "Edit": 1,
+                "View": 1,
+                "UserType": "SuperAdmin"
+            },
+            {
+                "MenuID": 3,
+                "MenuLable": "Setup",
+                "MenuLevel": 1,
+                "parentID": 0,
+                "MenuIcon": "fas fa-cog",
+                "MenuURL": "Administrator",
+                "GroupName": null,
+                "Add": 1,
+                "Edit": 1,
+                "View": 1,
+                "UserType": "SuperAdmin"
+            },
+            {
+                "MenuID": 6,
+                "MenuLable": "Request",
+                "MenuLevel": 1,
+                "parentID": 0,
+                "MenuIcon": "fas fa-file-invoice",
+                "MenuURL": "Request",
+                "GroupName": null,
+                "Add": 1,
+                "Edit": 1,
+                "View": 1,
+                "UserType": "SuperAdmin"
+            },
+            {
+                "MenuID": 5,
+                "MenuLable": "Approval",
+                "MenuLevel": 1,
+                "parentID": 0,
+                "MenuIcon": "fas fa-clipboard-check",
+                "MenuURL": "Approval",
+                "GroupName": null,
+                "Add": 1,
+                "Edit": 1,
+                "View": 1,
+                "UserType": "SuperAdmin"
+            },
+            {
+                "MenuID": 7,
+                "MenuLable": "Dispatch",
+                "MenuLevel": 1,
+                "parentID": 0,
+                "MenuIcon": "fas fa-truck-moving fa-flip-horizontal",
+                "MenuURL": "Dispatch",
+                "GroupName": null,
+                "Add": 1,
+                "Edit": 1,
+                "View": 1,
+                "UserType": "SuperAdmin"
+            },
+            {
+              "MenuID": 21,
+              "MenuLable": "Report",
+              "MenuLevel": 2,
+              "parentID": 0,
+              "MenuIcon": "fas fa-chart-pie",
+              "MenuURL": "Report",
+              "GroupName": "ToolsUtilities",
+              "Add": 1,
+              "Edit": 1,
+              "View": 1,
+              "UserType": "SuperAdmin"
+            },
+            {
+                "MenuID": 18,
+                "MenuLable": "Return Order",
+                "MenuLevel": 2,
+                "parentID": 0,
+                "MenuIcon": "fas fa-undo",
+                "MenuURL": "Return Order",
+                "GroupName": "Printables",
+                "Add": 1,
+                "Edit": 1,
+                "View": 1,
+                "UserType": "SuperAdmin"
+            },
+            {
+              "MenuID": 14,
+              "MenuLable": "Import",
+              "MenuLevel": 2,
+              "parentID": 0,
+              "MenuIcon": "fas fa-file-import",
+              "MenuURL": "Import",
+              "GroupName": "Printables",
+              "Add": 1,
+              "Edit": 1,
+              "View": 1,
+              "UserType": "SuperAdmin"
+            }
+        ]
+    }
+}

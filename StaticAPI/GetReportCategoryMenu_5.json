@@ -1,0 +1,18 @@
+{
+    "Status": "200",
+    "StatusCode": "Success",
+    "Result": {
+        "Table": [
+            {
+                "Id": 1,
+                "ReportName": "Delivery Log Report",
+                "Icon": "fas fa-file-invoice"
+            },
+			{
+                "Id": 2,
+                "ReportName": "Site Tracking Report",
+                "Icon": "fas fa-file-invoice"
+            }
+        ]
+    }
+}

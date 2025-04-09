@@ -1,0 +1,1066 @@
+<div class="wms-srv-content-area pnlTaskAssignment" id="pnlTaskAssignment">
+    <h4>TASK ASSIGNMENT</h4>
+    <input type="hidden" id="hdnskuorderID" value="0" />
+    <!-- Counter Dashboard -->
+    <span class="wms-srv-counter-dashboard">
+        <div class="container-fluid wms-srv-dashboard-panel">
+            <div class="row">
+                <div class="col-md-4 nopadding">
+                    <div class="wms-srv-count-box-holder dashboardActiveTab" data-id="OpenTask">
+                        <div class="wms-srv-count-box">
+                            <div class="wms-srv-count-icon" style="background-color: #ff2f2f;"><i
+                                    class="fas fa-receipt"></i></div>
+                            <div class="wms-srv-count-content">
+                                <div class="wms-srv-count" id="dashOpenTask">0</div>
+                                <div class="wms-srv-count-label" id="lblOpenTask">Open Tasks</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 nopadding">
+                    <div class="wms-srv-count-box-holder" data-id="CompletedTask">
+                        <div class="wms-srv-count-box">
+                            <div class="wms-srv-count-icon" style="background-color: #47d108;"><i
+                                    class="fas fa-file-invoice"></i></div>
+                            <div class="wms-srv-count-content">
+                                <div class="wms-srv-count" id="dashCompleteTask">0</div>
+                                <div class="wms-srv-count-label">Task Completed</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 nopadding">
+                    <div class="wms-srv-count-box-holder" data-id="OverdueTask">
+                        <div class="wms-srv-count-box">
+                            <div class="wms-srv-count-icon" style="background-color: #FFA500;"><i
+                                    class="fas fa-solid fa-clipboard-check"></i></div>
+                            <div class="wms-srv-count-content">
+                                <div class="wms-srv-count" id="dashOverdueTask">0</div>
+                                <div class="wms-srv-count-label">Overdue Tasks</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </span>
+    <!-- Counter Dashboard -->
+
+    <!-- Data Grid 1 -->
+    <div class="wms-srv-obj-main-grid pnlWmsDetail">
+        <div class="wms-srv-grid-holder">
+            <div class="wms-srv-grid-action-panel">
+                <div class="wms-srv-grid-common-action"><a href="#" title="Customize Grid" data-prefix="CG"
+                        class="wms-srv-icononly"><i class="fas fa-edit"></i></a></div>
+                <div class="wms-srv-search">
+                    <label>Search Filter: </label>
+                    <select type="text" class="wms-srv-input wms-srv-search-filter" id="ddlTaskAssignmentsearch">
+                        <option value="ALL">-- Filters --</option>
+                        <optgroup label="Search By Columns">
+                            <option value="TaskCode">Task Code</option>
+                            <option value="AssingType">Task Type</option>
+                            <option value="Assingmentdate">Creation Date</option>
+                            <option value="DueDate">Due Date</option>
+                            <option value="AssingTo">User</option>
+                            <option value="Status">Status</option>
+                        </optgroup>
+                    </select>
+                    <input type="text" class="wms-srv-input wms-srv-simple-search" id="txtTaskAssignmentvalue"><a
+                        href="#" data-prefix="SE"><i class="fas fa-search" style="
+                        margin-right: 0px;" title="Search" onclick="SearchTaskAssignment();"></i></a>
+                    <!--<a href="#" data-prefix="SE"> <i class="fas fa-times-circle" style="
+                                margin-right: 0px;" onclick="clearTaskListSearch();"></i></a>-->
+
+                </div>
+                <!-- openCreateTask -->
+                <button class="wms-srv-input wms-srv-button wms-srv-highlight-btn wms-srv-add-order" type="button"
+                    title="Create New" data-prefix="" onclick="checkTaskAssignment();return false"><i
+                        class="fas fa-plus"></i><span>Create
+                        New</span></button>
+                <div class="wms-srv-grid-title">
+                    Task Assignment List
+                </div>
+            </div>
+            <div class="wms-srv-grid-scroller" style="width: 100%;">
+                <div class="wms-srv-grid" data-gridobjectid="" id="tblTaskAssnmentList">
+                    <!-- <div class="wms-srv-grid-header" style="text-align: center;">
+                        <div class="wms-srv-grid-cell">Task Code</div>
+                        <div class="wms-srv-grid-cell">Task Type</div>
+                        <div class="wms-srv-grid-cell">Creation Date</div>
+                        <div class="wms-srv-grid-cell">Due Date</div>
+                        <div class="wms-srv-grid-cell">User</div>
+                        <div class="wms-srv-grid-cell">Status</div>
+                        <div class="wms-srv-grid-cell">Action</div>
+                    </div>
+                    <div class="wms-srv-grid-row" style="text-align: center;">
+                        <div class="wms-srv-grid-cell">T-0529</div>
+                        <div class="wms-srv-grid-cell">Receiving</div>
+                        <div class="wms-srv-grid-cell">29/05/2022</div>
+                        <div class="wms-srv-grid-cell">5/6/2022</div>
+                        <div class="wms-srv-grid-cell">User - 1</div>
+                        <div class="wms-srv-grid-cell">
+                            <div class="wms-srv-status-holder" title="Status">
+                                <div class="wms-srv-status-display">
+                                    <div class="wms-srv-status-label">Over Due Task</div>
+                                    <div class="wms-srv-status-progress">
+                                        <div class="wms-srv-dot wms-srv-green" data-orderid="" data-status="" title=""
+                                            onclick=""></div>
+                                        <div class="wms-srv-dot wms-srv-red" data-orderid="" data-status="" title=""
+                                            onclick=""></div>
+                                        <div class="wms-srv-dot wmsStatusQualityCheck wms-srv-gray" data-orderid=""
+                                            data-status="" title="" onclick=""></div>
+                                        <div class="wms-srv-dot wms-srv-gray" data-orderid="" data-status="" title=""
+                                            onclick=""></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="wms-srv-grid-cell">
+                            <div class="wms-srv-grid-action">
+                                <a href="#" title="Edit" data-prefix="" data-orderid="" class="wms-srv-icononly"><i
+                                        class="fas fa-edit"></i></a>
+                                <div class="wms-srv-action-sep">|</div>
+                                <a href="#" title="Cancel" data-prefix="" data-orderid="" class="wms-srv-icononly"><i
+                                        class="fas fa-times-circle"></i></a>
+                            </div>
+
+                        </div>
+                    </div> -->
+                </div>
+            </div>
+            <div class="wms-srv-grid-pager" id="tlbTaskAssignGridPager">
+                <span class="wms-srv-pager-records">1-1 of 0 Records</span>
+                <span class="wms-srv-empty-space"></span>
+                <span class="wms-srv-pager-links"><a href="#" data-page="firstpage"><i
+                            class="fas fa-angle-double-left"></i></a><a href="#" data-page="previous"><i
+                            class="fas fa-angle-left"></i></a><a href="#" class="wms-srv-active" data-page="1">1</a><a
+                        href="#" data-page="next"><i class="fas fa-angle-right"></i></a><a href="#"
+                        data-page="lastpage"><i class="fas fa-angle-double-right"></i></a></span>
+                <span class="wms-srv-empty-space"></span>
+                <input type="text" name="txtGridPageNo" class="wms-srv-input notranslate" value="0"
+                    style="width: 80px;">
+                <a href="#" title="Jump To" class="wms-srv-pager-go"><i class="fas fa-play-circle"></i></a>
+            </div>
+        </div>
+    </div>
+    <!-- Data Grid 1-->
+
+    <!-- Create Task Popup -->
+    <div class="wms-srv-popup-holder" id="wms-srv-createtask-popup" style="display: none;">
+        <input type="hidden" id="hdntskOrderID" />
+        <input type="hidden" id="hdnorderobj" />
+        <div class="wms-srv-popup-bg">
+        </div>
+        <div class="wms-srv-popup">
+            <div class="wms-srv-popup-content">
+                <!-- Popup Title -->
+                <div class="wms-srv-popup-title">
+                    <div class="wms-srv-page-title">
+                        <i class="fas fa-user-check"></i><span>Create Task</span>
+                    </div>
+                    <a href="#" id="wms-srv-createtask-popup-close" class="wms-srv-popup-close"><i
+                            class="fas fa-times-circle"></i></a>
+                </div>
+                <!-- Popup Title -->
+                <div class="wms-srv-popup-content-body" id="wms-srv-popup-content-body">
+                    <div id="popupContentDocument">
+                        <div id="pnlApproval">
+                            <!-- Grid -->
+                            <div class="wms-srv-grid-holder pnlWmsHead" id="pnlWmsHead">
+                                <div class="wms-srv-grid">
+                                    <!-- Object Head Data Will be Here -->
+                                    <div class="wms-srv-grid-header">
+
+                                        <div class="wms-srv-grid-cell">Task Type</div>
+                                        <div class="wms-srv-grid-cell">Date</div>
+                                        <div class="wms-srv-grid-cell">Time</div>
+                                        <div class="wms-srv-grid-cell">Assignment Type</div>
+
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+
+                                        <div class="wms-srv-grid-cell">
+                                            <select type="text" class="wms-srv-input wms-srv-search-filter"
+                                                style="width: 100%;" id="ddlTaskobj">
+
+                                                <option value="Receiving" selected>Receiving</option>
+                                                <option value="InwardQC">Inward QC</option>
+                                                <option value="PutIn">Put Away</option>
+                                                <option value="Picking">Picking</option>
+                                                <option value="OutwardQC">Outward QC</option>
+                                                <option value="Packing">Packing</option>
+                                                <option value="Dispatch">Dispatch</option>
+                                                <option value="Transfer">Internal Transfer</option>
+                                                <option value="CycleCount">Cycle Count</option>
+                                                <option value="Replenishment">Replenishment</option>
+
+                                            </select>
+                                        </div>
+                                        <div class="wms-srv-grid-cell"> <input type="text" value="" id="AssignDate"
+                                                class="wms-srv-grid-cell-input wms-srv-datepicker"></div>
+                                        <div class="wms-srv-grid-cell">
+                                            <select class="wms-srv-input wms-srv-search-filter" id="ddltimehr">
+                                                <option value="All">--HH--</option>
+                                                <option value="01">01</option>
+                                                <option value="02">02</option>
+                                                <option value="03">03</option>
+                                                <option value="04">04</option>
+                                                <option selected value="05">05</option>
+                                                <option value="06">06</option>
+                                                <option value="07">07</option>
+                                                <option value="08">08</option>
+                                                <option value="09">09</option>
+                                                <option value="10">10</option>
+                                                <option value="11">11</option>
+                                                <option value="12">12</option>
+                                            </select>
+                                            <select class="wms-srv-input wms-srv-search-filter" id="ddlassingminute">
+                                                <option value="All">--MM--</option>
+                                                <option value="00">00</option>
+                                                <option value="01">01</option>
+                                                <option value="02">02</option>
+                                                <option value="03">03</option>
+                                                <option value="04">04</option>
+                                                <option value="05">05</option>
+                                                <option value="06">06</option>
+                                                <option value="07">07</option>
+                                                <option value="08">08</option>
+                                                <option value="09">09</option>
+                                                <option selected value="10">10</option>
+                                                <option value="11">11</option>
+                                                <option value="12">12</option>
+                                                <option value="13">13</option>
+                                                <option value="14">14</option>
+                                                <option value="15">15</option>
+                                                <option value="16">16</option>
+                                                <option value="17">17</option>
+                                                <option value="18">18</option>
+                                                <option value="19">19</option>
+                                                <option value="20">20</option>
+                                                <option value="21">21</option>
+                                                <option value="22">22</option>
+                                                <option value="23">23</option>
+                                                <option value="24">24</option>
+                                                <option value="25">25</option>
+                                                <option value="26">26</option>
+                                                <option value="27">27</option>
+                                                <option value="28">28</option>
+                                                <option value="29">29</option>
+                                                <option value="30">30</option>
+                                                <option value="31">31</option>
+                                                <option value="32">32</option>
+                                                <option value="33">33</option>
+                                                <option value="34">34</option>
+                                                <option value="35">35</option>
+                                                <option value="36">36</option>
+                                                <option value="37">37</option>
+                                                <option value="38">38</option>
+                                                <option value="39">39</option>
+                                                <option value="40">40</option>
+                                                <option value="41">41</option>
+                                                <option value="42">42</option>
+                                                <option value="43">43</option>
+                                                <option value="44">44</option>
+                                                <option value="45">45</option>
+                                                <option value="46">46</option>
+                                                <option value="47">47</option>
+                                                <option value="48">48</option>
+                                                <option value="49">49</option>
+                                                <option value="50">50</option>
+                                                <option value="51">51</option>
+                                                <option value="52">52</option>
+                                                <option value="53">53</option>
+                                                <option value="54">54</option>
+                                                <option value="55">55</option>
+                                                <option value="56">56</option>
+                                                <option value="57">57</option>
+                                                <option value="58">58</option>
+                                                <option value="59">59</option>
+                                            </select>
+                                            <select class="wms-srv-input wms-srv-search-filter" id="ddltime">
+                                                <option selected value="AM">AM</option>
+                                                <option value="PM">PM</option>
+                                            </select>
+                                        </div>
+                                        <!-- <div class="wms-srv-grid-cell">
+                                            <input type="rdoGroup" class="TaskType" checked value="Group" name="btnObject"
+                                                onclick="openOrderList();">
+                                            <label for="Group" style="padding-right: 15px;">Group</label>
+                                            <input type="rdoItem" class="TaskType" value="Items" name="btnObject"
+                                                onclick="openSelectBatch();">
+                                            <label for="Items">Item</label>
+                                        </div> -->
+                                        <div class="wms-srv-grid-cell">
+                                            <input type="radio" id="rdoGroup" class="TaskType" checked value="Group"
+                                                name="btnObject" onclick="openOrderList();">
+                                            <label for="Group" style="padding-right: 15px;">Group</label>
+                                            <input type="radio" id="rdoItem" class="TaskType" value="Items"
+                                                name="btnObject" onclick="openSelectBatch();">
+                                            <label for="Items">Item</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <br>
+                            <!-- Grid -->
+                            <!-- Header Details -->
+                            <!-- Grid -->
+                            <div class="wms-srv-grid-holder pnlWmsDetail" id="pnlWmsDetail">
+                                <div class="wms-srv-grid-action-panel">
+                                    <div class="wms-srv-grid-common-action"><a href="#" title="Customize Grid"
+                                            data-prefix="CG" class="wms-srv-icononly"><i class="fas fa-edit"></i></a>
+                                    </div>
+
+                                    <div class="wms-srv-search" id="gridGroupSearch">
+                                        <label>Search Filter: </label>
+                                        <select type="text" class="wms-srv-input wms-srv-search-filter"
+                                            id="ddlGroupFilter">
+                                            <option value="ALL">-- Filters --</option>
+                                            <optgroup label="Search By Columns">
+                                                <option value="GroupID"> GroupID </option>
+                                                <option value="GroupName"> Group Name </option>
+                                                <option value="Title"> Title </option>
+                                                <option value="User"> User </option>
+                                                <option value="Status"> Status </option>
+                                                <option value="Ordernumber"> Order Reference No </option>
+
+                                            </optgroup>
+                                        </select>
+                                        <input type="text" class="wms-srv-input wms-srv-simple-search"
+                                            id="txtGroupValue"><a href="#" data-prefix="SE"><i class="fas fa-search"
+                                                title="Search" onclick="SearchGroupTask();"></i></a>
+
+                                    </div>
+
+                                    <div class="wms-srv-search" style="display: none;" id="gridItemSearch">
+                                        <label>Search Filter: </label>
+                                        <select type="text" class="wms-srv-input wms-srv-search-filter"
+                                            id="ddlItemFilter">
+                                            <option value="ALL">-- Filters --</option>
+                                            <optgroup label="Search By Columns">
+                                                <option value="GroupID"> GroupID </option>
+                                                <option value="SKUName"> SKU Name </option>
+                                                <option value="SKUCode"> SKU Code </option>
+                                                <option value="OrderNumber"> Order Number Reference </option>
+                                                <option value="RequestedQuantity"> Requested Quantity </option>
+                                                <option value="UOM"> UOM </option>
+                                                <option value="StaLocationtus"> Location </option>
+                                                <option value="User"> User </option>
+                                            </optgroup>
+                                        </select>
+                                        <input type="text" class="wms-srv-input wms-srv-simple-search"
+                                            id="txtItemValue"><a href="#" data-prefix="SE"><i class="fas fa-search"
+                                                title="Search" onclick="SearchItemTask();"></i></a>
+                                    </div>
+
+                                    <div class="wms-srv-search">
+                                        <label class="wms-srv-grid-title"
+                                            style="font-size: 14px;padding-left: 6px;margin-top: 3px;">User: </label>
+                                        <input type="text" class="wms-srv-input wms-srv-simple-search"
+                                            id="txtassinguserName">
+                                        <input type="hidden" id="hdnassinguserID" />
+                                        <a href="#" data-prefix="SE"><i class="fas fa-search" title="Search"
+                                                onclick="openassingUser('NA','NA');"></i></a>
+                                    </div>
+                                    <button class="wms-srv-input wms-srv-button wms-srv-allocation-plan" title="Assign"
+                                        onclick="saveAssingment(globalItem);"><i
+                                            class="fas fa-clipboard-check"></i><span>Assign</span></button>
+
+                                    <div class="wms-srv-grid-title">
+                                        List
+                                    </div>
+
+                                </div>
+                                <div class="wms-srv-grid-scroller" id="wms-orderlist-grid" style="width: 100%;">
+                                    <input type="hidden" id="hdnSelectedTaskCheck" value="">
+                                    <div class="wms-srv-grid" id="tlbgetTaskList"
+                                        data-gridobjectid="gridObject_Inbound_PurchaseOrder_APP">
+
+                                        <!-- <div class="wms-srv-grid-header">
+                                            <div class="wms-srv-grid-cell" style="text-align:center;"><input
+                                                    type="checkbox" onclick="" class="messageCheckbox" name="" value=""
+                                                    id=""></div>
+                                            <div class="wms-srv-grid-cell">Group ID</div>
+                                            <div class="wms-srv-grid-cell">Group Name</div>
+                                            <div class="wms-srv-grid-cell">Title</div>
+                                            <div class="wms-srv-grid-cell">User</div>
+                                            <div class="wms-srv-grid-cell">Action</div>
+                                        </div>
+                                        <div class="wms-srv-grid-row">
+                                            <div class="wms-srv-grid-cell" style="text-align: center;"><input
+                                                    type="checkbox" onclick="" class="messageCheckbox" name="" value=""
+                                                    id=""></div>
+                                            <div class="wms-srv-grid-cell">G-0529</div>
+                                            <div class="wms-srv-grid-cell">Group - 1</div>
+                                            <div class="wms-srv-grid-cell">Test</div>
+                                            <div class="wms-srv-grid-cell"></div>
+                                            <div class="wms-srv-grid-cell">
+                                                <div class="wms-srv-grid-action" style="opacity: 0.3;">
+                                                    <button class="wms-srv-input wms-srv-button " title="ReAssign"
+                                                        data-prefix="SV"><i class="fas fa-retweet"></i></button>
+                                                    <div class="wms-srv-action-sep">|</div>
+                                                    <button class="wms-srv-input wms-srv-button " title="Cancel"
+                                                        data-prefix="CN"><i
+                                                            class="fas fa-times-circle"></i><span>Cancel</span></button>
+                                                </div>
+                                            </div>
+                                        </div> -->
+                                    </div>
+                                </div>
+                                <div class="wms-srv-grid-scroller" id="wms-skulist-grid"
+                                    style="width: 100%;display: none;">
+                                    <div class="wms-srv-grid" data-gridobjectid="" id="tlbgetSKUList">
+                                        <!-- <div class="wms-srv-grid-header">
+                                            <div class="wms-srv-grid-cell" style="text-align:center;"><input
+                                                    type="checkbox" onclick="" class="messageCheckbox" name="" value=""
+                                                    id=""></div>
+                                            <div class="wms-srv-grid-cell">Group Name</div>
+                                            <div class="wms-srv-grid-cell">SKU Name</div>
+                                            <div class="wms-srv-grid-cell">Requested Quantity </div>
+                                            <div class="wms-srv-grid-cell">UOM</div>
+                                            <div class="wms-srv-grid-cell">Lottable</div>
+                                            <div class="wms-srv-grid-cell">Loacation</div>
+                                            <div class="wms-srv-grid-cell">User</div>
+                                            <div class="wms-srv-grid-cell">Action</div>
+                                        </div>
+                                        <div class="wms-srv-grid-row">
+                                            <div class="wms-srv-grid-cell" style="text-align: center;"><input
+                                                    type="checkbox" onclick="" class="messageCheckbox" name="" value=""
+                                                    id=""></div>
+                                            <div class="wms-srv-grid-cell">Group - 1</div>
+                                            <div class="wms-srv-grid-cell">SKU2022</div>
+                                            <div class="wms-srv-grid-cell">25</div>
+                                            <div class="wms-srv-grid-cell">Each</div>
+                                            <div class="wms-srv-grid-cell" style="width:275px;">
+                                                <div class="lottableControlHolder" id="grnLottable"></div>
+                                            </div>
+                                            <div class="wms-srv-grid-cell">Location - 1</div>
+                                            <div class="wms-srv-grid-cell"></div>
+                                            <div class="wms-srv-grid-cell">
+                                                <div class="wms-srv-grid-action" style="opacity: 0.3;">
+                                                    <button class="wms-srv-input wms-srv-button " title="ReAssign"
+                                                        data-prefix="SV"><i class="fas fa-retweet"></i></button>
+                                                    <div class="wms-srv-action-sep">|</div>
+                                                    <button class="wms-srv-input wms-srv-button " title="Cancel"
+                                                        data-prefix="CN"><i
+                                                            class="fas fa-times-circle"></i><span>Cancel</span></button>
+                                                </div>
+                                            </div>
+                                        </div> -->
+                                    </div>
+                                </div>
+                                <div class="wms-srv-grid-pager" id="tblCreateTaskPoupPg">
+                                    <span class="wms-srv-pager-records">0-1 of 0 Records</span>
+                                    <span class="wms-srv-empty-space"></span>
+                                    <span class="wms-srv-pager-links"><a href="#" data-page="firstpage"><i
+                                                class="fas fa-angle-double-left"></i></a><a href="#"
+                                            data-page="previous"><i class="fas fa-angle-left"></i></a><a href="#"
+                                            class="wms-srv-active" data-page="1">1</a><a href="#" data-page="next"><i
+                                                class="fas fa-angle-right"></i></a><a href="#" data-page="lastpage"><i
+                                                class="fas fa-angle-double-right"></i></a></span>
+                                    <span class="wms-srv-empty-space"></span>
+                                    <input type="text" name="txtGridPageNo" class="wms-srv-input" value="0"
+                                        style="width: 80px;">
+                                    <a href="#" title="Jump To" class="wms-srv-pager-go"><i
+                                            class="fas fa-play-circle"></i></a>
+                                </div>
+                            </div>
+                            <br>
+                            <!-- <div style="text-align: center;">
+                                <button class="wms-srv-input wms-srv-button wms-srv-highlight-btn-secondary"
+                                    type="button" title="Save" id="btnSubmitTask" onclick="" return false;">
+                                    <span>Submit</span></button>
+                            </div> -->
+                            <!-- Grid -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Create Task Popup -->
+
+    <!-- User popup -->
+    <div class="wms-srv-popup-holder" id="wms-srv-user-popup" style="display: none;">
+        <div class="wms-srv-popup-bg">
+        </div>
+        <div class="wms-srv-popup">
+            <div class="wms-srv-popup-content">
+                <!-- Popup Title -->
+                <div class="wms-srv-popup-title">
+                    <div class="wms-srv-page-title">
+                        <i class="fas fa-list"></i><span>User List</span>
+                    </div>
+                    <a href="#" title="Close" id="wms-srv-user-popup-close" class="wms-srv-popup-close"><i
+                            class="fas fa-times-circle"></i></a>
+                </div>
+                <!-- Popup Title -->
+                <div class="wms-srv-popup-content-body" id="wms-srv-popup-content-body">
+                    <div id="popupContentDocument">
+                        <div id="pnlApproval">
+                            <!-- Grid -->
+                            <div class="wms-srv-grid-holder pnlWmsHead" id="pnlWmsHead">
+                                <div class="wms-srv-grid" id="listassingUser" style="text-align: center;">
+                                    <!-- Object Head Data Will be Here -->
+                                    <!-- <div class="wms-srv-grid-header">
+                                        <div class="wms-srv-grid-cell">Sr. No</div>
+                                        <div class="wms-srv-grid-cell">User Name</div>
+                                        <div class="wms-srv-grid-cell">Action</div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+                                        <div class="wms-srv-grid-cell">1</div>
+                                        <div class="wms-srv-grid-cell">Brilliant</div>
+                                        <div class="wms-srv-grid-cell">
+                                            <div class="wms-srv-grid-action">
+                                                <i class="fas fa-check-circle" style="opacity: 1;"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+                                        <div class="wms-srv-grid-cell">2</div>
+                                        <div class="wms-srv-grid-cell">Brilliant</div>
+                                        <div class="wms-srv-grid-cell">
+                                            <div class="wms-srv-grid-action">
+                                                <i class="fas fa-check-circle" style="opacity: 1;"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+                                        <div class="wms-srv-grid-cell">3</div>
+                                        <div class="wms-srv-grid-cell">Brilliant</div>
+                                        <div class="wms-srv-grid-cell">
+                                            <div class="wms-srv-grid-action">
+                                                <i class="fas fa-check-circle" style="opacity: 1;"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+                                        <div class="wms-srv-grid-cell">4</div>
+                                        <div class="wms-srv-grid-cell">Brilliant</div>
+                                        <div class="wms-srv-grid-cell">
+                                            <div class="wms-srv-grid-action">
+                                                <i class="fas fa-check-circle" style="opacity: 1;"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+                                        <div class="wms-srv-grid-cell">5</div>
+                                        <div class="wms-srv-grid-cell">Brilliant</div>
+                                        <div class="wms-srv-grid-cell">
+                                            <div class="wms-srv-grid-action">
+                                                <i class="fas fa-check-circle" style="opacity: 1;"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+                                        <div class="wms-srv-grid-cell">6</div>
+                                        <div class="wms-srv-grid-cell">Brilliant</div>
+                                        <div class="wms-srv-grid-cell">
+                                            <div class="wms-srv-grid-action">
+                                                <i class="fas fa-check-circle" style="opacity: 1;"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+                                        <div class="wms-srv-grid-cell">7</div>
+                                        <div class="wms-srv-grid-cell">Brilliant</div>
+                                        <div class="wms-srv-grid-cell">
+                                            <div class="wms-srv-grid-action">
+                                                <i class="fas fa-check-circle" style="opacity: 1;"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+                                        <div class="wms-srv-grid-cell">8</div>
+                                        <div class="wms-srv-grid-cell">Brilliant</div>
+                                        <div class="wms-srv-grid-cell">
+                                            <div class="wms-srv-grid-action">
+                                                <i class="fas fa-check-circle" style="opacity: 1;"></i>
+                                            </div>
+                                        </div>
+                                    </div> -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- User Popup -->
+
+    <!-- Select Batch Popup -->
+    <div class="wms-srv-popup-holder" id="wms-srv-selectbatch-popup" style="display: none;">
+        <div class="wms-srv-popup-bg">
+        </div>
+        <div class="wms-srv-popup">
+            <div class="wms-srv-popup-content">
+                <!-- Popup Title -->
+                <div class="wms-srv-popup-title">
+                    <div class="wms-srv-page-title">
+                        <i class="fas fa-user-check"></i><span id="ItemHeadingText">Group List</span>
+                    </div>
+                    <a href="#" id="wms-srv-selectbatch-popup-close" class="wms-srv-popup-close"><i
+                            class="fas fa-times-circle"></i></a>
+                </div>
+                <!-- Popup Title -->
+                <div class="wms-srv-popup-content-body" id="wms-srv-popup-content-body">
+                    <div id="popupContentDocument">
+                        <div id="pnlApproval">
+                            <!-- Grid -->
+                            <div class="wms-srv-grid-holder pnlWmsHead" id="pnlWmsHead">
+                                <div class="wms-srv-grid-action-panel">
+                                    <div class="wms-srv-grid-common-action"><a href="#" title="Customize Grid"
+                                            data-prefix="CG" class="wms-srv-icononly"><i class="fas fa-edit"></i></a>
+                                    </div>
+                                    <div class="wms-srv-search">
+                                        <label>Search Filter: </label>
+                                        <select type="text" class="wms-srv-input wms-srv-search-filter"
+                                            id="ddlOrderSearchCol">
+                                            <option selected value="ALL">-- Filters --</option>
+                                            <optgroup label="Search By Columns">
+                                                <option value="GroupID">Order ID</option>
+                                                <option value="OrderNumber">Order Number</option>
+                                                <option value="Ordernumber"> Order Reference No </option>
+                                            </optgroup>
+                                        </select>
+                                        <input type="text" class="wms-srv-input wms-srv-simple-search"
+                                            id="txtOrdervalue"><a href="#" data-prefix="SE"><i class="fas fa-search"
+                                                title="Search" onclick="SearchOrder(); return false;"></i></a>
+                                    </div>
+                                    <div class="wms-srv-grid-title">
+                                        Group List
+                                    </div>
+                                </div>
+                                <div class="wms-srv-grid" id="tblgetGroupList" style="min-width: 300px;">
+                                    <!-- Object Head Data Will be Here -->
+                                    <!-- <div class="wms-srv-grid-header">
+                                        <div class="wms-srv-grid-cell">Order ID</div>
+                                        <div class="wms-srv-grid-cell">Order Number</div>
+                                        <div class="wms-srv-grid-cell" style="text-align: center;">Action</div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+                                        <div class="wms-srv-grid-cell">BWMS-2905</div>
+                                        <div class="wms-srv-grid-cell">05291308</div>
+                                        <div class="wms-srv-grid-cell">
+                                            <div class="wms-srv-grid-action">
+                                                <a href="#" title="Save" id="btnSave" data-prefix="" data-orderid=""
+                                                    class="wms-srv-icononly"><i class="fas fa-check-circle"></i></a>
+                                            </div>
+                                        </div>
+                                    </div> -->
+                                </div>
+                            </div>
+                            <div class="wms-srv-grid-pager" id="tlbgetGroupListPager">
+                                <span class="wms-srv-pager-records">0-1 of 0 Records</span>
+                                <span class="wms-srv-empty-space"></span>
+                                <span class="wms-srv-pager-links"><a href="#" data-page="firstpage"><i
+                                            class="fas fa-angle-double-left"></i></a><a href="#" data-page="previous"><i
+                                            class="fas fa-angle-left"></i></a><a href="#" class="wms-srv-active"
+                                        data-page="1">1</a><a href="#" data-page="next"><i
+                                            class="fas fa-angle-right"></i></a><a href="#" data-page="lastpage"><i
+                                            class="fas fa-angle-double-right"></i></a></span>
+                                <span class="wms-srv-empty-space"></span>
+                                <input type="text" name="txtGridPageNo" class="wms-srv-input" value="0"
+                                    style="width: 80px;">
+                                <a href="#" title="Jump To" class="wms-srv-pager-go"><i
+                                        class="fas fa-play-circle"></i></a>
+                            </div>
+                            <!-- Grid -->
+                            <!-- Header Details -->
+
+                            <!-- <br>
+                            <div style="text-align: center;">
+                                <button class="wms-srv-input wms-srv-button wms-srv-highlight-btn-secondary"
+                                    type="button" title="Save" id="btnSavePickupDetailsAll" onclick="">
+                                    <span>Submit</span></button>
+                            </div> -->
+                            <!-- Grid -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Select Batch Popup -->
+
+
+    <!-- Open po  Popup -->
+
+
+    <!-- Create Inbound Order -->
+    <div class="wms-srv-popup-holder" id="wms-srv-order-task-assginment-popup" style="display:none;">
+        <div class="wms-srv-popup-bg">
+        </div>
+        <div class="wms-srv-popup">
+            <div class="wms-srv-popup-content">
+                <!-- Popup Title -->
+                <div class="wms-srv-popup-title">
+                    <!-- <div class="wms-srv-page-title">
+                    <i class="fas fa-file-alt"></i><span>Inward Order</span>
+                </div> -->
+                    <a href="#" id="wms-srv-order-task-assginment-popup-close" class="wms-srv-popup-close"><i
+                            class="fas fa-times-circle" onclick="POPupclosepopup();"></i></a>
+                </div>
+                <!-- Popup Title -->
+                <div class="wms-srv-popup-content-body" id="wms-srv-popup-content-body">
+                    <div id="popupContentDocument">
+                        <div id="pnlCreatePurchaseOrder">
+                            <!-- Grid -->
+                            <!-- <div class="wms-srv-grid-holder pnlWmsHead" id="pnlWmsHead">
+                            <div class="wms-srv-grid"> -->
+                            <!-- Object Head Data Will be Here -->
+                            <!-- <div class="wms-srv-grid-header">
+                                <div class="wms-srv-grid-cell" style="text-align:center;">Inward Order No</div>
+                                <div class="wms-srv-grid-cell" style="text-align:center;">Order Date</div>
+                                <div class="wms-srv-grid-cell" style="text-align:center;">Exp. Delivery</div>
+                                <div class="wms-srv-grid-cell" style="text-align:center;">Reference No</div>
+                                <div class="wms-srv-grid-cell" style="text-align:center;" id="dvvtype" >Vendor Code</div>
+                                <div class="wms-srv-grid-cell" style="text-align:center;">Remark</div>
+                                <div class="wms-srv-grid-cell" style="text-align:center;">Created By
+                                </div> -->
+                            <!-- <div class="wms-srv-grid-cell">Rate</div> -->
+                            <!--<div class="wms-srv-grid-cell">Action</div>-->
+                            <!-- </div>
+                                <div class="wms-srv-grid-row"> -->
+                            <!-- <div class="wms-srv-grid-cell" style="text-align:center"><span id="spnPoOid">To be
+                                        Generated</span><input type="hidden" id="hdnPoOid" disabled data-id="0"  value="0" /></div> -->
+                            <!-- <div class="wms-srv-grid-cell" style="text-align:center">
+                                            <input type="text" disabled data-id="0"  value="08"
+                                                class="wms-srv-grid-cell-input wms-srv-datepicker" id="hdnPoOid">
+                                        </div>
+
+                                    <div class="wms-srv-grid-cell" style="text-align:center">
+                                    <input type="text" disabled data-id="0"  value="08-Jun-2022"
+                                        class="wms-srv-grid-cell-input wms-srv-datepicker" id="txtPoReceiptDate">
+                                </div>
+                                    <div class="wms-srv-grid-cell" style="text-align:center">
+                                    <input type="text" disabled data-id="0"  value="08-Jun-2022"
+                                        class="wms-srv-grid-cell-input wms-srv-datepicker" id="txtPoDeliveryDate">
+                                </div>
+                                    <div class="wms-srv-grid-cell" style="text-align:center">
+                                    <input type="text" disabled data-id="0"  value="" class="wms-srv-grid-cell-input"
+                                        id="txtPoCustomerRefNo">
+                                </div>
+                                <div class="wms-srv-grid-cell" style="width: 170px;">
+                                    <div class="wms-srv-suggestion-holder">
+                                        <input type="text" id="txtVendor" disabled data-id="0" value="" class="wms-srv-grid-cell-input">
+                                    </div>
+                                </div>
+                                    <div class="wms-srv-grid-cell" style="text-align:center">
+                                    <input type="text" value="" class="wms-srv-grid-cell-input" disabled data-id="0" id="txtPoRemark">
+                                </div>
+                                    <div class="wms-srv-grid-cell" id="txtPoUserName" disabled data-id="0" style="text-align: center;">Admin</div>
+
+                                     -->
+                            <!--  <div class="wms-srv-grid-cell">
+                                        <select class="wms-srv-grid-cell-input">
+                                            <option value="0" data-info="">Select Rate</option>
+                                            <option value="282" data-info="">Box Group</option>
+                                        </select></div> -->
+                            <!--<div class="wms-srv-grid-cell">
+                                        <div class="wms-srv-grid-action">
+                                            <button class="wms-srv-input wms-srv-button" id="btnSavePoHead" onclick="savePOHead();" type="button" title="Save" data-prefix="SV"><i class="fas fa-check-circle"></i><span>Save</span></button>
+                                            <div class="wms-srv-action-sep">|</div>
+                                            <a href="#" title="Transport" data-prefix="TRN" class="wms-srv-icononly"><i class="fas fa-truck-moving fa-flip-horizontal"></i></a>
+                                            <div class="wms-srv-action-sep">|</div>
+                                            <a href="#" title="3PL" data-prefix="3PL" class="wms-srv-icononly"><i class="fa fa-receipt"></i></a>
+                                        </div>
+                                    </div>-->
+                            <!-- </div>
+                            </div>
+
+                           
+                        </div>
+                        <br> -->
+                            <!-- Grid -->
+                            <!-- Grid -->
+                            <div class="wms-srv-grid-holder pnlWmsRateGrid" id="pnlWmsRateGrid" style="display: none;">
+                                <div class="wms-srv-grid"></div>
+                            </div>
+                            <br>
+                            <!-- Grid -->
+                            <!-- Header Details -->
+                            <!-- Grid -->
+                            <div class="wms-srv-grid-holder pnlWmsDetail" id="pnlWmsDetail">
+                                <div class="wms-srv-grid-action-panel">
+                                    <div class="wms-srv-grid-common-action"><a href="#" title="" data-prefix="CG"
+                                            class="wms-srv-icononly"><i class="fas fa-edit"></i></a></div>
+                                    <!--<a href="#" title="Cart" data-prefix="CRT" class="wms-srv-icononly" style="position: relative;"><i class="fas fa-shopping-cart"></i><span class="wms-srv-badge" style="left: 18px; top: -2px;">2</span></a>
+                                <div class="wms-srv-productsearch" data-sku="" data-skuid="" data-pallet="" data-palletid="" data-location="" data-locationid="">
+                                    <label>Search Product: </label>
+                                    <input type="text" value="" class="wms-srv-input wms-srv-scan-input" id="txtSearchForPoSku" />
+                                  
+                                    <a href="#" data-prefix="PRSE" class="wms-srv-search-button" onclick="searchForPoOrder();return false;">
+                                        <i class="fas fa-search"></i></a>
+                                        </div>
+                                <button class="wms-srv-input wms-srv-button " title="Export" data-prefix="EX"><i class="fas fa-file-export"></i><span>Export</span></button>
+                                <button class="wms-srv-input wms-srv-button " title="Import" data-prefix="IM"><i class="fas fa-file-import"></i><span>Import</span></button> 
+                                <button class="wms-srv-input wms-srv-button " title="Save" data-prefix="SV" onclick="savePOHead();"><i class="fas fa-check-circle"></i><span>Save</span></button>
+                                -->
+                                    <div class="wms-srv-grid-title">
+                                        SKU List
+                                    </div>
+                                </div>
+                                <div class="wms-srv-grid-scroller" style="width: 100%;">
+                                    <div class="wms-srv-grid" id="tlbTaskAssignmentPoOrderDetailsGrid">
+                                    </div>
+
+
+                                    <!--   <div class="wms-srv-grid" id="tlbPoOrderDetailsGridNew">
+                                     <div class="wms-srv-grid-header">
+                                        <div class="wms-srv-grid-cell">
+                                            <input type="checkbox" value="Id"></div>
+                                        <div class="wms-srv-grid-cell">Item Code </div>
+                                        <div class="wms-srv-grid-cell">Item Name</div>
+                                        <div class="wms-srv-grid-cell">Description</div>
+                                        <div class="wms-srv-grid-cell">Requested Qty</div>
+                                        <div class="wms-srv-grid-cell">UOM</div>
+                                        <div class="wms-srv-grid-cell">Order Qty</div>
+                                        <div class="wms-srv-grid-cell">Lot#</div>
+                                        <div class="wms-srv-grid-cell">Case Net Weight</div>
+                                        <div class="wms-srv-grid-cell">Case Gross Weight</div>
+                                        <div class="wms-srv-grid-cell">Total Carton</div>
+                                        <div class="wms-srv-grid-cell">Action</div>
+                                    </div>
+                                    <div class="wms-srv-grid-row wmsFrmAddRow">
+                                        <div class="wms-srv-grid-cell">
+                                            <input type="checkbox" value="1"></div>
+                                        <div class="wms-srv-grid-cell">
+                                           <div class="wms-srv-suggestion-holder">
+                                               <input type="text" data-prefix="SESKU" value="" class="txtItemCode wms-srv-grid-cell-input wms-srv-suggestion" >
+                                            </div>
+                                        </div>
+                                        <div class="wms-srv-grid-cell">
+                                            <input type="text" id="addNew_Name" value="" class="wms-srv-grid-cell-input"></div>
+                                        <div class="wms-srv-grid-cell">
+                                            <input type="text" id="addNew_Description" value="" class="wms-srv-grid-cell-input"></div>
+                                        <div class="wms-srv-grid-cell">
+                                            <input type="text" id="addNew_RequestedQty" value="" class="wms-srv-grid-cell-input"></div>
+                                        <div class="wms-srv-grid-cell">
+                                            <select class="wms-srv-grid-cell-input" id="addNew_UOM">
+                                                <option value="16" data-info="1" selected="selected">Each</option>
+                                                <option value="2" data-info="10">Bag</option>
+                                                <option value="1" data-info="5">Assembly Parts</option>
+                                                <option value="5" data-info="15">Bottle</option>
+                                            </select></div>
+                                        <div class="wms-srv-grid-cell">
+                                            <input type="text" id="addNew_OrderQty" value="" class="wms-srv-grid-cell-input" disabled=""></div>
+                                        <div class="wms-srv-grid-cell">
+                                            <input type="text" id="addNew_Lottable" value="" class="wms-srv-grid-cell-input"></div>
+                                        <div class="wms-srv-grid-cell">
+                                            <input type="text" id="addNew_CaseNetWeight" value="" class="wms-srv-grid-cell-input"></div>
+                                        <div class="wms-srv-grid-cell">
+                                            <input type="text" id="addNew_CaseGrossWeight" value="" class="wms-srv-grid-cell-input"></div>
+                                        <div class="wms-srv-grid-cell">
+                                            <input type="text" id="addNew_TotalCarton" value="" class="wms-srv-grid-cell-input"></div>
+                                        <div class="wms-srv-grid-cell">
+                                            <div class="wms-srv-grid-action">
+                                                <button class="wms-srv-input wms-srv-button " title="Save" data-prefix="SV"><i class="fas fa-check-circle"></i><span>Save</span></button>
+                                                <div class="wms-srv-action-sep">|</div>
+                                                <button class="wms-srv-input wms-srv-button " title="Cancel" data-prefix="CN"><i class="fas fa-times-circle"></i><span>Cancel</span></button></div>
+                                        </div>
+                                    </div>
+                                  
+                                </div>-->
+                                </div>
+
+
+                                <!--Save button Start    --->
+                                <br />
+                                <!-- <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="container-fluid">
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="wms-srv-grid-action" id="divbtnsavepo"> -->
+                                <!--    <input type="button" class="btngrnSave" value="save" onclick="UpdateGrnStatus()" />-->
+
+                                <!-- <button
+                                                        class="wms-srv-input wms-srv-button wms-srv-highlight-btn-secondary"
+                                                        type="button" title="Save" id="btnPOSave"
+                                                        onclick="UpdatePOStatus()"><span>Save</span></button>
+                                                   </div>
+                                                   
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> -->
+                                <!--Save button End----->
+                                <!-- <div class="wms-srv-grid-pager">
+                                <span class="wms-srv-pager-records">1-1 of 390 Records</span>
+                                <span class="wms-srv-empty-space"></span>
+                            <span class="wms-srv-pager-links"><a href="#" data-page="firstpage"><i
+                                        class="fas fa-angle-double-left"></i></a><a href="#" data-page="previous"><i
+                                        class="fas fa-angle-left"></i></a><a href="#" class="wms-srv-active"
+                                    data-page="1">1</a><a href="#" data-page="2">2</a><a href="#"
+                                    data-page="3">3</a><a href="#" data-page="4">4</a><a href="#"
+                                    data-page="5">5</a><a href="#" data-page="6">6</a><a href="#"
+                                    data-page="7">7</a><a href="#" data-page="8">8</a><a href="#"
+                                    data-page="9">9</a><a href="#" data-page="10">10</a><a href="#"
+                                    data-page="11">11</a><a href="#" data-page="12">12</a><a href="#"
+                                    data-page="13">13</a><a href="#" data-page="14">14</a><a href="#"
+                                    data-page="15">15</a><a href="#" data-page="16">16</a><a href="#"
+                                    data-page="17">17</a><a href="#" data-page="18">18</a><a href="#"
+                                    data-page="19">19</a><a href="#" data-page="20">20</a><a href="#"
+                                    data-page="21">21</a><a href="#" data-page="22">22</a><a href="#"
+                                    data-page="23">23</a><a href="#" data-page="24">24</a><a href="#"
+                                    data-page="25">25</a><a href="#" data-page="26">26</a><a href="#"
+                                    data-page="27">27</a><a href="#" data-page="28">28</a><a href="#"
+                                    data-page="29">29</a><a href="#" data-page="30">30</a><a href="#"
+                                    data-page="31">31</a><a href="#" data-page="32">32</a><a href="#"
+                                    data-page="33">33</a><a href="#" data-page="34">34</a><a href="#"
+                                    data-page="35">35</a><a href="#" data-page="36">36</a><a href="#"
+                                    data-page="37">37</a><a href="#" data-page="38">38</a><a href="#"
+                                    data-page="next"><i class="fas fa-angle-right"></i></a><a href="#"
+                                    data-page="lastpage"><i class="fas fa-angle-double-right"></i></a></span>
+                                <span class="wms-srv-empty-space"></span>
+                            <input type="text" name="txtGridPageNo" class="wms-srv-input" value="0"
+                                style="width: 80px;">
+                            <a href="#" title="Jump To" class="wms-srv-pager-go"><i
+                                    class="fas fa-play-circle"></i></a>
+                            </div> -->
+                            </div>
+                            <!-- Grid -->
+                            <!-- Grid -->
+                            <div class="wms-srv-grid-holder pnlSearchList" id="pnlSearchList" style="display: none;">
+                                <div class="wms-srv-grid-action-panel" style="display: none;">
+                                    <!-- Action Buttons Will be Here -->
+                                </div>
+                                <div class="wms-srv-grid-scroller" style="width: 100%;">
+                                    <div class="wms-srv-grid">
+                                        <!-- Header Data Will be Here -->
+                                    </div>
+                                </div>
+                                <div class="wms-srv-grid-pager">
+                                    <span class="wms-srv-pager-records">
+                                        <!-- Page Record Info -->
+                                    </span>
+                                    <span class="wms-srv-empty-space"></span>
+                                    <span class="wms-srv-pager-links">
+                                        <!-- Pagger Links -->
+                                    </span>
+                                    <span class="wms-srv-empty-space"></span>
+                                    <input type="text" name="txtGridPageNo" class="wms-srv-input" value="0"
+                                        style="width: 80px;">
+                                    <a href="#" title="Jump To" class="wms-srv-pager-go"><i
+                                            class="fas fa-play-circle"></i></a>
+                                </div>
+                            </div>
+                            <!-- Grid -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Create Inbound Order -->
+
+    <!-- start Region -->
+    <!-- Product Popup -->
+    <div class="wms-srv-popup-holder" id="wms-srv-Purchase-product-list-popup" style="display: none;">
+        <div class="wms-srv-popup-bg">
+        </div>
+        <div class="wms-srv-popup">
+            <div class="wms-srv-popup-content">
+                <!-- Popup Title -->
+                <div class="wms-srv-popup-title">
+                    <div class="wms-srv-page-title">
+                        <i class="fas fa-user"></i><span>Product List</span>
+                    </div>
+                    <a href="#" title="Close" id="wms-srv-Purchase-product-list-popup-close"
+                        class="wms-srv-popup-close"><i class="fas fa-times-circle"></i></a>
+                </div>
+
+                <div class="wms-srv-productsearch" data-sku="" data-skuid="" data-pallet="" data-palletid=""
+                    data-location="" data-locationid="" style="float: right;margin-right: 20px;margin-bottom: 5px;">
+                    <label>Search Product: </label>
+                    <input type="text" id="txtSo_ProdSearchpopup" value="" class="wms-srv-input wms-srv-scan-input">
+                    <select class="wms-srv-input wms-srv-scan-input notranslate"
+                        style="width: 62px; position: absolute; padding: 7px; background-color: #efefef; display: none;">
+                        <option>Lot1</option>
+                        <option>Lot2</option>
+                        <option>Lot3</option>
+                        <option>Lot4</option>
+                        <option>Lot5</option>
+                        <option>Lot6</option>
+                    </select>
+                    <input type="text" id="txtSo_ProdSearchLottablepopup" value=""
+                        class="wms-srv-input wms-srv-scan-input notranslate"
+                        style="padding-left: 65px; width: 170px;display: none;">
+
+                    <a href="#" data-prefix="PRSE" class="wms-srv-search-button"
+                        onclick="openPurchaseProductListPopup();return false;"><i class="fas fa-search"></i></a>
+                </div>
+                <!-- Popup Title -->
+                <div class="wms-srv-popup-content-body" id="wms-srv-popup-content-body">
+                    <div id="popupContentDocument">
+                        <div id="pnlCreatePurchaseOrder">
+                            <!-- Grid -->
+                            <div class="wms-srv-grid-holder pnlWmsHead" id="pnlWmsHead">
+                                <div class="wms-srv-grid" id="pnlPurchaseOrderProductList">
+
+                                </div>
+                            </div>
+                            <!-- Grid -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Product Popup -->
+    <!-- Vendor List Popup -->
+    <div class="wms-srv-popup-holder" id="wms-srv-Vendor-list-popup" style="display: none;">
+        <div class="wms-srv-popup-bg">
+        </div>
+        <div class="wms-srv-popup" style="width: 75% !important;margin-right: 25px;margin-left: 173px;">
+            <div class="wms-srv-popup-content">
+                <!-- Popup Title -->
+                <div class="wms-srv-popup-title">
+                    <div class="wms-srv-page-title">
+                        <i class="fas fa-user"></i><span id="spnheader">Vendor List</span>
+                    </div>
+                    <a href="#" title="Close" id="wms-srv-Vendor-list-popup-close" class="wms-srv-popup-close"><i
+                            class="fas fa-times-circle"></i></a>
+                </div>
+                <div class="wms-srv-productsearch" data-sku="" data-skuid="" data-pallet="" data-palletid=""
+                    data-location="" data-locationid="" style="float: right;margin-right: 20px;margin-bottom: 5px;">
+                    <label id="lblvendor">Search Vendor: </label>
+                    <input type="text" id="txtvendorsearch" value="" class="wms-srv-input wms-srv-scan-input">
+                    <a href="#" data-prefix="PRSE" class="wms-srv-search-button"
+                        onclick="loadVendorList();return false;"><i class="fas fa-search"></i></a>
+                    <a href="#" class="wms-srv-icononly" data-prefix="SE"><i class="fas fa-times-circle"
+                            onclick="VendorList();return false;"></i></a>
+                </div>
+                <!-- Popup Title -->
+                <div class="wms-srv-popup-content-body" id="wms-srv-popup-content-body">
+                    <div id="popupContentDocument">
+                        <div id="pnlCreateSalesOrder">
+                            <!-- Grid -->
+                            <div class="wms-srv-grid-scroller" style="width: 100%">
+                                <div class="wms-srv-grid-holder pnlWmsHead">
+                                    <div class="wms-srv-grid" id="pnlPOVendorList" style="text-align: center;">
+
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Grid -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Vendor List Popup -->
+    <!-- End Region -->
+    <!-- Open po  Popup -->
+
+
+
+</div>

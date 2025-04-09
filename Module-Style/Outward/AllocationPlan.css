@@ -1,0 +1,13 @@
+.wms-grid-highlight-row{
+    background-color: #fff4f4;
+}
+
+.wms-grid-transload-row{
+    background-color: #F5D0D0;
+}
+
+.wms-srv-partial {
+	background-color: #ffc107;
+	background-image: linear-gradient(to right, #47d108 45%, #ff2f2f 55%);
+	border-width: 0px;
+}

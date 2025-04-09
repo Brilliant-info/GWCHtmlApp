@@ -1,0 +1,18 @@
+{
+    "Status": "200",
+    "StatusCode": "Success",
+    "Result": {
+      "Table": [
+        {
+          "ID": 70524,
+          "PaymentMethodName": "None (Default)",
+          "PaymentSequence": "1"
+        },
+        {
+          "rownumber": 2,
+          "PaymentMethodName": "Bill to Account",
+          "PaymentSequence": "2"
+        }
+      ]
+    }
+}

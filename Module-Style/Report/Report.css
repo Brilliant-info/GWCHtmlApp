@@ -1,0 +1,74 @@
+﻿.reportCategory{
+    background-color: #efefef;
+    padding: 10px 0px;
+}
+
+.reportCategory a{
+    display: block;
+    color:#000000;
+    font-size: 14px;
+    padding: 10px 30px;
+}
+
+.reportCategory i{
+   margin-right: 10px;
+}
+
+.themWMSSearchReportHolder{
+    position: static;
+}
+.themeWMSSearchReport{
+    padding: 10px 20px;
+    background-color: #efefef;
+   
+}
+.themWMSSearchReport{
+    min-width: 250px !important;
+}
+.themWMSSearchReportHolder{
+    background-color: #ffffff;
+    margin: 10px 30px;
+}
+.themWMSSearchReportHolder i{
+    margin-right: 10px;
+}
+
+/* BOX STYLE FOR LIST */
+/* .printablesType {
+	border: solid 1px #cccccc;
+	margin: 10px 20px;
+	padding: 20px;
+	text-align: center;
+	font-size: 18px !important;
+	box-shadow: 5px 5px 5px #cccccc;
+}
+.printablesType i {
+	font-size: 40px !important;
+	margin-bottom: 10px;
+	color: #00acd7;
+}
+.printablesTitle {
+	font-size: 16px !important;
+	font-weight: bold;
+	color: #999;
+} */
+.printablesType {
+	border: solid 1px #cccccc;
+	margin: 10px 20px;
+	font-size: 18px !important;
+	box-shadow: 5px 5px 5px #cccccc;
+}
+.printablesType i {
+	font-size: 20px !important;
+	color: #575757;
+	margin-right: 5px;
+	padding: 20px;
+	background-color: #fbfafa;
+	border-right: solid 1px #cccccc;
+}
+.printablesTitle {
+	font-size: 14px !important;
+	color: #000000;
+    display: inline;
+}
+/* BOX STYLE FOR LIST */

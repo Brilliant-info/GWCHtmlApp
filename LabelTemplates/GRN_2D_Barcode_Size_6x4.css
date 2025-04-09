@@ -1,0 +1,15 @@
+/* .printLabelTitle{
+    font-size:0.25in;
+} */
+body{
+    font-size:0.16in;
+    line-height:0.32in;
+}
+.printRow{
+    margin-bottom: 0.15in;
+    width:4in;
+}
+.Barcode2DStringToPrint{
+    transform:scale(1);
+    right: 0in;
+}

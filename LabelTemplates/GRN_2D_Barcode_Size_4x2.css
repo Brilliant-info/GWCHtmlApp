@@ -1,0 +1,11 @@
+/* .printLabelTitle{
+    font-size:0.25in;
+} */
+
+.Barcode2DStringToPrint{
+	float:right;
+    right: 0px;
+}
+.printRow{
+    width:2.5in;
+}

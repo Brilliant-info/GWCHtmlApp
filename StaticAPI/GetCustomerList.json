@@ -1,0 +1,118 @@
+{
+    "Status": "200",
+    "StatusCode": "Success",
+    "Result": {
+        "Table": [
+            {
+                "rownumber": 1,
+                "ID": 70524,
+                "custmoreName": "Test001",
+                "CustmoreCode": "Test001",
+                "Address": null,
+                "City": "Pune",
+                "PhoneNo": null,
+                "EmailID": null,
+                "Active": null
+            },
+            {
+                "rownumber": 2,
+                "ID": 70523,
+                "custmoreName": null,
+                "CustmoreCode": null,
+                "Address": null,
+                "City": null,
+                "PhoneNo": null,
+                "EmailID": null,
+                "Active": null
+            },
+            {
+                "rownumber": 3,
+                "ID": 70522,
+                "custmoreName": "EsmartBin Cust",
+                "CustmoreCode": "Esmart003",
+                "Address": null,
+                "City": "Pune",
+                "PhoneNo": null,
+                "EmailID": null,
+                "Active": null
+            },
+            {
+                "rownumber": 4,
+                "ID": 70521,
+                "custmoreName": "TestCust",
+                "CustmoreCode": "Cust001",
+                "Address": null,
+                "City": "Pune",
+                "PhoneNo": null,
+                "EmailID": null,
+                "Active": null
+            },
+            {
+                "rownumber": 5,
+                "ID": 70520,
+                "custmoreName": "KK and KK Company",
+                "CustmoreCode": "KK a-70507",
+                "Address": "Kothrud Pune",
+                "City": "Pune",
+                "PhoneNo": "9923099230",
+                "EmailID": "kashinath@brilliantinfosys.com",
+                "Active": "Yes"
+            },
+            {
+                "rownumber": 6,
+                "ID": 70519,
+                "custmoreName": "AK WMS Company",
+                "CustmoreCode": "AK W-70506",
+                "Address": "Kothrud Pune",
+                "City": "Pune",
+                "PhoneNo": "9923099230",
+                "EmailID": "abhijit@brilliantinfosys.com",
+                "Active": "Yes"
+            },
+            {
+                "rownumber": 7,
+                "ID": 70518,
+                "custmoreName": "Demo Customer",
+                "CustmoreCode": "Demo Customer001",
+                "Address": "kothrud",
+                "City": "Pune",
+                "PhoneNo": "9338383838",
+                "EmailID": "Demo@gmail.com",
+                "Active": "Yes"
+            },
+            {
+                "rownumber": 8,
+                "ID": 70517,
+                "custmoreName": "TEST Customer",
+                "CustmoreCode": "890",
+                "Address": "Kothrud",
+                "City": "Pune",
+                "PhoneNo": "91685 8828",
+                "EmailID": "XYZ@schnellecke.com",
+                "Active": "Yes"
+            },
+            {
+                "rownumber": 9,
+                "ID": 70516,
+                "custmoreName": "BrillTestCompany",
+                "CustmoreCode": "Bril-70505",
+                "Address": "Pune",
+                "City": "Pune",
+                "PhoneNo": "912020202020",
+                "EmailID": "btc@gmail.com",
+                "Active": "Yes"
+            },
+            {
+                "rownumber": 10,
+                "ID": 70512,
+                "custmoreName": "Test1",
+                "CustmoreCode": "1",
+                "Address": "1",
+                "City": "1",
+                "PhoneNo": "1",
+                "EmailID": "1@gmail.com",
+                "Active": "Yes"
+            }
+        ]
+    }
+}

@@ -1,0 +1,1215 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>
+        Brilliant WMS
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src="../MasterPage/JavaScripts/crm.js" type="text/javascript"></script>
+    <link rel="icon" type="image/x-icon" href="../MasterPage/Logo/brillwmslogoNEW.ico">
+    <link href="../App_Themes/Blue/css/userinfo.css" rel="stylesheet" type="text/css">
+
+
+
+    <!-- WMS THEME -->
+
+    <link href="../Themes/fontawesome/css/all.css" rel="stylesheet">
+    <link id="ctl00_wmsThemeSet" href="../Themes/css/theme-wms-sky-blue.css" rel="stylesheet">
+    <link href="../Themes/css/wms-style.css" rel="stylesheet">
+    <link href="../Themes/css/wms-dashboard.css" rel="stylesheet">
+    <link rel="stylesheet" href="../Themes/bootstrap-4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="../Themes/bootstrap-4.0.0/dist/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <script src="../Themes/js/wms-theme.js"></script>
+    <!-- WMS THEME -->
+
+    <link href="../Themes/jquery-ui/jquery-ui.css" rel="stylesheet">
+    <script src="../Themes/jquery-ui/jquery-ui.js"></script>
+    <link href="../WMSReport/css/ReportDesigner.css" rel="stylesheet">
+    <!--  media="print" -->
+    <script src="../Themes/js/wms-app-navigator.js"></script>
+    <script src="../Themes/js/wms-app-session.js"></script>
+    <script src="../WMSReport/javascript/ExecuteReport.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('input[type="date"]').each(function () {
+                $(this).attr("type", "text");
+                $(this).datepicker({
+                    dateFormat: "dd/mm/yy"
+                });
+            });
+            generateReport('execute');
+            //// loadHeaderObject(rptHeaderObj);
+        });       
+    </script>
+    <style>
+        .ui-datepicker {
+            z-index: 999999 !important;
+        }
+    </style>
+    <link href="../App_Themes/Blue/css/dashboard.css" type="text/css" rel="stylesheet">
+    <link href="../App_Themes/Blue/css/general.css" type="text/css" rel="stylesheet">
+    <link href="../App_Themes/Blue/css/style.css" type="text/css" rel="stylesheet">
+    <link href="../App_Themes/Blue/css/userinfo.css" type="text/css" rel="stylesheet">
+    <link href="../App_Themes/Blue/css3menu1/style.css" type="text/css" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" charset="UTF-8"
+        href="https://translate.googleapis.com/translate_static/css/translateelement.css">
+    <script type="text/javascript" charset="UTF-8"
+        src="https://translate.googleapis.com/_/translate_http/_/js/k=translate_http.tr.en_GB.jUY4_WDT6tY.O/d=1/exm=el_conf/ed=1/rs=AN8SPfo-BMNf26XhheE95_VcZtMnJF0ToQ/m=el_main"></script>
+</head>
+
+<body style="overflow: hidden;">
+    <div id="themeWMSLoading" class="themeWMSLoading" style="display: none; background: transparent;">
+        <div class="themeWMSModelHolder">
+            <div class="themeWMSModel">
+                <img src="../App_Themes/Blue/img/ajax-loader.gif" style="top: 50%;"><span
+                    class="themeWMSLoadingProcessing"><br>Please Wait. Processing...</span>
+            </div>
+        </div>
+    </div>
+    <div id="divColorReader"></div>
+    <form method="post" action="./ExecuteReport.aspx?rptid=21" id="aspnetForm">
+        <div class="aspNetHidden">
+            <input type="hidden" name="ctl00_ToolkitScriptManager1_HiddenField"
+                id="ctl00_ToolkitScriptManager1_HiddenField" value="">
+            <input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="">
+            <input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="">
+            <input type="hidden" name="__LASTFOCUS" id="__LASTFOCUS" value="">
+            <input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE"
+                value="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">
+        </div>
+        </script>
+
+        <div class="themeWMSNavSearchHolder" style="display:none;">
+            <div class="themeWMSNavSearch">
+                <div class="themeWMSNavSearchInput">
+                    <input type="text" value="" id="themeWMSNavSearchInputBox" placeholder="Search for navigation"
+                        class="notranslate">
+                </div>
+                <a href="#" class="themeWMSNavBtnSearch" id="themeWMSNavBtnSearch"><i class="fas fa-search"></i></a>
+            </div>
+        </div>
+        <div class="themeWMSMain" id="themeWMSMain" style="visibility: visible;">
+
+            <div class="themeWMSNavHolder" style="width:42px;">
+                <!-- Navigation Starts Here -->
+                <div id="themeWMSNavPanel" style="width: 42px; overflow: hidden; height: 383px;">
+                    <div class="themeWMSNav themeWMSNavBarHolder onlyIconNav">
+                        <div class="appNavHolder">
+                            <img id="ctl00_ClientLogo" class="themeWMSClientLogo" src="data:image/png;base64,"
+                                style="display:none;" align="middle">
+                        </div>
+                        <span id="ctl00_dvMenu">
+                            <ul>
+                                <li><a href="../Dashboard/WmsDashboard.aspx"><i
+                                            class="fas fa-home"></i><span>Home</span></a></li>
+                                <li><a href="#"><i class="fas fa-tools
+"></i><span>Setup </span></a>
+                                    <ul>
+                                        <li><a href="#"><i class="fas fa-angle-double-right"></i><span>Company
+                                                    Management </span></a>
+                                            <ul>
+                                                <li><a href="../Account/AccountMaster.aspx"><i
+                                                            class="fas fa-angle-double-right"></i><span>Company
+                                                            Master</span></a></li>
+                                                <li><a href="../Account/Customer.aspx"><i
+                                                            class="fas fa-angle-double-right"></i><span>Customer
+                                                            Master</span></a></li>
+                                                <li><a href="../Tax/StatutoryMaster.aspx"><i
+                                                            class="fas fa-angle-double-right"></i><span>Parameter
+                                                            Master</span></a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="#"><i class="fas fa-angle-double-right"></i><span>User Management
+                                                </span></a>
+                                            <ul>
+                                                <li><a href="../UserManagement/DepartmentMaster.aspx"><i
+                                                            class="fas fa-angle-double-right"></i><span>Department
+                                                            Master</span></a></li>
+                                                <li><a href="../UserManagement/UserCreation.aspx"><i
+                                                            class="fas fa-angle-double-right"></i><span>User
+                                                            Master</span></a></li>
+                                                <li><a href="../UserManagement/RoleMaster.aspx"><i
+                                                            class="fas fa-angle-double-right"></i><span>Role
+                                                            Master</span></a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="#"><i class="fas fa-angle-double-right"></i><span>Product
+                                                    Management </span></a>
+                                            <ul>
+                                                <li><a href="../Product/ProductCategoryMaster.aspx"><i
+                                                            class="fas fa-angle-double-right"></i><span>Category
+                                                            Master</span></a></li>
+                                                <li><a href="../Product/ProductSubCategoryMaster.aspx"><i
+                                                            class="fas fa-angle-double-right"></i><span>Sub Category
+                                                            Master</span></a></li>
+                                                <li><a href="../Product/ProductMaster.aspx"><i
+                                                            class="fas fa-angle-double-right"></i><span>Product
+                                                            Master</span></a></li>
+                                                <li><a href="../Product/ProductInventory.aspx"><i
+                                                            class="fas fa-angle-double-right"></i><span>Product
+                                                            Inventory</span></a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="#"><i class="fas fa-angle-double-right"></i><span>Warehouse
+                                                    Management</span></a>
+                                            <ul>
+                                                <li><a href="../Warehouse/WarehouseMaster.aspx"><i
+                                                            class="fas fa-angle-double-right"></i><span>Warehouse
+                                                            Master</span></a></li>
+                                                <li><a href="../Warehouse/CycleCount.aspx"><i
+                                                            class="fas fa-angle-double-right"></i><span>Cycle
+                                                            Count</span></a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="#"><i class="fas fa-angle-double-right"></i><span>Account
+                                                    Management</span></a>
+                                            <ul>
+                                                <li><a href="../Account/ClientMaster.aspx"><i
+                                                            class="fas fa-angle-double-right"></i><span>Client
+                                                            Master</span></a></li>
+                                                <li><a href="../Account/VendorMaster.aspx"><i
+                                                            class="fas fa-angle-double-right"></i><span>Vendor
+                                                            Master</span></a></li>
+                                                <li><a href="../Account/RateCardmaster.aspx"><i
+                                                            class="fas fa-angle-double-right"></i><span>Rate
+                                                            Card</span></a></li>
+                                                <li><a href="../Account/ActivityMaster.aspx"><i
+                                                            class="fas fa-angle-double-right"></i><span>Activity
+                                                            Master</span></a></li>
+                                                <li><a href="../Account/CarrierMaster.aspx"><i
+                                                            class="fas fa-angle-double-right"></i><span>Carrier
+                                                            Master</span></a></li>
+                                                <li><a href="../Account/CarrierAccount.aspx"><i
+                                                            class="fas fa-angle-double-right"></i><span>Carrier
+                                                            Account</span></a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="#"><i class="fas fa-angle-double-right"></i><span>Document
+                                                    Management</span></a>
+                                            <ul>
+                                                <li><a href="../Document/DocumentTypeMaster.aspx"><i
+                                                            class="fas fa-angle-double-right"></i><span>Document Type
+                                                            Master</span></a></li>
+                                                <li><a href="../Document/DocumentMaster.aspx"><i
+                                                            class="fas fa-angle-double-right"></i><span>Document
+                                                            Master</span></a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="../GeneralMenu/GeneralMenuMaster.aspx"><i
+                                                    class="fas fa-angle-double-right"></i><span>General
+                                                    Master</span></a>
+                                            <ul>
+                                                <li><a href="../GeneralMenu/PackingStyleMasterNew.aspx"><i
+                                                            class="fas fa-angle-double-right"></i><span>Packing Style
+                                                            Master</span></a></li>
+                                                <li><a href="../GeneralMenu/ReasonCodeMasternew.aspx"><i
+                                                            class="fas fa-angle-double-right"></i><span>Reason
+                                                            code</span></a></li>
+                                                <li><a href="../CapacityPlanner/Capacity.aspx"><i
+                                                            class="fas fa-angle-double-right"></i><span>Capacity
+                                                            Master</span></a></li>
+                                                <li><a href="../DockMaster/DockMaster.aspx"><i
+                                                            class="fas fa-angle-double-right"></i><span>Dock
+                                                            Master</span></a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="#"><i
+                                                    class="fas fa-angle-double-right"></i><span>Configuration</span></a>
+                                            <ul>
+                                                <li><a href="../Product/EmailTemplate.aspx"><i
+                                                            class="fas fa-angle-double-right"></i><span>Email And SMS
+                                                            Config</span></a></li>
+                                                <li><a href="../CommonControls/HoldPalletNew.aspx"><i
+                                                            class="fas fa-angle-double-right"></i><span>Hold &amp;
+                                                            Release</span></a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="#"><i class="fas fa-angle-double-right"></i><span>EDI</span></a>
+                                            <ul>
+                                                <li><a href="../EDI/EDIAddNew.aspx"><i
+                                                            class="fas fa-angle-double-right"></i><span>EDI
+                                                            Configuration</span></a></li>
+                                                <li><a href="../EDI/EDITransactionNew.aspx"><i
+                                                            class="fas fa-angle-double-right"></i><span>EDI Received
+                                                            Transaction</span></a></li>
+                                                <li><a href="../EDI/EDISendTransactionNew.aspx"><i
+                                                            class="fas fa-angle-double-right"></i><span>EDI Send
+                                                            Transaction</span></a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="#"><i class="fas fa-angle-double-right"></i><span>IOT Config
+                                                </span></a>
+                                            <ul>
+                                                <li><a href="../ConveyorMaster/ConveyorConfig.aspx"><i
+                                                            class="fas fa-angle-double-right"></i><span>Conveyor
+                                                            Config</span></a></li>
+                                                <li><a href="../PTLMaster/PTLConfig.aspx"><i
+                                                            class="fas fa-angle-double-right"></i><span>PTL
+                                                            Config</span></a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="#"><i class="fas fa-angle-double-right"></i><span>Labour
+                                                    Management</span></a>
+                                            <ul>
+                                                <li><a href="../LabourMaster/LabourMaster.aspx"><i
+                                                            class="fas fa-angle-double-right"></i><span>Labour
+                                                            Master</span></a></li>
+                                                <li><a href="../LabourMaster/ZoneMaster.aspx"><i
+                                                            class="fas fa-angle-double-right"></i><span>Zone
+                                                            Master</span></a></li>
+                                                <li><a href="../LabourMaster/ShiftMaster.aspx"><i
+                                                            class="fas fa-angle-double-right"></i><span>Shift
+                                                            Master</span></a></li>
+                                                <li><a href="../LabourMaster/UnPlanActivity.aspx"><i
+                                                            class="fas fa-angle-double-right"></i><span>Un-Planned
+                                                            Activity</span></a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li><a href="AppointmentListActivity"><i
+                                            class="fas fa-calendar-check"></i><span>Appointment</span></a>
+                                    <ul>
+                                        <li><a href="../AppointmentDashboard/AppointmentDashboard.aspx"><i
+                                                    class="fas fa-angle-double-right"></i><span>Dashboard</span></a>
+                                            <ul></ul>
+                                        </li>
+                                        <li><a href="../Appointment/AppointmentList.aspx"><i
+                                                    class="fas fa-angle-double-right"></i><span>Appointment</span></a>
+                                            <ul></ul>
+                                        </li>
+                                        <li><a href="../AppointmentPipeline/AppointmentPipeline.aspx"><i
+                                                    class="fas fa-angle-double-right"></i><span>Pipeline</span></a>
+                                            <ul></ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li><a href="../Inbox/InboxPOR.aspx"><i class="fas fa-angle-double-right
+"></i><span>Inbox </span></a>
+                                    <ul></ul>
+                                </li>
+                                <li><a href="#"><i class="fas fa-grip-horizontal"></i><span>Dashboard </span></a>
+                                    <ul>
+                                        <li><a href="#"><i
+                                                    class="fas fa-angle-double-right"></i><span>Warehouse</span></a>
+                                            <ul>
+                                                <li><a href="../POR/DashboardPOR.aspx?invoker=utilization"><i
+                                                            class="fas fa-angle-double-right"></i><span>Utilization</span></a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="#"><i class="fas fa-angle-double-right"></i><span>Order Management
+                                                </span></a>
+                                            <ul>
+                                                <li><a href="../POR/DashboardPOR.aspx?invoker=sostatus"><i
+                                                            class="fas fa-angle-double-right"></i><span>Outbound Order
+                                                            Status</span></a></li>
+                                                <li><a href="../POR/DashboardPOR.aspx?invoker=postatus"><i
+                                                            class="fas fa-angle-double-right"></i><span>Inbound Order
+                                                            Status</span></a></li>
+                                                <li><a href="../POR/DashboardPOR.aspx?invoker=salesorder"><i
+                                                            class="fas fa-angle-double-right"></i><span>Outbound
+                                                            Order</span></a></li>
+                                                <li><a href="../POR/DashboardPOR.aspx?invoker=purchaseorder"><i
+                                                            class="fas fa-angle-double-right"></i><span>Inbound
+                                                            Order</span></a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="#"><i class="fas fa-angle-double-right"></i><span>Labor</span></a>
+                                            <ul>
+                                                <li><a href="../POR/DashboardPOR.aspx?invoker=labourforce"><i
+                                                            class="fas fa-angle-double-right"></i><span>Labor
+                                                            Force</span></a></li>
+                                                <li><a href="../POR/LabourDashboard.aspx"><i
+                                                            class="fas fa-angle-double-right"></i><span>Labor
+                                                            Dashboard</span></a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li><a href="../WMS/InboundList.aspx?JID=0"><i class="fas fa-truck-moving 
+"></i><span>Inbound </span></a>
+                                    <ul>
+                                        <li><a href="../WMS/InboundList.aspx?JID=0"><i
+                                                    class="fas fa-angle-double-right"></i><span>Inbound
+                                                    Receipt</span></a>
+                                            <ul></ul>
+                                        </li>
+                                        <li><a href="../WMS/GridGRN.aspx?POID=0"><i
+                                                    class="fas fa-angle-double-right"></i><span>Receiving</span></a>
+                                            <ul></ul>
+                                        </li>
+                                        <li><a href="../WMS/PutInList.aspx"><i
+                                                    class="fas fa-angle-double-right"></i><span>Put Away</span></a>
+                                            <ul></ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li><a href="#"><i class="fas fa-truck-moving fa-flip-horizontal
+"></i><span>Outbound </span></a>
+                                    <ul>
+                                        <li><a href="../WMS/SalesOrderList.aspx?JID=0"><i
+                                                    class="fas fa-angle-double-right"></i><span>Cust. Purchase
+                                                    Order</span></a>
+                                            <ul></ul>
+                                        </li>
+                                        <li><a href="../WMS/EDIOrderList.aspx"><i
+                                                    class="fas fa-angle-double-right"></i><span>EDI Order
+                                                    List</span></a>
+                                            <ul></ul>
+                                        </li>
+                                        <li><a href="../WMS/Outbound.aspx"><i
+                                                    class="fas fa-angle-double-right"></i><span>Allocation
+                                                    Group</span></a>
+                                            <ul></ul>
+                                        </li>
+                                        <li><a href="../WMS/PickUpList.aspx?SO=0"><i
+                                                    class="fas fa-angle-double-right"></i><span>Picking</span></a>
+                                            <ul></ul>
+                                        </li>
+                                        <li><a href="../WMS/Dispatch.aspx"><i
+                                                    class="fas fa-angle-double-right"></i><span>staging</span></a>
+                                            <ul></ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li><a href="../WMS/Transfer.aspx"><i class="fas fa-exchange-alt
+"></i><span>Transfer </span></a>
+                                    <ul>
+                                        <li><a href="../WMS/InternalTransfer.aspx"><i
+                                                    class="fas fa-angle-double-right"></i><span>Internal
+                                                    Transfer</span></a>
+                                            <ul></ul>
+                                        </li>
+                                        <li><a href="../WMS/Transfer.aspx"><i
+                                                    class="fas fa-angle-double-right"></i><span>Warehosue To Warehouse
+                                                    Transfer</span></a>
+                                            <ul></ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li><a href="#"><i class="fas fa-receipt
+"></i><span>Billing</span></a>
+                                    <ul>
+                                        <li><a href="../Invoice/Billing3PL.aspx"><i
+                                                    class="fas fa-angle-double-right"></i><span>3PL Billing</span></a>
+                                            <ul></ul>
+                                        </li>
+                                        <li><a href="../Md-Billing3PL/Billing3PLWms.aspx"><i
+                                                    class="fas fa-angle-double-right"></i><span>3PL Billing
+                                                    New</span></a>
+                                            <ul></ul>
+                                        </li>
+                                        <li><a href="../CommonControls/DefaultView.aspx?invoker=Invoice"><i
+                                                    class="fas fa-angle-double-right"></i><span>Invoice</span></a>
+                                            <ul></ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li><a href="#"><i class="fas fa-truck-loading"></i><span>Cross Dock</span></a>
+                                    <ul>
+                                        <li><a href="../WMS/DomesticList.aspx"><i
+                                                    class="fas fa-angle-double-right"></i><span>Domestic</span></a>
+                                            <ul></ul>
+                                        </li>
+                                        <li><a href="../WMS/ContainerList.aspx"><i
+                                                    class="fas fa-angle-double-right"></i><span>Container</span></a>
+                                            <ul></ul>
+                                        </li>
+                                        <li><a href="../WMS/CrossDockOrderList.aspx"><i
+                                                    class="fas fa-angle-double-right"></i><span>Cust. Purchase
+                                                    Order</span></a>
+                                            <ul></ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li><a href="#"><i class="fas fa-tools"></i><span>Tools &amp; Utility</span></a>
+                                    <ul>
+                                        <li><a href="../QueryBuilder/QueryBuilder.aspx"><i
+                                                    class="fas fa-angle-double-right"></i><span>Query Builder</span></a>
+                                            <ul></ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li><a href="#"><i
+                                            class="fas fa-truck-moving fa-flip-horizontal"></i><span>E-Commerce</span></a>
+                                    <ul>
+                                        <li><a href="../WMS/ECommOrderList.aspx?JID=0"><i
+                                                    class="fas fa-angle-double-right"></i><span>Cust. Purchase
+                                                    Order</span></a>
+                                            <ul></ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li><a href="../CrossDock/Transload.aspx"><i
+                                            class="fas fa-angle-double-right "></i><span>Transload</span></a>
+                                    <ul></ul>
+                                </li>
+                                <li class="themeWMSActiveNav"><a href="../Reports/WmsReports.aspx"><i
+                                            class="far fa-chart-bar"></i><span>Reports</span></a></li>
+                            </ul>
+                        </span>
+
+                    </div>
+                </div>
+                <!-- Navigation Starts Here -->
+            </div>
+            <div class="themeWMSContentHolder">
+                <div class="themeWMSTopNav">
+                    <div class="appNav" id="appNav"><i class="fas fa-bars"></i></div>
+                    <div class="themeWMSBreadCrump" id="themeWMSBreadCrump">
+
+                    </div>
+                    <script type="text/javascript"
+                        src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+                    <div class="themeWMSTopHeaderIconNav">
+                        <div id="Lang" class="themeWmsLangNav">
+                            <a href="#" class="themeWMSLblLang"><span id="langPrefix" class="notranslate"></span><i
+                                    class="fas fa-globe"></i></a>
+                            <div id="google_translate_element"></div>
+                            <input type="hidden" name="ctl00$hdnLanguage" id="hdnLanguage" value="en">
+
+                            <script type="text/javascript">
+                                function googleTranslateElementInit() {
+                                    new google.translate.TranslateElement({ pageLanguage: ['en', 'ar'] }, 'google_translate_element');
+                                } 
+                            </script>
+
+                        </div>
+                        <!-- <a href="../Dashboard/WmsDashboard.aspx"><i class="fas fa-home"></i></a> -->
+                        <a href="../Inbox/InboxPOR.aspx" id="myinbox"><i class="fas fa-envelope"></i>
+                            <div class="wmsUnreadCountHolder"><span id="ctl00_lblInboxCnt"
+                                    class="wmsUnreadCount">13</span></div>
+                        </a>
+                        <a href="../MasterPage/#" id="Help" onclick="downloadHELP();"><i
+                                class="fas fa-question-circle"></i></a>
+                        <a href="#" id="settings" onclick="opensettings();" style="display:none;"><i
+                                class="fas fa-cog"></i></a>
+                        <a href="#" id="search" style="display:none;"><i class="fas fa-search"></i></a>
+                        <a href="#" id="shortcut"><i class="fas fa-star"></i></a>
+
+                        <!-- Profile Pic with Menu -->
+                        <div class="themeWMSProfile dropdown hide">
+                            <a class="icoProfilePic" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false"><img src="../App_Themes/Blue/img/User1.png"
+                                    id="ctl00_ImgProfileMasterPg" width="30" height="30">
+                            </a>
+
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+
+                                <a href="../UserManagement/UserPreference.aspx" id="userpre" class="dropdown-item">User
+                                    Preference</a>
+                                <a class="dropdown-item" href="#" onclick="openChangePassword();">Change Password</a>
+                                <a class="dropdown-item" href="#" onclick="logout();">Logout</a>
+                            </div>
+                        </div>
+
+                        <!-- Profile Pic with Menu -->
+                        <!-- Application level Search -->
+                        <div class="wmsThemeAppSearchHolder">
+                            <div class="wmsThemeAppSearch">
+                                <div class="wmsThemeAppSearchFilter">
+                                    <ul class="wmsThemeAppSearchFilterUl" id="wmsThemeAppSearchFilterUl">
+                                        <li class="wmsThemeBtnAppSearchFilter">
+                                            <a href="#" id="wmsThemeAppSelectedSearch"
+                                                class="wmsThemeAppSelectedSearch"><i class="fas fa-truck-moving"></i><i
+                                                    class="fas fa-caret-down"></i></a>
+                                            <ul style="display:none;">
+                                                <li><a href="#"><i class="fas fa-truck-moving"></i><span
+                                                            data="Inbound Order">Inbound Order</span></a></li>
+                                                <li><a href="#"><i
+                                                            class="fas fa-truck-moving fa-flip-horizontal"></i><span
+                                                            data="Outbound Order">Outbound Order</span></a></li>
+                                                <li><a href="#"><i class="fas fa-box-open"></i><span
+                                                            data="SKU">SKU</span></a></li>
+                                                <li id="lstLoc"><a href="#"><i class="fas fa-map-marker-alt"></i><span
+                                                            data="Location">Location</span></a></li>
+
+                                                <li id="lstDoc"><a href="#"><i class="fas fa-file"></i><span
+                                                            data="Document">Document</span></a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="wmsThemeAppSearchInput">
+                                    <input name="ctl00$txtWmsAppSearch" type="text" id="txtWmsAppSearch"
+                                        class="inputElement notranslate" onblur="validateCtl(this);">
+                                    <i class="fas fa-search"></i>
+                                    <input type="hidden" name="ctl00$txtWmsAppSearchType" id="txtWmsAppSearchType"
+                                        value="Inbound Order">
+                                </div>
+                            </div>
+                            <div class="wmsThemeAppSearchSuggestions" id="wmsThemeAppSearchSuggestions"
+                                style="display:none;">
+
+                            </div>
+                        </div>
+                        <!-- Application level Search -->
+
+                    </div>
+                    <div class="themeWMSTopHeaderIconNav" style="position:static;">
+                        <div id="Div2" class="themeWmsLangNav">
+
+                            <div style="display:inline-block;position:relative;top:-5px;">
+                                <div class="wmsThemeAppSearch">
+                                    <div class="wmsThemeAppSearchFilter">
+                                        <ul class="wmsThemeAppSearchFilterUl" id="wmsThemeAppWarehouseFilterUl"
+                                            style="position:relative;">
+                                            <li class="wmsThemeBtnAppSearchFilter" style="top:-5px;left:-10px;">
+                                                <a href="#" id="wmsThemeAppWarehouseSearch"
+                                                    class="wmsThemeAppSelectedSearch"><i class="fas fa-user"></i></a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="wmsThemeAppSearchInput">
+                                        <select name="ctl00$ddlcustomer"
+                                            onchange="javascript:setTimeout('__doPostBack(\'ctl00$ddlcustomer\',\'\')', 0)"
+                                            id="ddlcustomer" class="inputElement notranslate"
+                                            onblur="validateCtl(this);"
+                                            style="font-weight:normal;width:200px;font-size:12px;">
+                                            <option value="10149">3PLCustomer</option>
+                                            <option selected="selected" value="10225">AmrutaCust</option>
+                                            <option value="10205">Mr Christmus</option>
+                                            <option value="10190">Oxymist Aqua</option>
+                                            <option value="10154">Ravitest001</option>
+                                            <option value="10087">SCEMANS</option>
+                                            <option value="10153">tori</option>
+                                            <option value="10131">WC01</option>
+                                            <option value="10082">White Horse Logistics Inc..</option>
+
+                                        </select>
+                                        <input type="hidden" name="ctl00$HiddenField1" id="HiddenField1"
+                                            value="Inbound Order">
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="display:inline-block;position:relative;top:-5px;">
+                                <div class="wmsThemeAppSearch">
+                                    <div class="wmsThemeAppSearchFilter">
+                                        <ul class="wmsThemeAppSearchFilterUl" id="wmsThemeAppCustomerFilterUl"
+                                            style="position:relative;">
+                                            <li class="wmsThemeBtnAppSearchFilter" style="top:-5px;left:-10px;">
+                                                <a href="#" id="wmsThemeAppSelectedCustomer"
+                                                    class="wmsThemeAppSelectedSearch"><i
+                                                        class="fas fa-solid fa-warehouse"></i></a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="wmsThemeAppSearchInput">
+                                        <select name="ctl00$ddlwarehouse"
+                                            onchange="javascript:setTimeout('__doPostBack(\'ctl00$ddlwarehouse\',\'\')', 0)"
+                                            id="ddlwarehouse" class="inputElement notranslate"
+                                            onblur="validateCtl(this);"
+                                            style="font-weight:normal;width:200px;font-size:12px;">
+                                            <option value="10274">West Coast Warehouse</option>
+                                            <option selected="selected" value="10478">201 W Manville</option>
+                                            <option value="10479">Westcoast Warehouse 201</option>
+                                            <option value="10481">ravi</option>
+                                            <option value="10507">DELL PC</option>
+                                            <option value="10508">DELL PC</option>
+                                            <option value="10509">DELL123</option>
+                                            <option value="10545">amrutawarehouse</option>
+                                            <option value="20597">warr</option>
+                                            <option value="20598">westhouse21</option>
+
+                                        </select>
+                                        <input type="hidden" name="ctl00$HiddenField2" id="HiddenField2"
+                                            value="Inbound Order">
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+
+
+
+
+
+                        </div>
+                    </div>
+                </div>
+
+
+                <div id="main">
+                    <!-- BEGIN HEADER BAR -->
+                    <div id="top_bar" style="margin-top: -10px;display:none;">
+                        <!-- BEGIN LOGO -->
+                        <div class="CompanyLogo" style="">
+                        </div>
+
+                        <div class="userInfo" style="max-height: 90px;">
+                            <table style="float: right; position: relative; top: 19px;">
+                                <tbody>
+                                    <tr>
+                                        <td>
+
+
+
+                                            <a id="search">
+                                                <img src="../App_Themes/Blue/img/search16x16.png" alt="Search"
+                                                    title="Search" style="padding-right:10px;"></a>
+                                            <a id="Help" onclick="downloadHELP();">
+                                                <img src="../App_Themes/Blue/img/help24.png" alt="Help"
+                                                    title="Help"></a>
+                                            <a onclick="opensettings();">
+                                                <img src="../App_Themes/Blue/img/Setting16.png" alt="Settings"
+                                                    title="Settings"></a>
+
+                                            &nbsp; <a href="../Login/Login.aspx?ID=10322" id="ctl00_btnLogout"
+                                                onclick="logout()">
+                                                <img src="../App_Themes/Blue/img/logout16.png" title="Logout"></a>
+                                        </td>
+                                        <td></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <!-- #info -->
+                        <!-- end div #logo -->
+                        <!-- END LOGO -->
+                        <!-- BEGIN TOP NOTIFICATIONS -->
+                        <!-- end div #top_notifications -->
+                        <!-- END TOP NOTIFICATIONS -->
+                    </div>
+                    <!-- end div #top_bar -->
+                    <!-- END HEADER BAR -->
+
+                    <!-- Popup -->
+                    <div class="divDetailExpandPopUpOff" id="divPopUp">
+                        <center>
+                            <div class="popupClose" onclick="CloseShowReport()">
+                            </div>
+                            <div class="divDetailExpand" id="div1">
+                                <iframe id="iframePORRpt" style="border: none; height: 500px;" width="80%"></iframe>
+                            </div>
+                        </center>
+                    </div>
+                    <!-- Popup -->
+
+                    <!-- BEGIN NAVIGATION MENU -->
+                    <!-- Start css3menu.com BODY section -->
+                    <div id="menudiv" style="display:none;">
+                        <div style="width: 995px; padding: 3px 0 0 0;">
+                        </div>
+                        <div class="divhover" style="border: none; height: 26px;">
+
+                        </div>
+                    </div>
+                    <!-- End css3menu.com BODY section -->
+                    <div class="fixed_page head">
+
+
+                    </div>
+                    <div id="divCPHolder_Form" class="fixed_page content"
+                        style="font-size: small; text-align: left; vertical-align: bottom; height: Auto; ">
+
+
+                        <input type="hidden" name="ctl00$CPHolder_Form$hdnReportId" id="hdnReportId" value="21">
+                        <input type="hidden" name="ctl00$CPHolder_Form$hdnColumnWidth" id="hdnColumnWidth"
+                            value="181.2">
+                        <input type="hidden" name="ctl00$CPHolder_Form$hdnColumns" id="hdnColumns"
+                            value="OrderNo|BatchId|BatchName|BatchStatus|BatchCreationDate">
+                        <input type="hidden" name="ctl00$CPHolder_Form$hdnPageWidth" id="hdnPageWidth" value="8.27">
+                        <input type="hidden" name="ctl00$CPHolder_Form$hdnPageHeight" id="hdnPageHeight" value="11.69">
+
+                        <input type="hidden" name="ctl00$CPHolder_Form$hdnLeftMargin" id="hdnLeftMargin" value="0.75">
+                        <input type="hidden" name="ctl00$CPHolder_Form$hdnRightMargin" id="hdnRightMargin" value="0.75">
+                        <input type="hidden" name="ctl00$CPHolder_Form$hdnTopMargin" id="hdnTopMargin" value="1.00">
+                        <input type="hidden" name="ctl00$CPHolder_Form$hdnBottomMargin" id="hdnBottomMargin"
+                            value="0.75">
+                        <input type="hidden" name="ctl00$CPHolder_Form$hdnPageOrientation" id="hdnPageOrientation"
+                            value="PagePortrait">
+                        <!-- Hidden field to store header value -->
+                        <input type="hidden" name="ctl00$CPHolder_Form$hdnHeader_HtmlTemplate"
+                            id="hdnHeader_HtmlTemplate">
+                        <input type="hidden" name="ctl00$CPHolder_Form$hdnHeader_CompanyName"
+                            id="hdnHeader_CompanyName">
+                        <input type="hidden" name="ctl00$CPHolder_Form$hdnHeader_Address1" id="hdnHeader_Address1">
+                        <input type="hidden" name="ctl00$CPHolder_Form$hdnHeader_Address2" id="hdnHeader_Address2">
+                        <input type="hidden" name="ctl00$CPHolder_Form$hdnHeader_Contact1" id="hdnHeader_Contact1">
+                        <input type="hidden" name="ctl00$CPHolder_Form$hdnHeader_Contact2" id="hdnHeader_Contact2">
+                        <input type="hidden" name="ctl00$CPHolder_Form$hdnHeader_Email" id="hdnHeader_Email">
+                        <input type="hidden" name="ctl00$CPHolder_Form$hdnHeader_Website" id="hdnHeader_Website">
+                        <input type="hidden" name="ctl00$CPHolder_Form$hdnHeader_ShowAll" id="hdnHeader_ShowAll">
+                        <!-- Hidden field to store header value -->
+
+                        <!-- Hidden field to store footer value -->
+                        <input type="hidden" name="ctl00$CPHolder_Form$hdnFooter_HtmlTemplate"
+                            id="hdnFooter_HtmlTemplate">
+                        <input type="hidden" name="ctl00$CPHolder_Form$hdnFooter_CompanyName"
+                            id="hdnFooter_CompanyName">
+                        <input type="hidden" name="ctl00$CPHolder_Form$hdnFooter_Email" id="hdnFooter_Email">
+                        <input type="hidden" name="ctl00$CPHolder_Form$hdnFooter_Website" id="hdnFooter_Website">
+                        <input type="hidden" name="ctl00$CPHolder_Form$hdnFooter_ShowAll" id="hdnFooter_ShowAll">
+
+                        <!-- Hidden field to store footer value -->
+                        <input type="hidden" name="ctl00$CPHolder_Form$hdnQueryId" id="hdnQueryId">
+                        <input type="hidden" name="ctl00$CPHolder_Form$hdnDetailActionType" id="hdnDetailActionType"
+                            value="GroupSummary">
+                        <input type="hidden" name="ctl00$CPHolder_Form$hdnDetailActionColumn" id="hdnDetailActionColumn"
+                            value="OrderNo">
+                        <input type="hidden" name="ctl00$CPHolder_Form$hdnSQLQueryText" id="hdnSQLQueryText">
+
+                        <!-- Hidden field to store advance search value -->
+                        <input type="hidden" name="ctl00$CPHolder_Form$hdnAdvanceSearch" id="hdnAdvanceSearch"
+                            value="OrderNo:OrderNo:bigint:Contains:na:SingleInput|BatchCreationDate:BatchCreationDate:date:In Between:na:SingleInput">
+
+                        <input type="hidden" name="ctl00$CPHolder_Form$hdnUserCustomSearch" id="hdnUserCustomSearch">
+
+                        <!-- Div to store column names -->
+                            <div id="dataColumnHolder">
+                            </div>
+                        <!-- Div to store column names -->
+
+                        <div id="dataDropDownListHolder">
+
+
+
+                        </div>
+                        <div class="previewReportPanel ExportViewPanel" style="display:block;">
+                            <div class="previewReportHolder">
+                                <div class="btnToggleAdvanceSearch" id="btnToggleAdvanceSearch">
+                                    <a href="#" onclick="showHideAdvanceSearch();return false;"><i
+                                            class="fas fa-cog"></i><span>Show Advance Search</span></a>
+                                </div>
+                                <div class="closeReportPreview">X</div>
+                                <div class="reportPreviewNavBar">
+                                    <a href="#" onclick="goToPreviousPage();return false;"><i
+                                            class="fas fa-arrow-alt-circle-left"></i></a>
+                                    <span class="pagePreviewCount">1/405</span>
+                                    <a href="#" onclick="goToNextPage();return false;"><i
+                                            class="fas fa-arrow-alt-circle-right"></i></a>
+                                    <span class="reportPageSep">|</span> Page No.
+                                    <input type="text" value="" class="txtReportPageNo notranslate"
+                                        id="txtReportPageNo">
+                                    <a href="#" onclick="jumpToPage(); return false;" class="lnkReportJumpToPage">GO</a>
+                                    <div class="btnExportReport">
+                                        <!--<a href="#" onclick="exportReportToCSV('pdf');return false;"><i class="fas fa-file-pdf"></i>Export to PDF</a> -->
+                                        <!-- <a href="#" onclick="exportReportToCSV('csv');return false;"><i
+                                                class="fas fa-file-csv"></i>Export to CSV</a>--> <a href="#"
+                                            onclick="exportReportToCSV('print');return false;" style="display:none;"><i
+                                                class="fas fa-print"></i>Print</a>
+                                                <a href="#" onclick="exportAtClient();return false;"><i
+                                                    class="fas fa-file-csv"></i>Export to CSV</a>
+                                    </div>
+                                </div>
+                                <div class="reportAdvanceSearchBar" id="reportAdvanceSearchBar"
+                                    style="position: absolute; top: 43px;">
+
+                                    <b>Advance Search:</b>
+                                    <div class="ctrlAdvanceSearch" style="">
+                                        <div>OrderNo</div>
+                                        <div><input class="txtAdvanceSearchSingle" type="number" step="any"
+                                                id="advSearch_OrderNo" data-id="OrderNo" data-type="bigint"
+                                                data-filter="Contains" value="" style="height:22px;"></div>
+                                    </div>
+                                    <div class="ctrlAdvanceSearch" style="">
+                                        <div>BatchCreationDate</div>
+                                        <div><input class="txtAdvanceSearchSingle hasDatepicker" type="text" step="any"
+                                                id="advSearch_BatchCreationDate" data-id="BatchCreationDate"
+                                                data-type="date" data-filter="In Between" value="" style="height:22px;">
+                                        </div>
+                                    </div>
+                                    <div class="btnAdvanceSearch"><a href="#"
+                                            onclick="getAdvanceSearchResult();return false;"><i
+                                                class="fas fa-search"></i>Search</a></div>
+                                </div>
+                                <div class="previewReportPageHolder" id="previewReportPageHolder"
+                                    style="padding-top: 124.5px;">
+                                    <div class="previewPage" style="width: 1169px; height: 827px;">
+                                        <div id="previewPageHeader" class="previewPageHeader"
+                                            style="width: 994px; top: 75px; left: 100px;">
+                                            <span id="spnHeaderTemplateCSS"></span>
+                                            <!-- <link href="Module-Style/HeaderTemplates/header-template-style-1.css" rel="stylesheet" /> -->
+                                            <!--<header class="reportHeader">
+                                                <div class="reportHeaderHolder">
+                                                    <div class="reportHeaderLogo">
+                                                        <img src=[Logo] runat="server" clientmode="static" />
+                                                    </div>
+                                                    <div class="reportHeaderAddress">
+                                                    <div class="reportAddressTitle">[COMPANY_NAME]</div>
+                                                    [ADDRESS1]<br />[ADDRESS2]
+                                                    </div>
+                                                    <div class="reportPhoneNumber">
+                                                        <div class="reportContactTitle">Contacts </div>
+                                                        Tel : [CONTACT1] <br />
+                                                        [CONTACT2] <br />
+                                                        Email:[EMAIL]
+                                                    </div>
+                                                </div>
+                                            </header>-->
+                                        </div>
+                                        <div class="previewPageContent"
+                                            style="width: 1018px; margin-left: 100px; margin-right: 75px; top: 170px; height: 582px; overflow: auto;">
+                                            <div class="previewPageTitle">
+                                                <span id="previewPageTitle"></span>
+                                            </div>
+                                            <div class="previewTable">
+                                                
+                                            </div>
+                                        </div>
+                                        <div id="previewPageFooter" class="previewPageFooter"
+                                            style="width: 994px; left: 100px; bottom: 75px;">
+                                            <span id="spnFooterTemplateCSS"></span>
+                                            <!-- <link href="Module-Style/FooterTemplates/footer-template-style-1.css" rel="stylesheet" />-->
+                                            <footer class="reportFooter">
+                                                <div class="reportFooterHolder">
+                                                    <div class="reportFooterTimeStamp">
+                                                        <div class="reportDate">
+                                                            <div class="reportDateLabel">Date </div>
+                                                            [DATE]
+                                                        </div>
+                                                    </div>
+                                                    <div class="reportFooterText">
+                                                    <div class="reportFooterTextTitle">[COMPANY_NAME]</div>
+                                                    [WEBSITE] | [EMAIL]
+                                                    </div>
+                                                    <div class="reportFooterTimeStamp">
+                                                        <div class="reportTime">
+                                                            <div class="reportTimeLabel">Time</div>
+                                                            [TIME]
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </footer>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="previewReportBg">
+
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- end section .footer -->
+                    <!-- END FOOTER -->
+                </div>
+
+
+                <!-- obout Flyout v.2.0.5.0  http://www.obout.com  -->
+
+                <div id="ctl00_FlyoutProfileSettings_contentbox"><iframe src="javascript:'<html></html>'"
+                        style="position: absolute; background-color: white; overflow: hidden; opacity: 0; width: 147px; height: 94px; z-index: 0; display: none; top: 0px; left: -73.5px;"
+                        scrolling="no" id="ctl00_FlyoutProfileSettingssettings_if" frameborder="0"></iframe>
+                    <div style="position: absolute; background-color: transparent; width: 147px; height: 94px; z-index: 1; display: none; top: 0px; left: -73.5px;"
+                        id="ctl00_FlyoutProfileSettingssettings_pv">
+                        <div style="background-color: transparent; width: 147px; height: 94px;"
+                            id="ctl00_FlyoutProfileSettingssettings_e">
+                            <div id="ctl00_FlyoutProfileSettingssettings_ct" style="">
+                                <div id="flyoutDiv">
+                                    <table style="text-align: left; margin: 10px;" cellspacing="5" cellpadding="5">
+
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    <a class="linksettings" onclick="openChangePassword();">Change
+                                                        Password</a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <a class="linksettings" onclick="openDeligation('0');">Access
+                                                        Delegation</a>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- obout Flyout v.2.0.5.0  http://www.obout.com  -->
+
+                <div id="ctl00_FlyoutSearch_contentbox"><iframe src="javascript:'<html></html>'"
+                        style="position: absolute; background-color: white; overflow: hidden; opacity: 0; width: 174px; height: 115px; z-index: 0; display: none; top: 0px; left: -87px;"
+                        scrolling="no" id="ctl00_FlyoutSearchsearch_if" frameborder="0"></iframe>
+                    <div style="position: absolute; background-color: transparent; width: 174px; height: 115px; z-index: 1; display: none; top: 0px; left: -87px;"
+                        id="ctl00_FlyoutSearchsearch_pv">
+                        <div style="background-color: transparent; width: 174px; height: 115px;"
+                            id="ctl00_FlyoutSearchsearch_e">
+                            <div id="ctl00_FlyoutSearchsearch_ct" style="">
+                                <div id="flyoutDiv">
+                                    <table style="text-align: left; margin: 10px;" cellpadding="5">
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    <a class="linksettings" onclick="openSkuSearch();">SKU Search</a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <a class="linksettings" onclick="openBinSearch();">BIN Search</a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <a class="linksettings" onclick="openPalletHoldRelease();">Hold Or
+                                                        Release Pallet</a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <a class="linksettings" onclick="openDocumentSearch();">Document
+                                                        Search</a>
+                                                </td>
+                                            </tr>
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="themeWmsPopup" style="display:none;">
+                    <div class="themeWmsPopupContent">
+                        <div class="themeWmsPopupTitle">
+                            Add Shortcut to Dashboard <div class="themeWMS_ctrl_btn wms_show_ctrl"
+                                id="btnCloseShortcutPopup"><i class="fas fa-times-circle"></i></div>
+                        </div>
+                        <div class="themeWmsPopupContentBody">
+
+                            <span class="themeWMSPopupLabel"><b>Title</b></span>
+                            <div class="themeWMS_ctrl wms_ctrl_title"><i class="fas fa-tag"></i>
+                                <input name="ctl00$txtShortcutTitle" type="text" id="txtShortcutTitle"
+                                    class="inputElement notranslate" onblur="validateCtl(this);">
+                            </div><br><br>
+                            <span class="themeWMSPopupLabel"><b>URL</b></span>
+                            <div class="themeWMS_ctrl wms_ctrl_website"><i class="fas fa-link"></i>
+                                <input name="ctl00$txtShortcutURL" type="text" id="txtShortcutURL"
+                                    class="inputElement notranslate" onblur="validateCtl(this);">
+                            </div><br><br>
+                            <span class="themeWMSPopupLabel" style="position:relative;top:-85px;"><b>Icon</b></span>
+                            <div class="themeWMSPopupShortcutIcons">
+                                <i class="fas fa-address-book"></i><i class="fas fa-building"></i><i
+                                    class="fas fa-box-open"></i><i class="fas fa-car-alt"></i><i
+                                    class="fas fa-chart-pie"></i>
+
+                            </div>
+                            <br>
+                            <input type="hidden" name="ctl00$hdnShortcutIcon" id="hdnShortcutIcon"><br>
+                            <span class="themeWMSPopupLabel"><b>&nbsp;</b></span>
+                            <div class="themeWMS_ctrl_btn wms_show_ctrl"><i class="fas fa-plus"
+                                    style="top:14px;left:16px;"></i>
+
+                                <input type="button" value="Save Shortcut" class="buttonON" onclick="saveShortCut();">
+
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="themeWmsPopupBg">
+                    </div>
+                </div>
+                <script type="text/javascript">
+
+                    function saveShortCut() {
+                        var getShortcutTitle = $('#txtShortcutTitle').val().trim();
+                        var getShortcutUrl = $('#txtShortcutURL').val().trim();
+                        var getShortcutIcon = $('#hdnShortcutIcon').val().trim();
+
+                        if (getShortcutTitle == '') {
+                            showAlert('Please Enter Title!', 'error', '#');
+                        } else if (getShortcutUrl == '') {
+                            showAlert('Please Select Icon!', 'error', '#');
+                        } else if (getShortcutIcon == '') {
+                            showAlert('Please Select Icon!', 'error', '#');
+                        } else {
+                            $.ajax({
+                                type: "POST",
+                                url: "../MasterPage/AddShortCut.ashx",
+                                data: { 'txtShortcutTitle': getShortcutTitle, 'txtShortcutURL': getShortcutUrl, 'hdnShortcutIcon': getShortcutIcon },
+                                beforeSend: function () {
+                                    showWMSThemeLoading();
+                                    //$("#userInput").css("background","transparent url("+ $serverRoot +  +"images/keyword-loader.gif) no-repeat center right");
+                                },
+                                success: function (data) {
+                                    hideWMSThemeLoading();
+                                    if (data == 'success') {
+                                        alert('Shortcut Created Successfully');
+                                        $('.themeWmsPopup').attr('style', 'display:none;');
+                                        //  showAlert('Shortcut Created Successfully', 'info', '#');
+                                    } else if (data == 'titleerror') {
+                                        alert('Please Enter Title!');
+                                        // showAlert('Please Enter Title!', 'error', '#');
+                                    } else if (data == 'iconerror') {
+                                        alert('Please Select Icon!');
+                                        //     showAlert('Please Select Icon!', 'error', '#');
+                                    } else if (data == 'alreadyexists') {
+                                        alert('Shortcut for this page already created.');
+                                        $('.themeWmsPopup').attr('style', 'display:none;');
+                                        //showAlert('Shortcut for this page already created.', 'error', '#');
+                                    }
+
+                                }
+                            });
+                        }
+                    }
+                    function openSwitchProduct() {
+                        window.open("../Login/SwitchProduct.aspx", null, 'height=385, width=396,status= 0, resizable= 0, scrollbars=0, toolbar=0,location=0,menubar=0, screenX=500, screenY=100;');
+                    }
+
+                    function openChangeDownload() {
+                        window.open("../UserManagement/FontDwnlInstruction.aspx", null, 'height=185, width=596,status= 0, resizable= 0, scrollbars=0, toolbar=0,location=0,menubar=0, screenX=0; screenY=0');
+                    }
+                    function openChangePassword() {
+                        window.open("../Login/ChangePassword.aspx", null, 'height=185, width=396,status= 0, resizable= 0, scrollbars=0, toolbar=0,location=0,menubar=0, screenX=0; screenY=0');
+                    }
+
+                    function openSkuSearch() {
+                        window.open("../CommonControls/NewSKUSearch.aspx", null, 'height=600, width=1200,status= 0, resizable= 0, scrollbars=0, toolbar=0,location=0,menubar=0, screenX=0; screenY=0');
+                    }
+                    function openBinSearch() {
+                        window.open("../Product/NewBINSearch.aspx", null, 'height=600, width=1200,status= 0, resizable= 0, scrollbars=0, toolbar=0,location=0,menubar=0, screenX=0; screenY=0');
+                    }
+                    function openPalletHoldRelease() {
+                        window.open("../CommonControls/HoldPallet.aspx", null, 'height=600, width=1200,status= 0, resizable= 0, scrollbars=0, toolbar=0,location=0,menubar=0, screenX=0; screenY=0');
+                    }
+
+                    function openDocumentSearch() {
+                        window.open("../Document/DocumentSearch.aspx", null, 'height=600, width=1200,status= 0, resizable= 0, scrollbars=0, toolbar=0,location=0,menubar=0, screenX=0; screenY=0');
+                    }
+
+                    function WaterMark(txt, evt, defaultText) {
+                        if (txt.value.length == 0 && evt.type == "blur") {
+                            txt.style.color = "white";
+                            txt.value = defaultText;
+                        }
+                        if (txt.value == defaultText && evt.type == "focus") {
+                            txt.style.color = "white";
+                            txt.value = "";
+                        }
+                    }
+                    function clearSession() {
+                        PageMethods.WMClearSession(null, null);
+                    }
+
+                    function showhideheader() {
+                        if (top_bar.style.display == 'none') { top_bar.style.display = ""; }
+                        else if (top_bar.style.display == '') { top_bar.style.display = "none"; }
+                    }
+
+                    function logout() {
+                        showAlert("You have been successfully logged out!!!", "info", "../Login/Login.aspx");
+                        //window.open("../Login/Login.aspx", "_self", 'status= 0, resizable= 0, scrollbars=0, toolbar=0,location=0,menubar=0, screenX=0; screenY=0');
+                    }
+
+                    function CloseShowReport() {
+                        LoadingOff();
+                        divPopUp.className = "divDetailExpandPopUpOff";
+                    }
+                    function downloadHELP() {
+                        //document.getElementById("iframePORRpt").src = "../POR/Img/CUMMINS MRS User Guide 1.0.0.pdf";
+                        document.getElementById("iframePORRpt").src = "../html/Preface.html";
+
+                        divPopUp.className = "divDetailExpandPopUpOn";
+                    }
+
+                    function openDeligation(sequence) {
+                        window.open('../UserManagement/Delegation.aspx', null, 'height=500px, width=1095px,status= 0, resizable= 1, scrollbars=1, toolbar=0,location=center,menubar=0, screenX=300; screenY=50');
+                    }
+
+                    function saveshortcut() {
+                        var txtShortcutTitle = document.getElementById("txtShortcutTitle");
+                        var txtShortcutURL = document.getElementById("txtShortcutURL");
+                        var hdnShortcutIcon = document.getElementById("hdnShortcutIcon");
+                        if (txtShortcutTitle.value == "") {
+                            showAlert("Please Enter Title.", "error", "#");
+                        } else if (hdnShortcutIcon.value == "") {
+                            showAlert("Please Select Icon.", "error", "#");
+                        } else {
+                            alert("HI");
+                            PageMethods.WMCreateShortcut(txtShortcutTitle.value, txtShortcutURL.value, hdnShortcutIcon.value, OnSuccessCreateShortcut, null);
+                        }
+                    }
+
+                    function OnSuccessCreateShortcut(result) {
+                        alert("On Success");
+                        if (result == "true") {
+                            showAlert("Shortcut Created Successfully.", "info", "#");
+                        } else {
+                            showAlert("Shortcut for this page already created.", "error", "#");
+                        }
+                    }
+                </script>
+                <style type="text/css">
+                    .language {
+                        background: transparent;
+                        width: 268px;
+                        padding: 5px;
+                        font-size: 16px;
+                        line-height: 1;
+                        border: 0;
+                        border-radius: 0;
+                        height: 34px;
+                        -webkit-appearance: none;
+                    }
+
+                    .popupClose {
+                        background: url(../App_Themes/Blue/img/icon_close.png) no-repeat;
+                        height: 32px;
+                        width: 32px;
+                        float: right;
+                        margin-top: -30px;
+                        margin-right: -25px;
+                    }
+
+                    .popupClose:hover {
+                        cursor: pointer;
+                    }
+
+                    .divDetailExpandPopUpOff {
+                        display: none;
+                    }
+
+                    .divDetailExpandPopUpOn {
+                        border: solid 3px gray;
+                        width: 65%;
+                        height: 98%;
+                        padding: 10px;
+                        background-color: #FFFFFF;
+                        margin-top: 50px;
+                        margin-left: 50px;
+                        top: 1%;
+                        left: 3%;
+                        position: absolute;
+                        z-index: 99999;
+                    }
+                </style>
+            </div>
+
+        </div>
+
+
+        <script type="text/javascript">
+            //<![CDATA[
+            (function () { var fn = function () { $get("ctl00_ToolkitScriptManager1_HiddenField").value = ''; Sys.Application.remove_init(fn); }; Sys.Application.add_init(fn); })(); var ctl00_FlyoutProfileSettingssettings; function initctl00_FlyoutProfileSettingssettings(attempt) { try { if (typeof __flyoutGlobal.styleTopMargin == 'undefined') __flyoutGlobal.executeMargins(); ctl00_FlyoutProfileSettingssettings = new Flyout2('ctl00_FlyoutProfileSettingssettings', 'settings', '', 'ctl00_FlyoutProfileSettings_content', 'BOTTOM_CENTER', 'MIDDLE', 'ONCLICK', 'ONMOUSEOUT', 200, 200, 200, 10, 0, 0, 100, 0, true, true, false, false, '#DDDDDD', 25); if (ctl00_FlyoutProfileSettingssettings.removeOCB != null) { ctl00_FlyoutProfileSettingssettings.registerOpenEffect(new FlyingEffect('MIDDLE_CENTER')); ctl00_FlyoutProfileSettingssettings.registerCloseEffect(new FlyingEffect('MIDDLE_CENTER')); } } catch (e) { alert("Failed to initialize [FlyoutProfileSettings] \n.Error:" + e + "\nPlease contact support@obout.com for support."); } } initctl00_FlyoutProfileSettingssettings(1); var ctl00_FlyoutSearchsearch; function initctl00_FlyoutSearchsearch(attempt) { try { if (typeof __flyoutGlobal.styleTopMargin == 'undefined') __flyoutGlobal.executeMargins(); ctl00_FlyoutSearchsearch = new Flyout2('ctl00_FlyoutSearchsearch', 'search', '', 'ctl00_FlyoutSearch_content', 'BOTTOM_CENTER', 'MIDDLE', 'ONCLICK', 'ONMOUSEOUT', 200, 200, 200, 10, 0, 0, 100, 0, true, true, false, false, '#DDDDDD', 25); if (ctl00_FlyoutSearchsearch.removeOCB != null) { ctl00_FlyoutSearchsearch.registerOpenEffect(new FlyingEffect('MIDDLE_CENTER')); ctl00_FlyoutSearchsearch.registerCloseEffect(new FlyingEffect('MIDDLE_CENTER')); } } catch (e) { alert("Failed to initialize [FlyoutSearch] \n.Error:" + e + "\nPlease contact support@obout.com for support."); } } initctl00_FlyoutSearchsearch(1);//]]>
+        </script>
+    </form>
+
+
+    <div id="ui-datepicker-div" class="ui-datepicker ui-widget ui-widget-content ui-helper-clearfix ui-corner-all">
+    </div>
+</body>
+
+</html>

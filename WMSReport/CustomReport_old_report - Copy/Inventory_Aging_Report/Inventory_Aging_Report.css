@@ -1,0 +1,61 @@
+.wms-srv-input {
+    width: 100%;
+}
+
+.inventory_box_wrapper {
+    border: 1px solid #009fff;
+    border-radius: 10px;
+}
+
+.inventory_box_header {
+    height: 25px;
+    text-align: center;
+    background-color: #009fff;
+    color: white;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    padding: 4px;
+}
+
+.inventory_box_row {
+    height: 40px;
+    text-align: center;
+    padding: 11px;
+}
+
+.label_text {
+    color: #009fff;
+    font-size: 14px;
+}
+
+.label-box {
+    background-color: #00a8ff;
+    height: 50px;
+    color: white;
+    font-size: 18px;
+    text-align: center;
+    padding-top: 10px;
+    border-radius: 5px;
+    font-size: 15px !important;
+    font-weight: bold;
+}
+
+.su-input-group {
+    width: 20% !important;
+    margin-right: 20px !important;
+}
+
+#header-wrap 
+{
+    position:sticky;
+    top:0;
+    height: auto;
+    width: 100%;
+    z-index: 100;
+}
+#header-wrap .wms-srv-grid-cell
+{
+	background-color:#efefef !important;
+	color:#000000 !important;
+	font-weight:bold !important;
+}

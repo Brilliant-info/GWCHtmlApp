@@ -1,0 +1,230 @@
+ #pnlCreatePurchaseOrder .pnlWmsDetail .wms-srv-grid-pager,
+ #pnlCreatePurchaseOrder .pnlSearchList .wms-srv-grid-pager,
+ #pnlApproval .pnlWmsDetail .wms-srv-grid-pager,
+ #pnlDocument .pnlWmsDetail .wms-srv-grid-pager,
+ #pnlCommunication .pnlWmsDetail .wms-srv-grid-pager,
+ #pnlTransport .pnlWmsDetail .wms-srv-grid-pager,
+ .pnlWmsDetail .wms-srv-grid-action-panel [data-prefix="EX"] {
+     display: none !important;
+ }
+
+ .appointmentFilterGroup {
+     text-align: right;
+ }
+
+ .wms-srv-grid {
+     min-width: 100px !important;
+     text-align: center;
+ }
+
+ .appointmentFilterHolder,
+ .appointmentDateRangeHolder,
+ .appointmentCtrlGo,
+ .appointmetViewHolder {
+     display: inline-block;
+ }
+
+ .appointmetViewHolder {
+     /* display:none; */
+     margin-left: 10px;
+     font-size: 13px;
+ }
+
+ .appointmentFilterHolder select,
+ .appointmentDateRangeHolder input {
+     margin-right: 10px;
+     margin-left: 5px;
+ }
+
+ .appointmentCtrlGo a {
+     font-size: 18px;
+ }
+
+ .pnlAppointmetPopupDropDownHolders {
+     text-align: right;
+ }
+
+ .pnlAppointmetPopupDropDownHolders select {
+     margin-left: 10px;
+     margin-right: 20px;
+ }
+
+ /* #pnlAppointmentList .pnlWmsDetail .wms-srv-status-label{
+            background-color: #ffffff;
+        }
+        #pnlAppointmentList .pnlWmsDetail .wms-srv-status-holder{
+            border:none;
+        }*/
+ #pnlAppointmentList .pnlWmsDetail .wms-srv-status-action {
+     display: none;
+ }
+
+ /* CSS for Status */
+ .activeStatus {
+     color: #178fff;
+     font-weight: bold;
+ }
+
+ .statusLine {
+     margin: 0px;
+     border: solid 1px #ffffff;
+     border-bottom: solid 1px #97d2ea;
+     position: relative;
+     top: 25px;
+     z-index: 1;
+ }
+
+ .activeStatus .trackStatusIcon {
+     background-color: #178fff;
+ }
+
+ .trackStatusIcon {
+     border: solid 1px #97d2ea;
+     width: 50px;
+     border-radius: 50%;
+     padding: 11px 5px 8px 5px;
+     text-align: center;
+     margin-left: auto;
+     margin-right: auto;
+     background-color: #ffffff;
+     position: relative;
+     z-index: 2;
+ }
+
+ .trackStatusTile {
+     text-align: center;
+     font-size: 14px;
+     margin-top: 10px;
+     margin-bottom: 30px;
+ }
+
+ .trackStatusIcon i {
+     font-size: 30px;
+     color: #495057;
+ }
+
+ .activeStatus .trackStatusIcon i {
+     color: #ffffff;
+ }
+
+ .trackStatusTile {
+     text-align: center;
+     font-size: 14px;
+     margin-top: 10px;
+     margin-bottom: 30px;
+ }
+
+ /* CSS for Status */
+
+ #pnlAppointmentForm .wms-srv-grid {
+     border: none;
+ }
+
+ #pnlAppointmentForm .wms-srv-grid .container-fluid .container-fluid .row div {
+     padding: 0px;
+ }
+
+ .wms-srv-popup {
+     overflow: auto;
+ }
+
+ #pnlAppointmentStatus .pnlAppointmentForm .wms-srv-grid-action button[data-prefix="SV"] {
+     border: solid 1px #474747 !important;
+     border-radius: 3px !important;
+     padding: 5px !important;
+     background-color: #f0f0f0 !important;
+     margin-left: 5px;
+     margin-right: 5px;
+ }
+
+ #pnlAppointmentStatus .pnlAppointmentForm .wms-srv-grid-action button[disabled=""] {
+     border: solid 1px #6d6d6d !important;
+     color: #6d6d6d !important;
+ }
+
+ #pnlAppointmentStatus .pnlAppointmentForm .wms-srv-grid-action button[disabled=""],
+ #pnlAppointmentStatus .pnlAppointmentForm .wms-srv-grid-action button[disabled=""] i,
+ #pnlAppointmentStatus .pnlWmsDetail .wms-srv-grid-action button[disabled=""] i {
+     color: #6d6d6d !important;
+ }
+
+ #pnlAppointmentStatus .pnlAppointmentForm .wms-srv-grid-action button[data-prefix="SV"] span {
+     display: inline-block !important;
+ }
+
+ .crosdockCountBox {
+     background-color: #178fff;
+     color: #ffffff;
+     padding: 10px 10px;
+     display: inline-block;
+     min-width: 120px;
+     text-align: center;
+     margin-left: 10px;
+ }
+
+ .crosdockCountBox:first-child {
+     margin-right: 30px;
+ }
+
+ #pnlCountBox {
+     text-align: right;
+     margin-bottom: 10px;
+     font-size: 14px;
+ }
+
+ /* Button Style */
+ #pnlAppointmentStatus .pnlAppointmentForm .wms-srv-grid-action button,
+ #pnlAppointmentStatus .pnlAppointmentForm .wms-srv-grid-action button[data-prefix="SV"],
+ #pnlCrossDockFinalSaveHolder button {
+     background-color: #178fff !important;
+     border: solid 1px #178fff !important;
+     border-radius: 18px !important;
+     padding: 5px;
+     color: #ffffff !important;
+     margin-bottom: 30px;
+     font-size: 14px !important;
+     padding: 10px 20px !important;
+     display: inline-block;
+     width: 100px !important;
+     margin-left: 2px;
+     margin-right: 2px;
+ }
+
+ #pnlCrossDockFinalSaveHolder button {
+     width: 110px !important;
+     margin-bottom: 10px;
+     padding: 7px 20px !important;
+     float: right;
+ }
+
+ #pnlAppointmentStatus .pnlAppointmentForm .wms-srv-grid-action button i,
+ #pnlAppointmentStatus .pnlAppointmentForm .wms-srv-grid-action button[data-prefix="SV"] i {
+     color: #ffffff !important;
+ }
+
+ .aptFormFieldError {
+     border: solid 1px #ffffff;
+     box-shadow: 0 0 5px #ff0000;
+ }
+
+
+
+ .themeWMSTopNav .wms-srv-warehouse-input,
+ .themeWMSTopNav .wms-srv-customer-input {
+     display: none;
+ }
+
+ .wms-srv-grid-header input[type="checkbox"] {
+     display: none;
+ }
+
+ .appointmentActiveTab {
+     background-color: #fafafa !important;
+     font-weight: bold;
+     color: #0686a7;
+     box-shadow: inset 0px 0px 5px #ccc;
+ }
+
+ .wms-srv-suggestion-holder {
+     width: 100% !important;
+ }

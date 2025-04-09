@@ -1,0 +1,352 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="generator" content="HelpNDoc Personal Edition 8.8.0.547">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" href="favicon.ico"/>
+
+  <title>Add New Order</title>
+  <meta name="description" content="" /> 
+  <meta name="keywords" content="">
+
+
+
+  
+  
+
+  <!-- Twitter Card data -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Add New Order">
+  <meta name="twitter:description" content="">
+
+  <!-- Open Graph data -->
+  <meta property="og:title" content="Add New Order" />
+  <meta property="og:type" content="article" />
+  <meta property="og:description" content="" />
+  <meta property="og:site_name" content="Easycloudwms" /> 
+
+  <!-- Bootstrap core CSS -->
+  <link href="vendors/bootstrap-3.4.1/css/bootstrap.min.css" rel="stylesheet"/>
+
+  <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+  <link href="vendors/bootstrap-3.4.1/css/ie10-viewport-bug-workaround.css" rel="stylesheet"/>
+
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+      <script src="vendors/html5shiv-3.7.3/html5shiv.min.js"></script>
+      <script src="vendors/respond-1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+  <!-- JsTree styles -->
+  <link href="vendors/jstree-3.3.10/themes/default/style.min.css" rel="stylesheet"/>
+
+  <!-- Hnd styles -->
+  <link href="css/layout.min.css" rel="stylesheet" />
+  <link href="css/effects.min.css" rel="stylesheet" />
+  <link href="css/theme-light-blue.min.css" rel="stylesheet" />
+  <link href="css/print.min.css" rel="stylesheet" media="print" />
+  <style type="text/css">nav { width: 350px} @media screen and (min-width:769px) { body.md-nav-expanded div#main { margin-left: 350px} body.md-nav-expanded header { padding-left: 364px} }</style>
+  <style type="text/css">.navigation #inline-toc { width: auto !important}</style>
+
+  <!-- Content style -->
+  <link href="css/hnd.content.css" rel="stylesheet" />
+
+  
+
+
+
+</head>
+
+<body class="md-nav-expanded">
+
+
+
+  
+
+  <div id="skip-link">
+    <a href="#main-content" class="element-invisible">Skip to main content</a>
+  </div>
+
+  <header class="headroom">
+    <button class="hnd-toggle btn btn-default">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>        
+    </button>
+    <h1>Easycloudwms</h1>
+    
+  </header>
+
+  <nav id="panel-left" class="md-nav-expanded">
+    <!-- Nav tabs -->
+    <ul class="tab-tabs nav nav-tabs" role="tablist">
+      <li id="nav-close" role="presentation"> 
+        <button class="hnd-toggle btn btn-default" aria-label="close">
+          <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+        </button>
+      </li>
+      
+	  
+        <li role="presentation" class="tab active">
+            <a href="#contents" id="tab-contents" aria-controls="contents" role="tab" data-toggle="tab">
+                <i class="glyphicon glyphicon-list"></i>
+                Contents
+            </a>
+        </li>
+      
+        <li role="presentation" class="tab">
+            <a href="#index" id="tab-index" aria-controls="index" role="tab" data-toggle="tab">
+                <i class="glyphicon glyphicon-asterisk"></i>
+                Index
+            </a>
+        </li>
+      
+        <li role="presentation" class="tab">
+            <a href="#search" id="tab-search" aria-controls="search" role="tab" data-toggle="tab">
+                <i class="glyphicon glyphicon-search"></i>
+                Search
+            </a>
+        </li>
+      
+    </ul>  <!-- /Nav tabs -->
+
+    <!-- Tab panes -->
+    <div class="tab-content">
+	  
+      <div role="tabpanel" class="tab-pane active" id="contents">
+        <div id="toc" class="tree-container unselectable"
+            data-url="_toc.json"
+            data-openlvl="1"
+        >
+            
+        </div>
+      </div>  <!-- /contents-->
+      
+      <div role="tabpanel" class="tab-pane" id="index">
+        <div id="keywords" class="tree-container unselectable"
+            data-url="_keywords.json"
+            data-openlvl="1"
+        >
+            
+        </div>
+      </div>  <!-- /index-->
+      
+      <div role="tabpanel" class="tab-pane" id="search">
+        <div class="search-content">
+          <div class="search-input">
+            <form id="search-form">
+              <div class="form-group">
+                <div class="input-group">
+                  <input type="text" class="form-control" id="input-search" name="input-search" placeholder="Search..." aria-label="Search..." />
+                  <span class="input-group-btn">
+                    <button class="btn btn-default" type="submit" aria-label="Search...">
+                      <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+                    </button>
+                  </span>
+                </div>
+              </div>
+            </form>
+          </div>  <!-- /search-input -->
+          <div class="search-result">
+            <div id="search-info"></div>
+            <div class="tree-container unselectable" id="search-tree"></div>
+          </div>  <!-- /search-result -->
+        </div>  <!-- /search-content -->
+      </div>  <!-- /search-->
+      
+    </div>  <!-- /Tab panes -->
+
+  </nav>
+
+  <div id="main">
+
+    <article>
+        <div id="topic-content" class="container-fluid" 
+		  data-hnd-id="AddNewOrder"
+		  data-hnd-context="106"
+		  data-hnd-title="Add New Order"
+		>
+            
+                <div class="navigation">
+                    <ol class="breadcrumb">
+                        <li><a href="InwardPurchaseOrderSalesReturnTr.html">Inward ( Purchase Order / Sales Return/Transfer In) </a></li>
+                    </ol>
+                    <div class="nav-arrows">
+                        <div class="btn-group btn-group" role="group"><a class="btn btn-default" href="InwardPurchaseOrderSalesReturnTr.html" title="Inward ( Purchase Order / Sales Return/Transfer In) " role="button"><span class="glyphicon glyphicon-menu-up" aria-hidden="true"></span></a><a class="btn btn-default" href="InwardPurchaseOrderSalesReturnTr.html" title="Inward ( Purchase Order / Sales Return/Transfer In) " role="button"><span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span></a><a class="btn btn-default" href="Receiving.html" title="Receiving " role="button"><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span></a></div>
+                    </div>
+                </div> 
+            
+
+            <a id="main-content"></a>
+
+            <h2>Add New Order</h2>
+
+            <div class="main-content">
+                
+<h2 class="rvps5"><span class="rvts0"><span class="rvts18">Inward – Inward List</span></span></h2>
+<p class="rvps21"><img width="602" height="339" alt="" style="padding : 1px;" src="lib/NewItem3.png"></p>
+<p class="rvps12"><span class="rvts33">To view the inward menu user needs to login into the web &amp; click on the inward menu then the user is able to see all parts of inward like inward order, receiving, quality check as well as put away &amp; user able to do the different activities by using different menus like document, communication.</span></p>
+<p class="rvps12"><span class="rvts33">The various parts of this dialog are:</span></p>
+<ol style="text-indent: 0px; padding: 0; margin: 0 0 0 72px; list-style-position: outside;">
+ <li style="margin-left: 0px; text-indent: 0px" class="rvps15"><span class="rvts39">Inward Order Type:</span><span class="rvts40"> In Inward Order type system will display the different order types of inward like purchases order type,</span><span class="rvts44"> </span><span class="rvts46">sales return</span><span class="rvts45">,</span><span class="rvts34"> and Transfer in.</span><span class="rvts34"> &nbsp; &nbsp; &nbsp; &nbsp;</span></li>
+ <li style="margin-left: 0px; text-indent: 0px" class="rvps15"><span class="rvts39">Add New:</span><span class="rvts40"> By using this 'ADD NEW' button user is able to add new purchase order.</span></li>
+ <li style="margin-left: 0px; text-indent: 0px" class="rvps16"><span class="rvts38">Inward Orders:</span><span class="rvts33"> In inward orders, the tab system will display all the ongoing inward orders.</span></li>
+ <li style="margin-left: 0px; text-indent: 0px" class="rvps16"><span class="rvts38">Receiving:</span><span class="rvts33"> In this tab system will display all the received orders.</span></li>
+ <li style="margin-left: 0px; text-indent: 0px" class="rvps16"><span class="rvts38">Quality Check:</span><span class="rvts33"> In the quality check tab system will display all orders which are passed from the Quality check process.</span></li>
+ <li style="margin-left: 0px; text-indent: 0px" class="rvps16"><span class="rvts38">Put away:</span><span class="rvts33"> In the Put away tab system will display all the orders which are passed from the put-away process.</span></li>
+ <li style="margin-left: 0px; text-indent: 0px" class="rvps16"><span class="rvts38">More:</span><span class="rvts33"> If the user clicks on the more drop-down system will show a menu of cancel order, by using the cancel menu user will able to cancel the order.</span></li>
+ <li style="margin-left: 0px; text-indent: 0px" class="rvps16"><span class="rvts38">Document:</span><span class="rvts33"> In the document tab user can attach the document related to the order.</span></li>
+ <li style="margin-left: 0px; text-indent: 0px" class="rvps16"><span class="rvts38">Communication: </span><span class="rvts33">By using the communication tab user can transfer order-related notes to the concerned person.&nbsp;</span></li>
+ <li style="margin-left: 0px; text-indent: 0px" class="rvps16"><span class="rvts38">Search Filter:</span><span class="rvts33"> By using the filter user is able to sort the order as per mentioned filter type of Inward order no, Reference No &amp; order date.</span></li>
+</ol>
+<h2 class="rvps17"><span class="rvts0"><span class="rvts17">&nbsp;Inward – Create Sales Order</span></span></h2>
+<h2 class="rvps20"><img width="602" height="339" alt="" style="padding : 1px;" src="lib/NewItem2.png"></h2>
+<h2 class="rvps18"><span class="rvts0"><span class="rvts43"><br/></span></span></h2>
+<h2 class="rvps18"><span class="rvts0"><span class="rvts37">For creating a new purchase order user need to click on the add a new button which is provided on the inward order list then the user is able to view the above-mentioned page for adding new order.</span></span></h2>
+<p class="rvps12"><span class="rvts33">&nbsp; The various parts of this dialog are:</span></p>
+<ol style="text-indent: 0px; padding: 0; margin: 0 0 0 36px; list-style-position: outside;">
+ <li style="margin-left: 0px; text-indent: 0px" class="rvps19"><span class="rvts0"><span class="rvts41">Inward Order No:</span></span><span class="rvts0"><span class="rvts42"> After filling all details regarding the inward order &amp; clicking on the final save button system will generate the order No. which will display on the inward list for the further process.</span></span></li>
+ <li style="margin-left: 0px; text-indent: 0px" class="rvps19"><span class="rvts0"><span class="rvts41">Order Date:</span></span><span class="rvts0"><span class="rvts42"> The order date by default is the current date.</span></span></li>
+ <li style="margin-left: 0px; text-indent: 0px" class="rvps19"><span class="rvts0"><span class="rvts41">Expected Delivery Date: </span></span><span class="rvts0"><span class="rvts42">The term describes the expected delivery date for the purchase order.</span></span></li>
+ <li style="margin-left: 0px; text-indent: 0px" class="rvps19"><span class="rvts0"><span class="rvts41">Reference No:</span></span><span class="rvts0"><span class="rvts42"> It is a number from which the user can identify his/her order easily.</span></span></li>
+ <li style="margin-left: 0px; text-indent: 0px" class="rvps19"><span class="rvts0"><span class="rvts41">Vendor:</span></span><span class="rvts0"><span class="rvts42"> The vendor is a supplier to the warehouse after clicking on the search button user is able to see the vendor list.</span></span></li>
+ <li style="margin-left: 0px; text-indent: 0px" class="rvps19"><span class="rvts0"><span class="rvts41">Remark:</span></span><span class="rvts0"><span class="rvts42"> In the remark, the field user can fill a short description of the order.</span></span></li>
+ <li style="margin-left: 0px; text-indent: 0px" class="rvps19"><span class="rvts0"><span class="rvts41">Created By:</span></span><span class="rvts0"><span class="rvts42"> In created by field system will display by which user order is getting placed.</span></span></li>
+ <li style="margin-left: 0px; text-indent: 0px" class="rvps19"><span class="rvts0"><span class="rvts41">SKU code:</span></span><span class="rvts0"><span class="rvts42"> In this field, the system will display the SKU code which is used for placing the purchase order. Also user can search for a new SKU by using magnifying glass from the SKU list.</span></span></li>
+ <li style="margin-left: 0px; text-indent: 0px" class="rvps19"><span class="rvts0"><span class="rvts41">SKU Name:</span></span><span class="rvts0"><span class="rvts42"> After selecting SKU code from the list system will display SKU name.</span></span></li>
+ <li style="margin-left: 0px; text-indent: 0px" class="rvps19"><span class="rvts0"><span class="rvts41">Description:</span></span><span class="rvts0"><span class="rvts42"> After selecting SKU code from the list system will display the SKU description. If the description is available for the selected SKU.</span></span></li>
+ <li style="margin-left: 0px; text-indent: 0px" class="rvps19"><span class="rvts0"><span class="rvts41">Requested quantity:</span></span><span class="rvts0"><span class="rvts42"> &nbsp;A quantity of SKU requested by the user.User need to enter the quantity.</span></span><span class="rvts0"><span class="rvts34">Same process needs to repeat for all SKUs.</span></span></li>
+ <li style="margin-left: 0px; text-indent: 0px" class="rvps19"><span class="rvts0"><span class="rvts41">UOM:</span></span><span class="rvts0"><span class="rvts42"> Unit of measure in which the system will measure the quantity in a particular format like Each=1.</span></span></li>
+ <li style="margin-left: 0px; text-indent: 0px" class="rvps19"><span class="rvts0"><span class="rvts41">LOTTABLE:</span></span><span class="rvts0"><span class="rvts42"> LOTTABLE is a field in which the user can add the extra parameters of SKU like expiry date. If the LOTTABLE is present for the SKU then the user needs to enter the LOTTABLE while order creation.</span></span></li>
+ <li style="margin-left: 0px; text-indent: 0px" class="rvps19"><span class="rvts0"><span class="rvts42">Fill all details of the weight field &amp; click on the </span></span><span class="rvts0"><span class="rvts41">action </span></span><span class="rvts0"><span class="rvts42">button then SKU will be added successfully in order.</span></span></li>
+ <li style="margin-left: 0px; text-indent: 0px" class="rvps19"><span class="rvts0"><span class="rvts42">Click on the final </span></span><span class="rvts0"><span class="rvts41">save</span></span><span class="rvts0"><span class="rvts42"> button.</span></span></li>
+</ol>
+<h2 class="rvps5"><span class="rvts0"><span class="rvts37">After Filling all the fields of creating order click on the save button then the order no will be generated &amp; the order will display on the inward list.</span></span></h2>
+<h2 class="rvps11"><img width="595" height="228" alt="" style="padding : 1px;" src="lib/NewItem1.png"></h2>
+<h2 class="rvps5"><span class="rvts0"><span class="rvts17"><br/></span></span></h2>
+<h2 class="rvps17"><span class="rvts0"><span class="rvts17">&nbsp;Inward – Create Sales Return Order</span></span></h2>
+<h2 class="rvps20"><img width="602" height="339" alt="" style="padding : 1px;" src="lib/NewItem2.png"></h2>
+<h2 class="rvps18"><span class="rvts0"><span class="rvts37">For creating a new sales return order user need to select the order type from the drop-down as sales return </span></span><span class="rvts0"><span class="rvts33">then click the "Add New" button. This will open &nbsp;Sales return Order wizard dialog.&nbsp;</span></span></h2>
+<p class="rvps12"><span class="rvts33">&nbsp; &nbsp; &nbsp; The various parts of this dialog are:</span></p>
+<ol style="text-indent: 0px; padding: 0; margin: 0 0 0 36px; list-style-position: outside;">
+ <li style="margin-left: 0px; text-indent: 0px" class="rvps19"><span class="rvts0"><span class="rvts41">Inward Order No:</span></span><span class="rvts0"><span class="rvts42"> After filling all the details regarding the inward order &amp; clicking on the final save button system will generate the order No which will be display on the inward list for the further process.</span></span></li>
+ <li style="margin-left: 0px; text-indent: 0px" class="rvps19"><span class="rvts0"><span class="rvts41">Order Date:</span></span><span class="rvts0"><span class="rvts42"> The order date by default is the current date when the user is creating the order.</span></span></li>
+ <li style="margin-left: 0px; text-indent: 0px" class="rvps19"><span class="rvts0"><span class="rvts41">Expected Delivery Date: </span></span><span class="rvts0"><span class="rvts42">The term describes the expected delivery date for the purchase order.</span></span></li>
+ <li style="margin-left: 0px; text-indent: 0px" class="rvps19"><span class="rvts0"><span class="rvts41">Reference No:</span></span><span class="rvts0"><span class="rvts42"> It is a number from which the user can identify the order easily.</span></span></li>
+ <li style="margin-left: 0px; text-indent: 0px" class="rvps19"><span class="rvts0"><span class="rvts41">Vendor:</span></span><span class="rvts0"><span class="rvts42"> The vendor is a supplier to the warehouse after clicking on the search button user is able to see the vendor list.</span></span></li>
+ <li style="margin-left: 0px; text-indent: 0px" class="rvps19"><span class="rvts0"><span class="rvts41">Remark:</span></span><span class="rvts0"><span class="rvts42"> In the remark, the field user can fill a short description of the order.</span></span></li>
+ <li style="margin-left: 0px; text-indent: 0px" class="rvps19"><span class="rvts0"><span class="rvts41">Created By:</span></span><span class="rvts0"><span class="rvts42"> In created by, The user who is placing the order is filled</span></span></li>
+ <li style="margin-left: 0px; text-indent: 0px" class="rvps19"><span class="rvts0"><span class="rvts41">SKU code:</span></span><span class="rvts0"><span class="rvts42"> In this field, the system will display the SKU code which is used for placing the purchase order also user can search for a new SKU by using magnifying glass from the SKU list.</span></span></li>
+ <li style="margin-left: 0px; text-indent: 0px" class="rvps19"><span class="rvts0"><span class="rvts41">SKU Name:</span></span><span class="rvts0"><span class="rvts42"> After selecting SKU code from the list system will display SKU name.</span></span></li>
+ <li style="margin-left: 0px; text-indent: 0px" class="rvps19"><span class="rvts0"><span class="rvts41">Description:</span></span><span class="rvts0"><span class="rvts42"> After selecting SKU code from the list, system will display the SKU description if the description is available for the selected SKU.</span></span></li>
+ <li style="margin-left: 0px; text-indent: 0px" class="rvps19"><span class="rvts0"><span class="rvts41">Requested quantity:</span></span><span class="rvts0"><span class="rvts42"> &nbsp;A quantity of SKU requested by the user.User need to enter the quantity.</span></span><span class="rvts0"><span class="rvts34">Same process needs to repeat for all SKUs.</span></span></li>
+ <li style="margin-left: 0px; text-indent: 0px" class="rvps19"><span class="rvts0"><span class="rvts41">UOM:</span></span><span class="rvts0"><span class="rvts42"> Unit of measure in which the system will measure the quantity in a particular format like Each=1.</span></span></li>
+ <li style="margin-left: 0px; text-indent: 0px" class="rvps19"><span class="rvts0"><span class="rvts41">LOTTABLE:</span></span><span class="rvts0"><span class="rvts42"> LOTTABLE is a field in which the user can add the extra parameters of SKU like expiry date. If the LOTTABLE is present for the SKU then the user needs to enter the LOTTABLE while order creation.</span></span></li>
+ <li style="margin-left: 0px; text-indent: 0px" class="rvps19"><span class="rvts0"><span class="rvts42">Fill all details of the weight field &amp; click on the </span></span><span class="rvts0"><span class="rvts41">action </span></span><span class="rvts0"><span class="rvts42">button then sku will add successfully in order.</span></span></li>
+ <li style="margin-left: 0px; text-indent: 0px" class="rvps19"><span class="rvts0"><span class="rvts42">Click on the final </span></span><span class="rvts0"><span class="rvts41">save</span></span><span class="rvts0"><span class="rvts42"> button.</span></span></li>
+</ol>
+<h2 class="rvps5"><span class="rvts0"><span class="rvts37">After Filling all the fields of creating order click on the save button then the order no will generate &amp; the order will display on the inward list.</span></span></h2>
+<h2 class="rvps17"><span class="rvts0"><span class="rvts17">&nbsp;Inward – Create Transfer In Order</span></span></h2>
+<h2 class="rvps17"><img width="748" height="216" alt="" style="padding : 1px;" src="lib/NewItem129.png"></h2>
+<h2 class="rvps18"><span class="rvts0"><span class="rvts37">For creating a new transfer in order user need to select the order type from the drop down as transfer in &nbsp;</span></span><span class="rvts0"><span class="rvts33">then click on the</span></span><span class="rvts0"><span class="rvts38"> "Add New"</span></span><span class="rvts0"><span class="rvts33"> button. This will open &nbsp;Transfer In Order wizard dialog.&nbsp;</span></span></h2>
+<p class="rvps12"><span class="rvts33">&nbsp; &nbsp;The various parts of this dialog are:</span></p>
+<ol style="text-indent: 0px; padding: 0; margin: 0 0 0 36px; list-style-position: outside;">
+ <li style="margin-left: 0px; text-indent: 0px" class="rvps19"><span class="rvts0"><span class="rvts41">Inward Order No:</span></span><span class="rvts0"><span class="rvts42"> After filling all details regarding the inward order &amp; clicking on the final save button system will generate the order No which will display on the inward list for the further process.</span></span></li>
+ <li style="margin-left: 0px; text-indent: 0px" class="rvps19"><span class="rvts0"><span class="rvts41">Order Date:</span></span><span class="rvts0"><span class="rvts42"> The order date by default is the current date.</span></span></li>
+ <li style="margin-left: 0px; text-indent: 0px" class="rvps19"><span class="rvts0"><span class="rvts41">Expected Delivery Date: </span></span><span class="rvts0"><span class="rvts42">The term describes the expected delivery date for the purchase order.</span></span></li>
+ <li style="margin-left: 0px; text-indent: 0px" class="rvps19"><span class="rvts0"><span class="rvts41">Reference No:</span></span><span class="rvts0"><span class="rvts42"> It is a number from which the user can identify the order easily.</span></span></li>
+ <li style="margin-left: 0px; text-indent: 0px" class="rvps19"><span class="rvts0"><span class="rvts41">Warehouse:</span></span><span class="rvts0"><span class="rvts42"> After clicking on the warehouse list user need to select the warehouse.</span></span></li>
+ <li style="margin-left: 0px; text-indent: 0px" class="rvps19"><span class="rvts0"><span class="rvts41">Remark:</span></span><span class="rvts0"><span class="rvts42"> In the remark, the field user can fill a short description of the order.</span></span></li>
+ <li style="margin-left: 0px; text-indent: 0px" class="rvps19"><span class="rvts0"><span class="rvts41">Created By:</span></span><span class="rvts0"><span class="rvts42"> In created by field system will display from which user order is getting placed.</span></span></li>
+ <li style="margin-left: 0px; text-indent: 0px" class="rvps19"><span class="rvts0"><span class="rvts41">SKU code:</span></span><span class="rvts0"><span class="rvts42"> In this field, the system will display the SKU code which is used for placing the purchase order also user can search for a new SKU by using magnifying glass from the SKU list.</span></span></li>
+ <li style="margin-left: 0px; text-indent: 0px" class="rvps19"><span class="rvts0"><span class="rvts41">SKU Name:</span></span><span class="rvts0"><span class="rvts42"> After selecting SKU code from the list system will display SKU name.</span></span></li>
+ <li style="margin-left: 0px; text-indent: 0px" class="rvps19"><span class="rvts0"><span class="rvts41">Description:</span></span><span class="rvts0"><span class="rvts42"> After selecting SKU code from the list system will display the SKU description. If the description is available for the selected SKU.</span></span></li>
+ <li style="margin-left: 0px; text-indent: 0px" class="rvps19"><span class="rvts0"><span class="rvts41">Requested quantity:</span></span><span class="rvts0"><span class="rvts42"> &nbsp;A quantity of SKU requested by the user.User need to enter the quantity.</span></span><span class="rvts0"><span class="rvts34">Same process needs to repeat for all SKUs.</span></span></li>
+ <li style="margin-left: 0px; text-indent: 0px" class="rvps19"><span class="rvts0"><span class="rvts41">UOM:</span></span><span class="rvts0"><span class="rvts42"> Unit of measure in which the system will measure the quantity in a particular format like Each=1.</span></span></li>
+ <li style="margin-left: 0px; text-indent: 0px" class="rvps19"><span class="rvts0"><span class="rvts41">LOTTABLE:</span></span><span class="rvts0"><span class="rvts42"> LOTTABLE is a field in which the user can add the extra parameters of SKU like expiry date. If the LOTTABLE is present for the SKU then the user needs to enter the &nbsp;LOTTABLE for order creation.</span></span></li>
+ <li style="margin-left: 0px; text-indent: 0px" class="rvps19"><span class="rvts0"><span class="rvts42">Fill all details of the weight field &amp; click on the </span></span><span class="rvts0"><span class="rvts41">action </span></span><span class="rvts0"><span class="rvts42">button then sku will add successfully in order.</span></span></li>
+ <li style="margin-left: 0px; text-indent: 0px" class="rvps19"><span class="rvts0"><span class="rvts42">Click on the final </span></span><span class="rvts0"><span class="rvts41">save</span></span><span class="rvts0"><span class="rvts42"> button.</span></span></li>
+</ol>
+<h2 class="rvps5"><span class="rvts0"><span class="rvts37">After Filling all the fields of creating order click on the save button then the order no will generate &amp; the order will display on the inward list.</span></span></h2>
+<h2 class="rvps5"><span class="rvts0"><span class="rvts6"></span></span><span class="rvts0"><span class="rvts6"></span></span></h2>
+<p class="rvps4" style="clear: both;"><span class="rvts15">Created with the Personal Edition of HelpNDoc: </span><a class="rvts16" href="https://www.helpndoc.com/step-by-step-guides/how-to-convert-a-word-docx-file-to-an-epub-or-kindle-ebook/">Effortlessly Convert Your Word Doc to an eBook: A Step-by-Step Guide</a></p>
+
+            </div>
+            
+            <div id="topic_footer"><div id="topic_footer_content">Copyright &copy; &lt;Dates&gt; by &lt;Authors&gt;. All Rights Reserved.</div></div>
+        </div>  <!-- /#topic-content -->
+    </article>
+
+    <footer></footer>
+
+  </div>  <!-- /#main -->
+
+  <div class="mask" data-toggle="sm-nav-expanded"></div>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="hndModal" tabindex="-1" role="dialog" aria-labelledby="hndModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="hndModalLabel"></h4>
+        </div>
+        <div class="modal-body">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary modal-btn-close" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Splitter -->
+  <div id="hnd-splitter" style="left: 350px"></div>  
+
+  <!-- Scripts -->
+  <script src="vendors/jquery-3.5.1/jquery.min.js"></script>
+  <script src="vendors/bootstrap-3.4.1/js/bootstrap.min.js"></script>
+  <script src="vendors/bootstrap-3.4.1/js/ie10-viewport-bug-workaround.js"></script>
+  <script src="vendors/markjs-8.11.1/jquery.mark.min.js"></script>
+  <script src="vendors/uri-1.19.11/uri.min.js"></script>
+  <script src="vendors/imageMapResizer-1.0.10/imageMapResizer.min.js"></script>
+  <script src="vendors/headroom-0.11.0/headroom.min.js"></script>
+  <script src="vendors/jstree-3.3.10/jstree.min.js"></script>  
+  <script src="vendors/interactjs-1.9.22/interact.min.js"></script>  
+
+  <!-- HelpNDoc scripts -->
+  <script src="js/polyfill.object.min.js"></script>
+  <script src="_translations.js"></script>
+  <script src="js/hndsd.min.js"></script>
+  <script src="js/hndse.min.js"></script>
+  <script src="js/app.min.js"></script>
+
+  <!-- Init script -->
+  <script>
+    $(function() {
+      // Create the app
+      var app = new Hnd.App({
+        searchEngineMinChars: 3
+      });
+      // Update translations
+      hnd_ut(app);
+	  // Instanciate imageMapResizer
+	  imageMapResize();
+	  // Custom JS
+	  
+      // Boot the app
+      app.Boot();
+    });
+  </script>
+
+
+
+</body>
+
+</html>
+

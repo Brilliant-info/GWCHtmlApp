@@ -1,0 +1,708 @@
+<div id="pnlProductMaster" class="wmsMasterTypePage" style="display: none;">
+    <div class="WMSLastScanned" style="display: none;"></div>
+    <!-- Content Holder -->
+    <div class="wms-srv-content-area pnlInbound" id="pnlAppointmentList">
+        <!-- Content Area -->
+
+        <div class="container-fluid wms-srv-dashboard-panel">
+            <div class="row">
+                <div class="col-md-4 nopadding">
+                    <!-- Page Title -->
+                    <div class="wms-srv-page-title">
+                        <i class="fas fa-list"></i><span class="wms-srv-data-title">SKU Master</span>
+                    </div>
+                    <!-- Page Title -->
+                </div>
+                <div class="col-md-8 nopadding">
+                </div>
+            </div>
+        </div>
+
+        <!-- Head Grid -->
+        <div class="wms-srv-grid-holder pnlWmsHead" id="pnlWmsHead" style="display: none;">
+            <div class="wms-srv-grid">
+                <!-- Object Head Data Will be Here -->
+            </div>
+        </div>
+        <br>
+        <!-- Head Grid -->
+        <!-- Grid -->
+        <div class="wms-srv-obj-main-grid pnlWmsDetail">
+            <div class="wms-srv-grid-holder">
+                <div class="wms-srv-grid-action-panel">
+                    <div class="wms-srv-search">
+                        <label>Search Filter: </label>
+                        <select type="text" class="wms-srv-input  wms-srv-search-filter"
+                                id="wms-srv-search-filter-ProductMasterList">
+                            <option value="ALL">-- Select All--</option>
+                            <option value="SkuCode">SKU Code</option>
+                            <option value="SkuName">SKU Name</option>
+                            <option value="UPCCode">UPC Code</option>
+                            <option value="ProductCategory">Category</option>
+                            <option value="ProductSubCategory">Sub-Category</option>
+
+                        </select>
+
+                        <input type="text" value="" class="wms-srv-input wms-srv-simple-search" title="Search"
+                               id="wms-srv-simple-search-ProductMasterList"><a href="#" data-prefix="SE"
+                                                                               onclick="SearchProduct()">
+                            <i class="fas fa-search" title="Search"
+                               style="margin-right: 17px;"></i>
+                        </a>
+
+                        <a href="#" title="Cancel" class="wms-srv-cancel" data-prefix="CN">
+                            <i class="fas fa-times-circle" onclick="clearSearchFilter();"></i>
+                        </a>
+
+                    </div>
+                    <select type="text" class="wms-srv-input wms-srv-search-by-year" style="display: none;">
+                        <option value="">-- Select Month --</option>
+                        <option value="January 2022">January 2022</option>
+                        <option value="February 2022">February 2022</option>
+
+                        <option value="January 2012">January 2012</option>
+                    </select>
+                    <button class="wms-srv-input wms-srv-button wms-srv-highlight-btn" title="Add New" data-prefix="AN"
+                            type="button" onclick="OpenAddNewSKUPopup();">
+                        <i class="fas fa-plus"></i><span>
+                            Add
+                            New
+                        </span>
+                    </button>
+                    <div class="wms-srv-grid-title">
+                        SKU List
+                    </div>
+                </div>
+                <div class="wms-srv-grid-scroller" style="width: 100%;">
+                    <div class="wms-srv-grid" id="omsSkuList">
+                    </div>
+                    <div class="wms-srv-grid-pager" id="wms-srv-grid-pager-ProductMaster">
+                        <span class="wms-srv-pager-records">1-1 of 82 Records</span>
+                        <span class="wms-srv-empty-space"></span>
+                        <span class="wms-srv-pager-links">
+                            <a href="#" data-page="firstpage">
+                                <i class="fas fa-angle-double-left"></i>
+                            </a><a href="#" data-page="previous">
+                                <i class="fas fa-angle-left"></i>
+                            </a><a href="#" class="wms-srv-active"
+                                   data-page="1">1</a><a href="#" data-page="2">2</a><a href="#" data-page="3">3</a><a href="#" data-page="4">4</a><a href="#" data-page="5">5</a><a href="#"
+                                                                                                                                                                                     data-page="6">6</a><a href="#" data-page="7">7</a><a href="#" data-page="8">8</a><a href="#" data-page="9">9</a><a href="#" data-page="next">
+                                <i class="fas fa-angle-right"></i>
+                            </a><a href="#" data-page="lastpage">
+                                <i class="fas fa-angle-double-right"></i>
+                            </a>
+                        </span>
+                        <span class="wms-srv-empty-space"></span>
+                        <input type="text" name="txtGridPageNo" onkeypress="return isNumber(event)"
+                               class="wms-srv-input notranslate" value="0" style="width: 80px;">
+                        <a href="#" title="Jump To" class="wms-srv-pager-go"><i class="fas fa-play-circle"></i></a>
+                    </div>
+                </div>
+            </div>
+            <!-- Grid -->
+            <!-- Content Area -->
+        </div><br>
+    </div>
+
+    <!-- Edit popup-->
+    <div class="wms-srv-popup-holder" id="wms-srv-edit-sku-popup" style="display: none;">
+        <div class="wms-srv-popup-bg">
+        </div>
+        <div class="wms-srv-popup">
+            <div class="wms-srv-popup-content">
+                <!-- Popup Title -->
+                <div class="wms-srv-popup-title">
+                    <div class="wms-srv-page-title">
+                        <i class="fas fa-file-alt"></i><span>SKU Details</span>
+                    </div>
+                    <a href="#" id="wms-srv-edit-sku-popup-close" class="wms-srv-popup-close">
+                        <i class="fas fa-times-circle"></i>
+                    </a>
+                </div>
+                <!-- Popup Title -->
+                <div class="wms-srv-popup-content-body" id="wms-srv-popup-content-body">
+                    <!-- Grid 2-->
+                    <div class="wms-srv-grid" style="text-align: center;"
+                         data-gridobjectid="gridObject_Appointment_Book_Book">
+                        <div class="wms-srv-grid-header">
+
+                            <div class="wms-srv-grid-cell">WMS SKU Code</div>
+                            <div class="wms-srv-grid-cell">SKU Name</div>
+                            <div class="wms-srv-grid-cell">Customer</div>
+                            <div class="wms-srv-grid-cell">Department</div>
+                            <div class="wms-srv-grid-cell">SKU Code</div>
+                            <div class="wms-srv-grid-cell">Cost</div>
+                        </div>
+                        <div class="wms-srv-grid-row">
+                            <div class="wms-srv-grid-cell">
+                                <input type="text" data-prefix="SESKU"
+                                       data-id="" value="" id="txtWMSSkuCode"
+                                       class="wms-srv-grid-cell-input">
+                            </div>
+                            <div class="wms-srv-grid-cell">
+                                <input type="text" data-prefix="SESKU"
+                                       data-id="" value="" id="txtWMSSkuName"
+                                       class="wms-srv-grid-cell-input">
+                            </div>
+                            <div class="wms-srv-grid-cell">
+                                <select id="ddlSkuCustomer" class="wms-srv-grid-cell-input">
+                                    <option value="0">-- Select --</option>
+                                    <option value="1">GWC ECOMMERCE</option>
+                                </select>
+                            </div>
+                            <div class="wms-srv-grid-cell">
+                                <select id="ddlSkuDepartment" class="wms-srv-grid-cell-input">
+                                    <option value="0">-- Select --</option>
+                                    <option value="1">VFQ5264ONL</option>
+                                </select>
+                            </div>
+                            <div class="wms-srv-grid-cell">
+                                <input type="text" value="" id="txtSkuCode" class="wms-srv-grid-cell-input">
+                            </div>
+                            <div class="wms-srv-grid-cell">
+                                <input type="text" value="" id="txtSkuCost" class="wms-srv-grid-cell-input">
+                            </div>
+                        </div>
+                    </div><br>
+                    <div class="wms-srv-grid" style="text-align: center;"
+                         data-gridobjectid="gridObject_Appointment_Book_Book">
+                        <div class="wms-srv-grid-header">
+                            <div class="wms-srv-grid-cell">Retail Price</div>
+                            <div class="wms-srv-grid-cell">Group Set</div>
+                            <div class="wms-srv-grid-cell">MOQ</div>
+                            <div class="wms-srv-grid-cell">Description</div>
+                        </div>
+                        <div class="wms-srv-grid-row">
+                            <div class="wms-srv-grid-cell">
+                                <input type="text" value="" id="txtRetailPrice" class="wms-srv-grid-cell-input">
+                            </div>
+                            <div class="wms-srv-grid-cell" style="text-align:center;">
+                                <select id="ddlGroupSet" class="wms-srv-grid-cell-input">
+                                    <option value="No">No</option>
+                                    <option value="Yes">Yes</option>
+                                </select>
+                            </div>
+                            <div class="wms-srv-grid-cell">
+                                <input type="text" value="" id="txtMOQ" class="wms-srv-grid-cell-input">
+                            </div>
+                            <div class="wms-srv-grid-cell">
+                                <input type="text" value="" id="txtDescription" class="wms-srv-grid-cell-input">
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="wms-srv-grid" style="text-align: center;">
+                        <div class="wms-srv-grid-header">
+                            <div class="wms-srv-grid-cell">Active</div>
+                            <div class="wms-srv-grid-cell">SKU Type</div>
+                            <div class="wms-srv-grid-cell">Serial Flag</div>
+                        </div>
+                        <div class="wms-srv-grid-row">
+                            <div class="wms-srv-grid-cell wms-srv-align">
+                                <input type="radio" name="txtIsSkuActive" id="txtIsSkuActiveY" data-id="" value="" checked="checked">
+                                <a href="#" style="margin-right: 20px;">Yes</a>
+                                <input type="radio" name="txtIsSkuActive" id="txtIsSkuActiveN" data-id="" value="">
+                                <a href="#">No</a>
+                            </div>
+                            <div class="wms-srv-grid-cell" style="text-align:center;">
+                                <select class="wms-srv-grid-cell-input" id="ddlSkuType">
+                                    <option value="General SKU">General SKU</option>
+                                    <option value="Virtual SKU">Virtual SKU</option>
+                                </select>
+                            </div>
+                            <div class="wms-srv-grid-cell wms-srv-align">
+                                <input type="radio" name="txtIsSerialTag" id="txtIsSerialTagY" data-id="" value="" checked="checked">
+                                <a href="#" style="margin-right: 20px;">Yes</a>
+                                <input type="radio" name="txtIsSerialTag" id="txtIsSerialTagN" data-id="" value="">
+                                <a href="#">No</a>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <div style="text-align: center;">
+                        <button class="wms-srv-input wms-srv-button wms-srv-highlight-btn-secondary"
+                                type="button" id="btnSaveMasterSkuDetaails" title="Save">
+                            <span style="margin-left: 0px;">Save</span>
+                        </button>
+                    </div>
+                    <!-- Grid 2-->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Edit popup-->
+    <!--Sku Category popup-->
+    <div class="wms-srv-popup-holder" id="wms-srv-SkuCategory-popup" style="display: none; z-index: 99999;">
+        <div class="wms-srv-popup-bg">
+        </div>
+        <div class="wms-srv-popup" style="width: 50%;margin-left: 25%; height: 65%;">
+            <div class="wms-srv-popup-content">
+                <!-- Popup Title -->
+                <div class="wms-srv-popup-title">
+                    <div class="wms-srv-page-title">
+                        <i class="fas fa-file-alt"></i><span>SKU Category List</span>
+                    </div>
+                    <a href="#" id="wms-srv-SkuCategory-popup-close" class="wms-srv-popup-close">
+                        <i class="fas fa-times-circle"></i>
+                    </a>
+                </div>
+                <!-- Popup Title -->
+                <div class="wms-srv-popup-content-body" id="wms-srv-popup-content-body">
+                    <!-- Grid 2-->
+
+                    <div class="wms-srv-grid-holder pnlWmsDetail" id="pnlWmsDetail">
+                        <div class="wms-srv-grid-action-panel">
+                            <div class="wms-srv-grid-common-action">
+                                <a href="#" data-prefix="CG"
+                                   class="wms-srv-icononly"><i class="fas fa-list"></i></a>
+                            </div>
+                            <div class="wms-srv-grid-title">
+                                SKU Category List
+                            </div>
+                        </div>
+                        <div class="wms-srv-grid-scroller" style="width: 100%;">
+                            <div class="wms-srv-grid" style="text-align: center; min-width: 400px;"
+                                 id="wms-srv-grid-skuCategoryPopup">
+
+                                <div class="wms-srv-grid-row wms-srv-grid-add" id="wms-srv-grid-skuCategoryPopup2">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Grid 2-->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Sku Category popup-->
+    <!--Sku Sub-Category popup-->
+    <div class="wms-srv-popup-holder" id="wms-srv-SubCategory-popup"
+         style="display: none;width: 50%;margin-left: 25%; z-index: 99999;height: auto;">
+        <div class="wms-srv-popup-bg">
+        </div>
+        <div class="wms-srv-popup">
+            <div class="wms-srv-popup-content">
+                <!-- Popup Title -->
+                <div class="wms-srv-popup-title">
+                    <div class="wms-srv-page-title">
+                        <i class="fas fa-file-alt"></i><span>SKU Sub-Category List</span>
+                    </div>
+                    <a href="#" id="wms-srv-SubCategory-popup-close" class="wms-srv-popup-close">
+                        <i class="fas fa-times-circle"></i>
+                    </a>
+                </div>
+                <!-- Popup Title -->
+                <div class="wms-srv-popup-content-body" id="wms-srv-popup-content-body">
+                    <!-- Grid 2-->
+
+                    <div class="wms-srv-grid-holder pnlWmsDetail" id="pnlWmsDetail">
+                        <div class="wms-srv-grid-action-panel">
+                            <div class="wms-srv-grid-common-action">
+                                <a href="#" data-prefix="CG"
+                                   class="wms-srv-icononly"><i class="fas fa-list"></i></a>
+                            </div>
+
+
+                            <div class="wms-srv-grid-title">
+                                SKU Sub-Category List
+                            </div>
+                        </div>
+                        <div class="wms-srv-grid-scroller" style="width: 100%; ">
+                            <div id="addSubcategoryHeader">
+                                <div class="wms-srv-grid" style="text-align: center; min-width: 400px;"
+                                     id="wms-srv-grid-skuSubCategoryPopup">
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Grid 2-->
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Sku Sub-Category popup-->
+    <!--Images-popup-->
+    <div class="wms-srv-popup-holder" id="wms-srv-Images-popup" style="display: none;">
+        <div class="wms-srv-popup-bg">
+        </div>
+        <div class="wms-srv-popup">
+            <div class="wms-srv-popup-content">
+                <!-- Popup Title -->
+                <div class="wms-srv-popup-title">
+                    <div class="wms-srv-page-title">
+                        <i class="fas fa-file-image"></i><span>Images</span>
+                    </div>
+                    <a href="#" title="Close" id="wms-srv-Images-popup-close" class="wms-srv-popup-close">
+                        <i class="fas fa-times-circle"></i>
+                    </a>
+                </div>
+                <!-- Popup Title -->
+                <div class="wms-srv-popup-content-body" id="wms-srv-popup-content-body">
+                    <!-- Grid 2-->
+
+                    <div class="wms-srv-grid-holder pnlWmsDetail" id="pnlWmsDetail">
+                        <div class="wms-srv-grid-action-panel">
+                            <div class="wms-srv-grid-common-action">
+                                <a href="#" class="wms-srv-icononly">
+                                    <i class="fas fa-list"></i>
+                                </a>
+                            </div>
+                            <div class="wms-srv-grid-title">
+                                Images List
+                            </div>
+                        </div>
+                        <div class="wms-srv-grid-scroller" style="width: 100%; ">
+                            <div class="wms-srv-grid" style="text-align: center;" id="wms-srv-grid-ImagePopup">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Grid 2-->
+
+            </div>
+        </div>
+    </div>
+    <!--Images-popup-->
+    <!--UOM-popup-->
+    <div class="wms-srv-popup-holder" id="wms-srv-UOM-popup" style="display: none;">
+        <div class="wms-srv-popup-bg">
+        </div>
+        <div class="wms-srv-popup">
+            <div class="wms-srv-popup-content">
+                <!-- Popup Title -->
+                <div class="wms-srv-popup-title">
+                    <div class="wms-srv-page-title">
+                        <i class="fas fa-pen-square"></i><span>Pack</span>
+                    </div>
+                    <a href="#" title="Close" id="wms-srv-UOM-popup-close" class="wms-srv-popup-close">
+                        <i class="fas fa-times-circle"></i>
+                    </a>
+                </div>
+                <!-- Popup Title -->
+                <div class="wms-srv-popup-content-body" id="wms-srv-popup-content-body">
+                    <!-- Grid 2-->
+
+                    <div class="wms-srv-grid-holder pnlWmsDetail" id="pnlWmsDetail">
+                        <div class="wms-srv-grid-action-panel">
+                            <div class="wms-srv-grid-common-action">
+                                <a href="#" title="" class="wms-srv-icononly">
+                                    <i class="fas fa-list"></i>
+                                </a>
+                            </div>
+                            <div class="wms-srv-grid-title">
+                               Pack
+                            </div>
+                        </div>
+                        <div class="wms-srv-grid-scroller" style="width: 100%; ">
+                            <div class="wms-srv-grid " id="wms-srv-grid-GetUomList" style="text-align: center;">
+                                <div class="wms-srv-grid-header">
+                                    <div class="wms-srv-grid-cell">Sr No.</div>
+                                    <div class="wms-srv-grid-cell">Unit Of Measurement</div>
+                                    <div class="wms-srv-grid-cell">Quantity</div>
+                                    <div class="wms-srv-grid-cell">Action</div>
+                                </div>
+                                <div class="wms-srv-grid-row wms-srv-grid-add">
+                                    <div class="wms-srv-grid-cell"></div>
+                                    <div class="wms-srv-grid-cell">
+                                        <select class="wms-srv-grid-cell-input">
+                                            <option value="">-- Select --</option>
+                                            <option value="">Each</option>
+                                            <option value="">Dozon</option>
+                                        </select>
+                                    </div>
+                                    <div class="wms-srv-grid-cell">
+                                        <input type="text" data-prefix="SESKU" data-id="" value=""
+                                               class="wms-srv-grid-cell-input">
+                                    </div>
+                                    <div class="wms-srv-grid-cell">
+                                        <div class="wms-srv-grid-action">
+                                            <a href="#" title="Save" class="wms-srv-save" data-prefix="SV">
+                                                <i class="fas fa-check-circle"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="wms-srv-grid-row  wms-srv-grid-add">
+                                    <div class="wms-srv-grid-cell">1</div>
+                                    <div class="wms-srv-grid-cell">Each</div>
+                                    <div class="wms-srv-grid-cell">20</div>
+                                    <div class="wms-srv-grid-cell">
+                                        <div class="wms-srv-grid-action">
+                                            <a href="#" title="Edit" class="wms-srv-save" data-prefix="SV">
+                                                <i class="fas fa-edit"></i>
+                                            </a>
+                                            <div class="wms-srv-action-sep">|</div>
+                                            <a href="#" title="Cancel" class="wms-srv-cancel" data-prefix="CN">
+                                                <i class="fas fa-times-circle"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Grid 2-->
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--UOM-popup-->
+    <!--Inventory popup-->
+    <div class="wms-srv-popup-holder" id="wms-srv-inventory-popup" style="display: none;">
+        <div class="wms-srv-popup-bg">
+        </div>
+        <div class="wms-srv-popup">
+            <div class="wms-srv-popup-content">
+                <!-- Popup Title -->
+                <div class="wms-srv-popup-title">
+                    <div class="wms-srv-page-title">
+                        <i class="fas fa-pallet"></i><span>Inventory</span>
+                    </div>
+                    <a href="#" id="wms-srv-inventory-popup-close" title="Close" class="wms-srv-popup-close">
+                        <i class="fas fa-times-circle"></i>
+                    </a>
+                </div>
+                <!-- Popup Title -->
+                <div class="wms-srv-popup-content-body" id="wms-srv-popup-content-body">
+                    <!-- Grid 1-->
+                    <div class="wms-srv-grid" style="text-align: center;" id="tblAddVirtualQty">
+                        <div class="wms-srv-grid-header">
+                            <div class="wms-srv-grid-cell">Enter Virtual Quantity</div>
+                            <div class="wms-srv-grid-cell">Virtual Re-Order Quantity</div>
+                            <div class="wms-srv-grid-cell">Action</div>
+                        </div>
+                        <div class="wms-srv-grid-row">
+                            <div class="wms-srv-grid-cell">
+                                <input type="text" value="" class="wms-srv-grid-cell-input" />
+                            </div>
+                            <div class="wms-srv-grid-cell">
+                                <input type="text" value="" class="wms-srv-grid-cell-input" />
+                            </div>
+                            <div class="wms-srv-grid-cell">
+                                <div class="wms-srv-grid-action">
+                                    <i class="fas fa-check-circle" title="Save Qty"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Grid 1 -->
+                    <br />
+                    <!-- Grid 2-->
+                    <div class="wms-srv-grid-holder pnlWmsDetail" id="pnlWmsDetail">
+                        <div class="wms-srv-grid-action-panel">
+                            <div class="wms-srv-grid-common-action">
+                                <a href="#" title="Customize Grid" data-prefix="CG"
+                                   class="wms-srv-icononly"><i class="fas fa-list"></i></a>
+                            </div>
+                            <div class="wms-srv-grid-title">
+                                Department wise Inventory
+                            </div>
+                            <div style="float: left;">
+
+                            </div>
+                            <div class="wms-srv-more-btn-holder">
+
+                            </div>
+
+                        </div>
+                        <div class="wms-srv-grid-scroller" style="width: 100%;">                           
+                            <div class="wms-srv-grid" style="text-align: center;" id="tblskulocation">
+                                <div class="wms-srv-grid-header">
+                                    <div class="wms-srv-grid-cell">Opening Quantity</div>
+                                    <div class="wms-srv-grid-cell">Receiving Quantity</div>
+                                    <div class="wms-srv-grid-cell">Dispatch Quantity</div>
+                                    <div class="wms-srv-grid-cell">Reserve Quantity</div>
+                                    <div class="wms-srv-grid-cell">Current Balance</div>
+                                    <div class="wms-srv-grid-cell">Virtual Quantity</div>
+                                    <div class="wms-srv-grid-cell">Virtual Re-Order Quantity</div>
+                                    <div class="wms-srv-grid-cell">Available Quantity</div>
+                                </div>
+                                <div class="wms-srv-grid-row">
+                                    <div class="wms-srv-grid-cell">
+                                        2000.00
+                                    </div>
+                                    <div class="wms-srv-grid-cell">
+                                        0.00
+                                    </div>
+                                    <div class="wms-srv-grid-cell">
+                                        0.00
+                                    </div>
+                                    <div class="wms-srv-grid-cell">
+                                        20.00
+                                    </div>
+                                    <div class="wms-srv-grid-cell">
+                                        1980.00
+                                    </div>
+                                    <div class="wms-srv-grid-cell">
+                                        0.00
+                                    </div>
+                                    <div class="wms-srv-grid-cell">
+                                        -
+                                    </div>
+                                    <div class="wms-srv-grid-cell">
+                                        0.00
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Grid 2 -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Inventry popup-->
+    <!--UDF popup-->
+    <div class="wms-srv-popup-holder" id="wms-srv-udf-popup" style="display: none;">
+        <div class="wms-srv-popup-bg">
+        </div>
+        <div class="wms-srv-popup">
+            <div class="wms-srv-popup-content">
+                <!-- Popup Title -->
+                <div class="wms-srv-popup-title">
+                    <div class="wms-srv-page-title">
+                        <i class="fas fa-tag"></i><span>SKU UDF List</span>
+                    </div>
+                    <a href="#" id="wms-srv-udf-popup-close" title="Close" class="wms-srv-popup-close">
+                        <i class="fas fa-times-circle"></i>
+                    </a>
+                </div>
+                <!-- Popup Title -->
+                <div class="wms-srv-popup-content-body" id="wms-srv-popup-content-body">
+                    <!-- Grid 2-->
+
+                    <div class="wms-srv-grid-holder pnlWmsDetail" id="pnlWmsDetail">
+                        <div class="wms-srv-grid-action-panel">
+                            <div class="wms-srv-grid-common-action">
+                                <a href="#" title="Customize Grid" data-prefix="CG"
+                                   class="wms-srv-icononly"><i class="fas fa-list"></i></a>
+                            </div>
+                            <div class="wms-srv-grid-title">
+                                UDF List
+                            </div>
+                            <div class="wms-srv-more-btn-holder">
+                            </div>
+                        </div>
+                        <div class="wms-srv-grid-scroller" style="width: 100%; ">
+                            <br>
+                            <div class="wms-srv-grid" style="text-align: center;" id="tblSkuUdf">
+                                <div class="wms-srv-grid-header">
+                                    <div class="wms-srv-grid-cell">User Defined Field</div>
+                                    <div class="wms-srv-grid-cell">Location Code</div>
+                                    <div class="wms-srv-grid-cell">Sort Code</div>
+                                    <div class="wms-srv-grid-cell">Action</div>
+                                </div>
+                                <div class="wms-srv-grid-row wms-srv-grid-add">
+
+                                    <div class="wms-srv-grid-cell">
+                                        L-2342
+                                    </div>
+                                    <div class="wms-srv-grid-cell">
+                                        Stored
+                                    </div>
+                                    <div class="wms-srv-grid-cell">
+                                        4563
+                                    </div>
+                                    <div class="wms-srv-grid-cell">
+                                        <div class="wms-srv-grid-action">
+                                            <i class="fas fa-times-circle" title="Remove"></i>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="wms-srv-grid-row wms-srv-grid-add">
+
+                                    <div class="wms-srv-grid-cell">
+                                        L-6789
+                                    </div>
+                                    <div class="wms-srv-grid-cell">
+                                        Shifing
+                                    </div>
+                                    <div class="wms-srv-grid-cell">
+                                        5674
+                                    </div>
+                                    <div class="wms-srv-grid-cell">
+                                        <div class="wms-srv-grid-action">
+                                            <i class="fas fa-times-circle" title="Remove"></i>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="wms-srv-grid-row wms-srv-grid-add">
+
+                                    <div class="wms-srv-grid-cell">
+                                        L-6789
+                                    </div>
+                                    <div class="wms-srv-grid-cell">
+                                        Shifing
+                                    </div>
+                                    <div class="wms-srv-grid-cell">
+                                        5674
+                                    </div>
+                                    <div class="wms-srv-grid-cell">
+                                        <div class="wms-srv-grid-action">
+                                            <i class="fas fa-times-circle" title="Remove"></i>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Grid 2-->
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Inventry popup-->
+    <!--Lottable-popup-->
+    <div class="wms-srv-popup-holder" id="wms-srv-Lottable-popup" style="display: none;">
+        <div class="wms-srv-popup-bg">
+        </div>
+        <div class="wms-srv-popup">
+            <div class="wms-srv-popup-content">
+                <!-- Popup Title -->
+                <div class="wms-srv-popup-title">
+                    <div class="wms-srv-page-title">
+                        <i class="fas fa-tag"></i><span>Lottable</span>
+                    </div>
+                    <a href="#" title="Close" id="wms-srv-Lottable-popup-close" class="wms-srv-popup-close">
+                        <i class="fas fa-times-circle"></i>
+                    </a>
+                </div>
+                <!-- Popup Title -->
+                <div class="wms-srv-popup-content-body" id="wms-srv-popup-content-body">
+                    <!-- Grid 2-->
+
+                    <div class="wms-srv-grid-holder pnlWmsDetail" id="pnlWmsDetail">
+                        <div class="wms-srv-grid-action-panel">
+                            <div class="wms-srv-grid-common-action">
+                                <a href="#" title="Customize Grid" data-prefix="CG"
+                                   class="wms-srv-icononly"><i class="fas fa-list"></i></a>
+                            </div>
+
+
+                            <div class="wms-srv-grid-title">
+                                Lottable List
+                            </div>
+                        </div>
+                        <div class="wms-srv-grid-scroller" style="width: 100%; ">
+                            <div class="wms-srv-grid" style="text-align: center;" id="GetLottableList">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Grid 2-->
+
+        </div>
+    </div>
+
+</div>

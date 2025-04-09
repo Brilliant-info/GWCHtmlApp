@@ -1,0 +1,38 @@
+{
+    "Status": "200",
+    "StatusCode": "Success",
+    "Result": {
+        "Table": [
+            {
+                "Id": 1,
+                "ReportName": "Order Delivery Report",
+                "Icon": "fas fa-file-invoice"
+            },
+			{
+                "Id": 2,
+                "ReportName": "SLA Report",
+                "Icon": "fas fa-file-invoice"
+            },
+			{
+                "Id": 3,
+                "ReportName": "Delivery Log Report",
+                "Icon": "fas fa-file-invoice"
+            },
+			{
+                "Id": 4,
+                "ReportName": "CAF & Delivery Report",
+                "Icon": "fas fa-file-invoice"
+            },
+			{
+                "Id": 5,
+                "ReportName": "Delivery Note",
+                "Icon": "fas fa-file-invoice"
+            },
+			{
+                "Id": 6,
+                "ReportName": "Normal Order Delivery Note",
+                "Icon": "fas fa-file-invoice"
+            }
+        ]
+    }
+}

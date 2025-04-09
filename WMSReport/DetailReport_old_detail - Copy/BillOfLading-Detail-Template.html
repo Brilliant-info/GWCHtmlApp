@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link href="../../WMSTheme/fontawesome/css/all.css" rel="stylesheet" />
+    <link href="Report-Template-Common.css" rel="stylesheet" />
+    <link href="../../WMSReport/DetailReport/BillOfLading.css" rel="stylesheet" />
+    <link href="BillOfLading-Detail-Template.css" rel="stylesheet" />
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="../../Themes/js/wms-app-session.js"></script>
+	<script src="../../Themes/js/wms-app-navigator.js"></script>
+   
+    <style>
+        .pnlBarcodeHolder{
+            text-align:center;
+        }
+        .pnlBarcodeHolder img{
+            width:200px;
+        }
+    </style>
+</head>
+<body>
+
+    <form>
+        <asp:Label ID="JsDataHolder" runat="server"></asp:Label>
+        <script src="Report-Template-Common.js" type="text/javascript"></script>
+        <script src="BillOfLading-Detail-Template.js" type="text/javascript"></script>
+        <asp:HiddenField ID="hdnDataId" runat="server" ClientIDMode="Static" />
+        <asp:HiddenField ID="hdnCompanyId" runat="server" ClientIDMode="Static" />
+        <asp:HiddenField ID="hdnUserId" runat="server" ClientIDMode="Static" />
+        <asp:HiddenField ID="hdnWarehouseId" runat="server" ClientIDMode="Static" />
+        <asp:HiddenField ID="hdnCustomerId" runat="server" ClientIDMode="Static" />
+        <asp:HiddenField ID="hdnBOLID" runat="server" ClientIDMode="Static" />
+      
+        <div class="pnlActionBar">
+            <a href="#" class="printTemplate" style="right: 100px" onclick="BOLUpdate();"><i class="fas fa-edit"></i>Update</a>
+            <a href="#" class="printTemplate" onclick="window.print();"><i class="fas fa-print"></i>Print</a>
+        </div>
+       <!-- Enter Your Body Content Here -->
+        <div class="BolMain" style="margin-top: 32px;">
+            <!-- TITLE -->
+            <div class="BolTable BorderBottom" style="width: 100%;">
+                <div class="BolTR">
+                    <div class="BolTD BoxPadding5" style="width: 33%; text-align: left;">
+                        Date: <span class="wmsCustomTag" contenteditable="false" >CurrentDate</span>
+                    </div>
+                    <div class="BolTD BoxPadding5" style="width: 33%; text-align: center;">
+                        <b>BILL OF LADING</b>
+                        <!-- <span class="" contenteditable="true"  id="setBillOfLandingObject"></span> -->
+                    </div>
+                    <div class="BolTD BoxPadding5" style="width: 33%; text-align: right;">
+                        <span class="wmsCustomTag" contenteditable="false" >Page 1</span>
+                    </div>
+                </div>
+            </div>
+            <!-- TITLE -->
+            <!-- HEAD SECTION -->
+            <div class="BolTable" style="width: 100%;">
+                <div class="BolTR">
+                    <div class="BolTD BorderRight VTop" style="width: 50%;">
+                        <!-- SHIP FROM -->
+                        <div class="BolTable" style="width: 100%;">
+                            <div class="BolTR">
+                                <div class="BolTD BoxHead">
+                                    SHIP FROM
+                                </div>
+                            </div>
+                            <div class="BolTR">
+                                <div class="BolTD FontHeadContent BoxPadding5" style="height: 126px;">
+                                    Name: <span class="wmsCustomTag" contenteditable="true" id="txtShipFromName" style="background-color: LightGray;" onkeydown="return (event.keyCode!=13);">ShipFromName</span>
+                                    <br />
+                                    Address: <span class="wmsCustomTag" contenteditable="true" style="background-color: LightGray;" id="txtShipFromAddress" onkeydown="return (event.keyCode!=13);">ShipFromAdd</span>
+                                    <br />
+                                    City/State/Zip: <span class="wmsCustomTag" contenteditable="true" style="background-color: LightGray;" id="txtShipFromCityStateZip" onkeydown="return (event.keyCode!=13);">ShipToCityStateZip</span>
+                                    <br />
+                                    SID# <span class="wmsCustomTag" contenteditable="true" style="background-color: LightGray;" id="txtShipFromSid" onkeydown="return (event.keyCode!=13);">ShipFromSid</span>
+                                    <span class="FloatRight">FOB: <span class="wmsCustomTag" contenteditable="true" style="background-color: LightGray;" id="ShipFromFob" onkeydown="return (event.keyCode!=13);">FOB</span>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- SHIP FROM -->
+                        <!-- SHIP TO -->
+                        <div class="BolTable" style="width: 100%;">
+                            <div class="BolTR">
+                                <div class="BolTD BoxHead">
+                                    SHIP TO
+                                </div>
+                            </div>
+                            <div class="BolTR">
+                                <div class="BolTD FontHeadContent BoxPadding5" style="height: 154px;">
+                                    Name: <span class="wmsCustomTag" contenteditable="true" id="txtShipToName" style="background-color: LightGray;" onkeydown="return (event.keyCode!=13);">ShipToName</span><span class="FloatRight InlineBlock" style="width: 168px;">Location#</span><br />
+                                    <br />
+                                    Address: <span class="wmsCustomTag" contenteditable="true" style="background-color: LightGray;" id="txtShipToAddress" onkeydown="return (event.keyCode!=13);">ShipToAdd</span>
+                                    <br />
+                                    City/State/Zip: <span class="wmsCustomTag" contenteditable="true" style="background-color: LightGray;" id="txtShipToCityStateZip" onkeydown="return (event.keyCode!=13);">ShipToDetails</span>
+                                    <br />
+                                    CID# <span class="wmsCustomTag" contenteditable="true" style="background-color: LightGray;" id="txtShipToSid" onkeydown="return (event.keyCode!=13);">ShipToSid</span>
+                                    <span class="FloatRight">FOB: <span class="wmsCustomTag" contenteditable="true" style="background-color: LightGray;" id="txtShipToFob" onkeydown="return (event.keyCode!=13);">ShipToFob</span>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- SHIP TO -->
+                        <!-- THIRD PARTY FRIGHT CHARGES -->
+                        <div class="BolTable" style="width: 100%;">
+                            <div class="BolTR">
+                                <div class="BolTD BoxHead">
+                                    THIRD PARTY FRIGHT CHARGES BILL TO:
+                                </div>
+                            </div>
+                            <div class="BolTR">
+                                <div class="BolTD BorderBottom FontHeadContent BoxPadding5" style="height: 77px;">
+                                    Name:<span class="wmsCustomTag" contenteditable="true" id="txtThirdPartyName" style="background-color:LightGray;" onkeydown="return (event.keyCode!=13);">ThirdPartyName</span><br />
+                            Address:<span class="wmsCustomTag" contenteditable="true" style="background-color:LightGray;" id="txtThirdPartyAddress" onkeydown="return (event.keyCode!=13);">ThirdPartyAddress</span><br />
+							City/State/Zip:<span class="wmsCustomTag" contenteditable="true" style="background-color:LightGray;" id="txtThirdPartyCityStateZip" onkeydown="return (event.keyCode!=13);">ThirdPartyCityStateZip</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- THIRD PARTY FRIGHT CHARGES -->
+                        <!-- BILL INSTRUCTION -->
+                        <div class="BolTable" style="width: 100%;">
+                            <div class="BolTR">
+                                <div class="BolTD FontHeadContent BoxPadding5" style="height: 84px;">
+                                    SPECIAL INSTRUCTION: <span class="wmsCustomTag" contenteditable="true" id="txtThirdPartySpecialInstuction" style="background-color: LightGray;" onkeydown="return (event.keyCode!=13);">ThirdPartySpecialInstuction</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- BILL INSTRUCTION -->
+                    </div>
+                    <div class="BolTD VTop" style="width: 50%;">
+                        <!-- BILL OF LADING -->
+                        <div class="BolTable BorderBottom" style="width: 100%;">
+                            <div class="BolTR">
+                                <div class="BolTD FontHeadContent BoxPadding5" style="height: 140px;">
+                                    <b>Bill of Lading Number: <span class="wmsCustomTag" id="txtBillOfLadingNo">BillofladingNo</span> </b>
+                                   <br /> <br />
+                                    <div class="invoiceLogo-B" style="text-align: center;">
+                                    <span class="wmsBarcodeTag">BillofladingNo</span></div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <!-- BILL OF LADING -->
+                        <!-- CARRIER -->
+                        <div class="BolTable BorderBottom" style="width: 100%;">
+                            <div class="BolTR wmsRepeatRow wmsGridRow" data-column="Table1">
+                                <div class="BolTD FontSubHeadContent BoxPadding5" style="height: 105px;">
+                                    <b>TRANSPORTER NAME: <select  id="ddlTransportList"></select></b>
+                                    <!-- <b>TRANSPORTER NAME: <span class="wmsCustomTag" contenteditable="true" id="txtCarrier" style="background-color: LightGray;" onkeydown="return (event.keyCode!=13);">Carrier</span> </b> -->
+                                    <br />
+                                    <br />
+                                    Invoice No: <span class="wmsCustomTag" contenteditable="true" style="background-color: LightGray;" id="txtTrailerNumber" onkeydown="return (event.keyCode!=13);">TrailerNumber</span>
+                                    <br />
+                                    <br />
+                                    Invoice Amount: <span class="wmsCustomTag" contenteditable="true" style="background-color: LightGray;" id="txtSealNumbers" onkeydown="return (event.keyCode!=13);">SealNumber</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- CARRIER -->
+                        <!-- SCAC -->
+                        <div class="BolTable BorderBottom" style="width: 100%;">
+                            <div class="BolTR">
+                                <div class="BolTD FontSubHeadContent BoxPadding5" style="height: 133px;">
+                                    <b>SCAC: <span class="wmsCustomTag" contenteditable="true" id="txtSCAC" style="background-color: LightGray;" onkeydown="return (event.keyCode!=13);">SCAC</span> </b>
+                                    <br />
+                                    <br />
+                                    Pro number: <span class="wmsCustomTag" contenteditable="true" style="background-color: LightGray;" id="txtProNumber" onkeydown="return (event.keyCode!=13);">ProNumber</span>
+                                    <br />
+                                    <br />
+                                    <div class="invoiceLogo-B" style="text-align: center;">
+                                        <span class="wmsBarcodeTag">SCAC</span></div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- SCAC -->
+                        <!-- FRIGHT CHARGES TERMS -->
+                        <div class="BolTable BorderBottom" style="width: 100%;">
+                            <div class="BolTR">
+                                <div class="BolTD FontSubHeadContent BoxPadding5" style="height: 52px;">
+                                    <b>Freight Charge Terms:</b> <span class="SmlInfo"><span id="txtFreightChargeTerms">(freight charges are prepaid unless marked otherwise)</span>
+                                        </span>
+                                    <!-- CHECK MARKS -->
+                                    <div class="BolTable" style="width: 100%;">
+                                        <div class="BolTR Font17">
+                                            <div class="BolTD">
+                                                Prepaid <span class="wmsCustomTag" style="background-color: LightGray;" id="txtPrepaid" onkeydown="return (event.keyCode!=13);">PrePaid</span> 
+                                            </div>
+                                            <div class="BolTD">
+                                                Collect <span class="wmsCustomTag" style="background-color: LightGray;" id="txtCollect" onkeydown="return (event.keyCode!=13);">Collect</span> 
+                                            </div>
+                                            <div class="BolTD">
+                                                3<sup>rd</sup> Party <span class="wmsCustomTag" style="background-color: LightGray;" id="txt3rdParty" onkeydown="return (event.keyCode!=13);">ThirdParty</span> 
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- CHECK MARKS -->
+                                </div>
+                            </div>
+                        </div>
+                        <!-- FRIGHT CHARGES TERMS -->
+                        <!-- MBOL CHECK -->
+                        <div class="BolTable" style="width: 100%; display:none;">
+                            <div class="BolTR">
+                                <div class="BolTD BoxPadding5" style="height: 49px;">
+                                    <!-- CHECK MARKS -->
+                                    <div class="BolTable" style="width: 100%; " >
+                                        <div class="BolTR">
+                                            <div class="BolTD FontSubHeadContent TextCenter BoxPadding5" style="width: 189px;">
+                                                <div id="txtMasterBillofLading" class="custCheck" onclick="custCheckClick(this);"></div>
+                                                <br />
+                                                <span class="Font15">(Check box)</span>
+                                            </div>
+                                            <div class="BolTD FontSubHeadContent Font17">
+                                                Master Bill of Lading:With attached underlying Bills of Lading
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- CHECK MARKS -->
+                                </div>
+                            </div>
+                        </div>
+                        <!-- MBOL CHECK -->
+                    </div>
+                </div>
+            </div>
+            <!-- HEAD SECTION -->
+            <!-- CUSTOMER ORDER INFORMATION -->
+            <div class="BolTable" style="width: 100%;">
+                <div class="BolTR">
+                    <div class="BolTD BoxHead">
+                        CUSTOMER ORDER INFORMATION
+                    </div>
+                </div>
+            </div>
+            <div class="BolTable" style="width: 100%;">
+                <div class="BolTR">
+                    <!-- <div class="BolTD BorderBottom BorderRight VMid TextCenter" style="width:238px;height: 28px; display:none;">
+                        <b>CUSTOMER ORDER NUMBER</b>
+                    </div> -->
+                    <div class="BolTD BorderBottom BorderRight VMid TextCenter" style="width:238px;height: 28px;">
+                        <b>CUSTOMER ORDER NUMBER</b>
+                    </div>
+                    <div class="BolTD BorderBottom BorderRight VMid TextCenter" style="width:126px;height: 28px;">
+                        <b>#PKGS</b>
+                    </div>
+                    <div class="BolTD BorderBottom BorderRight VMid TextCenter" style="width:126px;height: 28px;">
+                        <b>WEIGHT</b>
+                    </div>
+                    <div class="BolTD BorderBottom BorderRight VMid TextCenter" style="width:133px;height: 28px;">
+                        <b>PCS</b>
+                    </div>
+                    <div class="BolTD BorderBottom BorderRight VMid TextCenter" style="width:112px;height: 28px;">
+                        <b>PALLET/SLIP</b>
+                    </div>
+                    <div class="BolTD BorderBottom VMid TextCenter" style="height: 28px;">
+                        <b>ADDITIONAL SHIPPER INFO</b>
+                    </div>
+                </div>
+                <div class="BolTR wmsRepeatRow wmsGridRow"   data-column="Table1">
+                    <!-- <div class="BolTD BorderBottom BorderRight VMid" style="height: 28px;text-align:center; display:none;">
+                        <span class="wmsCustomRepeatTag" id="txtCustomerOrderNo"></span>
+                    </div> -->
+                    <div class="BolTD BorderBottom BorderRight VMid TextCenter"  style="height: 28px;">
+                        <span class="wmsCustomRepeatTag">ORDER_ID</span>
+                    </div>
+                    <div class="BolTD BorderBottom BorderRight VMid TextCenter" style="height: 28px;">
+                        <span class="wmsCustomRepeatTag" id="txtPkgs">PKGS</span>
+                    </div>
+                    <div class="BolTD BorderBottom BorderRight VMid TextCenter" style="height: 28px;">
+                        <span class="wmsCustomRepeatTag" id="txtWeight">Weight</span>
+                    </div>
+                    <div class="BolTD BorderBottom BorderRight VMid TextCenter" style="height: 28px;">
+                        <span class="wmsCustomRepeatTag" id="txtPCS">PCS</span>
+                    </div>
+                    <div class="BolTD BorderBottom BorderRight VMid TextCenter" style="height: 28px;">
+                        <!-- Pallet Slip -->
+                        <div class="BolTable" style="width: 100%;">
+                            <div class="BolTR">
+                                <div class="BolTD BorderRight VMid TextCenter" style="width: 50%; height: 28px;">                                    
+                                    <span class="wmsCustomRepeatTag" id="txtPallet">PALLET</span>
+                                </div>
+                                <div class="BolTD VMid TextCenter" style="width: 50%; height: 28px;">
+                                    <span class="wmsCustomRepeatTag" id="txtSlip">SLIP</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Pallet Slip -->
+                    </div>
+                    <div class="BolTD BorderBottom VMid TextCenter" style="height: 28px;">
+                        <span class="wmsCustomRepeatTag" id="txtAdditionalShipperInfo">ADDITIONAL_SHIPPER_INFO</span>
+                    </div>
+                </div>
+                <!-- <%--<div class="BolTR">
+                    <div class="BolTD BorderBottom BorderRight VMid" style="height: 28px;">
+                    </div>
+                    <div class="BolTD BorderBottom BorderRight VMid TextCenter" style="height: 28px;">
+                    </div>
+                    <div class="BolTD BorderBottom BorderRight VMid TextCenter" style="height: 28px;">
+                    </div>
+                    <div class="BolTD BorderBottom BorderRight VMid TextCenter" style="height: 28px;">
+                    </div>
+                    <div class="BolTD BorderBottom BorderRight VMid TextCenter" style="height: 28px;">
+                        
+                        <div class="BolTable" style="width: 100%;">
+                            <div class="BolTR">
+                                <div class="BolTD BorderRight VMid TextCenter" style="width: 50%; height: 28px;">
+                                    Y
+                                </div>
+                                <div class="BolTD VMid TextCenter" style="width: 50%; height: 28px;">
+                                    N
+                                </div>
+                            </div>
+                        </div>
+                       
+                    </div>
+                    <div class="BolTD BorderBottom VMid TextCenter" style="height: 28px;">
+                    </div>
+                </div>--%> -->
+                <div class="BolTR wmsLastRow ">
+                    <div class="BolTD BorderBottom BorderRight VMid TextCenter" style="height: 28px;">
+                        <b>GRAND TOTAL</b>
+                    </div>
+                    <div class="BolTD BorderBottom BorderRight VMid TextCenter" style="height: 28px;">
+                         <span class="wmsCustomTag" id="txtTotalPkgs">1</span>
+                    </div>
+                    <div class="BolTD BorderBottom BorderRight VMid TextCenter" style="height: 28px;">
+                        <span class="wmsCustomTag" id="txtTotalWeight">1</span>
+                    </div>
+                    <div class="BolTD BorderBottom BorderRight VMid TextCenter" style="height: 28px;">
+                        <span class="wmsCustomTag" id="txtTotalPcs">1</span>
+                    </div>
+                    <div class="BolTD GreyPatch" style="height: 28px;">
+                    </div>
+                    <div class="BolTD GreyPatch" style="height: 28px;">
+                    </div>
+                </div>
+
+            </div>
+            <!-- CUSTOMER ORDER INFORMATION -->
+            <!-- CARRIER INFORMATION -->
+            <div class="BolTable" style="width: 100%;">
+                <div class="BolTR">
+                    <div class="BolTD BoxHead">
+                        CARRIER INFORMATION
+                    </div>
+                </div>
+            </div>
+            <div class="BolTable" style="width: 100%;">
+                <div class="BolTR">
+                    <div class="BolTD BorderBottom BorderRight VMid TextCenter" style="width:133px;height: 28px;">
+                        <b>HANDLING UNIT</b>
+                    </div>
+                    <div class="BolTD BorderBottom BorderRight VMid TextCenter" style="width:147px;height: 28px;">
+                        <b>PACKAGE</b>
+                    </div>
+                    <div class="BolTD BorderBottom BorderRight VMid TextCenter" style="width:119px;height: 28px;">
+                    </div>
+                    <div class="BolTD BorderBottom BorderRight VMid TextCenter" style="width:133px;height: 28px;">
+                    </div>
+                    <div class="BolTD BorderBottom BorderRight VMid TextCenter" style="width:357px;height: 28px;">
+                        <b>COMMODITY DESCRIPTION</b>
+                    </div>
+                    <div class="BolTD BorderBottom VMid TextCenter" style="height: 28px;">
+                        <b>LTL ONLY</b>
+                    </div>
+                </div>
+                <div class="BolTR">
+                    <div class="BolTD BorderBottom BorderRight VMid TextCenter" style="height: 28px;">
+                        <!-- HANDLING UNIT -->
+                        <div class="BolTable" style="width: 100%;">
+                            <div class="BolTR">
+                                <div class="BolTD BorderRight VMid TextCenter" style="width: 50%; height: 40px;">
+                                    <b>QTY</b>
+                                </div>
+                                <div class="BolTD VMid TextCenter" style="width: 50%; height: 40px;">
+                                    <b>TYPE</b>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- HANDLING UNIT -->
+                    </div>
+                    <div class="BolTD BorderBottom BorderRight VMid TextCenter" style="height: 28px;">
+                        <!-- PACKAGE -->
+                        <div class="BolTable" style="width: 100%;">
+                            <div class="BolTR">
+                                <div class="BolTD BorderRight VMid TextCenter" style="width: 50%; height: 40px;">
+                                    <b>QTY</b>
+                                </div>
+                                <div class="BolTD VMid TextCenter" style="width: 50%; height: 40px;">
+                                    <b>TYPE</b>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- PACKAGE -->
+                    </div>
+                    <div class="BolTD BorderBottom BorderRight VMid TextCenter" style="height: 40px;">
+                        <b>WEIGHT</b>
+                    </div>
+                    <div class="BolTD BorderBottom BorderRight VMid TextCenter" style="height: 40px;">
+                        <b>HM
+                            <br/>
+                            (X)</b>
+                    </div>
+                    <div class="BolTD BorderBottom BorderRight VMid TextCenter Font12" style="height: 28px;">
+                        Commodities requiring special or additional care or attention in handling or stowing must be so marked and packaged as to ensure safe transportation<br />
+                            <u>See Section 2(e) of NMFC item 360</u>
+                    </div>
+                    <div class="BolTD BorderBottom VMid TextCenter" style="height: 28px;">
+                        <!-- PACKAGE -->
+                        <div class="BolTable" style="width: 100%;">
+                            <div class="BolTR">
+                                <div class="BolTD BorderRight VMid TextCenter" style="width: 50%; height: 40px;">
+                                    <b>NMFC#</b>
+                                </div>
+                                <div class="BolTD VMid TextCenter" style="width: 50%; height: 40px;">
+                                    <b>CLASS</b>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- PACKAGE -->
+                    </div>
+                </div>
+                <div class="BolTR">
+                    <div class="BolTD BorderBottom BorderRight VMid TextCenter" style="height: 28px;">
+                        <!-- HANDLING UNIT -->
+                        <div class="BolTable" style="width: 100%;">
+                            <div class="BolTR">
+                                <div class="BolTD BorderRight VMid TextCenter" style="width: 50%; height: 28px;">
+                                    &nbsp;
+                                </div>
+                                <div class="BolTD VMid TextCenter" style="width: 50%; height: 28px;">
+                                    &nbsp;
+                                </div>
+                            </div>
+                        </div>
+                        <!-- HANDLING UNIT -->
+                    </div>
+                    <div class="BolTD BorderBottom BorderRight VMid TextCenter" style="height: 28px;" >
+                        <!-- PACKAGE -->
+                        <div class="BolTable" style="width: 100%;">
+                            <div class="BolTR">
+                                <div class="BolTD BorderRight VMid TextCenter wmsRepeatRow wmsGridRow"  data-column="Table1" style="width: 50%; height: 28px;">
+                                     <span class="wmsCustomTag" contenteditable="false" id="txtTotalPkgs2" >1</span>
+                                </div>
+                                <div class="BolTD VMid TextCenter" style="width: 50%; height: 28px;">
+                                    &nbsp;
+                                </div>
+                            </div>
+                        </div>
+                        <!-- PACKAGE -->
+                    </div>
+                    <div class="BolTD BorderBottom BorderRight VMid TextCenter" style="height: 28px;" data-column="Table1">
+                        <span class="wmsCustomTag" contenteditable="false" id="txtTotalWeight2">1</span>
+                    </div>
+                    <div class="BolTD BorderBottom BorderRight VMid TextCenter" style="height: 28px;">
+                    </div>
+                    <div class="BolTD BorderBottom BorderRight VMid TextCenter" style="height: 28px;">
+                        <b>MENS FURN</b>
+                    </div>
+                    <div class="BolTD BorderBottom VMid TextCenter" style="height: 28px;">
+                        <!-- PACKAGE -->
+                        <div class="BolTable" style="width: 100%;">
+                            <div class="BolTR">
+                                <div class="BolTD BorderRight VMid TextCenter" style="width: 50%; height: 28px;">
+                                </div>
+                                <div class="BolTD VMid TextCenter" style="width: 50%; height: 28px;">
+                                    100
+                                </div>
+                            </div>
+                        </div>
+                        <!-- PACKAGE -->
+                    </div>
+                </div>
+                <div class="BolTR">
+                    <div class="BolTD BorderBottom BorderRight VMid TextCenter" style="height: 28px;">
+                        <!-- HANDLING UNIT -->
+                        <div class="BolTable" style="width: 100%;">
+                            <div class="BolTR">
+                                <div class="BolTD BorderRight VMid TextCenter" style="width: 50%; height: 28px;">
+                                    &nbsp;
+                                </div>
+                                <div class="BolTD VMid TextCenter" style="width: 50%; height: 28px;">
+                                    &nbsp;
+                                </div>
+                            </div>
+                        </div>
+                        <!-- HANDLING UNIT -->
+                    </div>
+                    <div class="BolTD BorderBottom BorderRight VMid TextCenter" style="height: 28px;">
+                        <!-- PACKAGE -->
+                        <div class="BolTable" style="width: 100%;">
+                            <div class="BolTR">
+                                <div class="BolTD BorderRight VMid TextCenter" style="width: 50%; height: 28px;">
+                                    &nbsp;
+                                </div>
+                                <div class="BolTD VMid TextCenter" style="width: 50%; height: 28px;">
+                                    &nbsp;
+                                </div>
+                            </div>
+                        </div>
+                        <!-- PACKAGE -->
+                    </div>
+                    <div class="BolTD BorderBottom BorderRight VMid TextCenter" style="height: 28px;">
+                    </div>
+                    <div class="BolTD BorderBottom BorderRight VMid TextCenter" style="height: 28px;">
+                    </div>
+                    <div class="BolTD BorderBottom VMid TextCenter" style="height: 28px;">
+                        &nbsp;
+                    </div>
+                    <div class="BolTD BorderBottom VMid TextRight" style="height: 28px;">
+                        <span class="LightGreyText"><b>RECEIVING</b></span>
+                    </div>
+                </div>
+                <div class="BolTR">
+                    <div class="BolTD BorderBottom BorderRight VMid TextCenter" style="height: 28px;">
+                        <!-- HANDLING UNIT -->
+                        <div class="BolTable" style="width: 100%;">
+                            <div class="BolTR">
+                                <div class="BolTD BorderRight VMid TextCenter" style="width: 50%; height: 28px;">
+                                    &nbsp;
+                                </div>
+                                <div class="BolTD VMid TextCenter" style="width: 50%; height: 28px;">
+                                    &nbsp;
+                                </div>
+                            </div>
+                        </div>
+                        <!-- HANDLING UNIT -->
+                    </div>
+                    <div class="BolTD BorderBottom BorderRight VMid TextCenter" style="height: 28px;">
+                        <!-- PACKAGE -->
+                        <div class="BolTable" style="width: 100%;">
+                            <div class="BolTR">
+                                <div class="BolTD BorderRight VMid TextCenter" style="width: 50%; height: 28px;">
+                                    &nbsp;
+                                </div>
+                                <div class="BolTD VMid TextCenter" style="width: 50%; height: 28px;">
+                                    &nbsp;
+                                </div>
+                            </div>
+                        </div>
+                        <!-- PACKAGE -->
+                    </div>
+                    <div class="BolTD BorderBottom BorderRight VMid TextCenter" style="height: 28px;">
+                    </div>
+                    <div class="BolTD BorderBottom BorderRight VMid TextCenter" style="height: 28px;">
+                    </div>
+                    <div class="BolTD BorderBottom VMid TextCenter" style="height: 28px;">
+                        &nbsp;
+                    </div>
+                    <div class="BolTD BorderBottom VMid TextRight" style="height: 28px;">
+                        <span class="LightGreyText"><b>STAMP SPACE</b></span>
+                    </div>
+                </div>
+                <div class="BolTR">
+                    <div class="BolTD BorderBottom BorderRight VMid TextCenter" style="height: 28px;">
+                        <!-- HANDLING UNIT -->
+                        <div class="BolTable" style="width: 100%;">
+                            <div class="BolTR">
+                                <div class="BolTD BorderRight VMid TextCenter" style="width: 50%; height: 28px;">
+                                    &nbsp;
+                                </div>
+                                <div class="BolTD VMid TextCenter GreyPatch" style="width: 50%; height: 28px;">
+                                    &nbsp;
+                                </div>
+                            </div>
+                        </div>
+                        <!-- HANDLING UNIT -->
+                    </div>
+                    <div class="BolTD BorderBottom BorderRight VMid TextCenter" style="height: 28px;">
+                        <!-- PACKAGE -->
+                        <div class="BolTable" style="width: 100%;">
+                            <div class="BolTR">
+                                <div class="BolTD BorderRight VMid TextCenter" style="width: 50%; height: 28px;">
+                                   <span class="wmsCustomTag" contenteditable="false" id="txtTotalPkgs3">1</span>
+                                </div>
+                                <div class="BolTD VMid TextCenter GreyPatch" style="width: 50%; height: 28px;">
+                                    &nbsp;
+                                </div>
+                            </div>
+                        </div>
+                        <!-- PACKAGE -->
+                    </div>
+                    <div class="BolTD BorderBottom BorderRight VMid TextCenter" style="height: 28px;">
+                        <span class="wmsCustomTag" contenteditable="false" id="txtTotalWeight3">1</span>
+                    </div>
+                    <div class="BolTD BorderBottom BorderRight VMid TextCenter GreyPatch" style="height: 28px;">
+                    </div>
+                    <div class="BolTD BorderBottom VMid TextCenter BorderRight" style="height: 28px;">
+                        <b>GRAND TOTAL</b>
+                    </div>
+                    <div class="BolTD BorderBottom VMid TextRight" style="height: 28px;">
+                        <!-- PACKAGE -->
+                        <div class="BolTable GreyPatch" style="width: 100%;">
+                            <div class="BolTR">
+                                <div class="BolTD BorderRight VMid TextCenter" style="width: 50%; height: 28px;">
+                                    &nbsp;
+                                </div>
+                                <div class="BolTD VMid TextCenter" style="width: 50%; height: 28px;">
+                                    &nbsp;
+                                </div>
+                            </div>
+                        </div>
+                        <!-- PACKAGE -->
+                    </div>
+                </div>
+            </div>
+            <!-- CARRIER INFORMATION -->
+            <!-- FOOTER SECTION - A -->
+            <div class="BolTable" style="width: 100%;">
+                <div class="BolTR">
+                    <div class="BolTD BorderRight BorderBottom VTop Font14 BoxPadding5" style="width: 50%; height: 105px;">
+                        Where the rate is dependent on value, Shippers are required to state specifically in writing the agreed or declared value of the property as follows:<br />
+                        The agreed or declared value of the property is specifically stated by the shipper to be not exceeding.<br />
+                        <br />
+
+                        __________________per__________________
+                    </div>
+                    <div class="BolTD BorderBottom VTop Font20 BoxPadding5" style="width: 50%; height: 105px;">
+                        <!-- COD Amount -->
+                        <b>COD Amount: $<div class="CodAmount BorderBottom"><span class="wmsCustomTag" id="txtCODAmount">CODAmount</span></div>_________________________</b>
+                        <div class="TextCenter CodCheckOpt">
+                            Fee Terms: Collect:
+                            <div id="txtCODCollect" class="custCheck" onclick="custCheckClick(this);"></div>
+                            Prepaid:
+                            <div class="custCheck" onclick="custCheckClick(this);" id="txtCODPrepaid"></div>
+                        </div>
+                        <div class="TextCenter CodCheckOpt">
+                            Customer check acceptable:
+                            <div class="custCheck" onclick="custCheckClick(this);" id="txtCODCustAccept"></div>
+                        </div>
+                        <!-- COD Amount -->
+                    </div>
+                </div>
+            </div>
+            <!-- FOOTER SECTION - A -->
+            <!-- FOOTER SECTION - B -->
+            <div class="BolTable" style="width: 100%;">
+                <div class="BolTR">
+                    <div class="BolTD BorderBottom VTop Font20 BoxPadding5" style="width: 50%; height: 21px;">
+                        <b>NOTE Liability Limitation for loss or damage in this shipment may be applicable. See 49 U.S.C. $ 14706(c)(1)(A) and (B).</b>
+                    </div>
+                </div>
+            </div>
+            <!-- FOOTER SECTION - B -->
+            <!-- FOOTER SECTION - C -->
+            <div class="BolTable" style="width: 100%;">
+                <div class="BolTR">
+                    <div class="BolTD BorderRight BorderBottom VTop Font14 BoxPadding5" style="width: 50%; height: 70px;">
+                        RECEIVED, subject to individually determined rates or contracts that have been agreed upon in writing between the carrier and shipper, if applicable, otherwise to the rates, classification and rules that have been established by the carrier and are available to the shipper, on request, and to all applicable state and federal regulations. 
+                    </div>
+                    <div class="BolTD BorderBottom VTop Font15 BoxPadding5" style="width: 50%; height: 70px;">
+                        The carrier shall not make delivery of this shipment without payment of freight and all other lawful charges.<br />
+
+                        <img src="" id="imgShipper" width="200" height="100"  onerror="hideSignature(this);" onload="showSignature(this);"/><b>Shipper Signature</b>
+                    </div>
+                </div>
+            </div>
+            <!-- FOOTER SECTION - C -->
+            <!-- FOOTER SECTION - D -->
+            <div class="BolTable" style="width: 100%;">
+                <div class="BolTR">
+                    <div class="BolTD BorderRight BorderBottom VTop Font20 BoxPadding5" style="width: 378px; height: 182px;">
+                        <b>SHIPPER SIGNATURE/DATE</b>
+                        <span class="Font14">
+                            <br />
+                            This is to certify that the above named materials are properly classified, described, packaged, marked and labeled, and are in proper condition for transportation according to the applicable regulations of the U.S. DOT.</span><br />
+                        <br />
+                        <b><span class="wmsCustomTag" contenteditable="true" style="background-color: LightGray;">CurrentDate</span></b>
+                    </div>
+                    <div class="BolTD BorderRight BorderBottom VTop" style="width: 378px; height: 182px;">
+                        <!-- Checkbox -->
+                        <div class="BolTable" style="width: 100%;">
+                            <div class="BolTR">
+                                <div class="BolTD" style="width: 50%;">
+                                    <u>Trailer Loaded</u>
+                                    <div class="FooterCheck">
+                                        <div class="custCheck" id="txtTrailerByShipper" onclick="custCheckClick(this);"></div>
+                                        By Shipper
+                                    </div>
+                                    <div class="FooterCheck">
+                                        <div class="custCheck"  id="txtTrailerByDriver" onclick="custCheckClick(this);"></div>
+                                        By Driver
+                                    </div>
+                                </div>
+                                <div class="BolTD" style="width: 50%;">
+                                    <u>Freight Counted</u>
+                                    <div class="FooterCheck">
+                                        <div class="custCheck"  id="txtFreightByShipper" onclick="custCheckClick(this);"></div>
+                                        By Shipper
+                                    </div>
+                                    <div class="FooterCheck">
+                                        <div class="custCheck"  id="txtFreightByDriver" onclick="custCheckClick(this);"></div>
+                                        By Driver/Pallets Said
+                                    </div>
+                                    <div class="FooterCheck">
+                                        <div class="custCheck"  id="txtFreightByPieces" onclick="custCheckClick(this);"></div>
+                                        By Driver/Pieces
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Checkbox -->
+                    </div>
+                    <div class="BolTD BorderBottom VTop BoxPadding5" style="height: 182px;">
+                        <b>CARRIER SIGNATURE/PICKUP DATE</b>
+                        <span class="Font14 ">
+                            <div class="TextCenter">
+                                <br />
+                                Carrier acknowledges receipt of packages and required placards. Carrier certifies emergency response information was made available and/or carrier has the U.S. DOT emergency response guidebook or equivalent documentation in the vehicle.
+                            </div>
+                            <br />
+                            <img src="" id="imgCarrier" width="200" height="100" onerror="hideSignature(this);" onload="showSignature(this);" />
+                            <br />
+                            <br />
+                            <br />
+
+
+
+                            <b><u><i>Property described above is received in good order, except as noted</i></u></b></span>
+                    </div>
+                </div>
+            </div>
+            <!-- FOOTER SECTION - D -->
+        </div>
+        <!-- Enter Your Body Content Here -->
+
+    </form>
+
+</body>
+</html>

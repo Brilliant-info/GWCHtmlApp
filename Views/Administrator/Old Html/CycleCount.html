@@ -1,0 +1,606 @@
+<div id="pnlCycleCount" style="display: none;">
+    <!-- Content Holder -->
+    <div class="wms-srv-content-area pnlInbound" id="pnlAppointmentList">
+        <!-- Content Area -->
+
+        <div class="container-fluid wms-srv-dashboard-panel">
+            <div class="row">
+                <div class="col-md-4 nopadding">
+                    <!-- Page Title -->
+                    <div class="wms-srv-page-title">
+                        <i class="fas fa-list"></i><span class="wms-srv-data-title">Cycle Count List</span>
+                    </div>
+                    <!-- Page Title -->
+                </div>
+                <div class="col-md-8 nopadding">
+                </div>
+            </div>
+        </div>
+
+        <!-- Head Grid -->
+        <div class="wms-srv-grid-holder pnlWmsHead" id="pnlWmsHead" style="display: none;">
+            <div class="wms-srv-grid">
+                <!-- Object Head Data Will be Here -->
+            </div>
+        </div>
+        <br>
+        <!-- Head Grid -->
+
+        <!-- Grid -->
+        <div class="wms-srv-obj-main-grid pnlWmsDetail">
+            <div class="wms-srv-grid-holder">
+                <div class="wms-srv-grid-action-panel">
+                    <div class="wms-srv-search">
+                        <label>Search Filter :- </label>
+                        <select class="wms-srv-input wms-srv-search-filter" id="ddlCycleCountSearch">
+                            <option value="">-- Select All--</option>
+                            <option value="PlanID">Plan Id</option>
+                            <option value="Title">Plan Title</option>
+                            <option value="creationdate">Date</option>
+                            <option value="countbasis">Count Basis</option>
+                            <option value="StatusName">Status</option>
+                        </select>
+                        <input type="text" value="" class="wms-srv-input wms-srv-simple-search" style="margin-left:5px;"
+                            id="txtCycleCountSearch"><a href="#" title="Search" style="margin-right: 17px;"
+                            data-prefix="SE" onclick="SearchCycleCount()" ;><i class="fas fa-search"></i></a>
+                        <a href="#" title="Cancel" class="wms-srv-cancel" data-prefix="CN"><i
+                                class="fas fa-times-circle" onclick="clearSearchFilter();"></i></a>
+                    </div>
+                    <button class="wms-srv-input wms-srv-button wms-srv-highlight-btn" title="Add New" data-prefix="AN"
+                        type="button" onclick="addCycleCount();" style="display: none;"> <i
+                            class="fas fa-plus"></i><span>Add
+                            New</span></button>
+                    <div class="wms-srv-grid-title">
+                        <i class="fas fa-list" style="font-size: 17px;"></i> Cycle Count List
+                    </div>
+                </div>
+                <div class="wms-srv-grid-scroller" style="width: 100%;">
+
+                    <div class="wms-srv-grid" id="GridBind">
+
+                    </div>
+                    <div class="wms-srv-grid" data-gridobjectid="gridObject_Appointment_Book_Book">
+                        <!-- <div class="wms-srv-grid-header">
+                            <div class="wms-srv-grid-cell wms-align">Plan Id</div>
+                            <div class="wms-srv-grid-cell wms-align">Plan Title</div>
+                            <div class="wms-srv-grid-cell wms-align">Date</div>
+                            <div class="wms-srv-grid-cell wms-align">Count Basis</div>
+                            <div class="wms-srv-grid-cell wms-align">Status</div>
+                            <div class="wms-srv-grid-cell wms-align">Active</div>
+                            <div class="wms-srv-grid-cell wms-align">Action</div>
+                        </div> -->
+                        <!-- <div class="wms-srv-grid-row wms-srv-edit" id="wms-srv-add-new" style="display:none;">
+                            <div class="wms-srv-grid-cell"><input type="text" data-prefix="SESKU" data-id="" value=""
+                                    class="wms-srv-grid-cell-input"><a href="#"></a></div>
+                            <div class="wms-srv-grid-cell"><input type="text" data-prefix="SESKU" data-id="" value=""
+                                    class="wms-srv-grid-cell-input"><a href="#"></a></div>
+                            <div class="wms-srv-grid-cell"><input type="text" data-prefix="SESKU" data-id="" value=""
+                                    class="wms-srv-grid-cell-input"><a href="#"></a></div>
+                            <div class="wms-srv-grid-cell"><input type="text" data-prefix="SESKU" data-id="" value=""
+                                    class="wms-srv-grid-cell-input"><a href="#"></a></div>
+                            <div class="wms-srv-grid-cell">
+                                <div class="wms-srv-suggestion-holder" style="display:inline-flexbox; width: 100px;">
+                                    <input type="checkbox" data-prefix="SESKU" data-id="" value=""
+                                        class="wms-srv-grid-cell-input notranslate"><a href="#">Yes</a>
+                                    <input type="checkbox" data-prefix="SESKU" data-id="" value=""
+                                        class="wms-srv-grid-cell-input notranslate"><a href="#">No</a>
+                                </div>
+                            </div>
+                            <div class="wms-srv-grid-cell">
+                                <div class="wms-srv-grid-action">
+                                    <a href="#" title="Save" class="wms-srv-save" data-prefix="SV"
+                                        onclick="saveCycleCountRecord();">
+                                        <i class="fas fa-check-circle"></i></a>
+                                    <div class="wms-srv-action-sep">|</div>
+                                    <a href="#" title="Cancel" class="wms-srv-cancel" data-prefix="CN"
+                                        onclick="hideAddCycleCount();">
+                                        <i class="fas fa-times-circle"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="wms-srv-grid-row wms-align" id="wms-srv-beforeedit-CycleCount">
+                            <div class="wms-srv-grid-cell">30025412</div>
+                            <div class="wms-srv-grid-cell">30025463</div>
+                            <div class="wms-srv-grid-cell">11/09/2022</div>
+                            <div class="wms-srv-grid-cell">Product</div>
+                            <div class="wms-srv-grid-cell">Completed</div>
+                            <div class="wms-srv-grid-cell"> YES</div>
+                            <div class="wms-srv-grid-cell">
+                                <div class="wms-srv-grid-action">
+                                    <a href="#" title="Edit" class="wms-srv-save" data-prefix="SV"><i class="fas fa-edit"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="wms-srv-grid-row wms-align" id="wms-srv-beforeedit-CycleCount1">
+                            <div class="wms-srv-grid-cell">22036541</div>
+                            <div class="wms-srv-grid-cell">20223456</div>
+                            <div class="wms-srv-grid-cell">25/06/2022</div>
+                            <div class="wms-srv-grid-cell">Product</div>
+                            <div class="wms-srv-grid-cell">Completed</div>
+                            <div class="wms-srv-grid-cell">YES</div>
+                            <div class="wms-srv-grid-cell">
+                                <div class="wms-srv-grid-action">
+                                    <a href="#" title="Edit" class="wms-srv-save" data-prefix="SV"><i class="fas fa-edit"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="wms-srv-grid-row  wms-align" id="wms-srv-beforeedit-CycleCount2">
+                            <div class="wms-srv-grid-cell">11025654</div>
+                            <div class="wms-srv-grid-cell">11236599</div>
+                            <div class="wms-srv-grid-cell">30/01/2023</div>
+                            <div class="wms-srv-grid-cell">Product</div>
+                            <div class="wms-srv-grid-cell">Completed</div>
+                            <div class="wms-srv-grid-cell"> NO</div>
+                            <div class="wms-srv-grid-cell">
+                                <div class="wms-srv-grid-action">
+                                    <a href="#" title="Edit" class="wms-srv-save" data-prefix="SV"><i class="fas fa-edit"></i></a>
+                                </div> 
+                            </div>
+                        </div>
+                        -->
+                        <!-- 
+                        <div class="wms-srv-grid-row wms-align" id="wms-srv-beforeedit-CycleCount3">
+                            <div class="wms-srv-grid-cell">30214563</div>
+                            <div class="wms-srv-grid-cell">32012336</div>
+                            <div class="wms-srv-grid-cell">21/12/2022</div>
+                            <div class="wms-srv-grid-cell">Product</div>
+                            <div class="wms-srv-grid-cell">Completed</div>
+                            <div class="wms-srv-grid-cell"> YES</div>
+                            <div class="wms-srv-grid-cell">
+                                <div class="wms-srv-grid-action">
+                                    <a href="#" title="Edit" class="wms-srv-save" data-prefix="SV"><i class="fas fa-edit"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="wms-srv-grid-row  wms-align" id="wms-srv-beforeedit-CycleCount4">
+                            <div class="wms-srv-grid-cell">22013623</div>
+                            <div class="wms-srv-grid-cell">22014596</div>
+                            <div class="wms-srv-grid-cell">15/08/2022</div>
+                            <div class="wms-srv-grid-cell">Product</div>
+                            <div class="wms-srv-grid-cell">Completed</div>
+                            <div class="wms-srv-grid-cell">NO</div>
+                            <div class="wms-srv-grid-cell">
+                                <div class="wms-srv-grid-action">
+                                    <a href="#" title="Edit" class="wms-srv-save" data-prefix="SV"><i class="fas fa-edit"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="wms-srv-grid-row wms-align" id="wms-srv-beforeedit-CycleCount5">
+                            <div class="wms-srv-grid-cell">30023589</div>
+                            <div class="wms-srv-grid-cell">30021256</div>
+                            <div class="wms-srv-grid-cell">06/09/2001</div>
+                            <div class="wms-srv-grid-cell">Product</div>
+                            <div class="wms-srv-grid-cell">Completed</div>
+                            <div class="wms-srv-grid-cell">YES</div>
+                            <div class="wms-srv-grid-cell">
+                                <div class="wms-srv-grid-action">
+                                    <a href="#" title="Edit" class="wms-srv-save" data-prefix="SV"><i class="fas fa-edit"></i></a>
+                                </div>
+                            </div> -->
+                    </div>
+                </div>
+            </div>
+            <div class="wms-srv-grid-pager" id="pagingCycleCount">
+                <span class="wms-srv-pager-records">1-1 of 82 Records</span>
+                <span class="wms-srv-empty-space"></span>
+                <span class="wms-srv-pager-links"><a href="#" data-page="firstpage" title="First Page"><i
+                            class="fas fa-angle-double-left"></i></a><a href="#" data-page="previous"></a><a href="#"
+                        class="wms-srv-active" data-page="1">1</a><a href="#" data-page="2">2</a><a href="#"
+                        data-page="3">3</a><a href="#" data-page="4">4</a><a href="#" data-page="5">5</a><a href="#"
+                        data-page="6">6</a><a href="#" data-page="7">7</a><a href="#" data-page="8">8</a><a href="#"
+                        data-page="9">9</a><a href="#" data-page="next"></a><a href="#" data-page="lastpage"
+                        title="Last Page"><i class="fas fa-angle-double-right"></i></a></span>
+                <span class="wms-srv-empty-space"></span>
+                <input type="text" name="txtGridPageNo" class="wms-srv-input notranslate" value="0"
+                    style="width: 80px;">
+                <a href="#" title="Jump To" class="wms-srv-pager-go"><i class="fas fa-play-circle"></i></a>
+            </div>
+        </div>
+    </div>
+    <!-- Grid -->
+    <!-- Content Area -->
+</div>
+<!-- Content Holder -->
+</div>
+
+<!-- Create CycleCount Order Pop-up-->
+<div class="wms-srv-popup-holder" id="wms-srv-order-popup" style="display: none;">
+    <div class="wms-srv-popup-bg">
+    </div>
+    <div class="wms-srv-popup">
+        <div class="wms-srv-popup-content">
+            <!-- Popup Title -->
+            <div class="wms-srv-popup-title">
+                <div class="wms-srv-page-title">
+                    <i class="fas fa-list"></i><span class="wms-srv-data-title"> Cycle Count Detail</span>
+                </div>
+                <a href="#" title="Close" id="wms-srv-order-popup-close" class="wms-srv-popup-close"><i
+                        class="fas fa-times-circle"></i></a>
+            </div>
+            <!-- Popup Title -->
+            <div class="wms-srv-popup-content-body" id="wms-srv-popup-content-body">
+                <div id="popupContentDocument">
+                    <div id="pnlCreateCycleCount">
+                        <!-- Grid -->
+                        <div class="wms-srv-grid-holder pnlWmsHead" id="pnlWmsHead">
+                            <div class="wms-srv-grid">
+                                <!-- Object Head Data Will be Here -->
+                                <div class="wms-srv-grid-header">
+                                    <div class="wms-srv-grid-cell wms-align">Plan Id</div>
+                                    <div class="wms-srv-grid-cell wms-align">Plan Title</div>
+                                    <div class="wms-srv-grid-cell wms-align">Date</div>
+                                    <div class="wms-srv-grid-cell wms-align">Count Basis</div>
+                                    <div class="wms-srv-grid-cell wms-align">Count By</div>
+                                    <div class="wms-srv-grid-cell wms-align">Status</div>
+                                    <div class="wms-srv-grid-cell wms-align">Active</div>
+                                    <div class="wms-srv-grid-cell wms-align">Action</div>
+                                </div>
+                                <div class="wms-srv-grid-row">
+                                    <div class="wms-srv-grid-cell">
+                                        <input type="text" value="" id="txtPlanID" disabled
+                                            class="wms-srv-grid-cell-input">
+                                    </div>
+                                    <div class="wms-srv-grid-cell">
+                                        <input type="text" value="" id="txtPlanTitle" disabled
+                                            class="wms-srv-grid-cell-input">
+                                    </div>
+                                    <div class="wms-srv-grid-cell">
+                                        <input type="text" id="txtDate" value="" disabled
+                                            class="wms-srv-grid-cell-input">
+                                    </div>
+                                    <div class="wms-srv-grid-cell">
+                                        <input type="text" id="txtCountBasis" value="" disabled
+                                            class="wms-srv-grid-cell-input">
+                                    </div>
+                                    <div class="wms-srv-grid-cell">
+                                        <input type="text" id="txtCountBy" value="" disabled
+                                            class="wms-srv-grid-cell-input">
+                                    </div>
+                                    <div class="wms-srv-grid-cell">
+                                        <select type="text" class="wms-srv-grid-cell-input" id="ddlStatus">
+                                            <option value="">-- Select --</option>
+                                            <option value="Planned">Planned</option>
+                                            <option value="Completed">Completed</option>
+                                            <option value="InProgress">In Progress</option>
+                                        </select>
+                                    </div>
+                                    <div class="wms-srv-grid-cell">
+                                        <input type="checkbox" value="" class="wms-srv-grid-cell-input" id="chkActive">
+                                    </div>
+                                    <div class="wms-srv-grid-cell">
+                                        <div class="wms-srv-grid-action">
+                                            <i class="fas fa-check-circle" style="color:black !important"
+                                                onclick="UpdateCycleCountDetail();"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <!-- Grid -->
+
+                    <!-- Grid -->
+                    <br />
+                    <!-- Grid -->
+                    <!-- Grid -->
+
+                    <!-- Header Details -->
+                    <!-- Grid -->
+
+                    <!--  Page Record Info -->
+                    <div class="wms-srv-obj-main-grid pnlWmsDetail">
+                        <div class="wms-srv-grid-holder">
+                            <div class="wms-srv-grid-action-panel">
+                                <div class="wms-srv-search" style="display: none;">
+                                    <label>Search : </label>
+                                    <input type="text" value="" class="wms-srv-input wms-srv-simple-search"><a href="#"
+                                        title="Search" data-prefix="SE"><i class="fas fa-search"></i></a>
+                                </div>
+                                <button class="wms-srv-input wms-srv-button wms-srv-highlight-btn"
+                                    style="display: none;" title="Export" data-prefix="AN" type="button"> <i
+                                        class="fas fa-plus"></i><span>Export</span></button>
+                                <div class="wms-srv-grid-title">
+                                    <i class="fas fa-list" style="font-size: 17px;"></i> Cycle Count SKU
+                                </div>
+                                <div>
+                                    <button class="wms-srv-input wms-srv-button" style="align-items: right;"
+                                        type="button" onclick="printBarcodeLabelForCycleCount();" data-orderid="0"
+                                        id="btnPrintCycleBarcodeLabel"><i class="fas fa-print"></i><span>Print
+                                            Selected</span></button>
+                                </div>
+                            </div>
+                            <div class="wms-srv-grid-scroller" style="width: 100%;">
+                                <div class="wms-srv-grid" id="PopupGridBind">
+
+                                </div>
+                                <div class="wms-srv-grid" data-gridobjectid="gridObject_Appointment_Book_Book">
+                                    <!-- <div class="wms-srv-grid-header">
+                                                <div class="wms-srv-grid-cell wms-align">S.R.No.</div>
+                                                <div class="wms-srv-grid-cell wms-align">Location</div>
+                                                <div class="wms-srv-grid-cell wms-align">Pallet</div>
+                                                <div class="wms-srv-grid-cell wms-align" style="width: 215px;">SKU Code</div>
+                                                <div class="wms-srv-grid-cell wms-align">System Qty</div>
+                                                <div class="wms-srv-grid-cell wms-align">Allocated Qty</div>
+                                                <div class="wms-srv-grid-cell wms-align">Actual Qty</div>
+                                                <div class="wms-srv-grid-cell wms-align">Difference Qty</div>
+                                                <div class="wms-srv-grid-cell wms-align">Adjustment Qty</div>
+                                                <div class="wms-srv-grid-cell wms-align">Adjustment Loc</div>
+                                                <div class="wms-srv-grid-cell wms-align">Remark</div>
+                                                <div class="wms-srv-grid-cell wms-align">Reason</div>
+                                            </div>
+                                            <div class="wms-srv-grid-row wms-srv-edit" id="wms-srv-add-new"
+                                                style="display:none;">
+                                                <div class="wms-srv-grid-cell"><input type="text" data-prefix="SESKU"
+                                                        data-id="" value="" class="wms-srv-grid-cell-input"><a
+                                                        href="#"></a></div>
+                                                <div class="wms-srv-grid-cell"><input type="text" data-prefix="SESKU"
+                                                        data-id="" value="" class="wms-srv-grid-cell-input"><a
+                                                        href="#"></a></div>
+                                                <div class="wms-srv-grid-cell"><input type="text" data-prefix="SESKU"
+                                                        data-id="" value="" class="wms-srv-grid-cell-input"><a
+                                                        href="#"></a></div>
+                                                <div class="wms-srv-grid-cell"><input type="text" data-prefix="SESKU"
+                                                        data-id="" value="" class="wms-srv-grid-cell-input"><a
+                                                        href="#"></a></div>
+                                                <div class="wms-srv-grid-cell">
+                                                    <div class="wms-srv-suggestion-holder"
+                                                        style="display:inline-flexbox; width: 100px;">
+                                                        <input type="checkbox" data-prefix="SESKU" data-id="" value=""
+                                                            class="wms-srv-grid-cell-input notranslate"><a
+                                                            href="#">Yes</a>
+                                                        <input type="checkbox" data-prefix="SESKU" data-id="" value=""
+                                                            class="wms-srv-grid-cell-input notranslate"><a
+                                                            href="#">No</a>
+                                                    </div>
+                                                </div>
+                                                <div class="wms-srv-grid-cell">
+                                                    <div class="wms-srv-grid-action">
+                                                        <a href="#" title="Save" class="wms-srv-save" data-prefix="SV"
+                                                            onclick="saveCycleCountRecord();">
+                                                            <i class="fas fa-check-circle"></i></a>
+                                                        <div class="wms-srv-action-sep">|</div>
+                                                        <a href="#" title="Cancel" class="wms-srv-cancel"
+                                                            data-prefix="CN" onclick="hideAddCycleCount();">
+                                                            <i class="fas fa-times-circle"></i></a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="wms-srv-grid-row wms-align" id="wms-srv-beforeedit-CycleCount">
+                                                <div class="wms-srv-grid-cell">1</div>
+                                                <div class="wms-srv-grid-cell">Sl463</div>
+                                                <div class="wms-srv-grid-cell">ST-105642</div>
+                                                <div class="wms-srv-grid-cell">L-1028</div>
+                                                <div class="wms-srv-grid-cell">0.00</div>
+                                                <div class="wms-srv-grid-cell">0.00</div>
+                                                <div class="wms-srv-grid-cell">50.00</div>
+                                                <div class="wms-srv-grid-cell">40.00</div>
+                                                <div class="wms-srv-grid-cell"></div>
+                                                <div class="wms-srv-grid-cell"></div>
+                                                <div class="wms-srv-grid-cell"></div>
+                                                <div class="wms-srv-grid-cell"></div>
+                                            </div>
+                                            <div class="wms-srv-grid-row wms-align" id="wms-srv-beforeedit-CycleCount1">
+                                                <div class="wms-srv-grid-cell">2</div>
+                                                <div class="wms-srv-grid-cell">Sl371</div>
+                                                <div class="wms-srv-grid-cell">ST-524568</div>
+                                                <div class="wms-srv-grid-cell">L-20014</div>
+                                                <div class="wms-srv-grid-cell">0.00</div>
+                                                <div class="wms-srv-grid-cell">0.00</div>
+                                                <div class="wms-srv-grid-cell">50.00</div>
+                                                <div class="wms-srv-grid-cell">40.00</div>
+                                                <div class="wms-srv-grid-cell"></div>
+                                                <div class="wms-srv-grid-cell"></div>
+                                                <div class="wms-srv-grid-cell"></div>
+                                                <div class="wms-srv-grid-cell"></div>
+                                            </div>
+                                            <div class="wms-srv-grid-row  wms-align"
+                                                id="wms-srv-beforeedit-CycleCount2">
+                                                <div class="wms-srv-grid-cell">3</div>
+                                                <div class="wms-srv-grid-cell">Sl212</div>
+                                                <div class="wms-srv-grid-cell">ST-385423</div>
+                                                <div class="wms-srv-grid-cell">L-6538</div>
+                                                <div class="wms-srv-grid-cell">0.00</div>
+                                                <div class="wms-srv-grid-cell">0.00</div>
+                                                <div class="wms-srv-grid-cell">50.00</div>
+                                                <div class="wms-srv-grid-cell">40.00</div>
+                                                <div class="wms-srv-grid-cell"></div>
+                                                <div class="wms-srv-grid-cell"></div>
+                                                <div class="wms-srv-grid-cell"></div>
+                                                <div class="wms-srv-grid-cell"></div>
+                                            </div>
+                                            <div class="wms-srv-grid-row wms-align" id="wms-srv-beforeedit-CycleCount3">
+                                                <div class="wms-srv-grid-cell">4</div>
+                                                <div class="wms-srv-grid-cell">Sl896</div>
+                                                <div class="wms-srv-grid-cell">ST-334785</div>
+                                                <div class="wms-srv-grid-cell">L-2157</div>
+                                                <div class="wms-srv-grid-cell">0.00</div>
+                                                <div class="wms-srv-grid-cell">0.00</div>
+                                                <div class="wms-srv-grid-cell">50.00</div>
+                                                <div class="wms-srv-grid-cell">40.00</div>
+                                                <div class="wms-srv-grid-cell"></div>
+                                                <div class="wms-srv-grid-cell"></div>
+                                                <div class="wms-srv-grid-cell"></div>
+                                                <div class="wms-srv-grid-cell"></div>
+                                            </div>
+                                            <div class="wms-srv-grid-row  wms-align"
+                                                id="wms-srv-beforeedit-CycleCount4">
+                                                <div class="wms-srv-grid-cell">5</div>
+                                                <div class="wms-srv-grid-cell">Sl592</div>
+                                                <div class="wms-srv-grid-cell">ST-125467</div>
+                                                <div class="wms-srv-grid-cell">L-4786</div>
+                                                <div class="wms-srv-grid-cell">0.00</div>
+                                                <div class="wms-srv-grid-cell">0.00</div>
+                                                <div class="wms-srv-grid-cell">50.00</div>
+                                                <div class="wms-srv-grid-cell">40.00</div>
+                                                <div class="wms-srv-grid-cell"></div>
+                                                <div class="wms-srv-grid-cell"></div>
+                                                <div class="wms-srv-grid-cell"></div>
+                                                <div class="wms-srv-grid-cell"></div>
+                                            </div>
+                                            <div class="wms-srv-grid-row wms-align" id="wms-srv-beforeedit-CycleCount5">
+                                                <div class="wms-srv-grid-cell">6</div>
+                                                <div class="wms-srv-grid-cell">Sl514</div>
+                                                <div class="wms-srv-grid-cell">SL-336520</div>
+                                                <div class="wms-srv-grid-cell">L-5632</div>
+                                                <div class="wms-srv-grid-cell">0.00</div>
+                                                <div class="wms-srv-grid-cell">0.00</div>
+                                                <div class="wms-srv-grid-cell">50.00</div>
+                                                <div class="wms-srv-grid-cell">40.00</div>
+                                                <div class="wms-srv-grid-cell"></div>
+                                                <div class="wms-srv-grid-cell"></div>
+                                                <div class="wms-srv-grid-cell"></div>
+                                                <div class="wms-srv-grid-cell"></div>
+                                            </div> -->
+                                </div>
+                            </div>
+                            <div class="wms-srv-grid-pager" id="CycleCountDetail">
+                                <span class="wms-srv-pager-records">1-1 of 82 Records</span>
+                                <span class="wms-srv-empty-space"></span>
+                                <span class="wms-srv-pager-links"><a href="#" data-page="firstpage"
+                                        title="First Page"><i class="fas fa-angle-double-left"></i></a><a href="#"
+                                        data-page="previous"></a><a href="#" class="wms-srv-active"
+                                        data-page="1">1</a><a href="#" data-page="2">2</a><a href="#"
+                                        data-page="3">3</a><a href="#" data-page="4">4</a><a href="#"
+                                        data-page="5">5</a><a href="#" data-page="6">6</a><a href="#"
+                                        data-page="7">7</a><a href="#" data-page="8">8</a><a href="#"
+                                        data-page="9">9</a><a href="#" data-page="next"></a><a href="#"
+                                        title="Last Page" data-page="lastpage"><i
+                                            class="fas fa-angle-double-right"></i></a></span>
+                                <span class="wms-srv-empty-space"></span>
+                                <input type="text" name="txtGridPageNo" class="wms-srv-input notranslate" value="0"
+                                    style="width: 80px;">
+                                <a href="#" title="Jump To" class="wms-srv-pager-go"><i
+                                        class="fas fa-play-circle"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Grid -->
+                    <div class="wms-srv-grid-holder pnlSearchList" id="pnlSearchList" style="display: none;">
+                        <div class="wms-srv-grid-action-panel" style="display: none;">
+                            <!-- Action Buttons Will be Here -->
+                        </div>
+                        <div class="wms-srv-grid-scroller" style="width: 100%;">
+                            <div class="wms-srv-grid">
+                                <!-- Header Data Will be Here -->
+                            </div>
+                        </div>
+                        <div class="wms-srv-grid-pager">
+                            <span class="wms-srv-pager-records">
+                                <!-- Page Record Info -->
+                            </span>
+                            <span class="wms-srv-empty-space"></span>
+                            <span class="wms-srv-pager-links">
+                                <!-- Pagger Links -->
+                            </span>
+                            <span class="wms-srv-empty-space"></span>
+                            <input type="text" name="txtGridPageNo" class="wms-srv-input" value="0"
+                                style="width: 80px;">
+                            <a href="#" title="Jump To" class="wms-srv-pager-go"><i class="fas fa-play-circle"></i></a>
+                        </div>
+                    </div>
+                    <!-- Grid -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Create CycleCount Order Pop-up-->
+
+
+
+
+    <!-- Barcode Print Label -->
+    <div class="wms-srv-popup-holder wms-srv-grnprintbarcode-popup" id="wms-srv-grnprintbarcode-popup"
+        style="display: none;z-index: 999999;">
+        <div class="wms-srv-popup-bg">
+        </div>
+        <div class="wms-srv-popup">
+            <div class="wms-srv-popup-content">
+                <!-- Popup Title -->
+                <div class="wms-srv-popup-title">
+                    <div class="wms-srv-page-title">
+                        <i class="fas fa-list"></i><span>Barcode Print Label</span>
+                    </div>
+                    <div id="btngrnPrint" style="text-align: right;padding-right: 14px;">
+                        <input type="hidden" id="hdnCurrentLabelPrintType" value="" />
+                        <div class="pnlGenerateSerialLabelHolder">
+                            <div id="pnlGenerateSerialLabels">
+                                Serial From:
+                                <input id="txtSerialBarcodeFrom" value="" placeholder="" />
+                                To:
+                                <input id="txtSerialBarcodeTo" value="" placeholder="" />
+                                <button class="wms-srv-input wms-srv-button" id="btnGenerateSerialNoLabel"
+                                    style="align-items: right;" type="button"><i class="fas fa-print"></i><span>Generate
+                                        Label</span></button>
+                            </div>
+                        </div>
+                        <div id="pnlPrintLabelSize">
+                            <div style="display: none;">
+                                <select id="txtPrintBarcodeTypeTransport" class="txtPrintBarcodeTypeTransport"
+                                    onchange="changeBarcodePrintFormat();">
+                                    <option value="">-- Select Barcode Type --</option>
+                                    <option value="1D - 128" selected="selected">1D - 128</option>
+                                    <option value="2D - 128">2D - 128</option>
+                                </select>
+                                <select id="txtPrintPaperSizeTransport" class="txtPrintPaperSizeTransport">
+                                    <option value="">-- Select Label Size --</option>
+                                    <option value="3x2">3x2</option>
+                                    <option value="4x2">4x2</option>
+                                    <option value="4x6">4x6</option>
+                                </select>
+                            </div>
+                            <button class="wms-srv-input wms-srv-button" style="align-items: right;" type="button"
+                                onclick="changePrintTemplate();" id="btnChangePrintTemplate" data-objecttype=""><i
+                                    class="fas fa-print"></i><span>Change Template</span></button>
+                            <button class="wms-srv-input wms-srv-button" style="align-items: right;" type="button"
+                                onclick="sendDataToPrinter();" id=""><i
+                                    class="fas fa-print"></i><span>Print</span></button>
+                        </div>
+                    </div>
+                    <a href="#" id="wms-srv-grnprintbarcode-popup-close" class="wms-srv-popup-close"><i
+                            class="fas fa-times-circle"></i></a>
+                </div>
+                <!-- Popup Title -->
+                <div class="wms-srv-popup-content-body" id="wms-srv-popup-content-body">
+                    <div id="popupContentprintbarcode">
+                        <div style="text-align: center;">
+                            <Span Id="grnBarcodeID" class="Barcode"></Span>
+                            <Span Id="grnBarcodeTxt" class="BarcodeTxt" style="font-size: 200%;"></Span>
+                            <Span Id="grnBarcodeProdDetails" class="BarcodeTxt" style="font-size: 200%;"></Span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Barcode Print Label  End -->
+
+
+    <!-- Barcode Print Label Template Start -->
+    <div class="wms-srv-popup-holder wms-srv-printtemplate-popup" id="wms-srv-printtemplate-popup"
+        style="display: none;z-index: 999999;">
+        <div class="wms-srv-popup-bg">
+        </div>
+        <div class="wms-srv-popup">
+            <div class="wms-srv-popup-content">
+                <!-- Popup Title -->
+                <div class="wms-srv-popup-title">
+                    <div class="wms-srv-page-title">
+                        <i class="fas fa-list"></i><span>Select Print Template</span>
+                    </div>
+                    <a href="#" id="wms-srv-printtemplate-popup-close" class="wms-srv-popup-close"><i
+                            class="fas fa-times-circle"></i></a>
+                </div>
+                <!-- Popup Title -->
+                <div class="wms-srv-popup-content-body" id="wms-srv-popup-content-body">
+                    <div id="popupContentPrintTemplate">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Barcode Print Label Template End -->

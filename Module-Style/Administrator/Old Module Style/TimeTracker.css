@@ -1,0 +1,126 @@
+body {
+}
+
+.wms-srv-grid-action .switch
+{
+    bottom:12px;
+}
+.switch {
+	position: relative;
+	display: inline-block;
+	width: 60px;
+	height: 33px;
+	margin-bottom: -21px;
+}
+
+ .switch input {
+        opacity: 0;
+        width: 0;
+        height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 2px;
+    left: 21px;
+    right: 3px;
+    bottom: 14px;
+    background-color: #ff462b;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.slider:before {
+        position: absolute;
+        content: "";
+        height: 16px;
+        width: 15px;
+        left: -7px;
+        right: 0px;
+        bottom: 0.5px;
+        background-color: white;
+        -webkit-transition: .4s;
+        transition: .4s;
+        margin-right: 16px;
+}
+
+
+.slider1:before {
+    position: absolute;
+    content: "";
+    height: 16px;
+    width: 15px;
+    left: -8px;
+    right: 0px;
+    bottom: 0.5px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+    box-shadow: 10px 10px 5px 12px lightblue;
+    margin-right: 16px;
+}
+
+input:checked + .slider {
+    background-color: #0bdb2d;
+}
+
+input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+.keyblock{
+    border:solid 1px #636363;
+    padding:7px;
+    border-radius: 7px;
+    background-color:#fbfbfb;
+    display: inline-block;
+    margin-right: 3px;
+    font-size: 11px;
+}
+.keyblock i{
+    margin-left: 3px;
+}
+.btnAddProductKeyword{
+    color: #00acd7;
+}
+.requiredStar {
+    color: #ff0000;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 10px;
+  }
+.pnlAddKeyword{
+    position: absolute;
+    box-shadow: 5px 5px 5px #ccc;
+}
+#pnlNoSkuRecord{
+    border:solid 1px #cccccc;
+    padding:10px;
+    text-align:center;
+    font-size: 13px;
+    font-style: italic;
+}
+.pnlPopupProductListHolder{
+    width:100%;
+    overflow:auto;
+    height:430px;
+}
+.pnlBtnAddSkuHolder{
+    text-align: center;
+    margin-top: 20px;
+}

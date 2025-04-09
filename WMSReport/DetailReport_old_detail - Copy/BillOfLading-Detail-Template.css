@@ -1,0 +1,329 @@
+
+.ob_gPSTT {
+    display: none !important;
+}
+
+/*Grid css*/
+.excel-textbox {
+    background-color: transparent;
+    border: 0px;
+    padding: 0px;
+    outline: 0;
+    font: inherit;
+    width: 91%;
+    padding-top: 4px;
+    padding-right: 2px;
+    padding-bottom: 4px;
+    text-align: right;
+}
+
+.excel-textbox-focused {
+    background-color: #FFFFFF;
+    border: 0px;
+    padding: 0px;
+    outline: 0;
+    font: inherit;
+    width: 91%;
+    padding-top: 4px;
+    padding-right: 2px;
+    padding-bottom: 4px;
+    text-align: right;
+}
+
+.excel-textbox-error {
+    color: #FF0000;
+}
+
+.ob_gCc2 {
+    padding-left: 3px !important;
+}
+
+.ob_gBCont {
+    border-bottom: 1px solid #C3C9CE;
+}
+
+.excel-checkbox {
+    height: 20px;
+    line-height: 20px;
+}
+
+
+/*POR Collapsable Div*/
+.PanelCaption {
+    color: Black;
+    font-size: 13px;
+    font-weight: bold;
+    margin-top: -22px;
+    margin-left: -5px;
+    position: absolute;
+    background-color: White;
+    padding: 0px 2px 0px 2px;
+}
+
+.divHead {
+    border: solid 2px #F5DEB3;
+    width: 99%;
+    text-align: left;
+}
+
+    .divHead h4 {
+        /*color: #33CCFF;*/
+        color: #483D8B;
+        margin: 3px 3px 3px 3px;
+    }
+
+    .divHead a {
+        float: right;
+        margin-top: -15px;
+        margin-right: 5px;
+    }
+
+        .divHead a:hover {
+            cursor: pointer;
+            color: Red;
+        }
+
+.divDetailExpand {
+    border: solid 2px #F5DEB3;
+    border-top: none;
+    width: 99%;
+    padding: 5px 0 5px 0;
+}
+
+.divDetailCollapse {
+    display: none;
+}
+/*End POR Collapsable Div*/
+
+
+.has-js .label_check, .has-js .label_radio {
+    padding-left: 25px;
+    padding-bottom: 10px;
+}
+
+.has-js .label_radio {
+    background: url(../App_Themes/Blue/img/radio-off.png) no-repeat;
+}
+
+.has-js .label_check {
+    background: url("../App_Themes/Blue/img/check-off.png") no-repeat;
+}
+
+.has-js label.c_on {
+    background: url("../App_Themes/Blue/img/check-on.png") no-repeat;
+}
+
+.has-js label.r_on {
+    background: url(../App_Themes/Blue/img/radio-on.png) no-repeat;
+}
+
+.has-js .label_check input, .has-js .label_radio input {
+    position: absolute;
+    left: -9999px;
+}
+
+/*Ratio CM * 70*/
+body,
+html {
+    margin: 0px;
+    padding: 0px;
+}
+
+.BolMain {
+    width: 1274px;
+    /* height: 1869px; */
+    border: solid 1px #000000;
+}
+
+.BolTable {
+    display: table;
+}
+
+.BolTR, .wmsGridRow {
+    display: table-row;
+}
+
+.BolTD {
+    display: table-cell;
+}
+
+.BoxHead {
+    text-align: center;
+    color: #ffffff;
+    background-color: #000000;
+    height: 21px;
+}
+
+.BorderBottom {
+    border-bottom: solid 1px #000000;
+}
+
+.BorderLeft {
+    border-left: solid 1px #000000;
+}
+
+.BorderRight {
+    border-right: solid 1px #000000;
+}
+
+.BorderTop {
+    border-top: solid 1px #000000;
+}
+
+.VTop {
+    vertical-align: top;
+}
+
+.VMid {
+    vertical-align: middle;
+}
+
+.VBot {
+    vertical-align: bottom;
+}
+
+.TextCenter {
+    text-align: center;
+}
+
+.TextRight {
+    text-align: right;
+}
+
+.GreyPatch {
+    background-color: #636363;
+}
+
+.FloatRight {
+    float: right;
+}
+
+.FontHeadContent,
+.FontSubHeadContent {
+    font-size: 20px;
+}
+
+.FontHeadContent {
+    line-height: 1.5;
+}
+
+.FontSubHeadContent {
+    line-height: 1;
+}
+
+.Block {
+    display: block;
+}
+
+.InlineBlock {
+    display: inline-block;
+}
+
+.SmlInfo {
+    font-size: 17px;
+    font-weight: bold;
+    text-decoration: underline;
+    font-style: italic;
+}
+
+.custCheck 
+{
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border: solid 1px #000000;
+    vertical-align: top;
+    text-align: center;
+    font-size: 11px;
+}
+
+.Font20 {
+    font-size: 20px;
+}
+
+.Font17 {
+    font-size: 17px;
+}
+
+.Font15 {
+    font-size: 15px;
+}
+
+.Font14 {
+    font-size: 14px;
+}
+
+.Font12 {
+    font-size: 12px;
+}
+
+.FooterCheck {
+    padding: 5px;
+}
+
+    .FooterCheck .custCheck {
+        margin-right: 5px;
+    }
+
+.CodCheckOpt {
+    margin: 7px;
+    font-weight: bold;
+}
+
+    .CodCheckOpt .custCheck {
+        margin-right: 10px;
+        margin-left: 10px;
+    }
+
+.CodAmount {
+    min-width: 100px;
+    display: inline-block;
+}
+
+.LightGreyText {
+    color: #cccccc;
+}
+
+.BoxPadding5 {
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-bottom: 2px;
+    padding-top: 2px;
+}
+
+.pnlActionBar {
+    text-align: right;
+    padding: 10px;
+}
+
+.pnlActionBar a {
+    display: inline-block;
+    border: solid 1px #00acd7 !important;
+    background-color: #00acd7 !important;
+    color: #ffffff;
+    border-radius: 7px;
+    padding: 5px 7px 5px 7px;
+    font-size: 16px !important;
+    text-decoration: none !important;
+    font-family: Arial;
+}
+
+[contenteditable="true"] {
+    min-width:60px;
+    display:inline-block;
+}
+
+    @media print {
+        body {
+            zoom: 55%;
+        }
+
+        .pnlActionBar {
+            display: none;
+        }
+
+        [contenteditable="true"] {
+            background-color: #ffffff !important;
+            display: inline;
+        }
+    }

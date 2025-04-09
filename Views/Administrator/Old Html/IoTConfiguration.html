@@ -1,0 +1,1568 @@
+<div id="pnlIoTConfiguration" class="wmsMasterTypePage" style="display:none;">
+    <!-- Content Holder -->
+    <div class="wms-srv-content-area pnlInbound">
+        <!-- Content Area -->
+
+        <div class="container-fluid wms-srv-dashboard-panel">
+            <div class="row">
+                <div class="col-md-4 nopadding">
+                    <!-- Page Title -->
+                    <div class="wms-srv-page-title">
+                        <i class="fas fa-list"></i><span class="wms-srv-data-title">IOT Configuration </span>
+                    </div>
+                    <!-- Page Title -->
+                </div>
+                <div class="col-md-8 nopadding">
+                </div>
+            </div>
+        </div>
+
+        <!-- Head Grid -->
+        <div class="wms-srv-grid-holder" style="display: none;">
+            <div class="wms-srv-grid">
+                <!-- Object Head Data Will be Here -->
+            </div>
+        </div>
+        <br>
+        <!-- Head Grid -->
+
+        <!-- Grid -->
+        <div class="wms-srv-obj-main-grid pnlWmsDetail">
+            <div class="wms-srv-grid-holder">
+                <div class="wms-srv-grid-action-panel">
+                    <div class="wms-srv-search">
+                        <label>Search Filter :- </label>
+                        <select class="wms-srv-input wms-srv-search-filter"  id="searchIOT">
+                            <option value="">-- Select All--</option>
+                            <option value="Code">Location </option>
+                            <option value="Pathway">Passage</option>
+                            <option value="Section">Section</option>
+                            <option value="Shelf">Shelf</option>
+                            <option value="devicecode">devicecode</option>
+                        </select>
+                        <input type="text" value="" class="wms-srv-input wms-srv-simple-search" id="valueIOT"><a href="#"
+                            title="Search" data-prefix="SE" onclick="SearchIOTfilter();"><i class="fas fa-search"></i></a>
+                    </div>
+                    <button class="wms-srv-input wms-srv-button wms-srv-highlight-btn" title="Add New" data-prefix="AN"
+                        type="button" style="display: none;"> <i class="fas fa-plus"></i><span>Add
+                            New</span></button>
+                    <div class="wms-srv-grid-title">
+                        <i class="fas fa-list" style="font-size: 17px;"></i> IOT Configuration List
+                    </div>
+                </div>
+                 <div class="wms-srv-grid-scroller" style="width: 100%;">
+
+                    <div class="wms-srv-grid" id="GridBindIOTConfig">
+                        
+                    </div>
+                      <!-- <div class="wms-srv-grid">
+                         <div class="wms-srv-grid-header">
+                            <div class="wms-srv-grid-cell wms-align">Location</div>
+                            <div class="wms-srv-grid-cell wms-align">Passage</div>
+                            <div class="wms-srv-grid-cell wms-align">Section</div>
+                            <div class="wms-srv-grid-cell wms-align">Shelf</div>
+                            <div class="wms-srv-grid-cell wms-align">Device Type</div>
+                            <div class="wms-srv-grid-cell wms-align">Device Code</div>
+                            <div class="wms-srv-grid-cell wms-align">Min Temp </div>
+                            <div class="wms-srv-grid-cell wms-align">Max Temp</div>
+                            <div class="wms-srv-grid-cell wms-align">Min Humidity </div>
+                            <div class="wms-srv-grid-cell wms-align">Max Humidity </div>
+                            <div class="wms-srv-grid-cell wms-align">Current Temp </div>
+                            <div class="wms-srv-grid-cell wms-align">Current Humidity </div>
+
+                            <div class="wms-srv-grid-cell wms-align" style="text-align: center;">Active/Inactive</div>
+                            <div class="wms-srv-grid-cell wms-align" style="text-align: center;">Action</div>
+                        </div>
+                        
+
+                        <div class="wms-srv-grid-row wms-align">
+                            <div class="wms-srv-grid-cell">
+                                <select>
+                                    <option>Location</option>
+                                    <option>Location1</option>
+                                    <option>Location2</option>
+                                </select>
+                            </div>
+                            <div class="wms-srv-grid-cell">
+                                <input type="text" data-prefix="SESKU" data-id="" value="" class="wms-srv-grid-cell-input">
+                            </div>
+                            <div class="wms-srv-grid-cell"><input type="text" data-prefix="SESKU" data-id="" value=""
+                                    class="wms-srv-grid-cell-input"></div>
+                            <div class="wms-srv-grid-cell"><input type="text" data-prefix="SESKU" data-id="" value=""
+                                    class="wms-srv-grid-cell-input"></div>
+                            <div class="wms-srv-grid-cell"> 
+                                <div class="wms-srv-grid-cell">
+                                    <select>
+                                        <option>Temperture Sensor</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="wms-srv-grid-cell"><input type="text" data-prefix="SESKU" data-id="" value=""
+                                    class="wms-srv-grid-cell-input"></div>
+                            <div class="wms-srv-grid-cell"><input type="text" data-prefix="SESKU" data-id="" value=""
+                                    class="wms-srv-grid-cell-input"></div>
+                            
+                            <div class="wms-srv-grid-cell"><input type="text" data-prefix="SESKU" data-id="" value=""
+                                        class="wms-srv-grid-cell-input"></div>
+                            <div class="wms-srv-grid-cell"><input type="text" data-prefix="SESKU" data-id="" value=""
+                                        class="wms-srv-grid-cell-input"></div>
+                            <div class="wms-srv-grid-cell"> <input type="text" data-prefix="SESKU" data-id="" value=""
+                                        class="wms-srv-grid-cell-input"></div>
+                            <div class="wms-srv-grid-cell"> <input type="text" data-prefix="SESKU" data-id="" value=""
+                                            class="wms-srv-grid-cell-input"></div>
+                            <div class="wms-srv-grid-cell"> <input type="text" data-prefix="SESKU" data-id="" value=""
+                                                class="wms-srv-grid-cell-input"></div>                            
+                            
+                            <div class="wms-srv-grid-cell"><input class="wms-srv-grid-cell-input" type="checkbox" id="myCheck1" checked="True" value="" >
+                                </div>
+                        
+                            <div class="wms-srv-grid-cell">
+                                <div class="wms-srv-grid-action">
+                                    <i class="fas fa-check-circle" title="Customer Info" onclick=""></i>
+                                            
+                                </div>
+                            </div>
+                        </div>
+
+                        
+                        <div class="wms-srv-grid-row wms-align" id="wms-srv-beforeedit-IoTConfigopen">
+                            <div class="wms-srv-grid-cell">Loc1</div>
+                            <div class="wms-srv-grid-cell">Passage1</div>
+                            <div class="wms-srv-grid-cell">SEC-1</div>
+                            <div class="wms-srv-grid-cell">Test</div>
+                            <div class="wms-srv-grid-cell">Device123</div>
+                            <div class="wms-srv-grid-cell">Devi-123</div>
+                            <div class="wms-srv-grid-cell">25</div>
+                            <div class="wms-srv-grid-cell">30</div>
+                            <div class="wms-srv-grid-cell">45</div>
+                            <div class="wms-srv-grid-cell">10</div>
+                            <div class="wms-srv-grid-cell">15</div>
+                            <div class="wms-srv-grid-cell">25</div>
+                            <div class="wms-srv-grid-cell"> YES</div>
+                            <div class="wms-srv-grid-cell">
+                                <div class="wms-srv-grid-action">
+                                    <a href="#" title="Edit" class="wms-srv-save" data-prefix="SV" onclick="showEditIoTConfigRow();return false"><i class="fas fa-edit"></i></a>
+                                        <div class="wms-srv-action-sep">|</div>
+                                    <a href="#" title="View" class="wms-srv-save" data-prefix="SV" onclick="openviewPopup();"><i class="fas fa-eye"></i></a>
+                                        <div class="wms-srv-action-sep">|</div>
+                                    <a href="#" title="Temperature" class="wms-srv-save" data-prefix="SV" onclick="TemperturePopup();"><i class="fa fa-thermometer-half"></i></a>
+     
+                                        <div class="wms-srv-action-sep"> | </div>
+                                     <a href="#" title="Humidity"  data-prefix="SV" onclick="HumadityPopup();"><i class="fas fa-temperature-low"></i></a> 
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="wms-srv-grid-row wms-align" id="wms-srv-beforeedit-close" style="display: none;">
+                            <div class="wms-srv-grid-cell">
+                                <select>
+                                    <option>Location</option>
+                                    <option>Location1</option>
+                                    <option>Location2</option>
+                                </select>
+                            </div>
+                            <div class="wms-srv-grid-cell"><input type="text" value="" class="wms-srv-grid-cell-input"></div>
+                            <div class="wms-srv-grid-cell"><input type="text" value="" class="wms-srv-grid-cell-input"></div>
+                            <div class="wms-srv-grid-cell"><input type="text" value="" class="wms-srv-grid-cell-input"></div>
+                            <div class="wms-srv-grid-cell">
+                                <select>
+                                    <option>Temperture Sensor</option>
+                                   
+                                </select>
+                            </div>
+                            <div class="wms-srv-grid-cell"><input type="text" value="" class="wms-srv-grid-cell-input"></div>
+                            <div class="wms-srv-grid-cell"><input type="text" value="" class="wms-srv-grid-cell-input"></div>
+                            <div class="wms-srv-grid-cell"><input type="text" value="" class="wms-srv-grid-cell-input"></div>
+                            <div class="wms-srv-grid-cell"><input type="text" value="" class="wms-srv-grid-cell-input"></div>
+                            <div class="wms-srv-grid-cell"><input type="text" value="" class="wms-srv-grid-cell-input"></div>
+                            <div class="wms-srv-grid-cell"><input type="text" value="" class="wms-srv-grid-cell-input"></div>
+                            <div class="wms-srv-grid-cell"><input type="text" value="" class="wms-srv-grid-cell-input"></div>
+                            <div class="wms-srv-grid-cell"><input type="checkbox" class="wms-srv-grid-cell-input" checked="True" value=""></div>
+                            <div class="wms-srv-grid-cell">
+                                <div class="wms-srv-grid-action">
+                                    <a href="#" title="Edit" class="wms-srv-save" data-prefix="SV"><i class="fas fa-check-circle" title="Customer Info" onclick=""></i></a>
+                                    <div class="wms-srv-action-sep">|</div>
+                                    <a href="#" title="Cancel" class="wms-srv-cancel" data-prefix="CN" onclick="hideEditIoTConfigRow();return false;"><i class="fas fa-times-circle"></i></a> 
+                                </div>
+                            </div>
+                        </div>
+
+   
+                        </div> -->
+                    </div>  
+                </div> 
+                <div class="wms-srv-grid-pager" id="pagingIOTConfig">
+                    <span class="wms-srv-pager-records">1-1 of 82 Records</span>
+                    <span class="wms-srv-empty-space"></span>
+                    <span class="wms-srv-pager-links"><a href="#" data-page="firstpage" title="First Page"><i class="fas fa-angle-double-left"></i></a><a href="#" data-page="previous"></a><a href="#" class="wms-srv-active"
+                            data-page="1">1</a><a href="#" data-page="2">2</a><a href="#" data-page="3">3</a><a href="#"
+                            data-page="4">4</a><a href="#" data-page="5">5</a><a href="#" data-page="6">6</a><a href="#"
+                            data-page="7">7</a><a href="#" data-page="8">8</a><a href="#" data-page="9">9</a><a href="#"
+                            data-page="next"></a><a href="#" data-page="lastpage" title="Last Page"><i class="fas fa-angle-double-right"></i></a></span>
+                    <span class="wms-srv-empty-space"></span>
+                    <input type="text" name="txtGridPageNo" class="wms-srv-input notranslate" value="0"
+                        style="width: 80px;">
+                    <a href="#" title="Jump To" class="wms-srv-pager-go"><i class="fas fa-play-circle"></i></a>
+                </div>
+            </div>
+        </div>
+        <!-- Grid -->
+        <!-- Content Area -->
+    
+    <!-- Content Holder -->
+
+
+<!--View Popup -->
+<div class="wms-srv-popup-holder" id="wms-srv-popup-IoTconfig-open" style="display:none;">
+    <div class="wms-srv-popup-bg">
+    </div>
+    <div class="wms-srv-popup">
+        <div class="wms-srv-popup-content">
+            <!-- Popup Title -->
+            <div class="wms-srv-popup-title">
+                
+                <a href="#" id="wms-srv-popup-IoTconfig-close" class="wms-srv-popup-close"><i
+                        class="fas fa-times-circle"></i></a>
+            </div>
+            <!-- Popup Title -->
+            <div class="wms-srv-popup-content-body" id="wms-srv-popup-content-body">
+                <!-- Grid 2-->
+                <div class="wms-srv-grid-holder pnlWmsDetail">
+                   
+                    <div class="app">
+                        <div class="wrapper">
+                            <div class="page-content ">
+                                <div class="page-container tradebook">
+                                    <h1><span class="icon icon-book"><i class="fa-solid fa-cart-shopping headIcon"></i></span>
+                                        <span class="previewPageTitle" style="font-size: 1.5rem;">IOT Config Report view </span>
+                                    </h1>
+                                    <hr class="header-hr">
+                                    <div class="container-fluid">
+                                        <div class="row">
+                                            <div class="col-sm-3">
+                                                <div class="su-input-group su-static-label">
+                                                    <label class="su-input-label"><b>Device Code</b></label>
+                                                    <div class="">
+                                                        <!-- <input type="text" placeholder="eg: INFY" autocorrect="off" maxlength="25" step="1" noerror="true" staticlabel="true" animate="true" label="Symbol" rules="" class="">   -->
+                        
+                                                        <select id="ddlPageView"
+                                                            style="margin-bottom: 0px;margin-top: 0px;">
+                                                            <!-- <option value="PurchaseOrder">
+                                                                IoT Order
+                                                            </option> -->
+                                                            <!--<option value="SalesReturn">Sales Return</option> -->
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                           
+                                            <div class="col-sm-4">
+                                                <div class="su-input-group su-static-label">
+                                                    <label class="su-input-label"><b>Select Date</b></label>
+                                                    <div class="">
+                                                        <input type="text"
+                                                        id="txtFromToDateobjrexta"
+                                                        placeholder="eg: Date"
+                                                        
+                                                        autocomplete="off"
+                                                        autocorrect="off" maxlength="25"
+                                                        step="1" noerror="true"
+                                                        staticlabel="true"
+                                                        animate="true" label="Symbol"
+                                                        rules="" class="datepicker"
+                                                        
+                                                        >
+                                                    </div>
+                                                </div>
+                                                <div class="dateGridView"
+                                                    id="dateSelecterobjrexta"
+                                                    style="display:none;">
+                                                    <i class="fas fa-times-circle" onclick="openDatePopup();" style="margin-left: 471px;"></i>
+                                                    <div>
+                        
+                                                        <span>
+                                                            <lable class="txtFixDates"
+                                                                onclick="getPreviousdate(1);">
+                                                                prev. day
+                                                                |
+                                                            </lable>
+                                                        </span><i
+                                                            class="fa-solid fa-circle-xmark iconClose"
+                                                            title="Cancel"></i>
+                                                        <span>
+                                                            <lable class="txtFixDates"
+                                                                onclick="getSevenDateData(7);">
+                                                                last 7
+                                                                days |
+                                                            </lable>
+                                                        </span>
+                                                        <span>
+                                                            <lable class="txtFixDates"
+                                                                onclick="getThirtyDateData(30);">
+                                                                last 30
+                                                                days |
+                                                            </lable>
+                                                        </span>
+                                                        <span>
+                                                            <lable class="txtFixDates"
+                                                                onclick="getcurrentFYData('2023/04/24');">
+                                                                current FY
+                                                            </lable>
+                                                        </span>
+                                                        <hr class="hrLine1">
+                        
+                                                    </div>
+                                                    <table class="dateGrid"
+                                                        id="gridDatePickerobjrexta">
+                        
+                                                        <tr>
+                                                            <td>
+                        
+                                                                <div class="text-center">
+                                                                    <strong>From</strong>
+                                                                </div>
+                        
+                        
+                                                                <div id="txt_FromdatePickerobjrexta"
+                                                                    class="txt_FromdatePicker">
+                        
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div class="text-center2">
+                                                                    <strong>To</strong>
+                                                                </div>
+                        
+                                                                <div
+                                                                    id="txt_TodatePickerobjrexta">
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-1" style="padding-right: 0px;padding-top: 22px;">
+                        
+                                                <button type="button" class="btn-blue"
+                                                    id="btnSearchReportobjrexta" style="float:right;">
+                                                    <span class="icon icon-arrow-right"><i
+                                                            class="fas fa-solid fa-arrow-right searchIcon"></i></span>
+                                                </button>
+                        
+                                            </div>
+                                        </div>
+                                        <!-- <div class="FilterHolder" style="display: flex;">
+                                            <div class="su-input-group su-static-label">
+                                                <label class="su-input-label"><b>Product Category</b></label>
+                                                <div class="">
+                                                     <input type="text" placeholder="eg: INFY" autocorrect="off" maxlength="25" step="1" noerror="true" staticlabel="true" animate="true" label="Symbol" rules="" class="">   
+                                                    <select id="txtProductCategory" style="margin-bottom: 0px;margin-top: 0px;">
+                                                        <option value="PurchaseOrder">
+                                                            All
+                                                        </option> 
+                                                        <option value="SalesReturn">Sales Return</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="su-input-group su-static-label">
+                                                <label class="su-input-label"><b>Product Code</b></label>
+                                                <div class="">
+                                                    <input type="text" placeholder="eg: INFY" autocorrect="off" maxlength="25" step="1" noerror="true" staticlabel="true" animate="true" label="Symbol" rules="" class="">   
+                                                    <select id="txtProductCode" style="margin-bottom: 0px;margin-top: 0px;">
+                                                        <option value="">
+                                                            All
+                                                        </option>
+                                                        <option value="SalesReturn">Sales Return</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="su-input-group su-static-label">
+                                                <label class="su-input-label"><b>Location Code</b></label>
+                                                <div class="">
+                                                     <input type="text" placeholder="eg: INFY" autocorrect="off" maxlength="25" step="1" noerror="true" staticlabel="true" animate="true" label="Symbol" rules="" class="">  
+                                                    <select id="txtlocationcode" style="margin-bottom: 0px;margin-top: 0px;">
+                                                        <option value="">
+                                                            All
+                                                        </option>
+                                                        <option value="SalesReturn">Sales Return</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="su-input-group su-static-label">
+                                                <label class="su-input-label"><b>Inventory Aging Bucket</b></label>
+                                                <div class="">
+                                                     <input type="text" placeholder="eg: INFY" autocorrect="off" maxlength="25" step="1" noerror="true" staticlabel="true" animate="true" label="Symbol" rules="" class="">   
+                                                    <select id="ddlPageObjectobjrexta" style="margin-bottom: 0px;margin-top: 0px;">
+                                                        <option value="">
+                                                           --Select--
+                                                        </option>
+                                                        <option value="1">1</option>
+                                                        <option value="2">2</option>
+                                                        <option value="3">3</option>
+                                                        <option value="4">4</option>
+                                                        <option value="5">5</option>
+                                                        <option value="6">6</option>
+                                                        <option value="7">7</option>
+                                                        <option value="8">8</option>
+                                                        <option value="9">9</option>
+                                                        <option value="10">10</option>
+                                                        <option value="11">11</option>
+                                                        <option value="12">12</option>
+                                                        <option value="13">13</option>
+                                                        <option value="14">14</option>
+                                                        <option value="15">15</option>
+                                                        <option value="16">16</option>
+                                                        <option value="17">17</option>
+                                                        <option value="18">18</option>
+                                                        <option value="19">19</option>
+                                                        <option value="20">20</option>
+                                                        <option value="21">21</option>
+                                                        <option value="22">22</option>
+                                                        <option value="23">23</option>
+                                                        <option value="24">24</option>
+                                                        <option value="25">25</option>
+                                                        <option value="26">26</option>
+                                                        <option value="27">27</option>
+                                                        <option value="28">28</option>
+                                                        <option value="29">29</option>
+                                                        <option value="30">30</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-1">
+                                                <button type="submit" class="btn-blue" id="btnSearchReportobjrexta"
+                                                    style="float:right; margin-top: 20px;" onclick="getBucketsPieChart();">
+                                                    <span class="icon icon-arrow-right"><i
+                                                            class="fas fa-solid fa-arrow-right searchIcon"></i></span>
+                                                </button>
+                                            </div>
+                                        </div> -->
+                                        <br>
+                                        <div class="row" style="display: none;">
+                                            <div class="col-6">
+                                                <div class="card" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+                                    <div class="card-body">
+                                        <canvas Id="FSN-Line-Chart" width="280" height="265"></canvas>
+                                    </div>
+                                </div>
+                                            </div>
+                
+                                            <div class="wms-srv-grid-scroller" style="max-height:487px !important;width:483px;">
+                                            <div class="wms-srv-grid"  style="width: 467px;" id="pnlReport">
+                                                
+                                                <!-- <table class="table table-striped">
+                
+                                                    <thead style="color: white;background-color: #1c8fca;">
+                                                        <tr>
+                                                            <th>Device Code</th>
+                                                            <th>Date</th>
+                                                            <th>Min-temp</th>
+                                                            <th>max-Temp</th>
+                                                            <th>Curr-Temp</th>
+                                                            
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>12</td>
+                                                            <td>20/01/23</td>
+                                                            <td>12.1</td>
+                                                            <td>23.1</td>
+                                                            <td>21.2</td>
+                                                            
+                                                        </tr>
+                                                        <tr>
+                                                            <td>12</td>
+                                                            <td>20/01/23</td>
+                                                            <td>12.1</td>
+                                                            <td>23.1</td>
+                                                            <td>21.2</td>
+                                                            
+                                                        </tr>
+                                                        <tr>
+                                                            <td>12</td>
+                                                            <td>20/01/23</td>
+                                                            <td>12.1</td>
+                                                            <td>23.1</td>
+                                                            <td>21.2</td>
+                                                            
+                                                        </tr>
+                                                        <tr>
+                                                            <td>12</td>
+                                                            <td>20/01/23</td>
+                                                            <td>12.1</td>
+                                                            <td>23.1</td>
+                                                            <td>21.2</td>
+                                                            
+                                                        </tr>
+                                                        <tr>
+                                                            <td>12</td>
+                                                            <td>20/01/23</td>
+                                                            <td>12.1</td>
+                                                            <td>23.1</td>
+                                                            <td>21.2</td>
+                                                            
+                                                        </tr>
+                                                        <tr>
+                                                            <td>12</td>
+                                                            <td>20/01/23</td>
+                                                            <td>12.1</td>
+                                                            <td>23.1</td>
+                                                            <td>21.2</td>
+                                                            
+                                                        </tr>
+                                                        <tr>
+                                                            <td>12</td>
+                                                            <td>20/01/23</td>
+                                                            <td>12.1</td>
+                                                            <td>23.1</td>
+                                                            <td>21.2</td>
+                                                            
+                                                        </tr>
+                                                        <tr>
+                                                            <td>12</td>
+                                                            <td>20/01/23</td>
+                                                            <td>12.1</td>
+                                                            <td>23.1</td>
+                                                            <td>21.2</td>
+                                                            
+                                                        </tr>
+                                                        <tr>
+                                                            <td>12</td>
+                                                            <td>20/01/23</td>
+                                                            <td>12.1</td>
+                                                            <td>23.1</td>
+                                                            <td>21.2</td>
+                                                            
+                                                        </tr>
+                                                        <tr>
+                                                            <td>12</td>
+                                                            <td>20/01/23</td>
+                                                            <td>12.1</td>
+                                                            <td>23.1</td>
+                                                            <td>21.2</td>
+                                                            
+                                                        </tr>
+                                                        <tr>
+                                                            <td>12</td>
+                                                            <td>20/01/23</td>
+                                                            <td>12.1</td>
+                                                            <td>23.1</td>
+                                                            <td>21.2</td>
+                                                            
+                                                        </tr>
+                                                        
+                                                    </tbody>
+                                                </table> -->
+                                               
+                                            </div>
+                                           
+                                        </div>
+                                        
+                                    </div><br>
+                                    <div class="contentHolder" style="margin-top: 5px;">
+                                        <!-- <div class="wms-srv-grid-scroller"> -->
+                                        <div class="">
+                                            <div style="float:right;">
+                                                <input type="text" value="" placeholder="search" id="txtfilterobjrexta"
+                                                    class="wms-srv-input wms-srv-simple-search" style="width: 100px;" ;="">
+                                                <a href="#" data-prefix="SE"><i class="fas fa-search" title="Search"
+                                                        style="position: relative; right: 25px;"
+                                                       ></i></a>
+                                                <div class="table-download text-small"><span class="icon icon-download"></span>
+                                                    Download:
+                                                    <a href="#" data-balloon="Download complete results as Excel" data-balloon-pos="up">
+                                                    </a><a href="#" data-balloon="Download complete results as CSV"
+                                                        data-balloon-pos="up" onclick="exportAtClient();">CSV</a>
+                                                </div>
+                                            </div>
+                                            <div class="wms-srv-grid-scroller" style="width: 100%; max-height:500px !important;">
+                                            <div class="wms-srv-grid" id="pnlIOTReportlist">
+                                                <!-- <div class="wms-srv-grid-header reportHeaderRow">
+                                                    <div class="wms-srv-grid-cell reportHeaderCell"
+                                                        style="text-align:center; color: #b3b3b3;font-weight: 500;">SKU Code</div>
+                                                    <div class="wms-srv-grid-cell reportHeaderCell"
+                                                        style="text-align:center;color: #b3b3b3;font-weight: 500;">UOM</div>
+                                                    <div class="wms-srv-grid-cell reportHeaderCell"
+                                                        style="text-align:center;color: #b3b3b3;font-weight: 500;">Current Unit In
+                                                        Stock</div>
+                                                    <div class="wms-srv-grid-cell reportHeaderCell"
+                                                        style="text-align:center;color: #b3b3b3;font-weight: 500;">0 Days</div>
+                                                    <div class="wms-srv-grid-cell reportHeaderCell"
+                                                        style="text-align:center;color: #b3b3b3;font-weight: 500;">> 30 Days</div>
+                                                    <div class="wms-srv-grid-cell reportHeaderCell"
+                                                        style=" text-align:center;color: #b3b3b3;font-weight: 500;">> 60 Days</div>
+                                                    <div class="wms-srv-grid-cell reportHeaderCell"
+                                                        style=" text-align:center;color: #b3b3b3;font-weight: 500;">> 90 Days</div>
+                                                    <div class="wms-srv-grid-cell reportHeaderCell"
+                                                        style=" text-align:center;color: #b3b3b3;font-weight: 500;">> 120 Days</div>
+                                                    <div class="wms-srv-grid-cell reportHeaderCell"
+                                                        style=" text-align:center;color: #b3b3b3;font-weight: 500;">> 150 Days</div>
+                                                    <div class="wms-srv-grid-cell reportHeaderCell"
+                                                        style=" text-align:center;color: #b3b3b3;font-weight: 500;">> 180 Days</div>
+                                                    <div class="wms-srv-grid-cell"
+                                                        style="text-align:center;color: #b3b3b3;font-weight: 500;">Action</div>
+                                                </div>
+                                                <div  class="wms-srv-grid-row reportRow">
+                                                    <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">
+                                                        Effervescence Water</div>
+                                                    <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">
+                                                        120*330ml</div>
+                                                    <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">59</div>
+                                                    <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">0</div>
+                                                    <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">25</div>
+                                                    <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">10</div>
+                                                    <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">24</div>
+                                                    <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">0</div>
+                                                    <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">0</div>
+                                                    <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">0</div>
+                                                    <div class="wms-srv-grid-cell" onclick="openDetailReport(1);"
+                                                        style="text-align:center;"><i class="fas fa-solid fa-eye"></i></div>
+                                                </div>
+                                                <div  class="wms-srv-grid-row reportRow">
+                                                    <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">Golden
+                                                        Leaf Chocolate</div>
+                                                    <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">530gm
+                                                    </div>
+                                                    <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">53</div>
+                                                    <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">10</div>
+                                                    <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">43</div>
+                                                    <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">0</div>
+                                                    <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">0</div>
+                                                    <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">0</div>
+                                                    <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">0</div>
+                                                    <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">0</div>
+                                                    <div class="wms-srv-grid-cell" onclick="openDetailReport(1);"
+                                                        style="text-align:center;"><i class="fas fa-solid fa-eye"></i></div>
+                                                </div>
+                                                <div  class="wms-srv-grid-row reportRow">
+                                                    <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">
+                                                        Effervescence Water</div>
+                                                    <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">12*750ml
+                                                    </div>
+                                                    <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">123
+                                                    </div>
+                                                    <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">0</div>
+                                                    <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">50</div>
+                                                    <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">0</div>
+                                                    <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">50</div>
+                                                    <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">0</div>
+                                                    <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">23</div>
+                                                    <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">0</div>
+                                                    <div class="wms-srv-grid-cell" onclick="openDetailReport(1);"
+                                                        style="text-align:center;"><i class="fas fa-solid fa-eye"></i></div>
+                                                </div> -->
+                                            </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                
+                
+                            <!-- Grid -->
+                        </div>
+                
+                    </div>
+                </div>
+            </div>
+            <!-- Grid 2-->
+        </div>
+    </div>
+</div>
+</div>
+<!--View Popup -->
+
+<!--Tempreture Popup -->
+<div class="wms-srv-popup-holder" id="wms-srv-popup-Temp-open" style="display:none;">
+    <div class="wms-srv-popup-bg">
+    </div>
+    <div class="wms-srv-popup">
+        <div class="wms-srv-popup-content">
+            <!-- Popup Title -->
+            <div class="wms-srv-popup-title">
+                <!-- <div class="wms-srv-page-title">
+                    <i class="fas fa-user-plus"></i><span>IoT Configuration</span>
+                </div> -->
+                <a href="#" id="wms-srv-popup-Temp-close" class="wms-srv-popup-close"><i
+                        class="fas fa-times-circle"></i></a>
+            </div>
+            <!-- Popup Title -->
+            <div class="wms-srv-popup-content-body" id="wms-srv-popup-content-body">
+                <!-- Grid 2-->
+                <div class="wms-srv-grid-holder pnlWmsDetail">
+                    <!-- <div class="wms-srv-grid-action-panel">
+                        <div class="wms-srv-grid-common-action"><a href="#" class="wms-srv-icononly"><i class="fas fa-list"></i></a></div>
+                        <div class="wms-srv-grid-title">
+                            Contact Information List
+                        </div>
+                        <span>
+                            <input type="text" value="" class="wms-srv-input wms-srv-simple-search notranslate">
+                            <a href="#" data-prefix="SE" title="Search"><i class="fas fa-search" style="color: black;"></i></a>
+                        </span>
+                    </div>
+                    <div class="wms-srv-grid-scroller" style="width: 100%;">
+                        <div class="wms-srv-grid" id="VendorContGrid">
+                        </div>
+                        <div class="wms-srv-grid" id="popupSkuSearchList" style="text-align: center;">
+                            
+                        </div>
+                    </div> -->
+                    <div class="app">
+                        <div class="wrapper">
+                            <div class="page-content ">
+                                <div class="page-container tradebook">
+                                    <h1><span class="icon icon-book"><i class="fa-solid fa-cart-shopping headIcon"></i></span>
+                                        <span class="previewPageTitle" style="font-size: 1.5rem;">IOT Config Tempreture </span>
+                                    </h1>
+                                    <hr class="header-hr">
+                                    <div class="container-fluid">
+                                        <div class="row">
+                                            <div class="col-sm-3">
+                                                <div class="su-input-group su-static-label">
+                                                    <label class="su-input-label"><b>Device Order</b></label>
+                                                    <div class="">
+                                                        <!-- <input type="text" placeholder="eg: INFY" autocorrect="off" maxlength="25" step="1" noerror="true" staticlabel="true" animate="true" label="Symbol" rules="" class="">   -->
+                        
+                                                        <select id="ddlPageObjectobjrexta"
+                                                            style="margin-bottom: 0px;margin-top: 0px;">
+                                                            <!-- <option value="deviceId">
+                                                                
+                                                            </option> -->
+                                                            <!--<option value="SalesReturn">Sales Return</option> -->
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                           
+                                            <div class="col-sm-4">
+                                                <div class="su-input-group su-static-label">
+                                                    <label class="su-input-label"><b>Select Date</b></label>
+                                                    <div class="">
+                                                        <input type="text"
+                                                            id="dtpdate"
+                                                            placeholder="eg: Date"
+                                                            
+                                                            autocomplete="off"
+                                                            autocorrect="off" maxlength="25"
+                                                            step="1" noerror="true"
+                                                            staticlabel="true"
+                                                            animate="true" label="Symbol"
+                                                            rules="" class="datepicker"
+                                                            
+                                                            >
+                                                          
+                                                        
+                                                    </div>
+                                                </div>
+                                                <div class="dateGridView"
+                                                    id="dateSelecterobjrexta"
+                                                    style="display:none;">
+                                                    <i class="fas fa-times-circle" onclick="openDatePopup();" style="margin-left: 471px;"></i>
+                                                    <div>
+                        
+                                                        <span>
+                                                            <lable class="txtFixDates"
+                                                                onclick="getPreviousdate(1);">
+                                                                prev. day
+                                                                |
+                                                            </lable>
+                                                        </span><i
+                                                            class="fa-solid fa-circle-xmark iconClose"
+                                                            title="Cancel"></i>
+                                                        <span>
+                                                            <lable class="txtFixDates"
+                                                                onclick="getSevenDateData(7);">
+                                                                last 7
+                                                                days |
+                                                            </lable>
+                                                        </span>
+                                                        <span>
+                                                            <lable class="txtFixDates"
+                                                                onclick="getThirtyDateData(30);">
+                                                                last 30
+                                                                days |
+                                                            </lable>
+                                                        </span>
+                                                        <span>
+                                                            <lable class="txtFixDates"
+                                                                onclick="getcurrentFYData('2023/04/24');">
+                                                                current FY
+                                                            </lable>
+                                                        </span>
+                                                        <hr class="hrLine1">
+                        
+                                                    </div>
+                                                    <table class="dateGrid"
+                                                        id="gridDatePickerobjrexta">
+                        
+                                                        <tr>
+                                                            <td>
+                        
+                                                                <div class="text-center">
+                                                                    <strong>From</strong>
+                                                                </div>
+                        
+                        
+                                                                <div id="txt_FromdatePickerobjrexta"
+                                                                    class="txt_FromdatePicker">
+                        
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div class="text-center2">
+                                                                    <strong>To</strong>
+                                                                </div>
+                        
+                                                                <div
+                                                                    id="txt_TodatePickerobjrexta">
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-1" style="padding-right: 0px;padding-top: 22px;">
+                        
+                                                <button type="button" class="btn-blue"
+                                                    id="btnSearchReportobjrexta" style="float:right;" onclick="getTemperture(0,'',2);">
+                                                    <span class="icon icon-arrow-right"><i
+                                                            class="fas fa-solid fa-arrow-right searchIcon" ></i></span>
+                                                </button>
+                        
+                                            </div>
+                                        </div>
+                                        <!-- <div class="FilterHolder" style="display: flex;">
+                                            <div class="su-input-group su-static-label">
+                                                <label class="su-input-label"><b>Product Category</b></label>
+                                                <div class="">
+                                                     <input type="text" placeholder="eg: INFY" autocorrect="off" maxlength="25" step="1" noerror="true" staticlabel="true" animate="true" label="Symbol" rules="" class="">   
+                                                    <select id="txtProductCategory" style="margin-bottom: 0px;margin-top: 0px;">
+                                                        <option value="PurchaseOrder">
+                                                            All
+                                                        </option> 
+                                                        <option value="SalesReturn">Sales Return</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="su-input-group su-static-label">
+                                                <label class="su-input-label"><b>Product Code</b></label>
+                                                <div class="">
+                                                    <input type="text" placeholder="eg: INFY" autocorrect="off" maxlength="25" step="1" noerror="true" staticlabel="true" animate="true" label="Symbol" rules="" class="">   
+                                                    <select id="txtProductCode" style="margin-bottom: 0px;margin-top: 0px;">
+                                                        <option value="">
+                                                            All
+                                                        </option>
+                                                        <option value="SalesReturn">Sales Return</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="su-input-group su-static-label">
+                                                <label class="su-input-label"><b>Location Code</b></label>
+                                                <div class="">
+                                                     <input type="text" placeholder="eg: INFY" autocorrect="off" maxlength="25" step="1" noerror="true" staticlabel="true" animate="true" label="Symbol" rules="" class="">  
+                                                    <select id="txtlocationcode" style="margin-bottom: 0px;margin-top: 0px;">
+                                                        <option value="">
+                                                            All
+                                                        </option>
+                                                        <option value="SalesReturn">Sales Return</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="su-input-group su-static-label">
+                                                <label class="su-input-label"><b>Inventory Aging Bucket</b></label>
+                                                <div class="">
+                                                     <input type="text" placeholder="eg: INFY" autocorrect="off" maxlength="25" step="1" noerror="true" staticlabel="true" animate="true" label="Symbol" rules="" class="">   
+                                                    <select id="ddlPageObjectobjrexta" style="margin-bottom: 0px;margin-top: 0px;">
+                                                        <option value="">
+                                                           --Select--
+                                                        </option>
+                                                        <option value="1">1</option>
+                                                        <option value="2">2</option>
+                                                        <option value="3">3</option>
+                                                        <option value="4">4</option>
+                                                        <option value="5">5</option>
+                                                        <option value="6">6</option>
+                                                        <option value="7">7</option>
+                                                        <option value="8">8</option>
+                                                        <option value="9">9</option>
+                                                        <option value="10">10</option>
+                                                        <option value="11">11</option>
+                                                        <option value="12">12</option>
+                                                        <option value="13">13</option>
+                                                        <option value="14">14</option>
+                                                        <option value="15">15</option>
+                                                        <option value="16">16</option>
+                                                        <option value="17">17</option>
+                                                        <option value="18">18</option>
+                                                        <option value="19">19</option>
+                                                        <option value="20">20</option>
+                                                        <option value="21">21</option>
+                                                        <option value="22">22</option>
+                                                        <option value="23">23</option>
+                                                        <option value="24">24</option>
+                                                        <option value="25">25</option>
+                                                        <option value="26">26</option>
+                                                        <option value="27">27</option>
+                                                        <option value="28">28</option>
+                                                        <option value="29">29</option>
+                                                        <option value="30">30</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-1">
+                                                <button type="submit" class="btn-blue" id="btnSearchReportobjrexta"
+                                                    style="float:right; margin-top: 20px;" onclick="getBucketsPieChart();">
+                                                    <span class="icon icon-arrow-right"><i
+                                                            class="fas fa-solid fa-arrow-right searchIcon"></i></span>
+                                                </button>
+                                            </div>
+                                        </div> -->
+                                        <br>
+                                        <div class="row">
+                                            <div class="col-6">
+                                                <div class="card" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+                                    <div class="card-body">
+                                        <canvas Id="FSN-Line-Tempreture" width="280" height="265"></canvas>
+                                    </div>
+                                </div>
+                                            </div>
+                
+                                            <div class="wms-srv-grid-scroller" style="max-height:487px !important;width: 486px;">
+                                            <div class="wms-srv-grid"  style="width: 467px;" id="pnlTempReport">
+                                                
+                                                <!-- <table class="table table-striped">
+                
+                                                    <thead style="color: white;background-color: #1c8fca;">
+                                                        <tr>
+                                                            <th>Device Code</th>
+                                                            <th>Date</th>
+                                                            <th>Min-temp</th>
+                                                            <th>max-Temp</th>
+                                                            <th>Curr-Temp</th>
+                                                            <th>Value</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>12</td>
+                                                            <td>20/01/23</td>
+                                                            <td>12.1</td>
+                                                            <td>23.1</td>
+                                                            <td>21.2</td>
+                                                            <td>208</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>12</td>
+                                                            <td>20/01/23</td>
+                                                            <td>12.1</td>
+                                                            <td>23.1</td>
+                                                            <td>21.2</td>
+                                                            <td>208</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>12</td>
+                                                            <td>20/01/23</td>
+                                                            <td>12.1</td>
+                                                            <td>23.1</td>
+                                                            <td>21.2</td>
+                                                            <td>208</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>12</td>
+                                                            <td>20/01/23</td>
+                                                            <td>12.1</td>
+                                                            <td>23.1</td>
+                                                            <td>21.2</td>
+                                                            <td>208</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>12</td>
+                                                            <td>20/01/23</td>
+                                                            <td>12.1</td>
+                                                            <td>23.1</td>
+                                                            <td>21.2</td>
+                                                            <td>208</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>12</td>
+                                                            <td>20/01/23</td>
+                                                            <td>12.1</td>
+                                                            <td>23.1</td>
+                                                            <td>21.2</td>
+                                                            <td>208</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>12</td>
+                                                            <td>20/01/23</td>
+                                                            <td>12.1</td>
+                                                            <td>23.1</td>
+                                                            <td>21.2</td>
+                                                            <td>208</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>12</td>
+                                                            <td>20/01/23</td>
+                                                            <td>12.1</td>
+                                                            <td>23.1</td>
+                                                            <td>21.2</td>
+                                                            <td>208</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>12</td>
+                                                            <td>20/01/23</td>
+                                                            <td>12.1</td>
+                                                            <td>23.1</td>
+                                                            <td>21.2</td>
+                                                            <td>208</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>12</td>
+                                                            <td>20/01/23</td>
+                                                            <td>12.1</td>
+                                                            <td>23.1</td>
+                                                            <td>21.2</td>
+                                                            <td>208</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>12</td>
+                                                            <td>20/01/23</td>
+                                                            <td>12.1</td>
+                                                            <td>23.1</td>
+                                                            <td>21.2</td>
+                                                            <td>208</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table> -->
+                                               
+                                            </div>
+                                           
+                                        </div>
+                                        
+                                    </div><br>
+                                    <div class="contentHolder" style="margin-top: 5px;" id="txtGridPurchaseOrderobjrexta">
+                                        <!-- <div class="wms-srv-grid-scroller"> -->
+                                        <div class="">
+                                            <div style="float:right;">
+                                                <input type="text" value="" placeholder="search" id="txtfilterobjrexta"
+                                                    class="wms-srv-input wms-srv-simple-search" style="width: 100px;" ;="">
+                                                <a href="#" data-prefix="SE"><i class="fas fa-search" title="Search"
+                                                        style="position: relative; right: 25px;"
+                                                        onclick="getPurchaseOrderList('');"></i></a>
+                                                <div class="table-download text-small"><span class="icon icon-download"></span>
+                                                    Download:
+                                                    <a href="#" data-balloon="Download complete results as Excel" data-balloon-pos="up">
+                                                    </a><a href="#" data-balloon="Download complete results as CSV"
+                                                        data-balloon-pos="up" onclick="exportAtClient();">CSV</a>
+                                                </div>
+                                            </div>
+                                            <div class="wms-srv-grid-scroller" style="width: 100%; max-height:500px !important;">
+                                            <div class="wms-srv-grid previewTable" id="pnllisttempReport">
+                                                <!-- <div class="wms-srv-grid-header reportHeaderRow">
+                                                    <div class="wms-srv-grid-cell reportHeaderCell"
+                                                        style="text-align:center; color: #b3b3b3;font-weight: 500;">SKU Code</div>
+                                                    <div class="wms-srv-grid-cell reportHeaderCell"
+                                                        style="text-align:center;color: #b3b3b3;font-weight: 500;">UOM</div>
+                                                    <div class="wms-srv-grid-cell reportHeaderCell"
+                                                        style="text-align:center;color: #b3b3b3;font-weight: 500;">Current Unit In
+                                                        Stock</div>
+                                                    <div class="wms-srv-grid-cell reportHeaderCell"
+                                                        style="text-align:center;color: #b3b3b3;font-weight: 500;">0 Days</div>
+                                                    <div class="wms-srv-grid-cell reportHeaderCell"
+                                                        style="text-align:center;color: #b3b3b3;font-weight: 500;">> 30 Days</div>
+                                                    <div class="wms-srv-grid-cell reportHeaderCell"
+                                                        style=" text-align:center;color: #b3b3b3;font-weight: 500;">> 60 Days</div>
+                                                    <div class="wms-srv-grid-cell reportHeaderCell"
+                                                        style=" text-align:center;color: #b3b3b3;font-weight: 500;">> 90 Days</div>
+                                                    <div class="wms-srv-grid-cell reportHeaderCell"
+                                                        style=" text-align:center;color: #b3b3b3;font-weight: 500;">> 120 Days</div>
+                                                    <div class="wms-srv-grid-cell reportHeaderCell"
+                                                        style=" text-align:center;color: #b3b3b3;font-weight: 500;">> 150 Days</div>
+                                                    <div class="wms-srv-grid-cell reportHeaderCell"
+                                                        style=" text-align:center;color: #b3b3b3;font-weight: 500;">> 180 Days</div>
+                                                    <div class="wms-srv-grid-cell"
+                                                        style="text-align:center;color: #b3b3b3;font-weight: 500;">Action</div>
+                                                </div>
+                                                <div id="" class="wms-srv-grid-row reportRow">
+                                                    <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">
+                                                        Effervescence Water</div>
+                                                    <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">
+                                                        120*330ml</div>
+                                                    <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">59</div>
+                                                    <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">0</div>
+                                                    <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">25</div>
+                                                    <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">10</div>
+                                                    <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">24</div>
+                                                    <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">0</div>
+                                                    <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">0</div>
+                                                    <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">0</div>
+                                                    <div class="wms-srv-grid-cell"
+                                                        style="text-align:center;"><i class="fas fa-solid fa-eye"></i></div>
+                                                </div> -->
+                                              
+                                            </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                
+                
+                            <!-- Grid -->
+                        </div>
+                
+                    </div>
+                </div>
+            </div>
+            <!-- Grid 2-->
+        </div>
+    </div>
+</div>
+</div>
+<!--Tempreture Popup -->
+
+<!--Humadity Popup -->
+<div class="wms-srv-popup-holder" id="wms-srv-popup-Humadity-open" style="display:none;">
+    <div class="wms-srv-popup-bg">
+    </div>
+    <div class="wms-srv-popup">
+        <div class="wms-srv-popup-content">
+            <!-- Popup Title -->
+            <div class="wms-srv-popup-title">
+                <!-- <div class="wms-srv-page-title">
+                    <i class="fas fa-user-plus"></i><span>IoT Configuration</span>
+                </div> -->
+                <a href="#" id="wms-srv-popup-Humadity-close" class="wms-srv-popup-close"><i
+                        class="fas fa-times-circle"></i></a>
+            </div>
+            <!-- Popup Title -->
+            <div class="wms-srv-popup-content-body">
+                <!-- Grid 2-->
+                <div class="wms-srv-grid-holder pnlWmsDetail">
+                    <!-- <div class="wms-srv-grid-action-panel">
+                        <div class="wms-srv-grid-common-action"><a href="#" class="wms-srv-icononly"><i class="fas fa-list"></i></a></div>
+                        <div class="wms-srv-grid-title">
+                            Contact Information List
+                        </div>
+                        <span>
+                            <input type="text" value="" class="wms-srv-input wms-srv-simple-search notranslate">
+                            <a href="#" data-prefix="SE" title="Search"><i class="fas fa-search" style="color: black;"></i></a>
+                        </span>
+                    </div>
+                    <div class="wms-srv-grid-scroller" style="width: 100%;">
+                        <div class="wms-srv-grid" id="VendorContGrid">
+                        </div>
+                        <div class="wms-srv-grid" id="popupSkuSearchList" style="text-align: center;">
+                            
+                        </div>
+                    </div> -->
+                    <div class="app">
+                        <div class="wrapper">
+                            <div class="page-content ">
+                                <div class="page-container tradebook">
+                                    <h1><span class="icon icon-book"><i class="fa-solid fa-cart-shopping headIcon"></i></span>
+                                        <span class="previewPageTitle" style="font-size: 1.5rem;">IOT Config Humidity </span>
+                                    </h1>
+                                    <hr class="header-hr">
+                                    <div class="container-fluid">
+                                        <div class="row">
+                                            <div class="col-sm-3">
+                                                <div class="su-input-group su-static-label">
+                                                    <label class="su-input-label"><b>Device Code</b></label>
+                                                    <div class="">
+                                                        <!-- <input type="text" placeholder="eg: INFY" autocorrect="off" maxlength="25" step="1" noerror="true" staticlabel="true" animate="true" label="Symbol" rules="" class="">   -->
+                        
+                                                        <select id="ddlPageObjectobjrextaHumidity"
+                                                            style="margin-bottom: 0px;margin-top: 0px;">
+                                                            <!-- <option value="PurchaseOrder">
+                                                                IoT Order
+                                                            </option> -->
+                                                            <!--<option value="SalesReturn">Sales Return</option> -->
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                           
+                                            <div class="col-sm-4">
+                                                <div class="su-input-group su-static-label">
+                                                    <label class="su-input-label"><b>Select Date</b></label>
+                                                    <div class="">
+                                                        <input type="text"
+                                                             id="dtpdatetemp"
+                                                            placeholder="eg: Date"
+                                                            
+                                                            autocomplete="off"
+                                                            autocorrect="off" maxlength="25"
+                                                            step="1" noerror="true"
+                                                            staticlabel="true"
+                                                            animate="true" label="Symbol"
+                                                            rules="" class="datepicker">
+                                                        
+                                                    </div>
+                                                </div>
+                                                <div class="dateGridView"
+                                                    id="dateSelecterobjrexta"
+                                                    style="display:none;">
+                                                    <i class="fas fa-times-circle" onclick="openDatePopup();" style="margin-left: 471px;"></i>
+                                                    <div>
+                        
+                                                        <span>
+                                                            <lable class="txtFixDates"
+                                                                onclick="getPreviousdate(1);">
+                                                                prev. day
+                                                                |
+                                                            </lable>
+                                                        </span><i
+                                                            class="fa-solid fa-circle-xmark iconClose"
+                                                            title="Cancel"></i>
+                                                        <span>
+                                                            <lable class="txtFixDates"
+                                                                onclick="getSevenDateData(7);">
+                                                                last 7
+                                                                days |
+                                                            </lable>
+                                                        </span>
+                                                        <span>
+                                                            <lable class="txtFixDates"
+                                                                onclick="getThirtyDateData(30);">
+                                                                last 30
+                                                                days |
+                                                            </lable>
+                                                        </span>
+                                                        <span>
+                                                            <lable class="txtFixDates"
+                                                                onclick="getcurrentFYData('2023/04/24');">
+                                                                current FY
+                                                            </lable>
+                                                        </span>
+                                                        <hr class="hrLine1">
+                        
+                                                    </div>
+                                                    <table class="dateGrid"
+                                                        id="gridDatePickerobjrexta">
+                        
+                                                        <tr>
+                                                            <td>
+                        
+                                                                <div class="text-center">
+                                                                    <strong>From</strong>
+                                                                </div>
+                        
+                        
+                                                                <div id="txt_FromdatePickerobjrexta"
+                                                                    class="txt_FromdatePicker">
+                        
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div class="text-center2">
+                                                                    <strong>To</strong>
+                                                                </div>
+                        
+                                                                <div
+                                                                    id="txt_TodatePickerobjrexta">
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-1" style="padding-right: 0px;padding-top: 22px;">
+                        
+                                                <button type="button" class="btn-blue"
+                                                    id="btnSearchReportobjHum" style="float:right;" onclick="getHumiditylineChart(0,'',2);">
+                                                    <span class="icon icon-arrow-right"><i
+                                                            class="fas fa-solid fa-arrow-right searchIcon" ></i></span>
+                                                </button>
+                        
+                                            </div>
+                                        </div>
+                                        <!-- <div class="FilterHolder" style="display: flex;">
+                                            <div class="su-input-group su-static-label">
+                                                <label class="su-input-label"><b>Product Category</b></label>
+                                                <div class="">
+                                                     <input type="text" placeholder="eg: INFY" autocorrect="off" maxlength="25" step="1" noerror="true" staticlabel="true" animate="true" label="Symbol" rules="" class="">   
+                                                    <select id="txtProductCategory" style="margin-bottom: 0px;margin-top: 0px;">
+                                                        <option value="PurchaseOrder">
+                                                            All
+                                                        </option> 
+                                                        <option value="SalesReturn">Sales Return</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="su-input-group su-static-label">
+                                                <label class="su-input-label"><b>Product Code</b></label>
+                                                <div class="">
+                                                    <input type="text" placeholder="eg: INFY" autocorrect="off" maxlength="25" step="1" noerror="true" staticlabel="true" animate="true" label="Symbol" rules="" class="">   
+                                                    <select id="txtProductCode" style="margin-bottom: 0px;margin-top: 0px;">
+                                                        <option value="">
+                                                            All
+                                                        </option>
+                                                        <option value="SalesReturn">Sales Return</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="su-input-group su-static-label">
+                                                <label class="su-input-label"><b>Location Code</b></label>
+                                                <div class="">
+                                                     <input type="text" placeholder="eg: INFY" autocorrect="off" maxlength="25" step="1" noerror="true" staticlabel="true" animate="true" label="Symbol" rules="" class="">  
+                                                    <select id="txtlocationcode" style="margin-bottom: 0px;margin-top: 0px;">
+                                                        <option value="">
+                                                            All
+                                                        </option>
+                                                        <option value="SalesReturn">Sales Return</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="su-input-group su-static-label">
+                                                <label class="su-input-label"><b>Inventory Aging Bucket</b></label>
+                                                <div class="">
+                                                     <input type="text" placeholder="eg: INFY" autocorrect="off" maxlength="25" step="1" noerror="true" staticlabel="true" animate="true" label="Symbol" rules="" class="">   
+                                                    <select id="ddlPageObjectobjrexta" style="margin-bottom: 0px;margin-top: 0px;">
+                                                        <option value="">
+                                                           --Select--
+                                                        </option>
+                                                        <option value="1">1</option>
+                                                        <option value="2">2</option>
+                                                        <option value="3">3</option>
+                                                        <option value="4">4</option>
+                                                        <option value="5">5</option>
+                                                        <option value="6">6</option>
+                                                        <option value="7">7</option>
+                                                        <option value="8">8</option>
+                                                        <option value="9">9</option>
+                                                        <option value="10">10</option>
+                                                        <option value="11">11</option>
+                                                        <option value="12">12</option>
+                                                        <option value="13">13</option>
+                                                        <option value="14">14</option>
+                                                        <option value="15">15</option>
+                                                        <option value="16">16</option>
+                                                        <option value="17">17</option>
+                                                        <option value="18">18</option>
+                                                        <option value="19">19</option>
+                                                        <option value="20">20</option>
+                                                        <option value="21">21</option>
+                                                        <option value="22">22</option>
+                                                        <option value="23">23</option>
+                                                        <option value="24">24</option>
+                                                        <option value="25">25</option>
+                                                        <option value="26">26</option>
+                                                        <option value="27">27</option>
+                                                        <option value="28">28</option>
+                                                        <option value="29">29</option>
+                                                        <option value="30">30</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-1">
+                                                <button type="submit" class="btn-blue" id="btnSearchReportobjrexta"
+                                                    style="float:right; margin-top: 20px;" onclick="getBucketsPieChart();">
+                                                    <span class="icon icon-arrow-right"><i
+                                                            class="fas fa-solid fa-arrow-right searchIcon"></i></span>
+                                                </button>
+                                            </div>
+                                        </div> -->
+                                        <br>
+                                        <div class="row">
+                                            <div class="col-6">
+                                                <div class="card" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+                                    <div class="card-body">
+                                        <canvas Id="FSN-Line-Humidity" width="280" height="265"></canvas>
+                                    </div>
+                                </div>
+                                            </div>
+                
+                                            <div class="wms-srv-grid-scroller" style="max-height:487px !important;width: 486px;">
+                                            <div class="wms-srv-grid" style="width: 467px;" id="pnlIOThumidity">
+                                                
+                                                <!-- <table class="table table-striped">
+                
+                                                    <thead style="color: white;background-color: #1c8fca;">
+                                                        <tr>
+                                                            <th>Device Code</th>
+                                                            <th>Date</th>
+                                                            <th>Min-Humidity</th>
+                                                            <th>max-Humidity</th>
+                                                            <th>Curr-Humidity</th>
+                                                            <th>Value</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>12</td>
+                                                            <td>20/01/23</td>
+                                                            <td>12.1</td>
+                                                            <td>23.1</td>
+                                                            <td>21.2</td>
+                                                            <td>208</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>12</td>
+                                                            <td>20/01/23</td>
+                                                            <td>12.1</td>
+                                                            <td>23.1</td>
+                                                            <td>21.2</td>
+                                                            <td>208</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>12</td>
+                                                            <td>20/01/23</td>
+                                                            <td>12.1</td>
+                                                            <td>23.1</td>
+                                                            <td>21.2</td>
+                                                            <td>208</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>12</td>
+                                                            <td>20/01/23</td>
+                                                            <td>12.1</td>
+                                                            <td>23.1</td>
+                                                            <td>21.2</td>
+                                                            <td>208</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>12</td>
+                                                            <td>20/01/23</td>
+                                                            <td>12.1</td>
+                                                            <td>23.1</td>
+                                                            <td>21.2</td>
+                                                            <td>208</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>12</td>
+                                                            <td>20/01/23</td>
+                                                            <td>12.1</td>
+                                                            <td>23.1</td>
+                                                            <td>21.2</td>
+                                                            <td>208</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>12</td>
+                                                            <td>20/01/23</td>
+                                                            <td>12.1</td>
+                                                            <td>23.1</td>
+                                                            <td>21.2</td>
+                                                            <td>208</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>12</td>
+                                                            <td>20/01/23</td>
+                                                            <td>12.1</td>
+                                                            <td>23.1</td>
+                                                            <td>21.2</td>
+                                                            <td>208</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>12</td>
+                                                            <td>20/01/23</td>
+                                                            <td>12.1</td>
+                                                            <td>23.1</td>
+                                                            <td>21.2</td>
+                                                            <td>208</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>12</td>
+                                                            <td>20/01/23</td>
+                                                            <td>12.1</td>
+                                                            <td>23.1</td>
+                                                            <td>21.2</td>
+                                                            <td>208</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>12</td>
+                                                            <td>20/01/23</td>
+                                                            <td>12.1</td>
+                                                            <td>23.1</td>
+                                                            <td>21.2</td>
+                                                            <td>208</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table> -->
+                                               
+                                            </div>
+                                           
+                                        </div>
+                                       
+                                    </div><br>
+                                    <div class="contentHolder" style="margin-top: 5px;" id="txtGridPurchaseOrderobjrexta">
+                                        <!-- <div class="wms-srv-grid-scroller"> -->
+                                        <div class="">
+                                            <div style="float:right;">
+                                                <input type="text" value="" placeholder="search" id="txtfilterobjrexta"
+                                                    class="wms-srv-input wms-srv-simple-search" style="width: 100px;" ;="">
+                                                <a href="#" data-prefix="SE"><i class="fas fa-search" title="Search"
+                                                        style="position: relative; right: 25px;"
+                                                        onclick="getPurchaseOrderList('');"></i></a>
+                                                <div class="table-download text-small"><span class="icon icon-download"></span>
+                                                    Download:
+                                                    <a href="#" data-balloon="Download complete results as Excel" data-balloon-pos="up">
+                                                    </a><a href="#" data-balloon="Download complete results as CSV"
+                                                        data-balloon-pos="up" onclick="exportAtClient();">CSV</a>
+                                                </div>
+                                            </div>
+                                            <div class="wms-srv-grid-scroller" style="width: 100%; max-height:500px !important;">
+                                            <div class="wms-srv-grid" id="pnlIOtHumidity">
+                                                <!-- <div class="wms-srv-grid-header reportHeaderRow">
+                                                    <div class="wms-srv-grid-cell reportHeaderCell"
+                                                        style="text-align:center; color: #b3b3b3;font-weight: 500;">SKU Code</div>
+                                                    <div class="wms-srv-grid-cell reportHeaderCell"
+                                                        style="text-align:center;color: #b3b3b3;font-weight: 500;">UOM</div>
+                                                    <div class="wms-srv-grid-cell reportHeaderCell"
+                                                        style="text-align:center;color: #b3b3b3;font-weight: 500;">Current Unit In
+                                                        Stock</div>
+                                                    <div class="wms-srv-grid-cell reportHeaderCell"
+                                                        style="text-align:center;color: #b3b3b3;font-weight: 500;">0 Days</div>
+                                                    <div class="wms-srv-grid-cell reportHeaderCell"
+                                                        style="text-align:center;color: #b3b3b3;font-weight: 500;">> 30 Days</div>
+                                                    <div class="wms-srv-grid-cell reportHeaderCell"
+                                                        style=" text-align:center;color: #b3b3b3;font-weight: 500;">> 60 Days</div>
+                                                    <div class="wms-srv-grid-cell reportHeaderCell"
+                                                        style=" text-align:center;color: #b3b3b3;font-weight: 500;">> 90 Days</div>
+                                                    <div class="wms-srv-grid-cell reportHeaderCell"
+                                                        style=" text-align:center;color: #b3b3b3;font-weight: 500;">> 120 Days</div>
+                                                    <div class="wms-srv-grid-cell reportHeaderCell"
+                                                        style=" text-align:center;color: #b3b3b3;font-weight: 500;">> 150 Days</div>
+                                                    <div class="wms-srv-grid-cell reportHeaderCell"
+                                                        style=" text-align:center;color: #b3b3b3;font-weight: 500;">> 180 Days</div>
+                                                    <div class="wms-srv-grid-cell"
+                                                        style="text-align:center;color: #b3b3b3;font-weight: 500;">Action</div>
+                                                </div>
+                                                <div id="" class="wms-srv-grid-row reportRow">
+                                                    <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">
+                                                        Effervescence Water</div>
+                                                    <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">
+                                                        120*330ml</div>
+                                                    <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">59</div>
+                                                    <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">0</div>
+                                                    <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">25</div>
+                                                    <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">10</div>
+                                                    <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">24</div>
+                                                    <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">0</div>
+                                                    <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">0</div>
+                                                    <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">0</div>
+                                                    <div class="wms-srv-grid-cell"
+                                                        style="text-align:center;"><i class="fas fa-solid fa-eye"></i></div>
+                                                </div> -->
+                                                
+                                            </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                
+                
+                            <!-- Grid -->
+                        </div>
+                
+                    </div>
+                </div>
+            </div>
+            <!-- Grid 2-->
+        </div>
+    </div>
+</div>
+</div>
+<!--Humadity Popup -->
+</div>

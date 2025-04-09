@@ -1,0 +1,63 @@
+.wms-srv-grid {
+            min-width: 800px;
+        }
+
+        .dashboardActiveTab {
+            background-color: #fafafa !important;
+            font-weight: bold;
+            color: #0686a7;
+            box-shadow: inset 0px 0px 5px #ccc;
+        }
+
+        #pnlCreatePurchaseOrder .pnlWmsDetail .wms-srv-grid-pager,
+        #pnlCreatePurchaseOrder .pnlSearchList .wms-srv-grid-pager,
+        #pnlApproval .pnlWmsDetail .wms-srv-grid-pager,
+        #pnlDocument .pnlWmsDetail .wms-srv-grid-pager,
+        #pnlCommunication .pnlWmsDetail .wms-srv-grid-pager,
+        #pnlTransport .pnlWmsDetail .wms-srv-grid-pager,
+        .pnlWmsDetail .wms-srv-grid-action-panel [data-prefix="EX"],
+        .pnlWmsDetail .wms-srv-grid-action-panel [data-prefix="IM"] {
+            display: none !important;
+        }
+
+        #pnlAllocationPlan .pnlWmsDetail .wms-srv-grid .wms-srv-grid-header input,
+        #pnlAllocationPlan .pnlWmsDetail .wms-srv-grid .wms-srv-grid-header select {
+            width: 100%;
+            display: block;
+        }
+
+        #pnlAllocationPlan .pnlWmsDetail .wms-srv-grid .wms-srv-grid-header label {
+            min-height: 40px;
+            display: block;
+        }
+
+        .wms-srv-grid-header .wms-srv-grid-cell:first-child,
+        .wms-srv-grid-row .wms-srv-grid-cell:first-child {
+            display: table-cell;
+        }
+
+        .wms-srv-grid-row .wms-srv-grid-cell i {
+            cursor: pointer;
+        }
+
+        .wms-grid-highlight-row {
+            background-color: #fff4f4;
+        }
+.wms-srv-suggestion-holder{
+    width: 100% !important;
+}
+
+#header-wrap 
+{
+    position:sticky;
+    top:0;
+    height: auto;
+    width: 100%;
+    /* z-index: 100; */
+}
+#header-wrap .wms-srv-grid-cell
+{
+	background-color:#efefef !important;
+	color:#000000 !important;
+	font-weight:bold !important;
+}

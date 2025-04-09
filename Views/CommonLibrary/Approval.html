@@ -1,0 +1,232 @@
+<!-- Approval Popup -->
+<div class="wms-srv-popup-holder" id="wms-srv-approval-popup" style="display: none;">
+    <div class="wms-srv-popup-bg">
+    </div>
+    <div class="wms-srv-popup">
+        <div class="wms-srv-popup-content">
+            <!-- Popup Title -->
+            <div class="wms-srv-popup-title">
+                <div class="wms-srv-page-title">
+                    <i class="fas fa-user-check"></i><span>Approval</span>
+                </div>
+                <a href="#" id="wms-srv-approval-popup-close" class="wms-srv-popup-close"><i
+                        class="fas fa-times-circle"></i></a>
+            </div>
+            <!-- Popup Title -->
+            <div class="wms-srv-popup-content-body" id="wms-srv-popup-content-body">
+                <div id="popupContentDocument">
+                    <div id="pnlApproval">
+                        <!-- Header Details -->
+                        <!-- Grid -->
+                         <!-- Administrator View -->
+                         <div class="wms-srv-grid-scroller" id="wms-aministratorview-grid"
+                         style="width: 100%;">
+                         <div class="wms-srv-grid" data-gridobjectid="gridObject_Appointment_Book_Book"
+                             id="tblApprovalTransHead">
+                             <div class="wms-srv-grid-header">
+                                <div class="wms-srv-grid-cell wms-align" id="divApprovalApplication" style="text-align: center;">
+                                    -</div>
+                                 <div class="wms-srv-grid-cell wms-align" id="divApprovalObject" style="text-align: center;">
+                                     -</div>
+                                 
+                                 <!-- <div class="wms-srv-grid-cell wms-align" style="text-align: center;">
+                                     Level 1</div>
+                                 <div class="wms-srv-grid-cell wms-align" style="text-align: center;">
+                                     Level 2</div>
+                                 <div class="wms-srv-grid-cell wms-align" style="text-align: center;">
+                                     Level 3</div> -->
+                             </div>
+                             <div class="wms-srv-grid-row wms-align">
+                                <div class="wms-srv-grid-cell" >
+                                    WMS
+                                </div>
+                                 <div class="wms-srv-grid-cell">
+                                     Purchase Order
+                                 </div>
+                                 
+                                 <!-- <div class="wms-srv-grid-cell">
+                                     <div class="pnlApprovalHolder">
+                                         <div class="ctrlEvent"><i class="fas fa-cogs"
+                                                 title="On Price Change"></i></div>
+                                         <div class="userProfile"><img
+                                                 src="Images/profile-pic/pic2.png" /></div>
+                                         <div class="userProfile"><img
+                                                 src="Images/profile-pic/pic3.png" /></div>
+                                         <div class="userProfile"><img
+                                                 src="Images/profile-pic/pic5.png" /></div>
+                                         <div class="ctrlAdd"><i class="fas fa-user-cog"></i></div>
+                                     </div>
+                                 </div>
+                                 <div class="wms-srv-grid-cell">
+                                     <div class="pnlApprovalHolder">
+                                         <div class="ctrlEvent"><i class="fas fa-cogs"
+                                                 title="On Price Change"></i></div>
+                                         <div class="userProfile"><img
+                                                 src="Images/profile-pic/pic4.png" /></div>
+                                         <div class="userProfile"><img
+                                                 src="Images/profile-pic/pic5.png" /></div>
+                                         <div class="ctrlAdd"><i class="fas fa-user-cog"></i></div>
+                                     </div>
+                                 </div>
+                                 <div class="wms-srv-grid-cell">
+                                    <div class="pnlApprovalHolder">
+                                        <div class="ctrlEvent" style="top:7px;"><i class="fas fa-cogs"
+                                                title="On Price Change"></i></div>
+                                        <div class="userProfile"><img
+                                                src="Images/profile-pic/pic1.png" title="" /></div>
+                                        <div class="userProfile"><img
+                                                src="Images/profile-pic/pic2.png" /></div>
+                                        <div class="userProfile"><img
+                                                src="Images/profile-pic/pic3.png" /></div>
+                                        <div class="userProfile activeUserProfile"><img
+                                                src="Images/profile-pic/pic4.png" /></div>
+                                        <div class="userProfile"><img
+                                                src="Images/profile-pic/pic5.png" /></div>
+                                        <div class="ctrlAdd"><i class="fas fa-user-cog"></i></div>
+                                    </div>
+                                </div> -->
+                             </div>
+                         </div>
+                     </div>
+                     <!-- Administrator View -->
+                        <!-- Grid -->
+                    </div>
+                    <br />
+                      <!-- Grid -->
+                      <div class="wms-srv-grid-holder pnlWmsDetail" id="pnlWmsDetail">
+                        <div class="wms-srv-grid-action-panel">
+                            <div class="wms-srv-grid-common-action"><a href="#" class="wms-srv-icononly"><i
+                                        class="fas fa-list"></i></a></div>
+                           
+                            <div class="wms-srv-grid-title" id="pnlApprovalGridTitle">
+                                Approval Level 3 - On Price Change
+                            </div>
+                        </div>
+                        <div class="wms-srv-grid-scroller" style="width: 100%;">
+                            <div class="wms-srv-grid" data-gridobjectid="gridObject_Inbound_PurchaseOrder_DOC" id="wmsGridApprovalList" style="text-align: center;">
+                                <!-- <div class="wms-srv-grid-header">
+                                    <div class="wms-srv-grid-cell" style="width: 35px;"></div>
+                                    <div class="wms-srv-grid-cell">Approver Name</div>
+                                    <div class="wms-srv-grid-cell">Date</div>
+                                    <div class="wms-srv-grid-cell">Remark</div>
+                                    <div class="wms-srv-grid-cell">Approval</div>
+                                </div>
+                                <div class="wms-srv-grid-row currentApprovalRow">
+                                    <div class="wms-srv-grid-cell">
+                                        <div class="userProfile"><img
+                                            src="Images/profile-pic/pic4.png" /></div>
+                                    </div>
+                                    <div class="wms-srv-grid-cell">
+                                        Ganesh Karale
+                                    </div>                              
+                                    <div class="wms-srv-grid-cell">
+                                        18-Nov-2023
+                                    </div>
+                                    <div class="wms-srv-grid-cell">
+                                        <input type="text" value="The price change looks okay for me. It is approved by me." class="wms-srv-grid-cell-input">
+                                    </div>
+                                    <div class="wms-srv-grid-cell">
+                                        <div class="wms-srv-grid-action">
+                                            <i class="fas fa-check-circle"></i>
+                                                     <div class="wms-srv-action-sep">|</div> 
+                                                     <i class="fas fa-times-circle"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="wms-srv-grid-row">
+                                    <div class="wms-srv-grid-cell">
+                                        <div class="userProfile"><img
+                                            src="Images/profile-pic/pic1.png" /></div>
+                                    </div>
+                                    <div class="wms-srv-grid-cell">
+                                        Sunita Jaikar
+                                    </div>                           
+                                    <div class="wms-srv-grid-cell">
+                                        18-Nov-2023
+                                    </div>
+                                    <div class="wms-srv-grid-cell">
+                                       The price change looks okay for me. It is approved by me. 
+                                    </div>
+                                    <div class="wms-srv-grid-cell">
+                                        <i class="fas fa-check-circle"></i>
+                                    </div>
+                                </div>
+                                <div class="wms-srv-grid-row">
+                                    <div class="wms-srv-grid-cell">
+                                        <div class="userProfile"><img
+                                            src="Images/profile-pic/pic2.png" /></div>
+                                    </div>
+                                    <div class="wms-srv-grid-cell">
+                                        Ramesh Kulkarni
+                                    </div>                             
+                                    <div class="wms-srv-grid-cell">
+                                        15-Nov-2023
+                                    </div>
+                                    <div class="wms-srv-grid-cell">
+                                       It looks Good. We can go for it. 
+                                    </div>
+                                    <div class="wms-srv-grid-cell">
+                                        <i class="fas fa-check-circle"></i>
+                                    </div>
+                                </div>
+                                
+                                <div class="wms-srv-grid-row">
+                                    <div class="wms-srv-grid-cell">
+                                        <div class="userProfile"><img
+                                            src="Images/profile-pic/pic3.png" /></div>
+                                    </div>
+                                    <div class="wms-srv-grid-cell">
+                                        Smita Waghmare
+                                    </div>                               
+                                    <div class="wms-srv-grid-cell">
+                                        07-Nov-2023
+                                    </div>
+                                    <div class="wms-srv-grid-cell">
+                                       Fine for me. We can proceed with the change. 
+                                    </div>
+                                    <div class="wms-srv-grid-cell">
+                                        <i class="fas fa-check-circle"></i>
+                                    </div>
+                                </div> -->
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Grid -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Approval Popup -->
+<!-- Approver Member Popup -->
+<div class="pnlEventApprover" style="top:30px;left:30px;display: none;z-index: 9999;">
+    <div class="eventApproverTitle">Add Approver <i class="fas fa-times-circle btnCloseEventApprover"></i></div>
+    <div class="eventCodition">Condition: <input type="radio" name="eventCodition" disabled="disabled" value="And" checked="checked" />
+        And <input type="radio" name="eventCodition" value="OR" disabled="disabled" /> OR 
+        <!-- <button type="button"
+            class="btnAddApprover"><i class="fas fa-user-plus"></i> Add</button> -->
+        </div>
+    <div class="eventApproverHolder">
+        <div class="eventApproverItem">
+            <div class="userProfile"><img src="Images/profile-pic/pic1.png"></div>
+            <div class="profileName">Sunita Jaikar</div>
+        </div>
+        <div class="eventApproverItem">
+            <div class="userProfile"><img src="Images/profile-pic/pic2.png"></div>
+            <div class="profileName">Ramesh Kulkarni</div>
+        </div>
+        <div class="eventApproverItem">
+            <div class="userProfile"><img src="Images/profile-pic/pic3.png"></div>
+            <div class="profileName">Smita Waghmare</div>
+        </div>
+        <div class="eventApproverItem">
+            <div class="userProfile"><img src="Images/profile-pic/pic4.png"></div>
+            <div class="profileName">Ganesh Karale</div>
+        </div>
+        <div class="eventApproverItem">
+            <div class="userProfile"><img src="Images/profile-pic/pic5.png"></div>
+            <div class="profileName">Namita Shahane</div>
+        </div>
+    </div>
+</div>
+<!-- Approver Member Popup -->

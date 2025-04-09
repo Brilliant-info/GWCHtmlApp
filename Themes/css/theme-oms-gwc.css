@@ -1,0 +1,19 @@
+/* CSS */
+.themeWMSTopNav{
+	background-color:#6ebf49;
+}
+.wmsThemeAppSearchFilter{
+	background-color:#4e9130;
+	border:solid 1px #4e9130;
+}
+.themeWMSNavBtnSearch{
+	background-color:#6ebf49;
+	border:solid 1px #6ebf49;
+}
+
+.themeWMSNav li a:hover,
+.themeWMSNav li:hover,
+.themeWMSNav li.themeWMSActiveNav,
+.themeWMSNav li.themeWMSActiveNav a{
+	background-color: #6ebf49 !important;
+}

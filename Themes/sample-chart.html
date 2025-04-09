@@ -1,0 +1,87 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>SAMPLE FUNCTIONS FOR DASHBOARD</title>
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <link href="css/theme-wms-sky-blue.css"  rel="stylesheet" />
+    <link href="css/dashboard-chart.css" rel="stylesheet" />
+    <script src="js/wms-theme.js"></script>
+    <script src="js/dashboard-chart.js"></script>
+</head>
+<body>
+    <h1>SAMPLE FUNCTIONS FOR DASHBOARD</h1>
+    <div id="divColorReader"></div>
+    <div class="tlbChart">
+
+        <!-- Topic Group Bar Chart -->
+        <span>
+            <script language="javascript" type="text/javascript">
+                var userDataA = '19,4,15';
+                var userDataB = '42,5,37';
+                var userDataC = '22,8,32';
+                var myXAxisLabel = 'Label A, Label B, Label C';
+                var chartScoreRange = 47;
+
+            </script>
+        </span>
+        <script language="javascript" type="text/javascript">
+
+            getThemeWmsTopicGroupBarChart(userDataA, userDataB, userDataC, myXAxisLabel, chartScoreRange);
+        </script>
+        <!-- Topic Group Bar Chart -->
+        <br /><br />
+        <!-- Bar Chart With Vertical Label -->
+        <span>
+            <script language="javascript" type="text/javascript">
+                var chartData = '30,60,40,20,70,50,90,10';
+                var myXAxisLabel = 'Dummy Big Text, Dummy Medium, Small, Xml, Label E, Label F, Label G, Label H';
+                var chartYAxisRange = 100;
+
+            </script>
+        </span>
+        <script language="javascript" type="text/javascript">
+
+            getThemeWmsBarChartWithVerticalLabel(chartData, myXAxisLabel, chartYAxisRange);
+        </script>
+        <!-- Bar Chart With Vertical Label -->
+        <br /><br />
+        <!-- Simple Bar Chart -->
+        <span>
+            <script language="javascript" type="text/javascript">
+                var chartData = '30,60,40,20,70,50,90,10';
+                var myXAxisLabel = 'Label A, Label B, Label C, Label D, Label E, Label F, Label G, Label H';
+                var chartYAxisRange = 100;
+
+            </script>
+        </span>
+        <script language="javascript" type="text/javascript">
+
+            getThemeWmsSimpleBarChart(chartData, myXAxisLabel, chartYAxisRange);
+        </script>
+        <!-- Simple Bar Chart -->
+        <br /><br />
+        <!-- ZigZag line Chart -->
+        <script language="javascript" type="text/javascript">
+            var myCanvasScoreArray = '1,1,0,1,2,10,9,11,60,2,1,1,1,0,0,1,2,0,0,1,0,1,10,28,1,1,2,0,1,0,0,2,1,4,1,4,0,1,1,0,0,2,0,1,1,0,4,1,1,1,1,2,1,3,0,0,0,0,0,0,0,0,0,0,0,1,0';
+            var maxYLabelNum = 100;
+        </script>
+        <script language="javascript" type="text/javascript">
+            createZigZagLineChart(myCanvasScoreArray, maxYLabelNum);
+        </script>
+        <!-- ZigZag line Chart -->
+        <br /><br />
+        <!-- Two Way Spot Line Chart -->
+        <script language="javascript" type="text/javascript">
+            var chartData_For_SideA = '0,2,8,0,0';
+            var chartData_For_SideB = '250,200,210,250,270';
+            var YAxis_SideA_Range = 800;
+            var YAxis_SideB_Range = 300;
+            var myXAxisLabel = '1,2,3,4,5';
+            twoWaySpotLineChart(chartData_For_SideA, chartData_For_SideB, YAxis_SideA_Range, YAxis_SideB_Range, myXAxisLabel);
+        </script>
+        <!-- Two Way Spot Line Chart -->
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,296 @@
+
+.tdChartXLabel {
+    font-family: Arial;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 10px;
+        padding-bottom: 10px;
+    padding-bottom: 40px;
+    color: #636363;
+}
+.tdChartYLabel {
+    font-family: Arial;
+    font-size: 14px;
+    font-weight: bold;
+    color: #636363;
+    padding: 10px;
+}
+.tlbChart canvas {
+    box-shadow: 0px 0px 10px #636363;
+}
+.sliderControlVal1 {
+    left: -42px;
+}
+.sliderControlVal2 {
+    left: 114px;
+}
+.sliderControlVal3 {
+    left: 267px;
+}
+.sliderControlVal4 {
+    left: 422px;
+}
+.sliderControlVal5 {
+    left: 576px;
+}
+.sliderControlVal1, .sliderControlVal2, .sliderControlVal3, .sliderControlVal4, .sliderControlVal5 {
+    position: absolute;
+    display: none;
+    text-align: center;
+    width: 100px;
+    color: #37899D;
+    font-weight: bold;
+    display: block;
+}
+.divSliderControlHolder {
+    position: relative;
+    width: 634px;
+    height: 50px;
+    margin-top: 60px;
+}
+.sliderControlPointer {
+    width: 100px;
+    color: #37899D;
+    font-weight: bold;
+    display: block;
+    font-size: 14px;
+    height: 55px;
+    background-image: url(../images/slider-range-val-pointer.png);
+    background-repeat: no-repeat;
+    background-position: bottom center;
+    position: absolute;
+    left: -40px;
+    top: -55px;
+}
+.sliderControlBar {
+    background-image: url(../images/slider-range-bar.png);
+    background-repeat: no-repeat;
+    width: 634px;
+    height: 26px;
+    border: solid 1px #efefef;
+}
+.lblScoreRange {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    display: block;
+    border-bottom: none;
+}
+.lblScoreRange {
+    font-size: 16px !important;
+    text-align: center;
+    color: #1D6674;
+    font-weight: bold;
+}
+.mainSliderScoreRange {
+    border: solid 1px #CCCCCC;
+    border-radius: 7px;
+    margin-bottom: 10px;
+    -moz-box-shadow: 0 0 5px #888;
+    -webkit-box-shadow: 0 0 5px #888;
+    box-shadow: 0 0 5px #888;
+	display:inline-block;
+	padding:0px 30px;
+}
+.pieChartScoreProjection {
+    background-image: url(../images/dashboard-pie-chart.png);
+    background-repeat: no-repeat;
+    width: 246px;
+    height: 152px;
+    position: relative;
+    display: block;
+    text-align: left;
+}
+.tdWritingPercent {
+    color: #BE4F4C !important;
+    font-size: 28px;
+    font-weight: bold;
+    padding-top: 15px;
+}
+.tdMathPercent {
+    color: #70893D !important;
+    font-size: 28px;
+    font-weight: bold;
+}
+.tdCriticalPercent {
+    color: #4E7FBB !important;
+    font-size: 28px;
+    font-weight: bold;
+}
+.pieChartScoreProjectionMath {
+    width: 120px;
+    height: 102px;
+    display: block;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    overflow: hidden;
+}
+.pieChartScoreProjectionCriticalReading {
+    width: 121px;
+    height: 102px;
+    display: block;
+    position: absolute;
+    top: 0px;
+    left: 125px;
+    overflow: hidden;
+}
+.pieChartScoreProjection {
+    background-image: url(../images/dashboard-pie-chart.png);
+    background-repeat: no-repeat;
+    width: 246px;
+    height: 152px;
+    position: relative;
+    display: block;
+    text-align: left;
+}
+.pieChartScoreProjectionWriting {
+    width: 226px;
+    height: 95px;
+    display: block;
+    position: absolute;
+    top: 57px;
+    left: 10px;
+    overflow: hidden;
+}
+.tdMyScoreProjectionMarksHolder {
+    width: 199px;
+}
+.divMyScoreProjectionMarks {
+    width: 126px;
+    display: block;
+    background-color: #70893D;
+    border: solid 1px #5A712D;
+    text-align: center;
+    color: #ffffff;
+    margin-top: 6px;
+    margin-bottom: 6px;
+    font-size: 13px;
+    font-weight: bold;
+    font-family: Arial;
+    vertical-align: middle;
+    padding-top: 13px;
+    padding-bottom: 13px;
+    border-radius: 7px;
+}
+.dashBScrPrjMath {
+    background-color: #70893D;
+    border: solid 1px #5A712D;
+}
+.dashBScrPrjCriticalReading {
+    background-color: #4E7FBB;
+    border: solid 1px #365F92;
+}
+.dashBScrPrjWriting {
+    background-color: #BE4F4C;
+    border: solid 1px #85322F;
+}
+.divDashBoardInfoTitle {
+    font-family: Arial;
+    color: #565656;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 19px;
+        padding-top: 19px;
+        padding-bottom: 19px;
+        padding-left: 19px;
+    padding-left: 25px;
+    text-align: left;
+    background-color: #1a82f7;
+    background: url(../images/sap-prep-design/sap-quiz-header-bg.jpg);
+    background-repeat: repeat-x;
+    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#ffffff), to(#EBEBEB));
+    background: -webkit-linear-gradient(top, #ffffff, #EBEBEB);
+    background: -moz-linear-gradient(top, #ffffff, #EBEBEB);
+    background: -ms-linear-gradient(top, #ffffff, #EBEBEB);
+    background: -o-linear-gradient(top, #ffffff, #EBEBEB);
+    border: solid 1px #C6C6C6;
+    border-radius: 7px;
+    position: relative;
+    top: 9px;
+}
+.divDashBoardInfoMain {
+    padding-top: 10px;
+    height: 250px;
+    background-color: #1a82f7;
+    background: url(../images/sap-prep-design/sap-quiz-header-bg.jpg);
+    background-repeat: repeat-x;
+    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#ffffff), to(#EBEBEB));
+    background: -webkit-linear-gradient(top, #ffffff, #EBEBEB);
+    background: -moz-linear-gradient(top, #ffffff, #EBEBEB);
+    background: -ms-linear-gradient(top, #ffffff, #EBEBEB);
+    background: -o-linear-gradient(top, #ffffff, #EBEBEB);
+    border: solid 1px #C6C6C6;
+    border-radius: 7px;
+    overflow: hidden;
+}
+.divStairAdmissionProgressHolder div.activeStairStep {
+    background-image: url(../images/stair-completed-step.png);
+}
+.innerDivStairInvidStep {
+    width: 327px;
+    height: 32px;
+    text-align: center;
+    vertical-align: middle;
+    padding-top: 7px;
+    color: #565656;
+    font-weight: bold;
+    font-size: 14px;
+    cursor: pointer;
+}
+.divStairInvidStep {
+    width: 354px;
+    height: 33px;
+    background-repeat: no-repeat;
+    padding-top: 12px;
+}
+.divStairAdmissionProgressHolder {
+    width: 455px;
+    height: 223px;
+    margin-top: 13px;
+    margin-left: 12px;
+    background-image: url(../images/stairs-progress-bg.png);
+    background-repeat: no-repeat;
+}
+#stairInvidProg1 {
+    margin-left: 0px;
+}
+#stairInvidProg2 {
+    margin-left: 26px;
+}
+#stairInvidProg3 {
+    margin-left: 52px;
+}
+#stairInvidProg4 {
+    margin-left: 77px;
+}
+#stairInvidProg5 {
+    margin-left: 102px;
+}
+.divStairAdmissionProgressHolder div.activeStairStep .innerDivStairInvidStep {
+    color: #ffffff !important;
+}
+/* PROGRESS BAR */
+.divLearningHistoryProgressBar {
+    background-color: #91C0B3;
+    width: 191px;
+    border: solid 1px #91C0B3;
+    border-radius: 13px;
+}
+.divLearningHistoryProgressBar, .divLearningHistoryProgressBarVal {
+    height: 30px;
+}
+.divLearningHistoryProgressBarVal {
+    background-color: #0B5E47;
+    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#118666), to(#0B5E47));
+    background: -webkit-linear-gradient(top, #118666, #0B5E47);
+    background: -moz-linear-gradient(top, #118666, #0B5E47);
+    background: -ms-linear-gradient(top, #118666, #0B5E47);
+    background: -o-linear-gradient(top, #118666, #0B5E47);
+    border-top-left-radius: 13px;
+    border-bottom-left-radius: 13px;
+}
+.tlbDashboardLearningHistoryMain td {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+/* PROGRESS BAR */

@@ -1,0 +1,39 @@
+#pnlNoInwardSkuRecord,
+#pnlEmptyPurchaseOrderCart{
+    border:solid 1px #cccccc;
+    padding:10px;
+    text-align:center;
+    font-size: 13px;
+    font-style: italic;
+}
+
+#pnlEmptyPurchaseOrderCart{
+	font-weight: bold;
+}
+
+#btnSelectFromPOSkuList{
+    text-decoration: underline;
+}
+
+#pnlSkuListCart {
+	display: inline-block;
+	position: relative;
+}
+
+.pnlCartCount {
+	/* position: absolute; */
+	background-color: #ff0000;
+	color: #ffffff;
+	padding: 3px;
+	border: solid 1px #ff0000;
+	border-radius: 50%;
+	min-width: 25px;
+	text-align: center;
+	display: inline-block;
+	position: relative;
+	top:-15px;
+	left:5px;
+}
+#pnlSkuListCart i.fa-shopping-cart{
+	font-size: 20px;
+}

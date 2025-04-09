@@ -1,0 +1,360 @@
+<div id="pnlReportSetup" class="wmsMasterTypePage" style="display:none;">
+<!-- Content Holder -->
+<div class="wms-srv-content-area pnlInbound" id="pnlAppointmentList">
+    <!-- Content Area -->
+    <div class="container-fluid wms-srv-dashboard-panel">
+        <div class="row">
+            <div class="col-md-4 nopadding">
+                <!-- Page Title -->
+                <div class="wms-srv-page-title">
+                    <i class="fas fa-cog"></i><span class="wms-srv-data-title">Report Setup</span>
+                </div>
+                <!-- Page Title -->
+            </div>
+            <div class="col-md-8 nopadding">
+            </div>
+        </div>
+    </div>
+    <!-- Grid -->
+    <div class="wms-srv-obj-main-grid pnlWmsDetail">
+        <div class="wms-srv-grid-holder">
+            <div class="wms-srv-grid-action-panel">
+                <div class="wms-srv-search">
+                    <label>Search Report: </label>
+                    <!-- <select type="text" class="wms-srv-input wms-srv-search-filter">
+                        <option value="">-- Select --</option>
+                        <option value="Transfer No">Warehouse Code</option>
+                        <option value="Date Time">Warehouse Name</option>
+
+                        <option value="Transfer By">Type</option>
+                    </select> -->
+                    <input type="text" value="" class="wms-srv-input wms-srv-simple-search"
+                        onkeydown="searchReportInList(this);" onkeyup="searchReportInList(this);"><a href="#"
+                        data-prefix="SE"><i class="fas fa-search"></i></a>
+                </div>
+                <!-- <button class="wms-srv-input wms-srv-button wms-srv-highlight-btn" title="Add New" data-prefix="AN" type="button" onclick="showAddWarehouseRow();">
+                    <i class="fas fa-plus"></i><span>Add New</span></button> -->
+                <div class="wms-srv-grid-title">
+                    Report List
+                </div>
+            </div>
+        </div>
+        <div class="wms-srv-grid-scroller" style="width: 100%;">
+            <div class="wms-srv-grid gridReportSetup" id="gridReportSetup">
+                <div class="wms-srv-grid-header">
+
+                    <div class="wms-srv-grid-cell  wms-align">Report Name</div>
+                    <div class="wms-srv-grid-cell wms-align" style="width:160px;">Action</div>
+                </div>
+                <div class="wms-srv-grid-row wms-srv-group-head wms-align" data-headgroup="Inbound Report">
+                    <div class="wms-srv-grid-cell">Inbound Report</div>
+                    <div class="wms-srv-grid-cell">
+                        <!-- <div class="wms-srv-grid-action">
+                            <i class="fas fa-check-circle" style="opacity: 1;"></i> <div class="wms-srv-action-sep"> | </div> <i class="fas fa-eye"></i>
+                        </div> -->
+                    </div>
+                </div>
+                <div class="wms-srv-grid-row wms-align">
+                    <div class="wms-srv-grid-cell wms-srv-group-item" data-head="Inbound Report">- Warehouse Dock
+                        Receipt</div>
+                    <div class="wms-srv-grid-cell">
+                        <div class="wms-srv-grid-action">
+                            <i class="fas fa-check-circle" style="opacity: 1;"></i>
+                            <div class="wms-srv-action-sep"> | </div> <i class="fas fa-eye"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="wms-srv-grid-row wms-align">
+                    <div class="wms-srv-grid-cell wms-srv-group-item" data-head="Inbound Report"> - Expected Receipt Log
+                        Report</div>
+                    <div class="wms-srv-grid-cell">
+                        <div class="wms-srv-grid-action">
+                            <i class="fas fa-check-circle" style="opacity: 0.2;"></i>
+                            <div class="wms-srv-action-sep">|</div> <i class="fas fa-eye"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="wms-srv-grid-row wms-align">
+                    <div class="wms-srv-grid-cell wms-srv-group-item" data-head="Inbound Report"> - Inbound Report for
+                        Variance</div>
+                    <div class="wms-srv-grid-cell">
+                        <div class="wms-srv-grid-action">
+                            <i class="fas fa-check-circle" style="opacity: 1;"></i>
+                            <div class="wms-srv-action-sep"> | </div> <i class="fas fa-eye"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="wms-srv-grid-row wms-srv-group-head wms-align" data-headgroup="Outbound Report">
+                    <div class="wms-srv-grid-cell">Outbound Report</div>
+                    <div class="wms-srv-grid-cell">
+                        <!-- <div class="wms-srv-grid-action">
+                            <i class="fas fa-check-circle" style="opacity: 1;"></i> <div class="wms-srv-action-sep"> | </div> <i class="fas fa-eye"></i>
+                        </div> -->
+                    </div>
+                </div>
+                <div class="wms-srv-grid-row wms-align">
+                    <div class="wms-srv-grid-cell wms-srv-group-item" data-head="Outbound Report"> - Allocation
+                        Shortages </div>
+                    <div class="wms-srv-grid-cell">
+                        <div class="wms-srv-grid-action"><i class="fas fa-check-circle" style="opacity: 1;"></i>
+                            <div class="wms-srv-action-sep"> | </div> <i class="fas fa-eye"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="wms-srv-grid-row wms-align">
+                    <div class="wms-srv-grid-cell wms-srv-group-item" data-head="Outbound Report"> - Carrier Requirement
+                    </div>
+                    <div class="wms-srv-grid-cell">
+                        <div class="wms-srv-grid-action"><i class="fas fa-check-circle" style="opacity: 0.2;"></i>
+                            <div class="wms-srv-action-sep">|</div> <i class="fas fa-eye"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="wms-srv-grid-row wms-align">
+                    <div class="wms-srv-grid-cell wms-srv-group-item" data-head="Outbound Report"> - Group Summary
+                    </div>
+                    <div class="wms-srv-grid-cell">
+                        <div class="wms-srv-grid-action"><i class="fas fa-check-circle" style="opacity: 1;"></i>
+                            <div class="wms-srv-action-sep"> | </div> <i class="fas fa-eye"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="wms-srv-grid-row wms-align">
+                    <div class="wms-srv-grid-cell wms-srv-group-item" data-head="Outbound Report"> - Group Item Summary
+                    </div>
+                    <div class="wms-srv-grid-cell">
+                        <div class="wms-srv-grid-action"><i class="fas fa-check-circle" style="opacity: 0.2;"></i>
+                            <div class="wms-srv-action-sep">|</div> <i class="fas fa-eye"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="wms-srv-grid-row wms-align">
+                    <div class="wms-srv-grid-cell wms-srv-group-item" data-head="Outbound Report"> - Order Log Report
+                    </div>
+                    <div class="wms-srv-grid-cell">
+                        <div class="wms-srv-grid-action"><i class="fas fa-check-circle" style="opacity: 1;"></i>
+                            <div class="wms-srv-action-sep"> | </div> <i class="fas fa-eye"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="wms-srv-grid-row wms-align">
+                    <div class="wms-srv-grid-cell wms-srv-group-item" data-head="Outbound Report"> - Order Manifest
+                    </div>
+                    <div class="wms-srv-grid-cell">
+                        <div class="wms-srv-grid-action"><i class="fas fa-check-circle" style="opacity: 1;"></i>
+                            <div class="wms-srv-action-sep"> | </div> <i class="fas fa-eye"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="wms-srv-grid-row wms-align">
+                    <div class="wms-srv-grid-cell wms-srv-group-item" data-head="Outbound Report"> - Packing Requirement
+                    </div>
+                    <div class="wms-srv-grid-cell">
+                        <div class="wms-srv-grid-action"><i class="fas fa-check-circle" style="opacity: 1;"></i>
+                            <div class="wms-srv-action-sep"> | </div> <i class="fas fa-eye"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="wms-srv-grid-row wms-align">
+                    <div class="wms-srv-grid-cell wms-srv-group-item" data-head="Outbound Report"> - Bill of Lading
+                        Report </div>
+                    <div class="wms-srv-grid-cell">
+                        <div class="wms-srv-grid-action"><i class="fas fa-check-circle" style="opacity: 1;"></i>
+                            <div class="wms-srv-action-sep"> | </div> <i class="fas fa-eye"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="wms-srv-grid-row wms-align">
+                    <div class="wms-srv-grid-cell wms-srv-group-item" data-head="Outbound Report"> - Customer Po
+                        Shipping Summary </div>
+                    <div class="wms-srv-grid-cell">
+                        <div class="wms-srv-grid-action"><i class="fas fa-check-circle" style="opacity: 1;"></i>
+                            <div class="wms-srv-action-sep"> | </div> <i class="fas fa-eye"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="wms-srv-grid-row wms-align">
+                    <div class="wms-srv-grid-cell wms-srv-group-item" data-head="Outbound Report"> - Dispatch Summary
+                    </div>
+                    <div class="wms-srv-grid-cell">
+                        <div class="wms-srv-grid-action"><i class="fas fa-check-circle" style="opacity: 1;"></i>
+                            <div class="wms-srv-action-sep"> | </div> <i class="fas fa-eye"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="wms-srv-grid-row wms-align">
+                    <div class="wms-srv-grid-cell wms-srv-group-item" data-head="Outbound Report"> - Packing List Per
+                        Carton </div>
+                    <div class="wms-srv-grid-cell">
+                        <div class="wms-srv-grid-action"><i class="fas fa-check-circle" style="opacity: 1;"></i>
+                            <div class="wms-srv-action-sep"> | </div> <i class="fas fa-eye"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="wms-srv-grid-row wms-align">
+                    <div class="wms-srv-grid-cell wms-srv-group-item" data-head="Outbound Report"> - Packing List Per
+                        Order </div>
+                    <div class="wms-srv-grid-cell">
+                        <div class="wms-srv-grid-action"><i class="fas fa-check-circle" style="opacity: 1;"></i>
+                            <div class="wms-srv-action-sep"> | </div> <i class="fas fa-eye"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="wms-srv-grid-row wms-align">
+                    <div class="wms-srv-grid-cell wms-srv-group-item" data-head="Outbound Report"> - Pick Ticket Per
+                        Batch Per Order </div>
+                    <div class="wms-srv-grid-cell">
+                        <div class="wms-srv-grid-action"><i class="fas fa-check-circle" style="opacity: 1;"></i>
+                            <div class="wms-srv-action-sep"> | </div> <i class="fas fa-eye"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="wms-srv-grid-row wms-align">
+                    <div class="wms-srv-grid-cell wms-srv-group-item" data-head="Outbound Report"> - Pick Ticket Per
+                        Batch Summary </div>
+                    <div class="wms-srv-grid-cell">
+                        <div class="wms-srv-grid-action"><i class="fas fa-check-circle" style="opacity: 1;"></i>
+                            <div class="wms-srv-action-sep"> | </div> <i class="fas fa-eye"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="wms-srv-grid-row wms-align">
+                    <div class="wms-srv-grid-cell wms-srv-group-item" data-head="Outbound Report"> - Open Order Report
+                    </div>
+                    <div class="wms-srv-grid-cell">
+                        <div class="wms-srv-grid-action"><i class="fas fa-check-circle" style="opacity: 1;"></i>
+                            <div class="wms-srv-action-sep"> | </div> <i class="fas fa-eye"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="wms-srv-grid-row wms-align">
+                    <div class="wms-srv-grid-cell wms-srv-group-item" data-head="Outbound Report"> - Item History Report
+                    </div>
+                    <div class="wms-srv-grid-cell">
+                        <div class="wms-srv-grid-action"><i class="fas fa-check-circle" style="opacity: 1;"></i>
+                            <div class="wms-srv-action-sep"> | </div> <i class="fas fa-eye"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="wms-srv-grid-row wms-srv-group-head wms-align" data-headgroup="Inventory Report">
+                    <div class="wms-srv-grid-cell">Inventory Report</div>
+                    <div class="wms-srv-grid-cell">
+                        <!-- <div class="wms-srv-grid-action">
+                            <i class="fas fa-check-circle" style="opacity: 1;"></i> <div class="wms-srv-action-sep"> | </div> <i class="fas fa-eye"></i>
+                        </div> -->
+                    </div>
+                </div>
+                <div class="wms-srv-grid-row wms-align">
+                    <div class="wms-srv-grid-cell wms-srv-group-item" data-head="Inventory Report">- Customer Inventory
+                        Report With Pack Id &
+                        Location</div>
+                    <div class="wms-srv-grid-cell">
+                        <div class="wms-srv-grid-action">
+                            <i class="fas fa-check-circle" style="opacity: 1;"></i>
+                            <div class="wms-srv-action-sep"> | </div> <i class="fas fa-eye"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="wms-srv-grid-row wms-srv-group-head wms-align" data-headgroup="Movement Report">
+                    <div class="wms-srv-grid-cell">Movement Report</div>
+                    <div class="wms-srv-grid-cell">
+                        <!-- <div class="wms-srv-grid-action">
+                            <i class="fas fa-check-circle" style="opacity: 1;"></i> <div class="wms-srv-action-sep"> | </div> <i class="fas fa-eye"></i>
+                        </div> -->
+                    </div>
+                </div>
+                <div class="wms-srv-grid-row wms-align">
+                    <div class="wms-srv-grid-cell wms-srv-group-item" data-head="Movement Report">- Movement Report
+                    </div>
+                    <div class="wms-srv-grid-cell">
+                        <div class="wms-srv-grid-action">
+                            <i class="fas fa-check-circle" style="opacity: 1;"></i>
+                            <div class="wms-srv-action-sep"> | </div> <i class="fas fa-eye"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="wms-srv-grid-row wms-align">
+                    <div class="wms-srv-grid-cell wms-srv-group-item" data-head="Movement Report"> - Pallet Movement
+                        Report</div>
+                    <div class="wms-srv-grid-cell">
+                        <div class="wms-srv-grid-action">
+                            <i class="fas fa-check-circle" style="opacity: 1;"></i>
+                            <div class="wms-srv-action-sep"> | </div> <i class="fas fa-eye"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- <div class="wms-srv-grid-pager">
+            <span class="wms-srv-pager-records">1-1 of 82 Records</span>
+            <span class="wms-srv-empty-space"></span>
+            <span class="wms-srv-pager-links"><a href="#" data-page="firstpage"><i
+                        class="fas fa-angle-double-left"></i></a><a href="#" data-page="previous"><i
+                        class="fas fa-angle-left"></i></a><a href="#" class="wms-srv-active" data-page="1">1</a><a
+                    href="#" data-page="2">2</a><a href="#" data-page="3">3</a><a href="#" data-page="4">4</a><a
+                    href="#" data-page="5">5</a><a href="#" data-page="6">6</a><a href="#" data-page="7">7</a><a
+                    href="#" data-page="8">8</a><a href="#" data-page="9">9</a><a href="#" data-page="next"><i
+                        class="fas fa-angle-right"></i></a><a href="#" data-page="lastpage"><i
+                        class="fas fa-angle-double-right"></i></a></span>
+            <span class="wms-srv-empty-space"></span>
+            <input type="text" name="txtGridPageNo" class="wms-srv-input notranslate" value="0" style="width: 80px;">
+            <a href="#" title="Jump To" class="wms-srv-pager-go"><i class="fas fa-play-circle"></i></a>
+        </div> -->
+    </div>
+</div>
+
+<!--Report popup-->
+<div class="wms-srv-popup-holder" id="wms-srv-report-setup-popup" style="display: none;">
+    <div class="wms-srv-popup-bg">
+    </div>
+    <div class="wms-srv-popup">
+        <div class="wms-srv-popup-content">
+            <!-- Popup Title -->
+            <div class="wms-srv-popup-title">
+                <div class="wms-srv-page-title">
+                    <i class="fas fa-file-alt"></i><span>Report</span>
+                </div>
+                <a href="#" id="wms-srv-report-setup-popup-close" class="wms-srv-popup-close"><i
+                        class="fas fa-times-circle"></i></a>
+            </div>
+            <!-- Popup Title -->
+            <div class="wms-srv-popup-content-body" id="wms-srv-popup-content-body">
+                <!-- Grid 2-->
+                    <iframe style="width: 100%;height:500px;" id="iframeSetupReport" src="about:blank">
+
+                    </iframe>
+                <!-- Grid 2-->
+            </div>
+        </div>
+    </div>
+</div>
+<!--Report popup-->
+
+<!--Report popup-->
+<div class="wms-srv-popup-holder" id="wms-srv-reportdetail-popup" style="display: none;">
+    <div class="wms-srv-popup-bg">
+    </div>
+    <div class="wms-srv-popup">
+        <div class="wms-srv-popup-content">
+            <!-- Popup Title -->
+            <div class="wms-srv-popup-title">
+                <div class="wms-srv-page-title">
+                    <i class="fas fa-file-alt"></i><span>Report</span>
+                </div>
+                <a href="#" id="wms-srv-reportdetail-popup-close" class="wms-srv-popup-close"><i
+                        class="fas fa-times-circle"></i></a>
+            </div>
+            <!-- Popup Title -->
+            <div class="wms-srv-popup-content-body" id="wms-srv-popup-content-body">
+                <!-- Grid 2-->
+                    <iframe style="width: 100%;height:500px;" id="iframeDetailReport" src="about:blank">
+
+                    </iframe>
+                <!-- Grid 2-->
+            </div>
+        </div>
+    </div>
+</div>
+<!--Report popup-->
+<!-- Content Area -->
+</div>

@@ -1,0 +1,15 @@
+#header-wrap 
+{
+    position:sticky;
+    top:0;
+    height: auto;
+    width: 100%;
+    z-index: 100;
+}
+#header-wrap .wms-srv-grid-cell{
+	background-color:#efefef !important;
+	color:#000000 !important;
+	font-weight:bold !important;
+}
+ 
+    

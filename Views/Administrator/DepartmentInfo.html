@@ -1,0 +1,334 @@
+<div id="pnlDepartmentInfo" class="wmsMasterTypePage" style="display: none;">
+    <div class="wms-srv-content-area pnlInbound">
+        <!-- Dashboard Area -->
+        <div class="container-fluid wms-srv-dashboard-panel">
+            <div class="row">
+                <div class="col-md-4 nopadding">
+                    <!-- Page Title -->
+                    <div class="wms-srv-page-title">
+                        <i class="fas fa-user-tag"></i><span class="wms-srv-data-title">Department Information</span>
+                    </div>
+                    <!-- Page Title -->
+                </div>
+                <div class="col-md-8 nopadding">
+                </div>
+            </div>
+        </div>
+        <!-- Dashboard Area -->
+        <!-- Head Grid -->
+        <div class="wms-srv-grid-holder pnlWmsHead" id="pnlWmsHead" style="display: none;">
+            <div class="wms-srv-grid">
+                <!-- Object Head Data Will be Here -->
+            </div>
+        </div>
+        <br>
+        <!-- Head Grid -->
+        <!-- Grid -->
+        <div class="wms-srv-obj-main-grid pnlWmsDetail">
+            <div class="wms-srv-grid-action-panel">
+                <div class="wms-srv-grid-common-action">
+                    <a href="#" class="wms-srv-icononly">
+                        <i class="fas fa-list"></i>
+                    </a>
+                </div>
+                <div class="wms-srv-search">
+                    <label>Search Filter: </label>
+                    <select type="text" id="ddlsearch" class="wms-srv-input wms-srv-search-filter">
+                        <option value="">--Select Filter--</option>
+                        <option>Department Name</option>
+                        <option>Department</option>
+                        <option>Approval Level</option>
+                        <option>Auto Cancel</option>
+                        <option>Cancel Days</option>
+                        <option>GWC Deliveries
+                        <option>
+                        <option>Ecommerce</option>
+                        <option>File Approver</option>
+                        <option>Address Type</option>
+                        <option>Prime Hours</option>
+                        <option>Express Hours</option>
+                        <option>Regular Hours</option>
+                    </select>
+                    <input type="text" value="" id="txtvalue" class="wms-srv-input wms-srv-simple-search"><a href="#" data-prefix="SE">
+                        <i class="fas fa-search" title="Search"
+                           onclick="SearchDepartment();"></i>
+                    </a>
+                </div>
+                <button class="wms-srv-input wms-srv-button wms-srv-highlight-btn" title="Add New" data-prefix="AN"
+                        type="button" onclick="openAddNewDepartmentPopup();">
+                    <i class="fas fa-plus"
+                       id="btnAddNewCustomerData"></i><span>Add New</span>
+                </button>
+
+                <div class="wms-srv-grid-title">
+                    Department List
+                </div>
+            </div>
+            <div class="wms-srv-grid-scroller" style="width: 100%;">
+                <div class="wms-srv-grid" id="departmentList">
+                </div>
+
+                <!-- Content Holder -->
+                <!-- Save Record Structure -->
+                <div class="wms-srv-alert-popup" data-type="" style="display: none;">
+                    <div class="wms-alert-title">Success</div>
+                    <div class="wms-alert-message">Your transaction has been saved!!</div>
+                </div>
+                <!-- Save Record Structure -->
+            </div>
+        </div>
+        <!-- Grid -->
+    </div>
+    <!-- ALL POPUP AREA -->
+    <!--Edit popup-->
+    <div class="wms-srv-popup-holder" id="wms-srv-department-edit-popup" style="display:none;">
+        <div class="wms-srv-popup-bg">
+        </div>
+        <div class="wms-srv-popup">
+            <div class="wms-srv-popup-content">
+                <div class="wms-srv-popup-title">
+                    <div class="wms-srv-page-title">
+                        <i class="fas fa-user"></i><span>Department Info</span>
+                    </div>
+                    <a href="#" title="Close" id="wms-srv-department-edit-popup-close"
+                       class="wms-srv-popup-close"><i class="fas fa-times-circle"></i></a>
+                </div>
+                <div class="wms-srv-popup-content-body" id="wms-srv-popup-content-body">
+                    <div class="wms-srv-grid-holder pnlWmsDetail" id="wms-srv-edit-popup">
+                        <div class="wms-srv-grid">
+                            <div class="wms-srv-grid-header">
+                                <div class="wms-srv-grid-cell">Select Customer <span class="requiredStar">*</span></div>
+                                <div class="wms-srv-grid-cell">Department <span class="requiredStar">*</span></div>
+                                <div class="wms-srv-grid-cell">Department Code <span class="requiredStar">*</span></div>
+                                <div class="wms-srv-grid-cell">Approval Level <span class="requiredStar">*</span></div>
+                                <div class="wms-srv-grid-cell">Auto Cancel <span class="requiredStar">*</span></div>
+                                <div class="wms-srv-grid-cell">Auto Cancellation Days <span class="requiredStar">*</span></div>
+                            </div>
+                            <div class="wms-srv-grid-row">
+                                <div class="wms-srv-grid-cell">
+                                    <select class="wms-srv-grid-cell-input" id="ddlDeptCustomerName">
+                                        <option value="">-- Select --</option>
+                                        <option value="Vodafone Technical">Vodafone Technical</option>
+                                    </select>
+                                </div>
+                                <div class="wms-srv-grid-cell">
+                                    <input type="text" value="" id="txtDeptName" class="wms-srv-grid-cell-input" />
+                                </div>
+                                <div class="wms-srv-grid-cell">
+                                    <input type="text" value="" id="txtDepartmentCode" class="wms-srv-grid-cell-input" />
+                                </div>
+                                <div class="wms-srv-grid-cell">
+                                    <input type="text" value="" id="txtDeptApprovalLevel" class="wms-srv-grid-cell-input" />
+                                </div>
+                                <div class="wms-srv-grid-cell">
+                                    <select class="wms-srv-grid-cell-input" id="ddlDeptAutoCancel">
+                                        <option value="">-- Select --</option>
+                                        <option value="Yes">Yes</option>
+                                        <option value="No">No</option>
+                                    </select>
+                                </div>
+                                <div class="wms-srv-grid-cell">
+                                    <input type="text" value="" id="txtDeptAutoCancellationDays" class="wms-srv-grid-cell-input" />
+                                </div>
+                            </div>
+                        </div>
+                        <br />
+                        <div class="wms-srv-grid">
+                            <div class="wms-srv-grid-header">
+                                <div class="wms-srv-grid-cell">Approval Reminder</div>
+                                <div class="wms-srv-grid-cell">Reminder Schedule</div>
+                                <div class="wms-srv-grid-cell">GWC Deliveries</div>
+                                <div class="wms-srv-grid-cell">Max Delivery Days</div>
+                                <div class="wms-srv-grid-cell">Active <span class="requiredStar">*</span></div>
+                                <div class="wms-srv-grid-cell">ECommerce</div>
+                                <div class="wms-srv-grid-cell">Price Change</div>
+                            </div>
+                            <div class="wms-srv-grid-row">
+                                <div class="wms-srv-grid-cell">
+                                    <input type="checkbox" value="" id="txtDeptApprovalReminder" class="wms-srv-grid-cell-input" />
+                                </div>
+                                <div class="wms-srv-grid-cell">
+                                    <input type="text" value="" id="txtDeptReminderSchedule" class="wms-srv-grid-cell-input" />
+                                </div>
+                                <div class="wms-srv-grid-cell">
+                                    <input type="checkbox" value="" id="txtDeptGWCDeliveries" class="wms-srv-grid-cell-input" />
+                                </div>
+                                <div class="wms-srv-grid-cell">
+                                    <input type="text" value="" id="txtDeptMaxDeliveryDays" class="wms-srv-grid-cell-input" />
+                                </div>
+                                <div class="wms-srv-grid-cell">
+                                    <input type="radio" name="txtDeptActive" id="rbnDeptY" data-id="" value="" checked="checked"><a href="#" style="margin-right: 20px;">Yes</a>
+                                    <input type="radio" name="txtDeptActive" id="rbnDeptN" data-id="" value=""><a href="#">No</a>
+                                </div>
+                                <div class="wms-srv-grid-cell">
+                                    <input type="text" value="" id="txtDeptEcommerce" class="wms-srv-grid-cell-input" />
+                                </div>
+                                <div class="wms-srv-grid-cell">
+                                    <input type="checkbox" value="" id="txtDeptPriceChange" class="wms-srv-grid-cell-input" />
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="wms-srv-grid">
+                            <div class="wms-srv-grid-header">
+                                <div class="wms-srv-grid-cell" style="white-space:nowrap;">Financial Approver</div>
+                                <div class="wms-srv-grid-cell" style="white-space:nowrap;">Location Compulsory <span class="requiredStar">*</span></div>
+                                <div class="wms-srv-grid-cell" style="white-space:nowrap;">Ecommerce Time</div>
+                                <div class="wms-srv-grid-cell" style="white-space:nowrap;">Ecommerce Requestor</div>
+                                <div class="wms-srv-grid-cell" style="white-space:nowrap;">Merchant Code</div>
+                                <div class="wms-srv-grid-cell" style="white-space:nowrap;">Customer Analytics</div>
+                                <div class="wms-srv-grid-cell" style="white-space:nowrap;">E Money</div>
+                                <div class="wms-srv-grid-cell" style="white-space:nowrap;">ERP Auto Approval</div>
+                                <div class="wms-srv-grid-cell" style="white-space:nowrap;">Expiry Date</div>
+                            </div>
+                            <div class="wms-srv-grid-row">
+                                <div class="wms-srv-grid-cell" style="width:140px;">
+                                    <input type="text" value="" id="txtDeptFinancialApprover" class="wms-srv-grid-cell-input" style="width:109px;display:inline-block;" />
+                                    <i class="fas fa-search" title="Search" style="margin-top: 4px;display:inline-block; "></i>
+                                </div>
+                                <div class="wms-srv-grid-cell">
+                                    <input type="radio" name="txtDeptLocationCompulsoryActive" id="rbnLocY" data-id="" value="" checked="checked"><a href="#" style="margin-right: 20px;">Yes</a>
+                                    <input type="radio" name="txtDeptLocationCompulsoryActive" id="rbnLocY" data-id="" value=""><a href="#">No</a>
+                                </div>
+                                <div class="wms-srv-grid-cell" style="white-space:nowrap;width:153px;">
+                                    <input type="text" value="" id="txtDeptNormalOrder" placeholder="Normal Order" class="wms-srv-grid-cell-input" style="width:90px;display:inline-block;" /> -
+                                    <input type="text" value="" id="txtDeptPreOrder" placeholder="Pre Order" class="wms-srv-grid-cell-input" style="width:90px;display:inline-block;" />
+                                </div>
+                                <div class="wms-srv-grid-cell">
+                                    <input type="text" value="" id="txtDeptEcommerceRequestor" class="wms-srv-grid-cell-input" style="width:122px;display:inline-block;" />
+                                    <i class="fas fa-search" title="Search" style="margin-top: 4px;display:inline-block; "></i>
+                                </div>
+                                <div class="wms-srv-grid-cell">
+                                    <input type="text" value="" id="txtDeptMerchantCode" class="wms-srv-grid-cell-input" />
+                                </div>
+                                <div class="wms-srv-grid-cell">
+                                    <input type="radio" name="txtDeptCustomerAnalyticsActive" id="txtDeptCustAnalyticsActiveY" data-id="" value="" checked="checked"><a href="#" style="margin-right: 20px;">Yes</a>
+                                    <input type="radio" name="txtDeptCustomerAnalyticsActive" id="txtDeptCustAnalyticsActiveN" data-id="" value=""><a href="#">No</a>
+                                </div>
+                                <div class="wms-srv-grid-cell">
+                                    <input type="checkbox" value="" id="txtDeptEMoney" class="wms-srv-grid-cell-input" />
+                                </div>
+                                <div class="wms-srv-grid-cell">
+                                    <input type="checkbox" value="" id="txtDeptErpAutoApprove" class="wms-srv-grid-cell-input" />
+                                </div>
+                                <div class="wms-srv-grid-cell">
+                                    <input type="text" value="" id="txtDeptExpiryDate" class="wms-srv-grid-cell-input" />
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="btnSaveCustomerDepartment" style="text-align:center;">
+                            <button class="wms-srv-input wms-srv-button wms-srv-highlight-btn-secondary"
+                                    type="button" title="Save"
+                                    data-prefix="MO[MKCM--wmscmm--CO]">
+                                <span>Save</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Edit popup-->
+    <!-- Payment Info Popup -->
+    <div class="wms-srv-popup-holder" id="wms-srv-department-payment-popup" style="display:none;">
+        <div class="wms-srv-popup-bg">
+        </div>
+        <div class="wms-srv-popup">
+            <div class="wms-srv-popup-content">
+                <div class="wms-srv-popup-title">
+                    <div class="wms-srv-page-title">
+                        <i class="fas fa-credit-card"></i><span>Payment Method List</span>
+                    </div>
+                    <a href="#" title="Close" id="wms-srv-department-payment-popup-close"
+                       class="wms-srv-popup-close"><i class="fas fa-times-circle"></i></a>
+                </div>
+                <div class="wms-srv-popup-content-body" id="wms-srv-popup-content-body">
+                    <div class="wms-srv-obj-main-grid pnlWmsDetail">
+                        <div class="wms-srv-grid-action-panel">
+                            <div class="wms-srv-grid-common-action">
+                                <a href="#" class="wms-srv-icononly">
+                                    <i class="fas fa-list"></i>
+                                </a>
+                            </div>
+                            <button class="wms-srv-input wms-srv-button wms-srv-highlight-btn" title="Add New" data-prefix="AN"
+                                    type="button" onclick="openAllPaymentMethodsPopup();">
+                                <i class="fas fa-plus"
+                                   id="btnAllPaymentMethodsPopup"></i><span>Add New</span>
+                            </button>
+
+                            <div class="wms-srv-grid-title">
+                                Payment Method List
+                            </div>
+                        </div>
+                        <div class="wms-srv-grid-scroller" style="width: 100%;">
+                            <div class="wms-srv-grid" id="departmentPaymentMethodList">
+
+                            </div>
+                            <!-- Content Holder -->
+                            <!-- Save Record Structure -->
+                            <div class="wms-srv-alert-popup" data-type="" style="display: none;">
+                                <div class="wms-alert-title">Success</div>
+                                <div class="wms-alert-message">Your transaction has been saved!!</div>
+                            </div>
+                            <!-- Save Record Structure -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Payment Info Popup -->
+
+    <!-- All Payment List -->
+    <div class="wms-srv-popup-holder" id="wms-srv-all-paymentlist-popup" style="display:none;">
+        <div class="wms-srv-popup-bg">
+        </div>
+        <div class="wms-srv-popup">
+            <div class="wms-srv-popup-content">
+                <div class="wms-srv-popup-title">
+                    <div class="wms-srv-page-title">
+                        <i class="fas fa-credit-card"></i><span>Add Payment Method</span>
+                    </div>
+                    <a href="#" title="Close" id="wms-srv-all-paymentlist-popup-close"
+                       class="wms-srv-popup-close"><i class="fas fa-times-circle"></i></a>
+                </div>
+                <div class="wms-srv-popup-content-body" id="wms-srv-popup-content-body">
+                    <div class="wms-srv-obj-main-grid pnlWmsDetail">
+                        <div class="wms-srv-grid-action-panel">
+                            <div class="wms-srv-grid-common-action">
+                                <a href="#" class="wms-srv-icononly">
+                                    <i class="fas fa-list"></i>
+                                </a>
+                            </div>
+                            <button class="wms-srv-input wms-srv-button wms-srv-highlight-btn" title="Add Selected" data-prefix="AN"
+                                    type="button" onclick="openAllPaymentMethodsPopup();">
+                                <i class="fas fa-plus"
+                                   id="btnAllPaymentMethodsPopup"></i><span>Add Selected</span>
+                            </button>
+
+                            <div class="wms-srv-grid-title">
+                                Payment Method List
+                            </div>
+                        </div>
+                        <div class="wms-srv-grid-scroller" style="width: 100%;">
+                            <div class="wms-srv-grid" id="allPaymentMethodList">
+
+                            </div>
+                            <!-- Content Holder -->
+                            <!-- Save Record Structure -->
+                            <div class="wms-srv-alert-popup" data-type="" style="display: none;">
+                                <div class="wms-alert-title">Success</div>
+                                <div class="wms-alert-message">Your transaction has been saved!!</div>
+                            </div>
+                            <!-- Save Record Structure -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- All Payment List -->
+    
+    <!-- ALL POPUP AREA -->
+</div>

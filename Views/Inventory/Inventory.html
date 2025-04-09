@@ -1,0 +1,673 @@
+<!-- Inventory Grid -->
+<div class="wms-srv-content-area pnlInbound" id="pnlInventory">
+    <div class="wms-srv-page-title">
+        <i class="fas fa-boxes"></i><span class="wms-srv-data-title">Inventory Snapshot</span>
+    </div>
+    <div class="wms-srv-grid-holder">
+        <div class="wms-srv-grid-action-panel">
+            <div class="wms-srv-grid-common-action"><a href="#" class="wms-srv-icononly"><i class="fas fa-list"></i></a>
+            </div>
+            <div class="wms-srv-grid-title">
+                Inventory List
+            </div>
+            <button class="wms-srv-input wms-srv-button wms-srv-highlight-btn" type="button" title="CreatePlan"
+                data-prefix="AN" onclick=" opencyclecountplan();">
+                <i class="fas fa-plus"></i><span>Create Cycle Count Plan</span></button>
+            <!--<button class="wms-srv-input wms-srv-button" type="button" title="Export" data-prefix="AN" onclick=""><i
+                    class="fas fa-file-export"></i><span>Export</span></button>-->
+            <div class="wms-srv-productsearch" data-sku="" data-skuid="" data-pallet="" data-palletid=""
+                data-location="" data-locationid="">
+                <label> Search by SKU Code: </label>
+                <input type="text" value="" placeholder="SKU Code" class="wms-srv-input wms-srv-scan-input"
+                    id="txtSearchSkuInventry">
+                <a href="#" data-prefix="PRSE" class="wms-srv-search-button"
+                    onclick="inventryskusearch();return false;">
+                    <i class="fas fa-search"></i></a>
+                <a href="#" title="Cancel" class="wms-srv-cancel" data-prefix="CN"><i class="fas fa-times-circle"
+                        onclick="clearSearchFilter();"></i></a>
+            </div>
+        </div>
+
+        <div class="wms-srv-grid-scroller" style="width: 100%;">
+            <div class="wms-srv-grid" id="tblinventrylistgrid">
+
+            </div>
+        </div>
+        <div class="wms-srv-grid-pager" id="AllinvenreylistPager">
+            <span class="wms-srv-pager-records">1-1 of 70 Records</span>
+            <span class="wms-srv-empty-space"></span>
+            <span class="wms-srv-pager-links"><a href="#" data-page="firstpage"><i
+                        class="fas fa-angle-double-left"></i></a><a href="#" data-page="previous"><i
+                        class="fas fa-angle-left"></i></a><a href="#" class="wms-srv-active" data-page="1">1</a>
+                <!-- <a href="#" data-page="2">2</a><a href="#" data-page="3">3</a><a href="#" data-page="4">4</a><a
+                    href="#" data-page="5">5</a><a href="#" data-page="6">6</a><a href="#" data-page="7">7</a> -->
+                <a href="#" data-page="next"><i class="fas fa-angle-right"></i></a><a href="#" data-page="lastpage"><i
+                        class="fas fa-angle-double-right"></i></a></span>
+            <span class="wms-srv-empty-space"></span>
+            <input type="text" name="txtGridPageNo" id="invmainSearchPageno" class="wms-srv-input notranslate" value="0"
+                style="width: 80px;">
+            <a href="#" title="Jump To" id="invtxtSearchPage" class="wms-srv-pager-go"><i class="fas fa-play-circle"
+                    id="invtxtSearchRecord"></i></a> <!--onclick="jumptogridpage('Maingrid')" -->
+        </div>
+
+    </div>
+
+</div>
+<!-- Inventory Grid -->
+
+<!--Available Inventory Popup -->
+<div class="wms-srv-popup-holder" id="wms-srv-availableinventorydetails-popup" style="display: none;">
+    <div class="wms-srv-popup-bg">
+    </div>
+    <div class="wms-srv-popup">
+        <div class="wms-srv-popup-content">
+            <!-- Popup Title -->
+            <div class="wms-srv-popup-title">
+                <div class="wms-srv-page-title">
+                    <i class="fas fa-file-alt"></i><span>Inventory Details</span>
+                </div>
+                <a href="#" title="Close" id="wms-srv-availableinventorydetails-popup-close"
+                    class="wms-srv-popup-close"><i class="fas fa-times-circle"></i></a>
+            </div>
+            <!-- Popup Title -->
+            <div class="wms-srv-popup-content-body" id="wms-srv-popup-content-body">
+                <div id="popupContentavailableinventorydetails">
+                    <div id="pnlavailableinventorydetails">
+                        <!-- Grid -->
+                        <div class="wms-srv-grid-holder pnlWmsHead" id="pnlWmsHead">
+                            <div class="wms-srv-grid-action-panel">
+                                <div class="wms-srv-grid-common-action"><a href="#" class="wms-srv-icononly"><i
+                                            class="fas fa-edit"></i></a></div>
+                                <div class="wms-srv-grid-title">
+                                    Available Inventory List
+                                </div>
+                                <!--  <button class="wms-srv-input wms-srv-button" type="button" title="Export"
+                                    data-prefix="AN" onclick=""><i
+                                        class="fas fa-file-export"></i><span>Export</span></button>-->
+                            </div>
+                            <div class="wms-srv-grid" style="text-align: center;" id="tblavailinventrylistgrid">
+                                <!-- Object Head Data Will be Here -->
+                                <div class="wms-srv-grid-header">
+                                    <div class="wms-srv-grid-cell">SKU Code</div>
+                                    <div class="wms-srv-grid-cell">UPC Code</div>
+                                    <div class="wms-srv-grid-cell">Batch Code</div>
+                                    <div class="wms-srv-grid-cell">Location</div>
+                                    <div class="wms-srv-grid-cell">Pallet</div>
+                                    <div class="wms-srv-grid-cell">Lottable</div>
+                                    <div class="wms-srv-grid-cell">Available Qty</div>
+                                    <div class="wms-srv-grid-cell">Action</div>
+                                </div>
+                                <div class="wms-srv-grid-row">
+                                    <div class="wms-srv-grid-cell" style="text-align:center;"><input type="text"
+                                            value="" data-id="" style="width:100%;"></div>
+                                    <div class="wms-srv-grid-cell" style="text-align:center;"><input type="text"
+                                            value="" data-id="" style="width:100%;"></div>
+                                    <div class="wms-srv-grid-cell" style="text-align:center;"><input type="text"
+                                            value="" data-id="" style="width:100%;"></div>
+                                    <div class="wms-srv-grid-cell" style="text-align:center;"><input type="text"
+                                            value="" data-id="" style="width:100%;"></div>
+                                    <div class="wms-srv-grid-cell" style="text-align: center;"><input type="text"
+                                            value="" data-id="" style="width:100%;"></div>
+                                    <div class="wms-srv-grid-cell" style="width:275px;">
+                                        <div class="lottableControlHolder">
+                                            <input type="text" value="" placeholder="Color" class="wmsLottableInput">
+                                            <input type="text" value="" placeholder="MFG Date"
+                                                class="wmsLottableInput wms-srv-datepicker">
+                                            <input type="text" value="" placeholder="Batch Code"
+                                                class="wmsLottableInput">
+                                        </div>
+                                    </div>
+                                    <div class="wms-srv-grid-cell"></div>
+                                    <div class="wms-srv-grid-cell"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="wms-srv-grid-pager" id="AvailinvenreylistPager">
+                            <span class="wms-srv-pager-records">1-3 of 0 Records</span>
+                            <span class="wms-srv-empty-space"></span>
+                            <span class="wms-srv-pager-links"><a href="#" data-page="firstpage"><i
+                                        class="fas fa-angle-double-left"></i></a><a href="#" class="wms-srv-active"
+                                    data-page="1">1</a><a href="#" data-page="lastpage"><i
+                                        class="fas fa-angle-double-right"></i></a></span>
+                            <span class="wms-srv-empty-space"></span>
+                            <input type="text" name="txtGridPageNo" id="availtxtSearchPageRecord" class="wms-srv-input"
+                                value="0" style="width: 80px;">
+                            <a href="#" title="Jump To" id="availtxtSearchPage" class="wms-srv-pager-go"><i
+                                    class="fas fa-play-circle" id="availtxtSearchRecord"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--Available Inventory Popup -->
+
+<!--Allocated Inventory Popup -->
+<div class="wms-srv-popup-holder" id="wms-srv-allocatedinventorydetails-popup" style="display: none;">
+    <div class="wms-srv-popup-bg">
+    </div>
+    <div class="wms-srv-popup">
+        <div class="wms-srv-popup-content">
+            <!-- Popup Title -->
+            <div class="wms-srv-popup-title">
+                <div class="wms-srv-page-title">
+                    <i class="fas fa-file-alt"></i><span>Allocated Inventory Details</span>
+                </div>
+                <a href="#" title="Close" id="wms-srv-allocatedinventorydetails-popup-close"
+                    class="wms-srv-popup-close"><i class="fas fa-times-circle"></i></a>
+            </div>
+            <!-- Popup Title -->
+            <div class="wms-srv-popup-content-body" id="wms-srv-popup-content-body">
+                <div id="popupContentallocatedinventorydetails">
+                    <div id="pnlallocatedinventorydetails">
+                        <!-- Grid -->
+                        <div class="wms-srv-grid-holder pnlWmsHead" id="pnlWmsallocinvHead">
+                            <div class="wms-srv-grid-action-panel">
+                                <div class="wms-srv-grid-common-action"><a href="#" class="wms-srv-icononly"><i
+                                            class="fas fa-edit"></i></a></div>
+                                <div class="wms-srv-grid-title">
+                                    Allocated Inventory List
+                                </div>
+                                <!-- <button class="wms-srv-input wms-srv-button" type="button" title="Export"
+                                    data-prefix="AN" onclick=""><i
+                                        class="fas fa-file-export"></i><span>Export</span></button>-->
+                            </div>
+                            <div class="wms-srv-grid" style="text-align: center;" id="tblalocatinventrylistgrid">
+                                <!-- Object Head Data Will be Here -->
+                                <div class="wms-srv-grid-header">
+                                    <div class="wms-srv-grid-cell">Order ID</div>
+                                    <div class="wms-srv-grid-cell">Order Number</div>
+                                    <div class="wms-srv-grid-cell">Order Date</div>
+                                    <div class="wms-srv-grid-cell">Cancel Date</div>
+                                    <div class="wms-srv-grid-cell">SKU Code</div>
+                                    <div class="wms-srv-grid-cell">Location</div>
+                                    <div class="wms-srv-grid-cell">Pallet</div>
+                                    <div class="wms-srv-grid-cell">Lottable</div>
+                                    <div class="wms-srv-grid-cell">Allocated Qty</div>
+                                    <div class="wms-srv-grid-cell">DeAllocated</div>
+                                </div>
+                                <div class="wms-srv-grid-row">
+                                    <div class="wms-srv-grid-cell" style="text-align:center;"><input type="text"
+                                            value="" data-id="" style="width:100%;"></div>
+                                    <div class="wms-srv-grid-cell" style="text-align:center;"><input type="text"
+                                            value="" data-id="" style="width:100%;"></div>
+                                    <div class="wms-srv-grid-cell" style="text-align:center;"><input type="text"
+                                            value="" data-id="" style="width:100%;"></div>
+                                    <div class="wms-srv-grid-cell" style="text-align:center;"><input type="text"
+                                            value="" data-id="" style="width:100%;"></div>
+                                    <div class="wms-srv-grid-cell" style="text-align: center;"><input type="text"
+                                            value="" data-id="" style="width:100%;"></div>
+                                    <div class="wms-srv-grid-cell" style="text-align: center;"><input type="text"
+                                            value="" data-id="" style="width:100%;"></div>
+                                    <div class="wms-srv-grid-cell" style="text-align: center;"><input type="text"
+                                            value="" data-id="" style="width:100%;"></div>
+                                    <div class="wms-srv-grid-cell" style="width:275px;">
+                                        <div class="lottableControlHolder">
+                                            <input type="text" value="" placeholder="Color" class="wmsLottableInput">
+                                            <input type="text" value="" placeholder="MFG Date"
+                                                class="wmsLottableInput wms-srv-datepicker">
+                                            <input type="text" value="" placeholder="Batch Code"
+                                                class="wmsLottableInput">
+                                        </div>
+                                    </div>
+                                    <div class="wms-srv-grid-cell"></div>
+                                    <div class="wms-srv-grid-cell"></div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="wms-srv-grid-pager" id="AllocatinvenreylistPager">
+                            <span class="wms-srv-pager-records">1-1 of 0 Records</span>
+                            <span class="wms-srv-empty-space"></span>
+                            <span class="wms-srv-pager-links"><a href="#" data-page="firstpage"><i
+                                        class="fas fa-angle-double-left"></i></a><a href="#" data-page="previous"><i
+                                        class="fas fa-angle-left"></i></a><a href="#" class="wms-srv-active"
+                                    data-page="1">1</a><a href="#" data-page="next"><i
+                                        class="fas fa-angle-right"></i></a><a href="#" data-page="lastpage"><i
+                                        class="fas fa-angle-double-right"></i></a></span>
+                            <span class="wms-srv-empty-space"></span>
+                            <input type="text" name="txtGridPageNo" id="aloctetxtSearchPageRecord" class="wms-srv-input"
+                                value="0" style="width: 80px;">
+                            <a href="#" title="Jump To" id="alocattxtSearchPage" class="wms-srv-pager-go"><i
+                                    class="fas fa-play-circle" id="alocattxtSearchRecord"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--Allocated Inventory Popup -->
+
+<!--Hold Inventory Popup -->
+<div class="wms-srv-popup-holder" id="wms-srv-holdinventorydetails-popup" style="display: none;">
+    <div class="wms-srv-popup-bg">
+    </div>
+    <div class="wms-srv-popup">
+        <div class="wms-srv-popup-content">
+            <!-- Popup Title -->
+            <div class="wms-srv-popup-title">
+                <div class="wms-srv-page-title">
+                    <i class="fas fa-file-alt"></i><span>Hold Inventory Details</span>
+                </div>
+                <a href="#" title="Close" id="wms-srv-holdinventorydetails-popup-close" class="wms-srv-popup-close"><i
+                        class="fas fa-times-circle"></i></a>
+            </div>
+            <!-- Popup Title -->
+            <div class="wms-srv-popup-content-body" id="wms-srv-popup-content-body">
+                <div id="popupContentholdinventorydetails">
+                    <div id="pnlavholdinventorydetails">
+                        <!-- Grid -->
+                        <div class="wms-srv-grid-holder pnlWmsHead" id="pnlWmsHldInvHead">
+                            <div class="wms-srv-grid-action-panel">
+                                <div class="wms-srv-grid-common-action"><a href="#" class="wms-srv-icononly"><i
+                                            class="fas fa-edit"></i></a></div>
+                                <div class="wms-srv-grid-title">
+                                    Hold Inventory List
+                                </div>
+                                <!-- <button class="wms-srv-input wms-srv-button" type="button" title="Export"
+                                    data-prefix="AN" onclick=""><i
+                                        class="fas fa-file-export"></i><span>Export</span></button>-->
+                            </div>
+                            <div class="wms-srv-grid" style="text-align: center;" id="tblholdinventrylistgrid">
+                                <!-- Object Head Data Will be Here -->
+                                <div class="wms-srv-grid-header">
+                                    <div class="wms-srv-grid-cell">SKU Code</div>
+                                    <div class="wms-srv-grid-cell">UPC Code</div>
+                                    <div class="wms-srv-grid-cell">Location</div>
+                                    <div class="wms-srv-grid-cell">Pallet</div>
+                                    <div class="wms-srv-grid-cell">Lottable</div>
+                                    <div class="wms-srv-grid-cell">Hold Qty</div>
+                                    <div class="wms-srv-grid-cell">Action</div>
+                                </div>
+                                <div class="wms-srv-grid-row">
+                                    <div class="wms-srv-grid-cell" style="text-align:center;"><input type="text"
+                                            value="" data-id="" style="width:100%;"></div>
+                                    <div class="wms-srv-grid-cell" style="text-align:center;"><input type="text"
+                                            value="" data-id="" style="width:100%;"></div>
+                                    <div class="wms-srv-grid-cell" style="text-align:center;"><input type="text"
+                                            value="" data-id="" style="width:100%;"></div>
+                                    <div class="wms-srv-grid-cell" style="text-align:center;"><input type="text"
+                                            value="" data-id="" style="width:100%;"></div>
+                                    <div class="wms-srv-grid-cell" style="width:275px;">
+                                        <div class="lottableControlHolder">
+                                            <input type="text" value="" placeholder="Color" class="wmsLottableInput">
+                                            <input type="text" value="" placeholder="MFG Date"
+                                                class="wmsLottableInput wms-srv-datepicker">
+                                            <input type="text" value="" placeholder="Batch Code"
+                                                class="wmsLottableInput">
+                                        </div>
+                                    </div>
+                                    <div class="wms-srv-grid-cell"></div>
+                                    <div class="wms-srv-grid-cell"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="wms-srv-grid-pager" id="HoldinvenreylistPager">
+                            <span class="wms-srv-pager-records">1-1 of 0 Records</span>
+                            <span class="wms-srv-empty-space"></span>
+                            <span class="wms-srv-pager-links"><a href="#" data-page="firstpage"><i
+                                        class="fas fa-angle-double-left"></i></a><a href="#" data-page="previous"><i
+                                        class="fas fa-angle-left"></i></a><a href="#" class="wms-srv-active"
+                                    data-page="1">1</a><a href="#" data-page="next"><i
+                                        class="fas fa-angle-right"></i></a><a href="#" data-page="lastpage"><i
+                                        class="fas fa-angle-double-right"></i></a></span>
+                            <span class="wms-srv-empty-space"></span>
+                            <input type="text" name="txtGridPageNo" class="wms-srv-input" value="0"
+                                style="width: 80px;">
+                            <a href="#" title="Jump To" id="holdtxtSearchPage" class="wms-srv-pager-go"><i
+                                    class="fas fa-play-circle" id="holdtxtSearchRecord"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--Hold Inventory Popup -->
+
+<!-- Cycle Count Popup -->
+<div class="themeWmsPopup" id="theme-cyclecount-popup" style="display:none;">
+    <div class="themeWmsPopupContent" style="display: table; margin-top: 30px;">
+        <div class="themeWmsPopupTitle">
+            Create Cycle Count Plan
+            <a href="#" title="Close" id="theme-cyclecount-popup-close" class="wms-srv-popup-close"><i
+                    class="fas fa-times-circle"></i></a>
+        </div>
+        <div class="themeWmsPopupContentBody">
+            <div id="divQbNotificationFor" class="divQbFormRow">
+                <span class="themeWMSPopupLabel"><b>Plan Title</b></span>
+                <div class="themeWMS_ctrl popupTextBoxWhiteBg">
+                    <input type="text" value="" id="txtplantitle" class="inputElement notranslate" style="width: 300px">
+                </div>
+            </div>
+            <br>
+            <div id="divQbNotificationFor" class="divQbFormRow">
+                <span class="themeWMSPopupLabel"><b>Plan ID</b></span>
+                <div class="themeWMS_ctrl popupTextBoxWhiteBg">
+                    <input type="text" value="" id="txtplanid" class="inputElement notranslate" style="width: 300px">
+                </div>
+            </div>
+            <br>
+            <div style="text-align: center;">
+                <button class="wms-srv-input wms-srv-button wms-srv-highlight-btn-secondary" type="button"
+                    onclick="SaveCycleCount()" title="Submit"
+                    style="/*! width: 100%; *//*! margin: auto; */text-align: -moz-right;">
+                    <span>Submit</span></button>
+            </div>
+        </div>
+    </div>
+    <div class="themeWmsPopupBg">
+    </div>
+</div>
+<!-- Cycle Count Popup -->
+
+<!-- Transfer Popup -->
+<div class="themeWmsPopup" id="theme-transfer-popup" style="display:none;">
+    <div class="themeWmsPopupContent" style="display: table; margin-top: 30px;">
+        <div class="themeWmsPopupTitle">
+            Create Transfer
+            <a href="#" title="Close" id="theme-transfer-popup-close" class="wms-srv-popup-close"><i
+                    class="fas fa-times-circle"></i></a>
+        </div>
+        <div class="themeWmsPopupContentBody" style="width:380px; height:250px;">
+            <div id="divQbNotificationFor" class="divQbFormRow">
+                <span class="themeWMSPopupLabel" style="width: 70px;"><b>To Location</b></span>
+                <div class="themeWMS_ctrl popupTextBoxWhiteBg">
+                    <input type="text" value="" id="txttranslocation" class="inputElement notranslate"
+                        style="width: 300px">
+                </div><a href="#" onclick="openformlocationPopup();return false;"><i class="fas fa-search"
+                        style="padding-left: 10px;"></i></a>
+            </div>
+            <br>
+            <div id="divpalletNotificationFor" class="divQbFormRow">
+                <span class="themeWMSPopupLabel" style="width: 70px;"><b>To Pallet</b></span>
+                <div class="themeWMS_ctrl popupTextBoxWhiteBg">
+                    <input type="text" value="" id="txttranspallet" class="inputElement notranslate"
+                        style="width: 300px">
+                </div><a href="#" onclick="openpalletPopup();return false;"><i class="fas fa-search"
+                        style="padding-left: 10px;"></i></a>
+            </div>
+            <br>
+            <div id="divQbNotificationFor" class="divQbFormRow">
+                <span class="themeWMSPopupLabel" style="width: 70px;"><b>Quantity</b></span>
+                <div class="themeWMS_ctrl popupTextBoxWhiteBg">
+                    <input type="text" value="" id="txttransqty" class="inputElement notranslate" style="width: 300px">
+                </div>
+            </div>
+            <br>
+            <div style="text-align: center;">
+                <button class="wms-srv-input wms-srv-button wms-srv-highlight-btn-secondary" type="button"
+                    title="Submit" onclick="TransferSave()"
+                    style="/*! width: 100%; *//*! margin: auto; */text-align: -moz-right;">
+                    <span>Submit</span></button>
+            </div>
+        </div>
+    </div>
+    <div class="themeWmsPopupBg">
+    </div>
+</div>
+<!-- Transfer Popup -->
+
+<!-- Rejected Popup -->
+<div class="wms-srv-popup-holder" id="wms-srv-rejectedinventorydetails-popup" style="display: none;">
+    <div class="wms-srv-popup-bg">
+    </div>
+    <div class="wms-srv-popup">
+        <div class="wms-srv-popup-content">
+            <!-- Popup Title -->
+            <div class="wms-srv-popup-title">
+                <div class="wms-srv-page-title">
+                    <i class="fas fa-file-alt"></i><span>Rejected Inventory Details</span>
+                </div>
+                <a href="#" title="Close" id="wms-srv-rejectedinventorydetails-popup-close"
+                    class="wms-srv-popup-close"><i class="fas fa-times-circle"></i></a>
+            </div>
+            <!-- Popup Title -->
+            <div class="wms-srv-popup-content-body" id="wms-srv-popup-content-body">
+                <div id="popupContentrejectedinventorydetails">
+                    <div id="pnlrejectedinventorydetails">
+                        <!-- Grid -->
+                        <div class="wms-srv-grid-holder pnlWmsHead" id="pnlWmsRejinvHead">
+                            <div class="wms-srv-grid-action-panel">
+                                <div class="wms-srv-grid-common-action"><a href="#" class="wms-srv-icononly"><i
+                                            class="fas fa-edit"></i></a></div>
+                                <div class="wms-srv-grid-title">
+                                    Rejected Inventory List
+                                </div>
+                                <!-- <button class="wms-srv-input wms-srv-button" type="button" title="Export"
+                                    data-prefix="AN" onclick=""><i
+                                        class="fas fa-file-export"></i><span>Export</span></button>-->
+                            </div>
+                            <div class="wms-srv-grid" style="text-align: center;" id="tblrejectinventrylistgrid">
+                                <!-- Object Head Data Will be Here -->
+                                <div class="wms-srv-grid-header">
+                                    <div class="wms-srv-grid-cell">SKU Code</div>
+                                    <div class="wms-srv-grid-cell">UPC Code</div>
+                                    <div class="wms-srv-grid-cell">Batch Code</div>
+                                    <div class="wms-srv-grid-cell">Location Type</div>
+                                    <div class="wms-srv-grid-cell">Location</div>
+                                    <div class="wms-srv-grid-cell">Pallet</div>
+                                    <div class="wms-srv-grid-cell">Lottable</div>
+                                    <div class="wms-srv-grid-cell">Qty</div>
+                                </div>
+                                <div class="wms-srv-grid-row">
+                                    <div class="wms-srv-grid-cell" style="text-align:center;"><input type="text"
+                                            value="" data-id="" style="width:100%;"></div>
+                                    <div class="wms-srv-grid-cell" style="text-align:center;"><input type="text"
+                                            value="" data-id="" style="width:100%;"></div>
+                                    <div class="wms-srv-grid-cell" style="text-align:center;"><input type="text"
+                                            value="" data-id="" style="width:100%;"></div>
+                                    <div class="wms-srv-grid-cell" style="text-align:center;"><input type="text"
+                                            value="" data-id="" style="width:100%;"></div>
+                                    <div class="wms-srv-grid-cell" style="text-align: center;"><input type="text"
+                                            value="" data-id="" style="width:100%;"></div>
+                                    <div class="wms-srv-grid-cell" style="text-align: center;"><input type="text"
+                                            value="" data-id="" style="width:100%;"></div>
+                                    <div class="wms-srv-grid-cell" style="width:275px;">
+                                        <div class="lottableControlHolder">
+                                            <input type="text" value="" placeholder="Color" class="wmsLottableInput">
+                                            <input type="text" value="" placeholder="MFG Date"
+                                                class="wmsLottableInput wms-srv-datepicker">
+                                            <input type="text" value="" placeholder="Batch Code"
+                                                class="wmsLottableInput">
+                                        </div>
+                                    </div>
+                                    <div class="wms-srv-grid-cell"></div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="wms-srv-grid-pager" id="RejectinvenreylistPager">
+                            <span class="wms-srv-pager-records">1-1 of 0 Records</span>
+                            <span class="wms-srv-empty-space"></span>
+                            <span class="wms-srv-pager-links"><a href="#" data-page="firstpage"><i
+                                        class="fas fa-angle-double-left"></i></a><a href="#" data-page="previous"><i
+                                        class="fas fa-angle-left"></i></a><a href="#" class="wms-srv-active"
+                                    data-page="1">1</a><a href="#" data-page="next"><i
+                                        class="fas fa-angle-right"></i></a><a href="#" data-page="lastpage"><i
+                                        class="fas fa-angle-double-right"></i></a></span>
+                            <span class="wms-srv-empty-space"></span>
+                            <input type="text" name="txtGridPageNo" class="wms-srv-input" value="0"
+                                style="width: 80px;">
+                            <a href="#" title="Jump To" id="rejecttxtSearchPage" class="wms-srv-pager-go"><i
+                                    class="fas fa-play-circle" id="rejecttxtSearchRecord"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Rejected Popup -->
+
+<!-- Adjustment Popup -->
+<div class="themeWmsPopup" id="theme-adjustment-popup" style="display:none;">
+    <div class="themeWmsPopupContent" style="display: table; margin-top: 30px;">
+        <div class="themeWmsPopupTitle">
+            Create Adjustment
+            <a href="#" title="Close" id="theme-adjustment-popup-close" class="wms-srv-popup-close"><i
+                    class="fas fa-times-circle"></i></a>
+        </div>
+        <div class="themeWmsPopupContentBody">
+            <div id="divQbNotificationFor" class="divQbFormRow">
+                <span class="themeWMSPopupLabel" style="padding-right: 100px;"><b>Qty</b></span>
+                <div class="themeWMS_ctrl popupTextBoxWhiteBg">
+                    <input type="text" value="" id="txtadjusntqty" class="inputElement notranslate"
+                        style="width: 188px !important">
+                </div>
+            </div>
+            <br>
+            <div id="divQbNotificationFor" class="divQbFormRow">
+                <span class="themeWMSPopupLabel" style="padding-right: 13px;width: 100px !important;"><b>Reason
+                        Code</b></span>
+                <div class="themeWMS_ctrl popupTextBoxWhiteBg">
+                    <select class="wms-srv-input wms-srv-search-filter" id="ddladjustfilter">
+                        <!-- <option value="Select"> Select </option>
+                        <option value="1"> Some quantity lost </option>
+                        <option value="2">Extra quantity added</option>
+                        <option value="3">No stock Available</option>
+                        <option value="4">some quantity theft</option>
+						<option value="5">Damaged</option>
+                        <option value="6">Reject</option> -->
+                    </select>
+                </div>
+            </div>
+            <br>
+            <div style="text-align: center;">
+                <button class="wms-srv-input wms-srv-button wms-srv-highlight-btn-secondary" type="button"
+                    title="Submit" onclick="adjustmentqty()">
+                    <span>Submit</span></button>
+            </div>
+        </div>
+    </div>
+    <div class="themeWmsPopupBg">
+    </div>
+</div>
+<!-- Adjustment Popup -->
+
+<!-- To Location Popup -->
+<div class="wms-srv-popup-holder" id="wms-srv-formlocation-popup" style="display: none; width: 49%;left: 30%;;">
+    <div class="wms-srv-popup-bg">
+    </div>
+    <div class="wms-srv-popup">
+        <div class="wms-srv-popup-content">
+            <!-- Popup Title -->
+            <div class="wms-srv-popup-title">
+                <div class="wms-srv-page-title">
+                    <i class="fas fa-file-alt"></i><span>Location List</span>
+                </div>
+                <a href="#" title="Close" id="wms-srv-formlocation-popup-close" class="wms-srv-popup-close"><i
+                        class="fas fa-times-circle"></i></a>
+            </div>
+            <!-- Popup Title -->
+            <div class="wms-srv-popup-content-body" id="wms-srv-popup-content-body">
+                <!-- Grid 2-->
+                <div class="wms-srv-grid-holder pnlWmsDetail" id="pnlWmsDetail">
+                    <div class="wms-srv-grid-action-panel">
+                        <div class="wms-srv-grid-common-action"><a href="#" title="Customize Grid" data-prefix="CG"
+                                class="wms-srv-icononly"><i class="fas fa-edit"></i></a></div>
+                        <div class="wms-srv-search">
+                            <input type="text" value="" placeholder="Enter Filter Value" id="txtinvlocfilter"
+                                class="wms-srv-input wms-srv-simple-search"><a href="#"
+                                onclick="searchlocation();return false;" data-prefix="SE"><i
+                                    class="fas fa-search"></i></a>
+                        </div>
+                        <div class="wms-srv-more-btn-holder">
+                            <button class="wms-srv-input wms-srv-button wms-srv-highlight-btn-secondary" type="button"
+                                title="More" data-prefix="MO[MKCM--wmscmm--CO]"
+                                onclick="getselectedloc()"><span>Submit</span></button>
+                        </div>
+                        <div class="wms-srv-grid-title">
+                            Location List
+                        </div>
+                    </div>
+
+                    <div class="wms-srv-grid-scroller" style="width: 100%;">
+                        <div class="wms-srv-grid" id="popuplocsarchList" style="min-width: 488px;text-align: center;">
+                            <div class="wms-srv-grid-scroller" style="width: 100%;">
+                                <div class="wms-srv-grid" data-gridobjectid="gridObject_Appointment_Book_Book">
+                                    <div class="wms-srv-grid-header">
+                                        <div class="wms-srv-grid-cell">
+                                        </div>
+                                        <div class="wms-srv-grid-cell">Location Code</div>
+                                        <div class="wms-srv-grid-cell">Availble Balance</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Grid 2-->
+            </div>
+        </div>
+    </div>
+</div>
+<!-- To Location Popup -->
+
+<!-- Pallet POPUP -->
+<div class="wms-srv-popup-holder" id="wms-srv-palletlist-popup" style="display: none; width: 49%;left: 30%;">
+    <div class="wms-srv-popup-bg">
+    </div>
+    <div class="wms-srv-popup">
+        <div class="wms-srv-popup-content">
+            <!-- Popup Title -->
+            <div class="wms-srv-popup-title">
+                <div class="wms-srv-page-title">
+                    <i class="fas fa-file-alt"></i><span>Pallet List</span>
+                </div>
+                <a href="#" title="Close" id="wms-srv-palletlist-popup-close" class="wms-srv-popup-close"><i
+                        class="fas fa-times-circle"></i></a>
+            </div>
+            <!-- Popup Title -->
+            <div class="wms-srv-popup-content-body" id="wms-srv-popup-content-body">
+                <!-- Grid 2-->
+                <div class="wms-srv-grid-holder pnlWmsDetail" id="pnlWmsDetail">
+                    <div class="wms-srv-grid-action-panel">
+                        <div class="wms-srv-grid-common-action"><a href="#" title="Customize Grid" data-prefix="CG"
+                                class="wms-srv-icononly"><i class="fas fa-edit"></i></a></div>
+                        <div class="wms-srv-search">
+                            <input type="text" value="" placeholder="Enter Filter Value" id="txtinvPallfilter"
+                                class="wms-srv-input wms-srv-simple-search"><a href="#"
+                                onclick="searchPallet();return false;" data-prefix="SE"><i
+                                    class="fas fa-search"></i></a>
+                        </div>
+                        <div class="wms-srv-more-btn-holder">
+                            <button class="wms-srv-input wms-srv-button wms-srv-highlight-btn-secondary" type="button"
+                                title="More" data-prefix="MO[MKCM--wmscmm--CO]"
+                                onclick="getselectedPallet()"><span>Submit</span></button>
+                        </div>
+                        <div class="wms-srv-grid-title">
+                            Pallet List
+                        </div>
+                    </div>
+                    <div class="wms-srv-grid-scroller" style="width: 100%;">
+                        <div class="wms-srv-grid" id="popuptPalleSrchList" style="min-width: 488px;text-align: center;">
+                            <div class="wms-srv-grid-scroller" style="width: 100%;">
+                                <div class="wms-srv-grid" data-gridobjectid="gridObject_Appointment_Book_Book">
+                                    <div class="wms-srv-grid-header">
+                                        <div class="wms-srv-grid-cell">
+                                        </div>
+                                        <div class="wms-srv-grid-cell">Pallet Code</div>
+
+
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+                                        <div class="wms-srv-grid-cell">
+                                            <i class="far fa-dot-circle"></i>
+                                        </div>
+                                        <div class="wms-srv-grid-cell">L1</div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Grid 2-->
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Pallet POPUP -->

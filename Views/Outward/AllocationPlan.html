@@ -1,0 +1,1542 @@
+<div style="display: none" id="batchlistGrid">
+    <!-- Hidden fields -->
+    <input type="hidden" id="hdnSelectedRec">
+    <input type="hidden" id="hdnSelectedBatch">
+    <input type="hidden" id="hdnapprovalflag">
+    <!-- Hidden fields End-->
+
+    <!-- MAIN GRID SECTION -->
+    <div class="wms-srv-content-area pnlInbound" id="pnlInbound">
+        <!-- Content Area -->
+        <!-- BatchLists Grid -->
+        <div class="wms-srv-obj-main-grid pnlWmsDetail">
+            <!-- Counter Dashboard -->
+            <!--
+            <span class="wms-srv-counter-dashboard">
+                <div class="container-fluid wms-srv-dashboard-panel">
+                    <div class="row">
+                        <div class="col-md-2 nopadding">
+                            <div class="wms-srv-count-box-holder btnHeadOutbound">
+                                <div class="wms-srv-count-box">
+                                    <div class="wms-srv-count-icon" style="background-color: #47d108;"><i
+                                            class="fas fa-receipt"></i></div>
+                                    <div class="wms-srv-count-content">
+                                        <div class="wms-srv-count" id="dashOutboundOrder">45</div>
+                                        <div class="wms-srv-count-label">Outward Order</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-2 nopadding">
+                            <div class="wms-srv-count-box-holder btnHeadAllocate dashboardActiveTab">
+                                <div class="wms-srv-count-box">
+                                    <div class="wms-srv-count-icon" style="background-color: #68bbd4;"><i
+                                            class="fas fa-receipt"></i></div>
+                                    <div class="wms-srv-count-content">
+                                        <div class="wms-srv-count" id="dashAllocated">69</div>
+                                        <div class="wms-srv-count-label">Allocated</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-2 nopadding">
+                            <div class="wms-srv-count-box-holder btnHeadPicking">
+                                <div class="wms-srv-count-box">
+                                    <div class="wms-srv-count-icon" style="background-color: #ffc107;"><i
+                                            class="fas fa-people-carry"></i></div>
+                                    <div class="wms-srv-count-content">
+                                        <div class="wms-srv-count" id="dashPicking">85</div>
+                                        <div class="wms-srv-count-label">Picking</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-2 nopadding">
+                            <div class="wms-srv-count-box-holder btnHeadQualityCheck">
+                                <div class="wms-srv-count-box">
+                                    <div class="wms-srv-count-icon" style="background-color: #bd82ce;"><i
+                                            class="fas fa-receipt"></i></div>
+                                    <div class="wms-srv-count-content">
+                                        <div class="wms-srv-count" id="dashQualityCheck">52</div>
+                                        <div class="wms-srv-count-label">Quality Check</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-2 nopadding">
+                            <div class="wms-srv-count-box-holder btnHeadStaging">
+                                <div class="wms-srv-count-box">
+                                    <div class="wms-srv-count-icon" style="background-color: #ff2f2f;"><i
+                                            class="fas fa-file-invoice"></i></div>
+                                    <div class="wms-srv-count-content">
+                                        <div class="wms-srv-count" id="dashStaging">100</div>
+                                        <div class="wms-srv-count-label">Packing</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-2 nopadding">
+                            <div class="wms-srv-count-box-holder btnHeadPassedBatch">
+                                <div class="wms-srv-count-box">
+                                    <div class="wms-srv-count-icon"><i class="fas fa-file-invoice"></i></div>
+                                    <div class="wms-srv-count-content">
+                                        <div class="wms-srv-count" id="dashPassedBatch">63</div>
+                                        <div class="wms-srv-count-label">
+                                            Dispatch
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </span>
+        -->
+            <!-- Counter Dashboard -->
+            <div class="wms-srv-grid-holder">
+                <div class="wms-srv-grid-action-panel">
+                    <div class="wms-srv-grid-common-action"><a href="#" class="wms-srv-icononly"><i
+                                class="fas fa-list"></i></a></div>
+                    <!-- <div class="wms-srv-grid-common-action"><a href="#" title="Archive" data-prefix="AR"
+                        class="wms-srv-icononly"><i class="fas fa-archive"></i></a></div> -->
+                    <div class="wms-srv-search">
+                        <label>Search Filter: </label>
+                        <select class="wms-srv-input wms-srv-search-filter" id="ddlBatchlistsearch" onclick="BatchListDateFilter();">
+                            <option value="All">-- Filters --</option>
+                            <option value="BatchID">ID</option>
+                            <option value="BatchName">Batch Name</option>
+                            <option value="BatchCreatedBy">Batch Created By</option>
+                            <option value="Creationdate">Creation Date</option>
+                            <option value="StatusName">Status</option>
+                            <option value="CreationDate">Creation Date</option>
+                        </select>
+                        <input type="text" value="" placeholder="Enter Filter Value" id="txtBatchlistvalue"
+                            class="wms-srv-input wms-srv-simple-search"><a href="#" data-prefix="SE"><i
+                                class="fas fa-search" onclick="SearchBatchList();" style="margin-right: 17px;"></i></a>
+                                <a href="#" title="Cancel" class="wms-srv-cancel" data-prefix="CN"><i class="fas fa-times-circle" onclick="clearSearchFilter();"></i></a>
+                            </div>
+                    <button class="wms-srv-input wms-srv-button wms-srv-allocation-plan" title="De Allocation Plan"
+                        onclick="DeAllocate(); return false;"><i class="fas fa-clipboard-check"></i><span>De
+                            Allocate</span></button>
+                    <!--<button class="wms-srv-input wms-srv-button wms-srv-allocation-plan" title="Allocation Plan"
+                        onclick="CreatePlan(); return false;"><i class="fas fa-clipboard-check"></i><span>Mark As
+                            Ship</span></button>-->
+                   <!-- <div class="wms-srv-more-btn-holder">
+                        <button class="wms-srv-input wms-srv-button wms-srv-highlight-btn-secondary" type="button"
+                            title="More" data-prefix="MO[MKCM--wmscmm--CO]"><span>More</span><i
+                                class="fas fa-chevron-down"></i></button>
+                        <div class="wms-srv-grid-more-navbar" style="display: none;">
+                            <a href="#" data-prefix="POIM" onclick="openlabelprint();"><i
+                                    class="fas fa-file-alt"></i>Print
+                                Lable</a>
+                        </div>
+                    </div>-->
+                    <div class="wms-srv-grid-title">
+                        Batch List
+                    </div>
+                </div>
+                <div class="wms-srv-grid-scroller" style="width: 100%;">
+                    <div class="wms-srv-grid" id="tlbBatchListGrid">
+
+                        <!--   </div>
+                        <div class="wms-srv-grid-header">
+                            <div class="wms-srv-grid-cell" style="text-align: center;">ID</div>
+                            <div class="wms-srv-grid-cell" style="text-align: center;">Batch Name</div>
+                            <div class="wms-srv-grid-cell" style="text-align: center;">Batch Created By</div>
+                            <div class="wms-srv-grid-cell" style="text-align: center;">Creation Date</div>
+                            <div class="wms-srv-grid-cell" style="text-align: center;width:200px;">Status</div>
+                            <div class="wms-srv-grid-cell" style="text-align: center;">Action</div>
+                        </div>
+                        <div class="wms-srv-grid-row" id="wms-srv-mainrow">
+                            <div class="wms-srv-grid-cell" style="text-align: center;">78945</div>
+                            <div class="wms-srv-grid-cell" style="text-align: center;">Group - 123</div>
+                            <div class="wms-srv-grid-cell" style="text-align: center;">User 1</div>
+                            <div class="wms-srv-grid-cell" style="text-align: center;">29/05/2022</div>
+                            <div class="wms-srv-grid-cell" style="text-align: center;">
+                                <div class="wms-srv-status-holder" title="Status" style="width: 275px;">
+                                    <div class="wms-srv-status-display">
+                                        <div class="wms-srv-status-label">Outward Order</div>
+                                        <div class="wms-srv-status-progress">
+                                            <div class="wms-srv-dot wms-srv-green" data-orderid=""
+                                                data-status="Outbound Order" title="" onclick=""></div>
+                                            <div class="wms-srv-dot wms-srv-red" data-orderid=""
+                                                data-status="Outbound Order" title="Pick Up Detail"
+                                                onclick="openpickedit();return false;"></div>
+                                            <div class="wms-srv-dot wms-srv-grey" data-orderid="" data-status=""
+                                                title="QC Detail" onclick="openQClist();return false;">
+                                            </div>
+                                            <div class="wms-srv-dot wms-srv-grey" data-orderid=""
+                                                data-status="Outbound Order" title="PackingDetail"
+                                                onclick="openstaginglist();return false;"></div>
+                                            <div class="wms-srv-dot wms-srv-grey" data-orderid=""
+                                                data-status="Outbound Order" title="Dispatch Detail"
+                                                onclick="openDispacthlist();return false;"></div>
+                                        </div>
+                                        <div class="wms-srv-status-action"><a href="#"
+                                                class="wms-srv-btn-status-action"><i class="fas fa-play-circle"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="wms-srv-grid-cell" style="text-align: center;"><i class="fas fa-edit"
+                                    title="Open AllocationPlan" onclick="openblallocation();return false;"></i></div>
+                        </div>
+                        <div class="wms-srv-grid-row">
+                            <div class="wms-srv-grid-cell" style="text-align: center;">78945</div>
+                            <div class="wms-srv-grid-cell" style="text-align: center;">Group - 123</div>
+                            <div class="wms-srv-grid-cell" style="text-align: center;">User 1</div>
+                            <div class="wms-srv-grid-cell" style="text-align: center;">29/05/2022</div>
+                            <div class="wms-srv-grid-cell" style="text-align: center;">
+                                <div class="wms-srv-status-holder" title="Status" style="width: 275px;">
+                                    <div class="wms-srv-status-display">
+                                        <div class="wms-srv-status-label">Outward Order</div>
+                                        <div class="wms-srv-status-progress">
+                                            <div class="wms-srv-dot wms-srv-green" data-orderid=""
+                                                data-status="Outbound Order" title=""
+                                                onclick="viewOrder('49046');return false;"></div>
+                                            <div class="wms-srv-dot wms-srv-red" data-orderid=""
+                                                data-status="Outbound Order" title="Pick Up Detail"
+                                                onclick="openpickedit();return false;"></div>
+                                            <div class="wms-srv-dot wms-srv-grey" data-orderid=""
+                                                data-status="Outbound Order" title="QC Detail"
+                                                onclick="openQClist();return false;">
+                                            </div>
+                                            <div class="wms-srv-dot wms-srv-grey" data-orderid=""
+                                                data-status="Outbound Order" title="Packing Detail"
+                                                onclick="openstaginglist();return false;"></div>
+                                            <div class="wms-srv-dot wms-srv-grey" data-orderid=""
+                                                data-status="Outbound Order" title="DispatchDetail"
+                                                onclick="openDispacthlist();return false;"></div>
+                                        </div>
+                                        <div class="wms-srv-status-action"><a href="#"
+                                                class="wms-srv-btn-status-action"><i class="fas fa-play-circle"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="wms-srv-grid-cell" style="text-align: center;"><i class="fas fa-edit"
+                                    onclick="openblallocation();return false;"></i></div>
+                        </div>
+                        <div class="wms-srv-grid-row">
+                            <div class="wms-srv-grid-cell" style="text-align: center;">78945</div>
+                            <div class="wms-srv-grid-cell" style="text-align: center;">Group - 123</div>
+                            <div class="wms-srv-grid-cell" style="text-align: center;">User 1</div>
+                            <div class="wms-srv-grid-cell" style="text-align: center;">29/05/2022</div>
+                            <div class="wms-srv-grid-cell" style="text-align: center;">
+                                <div class="wms-srv-status-holder" title="Status" style="width: 275px;">
+                                    <div class="wms-srv-status-display">
+                                        <div class="wms-srv-status-label">Outward Order</div>
+                                        <div class="wms-srv-status-progress">
+                                            <div class="wms-srv-dot wms-srv-green" data-orderid=""
+                                                data-status="Outbound Order" title=""
+                                                onclick="viewOrder('49046');return false;"></div>
+                                            <div class="wms-srv-dot wms-srv-red" data-orderid=""
+                                                data-status="Outbound Order" title="Pick Up Detail"
+                                                onclick="openpickedit();return false;"></div>
+                                            <div class="wms-srv-dot wms-srv-grey" data-orderid=""
+                                                data-status="Outbound Order" title="QC Detail"
+                                                onclick="openQClist();return false;">
+                                            </div>
+                                            <div class="wms-srv-dot wms-srv-grey" data-orderid=""
+                                                data-status="Outbound Order" title="Packing Detail"
+                                                onclick="openstaginglist();return false;"></div>
+                                            <div class="wms-srv-dot wms-srv-grey" data-orderid=""
+                                                data-status="Outbound Order" title="DispatchDetail"
+                                                onclick="openDispacthlist();return false;"></div>
+                                        </div>
+                                        <div class="wms-srv-status-action"><a href="#"
+                                                class="wms-srv-btn-status-action"><i class="fas fa-play-circle"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="wms-srv-grid-cell" style="text-align: center;"><i class="fas fa-edit"
+                                    title="Open AllocationPlan" onclick="openblallocation();return false;"></i></div>
+                        </div>
+                        <div class="wms-srv-grid-row">
+                            <div class="wms-srv-grid-cell" style="text-align: center;">78945</div>
+                            <div class="wms-srv-grid-cell" style="text-align: center;">Group - 123</div>
+                            <div class="wms-srv-grid-cell" style="text-align: center;">User 1</div>
+                            <div class="wms-srv-grid-cell" style="text-align: center;">29/05/2022</div>
+                            <div class="wms-srv-grid-cell" style="text-align: center;">
+                                <div class="wms-srv-status-holder" title="Status" style="width: 275px;">
+                                    <div class="wms-srv-status-display">
+                                        <div class="wms-srv-status-label">Outward Order</div>
+                                        <div class="wms-srv-status-progress">
+                                            <div class="wms-srv-dot wms-srv-green" data-orderid=""
+                                                data-status="Outbound Order" title=""
+                                                onclick="viewOrder('49046');return false;"></div>
+                                            <div class="wms-srv-dot wms-srv-red" data-orderid=""
+                                                data-status="Outbound Order" title="Pick Up Detail"
+                                                onclick="openpickedit();return false;"></div>
+                                            <div class="wms-srv-dot wms-srv-grey" data-orderid=""
+                                                data-status="Outbound Order" title="QC Detail"
+                                                onclick="openQClist();return false;">
+                                            </div>
+                                            <div class="wms-srv-dot wms-srv-grey" data-orderid=""
+                                                data-status="Outbound Order" title="Packing Detail"
+                                                onclick="openstaginglist();return false;"></div>
+                                            <div class="wms-srv-dot wms-srv-grey" data-orderid=""
+                                                data-status="Outbound Order" title="DispatchDetail"
+                                                onclick="openDispacthlist();return false;"></div>
+                                        </div>
+                                        <div class="wms-srv-status-action"><a href="#"
+                                                class="wms-srv-btn-status-action"><i class="fas fa-play-circle"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="wms-srv-grid-cell" style="text-align: center;"><i class="fas fa-edit"
+                                    title="Open AllocationPlan" onclick="openblallocation();return false;"></i></div>
+                        </div>
+                    </div> -->
+                    </div>
+                    <div class="wms-srv-grid-pager" id="tlbBatchListSOGridPager">
+                        <span class="wms-srv-pager-records">1-1 of 70 Records</span>
+                        <span class="wms-srv-empty-space"></span>
+                        <span class="wms-srv-pager-links"><a href="#" data-page="firstpage"><i
+                                    class="fas fa-angle-double-left"></i></a><a href="#" data-page="previous"><i
+                                    class="fas fa-angle-left"></i></a><a href="#" class="wms-srv-active"
+                                data-page="1">1</a><a href="#" data-page="2">2</a><a href="#" data-page="3">3</a><a
+                                href="#" data-page="4">4</a><a href="#" data-page="5">5</a><a href="#"
+                                data-page="6">6</a><a href="#" data-page="7">7</a><a href="#" data-page="next"><i
+                                    class="fas fa-angle-right"></i></a><a href="#" data-page="lastpage"><i
+                                    class="fas fa-angle-double-right"></i></a></span>
+                        <span class="wms-srv-empty-space"></span>
+                        <input type="text" name="txtGridPageNo" class="wms-srv-input notranslate" value="0"
+                            style="width: 80px;">
+                        <a href="#" title="Jump To" class="wms-srv-pager-go"><i class="fas fa-play-circle"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- BatchList Grid -->
+    </div>
+</div>
+<!-- Allocation Plan -->
+<div class="wms-srv-popup-holder" id="wms-srv-allocation-popup" style="display: none;">
+    <div class="wms-srv-popup-bg">
+    </div>
+    <div class="wms-srv-popup">
+        <div class="wms-srv-popup-content">
+            <!-- Popup Title -->
+            <div class="wms-srv-popup-title">
+                <div class="wms-srv-page-title">
+                    <i class="fas fa-file-alt"></i><span>Allocation Plan</span>
+                </div>
+                <a href="#" title="Close" id="wms-srv-allocation-popup-close" class="wms-srv-popup-close"><i
+                        class="fas fa-times-circle"></i></a>
+            </div>
+            <!-- Popup Title -->
+            <div class="wms-srv-popup-content-body" id="wms-srv-popup-content-body">
+                <div id="popupContentDocument">
+                    <div id="pnlCreateSalesOrder">
+                        <!-- Grid -->
+                        <div class="wms-srv-grid-holder pnlWmsHead" id="pnlWmsHead">
+                            <div class="wms-srv-grid">
+                                <!-- Object Head Data Will be Here -->
+                                <div class="wms-srv-grid-header">
+                                    <div class="wms-srv-grid-cell">Order Nos</div>
+                                    <div class="wms-srv-grid-cell">Total Order Qty</div>
+                                    <div class="wms-srv-grid-cell">Total Allocated Qty</div>
+                                    <div class="wms-srv-grid-cell">Total Short Qty</div>
+                                    <div class="wms-srv-grid-cell">Hold Qty</div>
+                                </div>
+                                <div class="wms-srv-grid-row">
+                                    <div class="wms-srv-grid-cell">46419,46417</div>
+                                    <div class="wms-srv-grid-cell">17</div>
+                                    <div class="wms-srv-grid-cell">17</div>
+                                    <div class="wms-srv-grid-cell">0</div>
+                                    <div class="wms-srv-grid-cell">6136</div>
+                                    <div class="wms-srv-grid-cell">0</div>
+                                    <div class="wms-srv-grid-cell">30496</div>
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+                        <!-- Grid -->
+                        <!-- Header Details -->
+                        <!-- Grid -->
+                        <div id="pnlAllocationPlan">
+                            <div class="wms-srv-obj-main-grid pnlWmsDetail">
+                                <div class="wms-srv-grid-holder">
+                                    <div class="wms-srv-grid-action-panel">
+                                        <div class="wms-srv-grid-title">Allocation Plan</div>
+                                        <!-- Action Buttons Will be Here -->
+                                        <button class="wms-srv-input wms-srv-button wms-srv-highlight-btn" type="button"
+                                            title="Create Batch" id="btnCreateBatch" data-prefix="AN"
+                                            style="opacity: 1; cursor: default;"><i class="fas fa-plus"></i><span>Create
+                                                Batch</span></button>
+                                        <button class="wms-srv-input wms-srv-button wms-srv-highlight-btn-secondary"
+                                            type="button" title="Cancel" id="btnCancelAllocationPlan"
+                                            data-prefix="CN"><i
+                                                class="fas fa-times-circle"></i><span>Cancel</span></button>
+                                    </div>
+                                    <div class="wms-srv-grid-scroller"
+                                        style="width: 100%; max-height: 600px !important;">
+                                        <div class="wms-srv-grid customSalesListGrid" data-gridobjectid="">
+                                            <div class="wms-srv-grid-header tdHeadRow">
+                                                <div class="wms-srv-grid-cell"></div>
+                                                <div class="wms-srv-grid-cell">
+                                                    <label>Order Id</label>
+                                                    <div class="reportFilterContent" data-value="Orderid">
+                                                        <select id="selFl_Orderid" value=""
+                                                            onchange="updateFilter('Orderid');">
+                                                            <option value="">No Filter</option>
+                                                            <option value="Contains">Contains</option>
+                                                            <option value="Does Not Contain">Does Not Contain
+                                                            </option>
+                                                            <option value="Starts With">Starts With</option>
+                                                            <option value="Ends With">Ends With</option>
+                                                            <option value="Equal To">Equal To</option>
+                                                            <option value="Not Equal To">Not Equal To</option>
+                                                            <option value="In Between">In Between</option>
+                                                            <option value="Smaller Than">Smaller Than</option>
+                                                            <option value="Greater Than">Greater Than</option>
+                                                            <option value="Smaller Than Or Equal To">Smaller Than Or
+                                                                Equal To</option>
+                                                            <option value="Greater Than Or Equal To">Greater Than Or
+                                                                Equal To</option>
+                                                            <option value="Is Null">Is Null</option>
+                                                            <option value="Is Not Null">Is Not Null</option>
+                                                            <option value="Is Empty">Is Empty</option>
+                                                            <option value="Is Not Empty">Is Not Empty</option>
+                                                        </select>
+                                                        <input type="text" id="inFl_Orderid" value=""
+                                                            onchange="updateFilterValue('Orderid');"><input type="text"
+                                                            id="inFl1_Orderid" class="inputInBetween" value=""
+                                                            onchange="updateFilterValue('Orderid');"
+                                                            style="display: none;"><input type="text" id="inFl2_Orderid"
+                                                            class="inputInBetween" value=""
+                                                            onchange="updateFilterValue('Orderid');"
+                                                            style="display: none;">
+                                                    </div>
+                                                </div>
+                                                <div class="wms-srv-grid-cell">
+                                                    <label>Order Date</label>
+                                                    <div class="reportFilterContent" data-value="orderdate">
+                                                        <select id="selFl_orderdate" value=""
+                                                            onchange="updateFilter('orderdate');">
+                                                            <option value="">No Filter</option>
+                                                            <option value="Contains">Contains</option>
+                                                            <option value="Does Not Contain">Does Not Contain
+                                                            </option>
+                                                            <option value="Starts With">Starts With</option>
+                                                            <option value="Ends With">Ends With</option>
+                                                            <option value="Equal To">Equal To</option>
+                                                            <option value="Not Equal To">Not Equal To</option>
+                                                            <option value="In Between">In Between</option>
+                                                            <option value="Smaller Than">Smaller Than</option>
+                                                            <option value="Greater Than">Greater Than</option>
+                                                            <option value="Smaller Than Or Equal To">Smaller Than Or
+                                                                Equal To</option>
+                                                            <option value="Greater Than Or Equal To">Greater Than Or
+                                                                Equal To</option>
+                                                            <option value="Is Null">Is Null</option>
+                                                            <option value="Is Not Null">Is Not Null</option>
+                                                            <option value="Is Empty">Is Empty</option>
+                                                            <option value="Is Not Empty">Is Not Empty</option>
+                                                        </select>
+                                                        <input type="text" id="inFl_orderdate" value=""
+                                                            onchange="updateFilterValue('orderdate');"><input
+                                                            type="text" id="inFl1_orderdate" class="inputInBetween"
+                                                            value="" onchange="updateFilterValue('orderdate');"
+                                                            style="display: none;"><input type="text"
+                                                            id="inFl2_orderdate" class="inputInBetween" value=""
+                                                            onchange="updateFilterValue('orderdate');"
+                                                            style="display: none;">
+                                                    </div>
+                                                </div>
+                                                <div class="wms-srv-grid-cell">
+                                                    <label>Client Name</label>
+                                                    <div class="reportFilterContent" data-value="clientname">
+                                                        <select id="selFl_clientname" value=""
+                                                            onchange="updateFilter('clientname');">
+                                                            <option value="">No Filter</option>
+                                                            <option value="Contains">Contains</option>
+                                                            <option value="Does Not Contain">Does Not Contain
+                                                            </option>
+                                                            <option value="Starts With">Starts With</option>
+                                                            <option value="Ends With">Ends With</option>
+                                                            <option value="Equal To">Equal To</option>
+                                                            <option value="Not Equal To">Not Equal To</option>
+                                                            <option value="In Between">In Between</option>
+                                                            <option value="Smaller Than">Smaller Than</option>
+                                                            <option value="Greater Than">Greater Than</option>
+                                                            <option value="Smaller Than Or Equal To">Smaller Than Or
+                                                                Equal To</option>
+                                                            <option value="Greater Than Or Equal To">Greater Than Or
+                                                                Equal To</option>
+                                                            <option value="Is Null">Is Null</option>
+                                                            <option value="Is Not Null">Is Not Null</option>
+                                                            <option value="Is Empty">Is Empty</option>
+                                                            <option value="Is Not Empty">Is Not Empty</option>
+                                                        </select>
+                                                        <input type="text" id="inFl_clientname" value=""
+                                                            onchange="updateFilterValue('clientname');"><input
+                                                            type="text" id="inFl1_clientname" class="inputInBetween"
+                                                            value="" onchange="updateFilterValue('clientname');"
+                                                            style="display: none;"><input type="text"
+                                                            id="inFl2_clientname" class="inputInBetween" value=""
+                                                            onchange="updateFilterValue('clientname');"
+                                                            style="display: none;">
+                                                    </div>
+                                                </div>
+                                                <div class="wms-srv-grid-cell">
+                                                    <label>Delivery Center</label>
+                                                    <div class="reportFilterContent" data-value="deliverycenter">
+                                                        <select id="selFl_deliverycenter" value=""
+                                                            onchange="updateFilter('deliverycenter');">
+                                                            <option value="">No Filter</option>
+                                                            <option value="Contains">Contains</option>
+                                                            <option value="Does Not Contain">Does Not Contain
+                                                            </option>
+                                                            <option value="Starts With">Starts With</option>
+                                                            <option value="Ends With">Ends With</option>
+                                                            <option value="Equal To">Equal To</option>
+                                                            <option value="Not Equal To">Not Equal To</option>
+                                                            <option value="In Between">In Between</option>
+                                                            <option value="Smaller Than">Smaller Than</option>
+                                                            <option value="Greater Than">Greater Than</option>
+                                                            <option value="Smaller Than Or Equal To">Smaller Than Or
+                                                                Equal To</option>
+                                                            <option value="Greater Than Or Equal To">Greater Than Or
+                                                                Equal To</option>
+                                                            <option value="Is Null">Is Null</option>
+                                                            <option value="Is Not Null">Is Not Null</option>
+                                                            <option value="Is Empty">Is Empty</option>
+                                                            <option value="Is Not Empty">Is Not Empty</option>
+                                                        </select>
+                                                        <input type="text" id="inFl_deliverycenter" value=""
+                                                            onchange="updateFilterValue('deliverycenter');"><input
+                                                            type="text" id="inFl1_deliverycenter" class="inputInBetween"
+                                                            value="" onchange="updateFilterValue('deliverycenter');"
+                                                            style="display: none;"><input type="text"
+                                                            id="inFl2_deliverycenter" class="inputInBetween" value=""
+                                                            onchange="updateFilterValue('deliverycenter');"
+                                                            style="display: none;">
+                                                    </div>
+                                                </div>
+                                                <div class="wms-srv-grid-cell">
+                                                    <label>Product Code</label>
+                                                    <div class="reportFilterContent" data-value="Productcode">
+                                                        <select id="selFl_Productcode" value=""
+                                                            onchange="updateFilter('Productcode');">
+                                                            <option value="">No Filter</option>
+                                                            <option value="Contains">Contains</option>
+                                                            <option value="Does Not Contain">Does Not Contain
+                                                            </option>
+                                                            <option value="Starts With">Starts With</option>
+                                                            <option value="Ends With">Ends With</option>
+                                                            <option value="Equal To">Equal To</option>
+                                                            <option value="Not Equal To">Not Equal To</option>
+                                                            <option value="In Between">In Between</option>
+                                                            <option value="Smaller Than">Smaller Than</option>
+                                                            <option value="Greater Than">Greater Than</option>
+                                                            <option value="Smaller Than Or Equal To">Smaller Than Or
+                                                                Equal To</option>
+                                                            <option value="Greater Than Or Equal To">Greater Than Or
+                                                                Equal To</option>
+                                                            <option value="Is Null">Is Null</option>
+                                                            <option value="Is Not Null">Is Not Null</option>
+                                                            <option value="Is Empty">Is Empty</option>
+                                                            <option value="Is Not Empty">Is Not Empty</option>
+                                                        </select>
+                                                        <input type="text" id="inFl_Productcode" value=""
+                                                            onchange="updateFilterValue('Productcode');"><input
+                                                            type="text" id="inFl1_Productcode" class="inputInBetween"
+                                                            value="" onchange="updateFilterValue('Productcode');"
+                                                            style="display: none;"><input type="text"
+                                                            id="inFl2_Productcode" class="inputInBetween" value=""
+                                                            onchange="updateFilterValue('Productcode');"
+                                                            style="display: none;">
+                                                    </div>
+                                                </div>
+                                                <div class="wms-srv-grid-cell">
+                                                    <label>UOM</label>
+                                                    <div class="reportFilterContent" data-value="uom">
+                                                        <select id="selFl_uom" value="" onchange="updateFilter('uom');">
+                                                            <option value="">No Filter</option>
+                                                            <option value="Contains">Contains</option>
+                                                            <option value="Does Not Contain">Does Not Contain
+                                                            </option>
+                                                            <option value="Starts With">Starts With</option>
+                                                            <option value="Ends With">Ends With</option>
+                                                            <option value="Equal To">Equal To</option>
+                                                            <option value="Not Equal To">Not Equal To</option>
+                                                            <option value="In Between">In Between</option>
+                                                            <option value="Smaller Than">Smaller Than</option>
+                                                            <option value="Greater Than">Greater Than</option>
+                                                            <option value="Smaller Than Or Equal To">Smaller Than Or
+                                                                Equal To</option>
+                                                            <option value="Greater Than Or Equal To">Greater Than Or
+                                                                Equal To</option>
+                                                            <option value="Is Null">Is Null</option>
+                                                            <option value="Is Not Null">Is Not Null</option>
+                                                            <option value="Is Empty">Is Empty</option>
+                                                            <option value="Is Not Empty">Is Not Empty</option>
+                                                        </select>
+                                                        <input type="text" id="inFl_uom" value=""
+                                                            onchange="updateFilterValue('uom');"><input type="text"
+                                                            id="inFl1_uom" class="inputInBetween" value=""
+                                                            onchange="updateFilterValue('uom');"
+                                                            style="display: none;"><input type="text" id="inFl2_uom"
+                                                            class="inputInBetween" value=""
+                                                            onchange="updateFilterValue('uom');" style="display: none;">
+                                                    </div>
+                                                </div>
+                                                <div class="wms-srv-grid-cell">
+                                                    <label>Location Code</label>
+                                                    <div class="reportFilterContent" data-value="locationcode">
+                                                        <select id="selFl_locationcode" value=""
+                                                            onchange="updateFilter('locationcode');">
+                                                            <option value="">No Filter</option>
+                                                            <option value="Contains">Contains</option>
+                                                            <option value="Does Not Contain">Does Not Contain
+                                                            </option>
+                                                            <option value="Starts With">Starts With</option>
+                                                            <option value="Ends With">Ends With</option>
+                                                            <option value="Equal To">Equal To</option>
+                                                            <option value="Not Equal To">Not Equal To</option>
+                                                            <option value="In Between">In Between</option>
+                                                            <option value="Smaller Than">Smaller Than</option>
+                                                            <option value="Greater Than">Greater Than</option>
+                                                            <option value="Smaller Than Or Equal To">Smaller Than Or
+                                                                Equal To</option>
+                                                            <option value="Greater Than Or Equal To">Greater Than Or
+                                                                Equal To</option>
+                                                            <option value="Is Null">Is Null</option>
+                                                            <option value="Is Not Null">Is Not Null</option>
+                                                            <option value="Is Empty">Is Empty</option>
+                                                            <option value="Is Not Empty">Is Not Empty</option>
+                                                        </select>
+                                                        <input type="text" id="inFl_locationcode" value=""
+                                                            onchange="updateFilterValue('locationcode');"><input
+                                                            type="text" id="inFl1_locationcode" class="inputInBetween"
+                                                            value="" onchange="updateFilterValue('locationcode');"
+                                                            style="display: none;"><input type="text"
+                                                            id="inFl2_locationcode" class="inputInBetween" value=""
+                                                            onchange="updateFilterValue('locationcode');"
+                                                            style="display: none;">
+                                                    </div>
+                                                </div>
+                                                <div class="wms-srv-grid-cell">
+                                                    <label>Pallet Name</label>
+                                                    <div class="reportFilterContent" data-value="palletname">
+                                                        <select id="selFl_palletname" value=""
+                                                            onchange="updateFilter('palletname');">
+                                                            <option value="">No Filter</option>
+                                                            <option value="Contains">Contains</option>
+                                                            <option value="Does Not Contain">Does Not Contain
+                                                            </option>
+                                                            <option value="Starts With">Starts With</option>
+                                                            <option value="Ends With">Ends With</option>
+                                                            <option value="Equal To">Equal To</option>
+                                                            <option value="Not Equal To">Not Equal To</option>
+                                                            <option value="In Between">In Between</option>
+                                                            <option value="Smaller Than">Smaller Than</option>
+                                                            <option value="Greater Than">Greater Than</option>
+                                                            <option value="Smaller Than Or Equal To">Smaller Than Or
+                                                                Equal To</option>
+                                                            <option value="Greater Than Or Equal To">Greater Than Or
+                                                                Equal To</option>
+                                                            <option value="Is Null">Is Null</option>
+                                                            <option value="Is Not Null">Is Not Null</option>
+                                                            <option value="Is Empty">Is Empty</option>
+                                                            <option value="Is Not Empty">Is Not Empty</option>
+                                                        </select>
+                                                        <input type="text" id="inFl_palletname" value=""
+                                                            onchange="updateFilterValue('palletname');"><input
+                                                            type="text" id="inFl1_palletname" class="inputInBetween"
+                                                            value="" onchange="updateFilterValue('palletname');"
+                                                            style="display: none;"><input type="text"
+                                                            id="inFl2_palletname" class="inputInBetween" value=""
+                                                            onchange="updateFilterValue('palletname');"
+                                                            style="display: none;">
+                                                    </div>
+                                                </div>
+                                                <div class="wms-srv-grid-cell">
+                                                    <label>Batch No</label>
+                                                    <div class="reportFilterContent" data-value="batchno">
+                                                        <select id="selFl_batchno" value=""
+                                                            onchange="updateFilter('batchno');">
+                                                            <option value="">No Filter</option>
+                                                            <option value="Contains">Contains</option>
+                                                            <option value="Does Not Contain">Does Not Contain
+                                                            </option>
+                                                            <option value="Starts With">Starts With</option>
+                                                            <option value="Ends With">Ends With</option>
+                                                            <option value="Equal To">Equal To</option>
+                                                            <option value="Not Equal To">Not Equal To</option>
+                                                            <option value="In Between">In Between</option>
+                                                            <option value="Smaller Than">Smaller Than</option>
+                                                            <option value="Greater Than">Greater Than</option>
+                                                            <option value="Smaller Than Or Equal To">Smaller Than Or
+                                                                Equal To</option>
+                                                            <option value="Greater Than Or Equal To">Greater Than Or
+                                                                Equal To</option>
+                                                            <option value="Is Null">Is Null</option>
+                                                            <option value="Is Not Null">Is Not Null</option>
+                                                            <option value="Is Empty">Is Empty</option>
+                                                            <option value="Is Not Empty">Is Not Empty</option>
+                                                        </select>
+                                                        <input type="text" id="inFl_batchno" value=""
+                                                            onchange="updateFilterValue('batchno');"><input type="text"
+                                                            id="inFl1_batchno" class="inputInBetween" value=""
+                                                            onchange="updateFilterValue('batchno');"
+                                                            style="display: none;"><input type="text" id="inFl2_batchno"
+                                                            class="inputInBetween" value=""
+                                                            onchange="updateFilterValue('batchno');"
+                                                            style="display: none;">
+                                                    </div>
+                                                </div>
+                                                <div class="wms-srv-grid-cell">
+                                                    <label>Allocate Qty</label>
+                                                    <div class="reportFilterContent" data-value="allocateqty">
+                                                        <select id="selFl_allocateqty" value=""
+                                                            onchange="updateFilter('allocateqty');">
+                                                            <option value="">No Filter</option>
+                                                            <option value="Contains">Contains</option>
+                                                            <option value="Does Not Contain">Does Not Contain
+                                                            </option>
+                                                            <option value="Starts With">Starts With</option>
+                                                            <option value="Ends With">Ends With</option>
+                                                            <option value="Equal To">Equal To</option>
+                                                            <option value="Not Equal To">Not Equal To</option>
+                                                            <option value="In Between">In Between</option>
+                                                            <option value="Smaller Than">Smaller Than</option>
+                                                            <option value="Greater Than">Greater Than</option>
+                                                            <option value="Smaller Than Or Equal To">Smaller Than Or
+                                                                Equal To</option>
+                                                            <option value="Greater Than Or Equal To">Greater Than Or
+                                                                Equal To</option>
+                                                            <option value="Is Null">Is Null</option>
+                                                            <option value="Is Not Null">Is Not Null</option>
+                                                            <option value="Is Empty">Is Empty</option>
+                                                            <option value="Is Not Empty">Is Not Empty</option>
+                                                        </select>
+                                                        <input type="text" id="inFl_allocateqty" value=""
+                                                            onchange="updateFilterValue('allocateqty');"><input
+                                                            type="text" id="inFl1_allocateqty" class="inputInBetween"
+                                                            value="" onchange="updateFilterValue('allocateqty');"
+                                                            style="display: none;"><input type="text"
+                                                            id="inFl2_allocateqty" class="inputInBetween" value=""
+                                                            onchange="updateFilterValue('allocateqty');"
+                                                            style="display: none;">
+                                                    </div>
+                                                </div>
+                                                <div class="wms-srv-grid-cell">
+                                                    <label>Intransit Qty</label>
+                                                    <div class="reportFilterContent" data-value="intransitqty">
+                                                        <select id="selFl_intransitqty" value=""
+                                                            onchange="updateFilter('intransitqty');">
+                                                            <option value="">No Filter</option>
+                                                            <option value="Contains">Contains</option>
+                                                            <option value="Does Not Contain">Does Not Contain
+                                                            </option>
+                                                            <option value="Starts With">Starts With</option>
+                                                            <option value="Ends With">Ends With</option>
+                                                            <option value="Equal To">Equal To</option>
+                                                            <option value="Not Equal To">Not Equal To</option>
+                                                            <option value="In Between">In Between</option>
+                                                            <option value="Smaller Than">Smaller Than</option>
+                                                            <option value="Greater Than">Greater Than</option>
+                                                            <option value="Smaller Than Or Equal To">Smaller Than Or
+                                                                Equal To</option>
+                                                            <option value="Greater Than Or Equal To">Greater Than Or
+                                                                Equal To</option>
+                                                            <option value="Is Null">Is Null</option>
+                                                            <option value="Is Not Null">Is Not Null</option>
+                                                            <option value="Is Empty">Is Empty</option>
+                                                            <option value="Is Not Empty">Is Not Empty</option>
+                                                        </select>
+                                                        <input type="text" id="inFl_intransitqty" value=""
+                                                            onchange="updateFilterValue('intransitqty');"><input
+                                                            type="text" id="inFl1_intransitqty" class="inputInBetween"
+                                                            value="" onchange="updateFilterValue('intransitqty');"
+                                                            style="display: none;"><input type="text"
+                                                            id="inFl2_intransitqty" class="inputInBetween" value=""
+                                                            onchange="updateFilterValue('intransitqty');"
+                                                            style="display: none;">
+                                                    </div>
+                                                </div>
+                                                <div class="wms-srv-grid-cell">
+                                                    <label>Intransit Allocate Qty</label>
+                                                    <div class="reportFilterContent" data-value="intransitallocateqty">
+                                                        <select id="selFl_intransitallocateqty" value=""
+                                                            onchange="updateFilter('intransitallocateqty');">
+                                                            <option value="">No Filter</option>
+                                                            <option value="Contains">Contains</option>
+                                                            <option value="Does Not Contain">Does Not Contain
+                                                            </option>
+                                                            <option value="Starts With">Starts With</option>
+                                                            <option value="Ends With">Ends With</option>
+                                                            <option value="Equal To">Equal To</option>
+                                                            <option value="Not Equal To">Not Equal To</option>
+                                                            <option value="In Between">In Between</option>
+                                                            <option value="Smaller Than">Smaller Than</option>
+                                                            <option value="Greater Than">Greater Than</option>
+                                                            <option value="Smaller Than Or Equal To">Smaller Than Or
+                                                                Equal To</option>
+                                                            <option value="Greater Than Or Equal To">Greater Than Or
+                                                                Equal To</option>
+                                                            <option value="Is Null">Is Null</option>
+                                                            <option value="Is Not Null">Is Not Null</option>
+                                                            <option value="Is Empty">Is Empty</option>
+                                                            <option value="Is Not Empty">Is Not Empty</option>
+                                                        </select>
+                                                        <input type="text" id="inFl_intransitallocateqty" value=""
+                                                            onchange="updateFilterValue('intransitallocateqty');"><input
+                                                            type="text" id="inFl1_intransitallocateqty"
+                                                            class="inputInBetween" value=""
+                                                            onchange="updateFilterValue('intransitallocateqty');"
+                                                            style="display: none;"><input type="text"
+                                                            id="inFl2_intransitallocateqty" class="inputInBetween"
+                                                            value=""
+                                                            onchange="updateFilterValue('intransitallocateqty');"
+                                                            style="display: none;">
+                                                    </div>
+                                                </div>
+                                                <div class="wms-srv-grid-cell">
+                                                    <label>Lottable1</label>
+                                                    <div class="reportFilterContent" data-value="lottable1">
+                                                        <select id="selFl_lottable1" value=""
+                                                            onchange="updateFilter('lottable1');">
+                                                            <option value="">No Filter</option>
+                                                            <option value="Contains">Contains</option>
+                                                            <option value="Does Not Contain">Does Not Contain
+                                                            </option>
+                                                            <option value="Starts With">Starts With</option>
+                                                            <option value="Ends With">Ends With</option>
+                                                            <option value="Equal To">Equal To</option>
+                                                            <option value="Not Equal To">Not Equal To</option>
+                                                            <option value="In Between">In Between</option>
+                                                            <option value="Smaller Than">Smaller Than</option>
+                                                            <option value="Greater Than">Greater Than</option>
+                                                            <option value="Smaller Than Or Equal To">Smaller Than Or
+                                                                Equal To</option>
+                                                            <option value="Greater Than Or Equal To">Greater Than Or
+                                                                Equal To</option>
+                                                            <option value="Is Null">Is Null</option>
+                                                            <option value="Is Not Null">Is Not Null</option>
+                                                            <option value="Is Empty">Is Empty</option>
+                                                            <option value="Is Not Empty">Is Not Empty</option>
+                                                        </select>
+                                                        <input type="text" id="inFl_lottable1" value=""
+                                                            onchange="updateFilterValue('lottable1');"><input
+                                                            type="text" id="inFl1_lottable1" class="inputInBetween"
+                                                            value="" onchange="updateFilterValue('lottable1');"
+                                                            style="display: none;"><input type="text"
+                                                            id="inFl2_lottable1" class="inputInBetween" value=""
+                                                            onchange="updateFilterValue('lottable1');"
+                                                            style="display: none;">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="wms-srv-grid-row ">
+                                                <div class="wms-srv-grid-cell">
+                                                    <input type="checkbox" value="105445">
+                                                </div>
+                                                <div class="wms-srv-grid-cell">46419</div>
+                                                <div class="wms-srv-grid-cell">2022-06-13T00:00:00</div>
+                                                <div class="wms-srv-grid-cell">DC 09001</div>
+                                                <div class="wms-srv-grid-cell">2725 WALKER NW</div>
+                                                <div class="wms-srv-grid-cell">ss2</div>
+                                                <div class="wms-srv-grid-cell">Each</div>
+                                                <div class="wms-srv-grid-cell">LL6</div>
+                                                <div class="wms-srv-grid-cell">ST-454744</div>
+                                                <div class="wms-srv-grid-cell">CNT-0001-201013</div>
+                                                <div class="wms-srv-grid-cell">
+                                                    <input type="text" style="width: 75px;" value="5"
+                                                        id="txtAllocationQty_105445"
+                                                        onchange="updateQty('105445','5','AllocationQty', this);">
+                                                    <i class="fas fa-solid fa-pen"
+                                                        onclick="openManualAllocation('37813', 'txtAllocationQty_105445', '46419');"></i>
+                                                </div>
+                                                <div class="wms-srv-grid-cell">3068</div>
+                                                <div class="wms-srv-grid-cell">
+                                                    <input type="text" style="width: 75px;" value="0"
+                                                        id="txtInTransitAllocationQty_105445"
+                                                        onchange="updateQty('105445','0','InTransitQty', this);">
+                                                    <i class="fas fa-solid fa-pen"
+                                                        onclick="openManualInTransit('37813', 'txtInTransitAllocationQty_105445', '46419');"></i>
+                                                </div>
+                                                <div class="wms-srv-grid-cell">0</div>
+                                            </div>
+                                            <div class="wms-srv-grid-row ">
+                                                <div class="wms-srv-grid-cell">
+                                                    <input type="checkbox" value="105446">
+                                                </div>
+                                                <div class="wms-srv-grid-cell">46417</div>
+                                                <div class="wms-srv-grid-cell">2022-06-13T00:00:00</div>
+                                                <div class="wms-srv-grid-cell">DC 09001</div>
+                                                <div class="wms-srv-grid-cell">2725 WALKER NW</div>
+                                                <div class="wms-srv-grid-cell">ss2</div>
+                                                <div class="wms-srv-grid-cell">Each</div>
+                                                <div class="wms-srv-grid-cell">LL6</div>
+                                                <div class="wms-srv-grid-cell">ST-454744</div>
+                                                <div class="wms-srv-grid-cell">CNT-0001-201013</div>
+                                                <div class="wms-srv-grid-cell">
+                                                    <input type="text" style="width: 75px;" value="3"
+                                                        id="txtAllocationQty_105446"
+                                                        onchange="updateQty('105446','3','AllocationQty', this);">
+                                                    <i class="fas fa-solid fa-pen"
+                                                        onclick="openManualAllocation('37813', 'txtAllocationQty_105446', '46417');"></i>
+                                                </div>
+                                                <div class="wms-srv-grid-cell">3068</div>
+                                                <div class="wms-srv-grid-cell">
+                                                    <input type="text" style="width: 75px;" value="0"
+                                                        id="txtInTransitAllocationQty_105446"
+                                                        onchange="updateQty('105446','0','InTransitQty', this);">
+                                                    <i class="fas fa-solid fa-pen"
+                                                        onclick="openManualInTransit('37813', 'txtInTransitAllocationQty_105446', '46417');"></i>
+                                                </div>
+                                                <div class="wms-srv-grid-cell">0</div>
+                                            </div>
+                                            <div class="wms-srv-grid-row ">
+                                                <div class="wms-srv-grid-cell">
+                                                    <input type="checkbox" value="105455">
+                                                </div>
+                                                <div class="wms-srv-grid-cell">46417</div>
+                                                <div class="wms-srv-grid-cell">2022-06-13T00:00:00</div>
+                                                <div class="wms-srv-grid-cell">DC 09001</div>
+                                                <div class="wms-srv-grid-cell">2725 WALKER NW</div>
+                                                <div class="wms-srv-grid-cell">ss1</div>
+                                                <div class="wms-srv-grid-cell">Each</div>
+                                                <div class="wms-srv-grid-cell">LOC5</div>
+                                                <div class="wms-srv-grid-cell">ST-457474</div>
+                                                <div class="wms-srv-grid-cell">CNT-0001-220310</div>
+                                                <div class="wms-srv-grid-cell">
+                                                    <input type="text" style="width: 75px;" value="6"
+                                                        id="txtAllocationQty_105455"
+                                                        onchange="updateQty('105455','6','AllocationQty', this);">
+                                                    <i class="fas fa-solid fa-pen"
+                                                        onclick="openManualAllocation('37812', 'txtAllocationQty_105455', '46417');"></i>
+                                                </div>
+                                                <div class="wms-srv-grid-cell">0</div>
+                                                <div class="wms-srv-grid-cell">
+                                                    <input type="text" style="width: 75px;" value="0"
+                                                        id="txtInTransitAllocationQty_105455" disabled="disabled">
+                                                    <i class="fas fa-solid fa-pen"
+                                                        style="opacity: 0.3; cursor: default;"></i>
+                                                </div>
+                                                <div class="wms-srv-grid-cell">0</div>
+                                            </div>
+                                            <div class="wms-srv-grid-row ">
+                                                <div class="wms-srv-grid-cell">
+                                                    <input type="checkbox" value="105459">
+                                                </div>
+                                                <div class="wms-srv-grid-cell">46419</div>
+                                                <div class="wms-srv-grid-cell">2022-06-13T00:00:00</div>
+                                                <div class="wms-srv-grid-cell">DC 09001</div>
+                                                <div class="wms-srv-grid-cell">2725 WALKER NW</div>
+                                                <div class="wms-srv-grid-cell">ss1</div>
+                                                <div class="wms-srv-grid-cell">Each</div>
+                                                <div class="wms-srv-grid-cell">LL22</div>
+                                                <div class="wms-srv-grid-cell">ST-457704</div>
+                                                <div class="wms-srv-grid-cell">CNT-0001-220512</div>
+                                                <div class="wms-srv-grid-cell">
+                                                    <input type="text" style="width: 75px;" value="1"
+                                                        id="txtAllocationQty_105459"
+                                                        onchange="updateQty('105459','1','AllocationQty', this);">
+                                                    <i class="fas fa-solid fa-pen"
+                                                        onclick="openManualAllocation('37812', 'txtAllocationQty_105459', '46419');"></i>
+                                                </div>
+                                                <div class="wms-srv-grid-cell">0</div>
+                                                <div class="wms-srv-grid-cell">
+                                                    <input type="text" style="width: 75px;" value="0"
+                                                        id="txtInTransitAllocationQty_105459" disabled="disabled">
+                                                    <i class="fas fa-solid fa-pen"
+                                                        style="opacity: 0.3; cursor: default;"></i>
+                                                </div>
+                                                <div class="wms-srv-grid-cell">0</div>
+                                            </div>
+                                            <div class="wms-srv-grid-row ">
+                                                <div class="wms-srv-grid-cell">
+                                                    <input type="checkbox" value="105460">
+                                                </div>
+                                                <div class="wms-srv-grid-cell">46419</div>
+                                                <div class="wms-srv-grid-cell">2022-06-13T00:00:00</div>
+                                                <div class="wms-srv-grid-cell">DC 09001</div>
+                                                <div class="wms-srv-grid-cell">2725 WALKER NW</div>
+                                                <div class="wms-srv-grid-cell">ss1</div>
+                                                <div class="wms-srv-grid-cell">Each</div>
+                                                <div class="wms-srv-grid-cell">LOC5</div>
+                                                <div class="wms-srv-grid-cell">ST-457678</div>
+                                                <div class="wms-srv-grid-cell">CNT-0001-220520</div>
+                                                <div class="wms-srv-grid-cell">
+                                                    <input type="text" style="width: 75px;" value="2"
+                                                        id="txtAllocationQty_105460"
+                                                        onchange="updateQty('105460','2','AllocationQty', this);">
+                                                    <i class="fas fa-solid fa-pen"
+                                                        onclick="openManualAllocation('37812', 'txtAllocationQty_105460', '46419');"></i>
+                                                </div>
+                                                <div class="wms-srv-grid-cell">0</div>
+                                                <div class="wms-srv-grid-cell">
+                                                    <input type="text" style="width: 75px;" value="0"
+                                                        id="txtInTransitAllocationQty_105460" disabled="disabled">
+                                                    <i class="fas fa-solid fa-pen"
+                                                        style="opacity: 0.3; cursor: default;"></i>
+                                                </div>
+                                                <div class="wms-srv-grid-cell">0</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="wms-srv-grid-pager" style="display: none;">
+                                        <span class="wms-srv-pager-records">
+                                            <!-- Page Record Info -->
+                                        </span>
+                                        <span class="wms-srv-empty-space"></span>
+                                        <span class="wms-srv-pager-links">
+                                            <!-- Pagger Links -->
+                                        </span>
+                                        <span class="wms-srv-empty-space"></span>
+                                        <input type="text" name="txtGridPageNo" class="wms-srv-input notranslate"
+                                            value="0" style="width: 80px;">
+                                        <a href="#" title="Jump To" class="wms-srv-pager-go"><i
+                                                class="fas fa-play-circle"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Grid -->
+                        <!-- Grid -->
+                        <div class="wms-srv-grid-holder pnlSearchList" id="pnlSearchList" style="display: none;">
+                            <div class="wms-srv-grid-action-panel" style="display: none;">
+                                <!-- Action Buttons Will be Here -->
+                            </div>
+                            <div class="wms-srv-grid-scroller" style="width: 100%;">
+                                <div class="wms-srv-grid">
+                                    <!-- Header Data Will be Here -->
+                                </div>
+                            </div>
+                            <div class="wms-srv-grid-pager">
+                                <span class="wms-srv-pager-records">
+                                    <!-- Page Record Info -->
+                                </span>
+                                <span class="wms-srv-empty-space"></span>
+                                <span class="wms-srv-pager-links">
+                                    <!-- Pagger Links -->
+                                </span>
+                                <span class="wms-srv-empty-space"></span>
+                                <input type="text" name="txtGridPageNo" class="wms-srv-input" value="0"
+                                    style="width: 80px;">
+                                <a href="#" title="Jump To" class="wms-srv-pager-go"><i
+                                        class="fas fa-play-circle"></i></a>
+                            </div>
+                        </div>
+                        <!-- Grid -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Allocation Plan -->
+
+<!-- BatchlistAllocation Popup -->
+<div class="wms-srv-popup-holder" id="wms-srv-blallocation-popup" style="display:none">
+    <div class="wms-srv-popup-bg">
+    </div>
+    <div class="wms-srv-popup">
+        <div class="wms-srv-popup-content">
+            <!-- Popup Title -->
+            <div class="wms-srv-popup-title">
+                <div class="wms-srv-page-title">
+                    <i class="fas fa-file-alt"></i><span>Allocation Plan</span>
+                </div>
+                <a href="#" title="Close" id="wms-srv-blallocation-popup-close" class="wms-srv-popup-close"><i
+                        class="fas fa-times-circle"></i></a>
+            </div>
+            <!-- Popup Title -->
+            <div class="wms-srv-popup-content-body" id="wms-srv-popup-content-body">
+                <div id="popupContentblallocation">
+                    <div id="pnlblallocation">
+                        <!-- Grid -->
+                        <div class="wms-srv-grid-holder pnlWmsHead" id="pnlWmsHead">
+                            <div class="wms-srv-grid" style="text-align: center;" id="wms-srv-grid-header-alloplan">
+                                <!-- Object Head Data Will be Here -->
+                                <!-- <div class="wms-srv-grid-header">
+                                        <div class="wms-srv-grid-cell">Total Order Qty</div>
+                                        <div class="wms-srv-grid-cell">Total Allocated Qty</div>
+                                        <div class="wms-srv-grid-cell">Total Short Qty</div>
+                                        <div class="wms-srv-grid-cell">Hold Qty</div>
+                                    </div>
+                                    <div class="wms-srv-grid-row">
+                                        <div class="wms-srv-grid-cell">370</div>
+                                        <div class="wms-srv-grid-cell">300</div>
+                                        <div class="wms-srv-grid-cell">70</div>
+                                        <div class="wms-srv-grid-cell">0</div>
+                                    </div> -->
+                            </div>
+                        </div>
+                        <br />
+                        <!-- Grid -->
+                        <!-- Header Details -->
+                        <!-- Grid -->
+                        <div class="wms-srv-grid-holder pnlWmsDetail" id="pnlWmsDetail">
+                            <div class="wms-srv-grid-action-panel">
+                                <div class="wms-srv-grid-common-action"><a href="#" title="" data-prefix=""
+                                        class="wms-srv-icononly"><i class="fas fa-list"></i></a></div>
+                                <button class="wms-srv-input wms-srv-button wms-srv-highlight-btn" type="button" id="btnCreatedirectBatch"
+                                    title="Create Batch" onclick="createBatchData();"><i
+                                        class="fas fa-plus"></i><span>Create Batch</span></button>
+
+                                <div class="wms-srv-grid-title">
+                                    Allocation Plan
+                                </div>
+                            </div>
+                            <div class="wms-srv-grid" style="width: 100%; text-align: center;">
+                                <div class="wms-srv-grid" data-gridobjectid="gridObject_Inbound_PurchaseOrder_DOC"
+                                    id="wms-srv-grid-detail-alloplan">
+                                    <!--  <div class="wms-srv-grid-header">
+                                            <div class="wms-srv-grid-cell">Order ID</div>
+                                            <div class="wms-srv-grid-cell">Order Date</div>
+                                            <div class="wms-srv-grid-cell">Client Name</div>
+                                            <div class="wms-srv-grid-cell">Delivery Center</div>
+                                            <div class="wms-srv-grid-cell">Product Code</div>
+                                            <div class="wms-srv-grid-cell">UOM</div>
+                                            <div class="wms-srv-grid-cell">Location Code</div>
+                                            <div class="wms-srv-grid-cell">Pallet Name</div>
+                                            <div class="wms-srv-grid-cell">Batch No.</div>
+                                            <div class="wms-srv-grid-cell">Allocate Qty</div>
+                                            <div class="wms-srv-grid-cell">Lotteble</div>
+                                        </div>
+                                        <div class="wms-srv-grid-header">
+                                            <div class="wms-srv-grid-cell"><input type="text"
+                                                    class="wms-srv-grid-cell-input notranslate" /></div>
+                                            <div class="wms-srv-grid-cell"><input type="text"
+                                                    class="wms-srv-grid-cell-input notranslate" /></div>
+                                            <div class="wms-srv-grid-cell"><input type="text"
+                                                    class="wms-srv-grid-cell-input notranslate" /></div>
+                                            <div class="wms-srv-grid-cell"><input type="text"
+                                                    class="wms-srv-grid-cell-input notranslate" /></div>
+                                            <div class="wms-srv-grid-cell"><input type="text"
+                                                    class="wms-srv-grid-cell-input notranslate" /></div>
+                                            <div class="wms-srv-grid-cell"><input type="text"
+                                                    class="wms-srv-grid-cell-input notranslate" /></div>
+                                            <div class="wms-srv-grid-cell"><input type="text"
+                                                    class="wms-srv-grid-cell-input notranslate" /></div>
+                                            <div class="wms-srv-grid-cell"><input type="text"
+                                                    class="wms-srv-grid-cell-input notranslate" /></div>
+                                            <div class="wms-srv-grid-cell"><input type="text"
+                                                    class="wms-srv-grid-cell-input notranslate" /></div>
+                                            <div class="wms-srv-grid-cell"><input type="text"
+                                                    class="wms-srv-grid-cell-input notranslate" /></div>
+                                            <div class="wms-srv-grid-cell" style="width:275px;">
+                                                <div class="lottableControlHolder">
+                                                    <input type="text" value="" placeholder="Color"
+                                                        class="wmsLottableInput">
+                                                    <input type="text" value="" placeholder="MFG Date"
+                                                        class="wmsLottableInput wms-srv-datepicker">
+                                                    <input type="text" value="" placeholder="Batch Code"
+                                                        class="wmsLottableInput">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="wms-srv-grid-row wms-srv-grid-add">
+                                            <div class="wms-srv-grid-cell">29056</div>
+                                            <div class="wms-srv-grid-cell">29/05/2022</div>
+                                            <div class="wms-srv-grid-cell">Brilliant WMS</div>
+                                            <div class="wms-srv-grid-cell">W-1</div>
+                                            <div class="wms-srv-grid-cell">SKU-1</div>
+                                            <div class="wms-srv-grid-cell">EACH</div>
+                                            <div class="wms-srv-grid-cell">R88-01-B</div>
+                                            <div class="wms-srv-grid-cell">ST-459767</div>
+                                            <div class="wms-srv-grid-cell">CNT-0001-221011</div>
+                                            <div class="wms-srv-grid-cell">
+                                                <div class="wms-srv-suggestion-holder">
+                                                    <input type="text" data-prefix="CL" data-id="1329" value=""
+                                                        class="wms-srv-grid-cell-input notranslate">
+                                                    <a href="#"><i class="fas fa-solid fa-pen"></i></a>
+                                                </div>
+                                            </div>
+                                            <div class="wms-srv-grid-cell">AAA</div>
+                                        </div>
+                                        <div class="wms-srv-grid-row wms-srv-grid-add">
+                                            <div class="wms-srv-grid-cell">29056</div>
+                                            <div class="wms-srv-grid-cell">29/05/2022</div>
+                                            <div class="wms-srv-grid-cell">Brilliant WMS</div>
+                                            <div class="wms-srv-grid-cell">W-1</div>
+                                            <div class="wms-srv-grid-cell">SKU-1</div>
+                                            <div class="wms-srv-grid-cell">EACH</div>
+                                            <div class="wms-srv-grid-cell">R88-01-B</div>
+                                            <div class="wms-srv-grid-cell">ST-459767</div>
+                                            <div class="wms-srv-grid-cell">CNT-0001-221011</div>
+                                            <div class="wms-srv-grid-cell">
+                                                <div class="wms-srv-suggestion-holder">
+                                                    <input type="text" data-prefix="CL" data-id="1329" value=""
+                                                        class="wms-srv-grid-cell-input notranslate">
+                                                    <a href="#"><i class="fas fa-solid fa-pen"></i></a>
+                                                </div>
+                                            </div>
+                                            <div class="wms-srv-grid-cell">AAA</div>
+                                        </div>
+                                        <div class="wms-srv-grid-row wms-srv-grid-add">
+                                            <div class="wms-srv-grid-cell">29056</div>
+                                            <div class="wms-srv-grid-cell">29/05/2022</div>
+                                            <div class="wms-srv-grid-cell">Brilliant WMS</div>
+                                            <div class="wms-srv-grid-cell">W-1</div>
+                                            <div class="wms-srv-grid-cell">SKU-1</div>
+                                            <div class="wms-srv-grid-cell">EACH</div>
+                                            <div class="wms-srv-grid-cell">R88-01-B</div>
+                                            <div class="wms-srv-grid-cell">ST-459767</div>
+                                            <div class="wms-srv-grid-cell">CNT-0001-221011</div>
+                                            <div class="wms-srv-grid-cell">
+                                                <div class="wms-srv-suggestion-holder">
+                                                    <input type="text" data-prefix="CL" data-id="1329" value=""
+                                                        class="wms-srv-grid-cell-input notranslate">
+                                                    <a href="#"><i class="fas fa-solid fa-pen"></i></a>
+                                                </div>
+                                            </div>
+                                            <div class="wms-srv-grid-cell">AAA</div>
+                                        </div>
+                                        <div class="wms-srv-grid-row wms-srv-grid-add">
+                                            <div class="wms-srv-grid-cell">29056</div>
+                                            <div class="wms-srv-grid-cell">29/05/2022</div>
+                                            <div class="wms-srv-grid-cell">Brilliant WMS</div>
+                                            <div class="wms-srv-grid-cell">W-1</div>
+                                            <div class="wms-srv-grid-cell">SKU-1</div>
+                                            <div class="wms-srv-grid-cell">EACH</div>
+                                            <div class="wms-srv-grid-cell">R88-01-B</div>
+                                            <div class="wms-srv-grid-cell">ST-459767</div>
+                                            <div class="wms-srv-grid-cell">CNT-0001-221011</div>
+                                            <div class="wms-srv-grid-cell">
+                                                <div class="wms-srv-suggestion-holder">
+                                                    <input type="text" data-prefix="CL" data-id="1329" value=""
+                                                        class="wms-srv-grid-cell-input notranslate">
+                                                    <a href="#"><i class="fas fa-solid fa-pen"></i></a>
+                                                </div>
+                                            </div>
+                                            <div class="wms-srv-grid-cell">AAA</div>
+                                        </div>
+                                        <div class="wms-srv-grid-row wms-srv-grid-add">
+                                            <div class="wms-srv-grid-cell">29056</div>
+                                            <div class="wms-srv-grid-cell">29/05/2022</div>
+                                            <div class="wms-srv-grid-cell">Brilliant WMS</div>
+                                            <div class="wms-srv-grid-cell">W-1</div>
+                                            <div class="wms-srv-grid-cell">SKU-1</div>
+                                            <div class="wms-srv-grid-cell">EACH</div>
+                                            <div class="wms-srv-grid-cell">R88-01-B</div>
+                                            <div class="wms-srv-grid-cell">ST-459767</div>
+                                            <div class="wms-srv-grid-cell">CNT-0001-221011</div>
+                                            <div class="wms-srv-grid-cell">
+                                                <div class="wms-srv-suggestion-holder">
+                                                    <input type="text" data-prefix="CL" data-id="1329" value=""
+                                                        class="wms-srv-grid-cell-input notranslate">
+                                                    <a href="#"><i class="fas fa-solid fa-pen"></i></a>
+                                                </div>
+                                            </div>
+                                            <div class="wms-srv-grid-cell">AAA</div>
+                                        </div>
+                                        <div class="wms-srv-grid-row wms-srv-grid-add">
+                                            <div class="wms-srv-grid-cell">29056</div>
+                                            <div class="wms-srv-grid-cell">29/05/2022</div>
+                                            <div class="wms-srv-grid-cell">Brilliant WMS</div>
+                                            <div class="wms-srv-grid-cell">W-1</div>
+                                            <div class="wms-srv-grid-cell">SKU-1</div>
+                                            <div class="wms-srv-grid-cell">EACH</div>
+                                            <div class="wms-srv-grid-cell">R88-01-B</div>
+                                            <div class="wms-srv-grid-cell">ST-459767</div>
+                                            <div class="wms-srv-grid-cell">CNT-0001-221011</div>
+                                            <div class="wms-srv-grid-cell">
+                                                <div class="wms-srv-suggestion-holder">
+                                                    <input type="text" data-prefix="CL" data-id="1329" value=""
+                                                        class="wms-srv-grid-cell-input notranslate">
+                                                    <a href="#"><i class="fas fa-solid fa-pen"></i></a>
+                                                </div>
+                                            </div>
+                                            <div class="wms-srv-grid-cell">AAA</div>
+                                        </div> -->
+                                </div>
+                            </div>
+                            <div class="wms-srv-grid-pager">
+                                <span class="wms-srv-pager-records">1-1 of 0 Records</span>
+                                <span class="wms-srv-empty-space"></span>
+                                <span class="wms-srv-pager-links"><a href="#" data-page="firstpage"><i
+                                            class="fas fa-angle-double-left"></i></a><a href="#" data-page="previous"><i
+                                            class="fas fa-angle-left"></i></a><a href="#" class="wms-srv-active"
+                                        data-page="1">1</a><a href="#" data-page="next"><i
+                                            class="fas fa-angle-right"></i></a><a href="#" data-page="lastpage"><i
+                                            class="fas fa-angle-double-right"></i></a></span>
+                                <span class="wms-srv-empty-space"></span>
+                                <input type="text" name="txtGridPageNo" class="wms-srv-input" value="0"
+                                    style="width: 80px;">
+                                <a href="#" title="Jump To" class="wms-srv-pager-go"><i
+                                        class="fas fa-play-circle"></i></a>
+                            </div>
+                        </div>
+                        <!-- Grid -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- BatchlistAllocation Popupp -->
+
+<!-- BatchlistManualAllocation Popup -->
+<div class="wms-srv-popup-holder" id="wms-srv-blmanualallocation-popup" style="display:none">
+    <div class="wms-srv-popup-bg">
+    </div>
+    <div class="wms-srv-popup">
+        <div class="wms-srv-popup-content">
+            <!-- Popup Title -->
+            <div class="wms-srv-popup-title">
+                <div class="wms-srv-page-title">
+                    <i class="fas fa-file-alt"></i><span>Manual Allocation Plan - Edit</span>
+                </div>
+                <a href="#" title="Close" id="wms-srv-blmanualallocation-popup-close" class="wms-srv-popup-close"
+                    onclick="closeManualPopUp()"><i class="fas fa-times-circle"></i></a>
+            </div>
+            <!-- Popup Title -->
+            <div class="wms-srv-popup-content-body" id="wms-srv-popup-content-body">
+                <div id="popupContentblmanualallocation">
+                    <div id="pnlblmanualallocation">
+                        <!-- Grid -->
+                        <div class="wms-srv-grid-holder pnlWmsHead" id="pnlWmsHead">
+                        </div>
+                        <br />
+                        <!-- Grid -->
+                        <!-- Header Details -->
+                        <!-- Grid -->
+                        <div class="wms-srv-grid-holder pnlWmsDetail" id="pnlWmsDetail">
+                            <div class="wms-srv-grid-action-panel">
+                                <div class="wms-srv-grid-common-action"><a href="#" title="" data-prefix=""
+                                        class="wms-srv-icononly"><i class="fas fa-list"></i></a></div>
+
+                                <div class="wms-srv-grid-title">
+                                    Manual Allocation Plan
+                                </div>
+                            </div>
+                            <div class="wms-srv-grid" style="width: 100%; text-align: center;">
+                                <div class="wms-srv-grid" data-gridobjectid="gridObject_Inbound_PurchaseOrder_DOC"
+                                    id="wms-srv-grid-detail-manualalloplan">
+                                   <!-- <div class="wms-srv-grid-header">
+                                        <div class="wms-srv-grid-cell">Order ID</div>
+                                        <div class="wms-srv-grid-cell">Order Date</div>
+                                        <div class="wms-srv-grid-cell">Client Name</div>
+                                        <div class="wms-srv-grid-cell">Delivery Center</div>
+                                        <div class="wms-srv-grid-cell">Product Code</div>
+                                        <div class="wms-srv-grid-cell">UOM</div>
+                                        <div class="wms-srv-grid-cell">Location Code</div>
+                                        <div class="wms-srv-grid-cell">Pallet Name</div>
+                                        <div class="wms-srv-grid-cell">Batch No.</div>
+                                        <div class="wms-srv-grid-cell">Allocate Qty</div>
+                                        <div class="wms-srv-grid-cell">Lotteble</div>
+                                    </div>
+                                    <div class="wms-srv-grid-header">
+                                        <div class="wms-srv-grid-cell"><input type="text"
+                                                class="wms-srv-grid-cell-input notranslate" /></div>
+                                        <div class="wms-srv-grid-cell"><input type="text"
+                                                class="wms-srv-grid-cell-input notranslate" /></div>
+                                        <div class="wms-srv-grid-cell"><input type="text"
+                                                class="wms-srv-grid-cell-input notranslate" /></div>
+                                        <div class="wms-srv-grid-cell"><input type="text"
+                                                class="wms-srv-grid-cell-input notranslate" /></div>
+                                        <div class="wms-srv-grid-cell"><input type="text"
+                                                class="wms-srv-grid-cell-input notranslate" /></div>
+                                        <div class="wms-srv-grid-cell"><input type="text"
+                                                class="wms-srv-grid-cell-input notranslate" /></div>
+                                        <div class="wms-srv-grid-cell"><input type="text"
+                                                class="wms-srv-grid-cell-input notranslate" /></div>
+                                        <div class="wms-srv-grid-cell"><input type="text"
+                                                class="wms-srv-grid-cell-input notranslate" /></div>
+                                        <div class="wms-srv-grid-cell"><input type="text"
+                                                class="wms-srv-grid-cell-input notranslate" /></div>
+                                        <div class="wms-srv-grid-cell"><input type="text"
+                                                class="wms-srv-grid-cell-input notranslate" /></div>
+                                        <div class="wms-srv-grid-cell" style="width:275px;">
+                                            <div class="lottableControlHolder">
+                                                <input type="text" value="" placeholder="Color"
+                                                    class="wmsLottableInput">
+                                                <input type="text" value="" placeholder="MFG Date"
+                                                    class="wmsLottableInput wms-srv-datepicker">
+                                                <input type="text" value="" placeholder="Batch Code"
+                                                    class="wmsLottableInput">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="wms-srv-grid-row wms-srv-grid-add">
+                                        <div class="wms-srv-grid-cell">29056</div>
+                                        <div class="wms-srv-grid-cell">29/05/2022</div>
+                                        <div class="wms-srv-grid-cell">Brilliant WMS</div>
+                                        <div class="wms-srv-grid-cell">W-1</div>
+                                        <div class="wms-srv-grid-cell">SKU-1</div>
+                                        <div class="wms-srv-grid-cell">EACH</div>
+                                        <div class="wms-srv-grid-cell">R88-01-B</div>
+                                        <div class="wms-srv-grid-cell">ST-459767</div>
+                                        <div class="wms-srv-grid-cell">CNT-0001-221011</div>
+                                        <div class="wms-srv-grid-cell">
+                                            <div class="wms-srv-suggestion-holder">
+                                                <input type="text" data-prefix="CL" data-id="1329" value=""
+                                                    class="wms-srv-grid-cell-input notranslate">
+                                                <a href="#"><i class="fas fa-solid fa-pen"></i></a>
+                                            </div>
+                                        </div>
+                                        <div class="wms-srv-grid-cell">AAA</div>
+                                    </div>
+                                    <div class="wms-srv-grid-row wms-srv-grid-add">
+                                        <div class="wms-srv-grid-cell">29056</div>
+                                        <div class="wms-srv-grid-cell">29/05/2022</div>
+                                        <div class="wms-srv-grid-cell">Brilliant WMS</div>
+                                        <div class="wms-srv-grid-cell">W-1</div>
+                                        <div class="wms-srv-grid-cell">SKU-1</div>
+                                        <div class="wms-srv-grid-cell">EACH</div>
+                                        <div class="wms-srv-grid-cell">R88-01-B</div>
+                                        <div class="wms-srv-grid-cell">ST-459767</div>
+                                        <div class="wms-srv-grid-cell">CNT-0001-221011</div>
+                                        <div class="wms-srv-grid-cell">
+                                            <div class="wms-srv-suggestion-holder">
+                                                <input type="text" data-prefix="CL" data-id="1329" value=""
+                                                    class="wms-srv-grid-cell-input notranslate">
+                                                <a href="#"><i class="fas fa-solid fa-pen"></i></a>
+                                            </div>
+                                        </div>
+                                        <div class="wms-srv-grid-cell">AAA</div>
+                                    </div>
+                                    <div class="wms-srv-grid-row wms-srv-grid-add">
+                                        <div class="wms-srv-grid-cell">29056</div>
+                                        <div class="wms-srv-grid-cell">29/05/2022</div>
+                                        <div class="wms-srv-grid-cell">Brilliant WMS</div>
+                                        <div class="wms-srv-grid-cell">W-1</div>
+                                        <div class="wms-srv-grid-cell">SKU-1</div>
+                                        <div class="wms-srv-grid-cell">EACH</div>
+                                        <div class="wms-srv-grid-cell">R88-01-B</div>
+                                        <div class="wms-srv-grid-cell">ST-459767</div>
+                                        <div class="wms-srv-grid-cell">CNT-0001-221011</div>
+                                        <div class="wms-srv-grid-cell">
+                                            <div class="wms-srv-suggestion-holder">
+                                                <input type="text" data-prefix="CL" data-id="1329" value=""
+                                                    class="wms-srv-grid-cell-input notranslate">
+                                                <a href="#"><i class="fas fa-solid fa-pen"></i></a>
+                                            </div>
+                                        </div>
+                                        <div class="wms-srv-grid-cell">AAA</div>
+                                    </div>
+                                    <div class="wms-srv-grid-row wms-srv-grid-add">
+                                        <div class="wms-srv-grid-cell">29056</div>
+                                        <div class="wms-srv-grid-cell">29/05/2022</div>
+                                        <div class="wms-srv-grid-cell">Brilliant WMS</div>
+                                        <div class="wms-srv-grid-cell">W-1</div>
+                                        <div class="wms-srv-grid-cell">SKU-1</div>
+                                        <div class="wms-srv-grid-cell">EACH</div>
+                                        <div class="wms-srv-grid-cell">R88-01-B</div>
+                                        <div class="wms-srv-grid-cell">ST-459767</div>
+                                        <div class="wms-srv-grid-cell">CNT-0001-221011</div>
+                                        <div class="wms-srv-grid-cell">
+                                            <div class="wms-srv-suggestion-holder">
+                                                <input type="text" data-prefix="CL" data-id="1329" value=""
+                                                    class="wms-srv-grid-cell-input notranslate">
+                                                <a href="#"><i class="fas fa-solid fa-pen"></i></a>
+                                            </div>
+                                        </div>
+                                        <div class="wms-srv-grid-cell">AAA</div>
+                                    </div>
+                                    <div class="wms-srv-grid-row wms-srv-grid-add">
+                                        <div class="wms-srv-grid-cell">29056</div>
+                                        <div class="wms-srv-grid-cell">29/05/2022</div>
+                                        <div class="wms-srv-grid-cell">Brilliant WMS</div>
+                                        <div class="wms-srv-grid-cell">W-1</div>
+                                        <div class="wms-srv-grid-cell">SKU-1</div>
+                                        <div class="wms-srv-grid-cell">EACH</div>
+                                        <div class="wms-srv-grid-cell">R88-01-B</div>
+                                        <div class="wms-srv-grid-cell">ST-459767</div>
+                                        <div class="wms-srv-grid-cell">CNT-0001-221011</div>
+                                        <div class="wms-srv-grid-cell">
+                                            <div class="wms-srv-suggestion-holder">
+                                                <input type="text" data-prefix="CL" data-id="1329" value=""
+                                                    class="wms-srv-grid-cell-input notranslate">
+                                                <a href="#"><i class="fas fa-solid fa-pen"></i></a>
+                                            </div>
+                                        </div>
+                                        <div class="wms-srv-grid-cell">AAA</div>
+                                    </div>
+                                    <div class="wms-srv-grid-row wms-srv-grid-add">
+                                        <div class="wms-srv-grid-cell">29056</div>
+                                        <div class="wms-srv-grid-cell">29/05/2022</div>
+                                        <div class="wms-srv-grid-cell">Brilliant WMS</div>
+                                        <div class="wms-srv-grid-cell">W-1</div>
+                                        <div class="wms-srv-grid-cell">SKU-1</div>
+                                        <div class="wms-srv-grid-cell">EACH</div>
+                                        <div class="wms-srv-grid-cell">R88-01-B</div>
+                                        <div class="wms-srv-grid-cell">ST-459767</div>
+                                        <div class="wms-srv-grid-cell">CNT-0001-221011</div>
+                                        <div class="wms-srv-grid-cell">
+                                            <div class="wms-srv-suggestion-holder">
+                                                <input type="text" data-prefix="CL" data-id="1329" value=""
+                                                    class="wms-srv-grid-cell-input notranslate">
+                                                <a href="#"><i class="fas fa-solid fa-pen"></i></a>
+                                            </div>
+                                        </div>
+                                        <div class="wms-srv-grid-cell">AAA</div>
+                                    </div> -->
+                                </div>
+                            </div>
+                            <div class="wms-srv-grid-pager">
+                                <span class="wms-srv-pager-records">1-1 of 0 Records</span>
+                                <span class="wms-srv-empty-space"></span>
+                                <span class="wms-srv-pager-links"><a href="#" data-page="firstpage"><i
+                                            class="fas fa-angle-double-left"></i></a><a href="#" data-page="previous"><i
+                                            class="fas fa-angle-left"></i></a><a href="#" class="wms-srv-active"
+                                        data-page="1">1</a><a href="#" data-page="next"><i
+                                            class="fas fa-angle-right"></i></a><a href="#" data-page="lastpage"><i
+                                            class="fas fa-angle-double-right"></i></a></span>
+                                <span class="wms-srv-empty-space"></span>
+                                <input type="text" name="txtGridPageNo" class="wms-srv-input" value="0"
+                                    style="width: 80px;">
+                                <a href="#" title="Jump To" class="wms-srv-pager-go"><i
+                                        class="fas fa-play-circle"></i></a>
+                            </div>
+                        </div>
+                        <!-- Grid -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- BatchlistManualAllocation Popupp -->
+<div class="wms-srv-popup-holder" id="wms-srv-TotalQtyAll-popup-open" style="display:none">
+    <div class="wms-srv-popup-bg">
+    </div>
+    <div class="wms-srv-popup">
+        <div class="wms-srv-popup-content">
+            <!-- Popup Title -->
+            <div class="wms-srv-popup-title">
+                <div class="wms-srv-page-title">
+                    <i class="fas fa-file-alt"></i><span>Total Short Qty</span>
+                </div>
+                <a href="#" title="Close" id="wms-srv-TotalQtyAll-popup-Close" class="wms-srv-popup-close"><i
+                        class="fas fa-times-circle"></i></a>
+            </div>
+            <!-- Popup Title -->
+            <div class="wms-srv-popup-content-body" id="wms-srv-popup-content-body">
+                <div id="popupContentblallocation">
+                    <div >
+                        <!-- Grid -->
+                        <div class="wms-srv-grid-holder pnlWmsHead" id="pnlWmsHead">
+                            <div class="wms-srv-grid" style="text-align: center;" id="totalqtyAll">
+                                <!-- Object Head Data Will be Here -->
+                                <!-- <div class="wms-srv-grid-header">
+                                        <div class="wms-srv-grid-cell">Sku Name</div>
+                                        <div class="wms-srv-grid-cell">Order Qty</div>
+                                        <div class="wms-srv-grid-cell">Allocate Qty</div>
+                                        <div class="wms-srv-grid-cell">Short Qty</div>
+                                    </div>
+                                <div class="wms-srv-grid-row">
+                                        <div class="wms-srv-grid-cell">370</div>
+                                        <div class="wms-srv-grid-cell">300</div>
+                                        <div class="wms-srv-grid-cell">70</div>
+                                        <div class="wms-srv-grid-cell">0</div>
+                                </div> -->
+                            </div>
+                        </div>
+                        <br/>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- TotalQty Popupp -->

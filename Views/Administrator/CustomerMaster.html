@@ -1,0 +1,702 @@
+<div id="pnlCustomerMaster" class="wmsMasterTypePage" style="display: none;">
+    <div class="wms-srv-content-area pnlInbound">
+        <!-- Dashboard Area -->
+        <div class="container-fluid wms-srv-dashboard-panel">
+            <div class="row">
+                <div class="col-md-4 nopadding">
+                    <!-- Page Title -->
+                    <div class="wms-srv-page-title">
+                        <i class="fas fa-user"></i><span class="wms-srv-data-title">Customer Master</span>
+                    </div>
+                    <!-- Page Title -->
+                </div>
+                <div class="col-md-8 nopadding">
+                </div>
+            </div>
+        </div>
+        <!-- Dashboard Area -->
+        <!-- Head Grid -->
+        <div class="wms-srv-grid-holder pnlWmsHead" id="pnlWmsHead" style="display: none;">
+            <div class="wms-srv-grid">
+                <!-- Object Head Data Will be Here -->
+            </div>
+        </div>
+        <br>
+        <!-- Head Grid -->
+        <!-- Grid -->
+        <div class="wms-srv-obj-main-grid pnlWmsDetail">
+            <div class="wms-srv-grid-action-panel">
+                <div class="wms-srv-grid-common-action">
+                    <a href="#" class="wms-srv-icononly">
+                        <i class="fas fa-list"></i>
+                    </a>
+                </div>
+                <div class="wms-srv-search">
+                    <label>Search Filter: </label>
+                    <select type="text" id="ddlsearch" class="wms-srv-input wms-srv-search-filter">
+                        <option value="">--Select Filter--</option>
+                        <option value="custmoreName">Customer Name</option>
+                        <option value="AddressLine1">Address Line 1</option>
+                        <option value="City">City</option>
+                        <option value="PhoneNo">Phone No</option>
+                        <option value="EmailID">Email ID</option>
+                    </select>
+                    <input type="text" value="" id="txtvalue" class="wms-srv-input wms-srv-simple-search"><a href="#" data-prefix="SE">
+                        <i class="fas fa-search" title="Search"
+                           onclick="SearchCustomer();"></i>
+                    </a>
+                </div>
+                <button class="wms-srv-input wms-srv-button wms-srv-highlight-btn" title="Add New" data-prefix="AN"
+                        type="button" onclick="openAddNewCustomerPopup();">
+                    <i class="fas fa-plus"
+                       id="btnAddNewCustomerData"></i><span>Add New</span>
+                </button>
+
+                <div class="wms-srv-grid-title">
+                    Customer List
+                </div>
+            </div>
+            <div class="wms-srv-grid-scroller" style="width: 100%;">
+                <div class="wms-srv-grid" id="customerList">
+                </div>
+
+                <!-- Content Holder -->
+                <!-- Save Record Structure -->
+                <div class="wms-srv-alert-popup" data-type="" style="display: none;">
+                    <div class="wms-alert-title">Success</div>
+                    <div class="wms-alert-message">Your transaction has been saved!!</div>
+                </div>
+                <!-- Save Record Structure -->
+            </div>
+        </div>
+        <!-- Grid -->
+    </div>
+    <!-- ALL POPUP AREA -->
+    <!--Edit popup-->
+    <div class="wms-srv-popup-holder" id="wms-srv-customer-edit-popup" style="display:none;">
+        <div class="wms-srv-popup-bg">
+        </div>
+        <div class="wms-srv-popup">
+            <div class="wms-srv-popup-content">
+                <div class="wms-srv-popup-title">
+                    <div class="wms-srv-page-title">
+                        <i class="fas fa-user"></i><span>Customer info</span>
+                    </div>
+                    <a href="#" title="Close" id="wms-srv-customer-edit-popup-close"
+                       class="wms-srv-popup-close"><i class="fas fa-times-circle"></i></a>
+                </div>
+                <div class="wms-srv-popup-content-body" id="wms-srv-popup-content-body">
+                    <div class="wms-srv-grid-holder pnlWmsDetail" id="wms-srv-edit-popup">
+                        <div class="wms-srv-grid">
+                            <div class="wms-srv-grid-header">
+                                <div class="wms-srv-grid-cell">Customer Name <span class="requiredStar">*</span></div>
+                                <div class="wms-srv-grid-cell">Website</div>
+                                <div class="wms-srv-grid-cell">Email Id <span class="requiredStar">*</span></div>
+                                <div class="wms-srv-grid-cell">Country <span class="requiredStar">*</span></div>
+                                <div class="wms-srv-grid-cell">State <span class="requiredStar">*</span></div>
+                                <div class="wms-srv-grid-cell">City <span class="requiredStar">*</span></div>
+                            </div>
+                            <div class="wms-srv-grid-row">
+                                <div class="wms-srv-grid-cell">
+                                    <input type="text" value="" id="txtEditCustomerName" class="wms-srv-grid-cell-input" />
+                                </div>
+                                <div class="wms-srv-grid-cell">
+                                    <input type="text" value="" id="txtEditWebsite" class="wms-srv-grid-cell-input" />
+                                </div>
+                                <div class="wms-srv-grid-cell">
+                                    <input type="text" value="" id="txtEditEmailId" class="wms-srv-grid-cell-input" />
+                                </div>
+                                <div class="wms-srv-grid-cell">
+                                    <select class="wms-srv-grid-cell-input" id="ddlEditCountry">
+                                        <option value="">-- Select --</option>
+                                        <option value="India">India</option>
+                                    </select>
+                                </div>
+                                <div class="wms-srv-grid-cell">
+                                    <select class="wms-srv-grid-cell-input" id="ddlEditState">
+                                        <option value="">-- Select --</option>
+                                        <option value="Maharashtra">Maharashtra</option>
+                                    </select>
+                                </div>
+                                <div class="wms-srv-grid-cell">
+                                    <select class="wms-srv-grid-cell-input" id="ddlEditCity">
+                                        <option value="">-- Select --</option>
+                                        <option value="Pune">Pune</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <br />
+                        <div class="wms-srv-grid">
+                            <div class="wms-srv-grid-header">
+                                <div class="wms-srv-grid-cell">Address Line 1 <span class="requiredStar">*</span></div>
+                                <div class="wms-srv-grid-cell">Address Line 2</div>
+                                <div class="wms-srv-grid-cell">Address Line 3</div>
+                            </div>
+                            <div class="wms-srv-grid-row">
+                                <div class="wms-srv-grid-cell">
+                                    <input type="text" value="" id="txtEditAddressLine1" class="wms-srv-grid-cell-input" />
+                                </div>
+                                <div class="wms-srv-grid-cell">
+                                    <input type="text" value="" id="txtEditAddressLine2" class="wms-srv-grid-cell-input" />
+                                </div>
+                                <div class="wms-srv-grid-cell">
+                                    <input type="text" value="" id="txtEditAddressLine3" class="wms-srv-grid-cell-input" />
+                                </div>
+                            </div>
+                        </div>
+                        <br />
+                        <div class="wms-srv-grid">
+                            <div class="wms-srv-grid-header">
+                                <div class="wms-srv-grid-cell">Zip Code</div>
+                                <div class="wms-srv-grid-cell">Landmark</div>
+                                <div class="wms-srv-grid-cell">Phone No</div>
+                                <div class="wms-srv-grid-cell">Fax No</div>
+                                <div class="wms-srv-grid-cell">Order No. Format <span class="requiredStar">*</span></div>
+                                <div class="wms-srv-grid-cell">Source Email <span class="requiredStar">*</span></div>
+                                <div class="wms-srv-grid-cell">Active</div>
+                                <div class="wms-srv-grid-cell">Logo</div>
+                            </div>
+                            <div class="wms-srv-grid-row">
+                                <div class="wms-srv-grid-cell">
+                                    <input type="text" value="" id="txtEditZipCode" class="wms-srv-grid-cell-input" />
+                                </div>
+                                <div class="wms-srv-grid-cell">
+                                    <input type="text" value="" id="txtEditLandmark" class="wms-srv-grid-cell-input" />
+                                </div>
+                                <div class="wms-srv-grid-cell">
+                                    <input type="text" value="" id="txtEditPhoneNo" class="wms-srv-grid-cell-input" />
+                                </div>
+                                <div class="wms-srv-grid-cell">
+                                    <input type="text" value="" id="txtEditFaxNo" class="wms-srv-grid-cell-input" />
+                                </div>
+                                <div class="wms-srv-grid-cell">
+                                    <input type="text" value="" id="txtEditOrderNoPrefix" class="wms-srv-grid-cell-input" style="width:50px;display:inline-block;" /> -
+                                    <input type="text" value="" id="txtEditOrderNoFormat" class="wms-srv-grid-cell-input" style="width: 100px; display: inline-block;" />
+                                </div>
+                                <div class="wms-srv-grid-cell">
+                                    <input type="text" value="" id="txtEditSourceEmail" class="wms-srv-grid-cell-input" />
+                                </div>
+                                <div class="wms-srv-grid-cell" style="text-align:center;">
+                                    <input type="radio" name="edditCustomgrp1" id="rbnY" data-id="" value="" checked="checked"><a href="#" style="margin-right: 20px;">Yes</a>
+                                    <input type="radio" name="edditCustomgrp1" id="rbnN" data-id="" value=""><a href="#">No</a>
+                                </div>
+                                <div class="wms-srv-grid-cell">
+                                    <div class="wms-srv-grid-action">
+                                        <i class="fas fa-paperclip" title="Attachment"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+
+                        <br>
+                        <div class="btnSaveCustomerMasterHolder" style="text-align:center;">
+                            <button class="wms-srv-input wms-srv-button wms-srv-highlight-btn-secondary"
+                                    type="button" title="Save"
+                                    data-prefix="MO[MKCM--wmscmm--CO]">
+                                <span>Save</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Edit popup-->
+    <!-- Delivery Contact Popup -->
+    <div class="wms-srv-popup-holder" id="wms-srv-delivery-contact-popup" style="display:none;">
+        <div class="wms-srv-popup-bg">
+        </div>
+        <div class="wms-srv-popup">
+            <div class="wms-srv-popup-content">
+                <div class="wms-srv-popup-title">
+                    <div class="wms-srv-page-title">
+                        <i class="fas fa-address-book"></i><span>Delivery Contact Person</span>
+                    </div>
+                    <a href="#" title="Close" id="wms-srv-delivery-contact-popup-close"
+                       class="wms-srv-popup-close"><i class="fas fa-times-circle"></i></a>
+                </div>
+                <div class="wms-srv-popup-content-body" id="wms-srv-popup-content-body">
+                    <div class="wms-srv-grid-holder pnlWmsDetail" id="wms-srv-edit-popup">
+                        <!-- Popup Content Will be Here -->
+                        <div class="wms-srv-grid-holder pnlWmsDetail" id="wms-srv-edit-popup">
+                            <div class="wms-srv-obj-main-grid pnlWmsDetail">
+                                <div class="wms-srv-grid-action-panel">
+                                    <div class="wms-srv-grid-common-action">
+                                        <a href="#" class="wms-srv-icononly">
+                                            <i class="fas fa-list"></i>
+                                        </a>
+                                    </div>
+                                    <div class="wms-srv-search">
+                                        <label>Search Filter: </label>
+                                        <select type="text" id="ddlsearch" class="wms-srv-input wms-srv-search-filter">
+                                            <option value="">--Select Filter--</option>
+                                            <option>Contact Type</option>
+                                            <option>Name</option>
+                                            <option>Department</option>
+                                            <option>Email Id</option>
+                                            <option>Mobile No.</option>
+                                            <option>Office No.</option>
+                                            <option>Default</option>
+                                        </select>
+                                        <input type="text" value="" id="txtvalue" class="wms-srv-input wms-srv-simple-search"><a href="#" data-prefix="SE">
+                                            <i class="fas fa-search" title="Search"></i>
+                                        </a>
+                                    </div>
+                                    <button class="wms-srv-input wms-srv-button wms-srv-highlight-btn" title="Add New" data-prefix="AN" type="button" onclick="addDeliveryContactPerson();">
+                                        <i class="fas fa-plus"></i><span>Add New</span>
+                                    </button>
+
+                                    <div class="wms-srv-grid-title">
+                                       Contact Person List
+                                    </div>
+                                </div>
+                                <div class="wms-srv-grid-scroller">
+                                    <div class="wms-srv-grid">
+                                        <div class="wms-srv-grid-header">
+                                            <div class="wms-srv-grid-cell">Contact Type</div>
+                                            <div class="wms-srv-grid-cell">Name</div>
+                                            <div class="wms-srv-grid-cell">Department</div>
+                                            <div class="wms-srv-grid-cell">Email Id</div>
+                                            <div class="wms-srv-grid-cell">Mobile No.</div>
+                                            <div class="wms-srv-grid-cell">Office No.</div>
+                                            <div class="wms-srv-grid-cell">Default</div>
+                                        </div>
+                                        <div class="wms-srv-grid-row">
+                                            <div class="wms-srv-grid-cell">
+                                                Individual
+                                            </div>
+                                            <div class="wms-srv-grid-cell">
+                                                Mahesh Gore
+                                            </div>
+                                            <div class="wms-srv-grid-cell">
+                                                Delivery Department
+                                            </div>
+                                            <div class="wms-srv-grid-cell">
+                                                mahesh@gwclogistics.com
+                                            </div>
+                                            <div class="wms-srv-grid-cell">
+                                                9923099230
+                                            </div>
+                                            <div class="wms-srv-grid-cell">
+                                                020-998556533
+                                            </div>
+                                            <div class="wms-srv-grid-cell">
+                                                <div style="text-align:center">
+                                                    <input type="checkbox" checked="checked" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="wms-srv-grid-row">
+                                            <div class="wms-srv-grid-cell">
+                                                Individual
+                                            </div>
+                                            <div class="wms-srv-grid-cell">
+                                                Mahesh Gore
+                                            </div>
+                                            <div class="wms-srv-grid-cell">
+                                                Delivery Department
+                                            </div>
+                                            <div class="wms-srv-grid-cell">
+                                                mahesh@gwclogistics.com
+                                            </div>
+                                            <div class="wms-srv-grid-cell">
+                                                9923099230
+                                            </div>
+                                            <div class="wms-srv-grid-cell">
+                                                020-998556533
+                                            </div>
+                                            <div class="wms-srv-grid-cell">
+                                                <div style="text-align:center">
+                                                    <input type="checkbox" checked="checked" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="wms-srv-grid-row">
+                                            <div class="wms-srv-grid-cell">
+                                                Individual
+                                            </div>
+                                            <div class="wms-srv-grid-cell">
+                                                Mahesh Gore
+                                            </div>
+                                            <div class="wms-srv-grid-cell">
+                                                Delivery Department
+                                            </div>
+                                            <div class="wms-srv-grid-cell">
+                                                mahesh@gwclogistics.com
+                                            </div>
+                                            <div class="wms-srv-grid-cell">
+                                                9923099230
+                                            </div>
+                                            <div class="wms-srv-grid-cell">
+                                                020-998556533
+                                            </div>
+                                            <div class="wms-srv-grid-cell">
+                                                <div style="text-align:center">
+                                                    <input type="checkbox" checked="checked" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="wms-srv-grid-row">
+                                            <div class="wms-srv-grid-cell">
+                                                Individual
+                                            </div>
+                                            <div class="wms-srv-grid-cell">
+                                                Mahesh Gore
+                                            </div>
+                                            <div class="wms-srv-grid-cell">
+                                                Delivery Department
+                                            </div>
+                                            <div class="wms-srv-grid-cell">
+                                                mahesh@gwclogistics.com
+                                            </div>
+                                            <div class="wms-srv-grid-cell">
+                                                9923099230
+                                            </div>
+                                            <div class="wms-srv-grid-cell">
+                                                020-998556533
+                                            </div>
+                                            <div class="wms-srv-grid-cell">
+                                                <div style="text-align:center">
+                                                    <input type="checkbox" checked="checked" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="wms-srv-grid-row">
+                                            <div class="wms-srv-grid-cell">
+                                                Individual
+                                            </div>
+                                            <div class="wms-srv-grid-cell">
+                                                Mahesh Gore
+                                            </div>
+                                            <div class="wms-srv-grid-cell">
+                                                Delivery Department
+                                            </div>
+                                            <div class="wms-srv-grid-cell">
+                                                mahesh@gwclogistics.com
+                                            </div>
+                                            <div class="wms-srv-grid-cell">
+                                                9923099230
+                                            </div>
+                                            <div class="wms-srv-grid-cell">
+                                                020-998556533
+                                            </div>
+                                            <div class="wms-srv-grid-cell">
+                                                <div style="text-align:center">
+                                                    <input type="checkbox" checked="checked" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="wms-srv-grid-row">
+                                            <div class="wms-srv-grid-cell">
+                                                Individual
+                                            </div>
+                                            <div class="wms-srv-grid-cell">
+                                                Mahesh Gore
+                                            </div>
+                                            <div class="wms-srv-grid-cell">
+                                                Delivery Department
+                                            </div>
+                                            <div class="wms-srv-grid-cell">
+                                                mahesh@gwclogistics.com
+                                            </div>
+                                            <div class="wms-srv-grid-cell">
+                                                9923099230
+                                            </div>
+                                            <div class="wms-srv-grid-cell">
+                                                020-998556533
+                                            </div>
+                                            <div class="wms-srv-grid-cell">
+                                                <div style="text-align:center">
+                                                    <input type="checkbox" checked="checked" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Popup Content Will be Here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Delivery Contact Popup -->
+    <!-- Delivery Address Popup -->
+    <div class="wms-srv-popup-holder" id="wms-srv-delivery-address-popup" style="display:none;">
+        <div class="wms-srv-popup-bg">
+        </div>
+        <div class="wms-srv-popup">
+            <div class="wms-srv-popup-content">
+                <div class="wms-srv-popup-title">
+                    <div class="wms-srv-page-title">
+                        <i class="fas fa-solid fa-truck"></i><span>Delivery Address Information</span>
+                    </div>
+                    <a href="#" title="Close" id="wms-srv-delivery-address-popup-close"
+                       class="wms-srv-popup-close"><i class="fas fa-times-circle"></i></a>
+                </div>
+                <div class="wms-srv-popup-content-body" id="wms-srv-popup-content-body">
+                    <div class="wms-srv-grid-holder pnlWmsDetail" id="wms-srv-edit-popup">
+                        <!-- Popup Content Will be Here -->
+                        <div class="wms-srv-grid-holder pnlWmsDetail">
+                            <div class="wms-srv-obj-main-grid pnlWmsDetail">
+                                <div class="wms-srv-grid-action-panel">
+                                    <div class="wms-srv-grid-common-action">
+                                        <a href="#" class="wms-srv-icononly">
+                                            <i class="fas fa-list"></i>
+                                        </a>
+                                    </div>
+                                    <div class="wms-srv-search">
+                                        <label>Search Filter: </label>
+                                        <select type="text" id="ddlsearch" class="wms-srv-input wms-srv-search-filter">
+                                            <option value="">--Select Filter--</option>
+                                            <option>Address</option>
+                                            <option>Country</option>
+                                            <option>State</option>
+                                            <option>City</option>
+                                            <option>Postal Code</option>
+                                            <option>Billing</option>
+                                            <option>Shipping</option>
+                                        </select>
+                                        <input type="text" value="" id="txtvalue" class="wms-srv-input wms-srv-simple-search"><a href="#" data-prefix="SE">
+                                            <i class="fas fa-search" title="Search"></i>
+                                        </a>
+                                    </div>
+                                    <button class="wms-srv-input wms-srv-button wms-srv-highlight-btn" title="Add New" data-prefix="AN" type="button" onclick="addDeliveryContactPerson();">
+                                        <i class="fas fa-plus"></i><span>Add New</span>
+                                    </button>
+
+                                    <div class="wms-srv-grid-title">
+                                        Address List
+                                    </div>
+                                </div>
+                                <div class="wms-srv-grid-scroller">
+                                    <div class="wms-srv-grid">
+                                        <div class="wms-srv-grid-header">
+                                            <div class="wms-srv-grid-cell">Address</div>
+                                            <div class="wms-srv-grid-cell">Country</div>
+                                            <div class="wms-srv-grid-cell">State</div>
+                                            <div class="wms-srv-grid-cell">City</div>
+                                            <div class="wms-srv-grid-cell">Postal Code</div>
+                                            <div class="wms-srv-grid-cell">Billing</div>
+                                            <div class="wms-srv-grid-cell">Shipping</div>
+                                        </div>
+                                        <div class="wms-srv-grid-row">
+                                            <div class="wms-srv-grid-cell">
+                                                D RING ROAD - DOHA, QATAR P.O BOX : 24434
+                                            </div>
+                                            <div class="wms-srv-grid-cell">
+                                                India
+                                            </div>
+                                            <div class="wms-srv-grid-cell">
+                                                Maharashtra
+                                            </div>
+                                            <div class="wms-srv-grid-cell">
+                                                Pune
+                                            </div>
+                                            <div class="wms-srv-grid-cell">
+                                                411001
+                                            </div>
+                                            <div class="wms-srv-grid-cell">
+                                               <div style="text-align:center">
+                                                   <input type="checkbox" />
+                                               </div>
+                                            </div>
+                                            <div class="wms-srv-grid-cell">
+                                                <div style="text-align:center">
+                                                    <input type="checkbox" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Popup Content Will be Here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Delivery Address Popup -->
+    <!-- Cost Center Popup -->
+    <div class="wms-srv-popup-holder" id="wms-srv-cost-center-popup" style="display:none;">
+        <div class="wms-srv-popup-bg">
+        </div>
+        <div class="wms-srv-popup">
+            <div class="wms-srv-popup-content">
+                <div class="wms-srv-popup-title">
+                    <div class="wms-srv-page-title">
+                        <i class="fas fa-receipt"></i><span>Cost Center</span>
+                    </div>
+                    <a href="#" title="Close" id="wms-srv-cost-center-popup-close"
+                       class="wms-srv-popup-close"><i class="fas fa-times-circle"></i></a>
+                </div>
+                <div class="wms-srv-popup-content-body" id="wms-srv-popup-content-body">
+                    <div class="wms-srv-grid-holder pnlWmsDetail" id="wms-srv-edit-popup">
+                        <!-- Popup Content Will be Here -->
+                        <div class="wms-srv-grid">
+                            <div class="wms-srv-grid-header">
+                                <div class="wms-srv-grid-cell">Cost Center Name</div>
+                                <div class="wms-srv-grid-cell">Code</div>
+                                <div class="wms-srv-grid-cell">Financial Approver</div>
+                                <div class="wms-srv-grid-cell">Remark</div>
+                                <div class="wms-srv-grid-cell">Action</div>
+                            </div>
+                            <div class="wms-srv-grid-row">
+                                <div class="wms-srv-grid-cell">
+                                    <input type="text" value="" id="txtCostCenter" class="wms-srv-grid-cell-input" />
+                                </div>
+                                <div class="wms-srv-grid-cell">
+                                    <input type="text" value="" id="txtCode" class="wms-srv-grid-cell-input" />
+                                </div>
+                                <div class="wms-srv-grid-cell" style="white-space:nowrap;">
+                                    <input type="text" value="" id="txtFinancialApprover" class="wms-srv-grid-cell-input" style="width: calc(100% - 25px); display: inline-block;" />
+                                    <i class="fas fa-search" title="Search" style="margin-top: 4px;display:inline-block;"></i>
+                                </div>
+                                <div class="wms-srv-grid-cell">
+                                    <input type="text" value="" id="txtRemark" class="wms-srv-grid-cell-input" />
+                                </div>
+                                <div class="wms-srv-grid-cell">
+                                    <div class="wms-srv-grid-action">
+                                        <i class="fas fa-check-circle" title="Attachment"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="wms-srv-grid-holder pnlWmsDetail">
+                            <div class="wms-srv-obj-main-grid pnlWmsDetail">
+                                <div class="wms-srv-grid-action-panel">
+                                    <div class="wms-srv-grid-common-action">
+                                        <a href="#" class="wms-srv-icononly">
+                                            <i class="fas fa-list"></i>
+                                        </a>
+                                    </div>
+                                    <div class="wms-srv-search">
+                                        <label>Search Filter: </label>
+                                        <select type="text" id="ddlsearch" class="wms-srv-input wms-srv-search-filter">
+                                            <option value="">--Select Filter--</option>
+                                            <option>Address</option>
+                                            <option>Country</option>
+                                            <option>State</option>
+                                            <option>City</option>
+                                            <option>Postal Code</option>
+                                            <option>Billing</option>
+                                            <option>Shipping</option>
+                                        </select>
+                                        <input type="text" value="" id="txtvalue" class="wms-srv-input wms-srv-simple-search"><a href="#" data-prefix="SE">
+                                            <i class="fas fa-search" title="Search"></i>
+                                        </a>
+                                    </div>
+                                    <div class="wms-srv-grid-title">
+                                        Cost Center List
+                                    </div>
+                                </div>
+                                <div class="wms-srv-grid-scroller">
+                                    <div class="wms-srv-grid">
+                                        <div class="wms-srv-grid-header">
+                                            <div class="wms-srv-grid-cell">Center Name</div>
+                                            <div class="wms-srv-grid-cell">Center Code</div>
+                                            <div class="wms-srv-grid-cell">Approver Name</div>
+                                            <div class="wms-srv-grid-cell">Remark</div>
+                                            <div class="wms-srv-grid-cell" style="text-align:center;">Action</div>
+                                        </div>
+                                        <div class="wms-srv-grid-row">
+                                            <div class="wms-srv-grid-cell">
+                                                GWC Cost Center
+                                            </div>
+                                            <div class="wms-srv-grid-cell">
+                                                GCC-00001
+                                            </div>
+                                            <div class="wms-srv-grid-cell">
+                                                Somnath Mane
+                                            </div>
+                                            <div class="wms-srv-grid-cell">
+                                                Cost center for the contact
+                                            </div>
+                                            <div class="wms-srv-grid-cell">
+                                                <div class="wms-srv-grid-action">
+                                                    <i class="fas fa-trash" title="Remove"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Popup Content Will be Here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Cost Center Popup -->
+    <!-- SFTP Popup -->
+    <div class="wms-srv-popup-holder" id="wms-srv-sftp-details-popup" style="display:none;">
+        <div class="wms-srv-popup-bg">
+        </div>
+        <div class="wms-srv-popup">
+            <div class="wms-srv-popup-content">
+                <div class="wms-srv-popup-title">
+                    <div class="wms-srv-page-title">
+                        <i class="fas fa-upload"></i><span>SFTP Details</span>
+                    </div>
+                    <a href="#" title="Close" id="wms-srv-sftp-details-popup-close"
+                       class="wms-srv-popup-close"><i class="fas fa-times-circle"></i></a>
+                </div>
+                <div class="wms-srv-popup-content-body" id="wms-srv-popup-content-body">
+                    <div class="wms-srv-grid-holder pnlWmsDetail" id="wms-srv-edit-popup">
+                        <!-- Popup Content Will be Here -->
+                        <div class="wms-srv-grid-holder pnlWmsDetail">
+                            <div class="wms-srv-obj-main-grid pnlWmsDetail">
+                                <div class="wms-srv-grid-action-panel">
+                                    <div class="wms-srv-grid-common-action">
+                                        <a href="#" class="wms-srv-icononly">
+                                            <i class="fas fa-list"></i>
+                                        </a>
+                                    </div>
+                                    <div class="wms-srv-search">
+                                        
+                                    </div>
+                                    <div class="wms-srv-grid-title">
+                                        SFTP Details
+                                    </div>
+                                </div>
+                                <div class="wms-srv-grid-scroller">
+                                    <div class="wms-srv-grid">
+                                        <div class="wms-srv-grid-header">
+                                            <div class="wms-srv-grid-cell">User Id</div>
+                                            <div class="wms-srv-grid-cell">Password</div>
+                                            <div class="wms-srv-grid-cell">Folder Path</div>
+                                            <div class="wms-srv-grid-cell">Config Hours</div>
+                                        </div>
+                                        <div class="wms-srv-grid-row">
+                                            <div class="wms-srv-grid-cell">
+                                                OMS_SFTP_01
+                                            </div>
+                                            <div class="wms-srv-grid-cell">
+                                                PassWord@001
+                                            </div>
+                                            <div class="wms-srv-grid-cell">
+                                                /rootTest/
+                                            </div>
+                                            <div class="wms-srv-grid-cell">
+                                                10
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Popup Content Will be Here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- SFTP Popup -->
+    <!-- ALL POPUP AREA -->
+</div>
