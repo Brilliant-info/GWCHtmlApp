@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Ecommerce Report 2</title>
+        <!-- Common JS and CSS -->
+        <script src="../../../Themes/js/jquery-3.2.1.min.js"></script>
+        <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js" type="text/javascript"></script> -->
+        <script src="../../../Themes/js/core-js/Chart.min.js" type="text/javascript"></script>    
+        <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+        <script src="../../../Themes/js/wms-app-navigator.js"></script>
+        <link href="../../css/CustomReport.css" rel="stylesheet" type="text/css" />
+        <link href="../../../Themes/fontawesome/css/all.css" rel="stylesheet" />
+        <link rel="stylesheet" href="../../../Themes/bootstrap-4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
+        <!-- Common JS and CSS -->
+        <!-- Report wise JS and CSS -->
+        <link href="Ecommerce_Report_2.css" rel="stylesheet" type="text/css" />
+        <script src="Ecommerce_Report_2.js"></script>
+        <!-- Report wise JS and CSS -->
+
+    </head>
+    <body>
+<!-- Example  -->
+<div class="app">
+<div class="wrapper">
+    <div class="page-content ">
+        <div class="page-container tradebook">
+            <h1><span class="icon icon-book"><i
+                        class="fa-solid fa-cart-shopping headIcon"></i></span>
+                Ecommerce Report 2
+            </h1>
+            <hr class="header-hr">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-sm-2">
+                        <div class="su-input-group su-static-label">
+                            <label class="su-input-label">Type</label>
+                            <div class="">
+                                <select style="margin-bottom: 0px;margin-top: 0px;">
+                                    <option value="0">-- Select --</option>
+                                    <option value="233">Daily</option>
+                                    <option value="253">Department - 002</option>
+                                    <option value="202">GWC Department - 003</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-2">
+                        <div class="su-input-group su-static-label">
+                            <label class="su-input-label">Customer</label>
+                            <div class="">
+                                <select style="margin-bottom: 0px;margin-top: 0px;">
+                                    <option value="0">-- Select All --</option>
+                                    <option value="10233">GWC ECOMMERCE</option>
+                                    <option value="10253">GWC GPS</option>
+                                    <option value="10202">GWC Test</option>
+                                    <option value="10322">GWC@123</option>
+                                    <option value="10320">GWC@Testing </option>
+                                    <option value="10257">GWC_HMC</option>
+                                    <option value="10319">GWCTesting</option>
+                                    <option value="10266">MTEST</option>
+                                    <option value="10277">OMS_WMS PVT Ltd</option>
+                                    <option value="10276">OMS_WMS_Company pvt ltd</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-2">
+                        <div class="su-input-group su-static-label">
+                            <label class="su-input-label">Department</label>
+                            <div class="">
+                                <select style="margin-bottom: 0px;margin-top: 0px;">
+                                    <option value="0">-- Select --</option>
+                                    <option value="233">Department - 001</option>
+                                    <option value="253">Department - 002</option>
+                                    <option value="202">GWC Department - 003</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="col-sm-2">
+                        <div class="su-input-group su-static-label">
+                            <label class="su-input-label">Status</label>
+                            <div class="">
+                                <select id="ddlStatus" style="margin-bottom: 0px;margin-top: 0px;">
+                                    <option selected="selected" value="0">-Select All-</option>
+                                    <option value="35">Activated</option>
+                                    <option value="3">Approved</option>
+                                    <option value="10">Cancelled</option>
+                                    <option value="10036">Delivered</option>
+                                    <option value="10041">Delivered to Hub</option>
+                                    <option value="8">Dispatch</option>
+                                    <option value="10047">Hub Verification Pending</option>
+                                    <option value="25">Out For Delivery</option>
+                                    <option value="21">Pending For Approval Level 2</option>
+                                    <option value="38">Pending For Document</option>
+                                    <option value="34">Ready For Activation</option>
+                                    <option value="7">Ready for Dispatch</option>
+                                    <option value="4">Rejected</option>
+                                    <option value="2">Request Sent for Approval</option>
+                                    <option value="26">Return</option>
+                                    <option value="39">Upload Document</option>                               
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-2">
+                        <div class="su-input-group su-static-label">
+                            <label class="su-input-label">User</label>
+                            <div class="">
+                                <select id="ddlUser" style="margin-bottom: 0px;margin-top: 0px;">
+                                    <option selected="selected" value="0">-Select All-</option>                        
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-2">
+                        <div class="su-input-group su-static-label">
+                            <label class="su-input-label"> 	
+                                Payment Mode</label>
+                            <div class="">
+                                <select id="ddlPytMode" style="margin-bottom: 0px;margin-top: 0px;">
+                                    <option value="0">-Select All-</option>
+                                    <option value="1">None(Default)</option>
+                                    <option value="2">Bill To Account</option>
+                                    <option value="3">COD - Cash On Delivery (QAR)</option>
+                                    <option value="5">FOC - Free Of Charge</option>
+                                    <option value="4">SIP</option>
+                                    <option value="6">LPO - Local Purchase Order</option>
+                                    <option value="7">Credit Card</option>
+                                    <option value="8">Debit Card</option>
+                                 </select>                   
+                            </div>
+                        </div>
+                    </div>                
+                    <div class="col-sm-1" style="padding-right: 0px;margin-left: 1000px;margin-top: -33px;">
+                        <button type="submit" class="btn-blue"
+                                id="btnSearchReportobjrexta" style="float:right;">
+                            <span class="icon icon-arrow-right">
+                                <i class="fas fa-solid fa-arrow-right searchIcon"></i>
+                            </span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!-- Grid -->
+
+            <div class="contentHolder" style="margin-top: 5px;"
+                id="txtGridPurchaseOrderobjrexta">
+                <!-- <div class="wms-srv-grid-scroller"> -->
+                <div class="">
+                    <div style="float:right;">
+                        <input type="text" value="" placeholder="search"
+                               id="txtfilterobjrexta"
+                               class="wms-srv-input wms-srv-simple-search"
+                               style="width: 100px;" ;>
+                        <a href="#" data-prefix="SE">
+                            <i class="fas fa-search" title="Search"
+                               style="position: relative; right: 25px;"
+                               onclick="getPurchaseOrderList('');"></i>
+                        </a>
+
+                        <div class="table-download text-small">
+                            <span class="icon icon-download"></span>
+                            Download:
+                            <a href="#"
+                               data-balloon="Download complete results as CSV"
+                               data-balloon-pos="up">CSV</a>
+                        </div>
+                    </div>
+                    <div class="wms-srv-grid-scroller" style="width: 100%; max-height:500px !important;overflow:auto">
+                        <div class="wms-srv-grid previewTable" id="gettopfiveorderobjrexta">
+                            <div class="wms-srv-grid-header reportHeaderRow" id="header-wrap">
+                                <div class="wms-srv-grid-cell reportHeaderCell" style="text-align:center; color: #b3b3b3;">Order No</div>
+                                <div class="wms-srv-grid-cell reportHeaderCell" style="text-align:center;color: #b3b3b3;">Web Order No</div>
+                                <div class="wms-srv-grid-cell reportHeaderCell" style="text-align:center;color: #b3b3b3;">Delivery Note</div>
+                                <div class="wms-srv-grid-cell reportHeaderCell" style="text-align:center;color: #b3b3b3;">Grand Total</div>
+                                <div class="wms-srv-grid-cell reportHeaderCell" style="text-align:center;color: #b3b3b3;">Payment method</div>
+                                <div class="wms-srv-grid-cell reportHeaderCell" style="text-align:center;color: #b3b3b3;">Receipt No</div>
+                                <div class="wms-srv-grid-cell reportHeaderCell" style="text-align:center;color: #b3b3b3;">Remark</div>
+                                <div class="wms-srv-grid-cell reportHeaderCell" style="text-align:center;color: #b3b3b3;">Plan</div>
+                                <div class="wms-srv-grid-cell reportHeaderCell" style="text-align:center;color: #b3b3b3;">Cancel Date</div>
+                                <div class="wms-srv-grid-cell reportHeaderCell" style="text-align:center;color: #b3b3b3;">Document Uploaded</div>
+                                <div class="wms-srv-grid-cell detailIconHeader" style="text-align:center;color: #b3b3b3;">Status</div>
+                                <div class="wms-srv-grid-cell reportHeaderCell" style="text-align:center;color: #b3b3b3;">Approval Comments</div>
+                                <div class="wms-srv-grid-cell detailIconHeader" style="text-align:center;color: #b3b3b3;">Approval Date</div>
+                            </div>
+                            <div id="" class="wms-srv-grid-row reportRow">
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">VFQ10003</div>
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">73637373</div>
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">01/2/2025 12:30:00</div>
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">5549.00</div>
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">COD</div>
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">nO000464</div>
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;"></div>
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;"></div>
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;"></div>
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">Fulfillment User</div>
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">Delivered</div>
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;"></div>
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">01/01/2025 08:30:14</div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Grid -->
+</div>
+
+</div>
+<!-- Example -->
+    </body>
+</html>

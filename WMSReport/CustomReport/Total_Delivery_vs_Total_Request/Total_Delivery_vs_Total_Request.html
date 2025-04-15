@@ -15,8 +15,8 @@
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"/>
         <!-- Common JS and CSS -->
         <!-- Report wise JS and CSS -->
-        <link href="Total_Delivery_Vs_Total_Request_Report.css" rel="stylesheet" type="text/css"/>
-        <script src="Total_Delivery_Vs_Total_Request_Report.js"></script>
+        <link href="Total_Delivery_vs_Total_Request.css" rel="stylesheet" type="text/css"/>
+        <script src="Total_Delivery_vs_Total_Request.js"></script>
         <!-- Report wise JS and CSS -->
     </head>
     <body>
@@ -61,63 +61,6 @@
                                     <option value="233">Department - 001</option>
                                     <option value="253">Department - 002</option>
                                     <option value="202">GWC Department - 003</option>
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-2">
-                        <div class="su-input-group su-static-label">
-                            <label class="su-input-label">Status</label>
-                            <div class="">
-                                <select style="margin-bottom: 0px;margin-top: 0px;">
-                                    <option selected="selected" value="0">-Select All-</option>
-                                    <option value="35">Activated</option>
-                                    <option value="3">Approved</option>
-                                    <option value="29">Approved With Revision</option>
-                                    <option value="28">Cancel by Requester</option>
-                                    <option value="10">Cancelled</option>
-                                    <option value="10044">Collection in Progress</option>
-                                    <option value="10039">Customer Refunded</option>
-                                    <option value="10036">Delivered</option>
-                                    <option value="10041">Delivered to Hub</option>
-                                    <option value="30">Direct Order Approved</option>
-                                    <option value="8">Dispatch</option>
-                                    <option value="10043">Driver Scheduled</option>
-                                    <option value="10049">Drop</option>
-                                    <option value="37">Ecommerce Order Out For Delivery</option>
-                                    <option value="10047">Hub Verification Pending</option>
-                                    <option value="10040">Order Expired</option>
-                                    <option value="25">Out For Delivery</option>
-                                    <option value="32">Pending For Cost Center Approver</option>
-                                    <option value="38">Pending For Document</option>
-                                    <option value="10042">Pending for driver allocation</option>
-                                    <option value="10038">Pending for Finance activity</option>
-                                    <option value="31">Pending For Financial Approver</option>
-                                    <option value="10037">Pending for Return</option>
-                                    <option value="10048">Pickup</option>
-                                    <option value="34">Ready For Activation</option>
-                                    <option value="7">Ready for Dispatch</option>
-                                    <option value="10034">Ready for Dispatch with SIM</option>
-                                    <option value="10045">Received in Warehouse</option>
-                                    <option value="4">Rejected</option>
-                                    <option value="2">Request Sent for Approval</option>
-                                    <option value="26">Return</option>
-                                    <option value="39">Upload Document</option>
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-2">
-                        <div class="su-input-group su-static-label">
-                            <label class="su-input-label">User</label>
-                            <div class="">
-                                <select style="margin-bottom: 0px;margin-top: 0px;">
-                                    <option selected="selected" value="0">-- Select All --</option>
-                                    <option value="21087">GWC User 01</option>
-                                    <option value="10587">GWC Approver User 01</option>
-                                    <option value="21027">GWC Logistics User</option>
-                                    <option value="429">Logistics Approver</option>
-                                    <option value="422">GWC Superadmin</option>
                                 </select>
                             </div>
                         </div>
@@ -253,67 +196,79 @@
                             <div class="wms-srv-grid-header reportHeaderRow" id="header-wrap">
                                 <div class="wms-srv-grid-cell reportHeaderCell" style="text-align:center; color: #b3b3b3;">Sku Code</div>
                                 <div class="wms-srv-grid-cell reportHeaderCell" style="text-align:center;color: #b3b3b3;">Sku Name</div>
-                                <div class="wms-srv-grid-cell reportHeaderCell" style="text-align:center;color: #b3b3b3;">Description</div>
+                                <div class="wms-srv-grid-cell reportHeaderCell" style="text-align:center;color: #b3b3b3;">OrderID</div>
+                                <div class="wms-srv-grid-cell reportHeaderCell" style="text-align:center;color: #b3b3b3;">Requested Date</div>
+                                <div class="wms-srv-grid-cell reportHeaderCell" style="text-align:center;color: #b3b3b3;">Delivery Qty</div>	                     
                             </div>
                             <div id="" class="wms-srv-grid-row reportRow">
-                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">GWC10230</div>
-                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">GWC9282</div>
-                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">Manish Patil</div>
-                                
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">SN-2.4-OPT1</div>
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">110038</div>
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">VC1081</div>
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">09/10/2024</div>
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">1</div>
                             </div>
                             <div id="" class="wms-srv-grid-row reportRow">
-                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">GWC10231</div>
-                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">GWC9332</div>
-                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">Sonia Mehra</div>
-                               
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">SN-2.4-OPT1</div>
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">110038</div>
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">VC1081</div>
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">02/01/2025</div>
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">1</div>
                             </div>
                             <div id="" class="wms-srv-grid-row reportRow">
-                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">GWC10232</div>
-                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">GWC2832</div>
-                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">Rajesh Kumar</div>
-                                
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">SN-2.4-OPT1</div>
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">110038</div>
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">VC1081</div>
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">03/01/2025</div>
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">1</div>
                             </div>
                             <div id="" class="wms-srv-grid-row reportRow">
-                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">GWC10233</div>
-                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">GWC2</div>
-                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">Priya Deshmukh</div>
-                                
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">SN-2.4-OPT1</div>
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">110038</div>
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">VC1081</div>
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">06/01/2025</div>
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">1</div>
                             </div>
                             <div id="" class="wms-srv-grid-row reportRow">
-                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">GWC10234</div>
-                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">GWC9332</div>
-                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">Anil Sharma</div>
-                               
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">SN-2.4-OPT1</div>
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">110038</div>
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">VC1081</div>
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">09/10/2024</div>
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">1</div>
                             </div>
                             <div id="" class="wms-srv-grid-row reportRow">
-                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">GWC10235</div>
-                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">GWC9332</div>
-                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">Simran Kaur</div>
-                                
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">SN-2.4-OPT1</div>
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">110038</div>
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">VC1081</div>
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">09/10/2024</div>
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">1</div>
                             </div>
                             <div id="" class="wms-srv-grid-row reportRow">
-                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">GWC10236</div>
-                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">GWC3722</div>
-                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">Vikram Singh</div>
-                                
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">SN-2.4-OPT1</div>
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">110038</div>
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">VC1081</div>
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">09/10/2024</div>
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">1</div>
                             </div>
                             <div id="" class="wms-srv-grid-row reportRow">
-                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">GWC10237</div>
-                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">GWC7823</div>
-                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">Neha Reddy</div>
-                                
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">SN-2.4-OPT1</div>
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">110038</div>
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">VC1081</div>
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">09/10/2024</div>
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">1</div>
                             </div>
                             <div id="" class="wms-srv-grid-row reportRow">
-                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">GWC10238</div>
-                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">GWC8873</div>
-                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">Karan Joshi</div>
-                                
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">SN-2.4-OPT1</div>
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">110038</div>
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">VC1081</div>
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">09/10/2024</div>
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">1</div>
                             </div>
                             <div id="" class="wms-srv-grid-row reportRow">
-                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">GWC10239</div>
-                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">GWC4212</div>
-                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">Pooja Mehta</div>
-                               
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">SN-2.4-OPT1</div>
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">110038</div>
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">VC1081</div>
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">09/10/2024</div>
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">1</div>
                             </div>
                         </div>
                     </div>

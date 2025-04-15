@@ -9,11 +9,6 @@
                 "Icon": "fas fa-file-invoice"
             },
 			{
-                "Id": 2,
-                "ReportName": "SKU Detail Report",
-                "Icon": "fas fa-file-invoice"
-            },
-			{
                 "Id": 3,
                 "ReportName": "BOM Detail Report",
                 "Icon": "fas fa-file-invoice"

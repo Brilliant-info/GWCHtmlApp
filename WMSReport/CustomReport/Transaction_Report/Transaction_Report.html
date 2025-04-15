@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>PURCHASE ORDER</title>
+        <!-- Common JS and CSS -->
+        <script src="../../../Themes/js/jquery-3.2.1.min.js"></script>
+        <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js" type="text/javascript"></script> -->
+        <script src="../../../Themes/js/core-js/Chart.min.js" type="text/javascript"></script>    
+        <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+        <script src="../../../Themes/js/wms-app-navigator.js"></script>
+        <link href="../../css/CustomReport.css" rel="stylesheet" type="text/css" />
+        <link href="../../../Themes/fontawesome/css/all.css" rel="stylesheet" />
+        <link rel="stylesheet" href="../../../Themes/bootstrap-4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
+        <!-- Common JS and CSS -->
+        <!-- Report wise JS and CSS -->
+        <link href="Transaction_Report.css" rel="stylesheet" type="text/css" />
+        <script src="Transaction_Report.js"></script>
+        <!-- Report wise JS and CSS -->
+    </head>
+    <body>
+<!-- Example  -->
+<div class="app">
+<div class="wrapper">
+    <div class="page-content ">
+        <div class="page-container tradebook">
+            <h1><span class="icon icon-book"><i
+                        class="fa-solid fa-cart-shopping headIcon"></i></span>
+                Transaction Report
+            </h1>
+            <hr class="header-hr">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-sm-2">
+                        <div class="su-input-group su-static-label">
+                            <label class="su-input-label">Category</label>
+                            <div class="">
+                                <select style="margin-bottom: 0px;margin-top: 0px;">
+                                    <option value="0">-- Select All --</option>
+                                    <option value="10233">Vodafone Commercial</option>
+                                    <option value="10253">Vodafone Technical</option>
+                                    <option value="10202">SJTest</option>
+                                    <option value="10322">SJCustomer</option>
+                                    <option value="10320">OPTest</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-2">
+                        <div class="su-input-group su-static-label">
+                            <label class="su-input-label">Criteria</label>
+                            <input type="text" name="Criteria" placeholder="Enter Criteria">
+                        </div>
+                    </div>
+                    <div class="col-sm-1" style="padding-right: 0px;padding-top: 22px;">
+                        <button type="submit" class="btn-blue"
+                                id="btnSearchReportobjrexta" style="float:right;">
+                            <span class="icon icon-arrow-right">
+                                <i class="fas fa-solid fa-arrow-right searchIcon"></i>
+                            </span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!-- Grid -->
+
+            <div class="contentHolder" style="margin-top: 5px;"
+                id="txtGridPurchaseOrderobjrexta">
+                <!-- <div class="wms-srv-grid-scroller"> -->
+                <div class="">
+                    <div style="float:right;">
+                        <input type="text" value="" placeholder="search"
+                               id="txtfilterobjrexta"
+                               class="wms-srv-input wms-srv-simple-search"
+                               style="width: 100px;" ;>
+                        <a href="#" data-prefix="SE">
+                            <i class="fas fa-search" title="Search"
+                               style="position: relative; right: 25px;"
+                               onclick="getPurchaseOrderList('');"></i>
+                        </a>
+
+                        <div class="table-download text-small">
+                            <span class="icon icon-download"></span>
+                            Download:
+                            <a href="#"
+                               data-balloon="Download complete results as CSV"
+                               data-balloon-pos="up">CSV</a>
+                        </div>
+                    </div>
+                    <div class="wms-srv-grid-scroller" style="width: 100%; max-height:500px !important;overflow:auto">
+                        <div class="wms-srv-grid previewTable" id="gettopfiveorderobjrexta">
+                            <div class="wms-srv-grid-header reportHeaderRow" id="header-wrap">
+                                <div class="wms-srv-grid-cell reportHeaderCell" style="text-align:center; color: #b3b3b3;">ASN No</div>
+                                <div class="wms-srv-grid-cell reportHeaderCell" style="text-align:center;color: #b3b3b3;">Return Order ID</div>
+                                <div class="wms-srv-grid-cell reportHeaderCell" style="text-align:center;color: #b3b3b3;">Order Date</div>
+                                <div class="wms-srv-grid-cell reportHeaderCell" style="text-align:center;color: #b3b3b3;">Department</div>
+                                <div class="wms-srv-grid-cell reportHeaderCell" style="text-align:center;color: #b3b3b3;">Collection Date</div>
+                                <div class="wms-srv-grid-cell reportHeaderCell" style="text-align:center;color: #b3b3b3;">SKU</div>
+                                <div class="wms-srv-grid-cell reportHeaderCell" style="text-align:center;color: #b3b3b3;">Description</div>
+                                <div class="wms-srv-grid-cell reportHeaderCell" style="text-align:center;color: #b3b3b3;">Request Qty</div>
+                                <div class="wms-srv-grid-cell detailIconHeader" style="text-align:center;color: #b3b3b3;">Received Qty</div>
+                                <div class="wms-srv-grid-cell detailIconHeader" style="text-align:center;color: #b3b3b3;">OMS Order No</div>
+                                <div class="wms-srv-grid-cell detailIconHeader" style="text-align:center;color: #b3b3b3;">Web Order No</div>
+                                <div class="wms-srv-grid-cell detailIconHeader" style="text-align:center;color: #b3b3b3;">SO NO</div>
+                                <div class="wms-srv-grid-cell detailIconHeader" style="text-align:center;color: #b3b3b3;">Location Code</div>
+                                <div class="wms-srv-grid-cell detailIconHeader" style="text-align:center;color: #b3b3b3;">Location Name</div>
+                                <div class="wms-srv-grid-cell detailIconHeader" style="text-align:center;color: #b3b3b3;">Return Category</div>
+                                <div class="wms-srv-grid-cell detailIconHeader" style="text-align:center;color: #b3b3b3;">Condition</div>
+                                <div class="wms-srv-grid-cell detailIconHeader" style="text-align:center;color: #b3b3b3;">Address</div>
+                                <div class="wms-srv-grid-cell detailIconHeader" style="text-align:center;color: #b3b3b3;">Action</div>
+                            </div>
+                            <div id="" class="wms-srv-grid-row reportRow">
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">0000232175</div>
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">4349</div>
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">01/04/2025</div>
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">VFQ5264ONL</div>
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">02/04/2025</div>
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">592850</div>
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">30W USB-C Power Adapter</div>
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">1.00</div>
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;"> </div>
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">VFQ1000180621</div>
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">0002315</div>
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">0000508262</div>
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">70000</div>
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">Vodafone Qatar Web Orders</div>
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">Online Cancellation</div>
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">Sealed</div>
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">8076|Lulu Al Khor</div>
+                                <div class="wms-srv-grid-cell detailIconCell" onclick="openDetailReport(251394);" style="text-align:center;"><i class="fas fa-solid fa-eye"></i></div>
+                            </div>
+                            <div id="" class="wms-srv-grid-row reportRow">
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">000054325</div>
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">1234</div>
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">02/04/2025</div>
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">VFQ5264ONL</div>
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">03/04/2025</div>
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">543212</div>
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">Power Adapter</div>
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">1.00</div>
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;"> </div>
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">VFQ100054321</div>
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">0004532</div>
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">0000098087</div>
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">70000</div>
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">Vodafone Qatar Web Orders</div>
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">Online Cancellation</div>
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">Sealed</div>
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">8076|Lulu Al Khor</div>
+                                <div class="wms-srv-grid-cell detailIconCell" onclick="openDetailReport(251394);" style="text-align:center;"><i class="fas fa-solid fa-eye"></i></div>
+                            </div>
+                            <div id="" class="wms-srv-grid-row reportRow">
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">0000232175</div>
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">4349</div>
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">03/04/2025</div>
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">VFQ5264ONL</div>
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">04/04/2025</div>
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">987654</div>
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">Adapter</div>
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">1.00</div>
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;"> </div>
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">VFQ100045678</div>
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">0008765</div>
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">0000347656</div>
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">70000</div>
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">Vodafone Qatar Web Orders</div>
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">Online Cancellation</div>
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">Sealed</div>
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">8076|Lulu Al Khor</div>
+                                <div class="wms-srv-grid-cell detailIconCell" onclick="openDetailReport(251394);" style="text-align:center;"><i class="fas fa-solid fa-eye"></i></div>
+                            </div>
+                            <div id="" class="wms-srv-grid-row reportRow">
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">0000232175</div>
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">4349</div>
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">01/04/2025</div>
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">VFQ5264ONL</div>
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">05/04/2025</div>
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">0987654</div>
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">USB-C Power</div>
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">1.00</div>
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;"> </div>
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">VFQ1000876468</div>
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">0003748</div>
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">000086754</div>
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">70000</div>
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">Vodafone Qatar Web Orders</div>
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">Online Cancellation</div>
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">Sealed</div>
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">8076|Lulu Al Khor</div>
+                                <div class="wms-srv-grid-cell detailIconCell" onclick="openDetailReport(251394);" style="text-align:center;"><i class="fas fa-solid fa-eye"></i></div>
+                            </div>
+                            <div id="" class="wms-srv-grid-row reportRow">
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">0000232175</div>
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">4349</div>
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">01/04/2025</div>
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">VFQ5264ONL</div>
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">02/04/2025</div>
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">592850</div>
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">30W USB-C Power Adapter</div>
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">1.00</div>
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;"> </div>
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">VFQ1000180621</div>
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">0002315</div>
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">0000508262</div>
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">70000</div>
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">Vodafone Qatar Web Orders</div>
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">Online Cancellation</div>
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">Sealed</div>
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">8076|Lulu Al Khor</div>
+                                <div class="wms-srv-grid-cell detailIconCell" onclick="openDetailReport(251394);" style="text-align:center;"><i class="fas fa-solid fa-eye"></i></div>
+                            </div>
+                            <div id="" class="wms-srv-grid-row reportRow">
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">0000232175</div>
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">4349</div>
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">01/04/2025</div>
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">VFQ5264ONL</div>
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">02/04/2025</div>
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">592850</div>
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">30W USB-C Power Adapter</div>
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">1.00</div>
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;"> </div>
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">VFQ1000180621</div>
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">0002315</div>
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">0000508262</div>
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">70000</div>
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">Vodafone Qatar Web Orders</div>
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">Online Cancellation</div>
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">Sealed</div>
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">8076|Lulu Al Khor</div>
+                                <div class="wms-srv-grid-cell detailIconCell" onclick="openDetailReport(251394);" style="text-align:center;"><i class="fas fa-solid fa-eye"></i></div>
+                            </div>
+                            <div id="" class="wms-srv-grid-row reportRow">
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">0000232175</div>
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">4349</div>
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">01/04/2025</div>
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">VFQ5264ONL</div>
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">02/04/2025</div>
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">592850</div>
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">30W USB-C Power Adapter</div>
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">1.00</div>
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;"> </div>
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">VFQ1000180621</div>
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">0002315</div>
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">0000508262</div>
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">70000</div>
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">Vodafone Qatar Web Orders</div>
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">Online Cancellation</div>
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">Sealed</div>
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">8076|Lulu Al Khor</div>
+                                <div class="wms-srv-grid-cell detailIconCell" onclick="openDetailReport(251394);" style="text-align:center;"><i class="fas fa-solid fa-eye"></i></div>
+                            </div>
+                            <div id="" class="wms-srv-grid-row reportRow">
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">0000232175</div>
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">4349</div>
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">01/04/2025</div>
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">VFQ5264ONL</div>
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">02/04/2025</div>
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">592850</div>
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">30W USB-C Power Adapter</div>
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">1.00</div>
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;"> </div>
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">VFQ1000180621</div>
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">0002315</div>
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">0000508262</div>
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">70000</div>
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">Vodafone Qatar Web Orders</div>
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">Online Cancellation</div>
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">Sealed</div>
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">8076|Lulu Al Khor</div>
+                                <div class="wms-srv-grid-cell detailIconCell" onclick="openDetailReport(251394);" style="text-align:center;"><i class="fas fa-solid fa-eye"></i></div>
+                            </div>
+                            <div id="" class="wms-srv-grid-row reportRow">
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">0000232175</div>
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">4349</div>
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">01/04/2025</div>
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">VFQ5264ONL</div>
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">02/04/2025</div>
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">592850</div>
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">30W USB-C Power Adapter</div>
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">1.00</div>
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;"> </div>
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">VFQ1000180621</div>
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">0002315</div>
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">0000508262</div>
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">70000</div>
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">Vodafone Qatar Web Orders</div>
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">Online Cancellation</div>
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">Sealed</div>
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">8076|Lulu Al Khor</div>
+                                <div class="wms-srv-grid-cell detailIconCell" onclick="openDetailReport(251394);" style="text-align:center;"><i class="fas fa-solid fa-eye"></i></div>
+                            </div>
+                            <div id="" class="wms-srv-grid-row reportRow">
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">0000232175</div>
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">4349</div>
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">01/04/2025</div>
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">VFQ5264ONL</div>
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">02/04/2025</div>
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">592850</div>
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">30W USB-C Power Adapter</div>
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">1.00</div>
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;"> </div>
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">VFQ1000180621</div>
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">0002315</div>
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">0000508262</div>
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">70000</div>
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">Vodafone Qatar Web Orders</div>
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">Online Cancellation</div>
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">Sealed</div>
+                                <div class="wms-srv-grid-cell reportRowCell" style="text-align:center;">8076|Lulu Al Khor</div>
+                                <div class="wms-srv-grid-cell detailIconCell" onclick="openDetailReport(251394);" style="text-align:center;"><i class="fas fa-solid fa-eye"></i></div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Grid -->
+</div>
+
+</div>
+<!-- Example -->
+    </body>
+</html>
