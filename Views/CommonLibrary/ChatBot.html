@@ -1,0 +1,18 @@
+<div class="divChatBot" id="divChatBot" style="display:none;">
+    <div class="chatBotTitle">
+        GwcOmsChatBot <i class="fas fa-times-circle" onclick="hideChatBot();"></i> <i class="fas fa-undo btnResetChat" onclick="resetChatLog();"></i>
+    </div>
+    <div class="chatConversation" id="chatConversationHolder">
+        <div class="chat-table">
+            <div class="chat-row">
+                <div class="chat-cell"  id="chatConversation">
+                    <i class="startChatLine">Type "Hi" to start the bot chat coversation</i>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="chatBotUserInput">
+        <input type="text" id="chatBoxInput" value="" />
+        <i class="fas fa-paper-plane" onclick="sendChatMessage();"></i>
+    </div>
+</div>

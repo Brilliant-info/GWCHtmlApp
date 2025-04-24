@@ -1,0 +1,274 @@
+<div id="pnlDirectOrder" class="wmsMasterTypePage" style="display: block;">
+   <input type="hidden" value="" id="hdnImportSessionId" />
+   <div class="wms-srv-content-area pnlInbound" id="pnlAppointmentList">
+       <div class="wms-srv-page-title">
+          <i class="fas fa-file-import"></i> <span class="wms-srv-data-title">Import Direct Order</span>
+      </div> 
+     <hr style="border-bottom: 2px dashed #636363;"> 
+      <center>
+      <table class="tblcls" cellpadding="0" cellspacing="20px" border="0" width="95%" style="margin-top: 33px;">
+         <tbody>
+            <tr>
+               <td align="center">
+                  <table align="center" border="0">
+                     <tbody>
+                        <tr>
+                           <td class="style3" align="center">
+                              <span class="cartStepHolder"><span class="cartStepTitle cartStepCurrentTitle">
+                                    <span class="divCartSymbol divCartCurrentSymbol circle">
+                                       <span id="ctl00_CPHolder_Form_lbl1">1</span></span><span
+                                       id="ctl00_CPHolder_Form_lblstep1">Upload File</span></span>
+                                 <span class="cartStepTitle"><span class="divCartSymbol">
+                                       <span id="ctl00_CPHolder_Form_lbl2">2</span></span><span
+                                       id="ctl00_CPHolder_Form_lblstep2">Data Validation &amp;
+                                       Verification</span></span>
+                                 <span class="cartStepTitle"><span class="divCartSymbol">
+                                       <span id="ctl00_CPHolder_Form_lbl3">3</span></span><span
+                                       id="ctl00_CPHolder_Form_lblstep3">Finished</span></span>
+                              </span>
+                           </td>
+                        </tr>
+                     </tbody>
+                  </table>
+                  <table cellpadding="0" width="100%" cellspacing="5px" border="0" class="tableForm">
+                     <tbody>
+                        <tr>
+                           <td align="left" colspan="4">
+
+                              <span id="ctl00_CPHolder_Form_lbltext1" style="font-size:14px;">&nbsp;&nbsp;Import will faciliated
+                                 Order Data to be directly imported into OMS</span>
+
+                              <span id="ctl00_CPHolder_Form_Lbl" style="font-size:14px;">For Downloading Order Import
+                                 Data Template</span>
+                              <a href="DirectOrderImport.xlsx" target="_blank">
+                                 <font color="blue"><u>Click Here.
+                                    </u></font>
+                              </a>
+
+                           </td>
+                        </tr>
+                        <tr>
+                           <td align="left" colspan="4"></td>
+                        </tr>
+                        <tr>
+                           <td></td>
+                           <td align="right" colspan="4">
+                              <table>
+                                 <tbody>
+                                    <tr>
+                                       <td>
+                                          <span id="ctl00_CPHolder_Form_lblSelecFile">Select Import File</span>
+                                          :
+                                       </td>
+                                       <td style="text-align: left;">
+                                          <input type="file" name="ctl00$CPHolder_Form$FileuploadPO"
+                                             id="ctl00_CPHolder_Form_FileuploadPO" multiple="multiple">
+                                       </td>
+                                       <td style="text-align: right;">
+                                          <input type="submit" name="ctl00$CPHolder_Form$btnUploadPo" value="Upload"
+                                             
+                                             id="ctl00_CPHolder_Form_btnUploadPo">
+                                          <span id="ctl00_CPHolder_Form_RegularExpressionValidator1"
+                                             style="color:Red;visibility:hidden;">Upload only excel file</span>
+                                       </td>
+                                    </tr>
+                                 </tbody>
+                              </table>
+                           </td>
+                           <td></td>
+                        </tr>
+
+                        <tr>
+                           <td colspan="4">
+                              <div id="divUpload" style="display: none">
+
+                                 <span style="text-align: center; float: inherit">
+                                    <span id="ctl00_CPHolder_Form_lbluploading"
+                                       style="font-weight:bold;font-style:italic;">Uploading File....</span></span><br>
+                                 <img id="ctl00_CPHolder_Form_uploadimg" src="../images/upload-animation.gif"
+                                    style="height:20px;width:380px;">
+
+
+                                 <div id="ctl00_CPHolder_Form_uploadMessage"
+                                    style="font-weight:bold;text-align: center;">
+                                    File uploaded successfully! Click On Next Button
+                                 </div>
+                              </div>
+
+                           </td>
+                        </tr>
+                        <tr>
+                           <td colspan="4">
+
+                           </td>
+                        </tr>
+
+                        <tr style="visibility: hidden;">
+                           <td>
+                              <req><span id="ctl00_CPHolder_Form_lblcompany">Customer</span> :</req>
+                           </td>
+                           <td style="text-align: left;">
+                              <select name="ctl00$CPHolder_Form$ddlcompany" id="ctl00_CPHolder_Form_ddlcompany"
+                                 class="inputElement notranslate" onchange="GetDepartment()" onblur="validateCtl(this);"
+                                 style="width:206px;">
+                                 <option value="0">-Select-</option>
+                                 <option value="10287">ABcust1</option>
+                                 <option value="10290">Abhijit Contact</option>
+                                 <option value="10295">Abhijit Customer ecommerce</option>
+                                 <option value="10289">Abhijit_Customer</option>
+                                 <option value="10296">Abhjit Customer ecomm</option>
+                                 <option value="10305">AKCUST</option>
+                                 <option value="10299">AMCustomer</option>
+                                 <option value="10298">BalajiGWC</option>
+                                 <option value="10301">Brilliant Technical</option>
+                                 <option value="10274">Brillint_Info</option>
+                                 <option value="10281">CDS GWC</option>
+                                 <option value="10278">chetan infosys</option>
+                                 <option value="10314">CUST_DUMMY</option>
+                                 <option value="10315">CUST_DUMMY1</option>
+                                 <option value="10316">CUSTGK</option>
+                                 <option value="10286">customer1</option>
+                                 <option value="10288">customer2</option>
+                                 <option value="10223">Deliopolise</option>
+                                 <option value="10280">DELL</option>
+                                 <option value="10279">DSK HOMES</option>
+                                 <option value="10313">DUMMY</option>
+                                 <option value="10311">Galib</option>
+                                 <option value="10312">Galib_Test</option>
+                                 <option value="10252">GPS</option>
+                                 <option value="10272">GPTEST</option>
+                                 <option value="10308">GvbTest</option>
+                                 <option value="10233">GWC ECOMMERCE</option>
+                                 <option value="10253">GWC GPS</option>
+                                 <option value="10202">GWC Test</option>
+                                 <option value="10322">GWC@123</option>
+                                 <option value="10320">GWC@Testing </option>
+                                 <option value="10257">GWC_HMC</option>
+                                 <option value="10319">GWCTesting</option>
+                                 <option value="10266">MTEST</option>
+                                 <option value="10277">OMS_WMS PVT Ltd</option>
+                                 <option value="10276">OMS_WMS_Company pvt ltd</option>
+                                 <option value="10284">OPtest</option>
+                                 <option value="10318">ORDERGK</option>
+                                 <option value="10285">OSPtest</option>
+                                 <option value="10294">PCC</option>
+                                 <option value="10293">Pooja_D</option>
+                                 <option value="10291">PoojaD</option>
+                                 <option value="10297">PoojaE-com</option>
+                                 <option value="10273">QAcustmer</option>
+                                 <option value="10206">Qafco</option>
+                                 <option value="10140">QNBN</option>
+                                 <option value="10302">RJCustomer</option>
+                                 <option value="10282">RMS</option>
+                                 <option value="10275">SJCustomer</option>
+                                 <option value="10271">SJTEST</option>
+                                 <option value="10303">SK CUST</option>
+                                 <option value="10304">SK CUST1</option>
+                                 <option value="10292">Suraj Cust</option>
+                                 <option value="10300">TATAneo</option>
+                                 <option value="10321">Test GWC</option>
+                                 <option value="10310">Test_Customer@99</option>
+                                 <option value="10283">TestC0709</option>
+                                 <option value="10306">TEstCompany</option>
+                                 <option value="10307">TestCustomer</option>
+                                 <option value="10317">TESTGK</option>
+                                 <option value="10261">Testvodafone2</option>
+                                 <option value="10309">TusharW</option>
+                                 <option value="10204">Vodafone Commercial</option>
+                                 <option value="10153">Vodafone Technical</option>
+
+                              </select>
+                              <span id="ctl00_CPHolder_Form_RfValCompany" style="display:none;"></span>
+                           </td>
+                           <td>
+                              <req><span id="ctl00_CPHolder_Form_lblDept">Department</span></req>
+                              :
+                           </td>
+                           <td style="text-align: left;">
+                              <select name="ctl00$CPHolder_Form$ddldepartment" id="ctl00_CPHolder_Form_ddldepartment"
+                                 class="inputElement notranslate" onchange="Getdeptid()" onblur="validateCtl(this);"
+                                 style="width:190px;">
+
+                              </select>
+                              <span id="ctl00_CPHolder_Form_rfdept" style="display:none;"></span>
+                           </td>
+                           <td>
+                              <req><span id="ctl00_CPHolder_Form_lbllocation">Location</span></req>
+                              :
+                           </td>
+                           <td style="text-align: left;">
+                              <select name="ctl00$CPHolder_Form$ddllocation" id="ctl00_CPHolder_Form_ddllocation"
+                                 class="inputElement notranslate" onchange="Getlocatn()" onblur="validateCtl(this);"
+                                 style="width:220px;">
+
+                              </select>
+                           </td>
+
+                        </tr>
+                        <tr style="visibility: hidden;">
+                           <td>
+                              <req><span id="ctl00_CPHolder_Form_lblpaymentMethod">Payment Method</span> :</req>
+                           </td>
+                           <td style="text-align: left;">
+                              <select name="ctl00$CPHolder_Form$ddlpayment" id="ctl00_CPHolder_Form_ddlpayment"
+                                 class="inputElement notranslate" onblur="validateCtl(this);" style="width:206px;">
+                                 <option value="1">None(Default)</option>
+
+                              </select>
+                           </td>
+                           <td>
+                              <req><span id="ctl00_CPHolder_Form_lblexpDate">Exp. Delivery Date</span> :</req>
+                           </td>
+                           <td style="text-align: left;">
+                              <input name="ctl00$CPHolder_Form$UC_DateofBirth$txtDate" type="text" maxlength="11"
+                                 id="ctl00_CPHolder_Form_UC_DateofBirth_txtDate" class="inputElement notranslate"
+                                 placeholder="DD-MMM-YYYY" onchange="validateDateFormat(this);"
+                                 onkeyup="giveSeprator(this);" onfocus="onfocusSelect(this)" onblur="validateCtl(this);"
+                                 style="width:82px;">
+                              <div id="ctl00_CPHolder_Form_UC_DateofBirth_validationsummary_date" style="display:none;">
+
+                              </div>
+
+                              <img id="ctl00_CPHolder_Form_UC_DateofBirth_ImgDate"
+                                 src="../App_Themes/Blue/img/Calendar24.png"
+                                 style="width: 20px; height: 20px; margin-bottom: -5px; cursor: pointer;">
+                              <span id="ctl00_CPHolder_Form_UC_DateofBirth_RFVDate" style="display:none;"></span>
+
+                           </td>
+                           <td></td>
+                           <td style="text-align: left;"></td>
+                        </tr>
+
+                     </tbody>
+                  </table>
+               </td>
+            </tr>
+
+            <tr>
+               <td>
+                  <table align="right">
+                     <tbody>
+                        <tr>
+                           <td>
+
+                              <input type="submit" name="ctl00$CPHolder_Form$Button12" value="Next"
+                                 id="ctl00_CPHolder_Form_Button12" disabled="disabled" class="aspNetDisabled class1">
+
+                           </td>
+                           <td>
+                              <input type="submit" name="ctl00$CPHolder_Form$Btncancel" value="Cancel"
+                                 id="ctl00_CPHolder_Form_Btncancel">
+                           </td>
+                        </tr>
+                     </tbody>
+                  </table>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+      </center>
+   </div>
+   <textarea id="txtCSVdata" style='width:1px;height:1px;position:absolute;overflow:hidden;'>
+        </textarea>
+   <div id="WMSDataCalendar" class="WMSDataCalendar"></div>
+</div>

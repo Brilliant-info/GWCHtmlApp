@@ -1,0 +1,158 @@
+{
+    "Status": "200",
+    "StatusCode": "Success",
+    "Result": {
+      "Table": [
+        {
+          "Id": 1,
+          "ProductCode": "SPX001",
+          "ProductName": "Smartphone X1",
+          "Description": "A high-performance smartphone with 128GB storage and 6GB RAM.",
+          "Price": 599.99,
+          "GroupSet": "Yes",
+          "ImagePath": "/images/smartphone_x1.jpg",
+          "AvailableBalance": 150
+        },
+        {
+          "Id": 2,
+          "ProductCode": "LP1502",
+          "ProductName": "Laptop Pro 15",
+          "Description": "15-inch laptop with Intel i7 processor and 16GB RAM.",
+          "Price": 1299.99,
+          "GroupSet": "No",
+          "ImagePath": "/images/laptop_pro_15.jpg",
+          "AvailableBalance": 80
+        },
+        {
+          "Id": 3,
+          "ProductCode": "WEZ01",
+          "ProductName": "Wireless Earbuds Z1",
+          "Description": "Noise-cancelling wireless earbuds with 10 hours of battery life.",
+          "Price": 99.99,
+          "GroupSet": "Yes",
+          "ImagePath": "/images/wireless_earbuds_z1.jpg",
+          "AvailableBalance": 200
+        },
+        {
+          "Id": 4,
+          "ProductCode": "TV50UHD",
+          "ProductName": "4K Ultra HD TV 50\"",
+          "Description": "50-inch 4K Ultra HD Smart TV with HDR support.",
+          "Price": 799.99,
+          "GroupSet": "No",
+          "ImagePath": "/images/4k_tv_50.jpg",
+          "AvailableBalance": 120
+        },
+        {
+          "Id": 5,
+          "ProductCode": "SWTS2",
+          "ProductName": "Smartwatch S2",
+          "Description": "A sleek smartwatch with fitness tracking and heart rate monitor.",
+          "Price": 199.99,
+          "GroupSet": "Yes",
+          "ImagePath": "/images/smartwatch_s2.jpg",
+          "AvailableBalance": 250
+        },
+        {
+          "Id": 6,
+          "ProductCode": "GCX",
+          "ProductName": "Gaming Console X",
+          "Description": "Next-gen gaming console with 4K resolution and large game library.",
+          "Price": 399.99,
+          "GroupSet": "Yes",
+          "ImagePath": "/images/gaming_console_x.jpg",
+          "AvailableBalance": 180
+        },
+        {
+          "Id": 7,
+          "ProductCode": "FR6000",
+          "ProductName": "Smart Fridge 6000",
+          "Description": "Smart refrigerator with touchscreen display and energy-saving features.",
+          "Price": 1499.99,
+          "GroupSet": "No",
+          "ImagePath": "/images/smart_fridge_6000.jpg",
+          "AvailableBalance": 50
+        },
+        {
+          "Id": 8,
+          "ProductCode": "BTSM1",
+          "ProductName": "Bluetooth Speaker M1",
+          "Description": "Portable Bluetooth speaker with excellent sound quality.",
+          "Price": 79.99,
+          "GroupSet": "No",
+          "ImagePath": "/images/bluetooth_speaker_m1.jpg",
+          "AvailableBalance": 300
+        },
+        {
+          "Id": 9,
+          "ProductCode": "SHB2000",
+          "ProductName": "Smart Home Hub 2000",
+          "Description": "Central hub for controlling smart home devices with voice commands.",
+          "Price": 129.99,
+          "GroupSet": "Yes",
+          "ImagePath": "/images/smart_home_hub_2000.jpg",
+          "AvailableBalance": 220
+        },
+        {
+          "Id": 10,
+          "ProductCode": "EKP1500",
+          "ProductName": "Electric Kettle Pro",
+          "Description": "1.5L electric kettle with rapid boiling feature and temperature control.",
+          "Price": 49.99,
+          "GroupSet": "No",
+          "ImagePath": "/images/electric_kettle_pro.jpg",
+          "AvailableBalance": 350
+        },
+        {
+          "Id": 11,
+          "ProductCode": "SC360",
+          "ProductName": "Smart Camera 360",
+          "Description": "360-degree rotating smart camera with motion detection and cloud storage.",
+          "Price": 149.99,
+          "GroupSet": "Yes",
+          "ImagePath": "/images/smart_camera_360.jpg",
+          "AvailableBalance": 130
+        },
+        {
+          "Id": 12,
+          "ProductCode": "PB10000",
+          "ProductName": "Portable Power Bank 10000mAh",
+          "Description": "High-capacity portable power bank for on-the-go charging.",
+          "Price": 29.99,
+          "GroupSet": "No",
+          "ImagePath": "/images/portable_power_bank_10000.jpg",
+          "AvailableBalance": 400
+        },
+        {
+          "Id": 13,
+          "ProductCode": "DXP4K",
+          "ProductName": "Drone X Pro",
+          "Description": "4K camera drone with long-range flight and advanced stability features.",
+          "Price": 499.99,
+          "GroupSet": "Yes",
+          "ImagePath": "/images/drone_x_pro.jpg",
+          "AvailableBalance": 75
+        },
+        {
+          "Id": 14,
+          "ProductCode": "VCV1",
+          "ProductName": "Robot Vacuum Cleaner V1",
+          "Description": "Robotic vacuum with automatic cleaning and smart navigation.",
+          "Price": 249.99,
+          "GroupSet": "No",
+          "ImagePath": "/images/robot_vacuum_cleaner_v1.jpg",
+          "AvailableBalance": 180
+        },
+        {
+          "Id": 15,
+          "ProductCode": "AC4K",
+          "ProductName": "Action Camera Pro 4K",
+          "Description": "4K resolution action camera for capturing high-definition video.",
+          "Price": 199.99,
+          "GroupSet": "Yes",
+          "ImagePath": "/images/action_camera_pro_4k.jpg",
+          "AvailableBalance": 150
+        }
+      ]
+    }
+}

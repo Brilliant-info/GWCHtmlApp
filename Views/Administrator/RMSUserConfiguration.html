@@ -1,0 +1,258 @@
+
+<div id="pnlRMSUserConfiguration" class="wmsMasterTypePage" style="display: none;">
+    <div class="wms-srv-content-area pnlInbound" id="pnlAppointmentList">
+        <!-- Content Area -->
+        <div class="container-fluid wms-srv-dashboard-panel">
+           <div class="row">
+              <div class="col-md-4 nopadding">
+                 <!-- Page Title -->
+                 <div class="wms-srv-page-title">
+                    <i class="fas fa-solid fa-user"></i><span class="wms-srv-data-title">RMS User Configuration</span>
+                 </div>
+                 <!-- Page Title -->
+              </div>
+              <div class="col-md-8 nopadding">
+              </div>
+           </div>
+        </div>
+        <div class="" style="margin-top: -25px;margin-left: 85%;margin-bottom: 5px;">
+           <button class="wms-srv-input" onclick="" style="margin-right: 10px;background-color: #6ebf49;" title="save" type="button"><span style="color: white;"> Save</span></button>
+           <button class="wms-srv-input" title="clear" onclick="" style="margin-right: 10px;background-color: #6ebf49;" type="button"><span style="color: white;"> Clear</span></button>
+        </div>
+        <div class="userConfiGridAddNew" style="padding:2px;">
+           <table>
+              <tbody>
+                 <tr>
+                    <td>
+                       <span>Customer :</span>
+                       <select id="ddluserCustomerList" onclick="" style="width:200px;height:23px;" class="notranslate">
+                          <option value="">-- Select Customer --</option>
+                          <option value="10140">QNBN</option>
+                          <option value="10153">Vodafone Technical</option>
+                          <option value="10202">GWC Test</option>
+                          <option value="10204">Vodafone Commercial</option>
+                          <option value="10206">Qafco</option>
+                          <option value="10223">Deliopolise</option>
+                          <option value="10233">GWC ECOMMERCE</option>
+                          <option value="10252">GPS</option>
+                          <option value="10253">GWC GPS</option>
+                          <option value="10257">GWC_HMC</option>
+                          <option value="10261">Testvodafone2</option>
+                          <option value="10266">MTEST</option>
+                          <option value="10271">SJTEST</option>
+                          <option value="10272">GPTEST</option>
+                          <option value="10273">QAcustmer</option>
+                          <option value="10274">Brillint_Info</option>
+                          <option value="10275">SJCustomer</option>
+                          <option value="10276">OMS_WMS_Company pvt ltd</option>
+                          <option value="10277">OMS_WMS PVT Ltd</option>
+                          <option value="10278">chetan infosys</option>
+                          <option value="10279">DSK HOMES</option>
+                          <option value="10280">DELL</option>
+                          <option value="10281">CDS GWC</option>
+                          <option value="10282">RMS</option>
+                          <option value="10283">TestC0709</option>
+                          <option value="10284">OPtest</option>
+                          <option value="10285">OSPtest</option>
+                          <option value="10286">customer1</option>
+                          <option value="10287">ABcust1</option>
+                          <option value="10288">customer2</option>
+                          <option value="10289">Abhijit_Customer</option>
+                          <option value="10290">Abhijit Contact</option>
+                          <option value="10291">PoojaD</option>
+                          <option value="10292">Suraj Cust</option>
+                          <option value="10293">Pooja_D</option>
+                          <option value="10294">PCC</option>
+                          <option value="10295">Abhijit Customer ecommerce</option>
+                          <option value="10296">Abhjit Customer ecomm</option>
+                          <option value="10297">PoojaE-com</option>
+                          <option value="10298">BalajiGWC</option>
+                          <option value="10299">AMCustomer</option>
+                          <option value="10300">TATAneo</option>
+                          <option value="10301">Brilliant Technical</option>
+                          <option value="10302">RJCustomer</option>
+                          <option value="10303">SK CUST</option>
+                          <option value="10304">SK CUST1</option>
+                          <option value="10305">AKCUST</option>
+                          <option value="10306">TEstCompany</option>
+                          <option value="10307">TestCustomer</option>
+                          <option value="10308">GvbTest</option>
+                          <option value="10309">TusharW</option>
+                          <option value="10310">Test_Customer@99</option>
+                          <option value="10311">Galib</option>
+                          <option value="10312">Galib_Test</option>
+                          <option value="10313">DUMMY</option>
+                          <option value="10314">CUST_DUMMY</option>
+                          <option value="10315">CUST_DUMMY1</option>
+                          <option value="10316">CUSTGK</option>
+                          <option value="10317">TESTGK</option>
+                          <option value="10318">ORDERGK</option>
+                          <option value="10319">GWCTesting</option>
+                          <option value="10320">GWC@Testing </option>
+                          <option value="10321">Test GWC</option>
+                          <option value="10322">GWC@123</option>
+                       </select>
+                    </td>
+                    <td>
+                       <span class="userConfigInputBox">Department :</span>
+                       <select id="ddluserDepartment" style="width:200px;height:23px;" class="notranslate">
+                          <option>-- Select Department --</option>
+                       </select>
+                    </td>
+                    <td>
+                       <span class="userConfigInputBox">Select User :</span>
+                       <sapn>
+                          <input id="sethdnUserId" type="hidden" style="width:200px;height:20px;">
+                          <input id="setUserName" type="text" style="width:200px;height:20px;" class="notranslate">
+                       </sapn>
+                       <sapn><i class="fas fa-search iconView" onclick="openpopupUser();"></i></sapn>
+                    </td>
+                 </tr>
+              </tbody>
+           </table>
+        </div>
+        <!-- Head Grid -->
+        <div class="wms-srv-grid-holder pnlWmsHead" id="pnlWmsHead" style="display: none;">
+           <div class="wms-srv-grid">
+              <!-- Object Head Data Will be Here -->
+           </div>
+        </div>
+        <br>
+        <!-- Head Grid -->
+        <!-- Grid -->
+        <div class="wms-srv-obj-main-grid pnlWmsDetail">
+           <div class="wms-srv-grid-holder">
+              <div class="wms-srv-grid-action-panel">
+                 <div class="wms-srv-grid-title">
+                    <a href="#" class="wms-srv-icononly"><i class="fas fa-users"></i></a> User List
+                 </div>
+                 <div class="wms-srv-search">
+                    <input type="text" value="" placeholder="Enter To Search" id="txtsearchRMSuser" class="wms-srv-input wms-srv-simple-search notranslate"><a href="#"><i class="fas fa-search" onclick="UserConfiList();"></i></a>                                   
+                 </div>
+              </div>
+              <div class="wms-srv-grid-scroller" style="max-height:300px;">
+                 <div class="wms-srv-grid" id="gridUserConfiList">
+                    <div class="wms-srv-grid-header">
+                       <div class="wms-srv-grid-cell">Customer</div>
+                       <div class="wms-srv-grid-cell">Department Name</div>
+                       <div class="wms-srv-grid-cell">User Name</div>
+                       <div class="wms-srv-grid-cell">User Type</div>
+                       <div class="wms-srv-grid-cell">Active</div>
+                       <div class="wms-srv-grid-cell" style="width:14%;">Action</div>
+                    </div>
+                    <div class="wms-srv-grid-row">
+                       <div class="wms-srv-grid-cell" style="text-align:center;">GWC ECOMMERCE</div>
+                       <div class="wms-srv-grid-cell" style="text-align:center;">VFQ5264ONL </div>
+                       <div class="wms-srv-grid-cell" style="text-align:center;">TOM JERRY</div>
+                       <div class="wms-srv-grid-cell" style="text-align:center;">Requestor And Approver</div>
+                       <div class="wms-srv-grid-cell" style="text-align:center;">YES</div>
+                       <div class="wms-srv-grid-cell">
+                          <div class="wms-srv-grid-action" style="margin-bottom: -20px;">
+                             <label class="switch"><input type="checkbox" checked="" onclick="activeUser(234,10233,10384);" id="checkUserActiveVal234"><span class="slider round"></span></label>
+                             <div class="wms-srv-action-sep"> | </div>
+                             <i class="fas fa-times-circle iconView" onclick="RemoveRMSUser(234,10233,10384)" title="Remove User"></i>
+                          </div>
+                       </div>
+                    </div>
+                    <div class="wms-srv-grid-row">
+                       <div class="wms-srv-grid-cell" style="text-align:center;">Vodafone Commercial</div>
+                       <div class="wms-srv-grid-cell" style="text-align:center;">Vodafone Commercial1</div>
+                       <div class="wms-srv-grid-cell" style="text-align:center;">Ajit k</div>
+                       <div class="wms-srv-grid-cell" style="text-align:center;">Super Admin</div>
+                       <div class="wms-srv-grid-cell" style="text-align:center;">YES</div>
+                       <div class="wms-srv-grid-cell">
+                          <div class="wms-srv-grid-action" style="margin-bottom: -20px;">
+                             <label class="switch"><input type="checkbox" checked="" onclick="activeUser(21087,10204,10306);" id="checkUserActiveVal21087"><span class="slider round"></span></label>
+                             <div class="wms-srv-action-sep"> | </div>
+                             <i class="fas fa-times-circle iconView" onclick="RemoveRMSUser(21087,10204,10306)" title="Remove User"></i>
+                          </div>
+                       </div>
+                    </div>
+                    <div class="wms-srv-grid-row">
+                       <div class="wms-srv-grid-cell" style="text-align:center;">SJCustomer</div>
+                       <div class="wms-srv-grid-cell" style="text-align:center;">sjdept</div>
+                       <div class="wms-srv-grid-cell" style="text-align:center;">shivajiR requestor</div>
+                       <div class="wms-srv-grid-cell" style="text-align:center;">Requestor</div>
+                       <div class="wms-srv-grid-cell" style="text-align:center;">YES</div>
+                       <div class="wms-srv-grid-cell">
+                          <div class="wms-srv-grid-action" style="margin-bottom: -20px;">
+                             <label class="switch"><input type="checkbox" checked="" onclick="activeUser(10890,10275,10475);" id="checkUserActiveVal10890"><span class="slider round"></span></label>
+                             <div class="wms-srv-action-sep"> | </div>
+                             <i class="fas fa-times-circle iconView" onclick="RemoveRMSUser(10890,10275,10475)" title="Remove User"></i>
+                          </div>
+                       </div>
+                    </div>
+                    <div class="wms-srv-grid-row">
+                       <div class="wms-srv-grid-cell" style="text-align:center;">Vodafone Commercial</div>
+                       <div class="wms-srv-grid-cell" style="text-align:center;">VBS</div>
+                       <div class="wms-srv-grid-cell" style="text-align:center;">VFQ superadmin</div>
+                       <div class="wms-srv-grid-cell" style="text-align:center;">Super Admin</div>
+                       <div class="wms-srv-grid-cell" style="text-align:center;">YES</div>
+                       <div class="wms-srv-grid-cell">
+                          <div class="wms-srv-grid-action" style="margin-bottom: -20px;">
+                             <label class="switch"><input type="checkbox" checked="" onclick="activeUser(10830,10204,10307);" id="checkUserActiveVal10830"><span class="slider round"></span></label>
+                             <div class="wms-srv-action-sep"> | </div>
+                             <i class="fas fa-times-circle iconView" onclick="RemoveRMSUser(10830,10204,10307)" title="Remove User"></i>
+                          </div>
+                       </div>
+                    </div>
+                 </div>
+              </div>
+              <div class="wms-srv-grid-pager" id="pgUserConfigUserList">
+                 1-2 of 2 Records <span class="wms-srv-empty-space"></span><b>Go to Page: </b> 
+                 <select id="ddlGridPageNo" class="wms-srv-input ddlGridPageNo" style="width:100px;">
+                    <option>1</option>
+                 </select>
+                 <a href="#" title="Jump To" class="wms-srv-ddlpager-go" style="font-size:16px;"><i class="fas fa-play-circle"></i></a>
+              </div>
+           </div>
+           <!-- Content Area -->
+        </div>
+     </div>
+
+     <!-- User list -->
+     <div class="wms-srv-popup-holder" id="wms-srv-UserList-popup" style="display:none ;z-index:9999">
+        <div class="wms-srv-popup-bg">
+        </div>
+        <div class="wms-srv-popup" style="width: 64%;margin-left: 21%; height: auto;">
+           <div class="wms-srv-popup-content">
+              <!-- Popup Title -->
+              <div class="wms-srv-popup-title">
+                 <div class="wms-srv-page-title">
+                    <i class="fas fa-file-alt"></i><span>User List </span>
+                 </div>
+                 <a href="#" id="wms-srv-UserList-popup-close" class="wms-srv-popup-close"><i class="fas fa-times-circle"></i></a>
+              </div>
+              <!-- Popup Title -->
+              <div class="wms-srv-popup-content-body" id="wms-srv-popup-content-body">
+                 <!-- Grid 2-->
+                 <div class="wms-srv-grid-holder pnlWmsDetail" id="pnlWmsDetail">
+                    <div class="wms-srv-grid-action-panel">
+                       <div class="wms-srv-grid-common-action"><a href="#" data-prefix="CG" class="wms-srv-icononly"><i class="fas fa-list"></i></a></div>
+                       <div class="wms-srv-grid-title">
+                          User List
+                       </div>
+                       <div class="wms-srv-search">
+                          <input type="text" value="" placeholder="Enter To Search" id="txtUserSearch" class="wms-srv-input wms-srv-simple-search notranslate"><a href="#"><i class="fas fa-search" onclick="UserConfigurationList();"></i></a>                                   
+                       </div>
+                    </div>
+                    <div class="wms-srv-grid-scroller">
+                       <div class="wms-srv-grid" style="text-align: center; min-width: 400px;" id="wms-srv-grid-UserListPopup">
+                          <div class="wms-srv-grid-header">
+                             <div class="wms-srv-grid-cell  wms-srv-align">Employee ID</div>
+                             <div class="wms-srv-grid-cell  wms-srv-align">Name</div>
+                             <div class="wms-srv-grid-cell  wms-srv-align">User Type</div>
+                             <div class="wms-srv-grid-cell  wms-srv-align">User Id</div>
+                             <div class="wms-srv-grid-cell  wms-srv-align">Email Id</div>
+                             <div class="wms-srv-grid-cell  wms-srv-align">Action</div>
+                          </div>
+                       </div>
+                    </div>
+                 </div>
+                 <!-- Grid 2-->
+              </div>
+           </div>
+        </div>
+     </div>
+     <!-- User list -->
+</div>

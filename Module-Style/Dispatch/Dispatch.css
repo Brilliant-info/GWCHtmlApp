@@ -1,0 +1,114 @@
+﻿body {
+}
+#pnlCreatePurchaseOrder .pnlWmsDetail .wms-srv-grid-pager,
+#pnlCreatePurchaseOrder .pnlSearchList .wms-srv-grid-pager,
+#pnlApproval .pnlWmsDetail .wms-srv-grid-pager,
+#pnlDocument .pnlWmsDetail .wms-srv-grid-pager,
+#pnlCommunication .pnlWmsDetail .wms-srv-grid-pager,
+#pnlTransport .pnlWmsDetail .wms-srv-grid-pager,
+.pnlWmsDetail .wms-srv-grid-action-panel [data-prefix="EX"],
+.pnlWmsDetail .wms-srv-grid-action-panel [data-prefix="IM"] {
+    display: none !important;
+}
+
+.wms-srv-status-label {
+    width: 150px;
+}
+.wms-srv-status-holder {
+    width: 250px;
+}
+.wms-srv-partial {
+    background-color: #ffc107; /* For browsers that do not support gradients */
+    background-image: linear-gradient(to right, #47d108 45%, #ff2f2f 55%);
+    border-width: 0px;
+}
+.requiredStar{
+    color:#ff0000;
+    font-weight:bold;
+    font-size:16px;
+    line-height:10px;
+}
+input.errorField{
+    border:solid 1px #ff0000 !important;
+}
+.wms-srv-container-search input {
+    width: calc(100% - 30px) !important;
+    display:inline-block;
+}
+
+.dashboardActiveTab {
+    background-color: #fafafa !important;
+    font-weight: bold;
+    color: #0686a7;
+    box-shadow: inset 0px 0px 5px #ccc;
+}
+
+/* -- Lottable Box -- */
+.pnlLottableHolder {
+    padding: 5px;
+    width: auto;
+    max-width:200px;
+    height: 60px;
+    overflow: auto;
+    overflow-y:hidden;
+    border: solid 1px #636363;
+    white-space: nowrap;
+}
+
+.lottableBox {
+    padding: 5px;
+    font-size: 13px;
+    display: inline-block;
+    border: solid 1px #636363;
+    font-family: Arial;
+    background-color: #efefef;
+    border-radius: 7px;
+    margin: 2px;
+}
+
+.lottableBox i {
+    margin-left: 7px;
+    display: inline-block;
+}
+
+.lottableBox label {
+    display: inline-block;
+    margin-bottom:0px;
+}
+.spnLottableType{
+    display:inline-block;
+    width:100%;
+}
+.lottableControlHolder{
+    position:relative;
+}
+
+    .lottableControlHolder select {
+    /* position: absolute;
+    top:-25px; */
+        display: block;
+    }
+.lottableControlHolder input {
+   width:calc(100%-80px);
+}
+    .lottableControlHolder .wmsLottableInput {
+        display: inline-block !important;
+        width: 85px !important;
+    }
+/* -- Lottable Box -- */
+
+.pnlReceivedGatePassQty{
+    float:right;
+    font-size:14px;
+    margin-top: 5px;
+}
+.wms-srv-popup{
+    overflow:auto;
+}
+.spnRunInScanMode{
+    display:inline-block;
+    margin-right:10px;
+}
+#tlbInboundGrid .wms-srv-status-progress{
+	min-width:80px;
+}

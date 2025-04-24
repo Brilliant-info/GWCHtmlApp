@@ -20,11 +20,11 @@
     margin-right: 30px;
     /* padding: 20px 10px; */
     padding: 40px 30px;
-    background-color: #00acd7;
+    background-color: #6ebf49;
     border-right: solid 1px #cccccc;
     width: 100px;
     text-align: center;
-  }
+}
 
 .import_line {
     position: absolute;
@@ -50,8 +50,8 @@
 
 .stepsNumberHolder {
     display: table;
-    border: solid 1px #00acd7;
-    background-color: #00acd7;
+    border: solid 1px #6ebf49;
+    background-color: #6ebf49;
     color: #ffffff;
     margin-left: auto;
     margin-right: auto;
@@ -126,11 +126,11 @@
 
 .wmsWizNavBack,
 .wmsWizNavNext {
-    background-color: var(--wms-color-primary);
+    background-color: #6ebf49;
     color: #ffffff;
     padding: 10px;
     text-decoration: none;
-    border: solid 1px var(--wms-color-primary);
+    border: solid 1px #6ebf49;
     border-radius: 7px;
     display: inline-block;
 }
@@ -159,8 +159,8 @@
 }
 
 .activeStep .stepsNumberHolder {
-    border: solid 1px var(--wms-color-secondary);
-    background-color: var(--wms-color-secondary);
+    border: solid 1px #407428;
+    background-color: #407428;
 }
 
 .stepsNumberHolder span {
@@ -513,6 +513,7 @@ td.errorCell i {
     border-right: solid 1px #ff0000;
     height: 100%;
 }
+
 .WmsImportOptionPopup {
     position: fixed;
     top: 0px;
@@ -521,16 +522,29 @@ td.errorCell i {
     height: 100%;
     z-index: 9;
 }
+
 #btnCloseImportPopup {
     float: right;
     margin-top: 3px;
     cursor: pointer;
 }
+
 #btnCloseImportPopup i {
     position: static;
     font-size: 20px;
 }
+
 .WmsImportOptionPopup .themeWMSPopupLabel{
     white-space:nowrap;
     width:100%;
+}
+
+.themeWMSAjaxTabPageTitle {
+    color: #407428;
+}
+
+.themeWMSAjaxTabPageTitle i {
+    background-color: #407428;
+    border: solid 1px #407428;
+    color:#ffffff;
 }

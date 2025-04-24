@@ -17,7 +17,7 @@ var wmsAppPath = null;
 var appDomain = 'http://localhost';
 
 //var appMainFolder = '/EASYCLOUDWMSUAT';
-var appMainFolder = '/BWMSWebApp2.2';
+var appMainFolder = '/GWCHtmlApp';
 //var appMainFolder = '';
 
 var apiDomain = 'http://localhost:5230/';

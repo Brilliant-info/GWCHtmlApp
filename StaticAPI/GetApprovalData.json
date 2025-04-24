@@ -1,0 +1,55 @@
+{
+    "Status": "200",
+    "StatusCode": "Success",
+  "Result": {
+    "Table": [
+      {
+        "Application": "VC1103",
+        "Object": "Normal Order"
+      }
+    ],
+    "Table1": [
+      {
+        "ApproverID": 251394,
+        "ApproverName": "Suresh Jadhav",
+        "ApproLevel": "1",
+        "ApproEvent": "Order Approval",
+        "Condition": "",
+        "ApprovalDate": "06-Mar-2025",
+        "Remark": "Boxes are in good condition",
+        "ApprovalFlag": "",
+        "Status": "Approved",
+        "Approvedby": "Suresh Jadhav"
+      },
+      {
+        "ApproverID": 251395,
+        "ApproverName": "Manish Jain",
+        "ApproLevel": "2",
+        "ApproEvent": "Order Approval",
+        "Condition": "",
+        "ApprovalDate": "15-Mar-2025",
+        "Remark": "Quantity matched",
+        "ApprovalFlag": "",
+        "Status": "Approved",
+        "Approvedby": "Manish Jain"
+      },
+      {
+        "ApproverID": 1,
+        "ApproverName": "Rajesh Wagh",
+        "ApproLevel": "3",
+        "ApproEvent": "Order Approval",
+        "Condition": "",
+        "ApprovalDate": "28-Mar-2025",
+        "Remark": "",
+        "ApprovalFlag": "",
+        "Status": "",
+        "Approvedby": "Rajesh Wagh"
+      }
+    ],
+    "Table2": [
+      {
+        "CurrentLevel": "Level 3"
+      }
+    ]
+  }
+}

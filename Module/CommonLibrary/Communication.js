@@ -1,6 +1,6 @@
 var communicationOrderId = '';
 var communicationObject = '';
-var communicationHeadData = '';
+var communicationHeadData = 'Request No|VC1103,Department|Vodafone Business,Request Date|15-Jan-2025,Request By|Mahesh Mane';
 
 var globalFileName = [];
 var globalFilePath = [];
@@ -10,7 +10,9 @@ function openCommunicationObject(oid, obj, objectHeadData) {
     switchToCommunicationList();
     communicationOrderId = oid;
     communicationObject = obj;
-    communicationHeadData = objectHeadData;
+    if (objectHeadData != null) {
+        communicationHeadData = objectHeadData;
+    }
     globalFileName = [];
     globalFilePath = [];
     getCommunicationListByObject();
@@ -50,7 +52,12 @@ function getCommunicationListByObject(){
         "OrderId": communicationOrderId,
         "UserId": getUserId,
         "ObjectName": communicationObject
-      };
+    };
+
+    // STATIC API FOR THE LIST
+    apiPath = "StaticAPI/GetCommunicationList.json";
+    postData = null;
+    // STATIC API FOR THE LIST
         callHttpUrl(apiPath, postData, function (data) {
           var getStatus = data.Status;
           var getStatusCode = data.StatusCode;
@@ -72,7 +79,7 @@ function getCommunicationListByObject(){
 
                  var strDocumentRow =   ' <div class="row">'+
                          '<div class="col-md-1">'+
-                         '<img class="wmsTicketProfilePic" src="" style="width: 100%;">'+
+                         '<img class="wmsTicketProfilePic" src="Images/User2.jpg" style="width: 100%;">'+
                          '</div>'+
                          '<div class="col-md-11">'+
                          '<div class="wmsChatBoxHolder">'+
@@ -99,7 +106,8 @@ function getCommunicationListByObject(){
                          '</div>'+
                          '</div>'+
                          '</div>'
-              $('#wmsCommunicationListHolder').append(strDocumentRow);
+                $('#wmsCommunicationListHolder').append(strDocumentRow);
+                $('.pnlCommunicationGrid .wms-srv-grid-scroller').css('width','auto');
             }
           } else {
             alert('getMessage');
@@ -144,6 +152,7 @@ function switchToCommunicationList() {
     $('#wms-srv-attachment-files').html('');
     globalFileName = [];
     globalFilePath = [];
+    $('.pnlCommunicationGrid .wms-srv-grid-scroller').css('width', 'auto');
 }
 
 function SaveCommunication() 

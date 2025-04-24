@@ -1,0 +1,38 @@
+{
+  "Status": "200",
+  "StatusCode": "Success",
+  "Result": {
+    "Table": [
+      {
+        "Title": "VFQORDER35",
+        "CustomerOrderRefNo": "VFQORDER35",
+        "RequestNo": "vf113",
+        "Status": "Request Sent for Approval",
+        "StatusId": "2",
+        "CustomerName": "Vodafone Technical",
+        "CustomerId": "10153",
+        "Department": "Vodafone Business",
+        "DepartmentId": "10179",
+        "RequestedBy": "Saurav Sa",
+        "RequestedById": "10839",
+        "RequestedDate": "15-Jan-2025",
+        "ExpDeliveryDate": "15-Jan-2025",
+        "DefaultContact": "Ashish",
+        "AlternateContact": "",
+        "LocationID": "70010  Corporate Care for Swap",
+        "AlternateDeliveryAddress": "",
+        "LocationDetails": "DOHA",
+        "AddressDetails": "",
+        "ProjectType": "TestCustom",
+        "SiteCode": "TestC123",
+        "SiteName": "TestC123",
+        "Latitude": "345",
+        "Longitude": "23",
+        "AccessRequirement": "Test",
+        "Remark": "",
+        "PaymentMethod": "None(Default)",
+        "PaymentMethodId": "1"
+      }
+    ]
+  }
+}

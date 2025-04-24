@@ -27,3 +27,6 @@
 	color: #ffffff;
 	border-color: #ff0000;
 }
+#pnlCommunication .wms-srv-richtexteditor .btn-group .btn {
+	padding: 7px 7px;
+}

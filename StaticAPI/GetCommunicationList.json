@@ -1,0 +1,35 @@
+{
+    "Status": "200",
+    "StatusCode": "Success",
+    "Result": {
+      "Table": [
+        {
+          "ID": 251394,
+          "replyby": "Ramesh Nagpure",
+          "date": "15-Jan-2025",
+          "Message": "Here are documents for the order",
+          "Attachment1": "251394/attachment1.jpg",
+          "attachment2": "251394/attachment2.jpg",
+          "ReferenceId": "0"
+        },
+        {
+          "ID": 251395,
+          "replyby": "Manish Murti",
+          "date": "20-Jan-2025",
+          "Message": "Please provide with your signature",
+          "Attachment1": "",
+          "attachment2": "",
+          "ReferenceId": "251394"
+        },
+        {
+          "ID": 251394,
+          "replyby": "Ramesh Nagpure",
+          "date": "15-Jan-2025",
+          "Message": "I have signed the document. Please check it again.",
+          "Attachment1": "251394/attachment120.jpg",
+          "attachment2": "251394/attachment240.jpg",
+          "ReferenceId": "251395"
+        }
+      ]
+    }
+}

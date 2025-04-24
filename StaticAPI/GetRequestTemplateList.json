@@ -1,0 +1,98 @@
+{
+    "Status": "200",
+    "StatusCode": "Success",
+    "Result": {
+      "Table": [
+        {
+          "ID": 70524,
+          "TemplateTitle": "Request Template 01",
+          "CreatedBy": "Ramesh Jadhav",
+          "AccessType": "Private",
+          "Department": "ENTC",
+          "CreatedDate": "06-Jan-2025",
+          "Active": "Yes"
+        },
+        {
+          "ID": 70525,
+          "TemplateTitle": "Request Template 02",
+          "CreatedBy": "Ramesh Jadhav",
+          "AccessType": "Private",
+          "Department": "ENTC",
+          "CreatedDate": "07-Jan-2025",
+          "Active": "Yes"
+        },
+        {
+          "ID": 70526,
+          "TemplateTitle": "Request Template 03",
+          "CreatedBy": "Ramesh Jadhav",
+          "AccessType": "Private",
+          "Department": "ENTC",
+          "CreatedDate": "08-Jan-2025",
+          "Active": "No"
+        },
+        {
+          "ID": 70527,
+          "TemplateTitle": "Request Template 04",
+          "CreatedBy": "Ramesh Jadhav",
+          "AccessType": "Private",
+          "Department": "ENTC",
+          "CreatedDate": "09-Feb-2025",
+          "Active": "Yes"
+        },
+        {
+          "ID": 70528,
+          "TemplateTitle": "Request Template 05",
+          "CreatedBy": "Ramesh Jadhav",
+          "AccessType": "Private",
+          "Department": "ENTC",
+          "CreatedDate": "10-Feb-2025",
+          "Active": "Yes"
+        },
+        {
+          "ID": 70529,
+          "TemplateTitle": "Request Template 06",
+          "CreatedBy": "Ramesh Jadhav",
+          "AccessType": "Private",
+          "Department": "ENTC",
+          "CreatedDate": "11-Feb-2025",
+          "Active": "No"
+        },
+        {
+          "ID": 70530,
+          "TemplateTitle": "Request Template 07",
+          "CreatedBy": "Ramesh Jadhav",
+          "AccessType": "Private",
+          "Department": "ENTC",
+          "CreatedDate": "12-March-2025",
+          "Active": "Yes"
+        },
+        {
+          "ID": 70531,
+          "TemplateTitle": "Request Template 08",
+          "CreatedBy": "Ramesh Jadhav",
+          "AccessType": "Private",
+          "Department": "ENTC",
+          "CreatedDate": "13-March-2025",
+          "Active": "Yes"
+        },
+        {
+          "ID": 70532,
+          "TemplateTitle": "Request Template 09",
+          "CreatedBy": "Ramesh Jadhav",
+          "AccessType": "Private",
+          "Department": "ENTC",
+          "CreatedDate": "14-April-2025",
+          "Active": "No"
+        },
+        {
+          "ID": 70533,
+          "TemplateTitle": "Request Template 10",
+          "CreatedBy": "Ramesh Jadhav",
+          "AccessType": "Private",
+          "Department": "ENTC",
+          "CreatedDate": "15-April-2025",
+          "Active": "Yes"
+        }
+      ]
+    }
+}

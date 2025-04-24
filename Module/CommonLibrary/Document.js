@@ -2,7 +2,7 @@ var getCustomerId = $('#ddlcustomer').val();
 var getWarehouseID = $('#ddlwarehouse').val();
 var documentOrderId = '';
 var documentObject = '';
-var documentHeadData = '';
+var documentHeadData = 'Request No|VC1103,Department|Vodafone Business,Request Date|15-Jan-2025,Request By|Mahesh Mane';
 var globalFileName = [];
 var globalFilePath = [];
 
@@ -14,8 +14,10 @@ function openDocumentObject(oid, obj, wmsHeadGridId) {
   globalFileName = [];
   globalFilePath = [];
   documentOrderId = oid;
-  documentObject = obj;
-  documentHeadData = wmsHeadGridId;
+    documentObject = obj;
+    if (wmsHeadGridId != null) {
+        documentHeadData = wmsHeadGridId;
+    }
   getDocumentListByObject();
   $('#wms-srv-document-popup').show();
   $('#wms-srv-document-popup-close').off();
@@ -67,7 +69,13 @@ function getDocumentListByObject() {
     "UserId": getUserId,
     "ReferenceID": documentOrderId,
     "ObjectName": documentObject
-  };
+    };
+
+    // STATIC API DATA
+    apiPath = "StaticAPI/GetDocumentList.json";
+    postData = null;
+    // STATIC API DATA
+
   callHttpUrl(apiPath, postData, function (data) {
     var getStatus = data.Status;
     var getStatusCode = data.StatusCode;

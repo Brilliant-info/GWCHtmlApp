@@ -1,188 +1,255 @@
 {
-    "Setup":[
-        {
-            "Default":"Setup",
-            "Modules":[{
-                "Setup":"Setup"
-            }]
-        }
+    "Setup": [
+      {
+        "Default": "Setup",
+        "Modules": [
+          {
+            "Setup": "Setup"
+          }
+        ]
+      }
     ],
-    "Dashboard":[
-        {
-            "Default":"Dashboard",
-            "Modules":[{
-                "Dashboard":"Dashboard"
-            }]
-        }
+    "Dashboard": [
+      {
+        "Default": "Dashboard",
+        "Modules": [
+          {
+            "Dashboard": "Dashboard"
+          }
+        ]
+      }
     ],
-    
-    "Inward":[
-        {
-            "Default":"InwardList",
-          "Modules": [
-            {
-              "InwardList": "InwardList",
-              "PurchaseOrder": "PurchaseOrder",
-              "GoodReceiptNotes": "GoodReceiptNotes",
-              "QualityCheck": "QualityCheck",
-              "PutIn": "PutIn"
-            }
-          ]
-        }
+  
+    "Request": [
+      {
+        "Default": "Request",
+        "Modules": [
+          {
+            "Request": "Request",
+            "PurchaseOrder": "PurchaseOrder",
+            "GoodReceiptNotes": "GoodReceiptNotes",
+            "QualityCheck": "QualityCheck",
+            "PutIn": "PutIn"
+          }
+        ]
+      }
     ],
-	 
-    "Outward":[
-        {
-            "Default":"OutwardList",
-            "Modules":[{
-                "OutwardList":"OutwardList",
-                "SalesOrder":"SalesOrder",
-                "AllocationPlan":"AllocationPlan",
-                "Pickup":"Pickup",
-                "QualityCheck":"QualityCheck",
-                "Packing":"Packing",
-                "Dispatch":"Dispatch",
-                "OutwardFilter":"OutwardFilter"
-            }]
-        }
+  
+    "Approval": [
+      {
+        "Default": "Approval",
+        "Modules": [
+          {
+            "Approval": "Approval"
+          }
+        ]
+      }
     ],
-    "DemandPortal":[
-        {
-            "Default":"DemandPortal",
-            "Modules":[{
-                "DemandPortal":"DemandPortal"
-            }]
-        }
+  
+    "ReturnOrder": [
+      {
+        "Default": "ReturnOrder",
+        "Modules": [
+          {
+            "ReturnOrder": "ReturnOrder"
+          }
+        ]
+      }
     ],
-    
-    "Inventory":[
-        {
-            "Default":"Inventory",
-            "Modules":[{
-                "Inventory":"Inventory"                
-            }]
-        }
+  
+    "Dispatch": [
+      {
+        "Default": "Dispatch",
+        "Modules": [
+          {
+            "Dispatch": "Dispatch"
+          }
+        ]
+      }
     ],
-    "Subscription":[
-        {
-            "Default":"Subscription",
-            "Modules":[{
-                "Subscription":"Subscription"
-            }]
-        }
+  
+    "Outward": [
+      {
+        "Default": "OutwardList",
+        "Modules": [
+          {
+            "OutwardList": "OutwardList",
+            "SalesOrder": "SalesOrder",
+            "AllocationPlan": "AllocationPlan",
+            "Pickup": "Pickup",
+            "QualityCheck": "QualityCheck",
+            "Packing": "Packing",
+            "Dispatch": "Dispatch",
+            "OutwardFilter": "OutwardFilter"
+          }
+        ]
+      }
     ],
-    "TaskAssignment":[
-        {
-            "Default":"TaskAssignment",
-            "Modules":[{
-                "TaskAssignment":"TaskAssignment"
-            }]
-        }
+    "DemandPortal": [
+      {
+        "Default": "DemandPortal",
+        "Modules": [
+          {
+            "DemandPortal": "DemandPortal"
+          }
+        ]
+      }
     ],
-    "Administrator":[
-        {
-            "Default":"Administrator",
-            "Modules":[{
-                "Administrator":"Administrator",
-                "UserMaster":"UserMaster",
-                "CustomerMaster":"CustomerMaster",
-                "WarehouseMaster":"WarehouseMaster",
-                "ProductMaster":"ProductMaster",
-                "VendorMaster":"VendorMaster",
-                "ClientMaster":"ClientMaster",
-                "QueryBuilder":"QueryBuilder",
-                "BarcodeConfiguration":"BarcodeConfiguration",
-                "BusinessRule":"BusinessRule",
-                "ThirdPartyConfiguration":"ThirdPartyConfiguration",
-                "EmailNotification":"EmailNotification",
-                "RFIDTagging":"RFIDTagging",
-                "ReportSetup":"ReportSetup",
-                "CycleCount":"CycleCount",
-                "ImportDesigner":"ImportDesigner",
-                "CompanyMaster":"CompanyMaster",
-				"SkuConversion":"SkuConversion"
-               
-               
-            }]
-        }
+  
+    "Inventory": [
+      {
+        "Default": "Inventory",
+        "Modules": [
+          {
+            "Inventory": "Inventory"
+          }
+        ]
+      }
     ],
-
-    "Import":[
-        {
-            "Default":"Import",
-            "Modules":[{
-                "Import":"Import"
-            }]
-        }
+    "Subscription": [
+      {
+        "Default": "Subscription",
+        "Modules": [
+          {
+            "Subscription": "Subscription"
+          }
+        ]
+      }
     ],
- "Transfer":[
-        {
-            "Default":"Transfer",
-            "Modules":[{
-                "Transfer":"Transfer",
-                "SkuConversion":"SkuConversion",
-                "InternalTransfer":"InternalTransfer"
-            }]
-        }
+    "TaskAssignment": [
+      {
+        "Default": "TaskAssignment",
+        "Modules": [
+          {
+            "TaskAssignment": "TaskAssignment"
+          }
+        ]
+      }
     ],
-
-    "Report":[
-        {
-            "Default":"Report",
-            "Modules":[{
-                "Report":"Report"
-            }]
-        }
+    "Administrator": [
+      {
+        "Default": "Administrator",
+        "Modules": [
+          {
+            "Administrator": "Administrator",
+            "UserMaster": "UserMaster",
+            "CustomerMaster": "CustomerMaster",
+            "WarehouseMaster": "WarehouseMaster",
+            "ProductMaster": "ProductMaster",
+            "VendorMaster": "VendorMaster",
+            "ClientMaster": "ClientMaster",
+            "QueryBuilder": "QueryBuilder",
+            "BarcodeConfiguration": "BarcodeConfiguration",
+            "BusinessRule": "BusinessRule",
+            "ThirdPartyConfiguration": "ThirdPartyConfiguration",
+            "EmailNotification": "EmailNotification",
+            "RFIDTagging": "RFIDTagging",
+            "ReportSetup": "ReportSetup",
+            "CycleCount": "CycleCount",
+            "ImportDesigner": "ImportDesigner",
+            "CompanyMaster": "CompanyMaster",
+            "SkuConversion": "SkuConversion"
+  
+  
+          }
+        ]
+      }
     ],
-
-    "Label":[
-        {
-            "Default":"Label",
-            "Modules":[{
-                "Label":"Label"
-            }]
-        }
+  
+    "Import": [
+      {
+        "Default": "Import",
+        "Modules": [
+          {
+            "Import": "Import"
+          }
+        ]
+      }
     ],
-	
-	 "3PLBilling":[
-        {
-            "Default":"3PLBilling",
-            "Modules":[{
-                "3PLBilling":"3PLBilling"
-            }]
-        }
+    "Transfer": [
+      {
+        "Default": "Transfer",
+        "Modules": [
+          {
+            "Transfer": "Transfer",
+            "SkuConversion": "SkuConversion",
+            "InternalTransfer": "InternalTransfer"
+          }
+        ]
+      }
     ],
-    "Transload":[
-        {
-            "Default":"Transload",
-            "Modules":[{
-                "Transload":"Transload"
-            }]
-        }
+  
+    "Report": [
+      {
+        "Default": "Report",
+        "Modules": [
+          {
+            "Report": "Report"
+          }
+        ]
+      }
     ],
-    "Production":[
-        {
-            "Default":"Production",
-            "Modules":[{
-                "Production":"Production",
-                "ProductionRequest":"ProductionRequest",
-                "ProductionIssue":"ProductionIssue"
-            }]
-        }
+  
+    "Label": [
+      {
+        "Default": "Label",
+        "Modules": [
+          {
+            "Label": "Label"
+          }
+        ]
+      }
     ],
-    "CommonLibrary":[
-        {
-            "Default":"",
-            "Modules":[{
-                "Transport":"Transport",
-                "Communication":"Communication",
-                "Document":"Document",
-                "Approval":"Approval",
-                "SuggestionList":"SuggestionList",
-                "UserPreference":"UserPreference",
-                "TaskAssignment":"TaskAssignment"
-            }]
-        }
+  
+    "3PLBilling": [
+      {
+        "Default": "3PLBilling",
+        "Modules": [
+          {
+            "3PLBilling": "3PLBilling"
+          }
+        ]
+      }
+    ],
+    "Transload": [
+      {
+        "Default": "Transload",
+        "Modules": [
+          {
+            "Transload": "Transload"
+          }
+        ]
+      }
+    ],
+    "Production": [
+      {
+        "Default": "Production",
+        "Modules": [
+          {
+            "Production": "Production",
+            "ProductionRequest": "ProductionRequest",
+            "ProductionIssue": "ProductionIssue"
+          }
+        ]
+      }
+    ],
+    "CommonLibrary": [
+      {
+        "Default": "",
+        "Modules": [
+          {
+            "ChatBot": "ChatBot",
+            "PurchaseOrder": "PurchaseOrder",
+            "Transport": "Transport",
+            "Communication": "Communication",
+            "Document": "Document",
+            "Approval": "Approval",
+            "SuggestionList": "SuggestionList",
+            "UserPreference": "UserPreference",
+            "TaskAssignment": "TaskAssignment"
+          }
+        ]
+      }
     ]
-    
-}
+  
+  }

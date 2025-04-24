@@ -87,7 +87,7 @@
                 "MenuLevel": 2,
                 "parentID": 0,
                 "MenuIcon": "fas fa-undo",
-                "MenuURL": "Return Order",
+                "MenuURL": "ReturnOrder",
                 "GroupName": "Printables",
                 "Add": 1,
                 "Edit": 1,

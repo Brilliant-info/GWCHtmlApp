@@ -1,0 +1,362 @@
+<div id="pnlRequestTemplate" class="wmsMasterTypePage" style="display: none;">
+    <div class="wms-srv-content-area pnlInbound">
+        <!-- Dashboard Area -->
+        <div class="container-fluid wms-srv-dashboard-panel">
+            <div class="row">
+                <div class="col-md-4 nopadding">
+                    <!-- Page Title -->
+                    <div class="wms-srv-page-title">
+                        <i class="fas fa-user"></i><span class="wms-srv-data-title">Request Template List</span>
+                    </div>
+                    <!-- Page Title -->
+                </div>
+                <div class="col-md-8 nopadding">
+                </div>
+            </div>
+        </div>
+        <!-- Dashboard Area -->
+        <!-- Head Grid -->
+        <div class="wms-srv-grid-holder pnlWmsHead" id="pnlWmsHead" style="display: none;">
+            <div class="wms-srv-grid">
+                <!-- Object Head Data Will be Here -->
+            </div>
+        </div>
+        <br>
+        <!-- Head Grid -->
+        <!-- Grid -->
+        <div class="wms-srv-obj-main-grid pnlWmsDetail">
+            <div class="wms-srv-grid-action-panel">
+                <div class="wms-srv-grid-common-action">
+                    <a href="#" class="wms-srv-icononly">
+                        <i class="fas fa-list"></i>
+                    </a>
+                </div>
+                <div class="wms-srv-search">
+                    <label> Search Filter: </label>
+                    <select type="text" id="ddlsearch" class="wms-srv-input wms-srv-search-filter">
+                        <option value="">--Select Filter--</option>
+                        <option value="Template Title">Template Title</option>
+                        <option value="Department">Department</option>
+                    </select>
+                    <input type="text" value="" id="txtvalue" class="wms-srv-input wms-srv-simple-search"><a href="#"
+                        data-prefix="SE">
+                        <i class="fas fa-search" title="Search" onclick=""></i>
+                    </a>
+                </div>
+                <button class="wms-srv-input" style="background-color: #6ebf49;color:white;" title="Add New"
+                    onclick="openpopupAddNew();" type="button">
+                    <span>Add New</span>
+                </button>
+
+                <div class="wms-srv-grid-title">
+                    Request Template List
+                </div>
+            </div>
+            <div class="wms-srv-grid-scroller">
+                <div class="wms-srv-grid" id="" style="text-align: center;">
+                    <div class="wms-srv-grid-header">
+                        <div class="wms-srv-grid-cell">Template Title</div>
+                        <div class="wms-srv-grid-cell">Created By</div>
+                        <div class="wms-srv-grid-cell">Access Type</div>
+                        <div class="wms-srv-grid-cell">Department</div>
+                        <div class="wms-srv-grid-cell">Created Date</div>
+                        <div class="wms-srv-grid-cell">Active</div>
+                        <div class="wms-srv-grid-cell">Action</div>
+                    </div>
+                    <div class="wms-srv-grid-row" style="text-align: center;">
+                        <div class="wms-srv-grid-cell">TestCustom</div>
+                        <div class="wms-srv-grid-cell">TestCustom</div>
+                        <div class="wms-srv-grid-cell">TestCustom</div>
+                        <div class="wms-srv-grid-cell">TestCustom</div>
+                        <div class="wms-srv-grid-cell">TestCustom</div>
+                        <div class="wms-srv-grid-cell">Yes</div>
+                        <div class="wms-srv-grid-cell">
+                            <div class="wms-srv-grid-action">
+                                <i class="fas fa-edit" title="edit" onclick="openpopupEdit();" id="showelenn"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Grid -->
+    </div>
+    <!-- ALL POPUP AREA -->
+
+    <!--Add New popup-->
+    <div class="wms-srv-popup-holder" id="wms-srv-Request-New-popup" style="display:none;">
+        <div class="wms-srv-popup-bg">
+        </div>
+        <div class="wms-srv-popup">
+            <div class="wms-srv-popup-content">
+                <div class="wms-srv-popup-title">
+                    <div class="wms-srv-page-title">
+                        <i class="fas fa-user"></i><span>Request info</span>
+                    </div>
+                    <a href="#" title="Close" id="wms-srv-Request-New-popup-close" class="wms-srv-popup-close"><i
+                            class="fas fa-times-circle"></i></a>
+                </div>
+                <div class="wms-srv-popup-content-body" id="wms-srv-popup-content-body">
+                    <div class="wms-srv-grid-holder pnlWmsDetail" id="wms-srv-edit-popup">
+                        <div class="wms-srv-grid">
+                            <div class="wms-srv-grid-header">
+                                <div class="wms-srv-grid-cell" style="text-align: center;">Title</div>
+                                <div class="wms-srv-grid-cell" style="text-align: center;">Access Type</div>
+                                <div class="wms-srv-grid-cell" style="text-align: center;">Customer Name</div>
+                            </div>
+                            <div class="wms-srv-grid-row">
+                                <div class="wms-srv-grid-cell">
+                                    <input type="text" value="" id="" class="wms-srv-grid-cell-input" />
+                                </div>
+                                <div class="wms-srv-grid-cell">
+                                    <select class="wms-srv-grid-cell-input" id="">
+                                        <option value="">-- Select --</option>
+                                    </select>
+                                </div>
+                                <div class="wms-srv-grid-cell">
+                                    <select class="wms-srv-grid-cell-input" id="">
+                                        <option value="">-- Select --</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <br />
+                        <div class="wms-srv-grid">
+                            <div class="wms-srv-grid-header">
+                                <div class="wms-srv-grid-cell" style="text-align: center;">Department</div>
+                                <div class="wms-srv-grid-cell" style="text-align: center;">Remark</div>
+                            </div>
+                            <div class="wms-srv-grid-row">
+                                <div class="wms-srv-grid-cell">
+                                    <select class="wms-srv-grid-cell-input" id="">
+                                        <option value="">-- Select --</option>
+                                    </select>
+                                </div>
+                                <div class="wms-srv-grid-cell">
+                                    <input type="text" value="" id="" class="wms-srv-grid-cell-input" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="wms-srv-popup-content">
+                            <div class="wms-srv-popup-content-body" id="wms-srv-popup-content-body">
+                                <div class="wms-srv-grid-holder pnlWmsDetail" id="">
+                                    <!-- Popup Content Will be Here -->
+                                    <div class="wms-srv-grid-holder pnlWmsDetail">
+                                        <div class="wms-srv-obj-main-grid pnlWmsDetail">
+                                            <div class="wms-srv-grid-action-panel">
+                                                <div class="wms-srv-grid-title">
+                                                    Product List
+                                                    <button class="wms-srv-input" type="button"
+                                                        style="background-color: #6ebf49;color:white;margin-left: 1008px;"
+                                                        title="Add Items to list">
+                                                        <span>Add Items to list&nbsp;</span>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                            <div class="wms-srv-grid">
+                                                <div class="wms-srv-grid-header">
+                                                    <!-- <div class="wms-srv-grid-cell" style="text-align: center;">SrNo
+                                                    </div> -->
+                                                    <div class="wms-srv-grid-cell" style="text-align: center;">Product Code
+                                                    </div>
+                                                    <div class="wms-srv-grid-cell" style="text-align: center;">Product
+                                                        Name</div>
+                                                    <div class="wms-srv-grid-cell" style="text-align: center;">
+                                                        Description</div>
+                                                    <div class="wms-srv-grid-cell" style="text-align: center;">MOQ</div>
+                                                    <div class="wms-srv-grid-cell" style="text-align: center;">Request
+                                                        Quantity</div>
+                                                    <div class="wms-srv-grid-cell" style="text-align: center;">UOM</div>
+                                                    <div class="wms-srv-grid-cell" style="text-align: center;">Order
+                                                        Quantity</div>
+                                                
+                                                    <div class="wms-srv-grid-cell" style="text-align: center;">Price
+                                                    </div>
+                                                    <div class="wms-srv-grid-cell" style="text-align: center;">Total
+                                                    </div>
+                                                    <div class="wms-srv-grid-cell" style="text-align: center;">Action
+                                                    </div>
+                                                </div>
+                                                <div class="wms-srv-grid-row">
+                                                    <!-- <div class="wms-srv-grid-cell">1</div> -->
+                                                    <div class="wms-srv-grid-cell">Prod012</div>
+                                                    <div class="wms-srv-grid-cell">Speaker</div>
+                                                    <div class="wms-srv-grid-cell">RIL prod012</div>
+                                                    <div class="wms-srv-grid-cell">3</div>
+                                                    <div class="wms-srv-grid-cell">0.00</div>
+                                                    <div class="wms-srv-grid-cell">
+                                                        <select class="wms-srv-grid-cell-input" id="">
+                                                            <option value="">-- Select --</option>
+                                                            <option value="Dozen">Dozen</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="wms-srv-grid-cell">0</div>
+                                                    <div class="wms-srv-grid-cell">200.00</div>
+                                                    <div class="wms-srv-grid-cell">0</div>
+                                                    <div class="wms-srv-grid-cell" style="text-align: center;"> 
+                                                       <i class="fas fa-times-circle"></i> 
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Popup Content Will be Here -->
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+                        <br>
+                        <div class="btnSaveCustomerMasterHolder" style="text-align:center;">
+                            <button class="wms-srv-input" type="button" title="Save" style="background-color: #6ebf49;color:white;">
+                                <span>Save</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Add New popup-->
+
+    <!--Edit popup-->
+    <div class="wms-srv-popup-holder" id="wms-srv-Edit-Request-New-popup" style="display:none;">
+        <div class="wms-srv-popup-bg">
+        </div>
+        <div class="wms-srv-popup">
+            <div class="wms-srv-popup-content">
+                <div class="wms-srv-popup-title">
+                    <div class="wms-srv-page-title">
+                        <i class="fas fa-user"></i><span>Request info</span>
+                    </div>
+                    <a href="#" title="Close" id="wms-srv-Request-New-popup-closeo" class="wms-srv-popup-close"><i
+                            class="fas fa-times-circle"></i></a>
+                </div>
+                <div class="wms-srv-popup-content-body" id="wms-srv-popup-content-body">
+                    <div class="wms-srv-grid-holder pnlWmsDetail" id="wms-srv-edit-popup">
+                        <div class="wms-srv-grid">
+                            <div class="wms-srv-grid-header">
+                                <div class="wms-srv-grid-cell" style="text-align: center;">Title</div>
+                                <div class="wms-srv-grid-cell" style="text-align: center;">Access Type</div>
+                                <div class="wms-srv-grid-cell" style="text-align: center;">Customer Name</div>
+                            </div>
+                            <div class="wms-srv-grid-row">
+                                <div class="wms-srv-grid-cell">
+                                    <input type="text" value="TestCustom" id="txtEditAddressLine1"
+                                        class="wms-srv-grid-cell-input" />
+                                </div>
+                                <div class="wms-srv-grid-cell">
+                                    <select class="wms-srv-grid-cell-input" id="">
+                                        <option value="">-- Select --</option>
+                                        <option value="">Private</option>
+                                        <option value="">Public</option>
+                                    </select>
+                                </div>
+                                <div class="wms-srv-grid-cell">
+                                    <select class="wms-srv-grid-cell-input" id="">
+                                        <option value="">-- Select --</option>
+                                        <!-- <option value=""></option> -->
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <br />
+                        <div class="wms-srv-grid">
+                            <div class="wms-srv-grid-header">
+                                <div class="wms-srv-grid-cell" style="text-align: center;">Department</div>
+                                <div class="wms-srv-grid-cell" style="text-align: center;">Remark</div>
+                            </div>
+                            <div class="wms-srv-grid-row">
+                                <div class="wms-srv-grid-cell">
+                                    <select class="wms-srv-grid-cell-input" id="">
+                                        <option value="">-- Select --</option>
+                                        <option selected="selected">ENTC</option>
+                                        <option value="">IndustrialDept</option>
+                                    </select>
+                                </div>
+                                <div class="wms-srv-grid-cell">
+                                    <input type="text" value="" id="txtEditAddressLine1"
+                                        class="wms-srv-grid-cell-input" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="wms-srv-popup-content">
+                            <div class="wms-srv-popup-content-body" id="wms-srv-popup-content-body">
+                                <div class="wms-srv-grid-holder pnlWmsDetail" id="">
+                                    <!-- Popup Content Will be Here -->
+                                    <div class="wms-srv-grid-holder pnlWmsDetail">
+                                        <div class="wms-srv-obj-main-grid pnlWmsDetail">
+                                            <div class="wms-srv-grid-action-panel">
+                                                <div class="wms-srv-grid-title">
+                                                    Product List
+                                                    <button class="wms-srv-input" type="button"
+                                                        style="background-color: #6ebf49;color:white;margin-left: 1008px;"
+                                                        title="Add Items to list">
+                                                        <span>Add Items to list&nbsp;</span>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                            <div class="wms-srv-grid">
+                                                <div class="wms-srv-grid-header">
+                                                    <!-- <div class="wms-srv-grid-cell" style="text-align: center;">SrNo
+                                                    </div> -->
+                                                    <div class="wms-srv-grid-cell" style="text-align: center;">Product Code
+                                                    </div>
+                                                    <div class="wms-srv-grid-cell" style="text-align: center;">Product
+                                                        Name</div>
+                                                    <div class="wms-srv-grid-cell" style="text-align: center;">
+                                                        Description</div>
+                                                    <div class="wms-srv-grid-cell" style="text-align: center;">MOQ</div>
+                                                    <div class="wms-srv-grid-cell" style="text-align: center;">Request
+                                                        Quantity</div>
+                                                    <div class="wms-srv-grid-cell" style="text-align: center;">UOM</div>
+                                                    <div class="wms-srv-grid-cell" style="text-align: center;">Order
+                                                        Quantity</div>
+                                                
+                                                    <div class="wms-srv-grid-cell" style="text-align: center;">Price
+                                                    </div>
+                                                    <div class="wms-srv-grid-cell" style="text-align: center;">Total
+                                                    </div>
+                                                    <div class="wms-srv-grid-cell" style="text-align: center;">Action
+                                                    </div>
+                                                </div>
+                                                <div class="wms-srv-grid-row">
+                                                    <!-- <div class="wms-srv-grid-cell">1</div> -->
+                                                    <div class="wms-srv-grid-cell">Prod012</div>
+                                                    <div class="wms-srv-grid-cell">Speaker</div>
+                                                    <div class="wms-srv-grid-cell">RIL prod012</div>
+                                                    <div class="wms-srv-grid-cell">3</div>
+                                                    <div class="wms-srv-grid-cell">0.00</div>
+                                                    <div class="wms-srv-grid-cell">
+                                                        <select class="wms-srv-grid-cell-input" id="">
+                                                            <option value="">-- Select --</option>
+                                                            <option value="Dozen">Dozen</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="wms-srv-grid-cell">0</div>
+                                                    <div class="wms-srv-grid-cell">200.00</div>
+                                                    <div class="wms-srv-grid-cell">0</div>
+                                                    <div class="wms-srv-grid-cell" style="text-align: center;"> 
+                                                       <i class="fas fa-times-circle"></i> 
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Popup Content Will be Here -->
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+                        <br>
+                        <div class="btnSaveCustomerMasterHolder" style="text-align:center;">
+                            <button class="wms-srv-input" type="button" title="Save" style="background-color: #6ebf49;color:white;">
+                                <span>Save</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Edit popup-->
+</div>

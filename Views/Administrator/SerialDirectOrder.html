@@ -1,0 +1,392 @@
+<div id="pnlSerialDirectOrder" class="wmsMasterTypePage" style="display: block;">
+    <input type="hidden" value="" id="hdnImportSessionId" />
+    <div class="wms-srv-content-area pnlInbound" id="pnlAppointmentList">
+        <!-- <div class="wms-srv-page-title">
+            <i class="fas fa-file-import"></i> <span class="wms-srv-data-title">Import</span>
+        </div> -->
+        <!-- <hr style="border-bottom: 2px dashed #636363;"> -->
+        <div id="divCPHolder_Form" class="fixed_page content" style="font-size: small; text-align: left;
+        vertical-align: bottom; height: 85%; overflow: auto;">
+        <contenttemplate>
+           <link id="ctl00_CPHolder_Form_UcImport_wmsMainThemeCss" href="../App_Themes/wms-style.css" rel="stylesheet">
+           <link id="ctl00_CPHolder_Form_UcImport_wmsThemeSet" href="../App_Themes/wms-color-theme.css" rel="stylesheet">
+           <link href="../App_Themes/wms-dashboard.css" rel="stylesheet">
+           <div id="divimport" title="Import" class="themeWMSImportSection">
+              <div id="ctl00_CPHolder_Form_UcImport_UpdateGirdProductProcess" style="display:none;height: 500px; width: 100%; position: absolute;" role="status" aria-hidden="true">
+                 <center>
+                    <div class="modal noProgressBorder" style="height:500px;width:100%;display:block;margin-top:40px;">
+                       <img src="../App_Themes/Blue/img/test-mentor-loading.gif" style="top: 50%;">      
+                    </div>
+                 </center>
+              </div>
+              <div id="ctl00_CPHolder_Form_UcImport_Up_PnlGirdProduct">
+                 <input type="hidden" name="ctl00$CPHolder_Form$UcImport$hdncustomerID" id="hdncustomerID" value="10140">
+                 <input type="hidden" name="ctl00$CPHolder_Form$UcImport$hdnexportobject" id="hdnexportobject" value="Order Import">
+                 <input type="hidden" name="ctl00$CPHolder_Form$UcImport$hdncheckvalid" id="hdncheckvalid">
+                 <div id="ctl00_CPHolder_Form_UcImport_pnlImport">
+                    <!-- Arrow Progress Set -->
+                    <div class="themeWMSImportProgressHolder">
+                       <!-- Upload File -->
+                       <div class="themeWMSImportProgressDone themeWMSProgressUploadTab">
+                          <div class="themeWMSImportArrowLeft">&nbsp;</div>
+                          <div class="themeWMSImportProgressTitle">Upload File</div>
+                          <div class="themeWMSImportArrowRight">&nbsp;</div>
+                       </div>
+                       <!-- Upload File -->
+                       <!-- Data Verification -->
+                       <div class="themeWMSImportProgressPending themeWMSProgressVerifyTab">
+                          <div class="themeWMSImportArrowLeft">&nbsp;</div>
+                          <div class="themeWMSImportProgressTitle">Data Verification</div>
+                          <div class="themeWMSImportArrowRight">&nbsp;</div>
+                       </div>
+                       <!-- Data Verification -->
+                       <!-- Data Verification -->
+                       <div class="themeWMSImportProgressPending themeWMSProgressCompleteTab">
+                          <div class="themeWMSImportArrowLeft">&nbsp;</div>
+                          <div class="themeWMSImportProgressTitle">Finished</div>
+                          <div class="themeWMSImportArrowRight">&nbsp;</div>
+                       </div>
+                       <!-- Data Verification -->
+                    </div>
+                    <!-- Arrow Progress Set -->
+                    <input type="hidden" name="ctl00$CPHolder_Form$UcImport$hdnobject" id="hdnobject" value="Order Import">
+                    <input type="hidden" name="ctl00$CPHolder_Form$UcImport$hdntablename" id="hdntablename">
+                    <center>
+                       <table cellpadding="0" cellspacing="20px" border="0" width="95%">
+                       </table>
+                       <div class="themeWMSImportTitle">
+                          Ready to Import?
+                       </div>
+                       <div class="themeWMSImportSubTitle">
+                          <span id="ctl00_CPHolder_Form_UcImport_lbltext1">Import will faciliated Order Data to be directly imported into WMS.</span><br>
+                          For Downloading Order Import Data Template 
+                          <span class="themeWMSImportHighlight"><a href="../ASNImportTemplate.xls" id="ctl00_CPHolder_Form_UcImport_downloadlink" target="_blank" class="themeWMSImportHighlight">Click Here.</a></span>
+                       </div>
+                       <br><br>
+                       <div style="text-align:center;">
+                          <div style="display:inline-block !important;">
+                             <span id="ctl00_CPHolder_Form_UcImport_lblcustomer">Select Customer :</span> 
+                             <select name="ctl00$CPHolder_Form$UcImport$ddlCustomer" id="ctl00_CPHolder_Form_UcImport_ddlCustomer" class="inputElement notranslate" onchange="GetCustomer();" onblur="validateCtl(this);" style="width:150px;">
+                                <option selected="selected" value="10140">QNBN</option>
+                                <option value="10153">Vodafone Technical</option>
+                                <option value="10202">GWC Test</option>
+                                <option value="10204">Vodafone Commercial</option>
+                                <option value="10206">Qafco</option>
+                                <option value="10223">Deliopolise</option>
+                                <option value="10233">GWC ECOMMERCE</option>
+                                <option value="10252">GPS</option>
+                                <option value="10253">GWC GPS</option>
+                                <option value="10257">GWC_HMC</option>
+                                <option value="10261">Testvodafone2</option>
+                                <option value="10266">MTEST</option>
+                                <option value="10271">SJTEST</option>
+                                <option value="10272">GPTEST</option>
+                                <option value="10273">QAcustmer</option>
+                                <option value="10274">Brillint_Info</option>
+                                <option value="10275">SJCustomer</option>
+                                <option value="10276">OMS_WMS_Company pvt ltd</option>
+                                <option value="10277">OMS_WMS PVT Ltd</option>
+                                <option value="10278">chetan infosys</option>
+                                <option value="10279">DSK HOMES</option>
+                                <option value="10280">DELL</option>
+                                <option value="10281">CDS GWC</option>
+                                <option value="10282">RMS</option>
+                                <option value="10283">TestC0709</option>
+                                <option value="10284">OPtest</option>
+                                <option value="10285">OSPtest</option>
+                                <option value="10286">customer1</option>
+                                <option value="10287">ABcust1</option>
+                                <option value="10288">customer2</option>
+                                <option value="10289">Abhijit_Customer</option>
+                                <option value="10290">Abhijit Contact</option>
+                                <option value="10291">PoojaD</option>
+                                <option value="10292">Suraj Cust</option>
+                                <option value="10293">Pooja_D</option>
+                                <option value="10294">PCC</option>
+                                <option value="10295">Abhijit Customer ecommerce</option>
+                                <option value="10296">Abhjit Customer ecomm</option>
+                                <option value="10297">PoojaE-com</option>
+                                <option value="10298">BalajiGWC</option>
+                                <option value="10299">AMCustomer</option>
+                                <option value="10300">TATAneo</option>
+                                <option value="10301">Brilliant Technical</option>
+                                <option value="10302">RJCustomer</option>
+                                <option value="10303">SK CUST</option>
+                                <option value="10304">SK CUST1</option>
+                                <option value="10305">AKCUST</option>
+                                <option value="10306">TEstCompany</option>
+                                <option value="10307">TestCustomer</option>
+                                <option value="10308">GvbTest</option>
+                                <option value="10309">TusharW</option>
+                                <option value="10310">Test_Customer@99</option>
+                                <option value="10311">Galib</option>
+                                <option value="10312">Galib_Test</option>
+                                <option value="10313">DUMMY</option>
+                                <option value="10314">CUST_DUMMY</option>
+                                <option value="10315">CUST_DUMMY1</option>
+                                <option value="10316">CUSTGK</option>
+                                <option value="10317">TESTGK</option>
+                                <option value="10318">ORDERGK</option>
+                                <option value="10319">GWCTesting</option>
+                                <option value="10320">GWC@Testing </option>
+                                <option value="10321">Test GWC</option>
+                                <option value="10322">GWC@123</option>
+                             </select>
+                             <input type="hidden" name="ctl00$CPHolder_Form$UcImport$hdnSelectedCustomer" id="hdnSelectedCustomer">
+                          </div>
+                          <span id="ctl00_CPHolder_Form_UcImport_lblSelecFile">Select Import File</span> : <input type="file" name="ctl00$CPHolder_Form$UcImport$FileuploadPO" id="ctl00_CPHolder_Form_UcImport_FileuploadPO">
+                          <div class="themeWMS_ctrl_btn wms_show_ctrl" style="display:inline-block !important;">
+                             <i class="fas fa-upload"></i>
+                             <input type="submit" name="ctl00$CPHolder_Form$UcImport$btnFileUpload" value="Upload" id="ctl00_CPHolder_Form_UcImport_btnFileUpload">
+                          </div>
+                          <span id="ctl00_CPHolder_Form_UcImport_RegularExpressionValidator1" style="color:Red;visibility:hidden;">Upload only excel file</span>
+                       </div>
+                       <br>  <br>
+                       <div id="divUpload" style="display: none">
+                          <span style="text-align:center; float:inherit"><span id="ctl00_CPHolder_Form_UcImport_lbluploading" style="font-weight:bold;font-style:italic;">Uploading file...</span></span><br>
+                          <img id="ctl00_CPHolder_Form_UcImport_uploadimg" src="../images/upload-animation.gif" style="height:20px;width:380px;">
+                       </div>
+                       <table align="right">
+                          <tbody>
+                             <tr>
+                                <td>
+                                   <div class="themeWMS_ctrl_btn themeWMS_ctrl_btn_reverse wms_show_ctrl" style="display:inline-block !important;">
+                                      <i class="fas fa-arrow-right"></i>
+                                      <input type="submit" name="ctl00$CPHolder_Form$UcImport$btnImportNext" value="Next" id="ctl00_CPHolder_Form_UcImport_btnImportNext" disabled="disabled" class="aspNetDisabled inputElement" style="padding-left:10px;padding-right:10px;padding-top:5px;padding-bottom:5px; margin-right:5px;">
+                                   </div>
+                                </td>
+                                <td>
+                                   <div class="themeWMS_ctrl_btn themeWMS_ctrl_btn_reverse wms_show_ctrl" style="display:inline-block !important;">
+                                      <i class="fas fa-arrow-left"></i>
+                                      <input type="submit" name="ctl00$CPHolder_Form$UcImport$btnImportCancel" value="Back" id="ctl00_CPHolder_Form_UcImport_btnImportCancel" class="inputElement" style="padding-left:10px;padding-right:10px;padding-top:5px;padding-bottom:5px;">
+                                   </div>
+                                </td>
+                             </tr>
+                          </tbody>
+                       </table>
+                       <br><br>
+                    </center>
+                 </div>
+              </div>
+           </div>
+           <style type="text/css">
+              /*POR Collapsable Div*/
+              .class1 {
+              opacity: 0.4;
+              filter: alpha(opacity=40);
+              cursor: wait;
+              }
+              .class2 {
+              opacity: 1;
+              filter: alpha(opacity=100);
+              cursor: pointer;
+              }
+              .PanelCaption {
+              color: Black;
+              font-size: 13px; /*font-weight: bold;*/
+              margin-top: -22px;
+              margin-left: -5px;
+              position: absolute;
+              background-color: White;
+              padding: 0px 2px 0px 2px;
+              }
+              .divHead {
+              border: solid 2px #F5DEB3;
+              width: 99%;
+              text-align: left;
+              }
+              .divHead h4 {
+              /*color: #33CCFF;*/
+              color: #483D8B; /*margin: 3px 3px 3px 3px;*/
+              }
+              .divHead a {
+              float: left;
+              margin-top: -15px;
+              margin-right: 5px;
+              }
+              .divHead a:hover {
+              cursor: pointer;
+              color: Red;
+              }
+              .divDetailExpand {
+              border: solid 2px #F5DEB3;
+              border-top: none;
+              width: 99%;
+              padding: 5px 0 5px 0;
+              }
+              .divDetailCollapse {
+              display: none;
+              }
+              /*End POR Collapsable Div*/
+           </style>
+           <style type="text/css">
+              .cartStepTitle {
+              font-size: 20px;
+              color: #cccccc;
+              padding: 0px 50px 20px 0px;
+              display: inline-block;
+              padding-right: 60px;
+              font-weight: bold;
+              }
+              .divCartSymbol, .divCartCurrentSymbol {
+              position: relative;
+              top: 30px;
+              left: -10px;
+              display: inline-block;
+              background-image: url(../images/opt-bg-normal1.png);
+              background-repeat: no-repeat;
+              background-position: center center;
+              font-size: 30px;
+              font-family: Trebuchet MS, Arial;
+              color: #ffffff;
+              padding: 20px;
+              text-decoration: none;
+              overflow: hidden;
+              opacity: 0.7;
+              }
+              .tdCartStepHolder {
+              padding-left: 10px;
+              }
+              .cartStepHolder {
+              position: relative;
+              top: -10px;
+              }
+              .divCartCurrentSymbol {
+              background-image: url(../images/opt-bg-selected2.png);
+              opacity: 1;
+              }
+              .cartStepCurrentTitle {
+              color: #000000;
+              }
+              .style2 {
+              height: 47px;
+              }
+              .btnCommonStyle {
+              font-family: inherit;
+              font-weight: bold;
+              font-size: 20px;
+              color: #ffffff;
+              text-decoration: none !important;
+              padding-left: 50px;
+              padding-right: 50px;
+              padding-top: 14px;
+              padding-bottom: 14px;
+              border-radius: 7px; /* fallback */
+              background-color: #1a82f7;
+              background: url(../images/btn-common-bg.jpg);
+              background-repeat: repeat-x; /* Safari 4-5, Chrome 1-9 */
+              background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#3FC3C3), to(#339E9E)); /* Safari 5.1, Chrome 10+ */
+              background: -webkit-linear-gradient(top, #3FC3C3, #339E9E); /* Firefox 3.6+ */
+              background: -moz-linear-gradient(top, #3FC3C3, #339E9E); /* IE 10 */
+              background: -ms-linear-gradient(top, #3FC3C3, #339E9E); /* Opera 11.10+ */
+              background: -o-linear-gradient(top, #3FC3C3, #339E9E);
+              }
+              .tblcls {
+              border: solid 2px #F5DEB3;
+              }
+           </style>
+           <style type="text/css">
+              .button {
+              background: url(../App_Themes/Blue/img/Scheduleicon.png) no-repeat !important;
+              background-position: 5px center !important;
+              cursor: pointer !important;
+              background-color: #1A527D !important;
+              border: #1A527D 1px solid !important;
+              border-top-left-radius: 6px !important;
+              border-top-right-radius: 6px !important;
+              border-bottom-left-radius: 6px !important;
+              border-bottom-right-radius: 6px !important;
+              box-shadow: inset 0px 1px #81B2D7 !important;
+              padding: 5px 10px 5px 35px !important;
+              margin: 10px !important;
+              font-weight: bold !important;
+              }
+           </style>
+           <style>
+              .divViewScheduleHolder {
+              position: relative;
+              }
+              .divViewScheduleHolder .divCircleCount {
+              position: absolute;
+              background-color: #ff0000;
+              border: solid 2px #ffffff;
+              border-radius: 50%;
+              width: 30px;
+              height: 30px;
+              overflow: hidden;
+              right: -20px;
+              top: -20px;
+              box-shadow: 0px 0px 5px #636363;
+              }
+              .divCircleCount div {
+              text-align: center;
+              }
+              .divCircleCount div span {
+              color: #ffffff;
+              padding-top: 6px;
+              display: block;
+              font-weight: bold;
+              font-size: 14px;
+              }
+           </style>
+           <script type="text/javascript">
+              function OpenSerial() {
+                  var Serialstring = document.getElementById("hdnnotavailserial").value;
+                  document.getElementById("btnopenserial").Visible = true;
+                   window.open('../CommonControls/NASerial.aspx?NAserial=' + Serialstring + "", null, 'height=250px, width=800px,status= 0, resizable= 1, scrollbars=1, toolbar=0,location=center,menubar=0, screenX=300; screenY=60');
+              }
+              
+              function OpenSerialPop() {
+                  var Serialstring = document.getElementById("hdnnotavailserial").value;
+                   window.open('../CommonControls/NASerial.aspx?NAserial=' + Serialstring + "", null, 'height=250px, width=800px,status= 0, resizable= 1, scrollbars=1, toolbar=0,location=center,menubar=0, screenX=300; screenY=60');
+              }
+              
+              
+              
+           </script>
+           <script type="text/javascript">
+              function ShowSchedule() {
+                  var Objectname = document.getElementById("hdnobject").value;
+                  window.open('../CommonControls/ImportSchedule.aspx?Objectname=' + Objectname + "", null, 'height=350px, width=1020px,status= 0, resizable= 1, scrollbars=1, toolbar=0,location=center,menubar=0, screenX=300; screenY=60');
+              }
+              
+              function OpenExport() {
+                  var valid = document.getElementById("hdncheckvalid").value;
+                  if (valid == "") {
+                      var CustomerID = document.getElementById("hdncustomerID").value;
+                        var Objectname = document.getElementById("hdnexportobject").value;
+                      window.open('../CommonControls/popup.aspx?Objectname=' + Objectname + '&CustomerID=' + CustomerID + "", null, 'height=350px, width=1020px,status= 0, resizable= 1, scrollbars=1, toolbar=0,location=center,menubar=0, screenX=300; screenY=60');
+                      PageMethods.PMMoveAddressToArchive(Ids, IsArchive, null, null); 
+                  }
+              }
+              
+              function GetCustomer() {
+                  document.getElementById("hdncustomerID").value = document.getElementById("ctl00_CPHolder_Form_UcImport_ddlCustomer").value;
+              }
+           </script>
+           <script type="text/javascript">
+              function ProgressBar() {
+                  if (document.getElementById('ctl00_CPHolder_Form_UcImport_FileuploadPO').value != "") {
+                          document.getElementById("divUpload").style.display = "block";
+                          var getFileUploadMessageObj = document.getElementById('ctl00_CPHolder_Form_UcImport_uploadMessage');
+                      if (getFileUploadMessageObj != null) {
+                          getFileUploadMessageObj.style.display = 'none';
+                      }
+              
+                      return true;
+                  }
+                  else {
+                      alert("Select a file to upload");
+                      return false;
+                  }
+              
+              }
+           </script>
+        </contenttemplate>
+     </div>
+     
+    </div>
+    <textarea id="txtCSVdata" style='width:1px;height:1px;position:absolute;overflow:hidden;'>
+        </textarea>
+    <div id="WMSDataCalendar" class="WMSDataCalendar"></div>
+</div>

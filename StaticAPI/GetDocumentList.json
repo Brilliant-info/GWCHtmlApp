@@ -1,0 +1,26 @@
+{
+    "Status": "200",
+    "StatusCode": "Success",
+    "Result": {
+      "Table": [
+        {
+          "DocumentId": 251394,
+          "DocumentTitle": "Address Proof",
+          "Description": "Electricity Bill as Address Proof",
+          "DocumentType": "Electricity Bill",
+          "FileType": "jpg",
+          "FilePath": "251394/electricity.jpg",
+          "ReferenceID": "1226"
+        },
+        {
+          "DocumentId": 251395,
+          "DocumentTitle": "ID Proof",
+          "Description": "Passport as Photo ID Proof",
+          "DocumentType": "Passport",
+          "FileType": "png",
+          "FilePath": "251394/passport.png",
+          "ReferenceID": "1226"
+        }
+      ]
+    }
+}

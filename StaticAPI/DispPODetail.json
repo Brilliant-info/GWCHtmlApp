@@ -1,0 +1,39 @@
+{
+  "Status": "200",
+  "StatusCode": "Success",
+  "Result": {
+    "PurchaseOrderDetails": [
+      {
+        "UomList": [
+          {
+            "Id": "1",
+            "Uom": "Each",
+            "UnitQty": "1"
+          },
+          {
+            "Id": "2",
+            "Uom": "Dozen",
+            "UnitQty": "12"
+          }
+        ],
+        "Id": "78035",
+        "SkuId": "1",
+        "ItemCode": "SK1001010",
+        "ItemName": "Cough Syrup",
+        "ItemDescription": "Test p1",
+        "MOQ": "1",
+        "CurrentStock": "1650.00",
+        "ReserveQty": "144.00",
+        "RequestedQty": "1.00",
+        "UOM": "Each",
+        "UOMId": "1",
+        "OrderQty": "1.00",
+        "Price": "10.00",
+        "Total": "10.00",
+        "isPriceChange": "0",
+        "Lot1": "v|0|0|0|0|0|0|0|0|0",
+        "SerialNo": ""
+      }
+    ]
+  }
+}

@@ -1,0 +1,141 @@
+{
+    "Status": "200",
+    "StatusCode": "Success",
+    "Result": {
+        "Table": [
+            {
+                "TotalRecords": 0,
+                "ExpectedReceipt": 0,
+                "Receiving": 0,
+                "PutAway": 0,
+                "CancelOrder": 0,
+                "Qualitycheck": 0,
+                "IsQC": "NO",
+                "Completed": 0,
+                "Taskassign": 1
+            }
+        ],
+      "Table1": [
+        {
+          "ID": 251394,
+          "RequestNo": "VC1103",
+          "Department": "Vodafone Business",
+          "RequestDate": "15-Jan-2025",
+          "ExpDeliveryDate": "16-Jan-2025",
+          "Title": "VFQORDER35",
+          "RequestBy": "Mahesh Mane",
+          "Status": "Request sent for Approval"
+        },
+        {
+          "ID": 251395,
+          "RequestNo": "VC1104",
+          "Department": "Vodafone Business",
+          "RequestDate": "20-Jan-2025",
+          "ExpDeliveryDate": "21-Jan-2025",
+          "Title": "VFQORDER36",
+          "RequestBy": "Sunil Jadhav",
+          "Status": "Request sent for Approval"
+        },
+        {
+          "ID": 251396,
+          "RequestNo": "VC1105",
+          "Department": "Vodafone Business",
+          "RequestDate": "28-Jan-2025",
+          "ExpDeliveryDate": "29-Jan-2025",
+          "Title": "VFQORDER37",
+          "RequestBy": "Jitendra Kamat",
+          "Status": "Request sent for Approval"
+        },
+        {
+          "ID": 251397,
+          "RequestNo": "VC1106",
+          "Department": "Vodafone Business",
+          "RequestDate": "06-Feb-2025",
+          "ExpDeliveryDate": "07-Feb-2025",
+          "Title": "VFQORDER38",
+          "RequestBy": "Narayan Mane",
+          "Status": "Request sent for Approval"
+        },
+        {
+          "ID": 251398,
+          "RequestNo": "VC1107",
+          "Department": "Vodafone Business",
+          "RequestDate": "12-Feb-2025",
+          "ExpDeliveryDate": "15-Feb-2025",
+          "Title": "VFQORDER38",
+          "RequestBy": "Sunita Joshi",
+          "Status": "Request sent for Approval"
+        },
+        {
+          "ID": 251399,
+          "RequestNo": "VC1108",
+          "Department": "Vodafone Business",
+          "RequestDate": "21-Mar-2025",
+          "ExpDeliveryDate": "26-Mar-2025",
+          "Title": "VFQORDER38",
+          "RequestBy": "Priyanka Sane",
+          "Status": "Request sent for Approval"
+        },
+        {
+          "ID": 251400,
+          "RequestNo": "VC1109",
+          "Department": "Vodafone Business",
+          "RequestDate": "15-Jan-2025",
+          "ExpDeliveryDate": "16-Jan-2025",
+          "Title": "VFQORDER35",
+          "RequestBy": "Mahesh Mane",
+          "Status": "Request sent for Approval"
+        },
+        {
+          "ID": 251401,
+          "RequestNo": "VC1110",
+          "Department": "Vodafone Business",
+          "RequestDate": "20-Jan-2025",
+          "ExpDeliveryDate": "21-Jan-2025",
+          "Title": "VFQORDER36",
+          "RequestBy": "Sunil Jadhav",
+          "Status": "Request sent for Approval"
+        },
+        {
+          "ID": 251402,
+          "RequestNo": "VC1111",
+          "Department": "Vodafone Business",
+          "RequestDate": "28-Jan-2025",
+          "ExpDeliveryDate": "29-Jan-2025",
+          "Title": "VFQORDER37",
+          "RequestBy": "Jitendra Kamat",
+          "Status": "Request sent for Approval"
+        },
+        {
+          "ID": 251403,
+          "RequestNo": "VC1112",
+          "Department": "Vodafone Business",
+          "RequestDate": "06-Feb-2025",
+          "ExpDeliveryDate": "07-Feb-2025",
+          "Title": "VFQORDER38",
+          "RequestBy": "Narayan Mane",
+          "Status": "Request sent for Approval"
+        },
+        {
+          "ID": 251404,
+          "RequestNo": "VC1113",
+          "Department": "Vodafone Business",
+          "RequestDate": "12-Feb-2025",
+          "ExpDeliveryDate": "15-Feb-2025",
+          "Title": "VFQORDER38",
+          "RequestBy": "Sunita Joshi",
+          "Status": "Request sent for Approval"
+        },
+        {
+          "ID": 251405,
+          "RequestNo": "VC1114",
+          "Department": "Vodafone Business",
+          "RequestDate": "21-Mar-2025",
+          "ExpDeliveryDate": "26-Mar-2025",
+          "Title": "VFQORDER38",
+          "RequestBy": "Priyanka Sane",
+          "Status": "Request sent for Approval"
+        }
+      ]
+    }
+}

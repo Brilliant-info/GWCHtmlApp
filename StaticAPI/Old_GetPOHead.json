@@ -1,0 +1,20 @@
+{
+  "Status": "200",
+  "StatusCode": "Success",
+  "Result": {
+    "Table": [
+      {
+        "orderfrom": "",
+        "InboundReceiptNo": 251394,
+        "InboundReceiptDate": "2025-01-20T00:00:00",
+        "ExpDeliveryDate": "2025-01-20T00:00:00",
+        "CustomerRefNo": "rfghjkl",
+        "Remark": "qwertyui",
+        "CreatedBy": "Brilliant Admin",
+        "Status": 34,
+        "Vendor": "vendor12",
+        "VendorId": 6
+      }
+    ]
+  }
+}

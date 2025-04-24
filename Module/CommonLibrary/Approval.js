@@ -43,16 +43,15 @@ function addApprovalColumn(eventTitle, levelTitle, levelNum){
 }
 
 function addApprovalGridHead(){
-    $('#tblApprovalTransHead').html('<div class="wms-srv-grid-header"><div class="wms-srv-grid-cell wms-align" style="text-align: center;">Application</div>' + 
-    '<div class="wms-srv-grid-cell wms-align" style="text-align: center;">Object</div></div>' + 
-    '<div class="wms-srv-grid-row wms-align"><div class="wms-srv-grid-cell" id="divApprovalApplication" >-</div>' + 
-    '<div class="wms-srv-grid-cell" id="divApprovalObject">-</div></div>');
+    $('#tblApprovalTransHead').html('<div class="wms-srv-grid-header" style="white-space: nowrap;"><div class="wms-srv-grid-cell">Request No</div><div class="wms-srv-grid-cell">Department</div><div class="wms-srv-grid-cell">Request Date</div><div class="wms-srv-grid-cell">Request By</div></div>' + 
+    '<div class="wms-srv-grid-row"><div class="wms-srv-grid-cell">VC1103</div><div class="wms-srv-grid-cell">Vodafone Business</div><div class="wms-srv-grid-cell">15-Jan-2025</div><div class="wms-srv-grid-cell">Mahesh Mane</div></div>');
 
     $('#wmsGridApprovalList').html('<div class="wms-srv-grid-header">' + 
     '<div class="wms-srv-grid-cell" style="width: 35px;"></div>' + 
     '<div class="wms-srv-grid-cell">Approver Name</div>' + 
     '<div class="wms-srv-grid-cell">Level</div>' + 
     '<div class="wms-srv-grid-cell">Date</div>' + 
+	'<div class="wms-srv-grid-cell">Delegate User</div>' + 
     '<div class="wms-srv-grid-cell">Remark</div>' + 
     '<div class="wms-srv-grid-cell">Approval</div>' +
     '</div>');
@@ -132,6 +131,11 @@ function  GetApprovalRecordbyOrder(OrderID,ApproObject)
             "CustomerID": getAppCustomerId,
             "WarehouseID": getAppWarehouseID
     };
+	// LOAD STATIC DATA
+	apiPath = 'StaticAPI/GetApprovalData.json';
+	postData = null;
+	// LOAD STATIC DATA
+	
     callHttpUrl(apiPath, postData, function (data) {
         var getstatus = data.Status;
         var getstatuscode = data.StatusCode;
@@ -167,7 +171,7 @@ function  GetApprovalRecordbyOrder(OrderID,ApproObject)
                     icoStatus = '<i class="fas fa-times-circle"></i>';
                 }
                 if(currentApprovalTransLevel != getApproLevel){
-                    addApprovalColumn(getApproEvent, getApproLevel, getLevelNum); 
+                    // addApprovalColumn(getApproEvent, getApproLevel, getLevelNum); 
                     currentApprovalTransLevel = getApproLevel;
                 }
                 var approverTitle= '';
@@ -189,24 +193,26 @@ function  GetApprovalRecordbyOrder(OrderID,ApproObject)
                     '<div class="wms-srv-grid-cell">'+ getApproverName +'</div>' + 
                     '<div class="wms-srv-grid-cell">'+ getApproLevel +'</div>' + 
                     '<div class="wms-srv-grid-cell">'+ getApprovalDate +'</div>' + 
+					'<div class="wms-srv-grid-cell"><input type="text" id="txtApproverDelegatedUser" value="" class="wms-srv-grid-cell-input" style="display:inline-block;width:calc(100% - 30px);margin-right:6px;"><i class="fas fa-search" title="Select User"></i></div>' + 
                     '<div class="wms-srv-grid-cell aprInputCell"><input type="text" id="txtApproverTransRemark" value="'+ getRemark +'" class="wms-srv-grid-cell-input"></div>' + 
                     '<div class="wms-srv-grid-cell aprActionCell"><div class="wms-srv-grid-action"><i class="fas fa-check-circle" onclick="OrderApprovReject('+ OrderID +','+ getApproverID +',\'Approved\',\''+ getApproLevel +'\',\''+ getApproEvent +'\');"></i><div class="wms-srv-action-sep">|</div>'+
                     '<i class="fas fa-times-circle" onclick="OrderApprovReject('+ OrderID +','+ getApproverID +',\'Rejected\',\''+ getApproLevel +'\',\''+ getApproEvent +'\');"></i></div></div>' +
                     '</div>');
-                    addApproverMemberToLevel(approverTitle, getLevelNum, 'Yes')
+                   // addApproverMemberToLevel(approverTitle, getLevelNum, 'Yes')
                 }else{
                     $('#wmsGridApprovalList').append('<div class="wms-srv-grid-row wmsApproverRow wmsApprovalLevel'+ getLevelNum +'">' + 
                     '<div class="wms-srv-grid-cell" style="width: 35px;"><div class="userProfile"><img src="Images/profile-pic/nopic.png"></div></div>' + 
                     '<div class="wms-srv-grid-cell">'+ getApproverName +'</div>' + 
                     '<div class="wms-srv-grid-cell">'+ getApproLevel +'</div>' + 
                     '<div class="wms-srv-grid-cell">'+ getApprovalDate +'</div>' + 
+					'<div class="wms-srv-grid-cell">-</div>' + 
                     '<div class="wms-srv-grid-cell aprInputCell">'+ getRemark +'</div>' + 
                     '<div class="wms-srv-grid-cell aprActionCell">'+ icoStatus +'</div>' +
                     '</div>');
-                    addApproverMemberToLevel(approverTitle, getLevelNum, 'No');
+                   // addApproverMemberToLevel(approverTitle, getLevelNum, 'No');
                 }
             }
-            activateApprovalControl();
+           // activateApprovalControl();
          }
          else
          {

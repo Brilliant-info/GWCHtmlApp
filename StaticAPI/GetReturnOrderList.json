@@ -1,0 +1,151 @@
+{
+    "Status": "200",
+    "StatusCode": "Success",
+    "Result": {
+        "Table": [
+            {
+                "TotalRecords": 0,
+                "ExpectedReceipt": 0,
+                "Receiving": 0,
+                "PutAway": 0,
+                "CancelOrder": 0,
+                "Qualitycheck": 0,
+                "IsQC": "NO",
+                "Completed": 0,
+                "Taskassign": 1
+            }
+        ],
+      "Table1": [
+        {
+          "rownumber": 1,
+          "ReturnID": 2821,
+          "Department": "OPdept",
+          "returndate": "17/04/2025",
+          "referenceNo": "O1324",
+          "Priority": "1",
+          "returncategoryName": "Online Cancellation",
+          "returncategory": 112,
+          "statusid": 10042,
+          "status": "Pending for driver allocation",
+          "LocationName": "kothrud1"
+        },
+        {
+          "rownumber": 2,
+          "ReturnID": 2820,
+          "Department": "VFQ5264ONL ",
+          "returndate": "10/04/2025",
+          "referenceNo": "GWC58318",
+          "Priority": "1",
+          "returncategoryName": "Online Cancellation",
+          "returncategory": 112,
+          "statusid": 10042,
+          "status": "Pending for driver allocation",
+          "LocationName": "Vodafone Qatar Web Orders"
+        },
+        {
+          "rownumber": 3,
+          "ReturnID": 2819,
+          "Department": "VFQ5264ONL ",
+          "returndate": "08/04/2025",
+          "referenceNo": "GWC58053",
+          "Priority": "1",
+          "returncategoryName": "Online Cancellation",
+          "returncategory": 112,
+          "statusid": 10042,
+          "status": "Pending for driver allocation",
+          "LocationName": "Vodafone Qatar Web Orders"
+        },
+        {
+          "rownumber": 4,
+          "ReturnID": 2817,
+          "Department": "VFQ5264ONL ",
+          "returndate": "03/04/2025",
+          "referenceNo": "GWC58315",
+          "Priority": "1",
+          "returncategoryName": "Online Cancellation",
+          "returncategory": 112,
+          "statusid": 10042,
+          "status": "",
+          "LocationName": "Vodafone Qatar Web Orders"
+        },
+        {
+          "rownumber": 5,
+          "ReturnID": 2816,
+          "Department": "VFQ5264ONL ",
+          "returndate": "29/01/2025",
+          "referenceNo": "GWC53134",
+          "Priority": "1",
+          "returncategoryName": "Online Cancellation",
+          "returncategory": 112,
+          "statusid": 10042,
+          "status": "Pending for driver allocation",
+          "LocationName": "Vodafone Qatar Web Orders"
+        },
+        {
+          "rownumber": 6,
+          "ReturnID": 2815,
+          "Department": "VFQ5264ONL ",
+          "returndate": "29/01/2025",
+          "referenceNo": "GWC53133",
+          "Priority": "1",
+          "returncategoryName": "Online Cancellation",
+          "returncategory": 112,
+          "statusid": 10042,
+          "status": "Pending for driver allocation",
+          "LocationName": "Vodafone Qatar Web Orders"
+        },
+        {
+          "rownumber": 7,
+          "ReturnID": 2814,
+          "Department": "VFQ5264ONL ",
+          "returndate": "29/01/2025",
+          "referenceNo": "GWC53132",
+          "Priority": "1",
+          "returncategoryName": "Online Cancellation",
+          "returncategory": 112,
+          "statusid": 10042,
+          "status": "Pending for driver allocation",
+          "LocationName": "Vodafone Qatar Web Orders"
+        },
+        {
+          "rownumber": 8,
+          "ReturnID": 2813,
+          "Department": "VFQ5264ONL ",
+          "returndate": "29/01/2025",
+          "referenceNo": "GWC52098",
+          "Priority": "1",
+          "returncategoryName": "Online Cancellation",
+          "returncategory": 112,
+          "statusid": 10042,
+          "status": "Pending for driver allocation",
+          "LocationName": "Vodafone Qatar Web Orders"
+        },
+        {
+          "rownumber": 9,
+          "ReturnID": 2812,
+          "Department": "VFQ5264ONL ",
+          "returndate": "29/01/2025",
+          "referenceNo": "GWC52081",
+          "Priority": "1",
+          "returncategoryName": "Online Cancellation",
+          "returncategory": 112,
+          "statusid": 10042,
+          "status": "Pending for driver allocation",
+          "LocationName": "Vodafone Qatar Web Orders"
+        },
+        {
+          "rownumber": 10,
+          "ReturnID": 2811,
+          "Department": "VFQ5264ONL ",
+          "returndate": "29/01/2025",
+          "referenceNo": "GWC52001",
+          "Priority": "1",
+          "returncategoryName": "Online Cancellation",
+          "returncategory": 112,
+          "statusid": 10042,
+          "status": "Pending for driver allocation",
+          "LocationName": "Vodafone Qatar Web Orders"
+        }
+      ]
+    }
+}

@@ -1,0 +1,594 @@
+<div id="pnlDatabaseSettings" class="wmsMasterTypePage" style="display: none;">
+    <div class="wms-srv-content-area pnlInbound">
+        <!-- Dashboard Area -->
+        <div class="container-fluid wms-srv-dashboard-panel">
+            <div class="row">
+                <div class="col-md-4 nopadding">
+                    <!-- Page Title -->
+                    <div class="wms-srv-page-title">
+                        <i class="fas fa-user"></i><span class="wms-srv-data-title">Database Setting List</span>
+                    </div>
+                    <!-- Page Title -->
+                </div>
+                <div class="col-md-8 nopadding">
+                </div>
+            </div>
+        </div>
+        <!-- Dashboard Area -->
+        <!-- Head Grid -->
+        <div class="wms-srv-grid-holder pnlWmsHead" id="pnlWmsHead" style="display: none;">
+            <div class="wms-srv-grid">
+                <!-- Object Head Data Will be Here -->
+            </div>
+        </div>
+        <br>
+        <!-- Head Grid -->
+        <!-- Grid -->
+        <div class="wms-srv-obj-main-grid pnlWmsDetail">
+            <div class="wms-srv-grid-action-panel">
+                <div class="wms-srv-grid-common-action">
+                    <a href="#" class="wms-srv-icononly">
+                        <i class="fas fa-list"></i>
+                    </a>
+                </div>
+                <div class="wms-srv-search">
+                    <label> Search Filter: </label>
+                    <select type="text" id="ddlsearch" class="wms-srv-input wms-srv-search-filter">
+                        <option value="">--Select Filter--</option>
+                        <option value="Company Name">Company Name</option>
+                        <option value="Department">Department</option>
+                        <option value="WMS Storecode">WMS Storecode</option>
+                        <option value="Database">Database</option>
+                    </select>
+                    <input type="text" value="" id="txtvalue" class="wms-srv-input wms-srv-simple-search"><a href="#"
+                        data-prefix="SE">
+                        <i class="fas fa-search" title="Search" onclick=""></i>
+                    </a>
+                </div>
+                <button class="wms-srv-input" title="Add New" type="button" id="wms-srv-New-popup" style="background-color: #6ebf49;color:white;">
+                    <span>Add New</span>
+                </button>
+
+                <div class="wms-srv-grid-title">
+                    Database Setting List
+                </div>
+            </div>
+            <div class="wms-srv-grid-scroller">
+                <div class="wms-srv-grid" id="">
+                    <div class="wms-srv-grid-header">
+                        <div class="wms-srv-grid-cell">Company Name</div>
+                        <div class="wms-srv-grid-cell">Department</div>
+                        <div class="wms-srv-grid-cell">WMS Storecode</div>
+                        <div class="wms-srv-grid-cell">Database</div>
+                        <div class="wms-srv-grid-cell">Schema Name</div>
+                        <div class="wms-srv-grid-cell">Active</div>
+                        <div class="wms-srv-grid-cell">Action</div>
+                    </div>
+                    <div class="wms-srv-grid-row" id="showtext" style="display: none;">
+                        <div class="wms-srv-grid-cell">
+                            <select  class="wms-srv-grid-cell-input">
+                                <option value="0">-Select-</option>
+                                <option value="1">ProjectType1</option>
+                                <option value="2">GWC Ecommerence</option>
+                                <option value="17">PROJECT01</option>
+                                <option value="18">PROJECT02</option>
+                                <option value="26">VFQUAT</option>
+                                <option value="29">Project-UAT-02</option>
+                                <option value="30">lengthcheckinginwmss</option>
+                                <option value="31">CDS GWC</option>
+                                <option value="32">VDFDEMO</option>
+                                <option value="33">VDFDemo 1</option>
+                                <option value="34">VDF5G</option>
+                                <option value="35">TESTGWC</option>
+                                <option value="36">TESTGWC1</option>
+                                <option value="37">908090</option>
+                                <option value="38">Project-GWC</option>
+                                <option value="39">Proj_OMS_WMS</option>
+                                <option value="40">VFQT</option>
+                                <option value="10040">Gsm50</option>
+                                <option value="10041">SK Project</option>
+                                <option value="10042">BT Project Type</option>
+                                <option value="10043">Project_SJ</option>
+                                <option value="10044">VBSPT</option>
+                                <option value="10045">TestCustom</option>
+        
+                            </select>
+                        </div>
+                        <div class="wms-srv-grid-cell">
+                            <select  class="wms-srv-grid-cell-input">
+                                <option value="0">-Select-</option>
+                                <option value="1">ProjectType1</option>
+                                <option value="2">ProjectType2</option>
+                                <option value="17">PROJECT01</option>
+                                <option value="18">PROJECT02</option>
+                                <option value="26">VFQ3432ONL</option>
+                                <option value="29">Project-UAT-02</option>
+                                <option value="30">lengthcheckinginwmss</option>
+                                <option value="31">CDS GWC</option>
+                                <option value="32">VDFDEMO</option>
+                                <option value="33">VDFDemo 1</option>
+                                <option value="34">VDF5G</option>
+                                <option value="35">TESTGWC</option>
+                                <option value="36">TESTGWC1</option>
+                                <option value="37">908090</option>
+                                <option value="38">Project-GWC</option>
+                                <option value="39">Proj_OMS_WMS</option>
+                                <option value="40">VFQT</option>
+                                <option value="10040">Gsm50</option>
+                                <option value="10041">SK Project</option>
+                                <option value="10042">BT Project Type</option>
+                                <option value="10043">Project_SJ</option>
+                                <option value="10044">VBSPT</option>
+                                <option value="10045">TestCustom</option>
+        
+                            </select>
+                        </div>
+                        <div class="wms-srv-grid-cell"><input type="text" class="wms-srv-grid-cell-input"></div>
+                        <div class="wms-srv-grid-cell"><input type="text" class="wms-srv-grid-cell-input"></div>
+                        <div class="wms-srv-grid-cell"><input type="text" class="wms-srv-grid-cell-input"></div>
+                        <div class="wms-srv-grid-cell"><input type="checkbox" class="wms-srv-grid-cell-input"></div>
+                        <div class="wms-srv-grid-cell">
+                            <div class="wms-srv-grid-action">                         
+                                <i class="fas fa-check-circle" title="edit" onclick="" id="hidetext"></i>
+                                <div class="wms-srv-action-sep"> | </div>
+                                <i class="fas fa-times-circle" title="edit" onclick="" id="hidecirclenew"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="wms-srv-grid-row" id="showtexter34" style="display: none;">
+                        <div class="wms-srv-grid-cell">
+                            <select  class="wms-srv-grid-cell-input">
+                                <option value="0">-Select-</option>
+                                <option value="1">ProjectType1</option>
+                                <option value="2">ProjectType2</option>
+                                <option value="17">PROJECT01</option>
+                                <option value="18">PROJECT02</option>
+                                <option selected="selected" value="26">VFQ3432ONL</option>
+                                <option value="29">Project-UAT-02</option>
+                                <option value="30">lengthcheckinginwmss</option>
+                                <option value="31">CDS GWC</option>
+                                <option value="32">VDFDEMO</option>
+                                <option value="33">VDFDemo 1</option>
+                                <option value="34">VDF5G</option>
+                                <option value="35">TESTGWC</option>
+                                <option value="36">TESTGWC1</option>
+                                <option value="37">908090</option>
+                                <option value="38">Project-GWC</option>
+                                <option value="39">Proj_OMS_WMS</option>
+                                <option value="40">VFQT</option>
+                                <option value="10040">Gsm50</option>
+                                <option value="10041">SK Project</option>
+                                <option value="10042">BT Project Type</option>
+                                <option value="10043">Project_SJ</option>
+                                <option value="10044">VBSPT</option>
+                                <option value="10045">TestCustom</option>
+                            </select>
+                        </div>
+                        <div class="wms-srv-grid-cell">
+                            <select  class="wms-srv-grid-cell-input">
+                                <option value="0">-Select-</option>
+                                <option value="1">ProjectType1</option>
+                                <option value="2">ProjectType2</option>
+                                <option value="17">PROJECT01</option>
+                                <option value="18">PROJECT02</option>
+                                <option value="26" selected="selected" >VFQ3432ONL</option>
+                                <option value="29">Project-UAT-02</option>
+                                <option value="30">lengthcheckinginwmss</option>
+                                <option value="31">CDS GWC</option>
+                                <option value="32">VDFDEMO</option>
+                                <option value="33">VDFDemo 1</option>
+                                <option value="34">VDF5G</option>
+                                <option value="35">TESTGWC</option>
+                                <option value="36">TESTGWC1</option>
+                                <option value="37">908090</option>
+                                <option value="38">Project-GWC</option>
+                                <option value="39">Proj_OMS_WMS</option>
+                                <option value="40">VFQT</option>
+                                <option value="10040">Gsm50</option>
+                                <option value="10041">SK Project</option>
+                                <option value="10042">BT Project Type</option>
+                                <option value="10043">Project_SJ</option>
+                                <option value="10044">VBSPT</option>
+                                <option value="10045">TestCustom</option>
+                            </select>
+                        </div>
+                        <div class="wms-srv-grid-cell"><input type="text" class="wms-srv-grid-cell-input" value="Test342"></div>
+                        <div class="wms-srv-grid-cell"><input type="text" class="wms-srv-grid-cell-input" value="342"></div>
+                        <div class="wms-srv-grid-cell"><input type="text" class="wms-srv-grid-cell-input" value="24"></div>
+                        <!-- <div class="wms-srv-grid-cell"><input type="text" class="wms-srv-grid-cell-input" value="Test"></div> -->
+                        <div class="wms-srv-grid-cell"><input type="checkbox" class="wms-srv-grid-cell-input" checked></div>
+                        <div class="wms-srv-grid-cell">
+                            <div class="wms-srv-grid-action">                         
+                                <i class="fas fa-check-circle" title="save" onclick="" id=""></i>
+                                <div class="wms-srv-action-sep"> | </div>
+                                <i class="fas fa-times-circle" title="edit" onclick="" id="hidecircbdd"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="wms-srv-grid-row">
+                        <div class="wms-srv-grid-cell">GWC Ecommerence</div>
+                        <div class="wms-srv-grid-cell">VFQ3432ONL</div>
+                        <div class="wms-srv-grid-cell">VFQ5264ONL</div>
+                        <div class="wms-srv-grid-cell">SCPRD</div>
+                        <div class="wms-srv-grid-cell">WMWHSE4</div>
+                        <div class="wms-srv-grid-cell">Yes</div>
+                        <div class="wms-srv-grid-cell">
+                            <div class="wms-srv-grid-action">
+                                <i class="fas fa-edit" title="edit" onclick="" id="showbfr"></i>
+                            </div>
+                        </div>
+                    </div>                   
+                    <div class="wms-srv-grid-row" id="showtextergh" style="display: none;">
+                        <div class="wms-srv-grid-cell">
+                            <select  class="wms-srv-grid-cell-input">
+                                <option value="0">-Select-</option>
+                                <option value="1">ProjectType1</option>
+                                <option value="2">ProjectType2</option>
+                                <option value="17">PROJECT01</option>
+                                <option value="18">PROJECT02</option>
+                                <option value="26">VFQUAT</option>
+                                <option value="29">Project-UAT-02</option>
+                                <option value="30">lengthcheckinginwmss</option>
+                                <option value="31">CDS GWC</option>
+                                <option value="32">VDFDEMO</option>
+                                <option value="33">VDFDemo 1</option>
+                                <option value="34">VDF5G</option>
+                                <option value="35">TESTGWC</option>
+                                <option value="36">TESTGWC1</option>
+                                <option value="37">908090</option>
+                                <option value="38">Project-GWC</option>
+                                <option value="39">Proj_OMS_WMS</option>
+                                <option value="40">VFQT</option>
+                                <option value="10040">Gsm50</option>
+                                <option value="10041">SK Project</option>
+                                <option value="10042">BT Project Type</option>
+                                <option value="10043">Project_SJ</option>
+                                <option value="10044">VBSPT</option>
+                                <option value="10045">TestCustom</option>
+        
+                            </select>
+                        </div>
+                        <div class="wms-srv-grid-cell"><input type="text" class="wms-srv-grid-cell-input" value="TestCustom"></div>
+                        <div class="wms-srv-grid-cell"><input type="text" class="wms-srv-grid-cell-input" value="Test342"></div>
+                        <div class="wms-srv-grid-cell"><input type="text" class="wms-srv-grid-cell-input" value="342"></div>
+                        <div class="wms-srv-grid-cell"><input type="text" class="wms-srv-grid-cell-input" value="24"></div>
+                        <div class="wms-srv-grid-cell"><input type="text" class="wms-srv-grid-cell-input" value="Test"></div>
+                        <div class="wms-srv-grid-cell"><input type="checkbox" class="wms-srv-grid-cell-input" checked></div>
+                        <div class="wms-srv-grid-cell">
+                            <div class="wms-srv-grid-action">                         
+                                <i class="fas fa-check-circle" title="save" onclick="" id=""></i>
+                                <div class="wms-srv-action-sep"> | </div>
+                                <i class="fas fa-times-circle" title="edit" onclick="" id="hidecircleeb"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="wms-srv-grid-row">
+                        <div class="wms-srv-grid-cell">GWC Ecommerence</div>
+                        <div class="wms-srv-grid-cell">VFQ3432ONL</div>
+                        <div class="wms-srv-grid-cell">VFQ5264ONL</div>
+                        <div class="wms-srv-grid-cell">SCPRD</div>
+                        <div class="wms-srv-grid-cell">WMWHSE4</div>
+                        <div class="wms-srv-grid-cell">Yes</div>
+                        <div class="wms-srv-grid-cell">
+                            <div class="wms-srv-grid-action">
+                                <i class="fas fa-edit" title="edit" onclick="" id="showelenn"></i>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="wms-srv-grid-row">
+                        <div class="wms-srv-grid-cell">GWC Ecommerence</div>
+                        <div class="wms-srv-grid-cell">VFQ3432ONL</div>
+                        <div class="wms-srv-grid-cell">VFQ5264ONL</div>
+                        <div class="wms-srv-grid-cell">SCPRD</div>
+                        <div class="wms-srv-grid-cell">WMWHSE4</div>
+                        <div class="wms-srv-grid-cell">Yes</div>
+                        <div class="wms-srv-grid-cell">
+                            <div class="wms-srv-grid-action">
+                                <i class="fas fa-edit" title="edit" onclick="openpopupEdit();" id="showelenn"></i>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="wms-srv-grid-row">
+                        <div class="wms-srv-grid-cell">GWC Ecommerence</div>
+                        <div class="wms-srv-grid-cell">VFQ3432ONL</div>
+                        <div class="wms-srv-grid-cell">VFQ5264ONL</div>
+                        <div class="wms-srv-grid-cell">SCPRD</div>
+                        <div class="wms-srv-grid-cell">WMWHSE4</div>
+                        <div class="wms-srv-grid-cell">Yes</div>
+                        <div class="wms-srv-grid-cell">
+                            <div class="wms-srv-grid-action">
+                                <i class="fas fa-edit" title="edit" onclick="openpopupEdit();" id="showelenn"></i>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="wms-srv-grid-row">
+                        <div class="wms-srv-grid-cell">GWC Ecommerence</div>
+                        <div class="wms-srv-grid-cell">VFQ3432ONL</div>
+                        <div class="wms-srv-grid-cell">VFQ5264ONL</div>
+                        <div class="wms-srv-grid-cell">SCPRD</div>
+                        <div class="wms-srv-grid-cell">WMWHSE4</div>
+                        <div class="wms-srv-grid-cell">Yes</div>
+                        <div class="wms-srv-grid-cell">
+                            <div class="wms-srv-grid-action">
+                                <i class="fas fa-edit" title="edit" onclick="openpopupEdit();" id="showelenn"></i>
+                            </div>
+                        </div>
+
+                    </div>
+                 </div>
+            </div>
+        </div>
+        <!-- Grid -->
+    </div>
+    <!-- ALL POPUP AREA -->
+
+    <!--Add New popup-->
+    <div class="wms-srv-popup-holder" id="wms-srv-Request-New-popup" style="display:none;">
+        <div class="wms-srv-popup-bg">
+        </div>
+        <div class="wms-srv-popup">
+            <div class="wms-srv-popup-content">
+                <div class="wms-srv-popup-title">
+                    <div class="wms-srv-page-title">
+                        <i class="fas fa-user"></i><span>Request info</span>
+                    </div>
+                    <a href="#" title="Close" id="wms-srv-Request-New-popup-close" class="wms-srv-popup-close"><i
+                            class="fas fa-times-circle"></i></a>
+                </div>
+                <div class="wms-srv-popup-content-body" id="wms-srv-popup-content-body">
+                    <div class="wms-srv-grid-holder pnlWmsDetail" id="wms-srv-edit-popup">
+                        <div class="wms-srv-grid">
+                            <div class="wms-srv-grid-header">
+                                <div class="wms-srv-grid-cell" style="text-align: center;">Title</div>
+                                <div class="wms-srv-grid-cell" style="text-align: center;">Access Type</div>
+                                <div class="wms-srv-grid-cell" style="text-align: center;">Customer Name</div>
+                            </div>
+                            <div class="wms-srv-grid-row">
+                                <div class="wms-srv-grid-cell">
+                                    <input type="text" value="" id="txtEditAddressLine1"
+                                        class="wms-srv-grid-cell-input" />
+                                </div>
+                                <div class="wms-srv-grid-cell">
+                                    <select class="wms-srv-grid-cell-input" id="">
+                                        <option value="">-- Select --</option>
+                                        <!-- <option value=""></option> -->
+                                    </select>
+                                </div>
+                                <div class="wms-srv-grid-cell">
+                                    <select class="wms-srv-grid-cell-input" id="">
+                                        <option value="">-- Select --</option>
+                                        <!-- <option value=""></option> -->
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <br />
+                        <div class="wms-srv-grid">
+                            <div class="wms-srv-grid-header">
+                                <div class="wms-srv-grid-cell" style="text-align: center;">Department</div>
+                                <div class="wms-srv-grid-cell" style="text-align: center;">Remark</div>
+                            </div>
+                            <div class="wms-srv-grid-row">
+                                <div class="wms-srv-grid-cell">
+                                    <select class="wms-srv-grid-cell-input" id="">
+                                        <option value="">-- Select --</option>
+                                        <!-- <option value=""></option> -->
+                                    </select>
+                                </div>
+                                <div class="wms-srv-grid-cell">
+                                    <input type="text" value="" id="txtEditAddressLine1"
+                                        class="wms-srv-grid-cell-input" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="wms-srv-popup-content">
+                            <div class="wms-srv-popup-content-body" id="wms-srv-popup-content-body">
+                                <div class="wms-srv-grid-holder pnlWmsDetail" id="">
+                                    <!-- Popup Content Will be Here -->
+                                    <div class="wms-srv-grid-holder pnlWmsDetail">
+                                        <div class="wms-srv-obj-main-grid pnlWmsDetail">
+                                            <div class="wms-srv-grid-action-panel">
+                                                <!-- <div class="wms-srv-grid-common-action">
+                                                    <a href="#" class="wms-srv-icononly">
+                                                        <i class="fas fa-list"></i>
+                                                    </a>
+                                                </div> -->
+                                                <div class="wms-srv-grid-title">
+                                                    SKU List
+                                                    <button class="wms-srv-highlight-btn-secondary" type="button"
+                                                    title="Add Items to list" style="margin-left: 884px;margin-top: -15px;padding: 0px;">
+                                                    <span>Add Items to list&nbsp;</span>
+                                                </button>
+                                                </div>
+                                            </div>
+                                                <div class="wms-srv-grid">
+                                                    <div class="wms-srv-grid-header">
+                                                        <div class="wms-srv-grid-cell" style="text-align: center;">SrNo</div>   
+                                                        <div class="wms-srv-grid-cell" style="text-align: center;">Code</div>   
+                                                        <div class="wms-srv-grid-cell" style="text-align: center;">Product Name</div>   
+                                                        <div class="wms-srv-grid-cell" style="text-align: center;">Description</div>                    
+                                                        <div class="wms-srv-grid-cell" style="text-align: center;">MOQ</div>   
+                                                        <div class="wms-srv-grid-cell" style="text-align: center;">Request Quantity</div>  
+                                                        <div class="wms-srv-grid-cell" style="text-align: center;">UOM</div>   
+                                                        <div class="wms-srv-grid-cell" style="text-align: center;">Order Quantity</div>  
+                        
+                                                        <div class="wms-srv-grid-cell" style="text-align: center;">Price</div>   
+                                                        <div class="wms-srv-grid-cell" style="text-align: center;">Total</div>  
+                                                        <!-- <div class="wms-srv-grid-cell" style="text-align: center;">Group Set</div>    -->
+                                                    </div>
+                                                    <div class="wms-srv-grid-row">
+                                                        <div class="wms-srv-grid-cell">1</div>  
+                                                        <div class="wms-srv-grid-cell">Prod012</div>
+                                                        <div class="wms-srv-grid-cell">Speaker</div>  
+                                                        <div class="wms-srv-grid-cell">RIL prod012</div>             
+                                                        <div class="wms-srv-grid-cell">3</div>  
+                                                        <div class="wms-srv-grid-cell">0.00</div>  
+                                                        <div class="wms-srv-grid-cell">
+                                                            <select class="wms-srv-grid-cell-input" id="">
+                                                                <option value="">-- Select --</option>
+                                                                <option value="Dozen">Dozen</option>
+                                                            </select>
+                                                        </div>  
+                                                        <div class="wms-srv-grid-cell">0</div>  
+                                                        <div class="wms-srv-grid-cell">200.00</div>  
+                                                        <div class="wms-srv-grid-cell">0</div>  
+                                                    </div>
+                                                </div>
+                                        </div>
+                                    </div>
+                                    <!-- Popup Content Will be Here -->
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+                        <br>
+                        <div class="btnSaveCustomerMasterHolder" style="text-align:center;">
+                            <button class="wms-srv-button wms-srv-highlight-btn-secondary" type="button" title="Save">
+                                <span>Save</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Add New popup-->
+
+    <!--Edit popup-->
+    <div class="wms-srv-popup-holder" id="wms-srv-Edit-Request-New-popup" style="display:none;">
+        <div class="wms-srv-popup-bg">
+        </div>
+        <div class="wms-srv-popup">
+            <div class="wms-srv-popup-content">
+                <div class="wms-srv-popup-title">
+                    <div class="wms-srv-page-title">
+                        <i class="fas fa-user"></i><span>Request info</span>
+                    </div>
+                    <a href="#" title="Close" id="wms-srv-Request-New-popup-closeo" class="wms-srv-popup-close"><i
+                            class="fas fa-times-circle"></i></a>
+                </div>
+                <div class="wms-srv-popup-content-body" id="wms-srv-popup-content-body">
+                    <div class="wms-srv-grid-holder pnlWmsDetail" id="wms-srv-edit-popup">
+                        <div class="wms-srv-grid">
+                            <div class="wms-srv-grid-header">
+                                <div class="wms-srv-grid-cell" style="text-align: center;">Title</div>
+                                <div class="wms-srv-grid-cell" style="text-align: center;">Access Type</div>
+                                <div class="wms-srv-grid-cell" style="text-align: center;">Customer Name</div>
+                            </div>
+                            <div class="wms-srv-grid-row">
+                                <div class="wms-srv-grid-cell">
+                                    <input type="text" value="TestCustom" id="txtEditAddressLine1"
+                                        class="wms-srv-grid-cell-input"/>
+                                </div>
+                                <div class="wms-srv-grid-cell">
+                                    <select class="wms-srv-grid-cell-input" id="">
+                                        <option value="">-- Select --</option>
+                                        <option value="">Private</option>
+                                        <option value="">Public</option>
+                                    </select>
+                                </div>
+                                <div class="wms-srv-grid-cell">
+                                    <select class="wms-srv-grid-cell-input" id="">
+                                        <option value="">-- Select --</option>
+                                        <!-- <option value=""></option> -->
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <br />
+                        <div class="wms-srv-grid">
+                            <div class="wms-srv-grid-header">
+                                <div class="wms-srv-grid-cell" style="text-align: center;">Department</div>
+                                <div class="wms-srv-grid-cell" style="text-align: center;">Remark</div>
+                            </div>
+                            <div class="wms-srv-grid-row">
+                                <div class="wms-srv-grid-cell">
+                                    <select class="wms-srv-grid-cell-input" id="">
+                                        <option value="">-- Select --</option>
+                                        <option selected="selected">ENTC</option>
+                                        <option value="">IndustrialDept</option>
+                                    </select>
+                                </div>
+                                <div class="wms-srv-grid-cell">
+                                    <input type="text" value="" id="txtEditAddressLine1"
+                                        class="wms-srv-grid-cell-input" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="wms-srv-popup-content">
+                            <div class="wms-srv-popup-content-body" id="wms-srv-popup-content-body">
+                                <div class="wms-srv-grid-holder pnlWmsDetail" id="">
+                                    <!-- Popup Content Will be Here -->
+                                    <div class="wms-srv-grid-holder pnlWmsDetail">
+                                        <div class="wms-srv-obj-main-grid pnlWmsDetail">
+                                            <div class="wms-srv-grid-action-panel">
+                                                <!-- <div class="wms-srv-grid-common-action">
+                                                    <a href="#" class="wms-srv-icononly">
+                                                        <i class="fas fa-list"></i>
+                                                    </a>
+                                                </div> -->
+                                                <div class="wms-srv-grid-title">
+                                                    SKU List
+                                                    <button class="wms-srv-highlight-btn-secondary" type="button"
+                                                    title="Add Items to list" style="margin-left: 884px;margin-top: -15px;padding: 0px;">
+                                                    <span>Add Items to list&nbsp;</span>
+                                                </button>
+                                                </div>
+                                            </div>
+                                                <div class="wms-srv-grid">
+                                                    <div class="wms-srv-grid-header">
+                                                        <div class="wms-srv-grid-cell" style="text-align: center;">SrNo</div>   
+                                                        <div class="wms-srv-grid-cell" style="text-align: center;">Code</div>   
+                                                        <div class="wms-srv-grid-cell" style="text-align: center;">Product Name</div>   
+                                                        <div class="wms-srv-grid-cell" style="text-align: center;">Description</div>                    
+                                                        <div class="wms-srv-grid-cell" style="text-align: center;">MOQ</div>   
+                                                        <div class="wms-srv-grid-cell" style="text-align: center;">Request Quantity</div>  
+                                                        <div class="wms-srv-grid-cell" style="text-align: center;">UOM</div>   
+                                                        <div class="wms-srv-grid-cell" style="text-align: center;">Order Quantity</div>  
+                        
+                                                        <div class="wms-srv-grid-cell" style="text-align: center;">Price</div>   
+                                                        <div class="wms-srv-grid-cell" style="text-align: center;">Total</div>  
+                                                        <!-- <div class="wms-srv-grid-cell" style="text-align: center;">Group Set</div>    -->
+                                                    </div>
+                                                    <div class="wms-srv-grid-row">
+                                                        <div class="wms-srv-grid-cell">1</div>  
+                                                        <div class="wms-srv-grid-cell">Prod012</div>
+                                                        <div class="wms-srv-grid-cell">Speaker</div>  
+                                                        <div class="wms-srv-grid-cell">RIL prod012</div>             
+                                                        <div class="wms-srv-grid-cell">3</div>  
+                                                        <div class="wms-srv-grid-cell">0.00</div>  
+                                                        <div class="wms-srv-grid-cell">
+                                                            <select class="wms-srv-grid-cell-input" id="">
+                                                                <option value="">-- Select --</option>
+                                                                <option value="Dozen">Dozen</option>
+                                                            </select>
+                                                        </div>  
+                                                        <div class="wms-srv-grid-cell">0</div>  
+                                                        <div class="wms-srv-grid-cell">200.00</div>  
+                                                        <div class="wms-srv-grid-cell">0</div>  
+                                                    </div>
+                                                </div>
+                                        </div>
+                                    </div>
+                                    <!-- Popup Content Will be Here -->
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+                        <br>
+                        <div class="btnSaveCustomerMasterHolder" style="text-align:center;">
+                            <button class="wms-srv-button wms-srv-highlight-btn-secondary" type="button" title="Save">
+                                <span>Save</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Edit popup-->
+
+</div>

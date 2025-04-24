@@ -1,0 +1,536 @@
+.importMenuItems a {
+    border: solid 1px #cccccc;
+    margin: 10px 0px;
+    margin-bottom: 10px;
+    /* font-size: 14px !important; */
+    font-size: 18px !important;
+    box-shadow: 5px 5px 5px #cccccc;
+    background-color: #ffffff;
+    color: #000000;
+    display: block;
+    text-decoration: none;
+    border-radius: 20px;
+    overflow: hidden;
+    margin-bottom: 25px;
+}
+
+.importMenuItems a i {
+    font-size: 20px !important;
+    color: #fff;
+    margin-right: 30px;
+    /* padding: 20px 10px; */
+    padding: 40px 30px;
+    background-color: #6ebf49;
+    border-right: solid 1px #cccccc;
+    width: 100px;
+    text-align: center;
+  }
+
+.import_line {
+    position: absolute;
+    height: 100%;
+    border-left: 1px dashed #636363;
+    left: 45px;
+    z-index: 1;
+}
+
+.import_steps {
+    display: table;
+    position: relative;
+    z-index: 2;
+    margin-top: 25px;
+    border: none;
+    margin-bottom: 60px;
+}
+
+.import_step_holder {
+    text-align: center;
+    display: flex;
+}
+
+.stepsNumberHolder {
+    display: table;
+    border: solid 1px #6ebf49;
+    background-color: #6ebf49;;
+    color: #ffffff;
+    margin-left: auto;
+    margin-right: auto;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+}
+
+.stepsNumberHolder span {
+    text-align: center;
+    font-size: 20px;
+}
+
+.stepsLable {
+    margin: 10px;
+    color: #686868;
+}
+
+.stepsNumberHolder i {
+    position: relative;
+    /* top: 15px; */
+    font-size: 25px;
+}
+
+.WMSImport_StepsPages {
+    padding: 20px;
+    margin: 40px;
+    /* margin-top:10px; */
+    margin-top: 0px;
+    margin-bottom: 10px;
+    border: solid 1px #636363;
+    border-radius: 12px;
+}
+
+.WmsImport_Title {
+    font-size: 28px;
+}
+
+.WmsImport_Icon i {
+    font-size: 100px;
+    color: #398c4a;
+}
+
+
+.WmsImport_Type {
+    text-align: center;
+    border: solid 1px #636363;
+    border-radius: 7px;
+    box-shadow: 5px 5px 5px #636363;
+    padding: 20px;
+    margin-bottom: 20px;
+    margin-top: 10px;
+}
+
+.WmsImport_Description {
+    font-size: 18px !important;
+    margin-top: 10px;
+}
+
+.WmsImport_NavHolder {
+    text-align: right;
+    padding: 10px;
+}
+
+.wmsWizNavBack i {
+    margin-right: 10px;
+}
+
+.wmsWizNavNext i {
+    margin-left: 10px;
+}
+
+.wmsWizNavBack,
+.wmsWizNavNext {
+    background-color: var(--wms-color-primary);
+    color: #ffffff;
+    padding: 10px;
+    text-decoration: none;
+    border: solid 1px var(--wms-color-primary);
+    border-radius: 7px;
+    display: inline-block;
+}
+
+.WmsImport_Wizard_Steps_Line {
+    position: relative;
+    z-index: 1;
+    top: 47px;
+    border: none;
+    border-bottom: dashed 1px #636363;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.WmsImport_Wizard_Steps {
+    display: table;
+    width: 100%;
+    position: relative;
+    z-index: 2;
+    margin-top: 25px;
+}
+
+.WmsImport_Wizard_Steps_Holder {
+    display: table-cell;
+    text-align: center;
+}
+
+.activeStep .stepsNumberHolder {
+    border: solid 1px var(--wms-color-secondary);
+    background-color: var(--wms-color-secondary);
+}
+
+.stepsNumberHolder span {
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+    /* font-size: 28px; */
+    font-size: 20px;
+}
+
+.stepsLable {
+    margin-top: 10px;
+    color: #686868;
+    margin-bottom: 10px;
+}
+
+.activeStep .stepsLable {
+    /* color: var(--wms-color-primary); */
+    color: var(--wms-color-secondary);
+}
+
+.fileHeaderContainer ul {
+    padding-left: 0px;
+    margin-left: 0px;
+    list-style-image: none;
+    list-style-type: none;
+}
+
+.fileHeaderContainer ul li {
+    padding: 6px;
+    margin: 2px;
+}
+
+.fileHeaderContainer ul li a {
+    float: right;
+}
+
+.fileHeaderContainer ul li a i {
+    font-size: 21px;
+    color: var(--wms-color-primary);
+}
+
+.sortableHeaderHolder {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+#lnkMapHeader {
+    float: right;
+}
+
+i.fa-check-circle,
+i.fa-arrows-alt-h {
+    color: #6ebf49 !important;
+}
+
+i.fa-arrows-alt-h {
+    position: relative;
+    right: -35px;
+}
+
+.WMSImportTable {
+    width: 100%;
+}
+
+.WMSImportTable td {
+    padding: 7px;
+    background-color: #ffffff;
+}
+
+.WMSImportTable .WMSImportHeaderRow td,
+.WMSImportTable td.WMSRowNo,
+.WMSImportTable tr:nth-child(even) td.WMSRowNo {
+    font-weight: bold;
+    background-color: #636363 !important;
+    color: #ffffff !important;
+}
+
+.WMSImportTable td.WMSRowNo {
+    width: 40px;
+    text-align: center;
+}
+
+.WMSImportTable tr:nth-child(even) td {
+    background-color: #f2f2f2;
+}
+
+.validationMessage {
+    border: solid 1px #990000;
+    background-color: #990000;
+    color: #ffffff;
+    padding: 10px 18px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 7px;
+    margin-right: 10px;
+}
+
+.dataErrorMessage {
+    border: solid 1px #990000;
+    background-color: #990000;
+    color: #ffffff;
+}
+
+.dataSuccessMessage {
+    border: solid 1px #669f00;
+    background-color: #669f00;
+    color: #ffffff;
+}
+
+.validationHolder {
+    width: 100%;
+    margin-bottom: 10px;
+    display: table;
+}
+
+.validationHolderRow {
+    display: table-row;
+}
+
+.validationHolderCell {
+    display: ruby;
+}
+
+#lnkValidateCorrection i,
+#lnkUploadImportData i {
+    color: #ffffff !important;
+    margin-left: 0px;
+    margin-right: 2px;
+}
+
+.errorRow td {
+    border: solid 2px #ff0000;
+    background-color: #ffd9d9 !important;
+}
+
+.uploadedRow td {
+    border: solid 2px #c2e16c;
+    background-color: #f7ffe5 !important;
+}
+
+td.errorCell {
+    box-shadow: inset 5px 5px 5px #636363;
+    background-color: #ffffff;
+}
+
+td.errorCell i {
+    margin-right: 10px;
+}
+
+/*.completedDataOnly tr,*/
+.completedDataOnly tr.errorRow,
+.errorDataOnly tr,
+.warningDataOnly tr {
+    display: none;
+}
+
+.errorDataOnly tr.errorRow,
+.errorDataOnly .WMSImportHeaderRow,
+/*.completedDataOnly tr.uploadedRow,*/
+.completedDataOnly tr,
+.completedDataOnly .WMSImportHeaderRow,
+.warningDataOnly tr.criticalErrorRow,
+.warningDataOnly .WMSImportHeaderRow {
+    display: table-row;
+}
+
+/* Server Error CSS */
+/* Server Error CSS */
+
+.WMSFilterPanel {
+    text-align: right;
+    margin-top: 15px;
+}
+
+.themeWMSContentHolder div.container-fluid .WMSFilterPanel select.inputElement {
+    display: inline-block !important;
+    width: auto !important;
+}
+
+#WMSDataCalendar {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+
+.btnCalendar {
+    float: right;
+}
+
+.WMSProgressLabel {
+    margin-bottom: 10px;
+    padding: 0px 20px;
+    font-size: 14px;
+    text-align: center;
+}
+
+.WMSProgressBar,
+.WMSProgressBarStatus {
+    border: solid 1px #636363;
+    border-radius: 7px;
+    height: 20px;
+}
+
+.WMSProgressBar {
+    height: 22px;
+    overflow: hidden;
+}
+
+.WMSProgressBarStatus {
+    border-color: var(--wms-color-primary);
+    background-color: var(--wms-color-primary);
+}
+
+.WMSPercentProgress {
+    font-weight: bold;
+    text-align: center;
+    display: block;
+}
+
+.WMSdragDropHolder,
+.WMSdragDropPanel {
+    height: 200px;
+}
+
+.WMSdragDropHolder {
+    border: dashed 1px #636363;
+    background-color: #efefef;
+}
+
+.fileDragOver {
+    border: dashed 2px #636363;
+    background-color: #e1e1e1;
+}
+
+.WMSdragDropPanel {
+    display: table;
+    width: 100%;
+}
+
+.WMSdragDropLabel {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    font-size: 24px;
+    color: #636363;
+}
+
+.WMSDefaultFileCtrl {
+    margin-top: 10px;
+    text-align: center;
+}
+
+#txtIsHeader,
+#txtFieldSaparator {
+    width: 100%;
+}
+
+.WmsImport_DownloadTemplate {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.WmsImport_DownloadTemplate a {
+    padding: 5px;
+}
+
+.WMSTopImportStrip {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+
+.wmsImportCountHolder i {
+    color: #ffffff !important;
+}
+
+.wmsImportCountHolder .wmsDashboardCountBoxHolder {
+    width: 32.5%;
+}
+
+.wmsfreezUiBg {
+    background-color: #000000;
+    opacity: 0.5;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 999;
+}
+
+#WmsPage_step_import {
+    position: relative;
+    z-index: 9999;
+    background-color: #fff;
+}
+
+/* Preview Starts Here... */
+#textPreviewContent {
+    white-space: nowrap;
+}
+
+.textPreview {
+    /*width: 318px;*/
+    width: 430px;
+    height: 100px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    position: relative;
+}
+
+.previewChar {
+    display: inline-block;
+    width: 12px;
+    border-right: solid 1px #ffffff;
+    text-align: center;
+}
+
+.divRulerLine,
+.divRulerBigLine {
+    width: 12px;
+    border-right: solid 1px #636363;
+    display: inline-block;
+    height: 6px;
+    margin-top: 7px;
+    margin-bottom: 7px;
+    cursor: pointer;
+}
+
+.divRulerBigLine {
+    height: 16px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    position: relative;
+    top: -5px;
+}
+
+.divRuler {
+    background-color: #cccccc;
+    height: 20px;
+}
+
+.rulerMarkupLine {
+    position: absolute;
+    top: 0px;
+    width: 1px;
+    border-right: solid 1px #ff0000;
+    height: 100%;
+}
+.WmsImportOptionPopup {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 9;
+}
+#btnCloseImportPopup {
+    float: right;
+    margin-top: 3px;
+    cursor: pointer;
+}
+#btnCloseImportPopup i {
+    position: static;
+    font-size: 20px;
+}
+.WmsImportOptionPopup .themeWMSPopupLabel{
+    white-space:nowrap;
+    width:100%;
+}
